@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		944699892C35AC39005E0673 /* Transit in Frameworks */ = {isa = PBXBuildFile; productRef = 944699882C35AC39005E0673 /* Transit */; };
+		9446998B2C35AF31005E0673 /* TransitParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446998A2C35AF31005E0673 /* TransitParser.swift */; };
 		94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF802C29ABBD00970F8C /* CyBusApp.swift */; };
 		94ABDF832C29ABBD00970F8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF822C29ABBD00970F8C /* ContentView.swift */; };
 		94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF842C29ABBD00970F8C /* Assets.xcassets */; };
@@ -15,6 +15,7 @@
 		94ABDF932C29ABBD00970F8C /* CyBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF922C29ABBD00970F8C /* CyBusTests.swift */; };
 		94ABDF9D2C29ABBE00970F8C /* CyBusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */; };
 		94ABDF9F2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */; };
+		94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 94BB5BC62C35CBDF00404028 /* SwiftProtobuf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9400C2532C35BA3600355A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9400C25C2C35C93600355A0F /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
+		9446998A2C35AF31005E0673 /* TransitParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitParser.swift; sourceTree = "<group>"; };
 		94ABDF7D2C29ABBD00970F8C /* CyBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDF802C29ABBD00970F8C /* CyBusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusApp.swift; sourceTree = "<group>"; };
 		94ABDF822C29ABBD00970F8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 		94ABDF982C29ABBE00970F8C /* CyBusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CyBusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITests.swift; sourceTree = "<group>"; };
 		94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		94BB5BCB2C35CDB000404028 /* gtfs-realtime.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = "gtfs-realtime.proto"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				944699892C35AC39005E0673 /* Transit in Frameworks */,
+				94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +82,13 @@
 		94ABDF742C29ABBD00970F8C = {
 			isa = PBXGroup;
 			children = (
+				94BB5BCA2C35CD8D00404028 /* Protos */,
+				94BB5BC82C35CCCB00404028 /* Generated */,
 				94ABDF7F2C29ABBD00970F8C /* CyBus */,
 				94ABDF912C29ABBD00970F8C /* CyBusTests */,
 				94ABDF9B2C29ABBE00970F8C /* CyBusUITests */,
 				94ABDF7E2C29ABBD00970F8C /* Products */,
+				94BB5BC52C35CBDF00404028 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,11 +105,13 @@
 		94ABDF7F2C29ABBD00970F8C /* CyBus */ = {
 			isa = PBXGroup;
 			children = (
+				9400C2532C35BA3600355A0F /* Info.plist */,
 				94ABDF802C29ABBD00970F8C /* CyBusApp.swift */,
 				94ABDF822C29ABBD00970F8C /* ContentView.swift */,
 				94ABDF842C29ABBD00970F8C /* Assets.xcassets */,
 				94ABDF862C29ABBD00970F8C /* CyBus.entitlements */,
 				94ABDF872C29ABBD00970F8C /* Preview Content */,
+				9446998A2C35AF31005E0673 /* TransitParser.swift */,
 			);
 			path = CyBus;
 			sourceTree = "<group>";
@@ -131,6 +141,29 @@
 			path = CyBusUITests;
 			sourceTree = "<group>";
 		};
+		94BB5BC52C35CBDF00404028 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94BB5BC82C35CCCB00404028 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				9400C25C2C35C93600355A0F /* gtfs-realtime.pb.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		94BB5BCA2C35CD8D00404028 /* Protos */ = {
+			isa = PBXGroup;
+			children = (
+				94BB5BCB2C35CDB000404028 /* gtfs-realtime.proto */,
+			);
+			path = Protos;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,7 +181,7 @@
 			);
 			name = CyBus;
 			packageProductDependencies = (
-				944699882C35AC39005E0673 /* Transit */,
+				94BB5BC62C35CBDF00404028 /* SwiftProtobuf */,
 			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
@@ -223,7 +256,7 @@
 			);
 			mainGroup = 94ABDF742C29ABBD00970F8C;
 			packageReferences = (
-				944699872C35AC39005E0673 /* XCRemoteSwiftPackageReference "transit" */,
+				9400C25E2C35C99500355A0F /* XCRemoteSwiftPackageReference "swift-protobuf" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
@@ -269,6 +302,7 @@
 			files = (
 				94ABDF832C29ABBD00970F8C /* ContentView.swift in Sources */,
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
+				9446998B2C35AF31005E0673 /* TransitParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +464,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CyBus/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CyBus/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -467,6 +502,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CyBus/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CyBus/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -621,21 +657,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		944699872C35AC39005E0673 /* XCRemoteSwiftPackageReference "transit" */ = {
+		9400C25E2C35C99500355A0F /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/richwolf/transit";
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.3;
+				minimumVersion = 1.26.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		944699882C35AC39005E0673 /* Transit */ = {
+		94BB5BC62C35CBDF00404028 /* SwiftProtobuf */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 944699872C35AC39005E0673 /* XCRemoteSwiftPackageReference "transit" */;
-			productName = Transit;
+			package = 9400C25E2C35C99500355A0F /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
