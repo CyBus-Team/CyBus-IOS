@@ -1,0 +1,15 @@
+{
+  "originHash" : "b1f64eacab8667e0cee3abed77ab2cbc3067ea9eac3325da89319bfb598c33c3",
+  "pins" : [
+    {
+      "identity" : "transit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/richwolf/transit",
+      "state" : {
+        "revision" : "f6f2b0c5b4ef882fe80ac7f18a18eec8e4a6d06d",
+        "version" : "0.1.3"
+      }
+    }
+  ],
+  "version" : 3
+}

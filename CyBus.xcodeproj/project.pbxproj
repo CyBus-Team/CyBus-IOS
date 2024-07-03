@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		944699892C35AC39005E0673 /* Transit in Frameworks */ = {isa = PBXBuildFile; productRef = 944699882C35AC39005E0673 /* Transit */; };
 		94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF802C29ABBD00970F8C /* CyBusApp.swift */; };
 		94ABDF832C29ABBD00970F8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF822C29ABBD00970F8C /* ContentView.swift */; };
 		94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF842C29ABBD00970F8C /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				944699892C35AC39005E0673 /* Transit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +147,9 @@
 			dependencies = (
 			);
 			name = CyBus;
+			packageProductDependencies = (
+				944699882C35AC39005E0673 /* Transit */,
+			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +222,9 @@
 				Base,
 			);
 			mainGroup = 94ABDF742C29ABBD00970F8C;
+			packageReferences = (
+				944699872C35AC39005E0673 /* XCRemoteSwiftPackageReference "transit" */,
+			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -611,6 +619,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		944699872C35AC39005E0673 /* XCRemoteSwiftPackageReference "transit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/richwolf/transit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		944699882C35AC39005E0673 /* Transit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 944699872C35AC39005E0673 /* XCRemoteSwiftPackageReference "transit" */;
+			productName = Transit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 94ABDF752C29ABBD00970F8C /* Project object */;
 }
