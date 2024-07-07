@@ -172,7 +172,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94ABDFA22C29ABBE00970F8C /* Build configuration list for PBXNativeTarget "CyBus" */;
 			buildPhases = (
-				94891BC42C3AF4B9008AFC53 /* ShellScript */,
 				94ABDF792C29ABBD00970F8C /* Sources */,
 				94ABDF7A2C29ABBD00970F8C /* Frameworks */,
 				94ABDF7B2C29ABBD00970F8C /* Resources */,
@@ -296,26 +295,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		94891BC42C3AF4B9008AFC53 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "# Path to the directory containing .proto files\nPROTO_DIR=\"${SRCROOT}/Protos\"\n# Path to the directory for generated files\nOUTPUT_DIR=\"${SRCROOT}/Generated\"\n\n# Create the directory for generated files if it doesn't exist\n# mkdir -p \"${OUTPUT_DIR}\"\n\n# Generate Swift files from .proto files\nfor proto in \"${PROTO_DIR}\"/*.proto; do\n    protoc --swift_out=\"${OUTPUT_DIR}\" \"$proto\"\ndone\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		94ABDF792C29ABBD00970F8C /* Sources */ = {
