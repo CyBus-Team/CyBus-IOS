@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9446998B2C35AF31005E0673 /* TransitParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446998A2C35AF31005E0673 /* TransitParser.swift */; };
+		94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */; };
 		94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF802C29ABBD00970F8C /* CyBusApp.swift */; };
 		94ABDF832C29ABBD00970F8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF822C29ABBD00970F8C /* ContentView.swift */; };
 		94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF842C29ABBD00970F8C /* Assets.xcassets */; };
@@ -37,8 +38,8 @@
 
 /* Begin PBXFileReference section */
 		9400C2532C35BA3600355A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9400C25C2C35C93600355A0F /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
 		9446998A2C35AF31005E0673 /* TransitParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitParser.swift; sourceTree = "<group>"; };
+		94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
 		94ABDF7D2C29ABBD00970F8C /* CyBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDF802C29ABBD00970F8C /* CyBusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusApp.swift; sourceTree = "<group>"; };
 		94ABDF822C29ABBD00970F8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,7 +152,7 @@
 		94BB5BC82C35CCCB00404028 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				9400C25C2C35C93600355A0F /* gtfs-realtime.pb.swift */,
+				94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -171,6 +172,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94ABDFA22C29ABBE00970F8C /* Build configuration list for PBXNativeTarget "CyBus" */;
 			buildPhases = (
+				94891BC42C3AF4B9008AFC53 /* ShellScript */,
 				94ABDF792C29ABBD00970F8C /* Sources */,
 				94ABDF7A2C29ABBD00970F8C /* Frameworks */,
 				94ABDF7B2C29ABBD00970F8C /* Resources */,
@@ -295,12 +297,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		94891BC42C3AF4B9008AFC53 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Path to the directory containing .proto files\nPROTO_DIR=\"${SRCROOT}/Protos\"\n# Path to the directory for generated files\nOUTPUT_DIR=\"${SRCROOT}/Generated\"\n\n# Create the directory for generated files if it doesn't exist\n# mkdir -p \"${OUTPUT_DIR}\"\n\n# Generate Swift files from .proto files\nfor proto in \"${PROTO_DIR}\"/*.proto; do\n    protoc --swift_out=\"${OUTPUT_DIR}\" \"$proto\"\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		94ABDF792C29ABBD00970F8C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				94ABDF832C29ABBD00970F8C /* ContentView.swift in Sources */,
+				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
 				9446998B2C35AF31005E0673 /* TransitParser.swift in Sources */,
 			);

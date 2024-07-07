@@ -13,7 +13,9 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button("Run") {
+                downloadAndParseBinaryFile(from: "http://20.19.98.194:8328/Api/api/gtfs-realtime")
+            }
         }
         .padding()
     }
