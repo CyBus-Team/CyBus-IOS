@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Bus: Codable, Identifiable {
+struct Bus: Identifiable {
     let id: String
-    let route: String
     let currentLocation: MapLocation
+    let route: Route?
 }

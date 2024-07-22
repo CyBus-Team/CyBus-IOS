@@ -6,12 +6,32 @@ class TransitAPIClient {
     
     let urlString = "http://20.19.98.194:8328/Api/api/gtfs-realtime"
     
+    // Function to load and decode JSON file
+    func loadRoutes(from filename: String) -> [Route]? {
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
+            print("Failed to locate \(filename) in bundle.")
+            return nil
+        }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            let routes = try decoder.decode([Route].self, from: data)
+            return routes
+        } catch {
+            print("Failed to decode JSON: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
     func fetchBuses(completion: @escaping (Result<[Bus], Error>) -> Void) {
         guard let url = URL(string: urlString) else {
             // TODO: Localize the error message
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
             return
         }
+        
+        let routes = loadRoutes(from: "routes")
 
         let session = URLSession.shared
         let task = session.dataTask(with: url) { data, response, error in
@@ -34,11 +54,11 @@ class TransitAPIClient {
                     }
                     let bus = Bus(
                         id: entity.id,
-                        route: entity.tripUpdate.trip.routeID,
                         currentLocation: MapLocation(
                             latitude: entity.vehicle.position.latitude,
                             longitude: entity.vehicle.position.longitude
-                        )
+                        ),
+                        route: routes?.first(where: { $0.lineID == entity.vehicle.trip.routeID })
                     )
                     return bus
                 }
