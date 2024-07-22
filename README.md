@@ -36,18 +36,27 @@ ruby routes_generator.rb
 ```
 
 # TODO for MVP
-[📋] - Show route info (start, finish, stops) - (issue)[https://github.com/PopovVA/CyBus/issues/1]
 
-[📋] - Setup CI/CD - (issue)[https://github.com/PopovVA/CyBus/issues/2]
+[📋] - Show route info (start, finish, stops) - (issue) [https://github.com/PopovVA/CyBus/issues/1]
 
-[📋] - Setup env - (issue)[https://github.com/PopovVA/CyBus/issues/3]
+[📋] - Setup CI/CD - (issue) [https://github.com/PopovVA/CyBus/issues/2]
 
-[📋] - Add localization - (issue)[https://github.com/PopovVA/CyBus/issues/4]
+[📋] - Setup env - (issue) [https://github.com/PopovVA/CyBus/issues/3]
 
-[📋] - Update architecture - (issue)[https://github.com/PopovVA/CyBus/issues/5]
+[📋] - Add localization - (issue) [https://github.com/PopovVA/CyBus/issues/4]
 
-[📋] - Create UI - (issue)[https://github.com/PopovVA/CyBus/issues/6]
+[📋] - Update architecture - (issue) [https://github.com/PopovVA/CyBus/issues/5]
+
+[📋] - Create UI - (issue) [https://github.com/PopovVA/CyBus/issues/6]
 
 # TODO enhancement
 
-[📋] - Move GTFS and routes generation to one REST API service - (issue)[https://github.com/PopovVA/CyBus/issues/7]
+[📋] - Move GTFS and routes generation to one REST API service - (issue) [https://github.com/PopovVA/CyBus/issues/7]
+
+[📋] - Add unit tests - (issue) [https://github.com/PopovVA/CyBus/issues/8]
+
+[📋] - Add analytics - (issue) [https://github.com/PopovVA/CyBus/issues/9]
+
+# TODO ideas
+
+[📋] - Add Bolt integration - (issue) [https://github.com/PopovVA/CyBus/issues/10]
