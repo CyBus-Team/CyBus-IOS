@@ -35,7 +35,7 @@ Afterward, run the Ruby script in the root folder:
 ruby routes_generator.rb
 ```
 
-# TODO
+# TODO for MVP
 [📋] - Show route info (start, finish, stops) - (issue)[https://github.com/PopovVA/CyBus/issues/1]
 
 [📋] - Setup CI/CD - (issue)[https://github.com/PopovVA/CyBus/issues/2]
@@ -44,8 +44,10 @@ ruby routes_generator.rb
 
 [📋] - Add localization - (issue)[https://github.com/PopovVA/CyBus/issues/4]
 
-[📋] - Update architecture
+[📋] - Update architecture - (issue)[https://github.com/PopovVA/CyBus/issues/5]
 
-[📋] - Create UI
+[📋] - Create UI - (issue)[https://github.com/PopovVA/CyBus/issues/6]
 
-[📋] - Move GTFS and routes generation to one REST API service
+# TODO enhancement
+
+[📋] - Move GTFS and routes generation to one REST API service - (issue)[https://github.com/PopovVA/CyBus/issues/7]
