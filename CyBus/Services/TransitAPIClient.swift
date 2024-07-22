@@ -4,6 +4,7 @@ import SwiftProtobuf
 class TransitAPIClient {
     static let shared = TransitAPIClient()
     
+    // TODO: Setup env - (issue)[https://github.com/PopovVA/CyBus/issues/3]
     let urlString = "http://20.19.98.194:8328/Api/api/gtfs-realtime"
     
     // Function to load and decode JSON file
@@ -26,7 +27,7 @@ class TransitAPIClient {
     
     func fetchBuses(completion: @escaping (Result<[Bus], Error>) -> Void) {
         guard let url = URL(string: urlString) else {
-            // TODO: Localize the error message
+            // TODO: Errors localization - (issue)[https://github.com/PopovVA/CyBus/issues/4]
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
             return
         }
@@ -41,7 +42,7 @@ class TransitAPIClient {
             }
 
             guard let data = data else {
-                // TODO: Localize the error message
+                // TODO: Errors localization - (issue)[https://github.com/PopovVA/CyBus/issues/4]
                 completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
                 return
             }

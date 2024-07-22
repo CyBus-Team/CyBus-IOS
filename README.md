@@ -36,14 +36,16 @@ ruby routes_generator.rb
 ```
 
 # TODO
-[📋] - Show route info (start, finish, stops)
+[📋] - Show route info (start, finish, stops) - (issue)[https://github.com/PopovVA/CyBus/issues/1]
+
+[📋] - Setup CI/CD - (issue)[https://github.com/PopovVA/CyBus/issues/2]
+
+[📋] - Setup env - (issue)[https://github.com/PopovVA/CyBus/issues/3]
+
+[📋] - Add localization - (issue)[https://github.com/PopovVA/CyBus/issues/4]
 
 [📋] - Update architecture
 
-[📋] - Error localization
-
 [📋] - Create UI
-
-[📋] - Setup CI/CD
 
 [📋] - Move GTFS and routes generation to one REST API service
