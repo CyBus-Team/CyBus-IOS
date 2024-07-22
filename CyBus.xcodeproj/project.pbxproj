@@ -21,6 +21,13 @@
 		94ABDF9D2C29ABBE00970F8C /* CyBusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */; };
 		94ABDF9F2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */; };
 		94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 94BB5BC62C35CBDF00404028 /* SwiftProtobuf */; };
+		94CC172B2C4EBAD000AC358D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC172A2C4EBAD000AC358D /* Route.swift */; };
+		94CC173A2C4EC42C00AC358D /* routes.shp in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17362C4EC42C00AC358D /* routes.shp */; };
+		94CC17412C4EC65300AC358D /* routes.prj in Resources */ = {isa = PBXBuildFile; fileRef = 94CC173D2C4EC65300AC358D /* routes.prj */; };
+		94CC17432C4EC65300AC358D /* routes.shx in Resources */ = {isa = PBXBuildFile; fileRef = 94CC173F2C4EC65300AC358D /* routes.shx */; };
+		94CC17442C4EC65300AC358D /* routes.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17402C4EC65300AC358D /* routes.dbf */; };
+		94CC17462C4EC6AA00AC358D /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17452C4EC6AA00AC358D /* routes.json */; };
+		94CC17482C4ECF7C00AC358D /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC17472C4ECF7C00AC358D /* MapMarker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +67,13 @@
 		94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITests.swift; sourceTree = "<group>"; };
 		94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		94BB5BCB2C35CDB000404028 /* gtfs-realtime.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = "gtfs-realtime.proto"; sourceTree = "<group>"; };
+		94CC172A2C4EBAD000AC358D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		94CC17362C4EC42C00AC358D /* routes.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shp; sourceTree = "<group>"; };
+		94CC173D2C4EC65300AC358D /* routes.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.prj; sourceTree = "<group>"; };
+		94CC173F2C4EC65300AC358D /* routes.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shx; sourceTree = "<group>"; };
+		94CC17402C4EC65300AC358D /* routes.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.dbf; sourceTree = "<group>"; };
+		94CC17452C4EC6AA00AC358D /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
+		94CC17472C4ECF7C00AC358D /* MapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +107,7 @@
 			children = (
 				94891BDD2C3B016C008AFC53 /* MapLocation.swift */,
 				94891BDF2C3B017B008AFC53 /* Bus.swift */,
+				94CC172A2C4EBAD000AC358D /* Route.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				94891BD62C3AFBCF008AFC53 /* MapView.swift */,
+				94CC17472C4ECF7C00AC358D /* MapMarker.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -155,6 +171,7 @@
 		94ABDF7F2C29ABBD00970F8C /* CyBus */ = {
 			isa = PBXGroup;
 			children = (
+				94CC17452C4EC6AA00AC358D /* routes.json */,
 				94891BDA2C3AFC65008AFC53 /* Services */,
 				94891BD42C3AFB95008AFC53 /* ViewModels */,
 				94891BD32C3AFB8E008AFC53 /* Views */,
@@ -204,6 +221,10 @@
 		94BB5BC82C35CCCB00404028 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				94CC17362C4EC42C00AC358D /* routes.shp */,
+				94CC17402C4EC65300AC358D /* routes.dbf */,
+				94CC173D2C4EC65300AC358D /* routes.prj */,
+				94CC173F2C4EC65300AC358D /* routes.shx */,
 				94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */,
 			);
 			path = Generated;
@@ -327,7 +348,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CC17432C4EC65300AC358D /* routes.shx in Resources */,
+				94CC17462C4EC6AA00AC358D /* routes.json in Resources */,
 				94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */,
+				94CC173A2C4EC42C00AC358D /* routes.shp in Resources */,
+				94CC17412C4EC65300AC358D /* routes.prj in Resources */,
+				94CC17442C4EC65300AC358D /* routes.dbf in Resources */,
 				94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,12 +379,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CC17482C4ECF7C00AC358D /* MapMarker.swift in Sources */,
 				94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */,
 				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,
 				94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */,
 				94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */,
 				94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */,
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
+				94CC172B2C4EBAD000AC358D /* Route.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* Bus.swift in Sources */,
 				9446998B2C35AF31005E0673 /* TransitParser.swift in Sources */,
 			);
