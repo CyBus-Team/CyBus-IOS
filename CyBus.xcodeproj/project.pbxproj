@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9446998B2C35AF31005E0673 /* TransitParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446998A2C35AF31005E0673 /* TransitParser.swift */; };
 		94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */; };
 		94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
 		94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD82C3AFC20008AFC53 /* MapViewModel.swift */; };
@@ -49,7 +48,6 @@
 
 /* Begin PBXFileReference section */
 		9400C2532C35BA3600355A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9446998A2C35AF31005E0673 /* TransitParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitParser.swift; sourceTree = "<group>"; };
 		94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
 		94891BD62C3AFBCF008AFC53 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		94891BD82C3AFC20008AFC53 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				94ABDF842C29ABBD00970F8C /* Assets.xcassets */,
 				94ABDF862C29ABBD00970F8C /* CyBus.entitlements */,
 				94ABDF872C29ABBD00970F8C /* Preview Content */,
-				9446998A2C35AF31005E0673 /* TransitParser.swift */,
 			);
 			path = CyBus;
 			sourceTree = "<group>";
@@ -388,7 +385,6 @@
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
 				94CC172B2C4EBAD000AC358D /* Route.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* Bus.swift in Sources */,
-				9446998B2C35AF31005E0673 /* TransitParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
