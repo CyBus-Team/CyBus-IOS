@@ -4,7 +4,20 @@ iOS application with schedules, routes, and locations of buses in Cyprus.
 
 # Setup
 
-## Generate Protobuf
+## Required
+
+You need to create account on MapBox and generate an access token, just follow [these instruction](https://docs.mapbox.com/ios/navigation/guides/get-started/install/#step-2-create-a-secret-token)
+
+After, you have to create `Config-Secret.xcconfig` file in the root directory and paste your access token there
+
+```
+MBX_ACCESS_TOKEN = YOUR_MAPBOX_ACCESS_TOKEN
+```
+
+
+## Optional
+
+### Generate Protobuf
 Make sure that you've installed `protobuf`:
 ```
 brew install protobuf
@@ -18,7 +31,7 @@ cd Protos
 protoc --swift_out=. gtfs-realtime.proto
 ```
 
-## Generate Routes
+### Generate Routes
 Routes are static files from [motionbuscard](https://motionbuscard.org.cy/opendata).
 
 They are static for now and located in the Generated folder. If you want to update them, go to the `Topology` section and download `routes.zip`, then unzip it to the Generated folder.

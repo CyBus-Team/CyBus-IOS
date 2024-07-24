@@ -13,6 +13,8 @@
 		94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */; };
 		94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDD2C3B016C008AFC53 /* MapLocation.swift */; };
 		94891BE02C3B017B008AFC53 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDF2C3B017B008AFC53 /* Bus.swift */; };
+		949765742C516EFE001321CA /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 949765732C516EFE001321CA /* Config.xcconfig */; };
+		949765762C516F96001321CA /* Config-Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 949765752C516F96001321CA /* Config-Secret.xcconfig */; };
 		94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF802C29ABBD00970F8C /* CyBusApp.swift */; };
 		94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF842C29ABBD00970F8C /* Assets.xcassets */; };
 		94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF882C29ABBD00970F8C /* Preview Assets.xcassets */; };
@@ -21,10 +23,6 @@
 		94ABDF9F2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */; };
 		94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 94BB5BC62C35CBDF00404028 /* SwiftProtobuf */; };
 		94CC172B2C4EBAD000AC358D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC172A2C4EBAD000AC358D /* Route.swift */; };
-		94CC173A2C4EC42C00AC358D /* routes.shp in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17362C4EC42C00AC358D /* routes.shp */; };
-		94CC17412C4EC65300AC358D /* routes.prj in Resources */ = {isa = PBXBuildFile; fileRef = 94CC173D2C4EC65300AC358D /* routes.prj */; };
-		94CC17432C4EC65300AC358D /* routes.shx in Resources */ = {isa = PBXBuildFile; fileRef = 94CC173F2C4EC65300AC358D /* routes.shx */; };
-		94CC17442C4EC65300AC358D /* routes.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17402C4EC65300AC358D /* routes.dbf */; };
 		94CC17462C4EC6AA00AC358D /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17452C4EC6AA00AC358D /* routes.json */; };
 		94CC17482C4ECF7C00AC358D /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC17472C4ECF7C00AC358D /* MapMarker.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +52,8 @@
 		94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitAPIClient.swift; sourceTree = "<group>"; };
 		94891BDD2C3B016C008AFC53 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		94891BDF2C3B017B008AFC53 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
+		949765732C516EFE001321CA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		949765752C516F96001321CA /* Config-Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-Secret.xcconfig"; sourceTree = "<group>"; };
 		94ABDF7D2C29ABBD00970F8C /* CyBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDF802C29ABBD00970F8C /* CyBusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusApp.swift; sourceTree = "<group>"; };
 		94ABDF842C29ABBD00970F8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +146,8 @@
 		94ABDF742C29ABBD00970F8C = {
 			isa = PBXGroup;
 			children = (
+				949765752C516F96001321CA /* Config-Secret.xcconfig */,
+				949765732C516EFE001321CA /* Config.xcconfig */,
 				94BB5BCA2C35CD8D00404028 /* Protos */,
 				94BB5BC82C35CCCB00404028 /* Generated */,
 				94ABDF7F2C29ABBD00970F8C /* CyBus */,
@@ -346,12 +348,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94CC17432C4EC65300AC358D /* routes.shx in Resources */,
+				949765742C516EFE001321CA /* Config.xcconfig in Resources */,
 				94CC17462C4EC6AA00AC358D /* routes.json in Resources */,
+				949765762C516F96001321CA /* Config-Secret.xcconfig in Resources */,
 				94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */,
-				94CC173A2C4EC42C00AC358D /* routes.shp in Resources */,
-				94CC17412C4EC65300AC358D /* routes.prj in Resources */,
-				94CC17442C4EC65300AC358D /* routes.dbf in Resources */,
 				94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +424,7 @@
 /* Begin XCBuildConfiguration section */
 		94ABDFA02C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -485,6 +486,7 @@
 		};
 		94ABDFA12C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

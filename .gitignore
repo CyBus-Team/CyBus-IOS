@@ -1,3 +1,6 @@
+# Ignoring Config-Secret.xcconfig to avoid exposing sensitive information
+Config-Secret.xcconfig
+
 # VsCode
 .DS_Store
 
