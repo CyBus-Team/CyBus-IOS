@@ -328,6 +328,7 @@
 			mainGroup = 94ABDF742C29ABBD00970F8C;
 			packageReferences = (
 				9400C25E2C35C99500355A0F /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+				949765682C516669001321CA /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
@@ -745,6 +746,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.26.0;
+			};
+		};
+		949765682C516669001321CA /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-navigation-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -6,8 +6,11 @@
         <dict>
             <key>NSAllowsArbitraryLoads</key>
             <true/>
+            <key>NSLocationWhenInUseUsageDescription</key>
+            <string>The app uses your location to show your position on the map.</string>
             <key>NSExceptionDomains</key>
             <dict>
+                <!-- TODO: Move to env -->
                 <key>20.19.98.194</key>
                 <dict>
                     <key>NSExceptionAllowsInsecureHTTPLoads</key>
