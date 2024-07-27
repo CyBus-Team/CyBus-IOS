@@ -1,0 +1,143 @@
+﻿route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_color,route_text_color
+20000011,10,430,Larnaca Station - Airport - Kiti - Pervolia,,3,CCCC00,000000
+20000012,10,430,Pervolia - Kiti - Airport - Larnaca station,,3,CCCC00,000000
+20000021,10,430,Larnaca Station - Pervo,,3,CCCC00,000000
+20000031,10,430,Larnaca - Pervolia,,3,CCCC00,000000
+20000032,10,430,Pevolia,,3,CCCC00,000000
+20010011,10,417,Larnaca Station - Aradippou,,3,1C8600,FFFFFF
+20010012,10,417,Aradippou - Larnaca Station,,3,1C8600,FFFFFF
+20010021,10,417,Larnaca Station - Industrial Area - Aradippou,,3,1C8600,FFFFFF
+20010022,10,417,Aradippou - Industrial Area - Larnaca Station,,3,1C8600,FFFFFF
+20030011,10,431,Larnaca Station-Airport -  Meneou - Dromolaxia,,3,CC00E0,FFFFFF
+20030012,10,431,Dromolaxia - Meneou - Airport - Larnaca St.,,3,CC00E0,FFFFFF
+20040011,10,418,Larnaca Station - Lividia - Kellia - Troulloi,,3,33CC33,000000
+20040012,10,418,Troulloi - Kellia - Livadia - Larnaca Station,,3,33CC33,000000
+20050011,10,419,Larnaca Station - Oroklini,,3,FF33CC,FFFFFF
+20050012,10,419,Oroklini - Larnaca Station,,3,FF33CC,FFFFFF
+20050022,10,419,Oroklini - Larnaca Station,,3,FF33CC,FFFFFF
+20060011,10,432,Larnaca Station - Airport - Dromoloxia - Kiti - Tersefanou,,3,FF0000,FFFFFF
+20060012,10,432,Tersefanou - Kiti - Dromolaxia - Airport - Larnaca Station,,3,FF0000,FFFFFF
+20070011,10,420,Larnaca Station - Kamares - Kalo Chorio,,3,D6AA80,000000
+20070012,10,420,Kalo Chorio - Kamares - Larnaca Station,,3,D6AA80,000000
+20070021,10,420,Larnaca Station - Kamares - Kalo Chorio,,3,D6AA80,000000
+20070022,10,420,Kalo Chorio - Kamares - (Lyceem) - Larnaca Station,,3,D6AA80,000000
+20070041,10,420,Larnaka - Kalo Chorio,,3,D6AA80,000000
+20070042,10,420,Kalo Chorio - Larnaka,,3,D6AA80,000000
+20080011,10,421,Larnaca Station - Fire Station - Kamares,,3,FF80C0,000000
+20080012,10,421,Kamares - Fire Station - Larnaca Station,,3,FF80C0,000000
+20080021,10,421,Larnaca Station - Kamares - Free Trade Zone - Larnaca Station,,3,FF80C0,000000
+20090011,10,422,Larnaca St. -New Hospital - Vergina ,,3,CC6600,000000
+20090012,10,422,Kamares 2 -Zinonas -Vergina -New Hospital - Larnaca St.,,3,CC6600,000000
+20090022,10,422,Kamares 2 -Zinonas-Vergina-New Hospital - Larnaca St.,,3,CC6600,000000
+20090032,10,422,Kamares 2 - Zinonas - Vergina - New Hospital - Larnaca Station,,3,CC6600,000000
+20100011,10,418L,Larnaca Station - Chrysopolitissa -  Αg. Anargyroi - Livadia,,3,004000,FFFFFF
+20100012,10,418L,Livadia - Ag. Anargyroi - Chrysopolotissa - Larnaca,,3,004000,FFFFFF
+20100021,10,418L,Larnaca Station - Chrysopolitissa - Ag. Anargyroi-Livadia-Larnaca Station,,3,004000,FFFFFF
+20110011,10,423,Larnaca Station- Faneromeni - Drosia Area -Mall,,3,FF80FF,000000
+20110012,10,423,New Hospital - Drosia Area - Faneromeni - Larnaca Station,,3,FF80FF,000000
+20120011,10,424,Larnaca St. -  Finikoudes-Old Hospital-CTO - Pyla,,3,94462C,FFFFFF
+20120012,10,424,Pyla - CTO - Larnaca Station,,3,94462C,FFFFFF
+20120021,10,424,Larnaca Station -  Old Hospital-CTO - Pyla,,3,94462C,FFFFFF
+20120022,10,424,Pyla - CTO - Old Hospital - Larnaca Station,,3,94462C,FFFFFF
+20120032,10,424,Pyla - Larnaka,,3,94462C,FFFFFF
+20120041,10,424,Larnaca St - Old Hospital - Pyla,,3,94462C,FFFFFF
+20120042,10,424,Pyla - Larnaca St,,3,94462C,FFFFFF
+20150011,10,425,Dekeleia - C.T.O. - Larnaca Station - Foinikoudes- Makenzy - Airport,,3,791D6E,FFFFFF
+20150012,10,425,Airport - Makenzy - Old Hospital - C.T.O. - Dekeleia,,3,791D6E,FFFFFF
+20150021,10,425,Larnaca Station - Foinikoudes - Makenzy - Airport,,3,791D6E,FFFFFF
+20150022,10,425,Airport - Makenzy - Larnaca Station,,3,791D6E,FFFFFF
+20150031,10,425,Dekeleia - C.T.O. - Larnaca Station,,3,791D6E,FFFFFF
+20150032,10,425,Larnaca Station - Harbour - KOT - Dekeleia,,3,791D6E,FFFFFF
+20160011,10,426,Larnaca Station - Kalogera - E.A.C. - New Hospital - Kokkines - Tsiakkilero - Aradippou,,3,DF32FF,FFFFFF
+20160012,10,426,Aradippou - Tsiakkilero - Kokkines - New Hospital - E.A.C. - Kalogera - Larnaca Station,,3,DF32FF,FFFFFF
+20170011,10,427,Larnaca St. - Harbour - Fire Station - Old Hospital - Foinikoudes - New Hospital - Cineplex - Faneromeni - Larnaca St.,,3,0000A0,FFFFFF
+20170021,10,427,Larnaca.St - Old Hospiital - Foinikoudes - Larnaca St.,,3,0000A0,FFFFFF
+20180011,10,428,Larnaca St. - Tsiakkilero- Aradippou - Pascal Area,,3,8080FF,FFFFFF
+20180012,10,428,Pascal School - Aradippou -Tsiakkilero - Larnaca St. ,,3,8080FF,FFFFFF
+20190011,10,429,Larnaca Station - Airport - Faros,,3,400080,FFFFFF
+20190012,10,429,Faros - Meneou - Airport - Larnaca Station,,3,400080,FFFFFF
+20190022,10,429,Faros - Meneou - Tekke -  Airport - Larnaca Station,,3,400080,FFFFFF
+20210011,10,442,Nightly Larnaca Station - Livadia - Kellia - Troulloi,,3,00FFFF,000000
+20210012,10,442,Nightly Troulloi - Kellia - Livadia - Larnaca station,,3,00FFFF,000000
+20220011,10,443,Nightly Larnaca St. -Harbour - Fire St. - Old Hospital -Foinikoudes - New Hospital - Cineplex - Faneromeni - Larnaca St.,,3,808080,FFFFFF
+20230011,10,444,Nightly Larnaca St. - Mitropoli - Trifilia - Tsiakkilero- G.S.Z. Stadium- Vergina- Aradippou ,,3,804040,FFFFFF
+20230012,10,444,Nightly Aradippou - Vergina - G.S.Z. Stadium - Tsiakkilero - Trifilia - Mitropoli - Larnaca Station,,3,804040,FFFFFF
+20240011,10,445,Nightly Oroklini - Pyla - Κ.Ο.Τ - Foinikoudes - Makenzy - Larnaca Station,,3,FE5841,000000
+20240012,10,445,Nightly Larnaca Station - Makenzy - Foinikoudes - Κ.Ο.Τ. - Pyla - Oroklini,,3,FE5841,000000
+20250011,10,446,Nightly Larnaca Station - Makenzy - Dromoloxia - Tersefanou - Kiti - Pervolia,,3,66CCFF,FFFFFF
+20250012,10,446,Nightly Pervolia - Kiti - Tersefanou - Dromoloxia - Airport- Makenzy - Larnaca St.,,3,66CCFF,FFFFFF
+20260011,10,401,Mari - Vasiliko - Zygi - Kalavasos - Tochni - Choirokoitia - Kofinou Station,,3,4ACFFF,000000
+20260012,10,401,Kofinou Station - Choirokoitia - Tochni - Kalavasos - Zygi - Vasiliko - Mari,,3,4ACFFF,000000
+20260021,10,401,Mari-Vasiliko-Zygi-Kalavasos-Tochni- Kofinou Station,,3,4ACFFF,000000
+20260022,10,401,Kofinou Station-Tochni-Kalavasos-Zygi-Vasiliko-Mari,,3,4ACFFF,000000
+20270011,10,402,Maroni - Psematismenos - Choirokoitia - Kofinou - Kofinou Station,,3,E151C5,FFFFFF
+20270012,10,402,Kofinou Station-  Kofinou - Choirokoitia- Psematismenos- Maroni,,3,E151C5,FFFFFF
+20280011,10,403,Odou - Melini - Ora - Lagia - Choirokoitia - Kofinou Station,,3,39BB41,000000
+20280012,10,403,Kofinou Station - Choirokoitia - Lagia - Ora - Melini - Odou,,3,39BB41,000000
+20290011,10,404,Agioi Vavatsinias - Lagia - Vavla - Kato Drys - Skarinou - Kofinou Station,,3,632401,FFFFFF
+20290012,10,404,Kofinou Station - Skarinou - Kato Drys - Vavla - Lagia - Agioi Vavatsinias,,3,632401,FFFFFF
+20300011,10,405,Vavatsinia - Pano Lefkara - Kato Lefkara - Skarinou - Kofinou Station,,3,0FF804,000000
+20300012,10,405,Kofinou Station - Skarinou - Kato Lefkara - Pano Lefkara - Vavatsinia,,3,0FF804,000000
+20300021,10,405,Vavatsinia - Pano Lefkara - Kato Lefkara - Skarinou - Kofinou Station - Alampra Station,,3,0FF804,000000
+20300022,10,405,Kofinou Station - Kato Lefkara - Pano Lefkara - Vavatsinia,,3,0FF804,000000
+20310011,10,405A,Pano Lefkara - Kato Lefkara - Skarinou - Kofinou Station,,3,BB0A0D,FFFFFF
+20310012,10,405A,Kofinou Station - Skarinou - Kato Lefkara - Pano Lefkara,,3,BB0A0D,FFFFFF
+20320011,10,406,Tourist Area Pentaschinos - Agios Theodoros - Kofinou St.,,3,40110F,FFFFFF
+20320012,10,406,Kofinou St. - Agios Theodoros - Tourist Area Pentaschinos,,3,40110F,FFFFFF
+20330011,10,407,Larnaca St. - Airport - Meneou - Kiti - Mazotos - Tourist Area Pentaschinos - Zygi - Vasiliko ,,3,399001,FFFFFF
+20330012,10,407,Zygi -Tourist Area Pentaschinos - Mazotos - Kiti - Meneou - Airport - Larnaca Station,,3,399001,FFFFFF
+20340011,10,408,Larnaca Station - Alethriko - Anglisides - Kofinou Station,,3,49580D,FFFFFF
+20340012,10,408,Kofinou Station - Anglisides - Alethriko - Larnaca Station,,3,49580D,FFFFFF
+20350011,10,408B,Kofinou Station - Anglisides - Vergina- Rizoelia,,3,B94605,000000
+20350012,10,408B,Rizoelia - Vergina- Anglisides -Menogeia-Kofinou Station,,3,B94605,000000
+20360011,10,409,Larnaca St. - Lympia - Dali - Pera Chorio - Alampra St.,,3,5A82A0,FFFFFF
+20360012,10,409,Alampra Station Pera Chorio - Dali - Lympia - Larnaca Station,,3,5A82A0,FFFFFF
+20360021,10,409,Larnaca Station-Vergina School -Lympia-Dali-Pera Chorio-Alampra Station,,3,5A82A0,FFFFFF
+20360022,10,409,Alampra Station-Pera Chorio-Dali-Lympia-Kosi-Vergina School-Larnaca Station,,3,5A82A0,FFFFFF
+20360031,10,409,Larnaca Station - Kosi - Lympia - Dali - Pera Xorio - Alampra Station,,3,5A82A0,FFFFFF
+20360032,10,409,Alampra Station - Pera Xorio - Dali - Lympia - Kosi - Larnaca Station,,3,5A82A0,FFFFFF
+20370011,10,410,Larnaca Station - Kalo Chorio - Agia Anna - Psevdas - Pyrga - Kornos - Delikipos,,3,75610B,FFFFFF
+20370012,10,410,Delikipos - Kornos - Pyrga - Psevdas - Agia Anna - Kalo Chorio - Larnaca Station,,3,75610B,FFFFFF
+20370021,10,410,Larnaca Station - Vergina Lyceum- Kalo Chorio- Delikipos,,3,75610B,FFFFFF
+20370022,10,410,Delikipos-Kornos-Kalo Chorio-Vergina Lyceum- Larnaca St,,3,75610B,FFFFFF
+20370031,10,410,Larnaka  - Kalo Chorio - Agia anna - Psevdas- Pyrga - Kornos - Delikipos,,3,75610B,FFFFFF
+20370032,10,410,Delikipos - Kornos - Pyrga - Psvedas - Agia Anna - Kalo Chorio - Larnaca Station,,3,75610B,FFFFFF
+20380011,10,412,Larnaca Station - Alethriko - Anglisides - Anafotia - Alaminos,,3,001C9B,FFFFFF
+20380012,10,412,Alaminοs - Anafotia - Anglisides - Alethriko - Larnaca Station,,3,001C9B,FFFFFF
+20380031,10,412,Larnaca Station - Alethriko - Anglisides - Anafotia - Alaminos,,3,001C9B,FFFFFF
+20380032,10,412,Alaminos - Anafotia - Anglisides - Alethriko - Larnaca Station,,3,001C9B,FFFFFF
+20380041,10,412,Larnaca Station - Alethriko - Anglisidies - Anafotia - Alaminos,,3,001C9B,FFFFFF
+20380042,10,412,Alaminos - Anafotida - Anglisides - Alethriko - Larnaca Station,,3,001C9B,FFFFFF
+20390011,10,413,Kivisili - Alethriko - Klavdia - Larnaca Station,,3,0553E2,FFFFFF
+20390012,10,413,Larnaca Station - Klavdia - Alethriko - Kivisili,,3,0553E2,FFFFFF
+20390021,10,413,Kivisili - Alethriko - Klavdia - Vergina SC - Larnaca Station,,3,0553E2,FFFFFF
+20390022,10,413,Larnaca Station - Vergina SC  - Klavdia - Alethriko - Kivisili,,3,0553E2,FFFFFF
+20390031,10,413,Kivisili - Alethriko - Klavdia - Larnaca Station,,3,0553E2,FFFFFF
+20390032,10,413,Larnaca Station - Klavdia - Alethriko - Kivisili,,3,0553E2,FFFFFF
+20400011,10,414,Larnaca Station - Alethriko - Aplanta  - Anglisides - Menogeia - Kofinou Station,,3,FF0080,FFFFFF
+20400012,10,414,Kofinou Station - Menogeia - Anglisides - Aplanta - Alethriko - Larnaca Station,,3,FF0080,FFFFFF
+20400021,10,414,Larnaca Station - Alethriko-Aplanta-Anglisides-Menogeia-Politiko A- Kofinou Station,,3,FF0080,FFFFFF
+20400022,10,414,Kofinou Station - Politiko A - Menogia - Anglisides- Aplanta-Alethriko- Larnaca Station,,3,FF0080,FFFFFF
+20410011,10,415,Athienou - Avdellero - Aradippou - Larnaca Station,,3,9D2B14,FFFFFF
+20410012,10,415,Larnaca Station - Aradippou - Avdellero - Athienou,,3,9D2B14,FFFFFF
+20410021,10,415,Athienou-Avdellero-Aradippou-Vergina School-Larnaca Station,,3,9D2B14,FFFFFF
+20410022,10,415,Larnaca Station-Vergina School-Aradippou-Avdellero-Athienou,,3,9D2B14,FFFFFF
+20410031,10,415,Athienou - Aradippou - Lyceum Vergina - Larnaca Station,,3,9D2B14,FFFFFF
+20410032,10,415,Larnaca - Vergina Lyceum - Aradippou - Athienou,,3,9D2B14,FFFFFF
+20420011,10,448,"Nightly Kofinou Station - Larnaca Station (Connection With Routes: 449 450 451)",,3,5BD312,000000
+20420012,10,448,"Nightly Larnaca Station - Kofinou Station (Connection With Routes: 449 450 451)",,3,5BD312,000000
+20430011,10,449,Nightly Vavatsinia - Pano Lefkara - Kato Lefkara - Kato Drys - Skarinou - Kofinou Station,,3,DFB27F,000000
+20430012,10,449,Nightly Kofinou Station - Skarinou - Kato Drys - Kato Lefkara - Pano Lefkara - Vavatsinia,,3,DFB27F,000000
+20440011,10,450,Nightly Kalavasos - Tochni - Psematismenos - Maroni - Agios Theodoros - Kofinou - Kofinou Station,,3,990033,FFFFFF
+20440012,10,450,Nightly Kofinou Station - Kofinou - Agios Theodoros - Maroni - Psematismenos - Tochni - Kalavasos,,3,990033,FFFFFF
+20450011,10,451,Nightly Odou - Melini - Agioi Vavatsinias - Ora - Lagia - Vavla - Choirokoitia - Kofinou Station,,3,FF8080,000000
+20450012,10,451,Nightly Kofinou Station - Choirokoitia - Vavla - Lagia - Ora - Agioi Vavatsinias - Melini - Odou,,3,FF8080,000000
+20460011,10,452,Nightly Alaminos - Anafotia - Aplanta - Kivisili - Alethriko - Klavdia - Larnaca Station,,3,008000,FFFFFF
+20460012,10,452,Nightly Larnaca Station - Klavdia - Alethriko - Kivisili - Aplanta - Anafotia - Alaminos,,3,008000,FFFFFF
+20470011,10,454,Nightly Athienou - Avdellero - Aradippou - Larnaca Station,,3,FF99FF,000000
+20470012,10,454,Nightly Larnaca Station - Aradippou - Avdellero -Athienou,,3,FF99FF,000000
+20480011,10,455,Nightly Kornos - Pyrga - Mosfiloti - Psevdas - Agia Anna - Kalo Chorio - Larnaca Station,,3,0080FF,FFFFFF
+20480012,10,455,Nightly Larnaca Station - Kalo Chorio - Agia Anna - Psevdas - Mosfiloti - Pyrga - Kornos,,3,0080FF,FFFFFF
+20490011,10,456,Nightly Vasiliko - Mari - Zygi - Tourist Area Pentaschinos - Mazotos - Kiti - Meneou - Airport - Larnaka Station,,3,C53B66,FFFFFF
+20490012,10,456,Nightly Larnaka Station - Airport - Meneou - Kiti - Mazotos - Tourist Area Pentaschinos - Zygi - Mari - Vasiliko,,3,C53B66,FFFFFF
+20500011,10,440,Larnaca St. - Mackenzie - Mall - Larnaca St.,,3,FF8000,000000

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942C53EE2C55152E00DE9BD7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 942C53EC2C55152E00DE9BD7 /* README.md */; };
+		942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53ED2C55152E00DE9BD7 /* routes_generator.rb */; };
+		942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F02C55201900DE9BD7 /* shapes_generator.rb */; };
+		942C53F52C55208B00DE9BD7 /* shapes.json in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F42C55208B00DE9BD7 /* shapes.json */; };
 		94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */; };
 		94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
 		94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD82C3AFC20008AFC53 /* MapViewModel.swift */; };
@@ -15,6 +19,8 @@
 		94891BE02C3B017B008AFC53 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDF2C3B017B008AFC53 /* Bus.swift */; };
 		949765742C516EFE001321CA /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 949765732C516EFE001321CA /* Config.xcconfig */; };
 		949765762C516F96001321CA /* Config-Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 949765752C516F96001321CA /* Config-Secret.xcconfig */; };
+		949A570C2C52CAA5007457B0 /* MapboxNavigationCore in Frameworks */ = {isa = PBXBuildFile; productRef = 949A570B2C52CAA5007457B0 /* MapboxNavigationCore */; };
+		949A570E2C52CAA5007457B0 /* MapboxNavigationUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 949A570D2C52CAA5007457B0 /* MapboxNavigationUIKit */; };
 		94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF802C29ABBD00970F8C /* CyBusApp.swift */; };
 		94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF842C29ABBD00970F8C /* Assets.xcassets */; };
 		94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF882C29ABBD00970F8C /* Preview Assets.xcassets */; };
@@ -46,6 +52,10 @@
 
 /* Begin PBXFileReference section */
 		9400C2532C35BA3600355A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942C53EC2C55152E00DE9BD7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		942C53ED2C55152E00DE9BD7 /* routes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = routes_generator.rb; sourceTree = "<group>"; };
+		942C53F02C55201900DE9BD7 /* shapes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = shapes_generator.rb; sourceTree = "<group>"; };
+		942C53F42C55208B00DE9BD7 /* shapes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shapes.json; sourceTree = "<group>"; };
 		94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
 		94891BD62C3AFBCF008AFC53 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		94891BD82C3AFC20008AFC53 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -79,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949A570E2C52CAA5007457B0 /* MapboxNavigationUIKit in Frameworks */,
+				949A570C2C52CAA5007457B0 /* MapboxNavigationCore in Frameworks */,
 				94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +158,9 @@
 		94ABDF742C29ABBD00970F8C = {
 			isa = PBXGroup;
 			children = (
+				942C53F02C55201900DE9BD7 /* shapes_generator.rb */,
+				942C53EC2C55152E00DE9BD7 /* README.md */,
+				942C53ED2C55152E00DE9BD7 /* routes_generator.rb */,
 				949765752C516F96001321CA /* Config-Secret.xcconfig */,
 				949765732C516EFE001321CA /* Config.xcconfig */,
 				94BB5BCA2C35CD8D00404028 /* Protos */,
@@ -171,12 +186,13 @@
 		94ABDF7F2C29ABBD00970F8C /* CyBus */ = {
 			isa = PBXGroup;
 			children = (
-				94CC17452C4EC6AA00AC358D /* routes.json */,
+				942C53F42C55208B00DE9BD7 /* shapes.json */,
 				94891BDA2C3AFC65008AFC53 /* Services */,
 				94891BD42C3AFB95008AFC53 /* ViewModels */,
 				94891BD32C3AFB8E008AFC53 /* Views */,
 				94891BD22C3AFB86008AFC53 /* Models */,
 				9400C2532C35BA3600355A0F /* Info.plist */,
+				94CC17452C4EC6AA00AC358D /* routes.json */,
 				94ABDF802C29ABBD00970F8C /* CyBusApp.swift */,
 				94ABDF842C29ABBD00970F8C /* Assets.xcassets */,
 				94ABDF862C29ABBD00970F8C /* CyBus.entitlements */,
@@ -255,6 +271,8 @@
 			name = CyBus;
 			packageProductDependencies = (
 				94BB5BC62C35CBDF00404028 /* SwiftProtobuf */,
+				949A570B2C52CAA5007457B0 /* MapboxNavigationCore */,
+				949A570D2C52CAA5007457B0 /* MapboxNavigationUIKit */,
 			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
@@ -348,11 +366,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942C53EE2C55152E00DE9BD7 /* README.md in Resources */,
 				949765742C516EFE001321CA /* Config.xcconfig in Resources */,
 				94CC17462C4EC6AA00AC358D /* routes.json in Resources */,
+				942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */,
 				949765762C516F96001321CA /* Config-Secret.xcconfig in Resources */,
+				942C53F52C55208B00DE9BD7 /* shapes.json in Resources */,
 				94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */,
 				94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */,
+				942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +562,7 @@
 		};
 		94ABDFA32C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -578,6 +601,7 @@
 		};
 		94ABDFA42C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -616,6 +640,7 @@
 		};
 		94ABDFA62C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -638,6 +663,7 @@
 		};
 		94ABDFA72C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -660,6 +686,7 @@
 		};
 		94ABDFA92C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -681,6 +708,7 @@
 		};
 		94ABDFAA2C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -755,12 +783,22 @@
 			repositoryURL = "https://github.com/mapbox/mapbox-navigation-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.0;
+				minimumVersion = 3.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		949A570B2C52CAA5007457B0 /* MapboxNavigationCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 949765682C516669001321CA /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */;
+			productName = MapboxNavigationCore;
+		};
+		949A570D2C52CAA5007457B0 /* MapboxNavigationUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 949765682C516669001321CA /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */;
+			productName = MapboxNavigationUIKit;
+		};
 		94BB5BC62C35CBDF00404028 /* SwiftProtobuf */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9400C25E2C35C99500355A0F /* XCRemoteSwiftPackageReference "swift-protobuf" */;

@@ -1,0 +1,108 @@
+﻿route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_color,route_text_color
+30000011,2,601,Karavella Station - Geroskipou - Timi - Anarita - Mandria,,3,408080,FFFFFF
+30000012,2,601,Mandria - Anarita - Timi - Geroskipou - Karavella Station,,3,408080,FFFFFF
+30000021,2,601,Karavella Station - Technical School - Geroskipou - Timi - Anarita - Mandria,,3,408080,FFFFFF
+30000022,2,601,Mandria - Anarita - Timi - Geroskipou -Technical School- Karavella Station,,3,408080,FFFFFF
+30010011,2,602,Karavella Station - Hospital - Tech. School - Museum - Government offices - Karavella Station,,3,0000A0,FFFFFF
+30020011,2,603,Karavella Station - Government offices - Universal Area - Agapinoros - Tombs of the Kings Station,,3,80FFFF,000000
+30020012,2,603,Tombs of the Kings Station - Agapinoros - Universal Area - Government offices - Karavella Station,,3,80FFFF,000000
+30030011,2,603B,Tombs of the Kings Station - Agapinoros - Universal Area - Al. Papagou (Alfamega),,3,FF0000,FFFFFF
+30030012,2,603B,Al. Papagou (Alfamega) - Universal Area - Agapinoros - Tombs of the Kings Station,,3,FF0000,FFFFFF
+30040011,2,604,Karavella Station - Chloraka - Emba - Tala - Agios Neofytos Monastery,,3,CC6600,000000
+30040012,2,604,Agios Neofytos Monastery - Tala - Emba - Chloraka - Karavella Station,,3,CC6600,000000
+30050011,2,606,Geroskipou (Pafiako) - Geroskipou Beach - Posidonos - Neapolis - Kings Av. Mall - Harbour Station,,3,FF33CC,FFFFFF
+30050012,2,606,Harbour Station - Kings Av. Mall - Neapolis - Posidonos - Geroskipou Beach - Geroskipou (Pafiako),,3,FF33CC,FFFFFF
+30050021,2,606,Geroskipou (Pafiako) - Posidonos - Kings Av. Mall - Harbour Station,,3,FF33CC,FFFFFF
+30050022,2,606,Harbour Station - Kings Av. Mall - Posidonos - Geroskipou (Pafiako),,3,FF33CC,FFFFFF
+30060011,2,607,Karavella Station - Chloraka - Lemba - Κissonerga - Pegia,,3,800080,FFFFFF
+30060012,2,607,Pegia - Κissonerga - Lemba - Chloraka - Κaravella Station,,3,800080,FFFFFF
+30070011,2,608,Karavella Station - Immigration - Citizen Service Center - General Hospital - Anavargos,,3,FF8040,000000
+30070012,2,608,Anavargos - General Hospital - Citizen Service Center - Immigration - Κaravella Station,,3,FF8040,000000
+30080011,2,609,Karavella Station - Konia - Marathounta - Armou - Episkopi,,3,66FF66,000000
+30080012,2,609,Episkopi - Armou - Marathounta - Konia - Karavella Station,,3,66FF66,000000
+30090011,2,610,Harbour Station - Ap. Pavlou - Agapinoros - Municipal Market,,3,008000,FFFFFF
+30090012,2,610,Municipal Market - Agapinoros - Ap. Pavlou - Harbour Station,,3,008000,FFFFFF
+30090021,2,610,Harbour Station - Ap. Pavlou - Tombs of the Kings Station - Agapinoros - Municipal Market,,3,008000,FFFFFF
+30100011,2,611,Tombs of the Kings Station - Harbour Station - Posidonos - Geroskipou Beach (Waterpark),,3,75610B,FFFFFF
+30100012,2,611,Geroskipou Beach (Waterpark) - Posidonos - Harbour Station - Tombs of the Kings Station,,3,75610B,FFFFFF
+30100021,2,611,Tombs of the Kings Station - Harbour Station - Posidonos - Geroskipou Beach,,3,75610B,FFFFFF
+30100022,2,611,Geroskipou Beach - Posidonos - Harbour Station - Tombs of the Kings Station,,3,75610B,FFFFFF
+30110011,2,612,Tombs of the Kings Station - Posidonos - Giannaki Talioti Lyceum - Geroskipou - Timi - Pafos Airport,,3,808080,FFFFFF
+30110012,2,612,Pafos Airport - Timi - Geroskipou - Giannaki Talioti Lyceum - Posidonos - Tombs of the Kings Station,,3,808080,FFFFFF
+30120011,2,613,Karavella Station - Geroskipou - Achelia - Timi - Pafos Airport,,3,33CC33,000000
+30120012,2,613,Pafos Airport - Timi - Achelia - Geroskipou - Karavella Station,,3,33CC33,000000
+30130011,2,614,Karavella Station - Tremithousa - Mesogi - Mesa Xorio - Tsada - Koili,,3,8080FF,FFFFFF
+30130012,2,614,Koili - Tsada - Mesa Xorio - Mesogi - Tremithousa - Karavella Station,,3,8080FF,FFFFFF
+30140011,2,615,Tombs of the Kings Station - Potima - Coral Bay,,3,00FF00,000000
+30140012,2,615,Coral Bay - Potima - Tombs of the Kings Station,,3,00FF00,000000
+30150011,2,616,Coral Bay - Pegia - Agios Georgios Pegias,,3,00CC99,000000
+30150012,2,616,Agios Georgios Pegias - Pegia - Coral Bay,,3,00CC99,000000
+30160011,2,618,Karavella Station - Kennedy Square - Tombs of the Kings Station,,3,4C610A,FFFFFF
+30160012,2,618,Tombs of the Kings Station - Kennedy Square - Karavella Station,,3,4C610A,FFFFFF
+30170011,2,622,Polis Chrysochous - Prodromi - Latchi - Baths of Aphrodite,,3,8080FF,FFFFFF
+30170012,2,622,Baths of Aphrodite - Latchi - Prodromi - Polis Chrysochous,,3,8080FF,FFFFFF
+30180011,2,623,Polis Chrysochous - Prodromi - Neo Chorio,,3,FF8000,000000
+30180012,2,623,Neo Chorio - Prodromi - Polis Chrysochous,,3,FF8000,000000
+30190011,2,624,Polis Chrysochous - Pelathousa,,3,65350B,FFFFFF
+30190012,2,624,Pelathousa - Polis Chrysochous,,3,65350B,FFFFFF
+30200011,2,625,Polis Chrysochous - Makounta - Kinousa,,3,CC00E0,FFFFFF
+30200012,2,625,Kinousa - Makounta - Polis Chrysochous,,3,CC00E0,FFFFFF
+30210011,2,630,Karavella Station - Geroskipou - Timi - Kouklia - Petra tou Romiou - Pissouri,,3,33CC33,000000
+30210012,2,630,Pissouri - Petra tou Romiou - Kouklia - Timi - Geroskipou - Karavella Station,,3,33CC33,000000
+30220011,2,631,Harbour Station - Posidonos - Geroskipou - Kouklia - Petra tou Romiou,,3,D6AA80,000000
+30220012,2,631,Petra tou Romiou - Kouklia - Geroskipou - Posidonos - Harbour Station,,3,D6AA80,000000
+30220021,2,631,Harbour Station - Posidonos - Geroskipou - Kouklia - Petra tou Romiou - Aphrodite Hills,,3,D6AA80,000000
+30220022,2,631,Aphrodite Hills - Kouklia - Geroskipou - Posidonos - Harbour Station - Tombs of the Kings Station,,3,D6AA80,000000
+30220031,2,631,Tombs of the Kings Station - Harbour Station - Posidonos - Geroskipou - Kouklia - Petra tou Romiou - Aphrodite Hills,,3,D6AA80,000000
+30230011,2,632,Paphos - Geroskipou - Kouklia - Archimandrita,,3,FF80C0,000000
+30230012,2,632,Archimandrita - Kouklia - Geroskipou - Paphos,,3,FF80C0,000000
+30230021,2,632,Karavella St. - Tombs of the Kings St. - Geroskipou - Aphrodite Hills   - Kouklia - Archimandrita,,3,FF80C0,000000
+30240011,2,633,Karavella Station - Nikoklia - Fasoula - Mamonia - Prastio - Kedares - Pretori - Filousa - Agios Nikolaos,,3,CC6600,000000
+30240012,2,633,Agios Nikolaos - Filousa - Pretori - Kedares - Prastio - Mamonia - Fasoula - Nikoklia - Karavella Station,,3,CC6600,000000
+30250011,2,634,Karavella Station - Choletria - Stavrokonnou - Kelokedara - Salamiou - Mesana - Arminou,,3,004000,FFFFFF
+30250012,2,634,Arminou - Mesana - Salamiou - Kelokedara - Stavrokonnou - Choletria - Karavella Station,,3,004000,FFFFFF
+30250021,2,634,Karavella Station - Technical School - Choletria - Stavrokonnou - Kelokedara - Salamiou - Mesana - Arminou,,3,004000,FFFFFF
+30250022,2,634,Arminou - Mesana - Salamiou - Kelokedara - Stavrokonnou - Choletria - Technical School - Karavella Station,,3,004000,FFFFFF
+30260011,2,635,Agios Ioannis - Trachipedoula - Stavrokonnou,,3,ACAE39,000000
+30260012,2,635,Stavrokonnou - Trachipedoula - Agios Ioannis,,3,ACAE39,000000
+30270011,2,636,Karavella St. - Ag. Varvara - Nata - Amargeti - Ag. Marina - Pentalia - Galataria - Kilinia - Statos - Agios Fotios,,3,1B9403,FFFFFF
+30270012,2,636,Agios Fotios - Statos - Kilinia - Galataria - Pentalia - Ag. Marina - Amargeti - Nata - Ag. Varvara - Karavella St.,,3,1B9403,FFFFFF
+30270021,2,636,Karavella St. - Ag. Varvara - Nata - Amargeti - Nea Pentalia - Pentalia - Galataria - Kilinia - Statos - Agios Fotios,,3,1B9403,FFFFFF
+30270022,2,636,Agios Fotios - Statos - Kilinia - Galataria - Pentalia - Nea Pentalia - Amargeti - Nata - Ag. Varvara - Karavella St.,,3,1B9403,FFFFFF
+30270031,2,636,Karavella St. - Technical School - Ag. Varvara - Nata - Nea Pentalia - Pentalia - Galataria - Statos - Agios Fotios,,3,1B9403,FFFFFF
+30270032,2,636,Agios Fotios - Statos - Galataria - Pentalia - Nea Pentalia - Nata - Ag. Varvara - Technical School - Karavella St.,,3,1B9403,FFFFFF
+30270042,2,636,Agios Fotios - Statos - Koilineia - Galataria - Pentalia - Nea Pentalia - Amargeti,,3,1B9403,FFFFFF
+30280011,2,637,Karavella Station - Tsada - Polemi - Psathi - Ag. Dimitrianos - Kannaviou - Asprogia - Panagia,,3,FF33CC,FFFFFF
+30280012,2,637,Panagia - Asprogia - Kannaviou - Ag. Dimitrianos - Psathi - Polemi - Tsada - Karavella Station,,3,FF33CC,FFFFFF
+30280021,2,637,Karavella Station - Tsada - Polemi - Psathi - Ag. Dimitrianos - Kannaviou - Asprogia - Panagia,,3,FF33CC,FFFFFF
+30280022,2,637,Panagia - Asprogia - Kannaviou - Ag. Dimitrianos - Psathi - Polemi - Tsada - Karavella Station,,3,FF33CC,FFFFFF
+30280032,2,637,Panagia - Asprogia (village) - Kannaviou - Ag. Dimitrianos - Psathi - Polemi - Tsada - Karavella Station,,3,FF33CC,FFFFFF
+30290011,2,638,Ag. Dimitrianos - Milia - Drinia - Drimou - Simou - Lasa - Fiti - Kritou Marottou - Ag. Dimitrianos,,3,DF32FF,FFFFFF
+30300011,2,639,Karavella Station - Tsada - Kallepia - Letimpou - Lemona - Choulou,,3,0000A0,FFFFFF
+30300012,2,639,Choulou - Lemona - Letimpou - Kallepia - Tsada (Main Road) - Karavella Station,,3,0000A0,FFFFFF
+30310011,2,640,Polis Chrysochous - Steni - Peristerona - Filousa - Lysos,,3,8080FF,FFFFFF
+30310012,2,640,Lysos - Filousa - Peristerona - Steni - Polis Chrysochous,,3,8080FF,FFFFFF
+30320011,2,641,Polis Chrysochous - Terra - Kritou Terra - Inia - Droushia - Arodes - Kathikas - Theletra - Karavella Station,,3,400080,FFFFFF
+30320012,2,641,Paphos - Theletra - Kathikas - Arodes - Droushia - Inia - Kritou Terra - Terra - Polis Chrysochous,,3,400080,FFFFFF
+30330011,2,643A,Pachyammos - Pomos - Nea Dimmata - Ag. Marina - Argaka - Polis Chrysochous,,3,808040,000000
+30330012,2,643A,Polis Chrysochous - Argaka - Ag. Marina - Nea Dimmata - Pomos - Pachyammos,,3,808040,000000
+30340011,2,643B,Pachyammos - Pomos - Nea Dimmata - Ag. Marina - Pano Gialia - Argaka - Pano Argaka - Polis Chrysochous,,3,FF0000,FFFFFF
+30340012,2,643B,Polis Chrysochous - Pano Argaka - Argaka - Pano Gialia - Ag. Marina - Nea Dimmata - Pomos - Pachyammos,,3,FF0000,FFFFFF
+30350011,2,645,Polis Chrysochous - Chrysochou - Goudi - Choli - Skoulli - Giolou - Stroumbi - Tsada - Karavella Station,,3,FFFF80,000000
+30350012,2,645,Karavella Station - Tsada - Stroumbi - Giolou - Skoulli - Choli - Goudi - Chrysochou - Polis Chrysochous,,3,FFFF80,000000
+30350021,2,645,Polis Chrysochous - Chrysochou - Goudi - Choli - Skoulli - Giolou - Stroumbi - Tsada - Government Offices - Karavella St,,3,FFFF80,000000
+30350022,2,645,Karavella St.- Government Offices - Tsada - Stroumbi - Giolou - Skoulli - Choli - Goudi - Chrysochou - Polis Chrysochous,,3,FFFF80,000000
+30350031,2,645,Polis Chrysochous - Polis Schools - Chrysochou - Goudi - Choli - Skoulli - Giolou - Stroumbi - Tsada - Karavella St.,,3,FFFF80,000000
+30350032,2,645,Karavella St. - Tsada - Stroumbi - Giolou - Skoulli - Choli - Goudi - Chrysochou - Polis Schools - Polis Chrysochous,,3,FFFF80,000000
+30360011,2,646,Polis Chrysochous - Chrysochou - Goudi - Skoulli - Choli - Akourdalia - Miliou - Giolou,,3,FF80FF,000000
+30360012,2,646,Giolou - Miliou - Akourdalia - Choli - Skoulli - Goudi - Chrysochou - Polis Chrysochous,,3,FF80FF,000000
+30370011,2,647,Polis Chrysochous - Prodromi - Androlykou,,3,0000FF,FFFFFF
+30370012,2,647,Androlykou - Prodromi - Polis Chrysochous,,3,0000FF,FFFFFF
+30380011,2,648,Coral Bay - Pegia - Kathikas - Arodes - Inia - Droushia - Polis Chrysochous,,3,800080,FFFFFF
+30380012,2,648,Polis Chrysochous - Droushia - Inia - Arodes - Kathikas - Pegia - Coral Bay,,3,800080,FFFFFF
+30390011,2,649,Polis Chrysochous - Chrysochou - Skoulli - Giolou - Stroumpi - Tsada - L. Mesogis - Geroskipou - Timi - Pafos Airport,,3,A05A01,FFFFFF
+30390012,2,649,Pafos Airport - Timi - Geroskipou - L. Mesogis - Tsada - Stroumpi - Giolou - Skoulli - Chrysochou - Polis Chrysochous,,3,A05A01,FFFFFF
+30400011,2,621,Polis Chrysochous - Polis Hospital,,3,007324,FFFFFF
+30400012,2,621,Polis Hospital - Polis Chrysochous,,3,007324,FFFFFF
+30410011,2,607B,Karavella Station  - Chloraka - Lemba - Κissonerga - Pegeia (Akoursos),,3,8C008C,FFFFFF
+30410012,2,607B,Pegeia (Akoursos) - Κissonerga -  Lemba  - Chloraka - Karavella,,3,8C008C,FFFFFF

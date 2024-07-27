@@ -1,0 +1,7 @@
+﻿fare_id,price,currency_type,payment_method,transfers,agency_id,transfer_duration
+311,2.4,EUR,0,0,10,
+313,4,EUR,0,0,10,
+321,2.4,EUR,0,0,10,
+323,4,EUR,0,0,10,
+331,0.6,EUR,0,0,10,
+333,1.8,EUR,0,0,10,

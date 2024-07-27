@@ -1,0 +1,2 @@
+﻿agency_id,agency_name,agency_url,agency_timezone,agency_lang
+5,INTERCITY,http://www.intercity-buses.com/,Asia/Nicosia,en
