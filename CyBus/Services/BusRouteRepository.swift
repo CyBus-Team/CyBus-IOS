@@ -16,7 +16,7 @@ class BusRouteRepository {
     
     private init() {}
     
-    func loadRoutes() -> [BusRoute]? {
+    func loadRoute() -> [BusRoute]? {
         if let route = self.route {
             return route
         }
@@ -38,9 +38,9 @@ class BusRouteRepository {
     }
     
     func getRoute(for line: String) -> [BusRoute]? {
-        guard let shapes = loadRoutes() else {
+        guard let route = loadRoute() else {
             return nil
         }
-        return shapes.filter { $0.shape_id == line }
+        return route.filter { $0.shape_id == line }
     }
 }
