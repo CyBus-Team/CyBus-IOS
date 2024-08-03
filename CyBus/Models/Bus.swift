@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Bus: Identifiable, Equatable {
     static func == (lhs: Bus, rhs: Bus) -> Bool {
-        lhs.route.lineID == rhs.route.lineID && lhs.route.routeName == rhs.route.routeName
+        lhs.id == rhs.id
     }
     
     let id: String

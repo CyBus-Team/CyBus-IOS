@@ -62,7 +62,7 @@ class MapViewModel: ObservableObject {
                     
                 }
             case .failure(let error):
-                // TODO: Display/Handle/Record the error
+                // TODO: Errors localization - (issue)[https://github.com/PopovVA/CyBus/issues/4]
                 print(error)
             }
         }
