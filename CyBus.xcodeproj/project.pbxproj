@@ -35,6 +35,7 @@
 		94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */; };
 		94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220892C5E701F00D776B9 /* ClearRouteButton.swift */; };
 		94F2208C2C5E704100D776B9 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F2208B2C5E704100D776B9 /* LocationButton.swift */; };
+		94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarkerView.swift; sourceTree = "<group>"; };
 		94F220892C5E701F00D776B9 /* ClearRouteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearRouteButton.swift; sourceTree = "<group>"; };
 		94F2208B2C5E704100D776B9 /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
+		94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */,
 				94F220892C5E701F00D776B9 /* ClearRouteButton.swift */,
 				94F2208B2C5E704100D776B9 /* LocationButton.swift */,
+				94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			files = (
 				94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */,
 				94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */,
+				94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */,
 				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,
 				94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */,
 				94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */,

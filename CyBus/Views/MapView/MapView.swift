@@ -74,6 +74,25 @@ struct MapView: View {
                 Spacer()
                 HStack {
                     Spacer()
+                    // Zoom out button
+                    ZoomButton(
+                        action: {
+                            zoom -= 1
+                            withViewportAnimation {
+                                viewport = .camera(zoom: zoom)
+                            }
+                        },
+                        zoomIn: false
+                    )
+                    ZoomButton(
+                        action: {
+                            zoom += 1
+                            withViewportAnimation {
+                                viewport = .camera(zoom: zoom)
+                            }
+                        },
+                        zoomIn: true
+                    )
                     LocationButton {
                         // TODO: Get current location
                         let center = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
@@ -81,33 +100,9 @@ struct MapView: View {
                             viewport = .camera(center: center, zoom: zoom, bearing: 0, pitch: 0)
                         }
                     }
-                    .padding(.trailing, 20)
-                    .padding(.bottom, 40)
                 }
-            }
-            
-            // Zoom out button
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        zoom -= 1
-                        withViewportAnimation {
-                            viewport = .camera(zoom: zoom)
-                        }
-                    }) {
-                        Image(systemName: "minus.magnifyingglass")
-                            .font(.system(size: 24))
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .clipShape(Circle())
-                            .shadow(radius: 10)
-                    }
-                    .padding(.trailing, 20)
-                    .padding(.bottom, 120)
-                }
+                .padding(.trailing, 20)
+                .padding(.bottom, 40)
             }
         }
     }
