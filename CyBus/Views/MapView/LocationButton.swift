@@ -22,7 +22,6 @@ struct LocationButton: View {
                 .clipShape(Circle())
                 .shadow(radius: 10)
         }
-        .padding(.trailing, 20)
-        .padding(.bottom, 40)
+        
     }
 }

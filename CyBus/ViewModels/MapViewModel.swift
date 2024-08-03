@@ -13,7 +13,7 @@ class MapViewModel: ObservableObject {
     @Published var route: [BusRoute] = []
     
     private var timer: Timer?
-    private var lineId: String?
+    private var selectedBus: Bus?
     
     init() {
         startTimer()
@@ -34,17 +34,17 @@ class MapViewModel: ObservableObject {
         timer = nil
     }
     
-    func getRoute(for line: String) {
-        route = BusRouteRepository.shared.getRoute(for: line) ?? []
-        if let bus = buses.first(where: {$0.route.lineID == line}) {
+    func getRoute(for bus: Bus) {
+        route = BusRouteRepository.shared.getRoute(for: bus.route.lineID) ?? []
+        if let bus = buses.first(where: {$0 == bus}) {
             buses.removeAll()
             buses.append(bus)
-            lineId = line
+            selectedBus = bus
         }
     }
     
     func clearRoute() {
-        lineId = nil
+        selectedBus = nil
         route.removeAll()
         loadBuses()
     }
@@ -54,10 +54,10 @@ class MapViewModel: ObservableObject {
             switch result {
             case .success(let buses):
                 DispatchQueue.main.async {
-                    if self?.lineId == nil {
+                    if self?.selectedBus == nil {
                         self?.buses = buses
                     } else {
-                        self?.buses = buses.filter{$0.route.lineID == self?.lineId}
+                        self?.buses = buses.filter { $0 == self?.selectedBus }
                     }
                     
                 }

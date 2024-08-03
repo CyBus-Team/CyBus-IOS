@@ -22,7 +22,6 @@ struct ClearRouteButton: View {
                 .clipShape(Circle())
                 .shadow(radius: 10)
         }
-        .padding(.leading, 20)
     }
 }
 
