@@ -54,25 +54,17 @@ struct MapView: View {
                 viewModel.loadBuses()
             }
             
-            // Clear route
             VStack {
                 Spacer()
-                HStack {
+                HStack(
+                    alignment: .center
+                ) {
+                    // Clear route button
                     if !viewModel.route.isEmpty {
                         ClearRouteButton {
                             viewModel.clearRoute()
                         }
                     }
-                    Spacer()
-                }
-                .padding(.leading, 20)
-                .padding(.bottom, 40)
-            }
-            
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
                     // Zoom buttons
                     ZoomButton(
                         action: {
@@ -101,7 +93,7 @@ struct MapView: View {
                         }
                     }
                 }
-                .padding(.trailing, 20)
+                .frame(maxWidth: .infinity)
                 .padding(.bottom, 40)
             }
         }.ignoresSafeArea()
