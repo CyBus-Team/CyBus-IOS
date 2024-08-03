@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomMapMarker: View {
+struct BusMarkerView: View {
     var bus: Bus
     
     var body: some View {
@@ -19,9 +19,9 @@ struct CustomMapMarker: View {
                 .cornerRadius(5)
                 .shadow(radius: 3)
             
-            Image(systemName: "mappin.circle.fill")
+            Image(systemName: "bus")
                 .font(.title)
-                .foregroundColor(.blue)
+                .foregroundColor(.black)
         }
     }
 }

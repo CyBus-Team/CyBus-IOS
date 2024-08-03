@@ -6,35 +6,96 @@
 //
 
 import SwiftUI
-import MapKit
+@_spi(Experimental) import MapboxMaps
 
 struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
-    // TODO: Get current location
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    )
+    // Initializes viewport state as styleDefault,
+    // which will use the default camera for the current style.
+    @State var viewport: Viewport = .styleDefault
+    
+    init() {
+        // TODO: Setup env - (issue)[https://github.com/PopovVA/CyBus/issues/3]
+        MapboxOptions.accessToken = ""
+    }
     
     var body: some View {
-        Map(coordinateRegion: $region, annotationItems: viewModel.buses) { bus in
-            MapAnnotation(
-                            coordinate: CLLocationCoordinate2D(
-                                latitude: CLLocationDegrees(bus.currentLocation.latitude),
-                                longitude: CLLocationDegrees(bus.currentLocation.longitude)
-                            ),
-                            anchorPoint: CGPoint(x: 0.5, y: 0.5)
-                        ) {
-                            CustomMapMarker(bus: bus)
+        ZStack {
+            // Map
+            Map(
+                viewport: $viewport
+            ) {
+                ForEvery(viewModel.buses) { bus in
+                    MapViewAnnotation(coordinate: bus.location) {
+                        BusMarkerView(bus: bus).onTapGesture {
+                            viewModel.getRoute(for: bus.route?.lineID ?? "")
                         }
-        }
-        .onAppear {
-            viewModel.loadBuses()
+                    }
+                }
+                if !viewModel.route.isEmpty {
+                    PolylineAnnotationGroup {
+                        PolylineAnnotation(id: "route-feature", lineCoordinates: viewModel.route.map { shape in
+                            shape.location
+                        })
+                        .lineColor(.systemBlue)
+                        .lineBorderColor(.systemBlue)
+                        .lineWidth(10)
+                        .lineBorderWidth(2)
+                    }
+                    .layerId("route")
+                    .lineCap(.round)
+                    .slot("middle")
+                }
+            }.onMapLoaded { _ in
+                viewModel.loadBuses()
+            }
+            
+            // Actions
+            VStack {
+                Spacer()
+                HStack {
+                    if !(viewModel.route.isEmpty) {
+                        Button(action: {
+                            viewModel.clearRoute()
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 24))
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                                .shadow(radius: 10)
+                        }
+                        .padding(.leading, 20)
+                    }
+                    Spacer()
+                }.padding(.bottom, 40)
+            }
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        // TODO: Get current location
+                        let center = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
+                        withViewportAnimation {
+                            viewport = .camera(center: center, zoom: 13, bearing: 0, pitch: 0)
+                        }
+                    }) {
+                        Image(systemName: "location.fill")
+                            .font(.system(size: 24))
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(radius: 10)
+                    }
+                    .padding(.trailing, 20)
+                }
+                .padding(.bottom, 40)
+            }
         }
     }
-}
-
-#Preview {
-    MapView()
+    
 }
 

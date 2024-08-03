@@ -1,5 +1,6 @@
 import Foundation
 import SwiftProtobuf
+@_spi(Experimental) import MapboxMaps
 
 class TransitAPIClient {
     static let shared = TransitAPIClient()
@@ -55,9 +56,9 @@ class TransitAPIClient {
                     }
                     let bus = Bus(
                         id: entity.id,
-                        currentLocation: MapLocation(
-                            latitude: entity.vehicle.position.latitude,
-                            longitude: entity.vehicle.position.longitude
+                        location: CLLocationCoordinate2D(
+                            latitude: CLLocationDegrees(entity.vehicle.position.latitude),
+                            longitude: CLLocationDegrees(entity.vehicle.position.longitude)
                         ),
                         route: routes?.first(where: { $0.lineID == entity.vehicle.trip.routeID })
                     )

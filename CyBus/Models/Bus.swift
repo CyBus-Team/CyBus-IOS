@@ -5,10 +5,11 @@
 //  Created by Vadim Popov on 07/07/2024.
 //
 
-import Foundation
+import SwiftUI
+@_spi(Experimental) import MapboxMaps
 
 struct Bus: Identifiable {
     let id: String
-    let currentLocation: MapLocation
+    let location: CLLocationCoordinate2D
     let route: Route?
 }

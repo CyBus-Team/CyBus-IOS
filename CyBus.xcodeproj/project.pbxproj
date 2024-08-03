@@ -11,6 +11,8 @@
 		942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53ED2C55152E00DE9BD7 /* routes_generator.rb */; };
 		942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F02C55201900DE9BD7 /* shapes_generator.rb */; };
 		942C53F52C55208B00DE9BD7 /* shapes.json in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F42C55208B00DE9BD7 /* shapes.json */; };
+		942C53F72C55217400DE9BD7 /* BusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F62C55217400DE9BD7 /* BusRoute.swift */; };
+		942C53F92C5521AF00DE9BD7 /* BusRouteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F82C5521AF00DE9BD7 /* BusRouteRepository.swift */; };
 		94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */; };
 		94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
 		94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD82C3AFC20008AFC53 /* MapViewModel.swift */; };
@@ -30,7 +32,7 @@
 		94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 94BB5BC62C35CBDF00404028 /* SwiftProtobuf */; };
 		94CC172B2C4EBAD000AC358D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC172A2C4EBAD000AC358D /* Route.swift */; };
 		94CC17462C4EC6AA00AC358D /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17452C4EC6AA00AC358D /* routes.json */; };
-		94CC17482C4ECF7C00AC358D /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC17472C4ECF7C00AC358D /* MapMarker.swift */; };
+		94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		942C53ED2C55152E00DE9BD7 /* routes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = routes_generator.rb; sourceTree = "<group>"; };
 		942C53F02C55201900DE9BD7 /* shapes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = shapes_generator.rb; sourceTree = "<group>"; };
 		942C53F42C55208B00DE9BD7 /* shapes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shapes.json; sourceTree = "<group>"; };
+		942C53F62C55217400DE9BD7 /* BusRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRoute.swift; sourceTree = "<group>"; };
+		942C53F82C5521AF00DE9BD7 /* BusRouteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRouteRepository.swift; sourceTree = "<group>"; };
 		94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
 		94891BD62C3AFBCF008AFC53 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		94891BD82C3AFC20008AFC53 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -81,7 +85,7 @@
 		94CC173F2C4EC65300AC358D /* routes.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shx; sourceTree = "<group>"; };
 		94CC17402C4EC65300AC358D /* routes.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.dbf; sourceTree = "<group>"; };
 		94CC17452C4EC6AA00AC358D /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
-		94CC17472C4ECF7C00AC358D /* MapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
+		94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarkerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 				94891BDD2C3B016C008AFC53 /* MapLocation.swift */,
 				94891BDF2C3B017B008AFC53 /* Bus.swift */,
 				94CC172A2C4EBAD000AC358D /* Route.swift */,
+				942C53F62C55217400DE9BD7 /* BusRoute.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				94891BD62C3AFBCF008AFC53 /* MapView.swift */,
-				94CC17472C4ECF7C00AC358D /* MapMarker.swift */,
+				94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */,
+				942C53F82C5521AF00DE9BD7 /* BusRouteRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -158,8 +164,8 @@
 		94ABDF742C29ABBD00970F8C = {
 			isa = PBXGroup;
 			children = (
-				942C53F02C55201900DE9BD7 /* shapes_generator.rb */,
 				942C53EC2C55152E00DE9BD7 /* README.md */,
+				942C53F02C55201900DE9BD7 /* shapes_generator.rb */,
 				942C53ED2C55152E00DE9BD7 /* routes_generator.rb */,
 				949765752C516F96001321CA /* Config-Secret.xcconfig */,
 				949765732C516EFE001321CA /* Config.xcconfig */,
@@ -186,13 +192,13 @@
 		94ABDF7F2C29ABBD00970F8C /* CyBus */ = {
 			isa = PBXGroup;
 			children = (
-				942C53F42C55208B00DE9BD7 /* shapes.json */,
 				94891BDA2C3AFC65008AFC53 /* Services */,
 				94891BD42C3AFB95008AFC53 /* ViewModels */,
 				94891BD32C3AFB8E008AFC53 /* Views */,
 				94891BD22C3AFB86008AFC53 /* Models */,
 				9400C2532C35BA3600355A0F /* Info.plist */,
 				94CC17452C4EC6AA00AC358D /* routes.json */,
+				942C53F42C55208B00DE9BD7 /* shapes.json */,
 				94ABDF802C29ABBD00970F8C /* CyBusApp.swift */,
 				94ABDF842C29ABBD00970F8C /* Assets.xcassets */,
 				94ABDF862C29ABBD00970F8C /* CyBus.entitlements */,
@@ -399,11 +405,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94CC17482C4ECF7C00AC358D /* MapMarker.swift in Sources */,
+				94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */,
 				94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */,
 				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,
 				94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */,
 				94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */,
+				942C53F72C55217400DE9BD7 /* BusRoute.swift in Sources */,
+				942C53F92C5521AF00DE9BD7 /* BusRouteRepository.swift in Sources */,
 				94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */,
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
 				94CC172B2C4EBAD000AC358D /* Route.swift in Sources */,
