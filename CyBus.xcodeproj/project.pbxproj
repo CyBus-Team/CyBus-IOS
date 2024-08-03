@@ -36,6 +36,14 @@
 		94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220892C5E701F00D776B9 /* ClearRouteButton.swift */; };
 		94F2208C2C5E704100D776B9 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F2208B2C5E704100D776B9 /* LocationButton.swift */; };
 		94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */; };
+		94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F2208F2C5E85A600D776B9 /* trips_generator.rb */; };
+		94F220922C5E85B200D776B9 /* generate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 94F220912C5E85B200D776B9 /* generate.sh */; };
+		94F220942C5E85C700D776B9 /* trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F220932C5E85C700D776B9 /* trips.json */; };
+		94F220962C5E86C600D776B9 /* BusStopsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220952C5E86C600D776B9 /* BusStopsRepository.swift */; };
+		94F220992C5E886E00D776B9 /* stops_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F220972C5E886E00D776B9 /* stops_generator.rb */; };
+		94F2209A2C5E886E00D776B9 /* stop_times_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F220982C5E886E00D776B9 /* stop_times_generator.rb */; };
+		94F2209D2C5E888200D776B9 /* stops.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F2209B2C5E888200D776B9 /* stops.json */; };
+		94F2209E2C5E888200D776B9 /* stop_times.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F2209C2C5E888200D776B9 /* stop_times.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +100,14 @@
 		94F220892C5E701F00D776B9 /* ClearRouteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearRouteButton.swift; sourceTree = "<group>"; };
 		94F2208B2C5E704100D776B9 /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomButton.swift; sourceTree = "<group>"; };
+		94F2208F2C5E85A600D776B9 /* trips_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = trips_generator.rb; sourceTree = "<group>"; };
+		94F220912C5E85B200D776B9 /* generate.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate.sh; sourceTree = "<group>"; };
+		94F220932C5E85C700D776B9 /* trips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trips.json; sourceTree = "<group>"; };
+		94F220952C5E86C600D776B9 /* BusStopsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopsRepository.swift; sourceTree = "<group>"; };
+		94F220972C5E886E00D776B9 /* stops_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stops_generator.rb; sourceTree = "<group>"; };
+		94F220982C5E886E00D776B9 /* stop_times_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stop_times_generator.rb; sourceTree = "<group>"; };
+		94F2209B2C5E888200D776B9 /* stops.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
+		94F2209C2C5E888200D776B9 /* stop_times.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stop_times.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +182,7 @@
 			children = (
 				94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */,
 				942C53F82C5521AF00DE9BD7 /* BusRouteRepository.swift */,
+				94F220952C5E86C600D776B9 /* BusStopsRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -173,7 +190,11 @@
 		94ABDF742C29ABBD00970F8C = {
 			isa = PBXGroup;
 			children = (
+				94F220912C5E85B200D776B9 /* generate.sh */,
 				942C53EC2C55152E00DE9BD7 /* README.md */,
+				94F220972C5E886E00D776B9 /* stops_generator.rb */,
+				94F220982C5E886E00D776B9 /* stop_times_generator.rb */,
+				94F2208F2C5E85A600D776B9 /* trips_generator.rb */,
 				942C53F02C55201900DE9BD7 /* shapes_generator.rb */,
 				942C53ED2C55152E00DE9BD7 /* routes_generator.rb */,
 				949765752C516F96001321CA /* Config-Secret.xcconfig */,
@@ -206,6 +227,9 @@
 				94891BD32C3AFB8E008AFC53 /* Views */,
 				94891BD22C3AFB86008AFC53 /* Models */,
 				9400C2532C35BA3600355A0F /* Info.plist */,
+				94F2209C2C5E888200D776B9 /* stop_times.json */,
+				94F2209B2C5E888200D776B9 /* stops.json */,
+				94F220932C5E85C700D776B9 /* trips.json */,
 				94CC17452C4EC6AA00AC358D /* routes.json */,
 				942C53F42C55208B00DE9BD7 /* shapes.json */,
 				94ABDF802C29ABBD00970F8C /* CyBusApp.swift */,
@@ -381,14 +405,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F220942C5E85C700D776B9 /* trips.json in Resources */,
 				942C53EE2C55152E00DE9BD7 /* README.md in Resources */,
 				949765742C516EFE001321CA /* Config.xcconfig in Resources */,
+				94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */,
+				94F220922C5E85B200D776B9 /* generate.sh in Resources */,
 				94CC17462C4EC6AA00AC358D /* routes.json in Resources */,
 				942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */,
+				94F220992C5E886E00D776B9 /* stops_generator.rb in Resources */,
+				94F2209D2C5E888200D776B9 /* stops.json in Resources */,
 				949765762C516F96001321CA /* Config-Secret.xcconfig in Resources */,
 				942C53F52C55208B00DE9BD7 /* shapes.json in Resources */,
+				94F2209A2C5E886E00D776B9 /* stop_times_generator.rb in Resources */,
 				94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */,
 				94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */,
+				94F2209E2C5E888200D776B9 /* stop_times.json in Resources */,
 				942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +447,7 @@
 			files = (
 				94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */,
 				94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */,
+				94F220962C5E86C600D776B9 /* BusStopsRepository.swift in Sources */,
 				94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */,
 				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,
 				94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */,

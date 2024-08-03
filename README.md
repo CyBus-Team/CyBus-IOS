@@ -31,7 +31,7 @@ cd Protos
 protoc --swift_out=. gtfs-realtime.proto
 ```
 
-### Generate Routes
+### Generate GFTS
 Routes are static files from [motionbuscard](https://motionbuscard.org.cy/opendata).
 
 They are static for now and located in the Generated folder. If you want to update them, go to the `Topology` section and download `routes.zip`, then unzip it to the Generated folder.
@@ -45,7 +45,7 @@ gem install rgeo-shapefile -v 3.0.0
 
 Afterward, run the Ruby script in the root folder:
 ```
-ruby routes_generator.rb
+sh generate.sh
 ```
 
 # TODO for MVP
