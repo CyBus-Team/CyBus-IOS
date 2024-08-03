@@ -25,6 +25,7 @@ struct MapView: View {
             Map(
                 viewport: $viewport
             ) {
+                // Bus marker
                 ForEvery(viewModel.buses) { bus in
                     MapViewAnnotation(coordinate: bus.location) {
                         BusMarkerView(bus: bus).onTapGesture {
@@ -32,6 +33,8 @@ struct MapView: View {
                         }
                     }
                 }
+                
+                // Bus route
                 if !viewModel.route.isEmpty {
                     PolylineAnnotationGroup {
                         PolylineAnnotation(id: "route-feature", lineCoordinates: viewModel.route.map { shape in
@@ -50,49 +53,33 @@ struct MapView: View {
                 viewModel.loadBuses()
             }
             
-            // Actions
+            // Clear route
             VStack {
                 Spacer()
                 HStack {
-                    if !(viewModel.route.isEmpty) {
-                        Button(action: {
+                    if !viewModel.route.isEmpty {
+                        ClearRouteButton {
                             viewModel.clearRoute()
-                        }) {
-                            Image(systemName: "xmark.circle.fill")
-                                .font(.system(size: 24))
-                                .padding()
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .clipShape(Circle())
-                                .shadow(radius: 10)
                         }
-                        .padding(.leading, 20)
                     }
                     Spacer()
-                }.padding(.bottom, 40)
+                }
+                .padding(.bottom, 40)
             }
+            
+            // Get current location button
             VStack {
                 Spacer()
                 HStack {
                     Spacer()
-                    Button(action: {
+                    LocationButton {
                         // TODO: Get current location
                         let center = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
                         withViewportAnimation {
                             viewport = .camera(center: center, zoom: 13, bearing: 0, pitch: 0)
                         }
-                    }) {
-                        Image(systemName: "location.fill")
-                            .font(.system(size: 24))
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .clipShape(Circle())
-                            .shadow(radius: 10)
                     }
-                    .padding(.trailing, 20)
                 }
-                .padding(.bottom, 40)
             }
         }
     }

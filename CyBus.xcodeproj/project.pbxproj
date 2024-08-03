@@ -33,6 +33,8 @@
 		94CC172B2C4EBAD000AC358D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC172A2C4EBAD000AC358D /* Route.swift */; };
 		94CC17462C4EC6AA00AC358D /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17452C4EC6AA00AC358D /* routes.json */; };
 		94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */; };
+		94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220892C5E701F00D776B9 /* ClearRouteButton.swift */; };
+		94F2208C2C5E704100D776B9 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F2208B2C5E704100D776B9 /* LocationButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		94CC17402C4EC65300AC358D /* routes.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.dbf; sourceTree = "<group>"; };
 		94CC17452C4EC6AA00AC358D /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
 		94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarkerView.swift; sourceTree = "<group>"; };
+		94F220892C5E701F00D776B9 /* ClearRouteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearRouteButton.swift; sourceTree = "<group>"; };
+		94F2208B2C5E704100D776B9 /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 			children = (
 				94891BD62C3AFBCF008AFC53 /* MapView.swift */,
 				94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */,
+				94F220892C5E701F00D776B9 /* ClearRouteButton.swift */,
+				94F2208B2C5E704100D776B9 /* LocationButton.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -411,7 +417,9 @@
 				94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */,
 				94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */,
 				942C53F72C55217400DE9BD7 /* BusRoute.swift in Sources */,
+				94F2208C2C5E704100D776B9 /* LocationButton.swift in Sources */,
 				942C53F92C5521AF00DE9BD7 /* BusRouteRepository.swift in Sources */,
+				94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */,
 				94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */,
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
 				94CC172B2C4EBAD000AC358D /* Route.swift in Sources */,
