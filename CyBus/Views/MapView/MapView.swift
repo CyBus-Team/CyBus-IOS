@@ -104,7 +104,7 @@ struct MapView: View {
                 .padding(.trailing, 20)
                 .padding(.bottom, 40)
             }
-        }
+        }.ignoresSafeArea()
     }
     
 }
