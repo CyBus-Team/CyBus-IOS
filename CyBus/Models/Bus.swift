@@ -11,5 +11,5 @@ import SwiftUI
 struct Bus: Identifiable {
     let id: String
     let location: CLLocationCoordinate2D
-    let route: Route?
+    let route: Route
 }

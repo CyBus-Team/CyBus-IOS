@@ -54,17 +54,21 @@ class TransitAPIClient {
                     if !entity.hasVehicle {
                         return nil
                     }
-                    let bus = Bus(
-                        id: entity.id,
-                        location: CLLocationCoordinate2D(
-                            latitude: CLLocationDegrees(entity.vehicle.position.latitude),
-                            longitude: CLLocationDegrees(entity.vehicle.position.longitude)
-                        ),
-                        route: routes?.first(where: { $0.lineID == entity.vehicle.trip.routeID })
-                    )
-                    return bus
+                    if let route = routes?.first(where: { $0.lineID == entity.vehicle.trip.routeID }) {
+                        let bus = Bus(
+                            id: entity.id,
+                            location: CLLocationCoordinate2D(
+                                latitude: CLLocationDegrees(entity.vehicle.position.latitude),
+                                longitude: CLLocationDegrees(entity.vehicle.position.longitude)
+                            ),
+                            route: route
+                        )
+                        return bus
+                    } else {
+                        return nil
+                    }
                 }
-                completion(.success(buses))
+                completion(.success(buses.compactMap{$0}))
             } catch {
                 completion(.failure(error))
             }

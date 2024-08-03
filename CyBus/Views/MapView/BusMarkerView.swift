@@ -12,7 +12,7 @@ struct BusMarkerView: View {
     
     var body: some View {
         VStack {
-            Text(bus.route?.lineName ?? "")
+            Text(bus.route.lineName)
                 .font(.caption)
                 .padding(5)
                 .background(Color.white)

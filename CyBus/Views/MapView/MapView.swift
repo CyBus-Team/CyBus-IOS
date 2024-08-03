@@ -28,7 +28,7 @@ struct MapView: View {
                 ForEvery(viewModel.buses) { bus in
                     MapViewAnnotation(coordinate: bus.location) {
                         BusMarkerView(bus: bus).onTapGesture {
-                            viewModel.getRoute(for: bus.route?.lineID ?? "")
+                            viewModel.getRoute(for: bus.route.lineID)
                         }
                     }
                 }

@@ -36,7 +36,7 @@ class MapViewModel: ObservableObject {
     
     func getRoute(for line: String) {
         route = BusRouteRepository.shared.getRoute(for: line) ?? []
-        if let bus = buses.first(where: {$0.route?.lineID == line}) {
+        if let bus = buses.first(where: {$0.route.lineID == line}) {
             buses.removeAll()
             buses.append(bus)
             lineId = line
@@ -57,7 +57,7 @@ class MapViewModel: ObservableObject {
                     if self?.lineId == nil {
                         self?.buses = buses
                     } else {
-                        self?.buses = buses.filter{$0.route?.lineID == self?.lineId}
+                        self?.buses = buses.filter{$0.route.lineID == self?.lineId}
                     }
                     
                 }
