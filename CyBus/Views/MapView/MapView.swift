@@ -69,12 +69,11 @@ struct MapView: View {
                 .padding(.bottom, 40)
             }
             
-            // Get current location button
             VStack {
                 Spacer()
                 HStack {
                     Spacer()
-                    // Zoom out button
+                    // Zoom buttons
                     ZoomButton(
                         action: {
                             zoom -= 1
@@ -93,6 +92,7 @@ struct MapView: View {
                         },
                         zoomIn: true
                     )
+                    // Get current location button
                     LocationButton {
                         // TODO: Get current location
                         let center = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
