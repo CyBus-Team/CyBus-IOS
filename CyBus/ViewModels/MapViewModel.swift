@@ -24,7 +24,7 @@ class MapViewModel: ObservableObject {
     }
     
     private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             self?.loadBuses()
         }
     }
@@ -46,6 +46,7 @@ class MapViewModel: ObservableObject {
     func clearRoute() {
         selectedBus = nil
         route.removeAll()
+        buses.removeAll()
         loadBuses()
     }
     
