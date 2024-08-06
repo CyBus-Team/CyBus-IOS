@@ -1,3 +1,6 @@
+# Generated files
+/CyBys/*.json
+
 # Ignoring Config-Secret.xcconfig to avoid exposing sensitive information
 Config-Secret.xcconfig
 
