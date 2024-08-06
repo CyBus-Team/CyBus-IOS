@@ -9,13 +9,54 @@ import Foundation
 import Combine
 
 class MapViewModel: ObservableObject {
+    //Public state vars
     @Published var buses: [Bus] = []
-    @Published var route: [BusRoute] = []
+    @Published var selectedBus: Bus? {
+        didSet {
+            if let bus = selectedBus {
+                print("selectedBus \(bus)")
+                let trip = trips.filter( {$0.route_id == bus.route.id } ).first
+                print("trip \(trip)")
+                let tripStopTimes = stopTimes.filter { $0.trip_id == trip?.trip_id }
+                print("tripStopTimes \(tripStopTimes)")
+                let tripStops = tripStopTimes.compactMap { stopTime in
+                    stops.first { $0.stop_id == stopTime.stop_id }
+                }
+                print("tripStops \(tripStops)")
+                let tripShapes = shapes.filter { $0.shape_id == trip?.shape_id }
+                print("tripShapes \(tripShapes)")
+                selectedRoute = RouteData(
+                    tripId: trip!.trip_id,
+                    stops: tripStops,
+                    shapes: tripShapes
+                )
+                print("selectedRoute \(selectedRoute)")
+            } else {
+                selectedRoute = nil
+            }
+            
+        }
+    }
+    @Published var selectedRoute: RouteData?
     
     private var timer: Timer?
-    private var selectedBus: Bus?
+    
+    // Route data
+    private var trips: [Trip] = []
+    private var shapes: [BusShape] = []
+    private var stopTimes: [BusStopTime] = []
+    private var stops: [BusStop] = []
     
     init() {
+        print("init init init")
+        trips = TripsRepository.shared.getTrips() ?? []
+        print("vad trips done \(trips.count)")
+        shapes = BusShapesRepository.shared.getShapes() ?? []
+        print("vad shapes done \(shapes.count)")
+        stopTimes = BusStopTimesRepository.shared.getStopTimes() ?? []
+        print("vad stopTimes done \(stopTimes.count)")
+        stops = BusStopsRepository.shared.getStops() ?? []
+        print("vad stops done \(stops.count)")
         startTimer()
     }
     
@@ -35,17 +76,13 @@ class MapViewModel: ObservableObject {
     }
     
     func getRoute(for bus: Bus) {
-        route = BusRouteRepository.shared.getRoute(for: bus.route.lineID) ?? []
         if let bus = buses.first(where: {$0 == bus}) {
-            buses.removeAll()
-            buses.append(bus)
             selectedBus = bus
         }
     }
     
     func clearRoute() {
         selectedBus = nil
-        route.removeAll()
         buses.removeAll()
         loadBuses()
     }
@@ -55,12 +92,7 @@ class MapViewModel: ObservableObject {
             switch result {
             case .success(let buses):
                 DispatchQueue.main.async {
-                    if self?.selectedBus == nil {
-                        self?.buses = buses
-                    } else {
-                        self?.buses = buses.filter { $0 == self?.selectedBus }
-                    }
-                    
+                    self?.buses = buses
                 }
             case .failure(let error):
                 // TODO: Errors localization - (issue)[https://github.com/PopovVA/CyBus/issues/4]

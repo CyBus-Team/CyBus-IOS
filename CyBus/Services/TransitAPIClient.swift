@@ -54,7 +54,7 @@ class TransitAPIClient {
                     if !entity.hasVehicle {
                         return nil
                     }
-                    if let route = routes?.first(where: { $0.lineID == entity.vehicle.trip.routeID }) {
+                    if let route = routes?.first(where: { $0.id == entity.vehicle.trip.routeID }) {
                         let bus = Bus(
                             id: entity.vehicle.vehicle.id,
                             location: CLLocationCoordinate2D(

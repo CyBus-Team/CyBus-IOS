@@ -29,16 +29,16 @@ struct MapView: View {
                 // Bus marker
                 ForEvery(viewModel.buses) { bus in
                     MapViewAnnotation(coordinate: bus.location) {
-                        BusMarkerView(bus: bus).onTapGesture {
+                        BusMarkerView(bus: bus, hidden: false).onTapGesture {
                             viewModel.getRoute(for: bus)
                         }
                     }
                 }
                 
                 // Bus route
-                if !viewModel.route.isEmpty {
+               if let selectedRoute = viewModel.selectedRoute {
                     PolylineAnnotationGroup {
-                        PolylineAnnotation(id: "route-feature", lineCoordinates: viewModel.route.map { shape in
+                        PolylineAnnotation(id: "route-feature", lineCoordinates: selectedRoute.shapes.map { shape in
                             shape.location
                         })
                         .lineColor(.systemBlue)
@@ -50,6 +50,8 @@ struct MapView: View {
                     .lineCap(.round)
                     .slot("middle")
                 }
+                
+                
             }.onMapLoaded { _ in
                 viewModel.loadBuses()
             }
@@ -60,7 +62,7 @@ struct MapView: View {
                     alignment: .center
                 ) {
                     // Clear route button
-                    if !viewModel.route.isEmpty {
+                    if viewModel.selectedRoute != nil {
                         ClearRouteButton {
                             viewModel.clearRoute()
                         }
