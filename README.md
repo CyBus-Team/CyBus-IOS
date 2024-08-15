@@ -11,7 +11,9 @@ You need to create account on MapBox and generate an access token, just follow [
 After, you have to create `Config-Secret.xcconfig` file in the root directory and paste your access token there
 
 ```
-MBX_ACCESS_TOKEN = YOUR_MAPBOX_ACCESS_TOKEN
+MBXAccessToken=YOUR_MAPBOX_ACCESS_TOKEN
+GFTSServiceIP=20.19.98.194
+GFTSServiceURL=$(GFTSServiceIP):8328/Api/api/gtfs-realtime //"http://20.19.98.194:8328/Api/api/gtfs-realtime"
 ```
 
 
@@ -50,11 +52,11 @@ sh generate.sh
 
 # TODO for MVP
 
-[📋] - Show route info (start, finish, stops) - (issue) [https://github.com/PopovVA/CyBus/issues/1]
+[✅] - Show route info (start, finish, stops) - (issue) [https://github.com/PopovVA/CyBus/issues/1]
 
 [📋] - Setup CI/CD - (issue) [https://github.com/PopovVA/CyBus/issues/2]
 
-[📋] - Setup env - (issue) [https://github.com/PopovVA/CyBus/issues/3]
+[✅] - Setup env - (issue) [https://github.com/PopovVA/CyBus/issues/3]
 
 [📋] - Add localization - (issue) [https://github.com/PopovVA/CyBus/issues/4]
 

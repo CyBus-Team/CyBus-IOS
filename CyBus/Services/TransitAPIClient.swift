@@ -5,8 +5,15 @@ import SwiftProtobuf
 class TransitAPIClient {
     static let shared = TransitAPIClient()
     
-    // TODO: Setup env - (issue)[https://github.com/PopovVA/CyBus/issues/3]
-    let urlString = "http://20.19.98.194:8328/Api/api/gtfs-realtime"
+    private let urlString: String
+    
+    private init?() {
+        guard let urlString = Bundle.main.object(forInfoDictionaryKey: "GFTSServiceURL") as? String else {
+            assertionFailure("Can't get GFTS Service URL")
+            return nil
+        }
+        self.urlString = "http://\(urlString)"
+    }
     
     // Function to load and decode JSON file
     func loadRoutes(from filename: String) -> [Route]? {
@@ -68,7 +75,7 @@ class TransitAPIClient {
                         return nil
                     }
                 }
-                completion(.success(buses.compactMap{$0}))
+                completion(.success(buses.compactMap { $0 }))
             } catch {
                 completion(.failure(error))
             }
@@ -76,5 +83,4 @@ class TransitAPIClient {
 
         task.resume()
     }
-    
 }
