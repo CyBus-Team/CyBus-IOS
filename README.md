@@ -11,7 +11,9 @@ You need to create account on MapBox and generate an access token, just follow [
 After, you have to create `Config-Secret.xcconfig` file in the root directory and paste your access token there
 
 ```
-MBXAccessToken = YOUR_MAPBOX_ACCESS_TOKEN
+MBXAccessToken=YOUR_MAPBOX_ACCESS_TOKEN
+GFTSServiceIP=20.19.98.194
+GFTSServiceURL=$(GFTSServiceIP):8328/Api/api/gtfs-realtime //"http://20.19.98.194:8328/Api/api/gtfs-realtime"
 ```
 
 

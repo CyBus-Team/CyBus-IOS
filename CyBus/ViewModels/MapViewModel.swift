@@ -58,7 +58,7 @@ class MapViewModel: ObservableObject {
     }
     
     func loadBuses() {
-        TransitAPIClient.shared.fetchBuses { [weak self] result in
+        TransitAPIClient.shared?.fetchBuses { [weak self] result in
             switch result {
             case .success(let buses):
                 DispatchQueue.main.async {

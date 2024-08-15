@@ -19,11 +19,13 @@
         
         <key>MBXAccessToken</key>
         <string>$(MBXAccessToken)</string>
+
+        <key>GFTSServiceURL</key>
+        <string>$(GFTSServiceURL)</string>
         
         <key>NSExceptionDomains</key>
         <dict>
-            <!-- TODO: Move to env -->
-            <key>20.19.98.194</key>
+            <key>$(GFTSServiceIP)</key>
             <dict>
                 <key>NSExceptionAllowsInsecureHTTPLoads</key>
                 <true/>
