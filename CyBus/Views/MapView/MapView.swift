@@ -29,17 +29,21 @@ struct MapView: View {
                 // Bus marker
                 ForEvery(viewModel.buses) { bus in
                     MapViewAnnotation(coordinate: bus.location) {
-                        BusMarkerView(bus: bus, hidden: false).onTapGesture {
-                            viewModel.getRoute(for: bus)
+                        BusMarkerView(bus: bus).onTapGesture {
+                            viewModel.getShapes(for: bus)
                         }
                     }
                 }
                 
                 // Bus route
-               if let selectedRoute = viewModel.selectedRoute {
+                if let busRoute = viewModel.route {
+                    let shapes = busRoute.shapes
                     PolylineAnnotationGroup {
-                        PolylineAnnotation(id: "route-feature", lineCoordinates: selectedRoute.shapes.map { shape in
-                            shape.location
+                        PolylineAnnotation(id: "route-feature", lineCoordinates: shapes.map { shape in
+                            CLLocationCoordinate2D(
+                                latitude: CLLocationDegrees(shape.latitude ) ?? 0,
+                                longitude: CLLocationDegrees(shape.longitude ) ?? 0
+                            )
                         })
                         .lineColor(.systemBlue)
                         .lineBorderColor(.systemBlue)
@@ -50,8 +54,6 @@ struct MapView: View {
                     .lineCap(.round)
                     .slot("middle")
                 }
-                
-                
             }.onMapLoaded { _ in
                 viewModel.loadBuses()
             }
@@ -62,7 +64,7 @@ struct MapView: View {
                     alignment: .center
                 ) {
                     // Clear route button
-                    if viewModel.selectedRoute != nil {
+                    if (viewModel.route != nil) {
                         ClearRouteButton {
                             viewModel.clearRoute()
                         }

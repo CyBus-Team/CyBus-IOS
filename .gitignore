@@ -1,5 +1,9 @@
-# Generated files
-/CyBys/*.json
+# Ignore generated files
+CyBus/routes.json
+CyBus/stop_times.json
+CyBus/stops.json
+CyBus/trips.json
+CyBus/shapes.json
 
 # Ignoring Config-Secret.xcconfig to avoid exposing sensitive information
 Config-Secret.xcconfig

@@ -11,8 +11,14 @@
 		942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53ED2C55152E00DE9BD7 /* routes_generator.rb */; };
 		942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F02C55201900DE9BD7 /* shapes_generator.rb */; };
 		942C53F52C55208B00DE9BD7 /* shapes.json in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F42C55208B00DE9BD7 /* shapes.json */; };
-		942C53F72C55217400DE9BD7 /* BusShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F62C55217400DE9BD7 /* BusShape.swift */; };
-		942C53F92C5521AF00DE9BD7 /* BusShapesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F82C5521AF00DE9BD7 /* BusShapesRepository.swift */; };
+		942C53F72C55217400DE9BD7 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F62C55217400DE9BD7 /* Route.swift */; };
+		942C53F92C5521AF00DE9BD7 /* ShapesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F82C5521AF00DE9BD7 /* ShapesRepository.swift */; };
+		9449C9D02C6DFBBA009E98F3 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9CF2C6DFBBA009E98F3 /* Shape.swift */; };
+		9449C9D22C6DFCD4009E98F3 /* BusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D12C6DFCD4009E98F3 /* BusRoute.swift */; };
+		9449C9D52C6E01C6009E98F3 /* StopsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D32C6E01C6009E98F3 /* StopsRepository.swift */; };
+		9449C9D62C6E01C6009E98F3 /* StopTimesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D42C6E01C6009E98F3 /* StopTimesRepository.swift */; };
+		9449C9D82C6E01CE009E98F3 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D72C6E01CE009E98F3 /* Trip.swift */; };
+		9449C9DA2C6E0223009E98F3 /* TripsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D92C6E0223009E98F3 /* TripsRepository.swift */; };
 		94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */; };
 		94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
 		94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD82C3AFC20008AFC53 /* MapViewModel.swift */; };
@@ -30,7 +36,6 @@
 		94ABDF9D2C29ABBE00970F8C /* CyBusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */; };
 		94ABDF9F2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */; };
 		94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 94BB5BC62C35CBDF00404028 /* SwiftProtobuf */; };
-		94CC172B2C4EBAD000AC358D /* BusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC172A2C4EBAD000AC358D /* BusRoute.swift */; };
 		94CC17462C4EC6AA00AC358D /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17452C4EC6AA00AC358D /* routes.json */; };
 		94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */; };
 		94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220892C5E701F00D776B9 /* ClearRouteButton.swift */; };
@@ -39,17 +44,10 @@
 		94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F2208F2C5E85A600D776B9 /* trips_generator.rb */; };
 		94F220922C5E85B200D776B9 /* generate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 94F220912C5E85B200D776B9 /* generate.sh */; };
 		94F220942C5E85C700D776B9 /* trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F220932C5E85C700D776B9 /* trips.json */; };
-		94F220962C5E86C600D776B9 /* BusStopsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220952C5E86C600D776B9 /* BusStopsRepository.swift */; };
 		94F220992C5E886E00D776B9 /* stops_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F220972C5E886E00D776B9 /* stops_generator.rb */; };
 		94F2209A2C5E886E00D776B9 /* stop_times_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F220982C5E886E00D776B9 /* stop_times_generator.rb */; };
 		94F2209D2C5E888200D776B9 /* stops.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F2209B2C5E888200D776B9 /* stops.json */; };
 		94F2209E2C5E888200D776B9 /* stop_times.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F2209C2C5E888200D776B9 /* stop_times.json */; };
-		94F220A02C5E8B8600D776B9 /* BusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F2209F2C5E8B8600D776B9 /* BusStop.swift */; };
-		94F220A22C5E8CDC00D776B9 /* BusStopTimesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220A12C5E8CDC00D776B9 /* BusStopTimesRepository.swift */; };
-		94F220A42C5E8D1100D776B9 /* BusStopTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220A32C5E8D1100D776B9 /* BusStopTime.swift */; };
-		94F220A62C6291BE00D776B9 /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220A52C6291BE00D776B9 /* RouteData.swift */; };
-		94F220A82C6299E100D776B9 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220A72C6299E100D776B9 /* Trip.swift */; };
-		94F220AA2C6299F900D776B9 /* TripsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220A92C6299F900D776B9 /* TripsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +73,14 @@
 		942C53ED2C55152E00DE9BD7 /* routes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = routes_generator.rb; sourceTree = "<group>"; };
 		942C53F02C55201900DE9BD7 /* shapes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = shapes_generator.rb; sourceTree = "<group>"; };
 		942C53F42C55208B00DE9BD7 /* shapes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shapes.json; sourceTree = "<group>"; };
-		942C53F62C55217400DE9BD7 /* BusShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusShape.swift; sourceTree = "<group>"; };
-		942C53F82C5521AF00DE9BD7 /* BusShapesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusShapesRepository.swift; sourceTree = "<group>"; };
+		942C53F62C55217400DE9BD7 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		942C53F82C5521AF00DE9BD7 /* ShapesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesRepository.swift; sourceTree = "<group>"; };
+		9449C9CF2C6DFBBA009E98F3 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		9449C9D12C6DFCD4009E98F3 /* BusRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRoute.swift; sourceTree = "<group>"; };
+		9449C9D32C6E01C6009E98F3 /* StopsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsRepository.swift; sourceTree = "<group>"; };
+		9449C9D42C6E01C6009E98F3 /* StopTimesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimesRepository.swift; sourceTree = "<group>"; };
+		9449C9D72C6E01CE009E98F3 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		9449C9D92C6E0223009E98F3 /* TripsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsRepository.swift; sourceTree = "<group>"; };
 		94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
 		94891BD62C3AFBCF008AFC53 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		94891BD82C3AFC20008AFC53 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -96,7 +100,6 @@
 		94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITests.swift; sourceTree = "<group>"; };
 		94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		94BB5BCB2C35CDB000404028 /* gtfs-realtime.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = "gtfs-realtime.proto"; sourceTree = "<group>"; };
-		94CC172A2C4EBAD000AC358D /* BusRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRoute.swift; sourceTree = "<group>"; };
 		94CC17362C4EC42C00AC358D /* routes.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shp; sourceTree = "<group>"; };
 		94CC173D2C4EC65300AC358D /* routes.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.prj; sourceTree = "<group>"; };
 		94CC173F2C4EC65300AC358D /* routes.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shx; sourceTree = "<group>"; };
@@ -109,17 +112,10 @@
 		94F2208F2C5E85A600D776B9 /* trips_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = trips_generator.rb; sourceTree = "<group>"; };
 		94F220912C5E85B200D776B9 /* generate.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate.sh; sourceTree = "<group>"; };
 		94F220932C5E85C700D776B9 /* trips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trips.json; sourceTree = "<group>"; };
-		94F220952C5E86C600D776B9 /* BusStopsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopsRepository.swift; sourceTree = "<group>"; };
 		94F220972C5E886E00D776B9 /* stops_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stops_generator.rb; sourceTree = "<group>"; };
 		94F220982C5E886E00D776B9 /* stop_times_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stop_times_generator.rb; sourceTree = "<group>"; };
 		94F2209B2C5E888200D776B9 /* stops.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
 		94F2209C2C5E888200D776B9 /* stop_times.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stop_times.json; sourceTree = "<group>"; };
-		94F2209F2C5E8B8600D776B9 /* BusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStop.swift; sourceTree = "<group>"; };
-		94F220A12C5E8CDC00D776B9 /* BusStopTimesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopTimesRepository.swift; sourceTree = "<group>"; };
-		94F220A32C5E8D1100D776B9 /* BusStopTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopTime.swift; sourceTree = "<group>"; };
-		94F220A52C6291BE00D776B9 /* RouteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteData.swift; sourceTree = "<group>"; };
-		94F220A72C6299E100D776B9 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		94F220A92C6299F900D776B9 /* TripsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,13 +149,11 @@
 		94891BD22C3AFB86008AFC53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9449C9D72C6E01CE009E98F3 /* Trip.swift */,
 				94891BDD2C3B016C008AFC53 /* MapLocation.swift */,
 				94891BDF2C3B017B008AFC53 /* Bus.swift */,
-				94CC172A2C4EBAD000AC358D /* BusRoute.swift */,
-				942C53F62C55217400DE9BD7 /* BusShape.swift */,
-				94F2209F2C5E8B8600D776B9 /* BusStop.swift */,
-				94F220A32C5E8D1100D776B9 /* BusStopTime.swift */,
-				94F220A72C6299E100D776B9 /* Trip.swift */,
+				942C53F62C55217400DE9BD7 /* Route.swift */,
+				9449C9CF2C6DFBBA009E98F3 /* Shape.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				94891BD82C3AFC20008AFC53 /* MapViewModel.swift */,
-				94F220A52C6291BE00D776B9 /* RouteData.swift */,
+				9449C9D12C6DFCD4009E98F3 /* BusRoute.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -196,11 +190,11 @@
 		94891BDA2C3AFC65008AFC53 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9449C9D92C6E0223009E98F3 /* TripsRepository.swift */,
+				9449C9D32C6E01C6009E98F3 /* StopsRepository.swift */,
+				9449C9D42C6E01C6009E98F3 /* StopTimesRepository.swift */,
 				94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */,
-				942C53F82C5521AF00DE9BD7 /* BusShapesRepository.swift */,
-				94F220952C5E86C600D776B9 /* BusStopsRepository.swift */,
-				94F220A12C5E8CDC00D776B9 /* BusStopTimesRepository.swift */,
-				94F220A92C6299F900D776B9 /* TripsRepository.swift */,
+				942C53F82C5521AF00DE9BD7 /* ShapesRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -463,26 +457,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94F220A82C6299E100D776B9 /* Trip.swift in Sources */,
 				94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */,
 				94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */,
-				94F220962C5E86C600D776B9 /* BusStopsRepository.swift in Sources */,
-				94F220A62C6291BE00D776B9 /* RouteData.swift in Sources */,
-				94F220A22C5E8CDC00D776B9 /* BusStopTimesRepository.swift in Sources */,
 				94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */,
+				9449C9D62C6E01C6009E98F3 /* StopTimesRepository.swift in Sources */,
+				9449C9D02C6DFBBA009E98F3 /* Shape.swift in Sources */,
 				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,
-				94F220A42C5E8D1100D776B9 /* BusStopTime.swift in Sources */,
 				94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */,
+				9449C9D52C6E01C6009E98F3 /* StopsRepository.swift in Sources */,
 				94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */,
-				942C53F72C55217400DE9BD7 /* BusShape.swift in Sources */,
+				942C53F72C55217400DE9BD7 /* Route.swift in Sources */,
 				94F2208C2C5E704100D776B9 /* LocationButton.swift in Sources */,
-				942C53F92C5521AF00DE9BD7 /* BusShapesRepository.swift in Sources */,
-				94F220AA2C6299F900D776B9 /* TripsRepository.swift in Sources */,
+				9449C9DA2C6E0223009E98F3 /* TripsRepository.swift in Sources */,
+				942C53F92C5521AF00DE9BD7 /* ShapesRepository.swift in Sources */,
+				9449C9D82C6E01CE009E98F3 /* Trip.swift in Sources */,
 				94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */,
 				94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */,
-				94F220A02C5E8B8600D776B9 /* BusStop.swift in Sources */,
+				9449C9D22C6DFCD4009E98F3 /* BusRoute.swift in Sources */,
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
-				94CC172B2C4EBAD000AC358D /* BusRoute.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* Bus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,16 +2,14 @@ require 'csv'
 require 'json'
 
 class StopTime
-  attr_accessor :trip_id, :arrival_time, :departure_time, :stop_id, :stop_sequence, :pickup_type, :drop_off_type
+  attr_accessor :trip_id, :arrival_time, :departure_time, :stop_id, :stop_sequence
 
-  def initialize(trip_id, arrival_time, departure_time, stop_id, stop_sequence, pickup_type, drop_off_type)
+  def initialize(trip_id, arrival_time, departure_time, stop_id, stop_sequence)
     @trip_id = trip_id
     @arrival_time = arrival_time
     @departure_time = departure_time
     @stop_id = stop_id
     @stop_sequence = stop_sequence
-    @pickup_type = pickup_type
-    @drop_off_type = drop_off_type
   end
 
   def to_hash
@@ -20,24 +18,20 @@ class StopTime
       arrival_time: @arrival_time,
       departure_time: @departure_time,
       stop_id: @stop_id,
-      stop_sequence: @stop_sequence,
-      pickup_type: @pickup_type,
-      drop_off_type: @drop_off_type
+      stop_sequence: @stop_sequence
     }
   end
 end
 
 def read_stop_times_file(file_path)
   stop_times = []
-  CSV.foreach(file_path, headers: false, col_sep: ",") do |row|
+  CSV.foreach(file_path, headers: true, col_sep: ",") do |row|
     stop_time = StopTime.new(
-      row[0],  # trip_id
-      row[1],  # arrival_time
-      row[2],  # departure_time
-      row[3],  # stop_id
-      row[4],  # stop_sequence
-      row[5],  # pickup_type
-      row[6]   # drop_off_type
+      row['trip_id'],
+      row['arrival_time'],
+      row['departure_time'],
+      row['stop_id'],
+      row['stop_sequence']
     )
     stop_times << stop_time
   end

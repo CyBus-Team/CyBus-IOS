@@ -2,15 +2,17 @@ require 'csv'
 require 'json'
 
 class Trip
-  attr_accessor :route_id, :service_id, :trip_id, :trip_headsign, :shape_id, :direction_id
+  attr_accessor :route_id, :service_id, :trip_id, :trip_headsign, :trip_short_name, :direction_id, :block_id, :shape_id
 
-  def initialize(route_id, service_id, trip_id, trip_headsign, shape_id, direction_id)
+  def initialize(route_id, service_id, trip_id, trip_headsign, trip_short_name, direction_id, block_id, shape_id)
     @route_id = route_id
     @service_id = service_id
     @trip_id = trip_id
     @trip_headsign = trip_headsign
-    @shape_id = shape_id
+    @trip_short_name = trip_short_name
     @direction_id = direction_id
+    @block_id = block_id
+    @shape_id = shape_id
   end
 
   def to_hash
@@ -19,23 +21,26 @@ class Trip
       service_id: @service_id,
       trip_id: @trip_id,
       trip_headsign: @trip_headsign,
-      shape_id: @shape_id,
-      direction_id: @direction_id
+      trip_short_name: @trip_short_name,
+      direction_id: @direction_id,
+      block_id: @block_id,
+      shape_id: @shape_id
     }
   end
 end
 
 def read_trips_file(file_path)
   trips = []
-  CSV.foreach(file_path, headers: false, col_sep: ",") do |row|
-    # Индексы колонок согласно вашему изображению
+  CSV.foreach(file_path, headers: true, col_sep: ",") do |row|
     trip = Trip.new(
-      row[0],  # route_id
-      row[1],  # service_id
-      row[2],  # trip_id
-      row[3],  # trip_headsign
-      row[4],  # shape_id
-      row[5]   # direction_id
+      row['route_id'],
+      row['service_id'],
+      row['trip_id'],
+      row['trip_headsign'],
+      row['trip_short_name'],
+      row['direction_id'],
+      row['block_id'],
+      row['shape_id']
     )
     trips << trip
   end
