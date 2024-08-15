@@ -47,8 +47,6 @@ class MapViewModel: ObservableObject {
             let stopTimes = StopTimesRepository.shared.getStopTimes(by: trip?.trip_id ?? "") ?? []
             let stopIds = stopTimes.map{$0.stopId}
             let stops = StopsRepository.shared.getStops(by: stopIds) ?? []
-            buses.removeAll()
-            buses.append(bus)
             route = BusRoute(stops: stops, shapes: shapes)
             selectedBus = bus
         }
@@ -57,8 +55,6 @@ class MapViewModel: ObservableObject {
     func clearRoute() {
         selectedBus = nil
         route = nil
-        buses.removeAll()
-        loadBuses()
     }
     
     func loadBuses() {
