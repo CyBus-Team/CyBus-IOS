@@ -48,6 +48,8 @@ class MapViewModel: ObservableObject {
     func clearRoute() {
         selectedBus = nil
         route = nil
+        buses.removeAll()
+        loadBuses()
     }
     
     func loadBuses() {
