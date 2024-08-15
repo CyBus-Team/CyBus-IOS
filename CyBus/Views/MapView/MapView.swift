@@ -18,8 +18,12 @@ struct MapView: View {
     let center = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
     
     init() {
-        // TODO: Setup env - (issue)[https://github.com/PopovVA/CyBus/issues/3]
-        MapboxOptions.accessToken = ""
+        if let mapBoxAccessToken = Bundle.main.object(forInfoDictionaryKey: "MBXAccessToken") as? String {
+            MapboxOptions.accessToken = mapBoxAccessToken
+        } else {
+            assertionFailure("Can't get MBX access token")
+        }
+        
     }
     
     var body: some View {
