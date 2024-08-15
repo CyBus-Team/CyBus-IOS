@@ -56,7 +56,7 @@ sh generate.sh
 
 [📋] - Setup CI/CD - (issue) [https://github.com/PopovVA/CyBus/issues/2]
 
-[📋] - Setup env - (issue) [https://github.com/PopovVA/CyBus/issues/3]
+[✅] - Setup env - (issue) [https://github.com/PopovVA/CyBus/issues/3]
 
 [📋] - Add localization - (issue) [https://github.com/PopovVA/CyBus/issues/4]
 
