@@ -13,7 +13,9 @@ struct MapView: View {
     // Initializes viewport state as styleDefault,
     // which will use the default camera for the current style.
     @State var viewport: Viewport = .styleDefault
-    @State var zoom: Double = 13
+    @State var zoom: Double = 12
+    
+    let center = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
     
     init() {
         // TODO: Setup env - (issue)[https://github.com/PopovVA/CyBus/issues/3]
@@ -74,6 +76,7 @@ struct MapView: View {
                     
                 }
             }.onMapLoaded { _ in
+                viewport = .camera(center: center, zoom: zoom)
                 viewModel.loadBuses()
             }
             
@@ -110,7 +113,6 @@ struct MapView: View {
                     // Get current location button
                     LocationButton {
                         // TODO: Get current location
-                        let center = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
                         withViewportAnimation {
                             viewport = .camera(center: center, zoom: zoom, bearing: 0, pitch: 0)
                         }
