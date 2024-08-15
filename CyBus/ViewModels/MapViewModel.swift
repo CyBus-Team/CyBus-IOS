@@ -14,9 +14,15 @@ class MapViewModel: ObservableObject {
     
     private var timer: Timer?
     private var selectedBus: Bus?
+    private var trips: [Trip] = []
+    private var stopTimes: [StopTime] = []
+    private var stops: [Stop] = []
     
     init() {
         startTimer()
+        trips = TripsRepository.shared.getTrips() ?? []
+        stopTimes = StopTimesRepository.shared.getStopTimes() ?? []
+        stops = StopsRepository.shared.getStops() ?? []
     }
     
     deinit {
@@ -35,13 +41,16 @@ class MapViewModel: ObservableObject {
     }
     
     func getShapes(for bus: Bus) {
-        let shapes = ShapesRepository.shared.getRoute(for: bus.route.id) ?? []
-        let stops = [Route]()
         if let bus = buses.first(where: {$0 == bus}) {
+            let shapes = ShapesRepository.shared.getRoute(for: bus.route.id) ?? []
+            let trip = TripsRepository.shared.getTrip(for: bus.route.id)
+            let stopTimes = StopTimesRepository.shared.getStopTimes(by: trip?.trip_id ?? "") ?? []
+            let stopIds = stopTimes.map{$0.stopId}
+            let stops = StopsRepository.shared.getStops(by: stopIds) ?? []
             buses.removeAll()
             buses.append(bus)
-            selectedBus = bus
             route = BusRoute(stops: stops, shapes: shapes)
+            selectedBus = bus
         }
     }
     

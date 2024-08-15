@@ -46,10 +46,10 @@ class TripsRepository {
         return trips
     }
     
-    func getTrips(for routeId: String) -> [Trip]? {
+    func getTrip(for routeId: String) -> Trip? {
         guard let trips = loadTrips() else {
             return nil
         }
-        return trips.filter { $0.route_id == routeId }
+        return trips.first { $0.route_id == routeId }
     }
 }

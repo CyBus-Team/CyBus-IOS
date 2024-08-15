@@ -45,4 +45,11 @@ class StopsRepository {
         }
         return stops
     }
+    
+    func getStops(by stopIds: [String]) -> [Stop]? {
+        guard let stops = loadStops() else {
+            return nil
+        }
+        return stops.filter {stopIds.contains($0.id)}
+    }
 }

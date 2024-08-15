@@ -43,5 +43,12 @@ class StopTimesRepository {
         }
         return stopTimes
     }
+    
+    func getStopTimes(by tripId: String) -> [StopTime]? {
+        guard let stopTimes = loadStopTimes() else {
+            return nil
+        }
+        return stopTimes.filter { $0.id == tripId }
+    }
 }
 

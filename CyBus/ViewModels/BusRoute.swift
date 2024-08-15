@@ -8,6 +8,6 @@
 import Foundation
 
 struct BusRoute {
-    let stops: [Route]
+    let stops: [Stop]
     let shapes: [Shape]
 }

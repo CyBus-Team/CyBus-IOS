@@ -9,12 +9,12 @@ import Foundation
 
 struct Stop: Codable, Identifiable {
     let id: String        // stop_id
-    let code: String      // stop_code
-    let name: String      // stop_name
-    let description: String // stop_desc
-    let latitude: Double  // stop_lat
-    let longitude: Double // stop_lon
-    let zoneID: String    // zone_id
+    let code: String          // stop_code
+    let name: String          // stop_name
+    let description: String?  // stop_desc
+    let latitude: String      // stop_lat
+    let longitude: String     // stop_lon
+    let zoneID: String        // zone_id
 
     enum CodingKeys: String, CodingKey {
         case id = "stop_id"

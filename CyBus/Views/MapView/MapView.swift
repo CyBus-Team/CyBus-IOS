@@ -37,6 +37,24 @@ struct MapView: View {
                 
                 // Bus route
                 if let busRoute = viewModel.route {
+                    ForEvery(busRoute.stops) { stop in
+                        MapViewAnnotation(coordinate:  CLLocationCoordinate2D(
+                            latitude: CLLocationDegrees(stop.latitude) ?? 0,
+                            longitude: CLLocationDegrees(stop.longitude) ?? 0
+                        )) {
+                            ZStack {
+                                Circle()
+                                    .fill(Color.blue)
+                                    .frame(width: 20, height: 20)
+                                Circle()
+                                    .fill(Color.white)
+                                    .frame(width: 10, height: 10)
+                                    .blendMode(.destinationOut)
+                            }
+                            .compositingGroup()
+                        }
+                    }
+                    
                     let shapes = busRoute.shapes
                     PolylineAnnotationGroup {
                         PolylineAnnotation(id: "route-feature", lineCoordinates: shapes.map { shape in
@@ -53,6 +71,7 @@ struct MapView: View {
                     .layerId("route")
                     .lineCap(.round)
                     .slot("middle")
+                    
                 }
             }.onMapLoaded { _ in
                 viewModel.loadBuses()

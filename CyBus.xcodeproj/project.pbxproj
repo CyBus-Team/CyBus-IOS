@@ -25,7 +25,6 @@
 		94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
 		94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD82C3AFC20008AFC53 /* MapViewModel.swift */; };
 		94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */; };
-		94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDD2C3B016C008AFC53 /* MapLocation.swift */; };
 		94891BE02C3B017B008AFC53 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDF2C3B017B008AFC53 /* Bus.swift */; };
 		949765742C516EFE001321CA /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 949765732C516EFE001321CA /* Config.xcconfig */; };
 		949765762C516F96001321CA /* Config-Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 949765752C516F96001321CA /* Config-Secret.xcconfig */; };
@@ -89,7 +88,6 @@
 		94891BD62C3AFBCF008AFC53 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		94891BD82C3AFC20008AFC53 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitAPIClient.swift; sourceTree = "<group>"; };
-		94891BDD2C3B016C008AFC53 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		94891BDF2C3B017B008AFC53 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		949765732C516EFE001321CA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		949765752C516F96001321CA /* Config-Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-Secret.xcconfig"; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				9449C9D72C6E01CE009E98F3 /* Trip.swift */,
-				94891BDD2C3B016C008AFC53 /* MapLocation.swift */,
 				94891BDF2C3B017B008AFC53 /* Bus.swift */,
 				942C53F62C55217400DE9BD7 /* Route.swift */,
 				9449C9CF2C6DFBBA009E98F3 /* Shape.swift */,
@@ -464,7 +461,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */,
-				94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */,
 				94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */,
 				9449C9D62C6E01C6009E98F3 /* StopTimesRepository.swift in Sources */,
 				9449C9D02C6DFBBA009E98F3 /* Shape.swift in Sources */,
