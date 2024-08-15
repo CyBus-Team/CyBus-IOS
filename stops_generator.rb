@@ -2,21 +2,27 @@ require 'csv'
 require 'json'
 
 class Stop
-  attr_accessor :stop_id, :stop_name, :stop_lat, :stop_lon
+  attr_accessor :stop_id, :stop_code, :stop_name, :stop_desc, :stop_lat, :stop_lon, :zone_id
 
-  def initialize(stop_id, stop_name, stop_lat, stop_lon)
+  def initialize(stop_id, stop_code, stop_name, stop_desc, stop_lat, stop_lon, zone_id)
     @stop_id = stop_id
+    @stop_code = stop_code
     @stop_name = stop_name
+    @stop_desc = stop_desc
     @stop_lat = stop_lat
     @stop_lon = stop_lon
+    @zone_id = zone_id
   end
 
   def to_hash
     {
       stop_id: @stop_id,
+      stop_code: @stop_code,
       stop_name: @stop_name,
+      stop_desc: @stop_desc,
       stop_lat: @stop_lat,
-      stop_lon: @stop_lon
+      stop_lon: @stop_lon,
+      zone_id: @zone_id
     }
   end
 end
@@ -25,14 +31,13 @@ def read_stops_file(file_path)
   stops = []
   CSV.foreach(file_path, headers: true, col_sep: ",") do |row|
     stop = Stop.new(
-      row[0],
-      row[1],
-      row[2],
-      row[3],
-      # row['stop_id'],
-      # row['stop_name'],
-      # row['stop_lat'],
-      # row['stop_lon']
+      row[0],  # stop_id
+      row[1],  # stop_code
+      row[2],  # stop_name
+      row[3],  # stop_desc
+      row[4],  # stop_lat
+      row[5],  # stop_lon
+      row[6]   # zone_id
     )
     stops << stop
   end
