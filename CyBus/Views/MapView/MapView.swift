@@ -34,7 +34,7 @@ struct MapView: View {
                         BusMarkerView(bus: bus).onTapGesture {
                             viewModel.getShapes(for: bus)
                         }
-                    }
+                    }.allowOverlap(true)
                 }
                 
                 // Bus route
