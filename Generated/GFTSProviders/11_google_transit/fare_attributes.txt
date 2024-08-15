@@ -1,0 +1,2 @@
+﻿fare_id,price,currency_type,payment_method,transfers,agency_id,transfer_duration
+111,0,EUR,0,0,11,

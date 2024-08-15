@@ -1,0 +1,54 @@
+﻿route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_color,route_text_color
+50000011,5,26,Nicosia - Pafos,,3,66FF66,000000
+50000012,5,26,Pafos - Nicosia,,3,66FF66,000000
+50000021,5,26,Nicosia - Choirokoitia - Pafos,,3,66FF66,000000
+50000022,5,26,Pafos - Choirokoitia - Nicosia,,3,66FF66,000000
+50000031,5,26,Nicosia - Agios Georgios Chavouzas - Episkopiana - CUT - Pafos,,3,66FF66,000000
+50000041,5,26,Nicosia - Alampra - Pafos,,3,66FF66,000000
+50000042,5,26,Pafos - Alampra - Nicosia,,3,66FF66,000000
+50000051,5,26,Nicosia - Alampra - Choirokoitia - Ag. Georgios Chavouzas - Episkopiana - EAC - Pafos,,3,66FF66,000000
+50000052,5,26,Pafos - CUT - EAC - Nicosia,,3,66FF66,000000
+50000061,5,26,L. Akrita - Nicosia - Pafos,,3,66FF66,000000
+50000062,5,26,Pafos - Nicosia - L. Akrita,,3,66FF66,000000
+50000071,5,26,Nicosia - CUT - Pafos,,3,66FF66,000000
+50000072,5,26,Pafos - CUT - Nicosia,,3,66FF66,000000
+50010011,5,23,Nicosia - Agia Napa - Paralimni,,3,008000,FFFFFF
+50010012,5,23,Paralimni - Agia Napa - Nicosia,,3,008000,FFFFFF
+50010021,5,23,Nicosia - Agia Napa - Protaras - Paralimni,,3,008000,FFFFFF
+50010022,5,23,Paralimni - Protaras - Agia Napa - Nicosia,,3,008000,FFFFFF
+50010031,5,23,Nicosia - Alampra - Paralimni,,3,008000,FFFFFF
+50010032,5,23,Paralimni - Protaras - Alampra - Nicosia,,3,008000,FFFFFF
+50010042,5,23,Paralimni - Agia Napa - Alampra - Nicosia,,3,008000,FFFFFF
+50010052,5,23,Paralimni - Agia Napa - Nicosia (except Gen. Hospital),,3,008000,FFFFFF
+50020011,5,43,Larnaca - Agia Napa - Paralimni,,3,75610B,FFFFFF
+50020012,5,43,Paralimni - Agia Napa - Larnaca,,3,75610B,FFFFFF
+50030011,5,56,Limassol - Pafos,,3,FFFF00,000000
+50030012,5,56,Pafos - Limassol,,3,FFFF00,000000
+50030021,5,56,Limassol - Episkopiana - Pafos,,3,FFFF00,000000
+50030022,5,56,Pafos - CUT - Episkopiana - Limassol,,3,FFFF00,000000
+50030032,5,56,Pafos - EAC - Episkopiana - Limassol,,3,FFFF00,000000
+50030041,5,56,Limassol - CUT - Pafos,,3,FFFF00,000000
+50030042,5,56,Pafos - CUT - Limassol,,3,FFFF00,000000
+50040011,5,45,Larnaca - Limassol,,3,8000FF,FFFFFF
+50040012,5,45,Limassol - Larnaca,,3,8000FF,FFFFFF
+50050011,5,36,Paralimni - Ayia Napa - Larnaca - Pafos,,3,FF8000,000000
+50050012,5,36,Pafos - Larnaca - Ayia Napa - Paralimni,,3,FF8000,000000
+50060011,5,25,Nicosia - Limassol,,3,FF0000,FFFFFF
+50060012,5,25,Limassol - Nicosia,,3,FF0000,FFFFFF
+50060021,5,25,Nicosia - Alampra - Limassol,,3,FF0000,FFFFFF
+50060022,5,25,Limassol - Alampra - Nicosia,,3,FF0000,FFFFFF
+50070011,5,42,Larnaca - Nicosia,,3,0000FF,FFFFFF
+50070012,5,42,Nicosia - Larnaca,,3,0000FF,FFFFFF
+50070021,5,42,Larnaca (Saint George) - Nicosia,,3,0000FF,FFFFFF
+50070022,5,42,Nicosia - Larnaca (Saint George),,3,0000FF,FFFFFF
+50070031,5,42,Larnaca - Alampra - Nicosia,,3,0000FF,FFFFFF
+50070032,5,42,Nicosia - Alampra - Larnaca,,3,0000FF,FFFFFF
+50070041,5,42,Larnaca (Port) - Presidential Palace - Nicosia,,3,0000FF,FFFFFF
+50070042,5,42,Nicosia - Presidential Palace - Larnaca,,3,0000FF,FFFFFF
+50070051,5,42,Larnaca - University of Cyprus - Nicosia,,3,0000FF,FFFFFF
+50070052,5,42,Nicosia - University of Cyprus - Larnaca,,3,0000FF,FFFFFF
+50080011,5,46,Larnaca - Limassol - Pafos,,3,800000,FFFFFF
+50080012,5,46,Pafos - Limassol - Larnaca,,3,800000,FFFFFF
+50080021,5,46,Larnaca - Limassol - CUT - Pafos,,3,800000,FFFFFF
+50090011,5,64,Larnaca - Pafos,,3,FF8000,000000
+50090012,5,64,Pafos - Larnaca,,3,FF8000,000000

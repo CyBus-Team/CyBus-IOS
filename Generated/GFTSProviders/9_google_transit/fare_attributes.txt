@@ -1,0 +1,7 @@
+﻿fare_id,price,currency_type,payment_method,transfers,agency_id,transfer_duration
+111,2.4,EUR,0,0,9,
+113,4,EUR,0,0,9,
+121,2.4,EUR,0,0,9,
+123,4,EUR,0,0,9,
+131,0.6,EUR,0,0,9,
+133,1.8,EUR,0,0,9,

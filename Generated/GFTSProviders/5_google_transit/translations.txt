@@ -1,0 +1,938 @@
+﻿table_name,field_name,language,translation,record_id
+routes,route_long_name,el,Λευκωσία - Πάφος,50000011
+routes,route_long_name,el,Πάφος - Λευκωσία,50000012
+routes,route_long_name,el,Λευκωσία - Χοιροκοιτία - Πάφος,50000021
+routes,route_long_name,el,Πάφος - Χοιροκοιτία - Λευκωσία,50000022
+routes,route_long_name,el,Λευκωσία - Άγιος Γεώργιος Χαβούζας - Επισκοπιάνα - ΤΕΠΑΚ - Πάφος,50000031
+routes,route_long_name,el,Λευκωσία - Αλάμπρα - Πάφος,50000041
+routes,route_long_name,el,Πάφος - Αλάμπρα - Λευκωσία,50000042
+routes,route_long_name,el,Λευκωσία - Αλάμπρα - Χοιροκοιτία - Άγ. Γεώργιος Χαβούζας - Επισκοπιάνα - ΑΗΚ - Πάφος,50000051
+routes,route_long_name,el,Πάφος - ΤΕΠΑΚ - ΑΗΚ - Λευκωσία,50000052
+routes,route_long_name,el,Λ. Ακρίτα - Λευκωσία - Πάφος,50000061
+routes,route_long_name,el,Πάφος - Λευκωσία - Λ. Ακρίτα,50000062
+routes,route_long_name,el,Λευκωσία - ΤΕΠΑΚ - Πάφος,50000071
+routes,route_long_name,el,Πάφος - ΤΕΠΑΚ - Λευκωσία,50000072
+routes,route_long_name,el,Λευκωσία - Αγία Νάπα - Παραλίμνι,50010011
+routes,route_long_name,el,Παραλίμνι - Αγία Νάπα - Λευκωσία,50010012
+routes,route_long_name,el,Λευκωσία - Αγία Νάπα - Πρωταράς - Παραλίμνι,50010021
+routes,route_long_name,el,Παραλίμνι - Πρωταράς - Αγία Νάπα - Λευκωσία,50010022
+routes,route_long_name,el,Λευκωσία - Αλάμπρα - Παραλίμνι,50010031
+routes,route_long_name,el,Παραλίμνι - Πρωταράς - Αλάμπρα - Λευκωσία,50010032
+routes,route_long_name,el,Παραλίμνι - Αγία Νάπα - Αλάμπρα - Λευκωσία,50010042
+routes,route_long_name,el,Παραλίμνι - Αγία Νάπα - Λευκωσία (εκτός Γεν. Νοσ.),50010052
+routes,route_long_name,el,Λάρνακα - Αγία Νάπα - Παραλίμνι,50020011
+routes,route_long_name,el,Παραλίμνι - Αγία Νάπα - Λάρνακα,50020012
+routes,route_long_name,el,Λεμεσός - Πάφος,50030011
+routes,route_long_name,el,Πάφος - Λεμεσός,50030012
+routes,route_long_name,el,Λεμεσός - Επισκοπιάνα - Πάφος,50030021
+routes,route_long_name,el,Πάφος - ΤΕΠΑΚ - Επισκοπιάνα - Λεμεσός,50030022
+routes,route_long_name,el,Πάφος - ΑΗΚ - Επισκοπιάνα - Λεμεσός,50030032
+routes,route_long_name,el,Λεμεσός - ΤΕΠΑΚ - Πάφος,50030041
+routes,route_long_name,el,Πάφος - ΤΕΠΑΚ - Λεμεσός,50030042
+routes,route_long_name,el,Λάρνακα - Λεμεσός,50040011
+routes,route_long_name,el,Λεμεσός - Λάρνακα,50040012
+routes,route_long_name,el,Παραλίμνι - Αγία Νάπα - Λάρνακα - Πάφος,50050011
+routes,route_long_name,el,Πάφος - Λάρνακα - Αγία Νάπα - Παραλίμνι,50050012
+routes,route_long_name,el,Λευκωσία - Λεμεσός,50060011
+routes,route_long_name,el,Λεμεσός - Λευκωσία,50060012
+routes,route_long_name,el,Λευκωσία - Αλαμπρα - Λεμεσός,50060021
+routes,route_long_name,el,Λεμεσός - Αλάμπρα - Λευκωσία,50060022
+routes,route_long_name,el,Λάρνακα - Λευκωσία,50070011
+routes,route_long_name,el,Λευκωσία - Λάρνακα,50070012
+routes,route_long_name,el,Λάρνακα (Άγιος Γεώργιος) - Λευκωσία,50070021
+routes,route_long_name,el,Λευκωσία - Λάρνακα (Άγιος Γεώργιος),50070022
+routes,route_long_name,el,Λάρνακα - Αλάμπρα - Λευκωσία,50070031
+routes,route_long_name,el,Λευκωσία - Αλάμπρα - Λάρνακα,50070032
+routes,route_long_name,el,Λάρνακα (Λιμάνι) - Προεδρικό Μέγαρο - Λευκωσία,50070041
+routes,route_long_name,el,Λευκωσία - Προεδρικό Μέγαρο - Λάρνακα,50070042
+routes,route_long_name,el,Λάρνακα - Πανεπιστήμιο Κύπρου - Λευκωσία,50070051
+routes,route_long_name,el,Λευκωσία - Πανεπιστήμιο Κύπρου - Λάρνακα,50070052
+routes,route_long_name,el,Λάρνακα - Λεμεσός - Πάφος,50080011
+routes,route_long_name,el,Πάφος - Λεμεσός - Λάρνακα,50080012
+routes,route_long_name,el,Λάρνακα - Λεμεσός - ΤΕΠΑΚ - Πάφος,50080021
+routes,route_long_name,el,Λάρνακα - Πάφος,50090011
+routes,route_long_name,el,Πάφος - Λάρνακα,50090012
+stops,stop_name,el,Πλατεία Διονυσίου Σολωμού,1
+stops,stop_desc,el,ΠΛΑΤΕΙΑ ΣΟ,1
+stops,stop_name,el,Λεωφόρος Ευαγόρου - Βασιλέως Παύλου,2
+stops,stop_desc,el,Ευα-Παυλου,2
+stops,stop_name,el,Λεωφόρος Αρχιεπισκόπου Μακαρίου Γ΄ -  Ήρας,323
+stops,stop_desc,el,Μακ-Ηρας,323
+stops,stop_name,el,Λεωφόρος Αρχιεπισκόπου Μακαρίου Γ΄ - Μνασιάδου,324
+stops,stop_desc,el,Μακ-Μνασια,324
+stops,stop_name,el,Λεωφόρος Αρχιεπισκόπου Μακαρίου Γ΄ - Νάξου,325
+stops,stop_desc,el,Μακ-Ναξου,325
+stops,stop_name,el,Λεωφόρος Αρχιεπισκόπου Μακαρίου Γ΄ - Δημοφώντος,326
+stops,stop_desc,el,Μακ-Δημοφ,326
+stops,stop_name,el,Τεχνική Σχολή Γ Λευκωσίας,332
+stops,stop_desc,el,ΤΕΧΝ.ΣΧΟΛΗ,332
+stops,stop_name,el,Λεωφ. Αρχιεπισκόπου Μακαρίου Γ΄ - John Kennedy,333
+stops,stop_desc,el,Μακ-Κένεντ,333
+stops,stop_name,el,Λεωφ. Λεμεσού - Λύκειο Αρχιεπισκόπου Μακαρίου Γ,337
+stops,stop_desc,el,ΑΣΤΥΝΟΜΙΑ,337
+stops,stop_name,el,Λεωφ. Λεμεσού - Πάρκο Κυκλοφοριακής Αγωγής,338
+stops,stop_desc,el, Κ.Αγωγής,338
+stops,stop_name,el,Λεωφόρος Λεμεσου - Ελλησπόντου,339
+stops,stop_desc,el,Λεμ-Ελλησ,339
+stops,stop_name,el,Λεωφόρος Λεμεσου - Καλησπέρα,340
+stops,stop_desc,el,Λεμ-Καλησπ,340
+stops,stop_name,el,Καλαμών - Κάμπου,341
+stops,stop_desc,el,Κα-Καμπού,341
+stops,stop_name,el,Καλαμών - Μετεώρων,342
+stops,stop_desc,el,Κα-Μετεώρ,342
+stops,stop_name,el,The Mall of Cyprus - Βεργίνας,346
+stops,stop_desc,el,Mall-Βεργ,346
+stops,stop_name,el,Σταθμός Καραβέλλα,1297
+stops,stop_desc,el,ΣταθμΚαραβ,1297
+stops,stop_name,el,Πυροσβεστικός Σταθμός 1,1303
+stops,stop_desc,el,ΠυροσΣταθμ,1303
+stops,stop_name,el,Πυροσβεστικός Σταθμός 2,1352
+stops,stop_desc,el,ΠυροσΣταθμ,1352
+stops,stop_name,el,Επαρχ. Δικαστήριο Πάφου 2,1910
+stops,stop_desc,el,ΕπαΔικΠαφ,1910
+stops,stop_name,el,Επαρχ. Δικαστήριο Πάφου 1,1975
+stops,stop_desc,el,ΕπαΔικΠαφ,1975
+stops,stop_name,el,Στρατηγού Αλεξ. Παπάγου - Ευζώνων,2004
+stops,stop_desc,el,ΣτΑλΠα-Ευ,2004
+stops,stop_name,el,Ολυμπιακό Κολυμβητήριο 1,2751
+stops,stop_desc,el,ΟλυμπΚολυμ,2751
+stops,stop_name,el,Λεωφ. Λουκή Ακρίτα - Υπουργείο Γεωργίας 1,2753
+stops,stop_desc,el,ΛΑκ-ΥπΓε,2753
+stops,stop_name,el,Λεωφ. Λουκή Ακρίτα - Υπουργείο Γεωργίας 2,2754
+stops,stop_desc,el,ΛΑκ-ΥπΓε,2754
+stops,stop_name,el,Χίλωνος - Μιχαήλ Παρίδη,2788
+stops,stop_desc,el,Χι-ΜιΠα,2788
+stops,stop_name,el,Λεωφ. Δημοσθένη Σεβέρη - Υπουργείο Εσωτερικών,2839
+stops,stop_desc,el,ΔηΣε-ΥπΕσ,2839
+stops,stop_name,el,Υπουργείο Εξωτερικών,2844
+stops,stop_desc,el,ΥπουρΕξωτε,2844
+stops,stop_name,el,Λεωφ. Δημοσθένη Σεβέρη - Απελλή,2845
+stops,stop_desc,el,ΛεΔηΣε-Απ,2845
+stops,stop_name,el,Πανεπιστήμιο Κύπρου - Ωκεανογραφικό Κέντρο,3110
+stops,stop_desc,el,ΠαΚυ-ΩκΚε,3110
+stops,stop_name,el,Πανεπιστήμιο Κύπρου - Σύγκλητος,3111
+stops,stop_desc,el,ΠαΚυ-Συ,3111
+stops,stop_name,el,Πανεπιστήμιο Κύπρου -Βόρεια Είσοδος,3156
+stops,stop_desc,el,ΠαΚυ-ΒΕι,3156
+stops,stop_name,el,Αθαλάσσης - Στρατόπεδο,3330
+stops,stop_desc,el,Αθα-Στρ,3330
+stops,stop_name,el,Νέο Λιμάνι - Αίθουσα,3906
+stops,stop_desc,el,ΝεΛι-Αι,3906
+stops,stop_name,el,Λεωφ.Ομόνοιας - Οπτικού Νικολαΐδη,3907
+stops,stop_desc,el,Λε-ΟπΝι,3907
+stops,stop_name,el,Φραγκλίνου Ρούσβελτ - Κοινωνικές Ασφαλίσεις,3910
+stops,stop_desc,el,ΦρΡο-ΚοΑσ,3910
+stops,stop_name,el,Τζελάλ Μπαγιάρ - Εκκλησία Αγίου Αντωνίου 2,3913
+stops,stop_desc,el,ΤζΜπ-ΕκΑΑν,3913
+stops,stop_name,el,Σπύρου Αραούζου - Εκκλησία Αγίας Νάπας,3916
+stops,stop_desc,el,ΣπΑρ-ΕκΑΝ,3916
+stops,stop_name,el,28 Οκτωβρίου - Σωτήρη Μιχαηλίδη,3919
+stops,stop_desc,el,28Οκ-ΣωΜι,3919
+stops,stop_name,el,28 Οκτωβρίου - Debenhams 2,3922
+stops,stop_desc,el,28Οκ-De,3922
+stops,stop_name,el,Βασιλέως Γεωργίου Α´ - Αμπελακίων,3928
+stops,stop_desc,el,ΒαΓεΑ-Αμ,3928
+stops,stop_name,el,Λεωφ. Αμαθούντος - Ξενοδοχείο Hawaii,3944
+stops,stop_desc,el,ΛεΑμ-ΞεHa,3944
+stops,stop_name,el,Παράδρομος Αμαθούντος - Ξενοδοχείο Grand Resort,3949
+stops,stop_desc,el,ΠαΑμ-ΞεGRe,3949
+stops,stop_name,el,Βασιλέως Γεωργίου Α´ - Αμερικάνας,3963
+stops,stop_desc,el,ΒαΓεΑ-Αμ,3963
+stops,stop_name,el,28 Οκτωβρίου - Debenhams 1,3968
+stops,stop_desc,el,28Οκ-De,3968
+stops,stop_name,el,28 Οκτωβρίου - Ζωολογικός Κήπος,3971
+stops,stop_desc,el,28Οκ-ΖωΚη,3971
+stops,stop_name,el,Σπύρου Αραούζου - Χώρος Στάθμευσης Μόλου,3974
+stops,stop_desc,el,ΣπΑρ-ΧΣτΜ,3974
+stops,stop_name,el,Τζελάλ Μπαγιάρ - Εκκλησία Αγίου Αντωνίου 1,3975
+stops,stop_desc,el,ΤζΜπ-ΕκΑΑν,3975
+stops,stop_name,el,Φραγκλίνου Ρούσβελτ - Συνεργατισμού,3978
+stops,stop_desc,el,ΦρΡο-Συ,3978
+stops,stop_name,el,Λεωφ. Ομόνοιας - Τσιφλικουδιών,3980
+stops,stop_desc,el,Λεω-Τσι,3980
+stops,stop_name,el,Επισκοπιάνα,4026
+stops,stop_desc,el,Επισκοπιαν,4026
+stops,stop_name,el,Εκκλησία Αγίου Γεωργίου Χαβούζας 1,4864
+stops,stop_desc,el,ΕκΑγΓεΧα,4864
+stops,stop_name,el,Εκκλησία Αγίου Γεωργίου Χαβούζας 2,4865
+stops,stop_desc,el,ΕκΑγΓεΧα,4865
+stops,stop_name,el,Αρχιεπ. Λεοντίου Α´ - Παλαιό Νοσοκομείο,5258
+stops,stop_desc,el,ΑρΛεΑ-ΠαΝο,5258
+stops,stop_name,el,Λεωφ. Αποστόλου Παύλου - Κυριάκου Νικολάου,5559
+stops,stop_desc,el,ΑπΠα-ΚυΝι,5559
+stops,stop_name,el,Λεωφ. Κρύου Νερού - Ξενοδοχείο Marina 2,5602
+stops,stop_desc,el,ΚΝ-ΞεMa,5602
+stops,stop_name,el,Λεωφ. Κρύου Νερού - Ξενοδοχείο Marina 1 ,5603
+stops,stop_desc,el,ΚΝ-ΞεMa,5603
+stops,stop_name,el,Πρωταρά - Παραλία Βρυσί,5622
+stops,stop_desc,el,Πρ-ΠαΒρ,5622
+stops,stop_name,el,Σταθμός Πλατείας Παραλιμνίου,5683
+stops,stop_desc,el,ΣταΠλατΑμμ,5683
+stops,stop_name,el,Μοναστήρι Αγίας Νάπας 1,5847
+stops,stop_desc,el,ΠλαΑγιΝαπ,5847
+stops,stop_name,el,Μοναστήρι Αγίας Νάπας 2,5848
+stops,stop_desc,el,ΠλαΑγιΝαπ,5848
+stops,stop_name,el,Λεωφ. Νησί - Καταλύμματα,5849
+stops,stop_desc,el,ΛεΝη-Κα,5849
+stops,stop_name,el,Λεωφ. Νησί - Γιούρι Γκαγκάριν,5850
+stops,stop_desc,el,ΛεΝη-ΓιΓκ,5850
+stops,stop_name,el,Λεωφ. Νησί - Ισαάκ και Σολωμού,5853
+stops,stop_desc,el,Ν-ΙκΣο,5853
+stops,stop_name,el,Λεωφ. Νησί - Βαθειάς Γωνιάς,5854
+stops,stop_desc,el,ΛεΝη-ΒαΓω,5854
+stops,stop_name,el,Λεωφ. Νησί - Ασπροβούνου,5856
+stops,stop_desc,el,ΛεΝη-Ασ,5856
+stops,stop_name,el,Παραλία Νήσι Μπέι 1,5858
+stops,stop_desc,el,ΠαρNisBay,5858
+stops,stop_name,el,Παραλία Νήσι Μπέι 2,5859
+stops,stop_desc,el,ΠαρNisBay,5859
+stops,stop_name,el,Παραλία Μακρόνησος 2,5862
+stops,stop_desc,el,ΠαραλΜακρο,5862
+stops,stop_name,el,Αγίας Θέκλας - Υδροπάρκο 1,5867
+stops,stop_desc,el,ΥδρΑγιΝαπ,5867
+stops,stop_name,el,Αγίας Θέκλας - Υδροπάρκο 2,5901
+stops,stop_desc,el,ΥδρΑγιΝαπ,5901
+stops,stop_name,el,Δήμητρας,6101
+stops,stop_desc,el,Δημητρας,6101
+stops,stop_name,el,Παλιό Νοσοκομείο,6102
+stops,stop_desc,el,ΠαλιοΝοσοκ,6102
+stops,stop_name,el,Φοινικούδες - Μαρίνα Λάρνακας,6104
+stops,stop_desc,el,Φο-ΜαΛα,6104
+stops,stop_name,el,Λεωφ. Νίκου και Δέσποινας Παττίχη - Αράχοβας,6167
+stops,stop_desc,el,ΝκΔεΠα-Αρ,6167
+stops,stop_name,el,Λεωφ. Νίκου και Δέσποινας Παττίχη - Καλύμνου,6171
+stops,stop_desc,el,ΝκΔεΠα-Κα,6171
+stops,stop_name,el,Δημοτική Βιβλιοθήκη 1,6172
+stops,stop_desc,el,ΔημοτΒιβλι,6172
+stops,stop_name,el,Λεωφ. Λεμεσού - Μακεδονίας 2,6178
+stops,stop_desc,el,ΛεΛε-Μα,6178
+stops,stop_name,el,Λεωφ. Λεμεσού - Μακεδονίας 1,6179
+stops,stop_desc,el,ΛεΛε-Μα,6179
+stops,stop_name,el,Λεωφ. Ακροπόλεως - Λεωφ. Αθηνών 2,6279
+stops,stop_desc,el,ΛεΑκ-ΛεΑθ,6279
+stops,stop_name,el,Λεωφ. Ακροπόλεως - Λεωφ. Αθηνών 1,6280
+stops,stop_desc,el,ΛεΑκ-ΛεΑθ,6280
+stops,stop_name,el,Λεωφ. Ακροπόλεως - Βιομηχ. Αραδίππου,6284
+stops,stop_desc,el,ΛεΑκ-ΒιΑρ,6284
+stops,stop_name,el,Λεωφ. Ελευθερίας - Λεωφ. Αρχιεπ. Μακαρίου Γ´,6285
+stops,stop_desc,el,Ελ-ΑρΜαΓ,6285
+stops,stop_name,el,Λεωφ. Ελευθερίας - Πετράκη Γιάλλουρου,6286
+stops,stop_desc,el,ΛεΕλ-ΠεΓι,6286
+stops,stop_name,el,Παγκύπριο Λύκειο,6345
+stops,stop_desc,el,ΠαγκυΛυκει,6345
+stops,stop_name,el,Λεωφ. Γ. Γρίβα Διγενή - Εκκλησία Αγ. Γεωργίου 1,6367
+stops,stop_desc,el,ΓΓΔι-ΕκΑΓε,6367
+stops,stop_name,el,Λεωφ. Νίκου και Δέσποινας Παττίχη - Ι. Κονδυλάκη,6370
+stops,stop_desc,el,ΝκΔεΠα-ΙΚο,6370
+stops,stop_name,el,Δημοτική Βιβλιοθήκη 2,6372
+stops,stop_desc,el,ΔημοτΒιβλι,6372
+stops,stop_name,el,Λεωφ. Γ. Γρίβα Διγενή - Εκκλησία Αγ. Γεωργίου 2,6393
+stops,stop_desc,el,ΓΓΔι-ΕκΑΓε,6393
+stops,stop_name,el,Ξενοδοχείο Princess 2,6417
+stops,stop_desc,el,ΞενοδPrinc,6417
+stops,stop_name,el,Πυροσβεστικός Σταθμός Ορόκλινης 1,6418
+stops,stop_desc,el,ΠυρΣταΟρο,6418
+stops,stop_name,el,Πυροσβεστικός Σταθμός Ορόκλινης 2,6427
+stops,stop_desc,el,ΠυρΣταΟρο,6427
+stops,stop_name,el,Ξενοδοχείο Princess 1,6429
+stops,stop_desc,el,ΞενοδPrinc,6429
+stops,stop_name,el,Λεωφ. Αρχιεπ. Μακαρίου Γ´ - Φιλιου Τσιγαριδη 2,6497
+stops,stop_desc,el,ΑρΜαΓ-ΦιΤσ,6497
+stops,stop_name,el,Λεωφ. Αμμοχώστου - Κατίνας Παξινού,6555
+stops,stop_desc,el,ΛεΑμ-ΚαΠα,6555
+stops,stop_name,el,Λεωφ. Αμμοχώστου - Θέτιδος,6556
+stops,stop_desc,el,ΛεΑμ-Θε,6556
+stops,stop_name,el,Τάσσου Παπαδόπουλου - Αριστοτέλη Βαλαωρίτη,6595
+stops,stop_desc,el,ΤαΠα-ΑρΒα,6595
+stops,stop_name,el,Λεωφ. Αρχιεπ. Μακαρίου Γ´ - Φιλιου Τσιγαριδη 1,6597
+stops,stop_desc,el,ΑρΜαΓ-ΦιΤσ,6597
+stops,stop_name,el,Τάσσου Παπαδόπουλου - Αντιόπης,6601
+stops,stop_desc,el,ΤαΠα-Αν,6601
+stops,stop_name,el,Λεωφ. Ακροπόλεως - Lordos - Sandy - Golden Bay,6656
+stops,stop_desc,el,Ακ-Lo-S-Go,6656
+stops,stop_name,el,Λεωφ. Ακροπόλεως - Ξενοδοχείο Lordos,6665
+stops,stop_desc,el,ΛεΑκ-ΞεLo,6665
+stops,stop_name,el,Λεωφ. Ελευθερίας - Λεωφ. Ελλάδος,6869
+stops,stop_desc,el,ΛεΕλ-ΛεΕλ,6869
+stops,stop_name,el,Σταθμός Λεωφορείων Αλάμπρας,7060
+stops,stop_desc,el,ΣταΛεωΑλα,7060
+stops,stop_name,el,Στάδιο Στέλιου Κυριακίδη,7073
+stops,stop_desc,el,ΣταΣτεΚυρ,7073
+stops,stop_name,el,Λεωφ. Δημοκρατίας - Ανδρέα Ευαγόρου,7074
+stops,stop_desc,el,ΛεΔη-ΑνΕυ,7074
+stops,stop_name,el,Λεωφ. Δημοκρατίας - Θηβών,7078
+stops,stop_desc,el,ΛεΔη-Θη,7078
+stops,stop_name,el,Λεωφ. Δημοκρατίας - Ανδρέα Θεοδοσίου,7090
+stops,stop_desc,el,ΛεΔη-ΑνΘε,7090
+stops,stop_name,el,Αρχιεπ. Λεοντίου Α´ - Intercity,7186
+stops,stop_desc,el,ΑρΛεΑ-In,7186
+stops,stop_name,el,Νεολιθικός Οικισμός Χοιροκοιτίας (ΟΑΣΙΣ) ,7194
+stops,stop_desc,el,ΝεοΟικΧοι2,7194
+stops,stop_name,el, Φυτωρίου - Ραδιοσταθμός,7336
+stops,stop_desc,el, Φυτ-ΡαδΣτ,7336
+stops,stop_name,el,ΑΗΚ Πάφου,7525
+stops,stop_desc,el,ΑΗΚΠαφου,7525
+stops,stop_name,el,Γενικό Νοσοκομείο Λευκωσίας - Intercity,7973
+stops,stop_desc,el,ΓεΝοΛευ-IN,7973
+stops,stop_name,el,Νέος Κεντρικός Σταθμός Αμμοχώστου,7994
+stops,stop_desc,el,ΝΚεΣταΑμμ,7994
+stops,stop_name,el,Δημαρχείο Παραλιμνίου,8010
+stops,stop_desc,el,ΔημαΠαρ,8010
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985367
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985368
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985369
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985370
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985371
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985372
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985373
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985374
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985375
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985376
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985377
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985378
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985379
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985380
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985381
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985382
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985383
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985384
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985385
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12985386
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985387
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12985388
+trips,trip_headsign,el,ΠΑΦΟΣ,12985389
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985390
+trips,trip_headsign,el,ΠΑΦΟΣ,12985391
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985392
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985393
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985394
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985395
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985396
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985397
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985398
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985399
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985400
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985401
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985402
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985403
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985404
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985405
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985406
+trips,trip_headsign,el,ΠΑΦΟΣ,12985407
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12985408
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985409
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985410
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985411
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985412
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985413
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985414
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985415
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985416
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985417
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985418
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985419
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985420
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985421
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985422
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985423
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985424
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985425
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985426
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985427
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985428
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985429
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985430
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985431
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985432
+trips,trip_headsign,el,ΠΑΦΟΣ,12985433
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985434
+trips,trip_headsign,el,ΠΑΦΟΣ,12985435
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985436
+trips,trip_headsign,el,ΠΑΦΟΣ,12985437
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985438
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985439
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985440
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985441
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985442
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985443
+trips,trip_headsign,el,ΠΑΦΟΣ,12985444
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985445
+trips,trip_headsign,el,ΠΑΦΟΣ,12985446
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985447
+trips,trip_headsign,el,ΠΑΦΟΣ,12985448
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985449
+trips,trip_headsign,el,ΠΑΦΟΣ,12985450
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985451
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985452
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985453
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985454
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985455
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985456
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985457
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985458
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985459
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985460
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985461
+trips,trip_headsign,el,ΠΑΦΟΣ,12985462
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985463
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985464
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985465
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985466
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985467
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985468
+trips,trip_headsign,el,ΠΑΦΟΣ,12985469
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985470
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985471
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985472
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985473
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985474
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985475
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985476
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985477
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985478
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985479
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985480
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985481
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985482
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985483
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985484
+trips,trip_headsign,el,ΠΑΦΟΣ,12985485
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985486
+trips,trip_headsign,el,ΤΕΠΑΚ-ΠΑΦΟΣ,12985487
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985488
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985489
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985490
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985491
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985492
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985493
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985494
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985495
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985496
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985497
+trips,trip_headsign,el,ΠΑΦΟΣ,12985498
+trips,trip_headsign,el,ΠΑΦΟΣ,12985499
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985500
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985501
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985502
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985503
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985504
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985505
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985506
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985507
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985508
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985509
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985510
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985511
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985512
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985513
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985514
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985515
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985516
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985517
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985518
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985519
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985520
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985521
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985522
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985523
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985524
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985525
+trips,trip_headsign,el,ΠΑΦΟΣ,12985526
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985527
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985528
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985529
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985530
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985531
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985532
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985533
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12985534
+trips,trip_headsign,el,ΠΑΦΟΣ,12985535
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985536
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985537
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985538
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985539
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985540
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985541
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985542
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985543
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985544
+trips,trip_headsign,el,ΠΑΦΟΣ,12985545
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985546
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985547
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12985548
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12985549
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985550
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985551
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985552
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985553
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985554
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985555
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985556
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985557
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985558
+trips,trip_headsign,el,ΠΑΦΟΣ,12985559
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12985560
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12985561
+trips,trip_headsign,el,ΑΗΚ-ΠΑΦΟΣ,12995975
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12995976
+trips,trip_headsign,el,Λ. ΑΚΡΙΤΑ (Λ/ΣΙΑ),12995977
+trips,trip_headsign,el,ΤΕΠΑΚ-ΠΑΦΟΣ,12995978
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12995979
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12995980
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12995981
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12995982
+trips,trip_headsign,el,Λ. ΑΚΡΙΤΑ (Λ/ΣΙΑ),12995983
+trips,trip_headsign,el,ΠΑΦΟΣ,12995984
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12995985
+trips,trip_headsign,el,ΠΑΦΟΣ,12995986
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12995987
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12995988
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12995989
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12995990
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12995991
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12995992
+trips,trip_headsign,el,ΤΕΠΑΚ-ΠΑΦΟΣ,12995993
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12995994
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12995995
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12995996
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12995997
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12995998
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12995999
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12996000
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996001
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996002
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996003
+trips,trip_headsign,el,ΠΑΦΟΣ,12996004
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996005
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996006
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996007
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996008
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996009
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996010
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996011
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996012
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996013
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996014
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996015
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996016
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996017
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996018
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996019
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996020
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996021
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996022
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996023
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996024
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996025
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ(ΑΓ. ΓΕΩ.),12996026
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996027
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996028
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996029
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996030
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996031
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996032
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996033
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996034
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996035
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996036
+trips,trip_headsign,el,ΠΑΦΟΣ,12996037
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996038
+trips,trip_headsign,el,ΠΑΦΟΣ,12996039
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996040
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996041
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996042
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996043
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996044
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996045
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996046
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996047
+trips,trip_headsign,el,ΠΑΦΟΣ,12996048
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996049
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996050
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996051
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996052
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996053
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996054
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996055
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996056
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996057
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996058
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996059
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996060
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996061
+trips,trip_headsign,el,ΠΑΦΟΣ,12996062
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996063
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996064
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996065
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996066
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996067
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996068
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996069
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996070
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996071
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996072
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996073
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996074
+trips,trip_headsign,el,ΤΕΠΑΚ-ΠΑΦΟΣ,12996075
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996076
+trips,trip_headsign,el,ΠΑΦΟΣ,12996077
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12996078
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996079
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996080
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996081
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996082
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996083
+trips,trip_headsign,el,ΤΕΠΑΚ-ΠΑΦΟΣ,12996084
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996085
+trips,trip_headsign,el,ΠΑΦΟΣ,12996086
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996087
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996088
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996089
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996090
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996091
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996092
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996093
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996094
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996095
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996096
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996097
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996098
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996099
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996100
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996101
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996102
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996103
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996104
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996105
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996106
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996107
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12996108
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996109
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12996110
+trips,trip_headsign,el,ΠΑΦΟΣ,12996111
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996112
+trips,trip_headsign,el,ΠΑΦΟΣ,12996113
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996114
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996115
+trips,trip_headsign,el,ΠΑΦΟΣ,12996116
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996117
+trips,trip_headsign,el,ΠΑΦΟΣ,12996118
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996119
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996120
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996121
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996122
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996123
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996124
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996125
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996126
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996127
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996128
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996129
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996130
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996131
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996132
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996133
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996134
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996135
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996136
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996137
+trips,trip_headsign,el,ΠΑΦΟΣ,12996138
+trips,trip_headsign,el,ΠΑΦΟΣ,12996139
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996140
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996141
+trips,trip_headsign,el,ΠΑΦΟΣ,12996142
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996143
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996144
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996145
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996146
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996147
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996148
+trips,trip_headsign,el,ΠΑΦΟΣ,12996149
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996150
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996151
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12996152
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996153
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996154
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996155
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996156
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996157
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996158
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996159
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996160
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996161
+trips,trip_headsign,el,ΠΑΦΟΣ,12996162
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996163
+trips,trip_headsign,el,ΠΑΦΟΣ,12996164
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996165
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996166
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996167
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996168
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996169
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996170
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996171
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996172
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996173
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996174
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996175
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996176
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996177
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996178
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996179
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996180
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996181
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996182
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996183
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996184
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996185
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996186
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996187
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996188
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996189
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996190
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996191
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996192
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996193
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996194
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996195
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996196
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996197
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996198
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996199
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996200
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996201
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996202
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996203
+trips,trip_headsign,el,ΠΑΦΟΣ,12996204
+trips,trip_headsign,el,ΠΑΦΟΣ,12996205
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996206
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996207
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996208
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996209
+trips,trip_headsign,el,ΠΑΦΟΣ,12996210
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996211
+trips,trip_headsign,el,ΠΑΦΟΣ,12996212
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996213
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996214
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996215
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996216
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996217
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996218
+trips,trip_headsign,el,ΠΑΦΟΣ,12996219
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996220
+trips,trip_headsign,el,ΠΑΦΟΣ,12996221
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996222
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996223
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996224
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996225
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996226
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996227
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996228
+trips,trip_headsign,el,ΠΑΦΟΣ,12996229
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996230
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996231
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996232
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,12996233
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996234
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,12996235
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,12996236
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,12996237
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,12996238
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319222
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319223
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319224
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319225
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319226
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319227
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319228
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319229
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319230
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319231
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319232
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319233
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319234
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,13319235
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319236
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,13319237
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319238
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319239
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319240
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319241
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319242
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319243
+trips,trip_headsign,el,ΠΑΦΟΣ,13319244
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319245
+trips,trip_headsign,el,ΠΑΦΟΣ,13319246
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319247
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319248
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319249
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319250
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319251
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319252
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319253
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319254
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319255
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319256
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319257
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319258
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319259
+trips,trip_headsign,el,ΠΑΦΟΣ,13319260
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,13319261
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319262
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319263
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319264
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319265
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319266
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319267
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319268
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319269
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319270
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319271
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319272
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319273
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319274
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319275
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319276
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319277
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319278
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319279
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319280
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319281
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319282
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319283
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319284
+trips,trip_headsign,el,ΠΑΦΟΣ,13319285
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319286
+trips,trip_headsign,el,ΠΑΦΟΣ,13319287
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319288
+trips,trip_headsign,el,ΠΑΦΟΣ,13319289
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319290
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319291
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319292
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319293
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319294
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319295
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319296
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319297
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319298
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319299
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319300
+trips,trip_headsign,el,ΠΑΦΟΣ,13319301
+trips,trip_headsign,el,ΠΑΦΟΣ,13319302
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319303
+trips,trip_headsign,el,ΠΑΦΟΣ,13319304
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319305
+trips,trip_headsign,el,ΠΑΦΟΣ,13319306
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319307
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319308
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319309
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319310
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319311
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319312
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319313
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319314
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319315
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319316
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319317
+trips,trip_headsign,el,ΠΑΦΟΣ,13319318
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319319
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319320
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319321
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319322
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319323
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319324
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319325
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319326
+trips,trip_headsign,el,ΠΑΦΟΣ,13319327
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319328
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319329
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319330
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319331
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319332
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319333
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319334
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319335
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319336
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319337
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319338
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319339
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319340
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319341
+trips,trip_headsign,el,ΠΑΦΟΣ,13319342
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319343
+trips,trip_headsign,el,ΤΕΠΑΚ-ΠΑΦΟΣ,13319344
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319345
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319346
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319347
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319348
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319349
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319350
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319351
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319352
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319353
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319354
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319355
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319356
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319357
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319358
+trips,trip_headsign,el,ΠΑΦΟΣ,13319359
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319360
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319361
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319362
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319363
+trips,trip_headsign,el,ΠΑΦΟΣ,13319364
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319365
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319366
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319367
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319368
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319369
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319370
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319371
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319372
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319373
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319374
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319375
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319376
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319377
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319378
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319379
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319380
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319381
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319382
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319383
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319384
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319385
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319386
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319387
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319388
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319389
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319390
+trips,trip_headsign,el,ΠΑΦΟΣ,13319391
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319392
+trips,trip_headsign,el,AΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319393
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319394
+trips,trip_headsign,el,ΠΑΡΑΛΙΜΝΙ,13319395
+trips,trip_headsign,el,ΠΑΦΟΣ,13319396
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319397
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319398
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319399
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319400
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319401
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319402
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319403
+trips,trip_headsign,el,ΠΑΦΟΣ,13319404
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319405
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319406
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319407
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319408
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319409
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319410
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319411
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319412
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319413
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319414
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319415
+trips,trip_headsign,el,ΠΑΦΟΣ,13319416
+trips,trip_headsign,el,ΛΕΜΕΣΟΣ,13319417
+trips,trip_headsign,el,ΛΑΡΝΑΚΑ,13319418
+trips,trip_headsign,el,ΑΓ.ΝΑΠΑ-ΠΑΡΑΛΙΜΝΙ,13319419
+trips,trip_headsign,el,ΛΕΥΚΩΣΙΑ,13319420

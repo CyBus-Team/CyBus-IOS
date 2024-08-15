@@ -1,0 +1,246 @@
+﻿route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_color,route_text_color
+10030011,6,3,Agios Athanasios - Mesa Geitonia - Leontiou EMEL Station,,3,0000FF,FFFFFF
+10030012,6,3,Leontiou EMEL Station - Mesa Geitonia - Agios Athanasios,,3,0000FF,FFFFFF
+10040011,6,4,Road & Traffic Authority - Leontiou EMEL Station,,3,FF0080,FFFFFF
+10040012,6,4,Leontiou EMEL Station - Road & Traffic Authority,,3,FF0080,FFFFFF
+10040021,6,4,Technical School C (Hotel School) - Leontiou EMEL St.,,3,FF0080,FFFFFF
+10040022,6,4,Leontiou EMEL St. - Technical School C (Hotel School),,3,FF0080,FFFFFF
+10050021,6,5,General Hospital - Agios Ioannis - Leontiou EMEL Station,,3,008000,FFFFFF
+10050022,6,5,Leontiou EMEL Station - Agios Ioannis - General Hospital,,3,008000,FFFFFF
+10070011,6,7,My Mall- Ypsonas Industrial Area - Leontiou EMEL Station,,3,804040,FFFFFF
+10070012,6,7,Leontiou EMEL Station - Ypsonas Industrial Area - My Mall,,3,804040,FFFFFF
+10090011,6,9,Palodeia - Agia Fyla - Leontiou EMEL Station,,3,0000A0,FFFFFF
+10090012,6,9,Leontiou EMEL Station - Agia Fyla - Palodeia,,3,0000A0,FFFFFF
+10090022,6,9,Leontiou EMEL Station - Agia Fyla - Agia Fyla Lyceum - Palodeia,,3,0000A0,FFFFFF
+10110011,6,11,Ag. Athanasios Housing Finance Agency - Enaerios - Ag. Athanasios Industrial Area - Leontiou EMEL Station,,3,66FFFF,000000
+10110012,6,11,Leontiou EMEL Station - Ag. Athanasios Industrial Area - Enaerios - Ag. Athanasios Housing Finance Agency,,3,66FFFF,000000
+10120011,6,12,Moutagiaka - Leontiou EMEL Station,,3,33FF33,000000
+10120012,6,12,Leontiou EMEL Station - Moutagiaka,,3,33FF33,000000
+10130011,6,13,Germasogia - Leontiou EMEL Station,,3,80FF00,000000
+10130012,6,13,Leontiou EMEL Station - Germasogia,,3,80FF00,000000
+10140011,6,14,Estias (Agios Athanasios) - Leontiou EMEL Station,,3,FF0000,FFFFFF
+10140012,6,14,Leontiou EMEL Station - Estias (Agios Athanasios),,3,FF0000,FFFFFF
+10150011,6,15,General Hospital - Makariou - Leontiou EMEL Station,,3,CC6600,000000
+10150012,6,15, Leontiou EMEL Station - Makariou - General Hospital,,3,CC6600,000000
+10160021,6,16,Kourion Beach - Agios Ermogenis - Episkopi - Episkopiana Hotel - Leontiou EMEL Station,,3,00FFFF,000000
+10160022,6,16,Leontiou EMEL Station - Episkopiana Hotel - Episkopi - Agios Ermogenis - Kourion Beach,,3,00FFFF,000000
+10170011,6,17,Kolossi (Castle) - Leontiou EMEL Station,,3,FFFF00,000000
+10170012,6,17,Leontiou EMEL Station - Kolossi (Castle),,3,FFFF00,000000
+10180021,6,18,Kourion Beach - Agios Ermogenis - Ipsonas - Agios Silas - General Hospital - My Mall,,3,6699FF,FFFFFF
+10180022,6,18,My Mall - General Hospital - Agios Silas - Ypsonas - Agios Ermogenis - Kourion Beach,,3,6699FF,FFFFFF
+10190011,6,19,Ellados (Trachoni) - Leontiou EMEL Station,,3,33CC33,000000
+10190012,6,19,Leontiou EMEL Station - Ellados (Trachoni),,3,33CC33,000000
+10200011,6,20,Taki Christodoulou - My Mall - Agios Nikolaos Fire Brigate,,3,800080,FFFFFF
+10200012,6,20,My Mall - Taki Christodoulou,,3,800080,FFFFFF
+10210011,6,21,My Mall - Makariou Avenue - Kolonakiou,,3,FF0000,FFFFFF
+10210012,6,21,Kolonakiou - Makariou Avenue - My Mall,,3,FF0000,FFFFFF
+10230011,6,23,Ypsonas High School - Ypsonas Centre,,3,FF8080,000000
+10230012,6,23,Ypsonas Centre - Ypsonas High School,,3,FF8080,000000
+10230021,6,23,Ypsonas Municipality - Ypsonas,,3,FF8080,000000
+10240011,6,24,Akrotiri - Asomatos -Trachoni - Leontiou EMEL Station,,3,80FF80,000000
+10240012,6,24,Leontiou EMEL Station - Trachoni - Akrotiri,,3,80FF80,000000
+10250011,6,25,Agios Tychonas - Leontiou EMEL Station,,3,FF33CC,FFFFFF
+10250012,6,25,Leontiou EMEL Station - Agios Tychonas,,3,FF33CC,FFFFFF
+10250021,6,25,Agios Tychonas - Enaerios - Leontiou EMEL Station,,3,FF33CC,FFFFFF
+10250022,6,25,Leontiou EMEL Station - Enaerios - Agios Tychonas,,3,FF33CC,FFFFFF
+10260011,6,26,Agios Tychonas - Mouttagiaka - Leontiou EMEL Station,,3,FF80C0,000000
+10260012,6,26,Leontiou EMEL Station - Mouttagiaka - Agios Tychonas,,3,FF80C0,000000
+10260021,6,26,Agios Tychonas - Armenochori - Mouttagiaka - Leontiou EMEL Station,,3,FF80C0,000000
+10260022,6,26,Leontiou EMEL Station - Mouttagiaka - Armenochori - Agios Tychonas,,3,FF80C0,000000
+10270011,6,27,Erimi - Kolossi - Leontiou EMEL Station,,3,804040,FFFFFF
+10270012,6,27,Leontiou EMEL Station - Kolossi - Erimi,,3,804040,FFFFFF
+10270021,6,27,Erimi - Kolossi - Ypsonas - Leontiou EMEL Station,,3,804040,FFFFFF
+10270022,6,27,Leontiou EMEL Station - Ypsonas - Kolossi - Erimi,,3,804040,FFFFFF
+10300011,6,30,My Mall - New Port - Parklane Ηotel,,3,808000,FFFFFF
+10300012,6,30,Parklane Hotel - New Port - My Mall,,3,808000,FFFFFF
+10300021,6,30,Municipal Art Gallery - Parklane Hotel,,3,808000,FFFFFF
+10300031,6,30,Old Port - Parklane Ηotel,,3,808000,FFFFFF
+10300042,6,30,Parklane Hotel - New Port - Casino - My Mall,,3,808000,FFFFFF
+10320011,6,32,City Centre,,3,66CCFF,FFFFFF
+10330011,6,33,Limassol Marina - My Mall - Waterpark - Kolossi (Castle) - Kourion Beach - Episkopi (UK Sov. Bases),,3,000000,FFFFFF
+10330012,6,33,Episkopi (UK Sov. Bases) - Kourion Beach - Kolossi (Castle) - Waterpark - My Mall - Limassol Marina,,3,000000,FFFFFF
+10350011,6,35,New Port - Old Port,,3,004080,FFFFFF
+10350012,6,35,Old Port - New Port,,3,004080,FFFFFF
+10400011,6,40,Omodos - Pachna - Ag. Amvrosios - Kantou - Lemesos,,3,804040,FFFFFF
+10400012,6,40,Lemesos - Kantou - Ag. Amvrosios - Pachna - Omodos,,3,804040,FFFFFF
+10400021,6,40,Omodos- Pachna- Ag. Amvrosios- Kantou- Ypsonas- Lemesos,,3,804040,FFFFFF
+10400022,6,40,Lemesos- Ypsonas- Kantou- Ag. Amvrosios- Pachna- Omodos,,3,804040,FFFFFF
+10400031,6,40,Omodos-Pachna-Ag. Amvrosios-Kantou-New Hospital-Lemesos,,3,804040,FFFFFF
+10400032,6,40,Lemesos-New Hospital-Kantou-Ag. Amvrosios-Pachna-Omodos,,3,804040,FFFFFF
+10500011,6,50,Agros - Agios Ioannis - Kalo Chorio - Lemesos,,3,600951,FFFFFF
+10500012,6,50,Lemesos - Kalo Chorio - Agios Ioannis - Agros,,3,600951,FFFFFF
+10600011,6,60,Pelendri - Saittas - Lemesos,,3,00C55E,000000
+10600012,6,60,Lemesos - Saittas - Pelendri,,3,00C55E,000000
+10600021,6,60,Pelendri - Saittas - Ypsonas Ind. Area - Lemesos,,3,00C55E,000000
+10600022,6,60,Lemesos - Ypsonas Ind. Area - Saittas - Pelendri,,3,00C55E,000000
+10600031,6,60,Pelendri - Saittas - Doros - Lemesos,,3,00C55E,000000
+10600041,6,60,Pelendri - Polemidia - Ypsonas Industrial Area - Fragklinou Rousvelt - Leontiou EMEL Station,,3,00C55E,000000
+10600042,6,60,Leontiou EMEL Station - Fragklinou Rousvelt - Ypsonas Industrial Area - Polemidia - Pelendri,,3,00C55E,000000
+10610011,6,61,Saittas - Lemesos,,3,42F518,000000
+10610012,6,61,Lemesos - Saittas,,3,42F518,000000
+10620011,6,62,Platres - Lemesos,,3,808040,000000
+10620012,6,62,Lemesos - Platres,,3,808040,000000
+10640011,6,64,Botanic Garden - Troodos - Saittas - Lemesos,,3,66BDF3,FFFFFF
+10640012,6,64,Lemesos - Saittas - Troodos - Botanic Garden,,3,66BDF3,FFFFFF
+10650011,6,65,Agios Mamas - Limnati - Korfi - Apesia - Lemesos,,3,4C610A,FFFFFF
+10650012,6,65,Lemesos - Apesia - Korfi - Limnati - Agios Mamas,,3,4C610A,FFFFFF
+10650021,6,65,Agios Mamas - Limnati - Korfi - Apesia - Agia Fyla High School - Lemesos,,3,4C610A,FFFFFF
+10650022,6,65,Lemesos - Agia Fyla High School - Apesia - Korfi - Limnati - Agios Mamas,,3,4C610A,FFFFFF
+10660011,6,66,Saittas - Pelendri - Agros - Lefkosia,,3,1B9403,FFFFFF
+10660012,6,66,Lefkosia - Agros - Pelendri - Saittas,,3,1B9403,FFFFFF
+10700011,6,70,Pissouri - Avdimou - Lemesos,,3,D6AA80,000000
+10700012,6,70,Lemesos - Avdimou - Pissouri,,3,D6AA80,000000
+10710011,6,71,Prastio - Avdimou - Lemesos,,3,004080,FFFFFF
+10710012,6,71,Lemesos - Avdimou - Prastio,,3,004080,FFFFFF
+10800011,6,80,Arakapas - Eptagoneia - Kellaki - Parekklisia - Kolonakiou - Lemesos,,3,E97113,000000
+10800012,6,80,Lemesos - Kolonakiou - Parekklisia - Kellaki - Eptagoneia - Arakapas,,3,E97113,000000
+10900011,6,90,Sanida - Asgata - Moni - Pyrgos - Lemesos,,3,65350B,FFFFFF
+10900012,6,90,Lemesos - Pyrgos - Moni - Asgata - Sanida,,3,65350B,FFFFFF
+10910011,6,91,Monagrouli - Moni - Lemesos,,3,FF0080,FFFFFF
+10910012,6,91,Lemesos - Moni - Monagrouli,,3,FF0080,FFFFFF
+10950011,6,95,Kalavasos - Zygi - Pentakomo - Lemesos,,3,004080,FFFFFF
+10950012,6,95,Lemesos - Pentakomo - Zygi - Kalavasos,,3,004080,FFFFFF
+10960011,6,96,Zygi - Lemesos,,3,8080FF,FFFFFF
+10960012,6,96,Lemesos - Zygi,,3,8080FF,FFFFFF
+15030011,6,9A,Palodeia - Kallithea - Agia Fyla - Leontiou EMEL Station,,3,00CC99,000000
+15030012,6,9A,Leontiou EMEL Station - Agia Fyla - Kallithea - Palodeia,,3,00CC99,000000
+15040011,6,13A,Akrounta - Germasogia - Leontiou EMEL Station,,3,806232,000000
+15070011,6,19A,Akrotiri - Asomatos -Trachoni - Leontiou EMEL Station,,3,1C8600,FFFFFF
+15070012,6,19A,Leontiou EMEL Station - Trachoni - Akrotiri,,3,1C8600,FFFFFF
+15080011,6,25A,Armenochori - Agios Tychonas - Leontiou EMEL Station,,3,2B6B00,FFFFFF
+15080012,6,25A,Leontiou EMEL Station - Agios Tychonas - Armenochori,,3,2B6B00,FFFFFF
+15080021,6,25A,Armenochori - Linopetra High School & Lyceum - Leontiou EMEL Station,,3,2B6B00,FFFFFF
+15080022,6,25A,Armenochori - Linopetra High School & Lyceum - Leontiou EMEL Station,,3,2B6B00,FFFFFF
+15080031,6,25A,Armenochori - Agios Tychonas - Enaerios - Leontiou EMEL Station,,3,2B6B00,FFFFFF
+15080032,6,25A,Leontiou EMEL Station - Enaerios - Agios Tychonas - Armenochori,,3,2B6B00,FFFFFF
+15100011,6,30N,My Mall - New Port - Parklane Hotel,,3,C4E112,000000
+15100012,6,30N,Parklane Hotel - New Port - My Mall,,3,C4E112,000000
+15100022,6,30N,Parklane Hotel - New Port - Casino - My Mall,,3,C4E112,000000
+15110011,6,90A,Lemesos - Moni - Pentakomo,,3,0080FF,FFFFFF
+15110012,6,90A,Pentakomo - Moni - Lemesos,,3,0080FF,FFFFFF
+15110021,6,90A,Pentakomo - Moni - Lemesos,,3,0080FF,FFFFFF
+15110022,6,90A,Lemesos - Moni - Pentakomo,,3,0080FF,FFFFFF
+15120011,6,95A,Lemesos - Governors Beach,,3,004080,FFFFFF
+15120012,6,95A,Governors Beach - Lemesos,,3,004080,FFFFFF
+15140011,6,13B,Foinikaria - Germasogia - Leontiou EMEL Station,,3,004080,FFFFFF
+15140012,6,13B,Leontiou EMEL Station - Germasogia - Foinikaria,,3,004080,FFFFFF
+15150011,6,13E,Foinikaria - Akrounta - Germasogia - Leontiou EMEL Station,,3,408080,FFFFFF
+15150012,6,13E,Leontiou EMEL Station - Germasogia - Foinikaria - Akrounta,,3,408080,FFFFFF
+15220011,6,14B,Mathikoloni - Agios Athanasios - Leontiou EMEL Station,,3,FF8040,000000
+15220012,6,14B,Leontiou EMEL Station - Agios Athanasios - Mathikoloni,,3,FF8040,000000
+15240011,6,32B,Apollonia student halls - Old Market - TEPAK,,3,004080,FFFFFF
+15240012,6,32B,Old Market - TEPAK - Apollonia student halls,,3,004080,FFFFFF
+15250011,6,40A,Agios Nikolaos - Arsos - Malia,,3,FF8040,000000
+15250012,6,40A,Malia - Arsos - Agios Nikolaos,,3,FF8040,000000
+15250021,6,40A,Agios Nikolaos - Arsos - Malia - Vasa - Malia,,3,FF8040,000000
+15250022,6,40A,Malia - Vasa - Malia - Arsos - Agios Nikolaos,,3,FF8040,000000
+15260011,6,40B,Dora - Malia,,3,0080C0,FFFFFF
+15260012,6,40B,Malia - Dora,,3,0080C0,FFFFFF
+15260021,6,40B,Dora - Malia - Potamiou - Malia,,3,0080C0,FFFFFF
+15260022,6,40B,Malia - Potamiou - Malia - Dora ,,3,0080C0,FFFFFF
+15270011,6,40E,Potamiou - Vasa,,3,FF80C0,000000
+15270012,6,40E,Vasa - Potamiou,,3,FF80C0,000000
+15280011,6,40H,Lofou - Agios Therapon,,3,FF80FF,000000
+15280012,6,40H,Agios Therapon - Lofou,,3,FF80FF,000000
+15280021,6,40H,Lofou - Agios Therapon - Souni - Kantou,,3,FF80FF,000000
+15280022,6,40H,Kantou - Souni - Agios Therapon - Lofou ,,3,FF80FF,000000
+15290011,6,40K,Zanakia - Souni - Sotira (Circular),,3,008080,FFFFFF
+15300011,6,40M,Vouni - Agios Amvrosios (Circular),,3,FF8000,000000
+15300021,6,40M,Vouni -  Agios Amvrosios - Zanakia - Sotira - Kantou,,3,FF8000,000000
+15300022,6,40M,Kantou - Sotira - Zanakia -  Agios Amvrosios - Vouni,,3,FF8000,000000
+15310011,6,40P,Kyvides - Pachna Health Centre,,3,000000,FFFFFF
+15310012,6,40P,Pachna Health Centre - Kyvides ,,3,000000,FFFFFF
+15320011,6,50A,Kato Milos - Agios Ioannis - Agios Theodoros - Papoutsa,,3,FFFF80,000000
+15320012,6,50A,Papoutsa - Agios Theodoros - Agios Ioannis - Kato Milos,,3,FFFF80,000000
+15330011,6,50B,Kyperounta - Dymes - Potamitissa - Kato Mylos,,3,408080,FFFFFF
+15330012,6,50B,Kato Mylos - Potamitissa - Dymes - Kyperounta,,3,408080,FFFFFF
+15340011,6,50E,Kato Mylos - Agios Ioannis - Agros - Agridia - Kyperounta Hospital,,3,FF0080,FFFFFF
+15340012,6,50E,Kyperounta Hospital - Agridia - Agros - Agios Ioannis - Kato Mylos,,3,FF0080,FFFFFF
+15350011,6,50H,Agios Theodoros - Zoopigi - Kalo Chorio,,3,8080FF,FFFFFF
+15350012,6,50H,Kalo Chorio - Zoopigi - Agios Theodoros ,,3,8080FF,FFFFFF
+15350021,6,50H,Agios Theodoros - Zoopigi - Kalo Chorio,,3,8080FF,FFFFFF
+15350022,6,50H,Kalo Chorio - Zoopigi,,3,8080FF,FFFFFF
+15360011,6,50K,Agios Konstantinos - Agios Pavlos - Louvaras - Kalo Chorio,,3,804040,FFFFFF
+15360012,6,50K,Kalo Chorio - Louvaras - Ag. Pavlos - Ag. Konstantinos,,3,804040,FFFFFF
+15360022,6,50K,Kalo Chorio - Louvaras - Kalo Chorio - Ag. Pavlos - Ag. Konstantinos,,3,804040,FFFFFF
+15370011,6,50M,Apsiou - Gerasa,,3,808040,000000
+15370012,6,50M,Gerasa - Apsiou ,,3,808040,000000
+15380011,6,50P,Fasoula - Spitali - Paramytha,,3,FF0000,FFFFFF
+15380012,6,50P,Paramytha - Spitali - Fasoula,,3,FF0000,FFFFFF
+15390011,6,50T,Agridia - Kyperounta,,3,00FFFF,000000
+15390012,6,50T,Kyperounta - Agridia,,3,00FFFF,000000
+15400011,6,60A,Pelendri - Saittas,,3,0080C0,FFFFFF
+15400012,6,60A,Saittas - Pelendri,,3,0080C0,FFFFFF
+15410011,6,60B,Kouka - Silikou - Ag. Georgios - Monagri - Doros - Distrato Doros-Laneia,,3,FF80FF,000000
+15410012,6,60B,Doros - Silikou - Kouka,,3,FF80FF,000000
+15420011,6,60E,Koilani - Pera Pedi - Moniatis - Saittas,,3,008040,FFFFFF
+15420012,6,60E,Saittas - Moniatis - Pera Pedi - Koilani,,3,008040,FFFFFF
+15430011,6,60H,Potamitissa - Pelendri - Fylagra - Kyperounta Hospital,,3,0000A0,FFFFFF
+15430012,6,60H,Kyperounta Hospital - Fylagra - Pelendri - Potamitissa,,3,0000A0,FFFFFF
+15440011,6,60K,Chandria - Kyperounta - Saittas,,3,FF8000,000000
+15440012,6,60K,Saittas - Kyperounta - Chandria,,3,FF8000,000000
+15460011,6,60P,Saittas - Moniatis - Pera Pedi - Koilani - Mandria - Kato Platres - Pano Platres - Foini,,3,FF0000,FFFFFF
+15460012,6,60P,Foini - Pano Platres - Kato Platres - Mandria - Koilani - Pera Pedi - Moniatis - Saittas,,3,FF0000,FFFFFF
+15470011,6,62A,Kaminaria - Treis Elies - Agios Dimitrios,,3,804000,FFFFFF
+15470012,6,62A,Agios Dimitrios - Treis Elies - Kaminaria,,3,804000,FFFFFF
+15480011,6,62B,Prodromos - Lemythou - Foini - Pano Platres - Mandria - Saittas,,3,004040,FFFFFF
+15480012,6,62B,Saittas - Mandria - Pano Platres - Foini - Lemythou - Prodromos,,3,004040,FFFFFF
+15490011,6,62E,Prodromos - Lemythou - Saittas,,3,00FF40,000000
+15490012,6,62E,Saittas - Lemythou - Prodromos,,3,00FF40,000000
+15500011,6,62H,Foini - Platres - Mandria - Pera Pedi - Moniatis - Saittas - Amiantos - Kyperounta Hospital,,3,8000FF,FFFFFF
+15500012,6,62H,Kyperounta Hospital - Amiantos - Saittas - Moniatis - Pera Pedi - Mandria - Platres - Foini,,3,8000FF,FFFFFF
+15510011,6,62K,Kaminaria - Treis Elies - Ag. Dimitrios - Paliomylos - Lemythou - Prodromos - Troodos - Kyperounta Hospital,,3,008080,FFFFFF
+15510012,6,62K,Kyperounta Hospital - Troodos - Prodromos - Lemythou - Paliomylos - Ag. Dimitrios - Treis Elies - Kaminaria,,3,008080,FFFFFF
+15520011,6,62M,Prodromos - Lemythou - Kaminaria - Treis Elies - Agios Dimitrios - Saittas,,3,FF8000,000000
+15520012,6,62M,Saittas - Agios Dimitrios - Treis Elies - Kaminaria - Lemythou - Prodromos,,3,FF8000,000000
+15530011,6,62P,Prodromos - Lemythou - Distrato Ag. Dimitriou - Kaminaria,,3,800000,FFFFFF
+15530012,6,62P,Kaminaria - Distrato Ag. Dimitriou - Lemythou - Prodromos,,3,800000,FFFFFF
+15540011,6,62T,Platres - Saittas,,3,FFFF80,000000
+15540012,6,62T,Saittas - Platres,,3,FFFF80,000000
+15550011,6,62X,Distrato Ag. Dimitriou - Lemythou - Prodromos,,3,800040,FFFFFF
+15550012,6,62X,Prodromos - Lemythou - Distrato Ag. Dimitriou,,3,800040,FFFFFF
+15560011,6,62Y,Saittas - Platania,,3,C0C0C0,FFFFFF
+15560012,6,62Y,Platania - Saittas,,3,C0C0C0,FFFFFF
+15580011,6,63A,Amiantos - Saittas,,3,004040,FFFFFF
+15580012,6,63A,Saittas - Amiantos,,3,004040,FFFFFF
+15590011,6,64A,Saittas - Platres - Troodos,,3,0080FF,FFFFFF
+15590012,6,64A,Troodos - Platres - Saittas,,3,0080FF,FFFFFF
+15600011,6,66A,Dymes - Potamitissa,,3,808040,000000
+15600012,6,66A,Potamitissa - Dymes,,3,808040,000000
+15610011,6,70A,Avdimou - Anogyra,,3,008000,FFFFFF
+15610012,6,70A,Anogyra - Avdimou,,3,008000,FFFFFF
+15620011,6,70B,Pissouri - Avdimou,,3,400040,FFFFFF
+15620012,6,70B,Avdimou - Pissouri,,3,400040,FFFFFF
+15630011,6,70E,Alektora - Agios Thomas - Platanistia - Avdimou,,3,80FF00,000000
+15630012,6,70E,Avdimou - Platanistia - Agios Thomas - Alektora,,3,80FF00,000000
+15640011,6,70H,Pissouri - Cyta - Columbia,,3,8080FF,FFFFFF
+15640012,6,70H,Columbia - Cyta - Pissouri,,3,8080FF,FFFFFF
+15650011,6,70K,Avdimou - Petra tou Romiou,,3,800080,FFFFFF
+15650012,6,70K,Petra tou Romiou - Avdimou,,3,800080,FFFFFF
+15660011,6,70M,Avdimou - Pachna Health Centre,,3,FF0000,FFFFFF
+15660012,6,70M,Pachna Health Centre - Avdimou,,3,FF0000,FFFFFF
+15670011,6,80A,Profitis Ilias - Sykopetra - Arakapas,,3,0080C0,FFFFFF
+15670012,6,80A,Arakapas - Sykopetra - Profitis Ilias,,3,0080C0,FFFFFF
+15680011,6,80B,Akapnou - Eptagoneia,,3,00FFFF,000000
+15680012,6,80B,Eptagoneia - Akapnou,,3,00FFFF,000000
+15690011,6,80E,Melini - Eptagoneia,,3,808080,FFFFFF
+15690012,6,80E,Eptagoneia - Melini,,3,808080,FFFFFF
+15700011,6,80H,Prastio - Panagia Glossa - Kellaki,,3,FF8080,000000
+15700012,6,80H,Kellaki - Panagia Glossa - Prastio,,3,FF8080,000000
+15710011,6,80K,Vikla - Klonari - Kellaki,,3,808080,FFFFFF
+15710012,6,80K,Kellaki - Klonari - Vikla,,3,808080,FFFFFF
+15720011,6,90B,Pentakomo - Moni,,3,808000,FFFFFF
+15720012,6,90B,Moni - Pentakomo,,3,808000,FFFFFF
+15740011,6,62AA,Prodromos - Lemythou - Palaiomylos - Foini - Kato Platres,,3,FF8000,000000
+15740012,6,62AA,Kato Platres - Foini - Palaiomylos - Lemythou - Prodromos,,3,FF8000,000000
+15750011,6,80M,Dierona - Arakapas,,3,000000,FFFFFF
+15750012,6,80M,Arakapas - Dierona,,3,000000,FFFFFF
+15760011,6,5B,General Hospital - Pylones - Agios Ioannis - Leontiou EMEL Station,,3,008040,FFFFFF
+15760012,6,5B,Leontiou EMEL Station - Agios Ioannis - Pylones - General Hospital,,3,008040,FFFFFF
+15760021,6,5B,General Hospital - Pylones - Elaion Park - Agios Ioannis - Leontiou EMEL Station,,3,008040,FFFFFF
+15760022,6,5B,Leontiou EMEL Station - Agios Ioannis - Pylones - Elaion Park - General Hospital,,3,008040,FFFFFF
+15770011,6,60T,Pelendri Circle Line,,3,800080,FFFFFF
+15780011,6,23A,Ypsonas Circular Green,,3,808000,FFFFFF
+15780021,6,23A,Ypsonas Municipality Circular Green,,3,808000,FFFFFF
+15790011,6,16A,Episkopi - Episkopiana Hotel - Leontiou EMEL Station,,3,808040,000000
+15790012,6,16A,Leontiou EMEL Station - Episkopiana Hotel - Episkopi,,3,808040,000000

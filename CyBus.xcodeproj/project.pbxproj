@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9446998B2C35AF31005E0673 /* TransitParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446998A2C35AF31005E0673 /* TransitParser.swift */; };
+		942C53EE2C55152E00DE9BD7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 942C53EC2C55152E00DE9BD7 /* README.md */; };
+		942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53ED2C55152E00DE9BD7 /* routes_generator.rb */; };
+		942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F02C55201900DE9BD7 /* shapes_generator.rb */; };
+		942C53F52C55208B00DE9BD7 /* shapes.json in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F42C55208B00DE9BD7 /* shapes.json */; };
+		942C53F72C55217400DE9BD7 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F62C55217400DE9BD7 /* Route.swift */; };
+		942C53F92C5521AF00DE9BD7 /* ShapesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F82C5521AF00DE9BD7 /* ShapesRepository.swift */; };
+		9449C9D02C6DFBBA009E98F3 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9CF2C6DFBBA009E98F3 /* Shape.swift */; };
+		9449C9D22C6DFCD4009E98F3 /* BusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D12C6DFCD4009E98F3 /* BusRoute.swift */; };
+		9449C9D52C6E01C6009E98F3 /* StopsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D32C6E01C6009E98F3 /* StopsRepository.swift */; };
+		9449C9D62C6E01C6009E98F3 /* StopTimesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D42C6E01C6009E98F3 /* StopTimesRepository.swift */; };
+		9449C9D82C6E01CE009E98F3 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D72C6E01CE009E98F3 /* Trip.swift */; };
+		9449C9DA2C6E0223009E98F3 /* TripsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D92C6E0223009E98F3 /* TripsRepository.swift */; };
+		947633D52C6E0747000F20C7 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947633D42C6E0747000F20C7 /* Stop.swift */; };
+		947633D72C6E079A000F20C7 /* StopTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947633D62C6E0799000F20C7 /* StopTime.swift */; };
 		94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */; };
 		94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
 		94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD82C3AFC20008AFC53 /* MapViewModel.swift */; };
 		94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */; };
-		94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDD2C3B016C008AFC53 /* MapLocation.swift */; };
 		94891BE02C3B017B008AFC53 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDF2C3B017B008AFC53 /* Bus.swift */; };
+		949765742C516EFE001321CA /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 949765732C516EFE001321CA /* Config.xcconfig */; };
+		949765762C516F96001321CA /* Config-Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 949765752C516F96001321CA /* Config-Secret.xcconfig */; };
+		949A570C2C52CAA5007457B0 /* MapboxNavigationCore in Frameworks */ = {isa = PBXBuildFile; productRef = 949A570B2C52CAA5007457B0 /* MapboxNavigationCore */; };
+		949A570E2C52CAA5007457B0 /* MapboxNavigationUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 949A570D2C52CAA5007457B0 /* MapboxNavigationUIKit */; };
 		94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF802C29ABBD00970F8C /* CyBusApp.swift */; };
 		94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF842C29ABBD00970F8C /* Assets.xcassets */; };
 		94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF882C29ABBD00970F8C /* Preview Assets.xcassets */; };
@@ -21,13 +37,18 @@
 		94ABDF9D2C29ABBE00970F8C /* CyBusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */; };
 		94ABDF9F2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */; };
 		94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 94BB5BC62C35CBDF00404028 /* SwiftProtobuf */; };
-		94CC172B2C4EBAD000AC358D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC172A2C4EBAD000AC358D /* Route.swift */; };
-		94CC173A2C4EC42C00AC358D /* routes.shp in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17362C4EC42C00AC358D /* routes.shp */; };
-		94CC17412C4EC65300AC358D /* routes.prj in Resources */ = {isa = PBXBuildFile; fileRef = 94CC173D2C4EC65300AC358D /* routes.prj */; };
-		94CC17432C4EC65300AC358D /* routes.shx in Resources */ = {isa = PBXBuildFile; fileRef = 94CC173F2C4EC65300AC358D /* routes.shx */; };
-		94CC17442C4EC65300AC358D /* routes.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17402C4EC65300AC358D /* routes.dbf */; };
 		94CC17462C4EC6AA00AC358D /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = 94CC17452C4EC6AA00AC358D /* routes.json */; };
-		94CC17482C4ECF7C00AC358D /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC17472C4ECF7C00AC358D /* MapMarker.swift */; };
+		94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */; };
+		94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220892C5E701F00D776B9 /* ClearRouteButton.swift */; };
+		94F2208C2C5E704100D776B9 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F2208B2C5E704100D776B9 /* LocationButton.swift */; };
+		94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */; };
+		94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F2208F2C5E85A600D776B9 /* trips_generator.rb */; };
+		94F220922C5E85B200D776B9 /* generate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 94F220912C5E85B200D776B9 /* generate.sh */; };
+		94F220942C5E85C700D776B9 /* trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F220932C5E85C700D776B9 /* trips.json */; };
+		94F220992C5E886E00D776B9 /* stops_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F220972C5E886E00D776B9 /* stops_generator.rb */; };
+		94F2209A2C5E886E00D776B9 /* stop_times_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F220982C5E886E00D776B9 /* stop_times_generator.rb */; };
+		94F2209D2C5E888200D776B9 /* stops.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F2209B2C5E888200D776B9 /* stops.json */; };
+		94F2209E2C5E888200D776B9 /* stop_times.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F2209C2C5E888200D776B9 /* stop_times.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,13 +70,27 @@
 
 /* Begin PBXFileReference section */
 		9400C2532C35BA3600355A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9446998A2C35AF31005E0673 /* TransitParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitParser.swift; sourceTree = "<group>"; };
+		942C53EC2C55152E00DE9BD7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		942C53ED2C55152E00DE9BD7 /* routes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = routes_generator.rb; sourceTree = "<group>"; };
+		942C53F02C55201900DE9BD7 /* shapes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = shapes_generator.rb; sourceTree = "<group>"; };
+		942C53F42C55208B00DE9BD7 /* shapes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shapes.json; sourceTree = "<group>"; };
+		942C53F62C55217400DE9BD7 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		942C53F82C5521AF00DE9BD7 /* ShapesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesRepository.swift; sourceTree = "<group>"; };
+		9449C9CF2C6DFBBA009E98F3 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		9449C9D12C6DFCD4009E98F3 /* BusRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRoute.swift; sourceTree = "<group>"; };
+		9449C9D32C6E01C6009E98F3 /* StopsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsRepository.swift; sourceTree = "<group>"; };
+		9449C9D42C6E01C6009E98F3 /* StopTimesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimesRepository.swift; sourceTree = "<group>"; };
+		9449C9D72C6E01CE009E98F3 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		9449C9D92C6E0223009E98F3 /* TripsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsRepository.swift; sourceTree = "<group>"; };
+		947633D42C6E0747000F20C7 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		947633D62C6E0799000F20C7 /* StopTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTime.swift; sourceTree = "<group>"; };
 		94891BC72C3AF77A008AFC53 /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
 		94891BD62C3AFBCF008AFC53 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		94891BD82C3AFC20008AFC53 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitAPIClient.swift; sourceTree = "<group>"; };
-		94891BDD2C3B016C008AFC53 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		94891BDF2C3B017B008AFC53 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
+		949765732C516EFE001321CA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		949765752C516F96001321CA /* Config-Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-Secret.xcconfig"; sourceTree = "<group>"; };
 		94ABDF7D2C29ABBD00970F8C /* CyBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDF802C29ABBD00970F8C /* CyBusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusApp.swift; sourceTree = "<group>"; };
 		94ABDF842C29ABBD00970F8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,13 +102,22 @@
 		94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITests.swift; sourceTree = "<group>"; };
 		94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		94BB5BCB2C35CDB000404028 /* gtfs-realtime.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = "gtfs-realtime.proto"; sourceTree = "<group>"; };
-		94CC172A2C4EBAD000AC358D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		94CC17362C4EC42C00AC358D /* routes.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shp; sourceTree = "<group>"; };
 		94CC173D2C4EC65300AC358D /* routes.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.prj; sourceTree = "<group>"; };
 		94CC173F2C4EC65300AC358D /* routes.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shx; sourceTree = "<group>"; };
 		94CC17402C4EC65300AC358D /* routes.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.dbf; sourceTree = "<group>"; };
 		94CC17452C4EC6AA00AC358D /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
-		94CC17472C4ECF7C00AC358D /* MapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
+		94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarkerView.swift; sourceTree = "<group>"; };
+		94F220892C5E701F00D776B9 /* ClearRouteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearRouteButton.swift; sourceTree = "<group>"; };
+		94F2208B2C5E704100D776B9 /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
+		94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomButton.swift; sourceTree = "<group>"; };
+		94F2208F2C5E85A600D776B9 /* trips_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = trips_generator.rb; sourceTree = "<group>"; };
+		94F220912C5E85B200D776B9 /* generate.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate.sh; sourceTree = "<group>"; };
+		94F220932C5E85C700D776B9 /* trips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trips.json; sourceTree = "<group>"; };
+		94F220972C5E886E00D776B9 /* stops_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stops_generator.rb; sourceTree = "<group>"; };
+		94F220982C5E886E00D776B9 /* stop_times_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stop_times_generator.rb; sourceTree = "<group>"; };
+		94F2209B2C5E888200D776B9 /* stops.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
+		94F2209C2C5E888200D776B9 /* stop_times.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stop_times.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949A570E2C52CAA5007457B0 /* MapboxNavigationUIKit in Frameworks */,
+				949A570C2C52CAA5007457B0 /* MapboxNavigationCore in Frameworks */,
 				94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,9 +151,12 @@
 		94891BD22C3AFB86008AFC53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				94891BDD2C3B016C008AFC53 /* MapLocation.swift */,
+				9449C9D72C6E01CE009E98F3 /* Trip.swift */,
 				94891BDF2C3B017B008AFC53 /* Bus.swift */,
-				94CC172A2C4EBAD000AC358D /* Route.swift */,
+				942C53F62C55217400DE9BD7 /* Route.swift */,
+				9449C9CF2C6DFBBA009E98F3 /* Shape.swift */,
+				947633D42C6E0747000F20C7 /* Stop.swift */,
+				947633D62C6E0799000F20C7 /* StopTime.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				94891BD82C3AFC20008AFC53 /* MapViewModel.swift */,
+				9449C9D12C6DFCD4009E98F3 /* BusRoute.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -132,7 +182,10 @@
 			isa = PBXGroup;
 			children = (
 				94891BD62C3AFBCF008AFC53 /* MapView.swift */,
-				94CC17472C4ECF7C00AC358D /* MapMarker.swift */,
+				94CC17472C4ECF7C00AC358D /* BusMarkerView.swift */,
+				94F220892C5E701F00D776B9 /* ClearRouteButton.swift */,
+				94F2208B2C5E704100D776B9 /* LocationButton.swift */,
+				94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -140,7 +193,11 @@
 		94891BDA2C3AFC65008AFC53 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9449C9D92C6E0223009E98F3 /* TripsRepository.swift */,
+				9449C9D32C6E01C6009E98F3 /* StopsRepository.swift */,
+				9449C9D42C6E01C6009E98F3 /* StopTimesRepository.swift */,
 				94891BDB2C3AFCF6008AFC53 /* TransitAPIClient.swift */,
+				942C53F82C5521AF00DE9BD7 /* ShapesRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -148,6 +205,15 @@
 		94ABDF742C29ABBD00970F8C = {
 			isa = PBXGroup;
 			children = (
+				94F220912C5E85B200D776B9 /* generate.sh */,
+				942C53EC2C55152E00DE9BD7 /* README.md */,
+				94F220972C5E886E00D776B9 /* stops_generator.rb */,
+				94F220982C5E886E00D776B9 /* stop_times_generator.rb */,
+				94F2208F2C5E85A600D776B9 /* trips_generator.rb */,
+				942C53F02C55201900DE9BD7 /* shapes_generator.rb */,
+				942C53ED2C55152E00DE9BD7 /* routes_generator.rb */,
+				949765752C516F96001321CA /* Config-Secret.xcconfig */,
+				949765732C516EFE001321CA /* Config.xcconfig */,
 				94BB5BCA2C35CD8D00404028 /* Protos */,
 				94BB5BC82C35CCCB00404028 /* Generated */,
 				94ABDF7F2C29ABBD00970F8C /* CyBus */,
@@ -171,17 +237,20 @@
 		94ABDF7F2C29ABBD00970F8C /* CyBus */ = {
 			isa = PBXGroup;
 			children = (
-				94CC17452C4EC6AA00AC358D /* routes.json */,
 				94891BDA2C3AFC65008AFC53 /* Services */,
 				94891BD42C3AFB95008AFC53 /* ViewModels */,
 				94891BD32C3AFB8E008AFC53 /* Views */,
 				94891BD22C3AFB86008AFC53 /* Models */,
 				9400C2532C35BA3600355A0F /* Info.plist */,
+				94F2209C2C5E888200D776B9 /* stop_times.json */,
+				94F2209B2C5E888200D776B9 /* stops.json */,
+				94F220932C5E85C700D776B9 /* trips.json */,
+				94CC17452C4EC6AA00AC358D /* routes.json */,
+				942C53F42C55208B00DE9BD7 /* shapes.json */,
 				94ABDF802C29ABBD00970F8C /* CyBusApp.swift */,
 				94ABDF842C29ABBD00970F8C /* Assets.xcassets */,
 				94ABDF862C29ABBD00970F8C /* CyBus.entitlements */,
 				94ABDF872C29ABBD00970F8C /* Preview Content */,
-				9446998A2C35AF31005E0673 /* TransitParser.swift */,
 			);
 			path = CyBus;
 			sourceTree = "<group>";
@@ -256,6 +325,8 @@
 			name = CyBus;
 			packageProductDependencies = (
 				94BB5BC62C35CBDF00404028 /* SwiftProtobuf */,
+				949A570B2C52CAA5007457B0 /* MapboxNavigationCore */,
+				949A570D2C52CAA5007457B0 /* MapboxNavigationUIKit */,
 			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
@@ -331,6 +402,7 @@
 			mainGroup = 94ABDF742C29ABBD00970F8C;
 			packageReferences = (
 				9400C25E2C35C99500355A0F /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+				949765682C516669001321CA /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
@@ -348,13 +420,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94CC17432C4EC65300AC358D /* routes.shx in Resources */,
+				94F220942C5E85C700D776B9 /* trips.json in Resources */,
+				942C53EE2C55152E00DE9BD7 /* README.md in Resources */,
+				949765742C516EFE001321CA /* Config.xcconfig in Resources */,
+				94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */,
+				94F220922C5E85B200D776B9 /* generate.sh in Resources */,
 				94CC17462C4EC6AA00AC358D /* routes.json in Resources */,
+				942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */,
+				94F220992C5E886E00D776B9 /* stops_generator.rb in Resources */,
+				94F2209D2C5E888200D776B9 /* stops.json in Resources */,
+				949765762C516F96001321CA /* Config-Secret.xcconfig in Resources */,
+				942C53F52C55208B00DE9BD7 /* shapes.json in Resources */,
+				94F2209A2C5E886E00D776B9 /* stop_times_generator.rb in Resources */,
 				94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */,
-				94CC173A2C4EC42C00AC358D /* routes.shp in Resources */,
-				94CC17412C4EC65300AC358D /* routes.prj in Resources */,
-				94CC17442C4EC65300AC358D /* routes.dbf in Resources */,
 				94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */,
+				94F2209E2C5E888200D776B9 /* stop_times.json in Resources */,
+				942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,16 +460,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94CC17482C4ECF7C00AC358D /* MapMarker.swift in Sources */,
-				94891BDE2C3B016C008AFC53 /* MapLocation.swift in Sources */,
+				94CC17482C4ECF7C00AC358D /* BusMarkerView.swift in Sources */,
+				94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */,
+				9449C9D62C6E01C6009E98F3 /* StopTimesRepository.swift in Sources */,
+				9449C9D02C6DFBBA009E98F3 /* Shape.swift in Sources */,
 				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,
 				94891BDC2C3AFCF6008AFC53 /* TransitAPIClient.swift in Sources */,
+				947633D52C6E0747000F20C7 /* Stop.swift in Sources */,
+				9449C9D52C6E01C6009E98F3 /* StopsRepository.swift in Sources */,
 				94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */,
+				942C53F72C55217400DE9BD7 /* Route.swift in Sources */,
+				94F2208C2C5E704100D776B9 /* LocationButton.swift in Sources */,
+				9449C9DA2C6E0223009E98F3 /* TripsRepository.swift in Sources */,
+				947633D72C6E079A000F20C7 /* StopTime.swift in Sources */,
+				942C53F92C5521AF00DE9BD7 /* ShapesRepository.swift in Sources */,
+				9449C9D82C6E01CE009E98F3 /* Trip.swift in Sources */,
+				94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */,
 				94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */,
+				9449C9D22C6DFCD4009E98F3 /* BusRoute.swift in Sources */,
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
-				94CC172B2C4EBAD000AC358D /* Route.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* Bus.swift in Sources */,
-				9446998B2C35AF31005E0673 /* TransitParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +518,7 @@
 /* Begin XCBuildConfiguration section */
 		94ABDFA02C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -488,6 +580,7 @@
 		};
 		94ABDFA12C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -541,6 +634,7 @@
 		};
 		94ABDFA32C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -579,6 +673,7 @@
 		};
 		94ABDFA42C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -617,6 +712,7 @@
 		};
 		94ABDFA62C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -639,6 +735,7 @@
 		};
 		94ABDFA72C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -661,6 +758,7 @@
 		};
 		94ABDFA92C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -682,6 +780,7 @@
 		};
 		94ABDFAA2C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949765732C516EFE001321CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -751,9 +850,27 @@
 				minimumVersion = 1.26.0;
 			};
 		};
+		949765682C516669001321CA /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-navigation-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		949A570B2C52CAA5007457B0 /* MapboxNavigationCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 949765682C516669001321CA /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */;
+			productName = MapboxNavigationCore;
+		};
+		949A570D2C52CAA5007457B0 /* MapboxNavigationUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 949765682C516669001321CA /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */;
+			productName = MapboxNavigationUIKit;
+		};
 		94BB5BC62C35CBDF00404028 /* SwiftProtobuf */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9400C25E2C35C99500355A0F /* XCRemoteSwiftPackageReference "swift-protobuf" */;

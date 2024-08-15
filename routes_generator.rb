@@ -70,4 +70,4 @@ def export_shapefile_to_json(shapefile_path, json_path)
 end
 
 # Example usage of the function
-export_shapefile_to_json('Generated/routes.shp', 'CyBys/routes.json')
+export_shapefile_to_json('Generated/routes.shp', 'CyBus/routes.json')

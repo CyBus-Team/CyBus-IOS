@@ -5,10 +5,15 @@
 //  Created by Vadim Popov on 07/07/2024.
 //
 
-import Foundation
+import SwiftUI
+@_spi(Experimental) import MapboxMaps
 
-struct Bus: Identifiable {
+struct Bus: Identifiable, Equatable {
+    static func == (lhs: Bus, rhs: Bus) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     let id: String
-    let currentLocation: MapLocation
-    let route: Route?
+    let location: CLLocationCoordinate2D
+    let route: Route
 }

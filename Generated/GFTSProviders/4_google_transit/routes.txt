@@ -1,0 +1,51 @@
+﻿route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_color,route_text_color
+40000011,4,101,Agia Napa (Waterpark) - Cape Greco - Konnos - Protaras - Pernera - Paralimni,,3,804040,FFFFFF
+40010011,4,102,Paralimni - Pernera - Protaras - Konnos - Cape Greco - Agia Napa (Waterpark),,3,408080,FFFFFF
+40020011,4,201,Luna Park-Thalassa Mus.-Ag. Napa Sq.-Nissi Ave.-Marina-Waterpark-T. Anthia-M. Kasialou-Thalassa-Ag. Napa Sq.-Luna Park,,3,0000A0,FFFFFF
+40030011,4,301,Fam. Station-G. Papad/lou-Kappari Av.-Protara Av.-Ag Varvara Ch.-Paralimni Sq.-Stadiou-1 Apriliou-Fam. Station,,3,FF0080,FFFFFF
+40040011,4,501,Deryneia (Green Line) - Frenaros - Liopetri - Waterpark - Ag. Napa - Paralimni - Gen. Hospital - Deryneia (Green Line),,3,FF0000,FFFFFF
+40050011,4,502,Deryneia (Green Line) - Gen. Hospital - Paralimni - Ag. Napa - Waterpark - Liopetri - Frenaros - Deryneia (Green Line),,3,CC6600,000000
+40060011,4,701,Ormideia - Xylofagou - Liopetri - Sotira - Deryneia - Famagusta Gen. Hospital - Paralimni,,3,FF33CC,FFFFFF
+40060012,4,701,Paralimni - Famagusta Gen.Hospital - Deryneia - Sotira - Liopetri - Xylofagou - Ormideia,,3,FF33CC,FFFFFF
+40070011,4,702,Xylotympou - Dasaki Achnas - Avgorou - Frenaros - Deryneia - Famagusta General Hospital - Paralimni,,3,FF8040,000000
+40070012,4,702,Paralimni - Famagusta General Hospital - Deryneia - Frenaros - Avgorou - Dasaki Achnas - Xylotympou,,3,FF8040,000000
+40080011,4,703,E.A.C. Dhekelia - Ormideia - Xylofagou - Liopetri - Sotira - Paralimni - Protaras - Konnos,,3,66FF66,000000
+40080012,4,703,Konnos - Protaras - Paralimni - Sotira - Liopetri - Xylofagou - Ormideia - E.A.C. Dhekelia,,3,66FF66,000000
+40090011,4,704,E.A.C. Dhekelia - Xylotympou - Ormideia - Xylofagou - Agia Napa ,,3,008000,FFFFFF
+40090012,4,704,Agia Napa - Xylofagou - Ormideia - Xylotympou - E.A.C. Dhekelia,,3,008000,FFFFFF
+40100011,4,705,Dasaki Achnas - Avgorou - Liopetri - Agia Napa,,3,75610B,FFFFFF
+40100012,4,705,Agia Napa - Liopetri - Avgorou - Dasaki Achnas,,3,75610B,FFFFFF
+40110011,4,706,Xylotympou - Dasaki Achnas - Avgorou - Frenaros - Deryneia - Paralimni - Protaras - Konnos,,3,808080,FFFFFF
+40110012,4,706,Konnos - Protaras - Paralimni - Deryneia - Frenaros - Avgorou - Dasaki Achnas - Xylotympou,,3,808080,FFFFFF
+40120011,4,708,Strovilia (Green Line) - Vrysoulles - Frenaros - Deryneia - Famagusta General Hospital - Paralimni - Protaras - Konnos,,3,33CC33,000000
+40120012,4,708,Konnos - Protaras - Paralimni - Famagusta General Hospital - Deryneia - Frenaros - Vrysoulles - Strovilia (Green Line),,3,33CC33,000000
+40130011,4,709,Strovilia (Green Line) - Vrysoulles - Frenaros - Sotira - Agia Napa,,3,8080FF,FFFFFF
+40130012,4,709,Agia Napa - Sotira - Frenaros - Vrysoulles - Strovilia (Green Line),,3,8080FF,FFFFFF
+40140011,4,710,Deryneia - Sotira - Agia Napa,,3,00CC99,000000
+40140012,4,710,Agia Napa - Sotira - Deryneia,,3,00CC99,000000
+40150011,4,711,Paralimni-Kapparis-Protaras-Konnos-Ag. Napa-Ag. Thekla Beach-Xylofagou-Ormideia-Larnaka-New Hospital-Metropolis Mall,,3,4C610A,FFFFFF
+40150012,4,711,Metropolis Mall-New Hospital-Larnaka-Ormideia-Xylofagou-Ag. Thekla Beach-Ag. Napa-Konnos-Protaras-Kapparis-Paralimni,,3,4C610A,FFFFFF
+40160011,4,712,Paralimni-Gen. Hospital-Deryneia-Frenaros-Vrysoulles-Avgorou-Dasaki-Xylotympou-Larnaka-New Hospital-Metropolis Mall,,3,46A5EB,FFFFFF
+40160012,4,712,Metropolis Mall-New Hospital-Larnaka-Xylotympou-Dasaki-Avgorou-Vrysoulles-Frenaros-Deryneia-Gen. Hospital-Paralimni,,3,46A5EB,FFFFFF
+40170011,4,714,Paralimni-Famagusta Hospital-Deryneia-Sotira-Liopetri-Xylofagou-Dhekelia-Larnaka-New Hospital-Metropolis Mall,,3,800000,FFFFFF
+40170012,4,714,Metropolis Mall-New Hospital-Larnaka-Dhekelia-Xylofagou-Liopetri-Sotira-Deryneia-Famagusta Hospital-Paralimni,,3,800000,FFFFFF
+40180011,4,510,Gen. Hospital - Paralimni Lyceum - Kapparis - Paralimni - Ag. Napa - Waterpark - Ag. Thekla Beach,,3,0080C0,FFFFFF
+40180012,4,510,Ag. Thekla Beach - Waterpark - Ag. Napa - Paralimni - Kapparis - Paralimni Lyceum,,3,0080C0,FFFFFF
+40190011,4,302,Paralimni - Pernera - Kapparis Circle Line,,3,6E9BE6,FFFFFF
+40200011,4,303,Paralimni - Kapparis - Pernera - Protaras - Konnos,,3,A0A0A0,FFFFFF
+40200012,4,303,Konnos - Protaras - Pernera - Kapparis -   Paralimni,,3,A0A0A0,FFFFFF
+40210011,4,304,Paralimni - Pernera - Protaras - Konnos,,3,FF8200,000000
+40210012,4,304,Konnos - Protaras - Pernera - Paralimni,,3,FF8200,000000
+40220011,4,202,Luna Park-Thalassa-Ag. Napa Sq-Nissi Av.-Ag. Napa Marina-T. Anthia-M. Kasialou-Thalassa-Ag. Napa Sq-Luna Park,,3,FF8264,000000
+40230011,4,704A,E.A.C. Dhekelia - Xylofagou - Agia Napa,,3,824100,FFFFFF
+40230012,4,704A,Agia Napa - Xylofagou - E.A.C. Dhekelia,,3,824100,FFFFFF
+40240011,4,704B,Xylotympou - Ormideia - Xylofagou - Agia Napa,,3,FF6EBE,000000
+40240012,4,704B,Agia Napa - Xylofagou - Ormideia - Xylotympou,,3,FF6EBE,000000
+40250011,4,704C,Xylofagou - Agia Napa,,3,E6554B,FFFFFF
+40250012,4,704C,Agia Napa - Xylofagou,,3,E6554B,FFFFFF
+40260011,4,701A,Xylofagou - Liopetri - Sotira - Paralimni - Famagusta General Hospital,,3,8282FF,FFFFFF
+40260012,4,701A,Paralimni - Sotira - Liopetri - Xylofagou,,3,8282FF,FFFFFF
+40270011,4,712A,Paralimni - Gen. Hospital - Deryneia - Frenaros - Vrysoulles - Xylotympou - Larnaka - New Hospital,,3,0000E1,FFFFFF
+40280011,4,714A,Paralimni-Famagusta Hospital-Deryneia-Sotira-Liopetri-Xylofagou-Dhekelia-Larnaka-New Hospital-Metropolis Mall,,3,EB46C8,FFFFFF
+40290011,4,702A,Xylotympou - Dasaki Achnas - Avgorou - Liopetri -Frenaros - Deryneia - Famagusta General Hospital - Paralimni,,3,69AA55,FFFFFF
+40290012,4,702A,Paralimni - Famagusta General Hospital - Deryneia - Frenaros - Liopetri - Avgorou - Dasaki Achnas - Xylotympou,,3,69AA55,FFFFFF

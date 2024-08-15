@@ -1,0 +1,113 @@
+﻿table_name,field_name,language,translation,record_id
+routes,route_long_name,el,ΓΣΠ - Υπουργείο Οικονομικών - Ομήρου - ΓΣΠ,9990999
+stops,stop_name,el,Υπουργείο Οικονομικών,3
+stops,stop_desc,el,ΥΠ.ΟΙΚΟΝ,3
+stops,stop_name,el,Λεωφόρος Αρχιεπισκόπου Μακαρίου Γ΄ - Αμάλδας,321
+stops,stop_desc,el,Μακ-Αμάλδα,321
+stops,stop_name,el,Λεωφ. Αρχιεπισκόπου Μακαρίου Γ΄- Θεοφάνη Θεοδότου,322
+stops,stop_desc,el,Μακ-Θεοδοτ,322
+stops,stop_name,el,Λεωφόρος Αρχιεπισκόπου Μακαρίου Γ΄ - Νάξου,325
+stops,stop_desc,el,Μακ-Ναξου,325
+stops,stop_name,el,Λεωφόρος Αρχιεπισκόπου Μακαρίου Γ΄ - Δημοφώντος,326
+stops,stop_desc,el,Μακ-Δημοφ,326
+stops,stop_name,el,Τεχνική Σχολή Γ Λευκωσίας,332
+stops,stop_desc,el,ΤΕΧΝ.ΣΧΟΛΗ,332
+stops,stop_name,el,Λεωφ. Αρχιεπισκόπου Μακαρίου Γ΄ - John Kennedy,333
+stops,stop_desc,el,Μακ-Κένεντ,333
+stops,stop_name,el,Λεωφόρος Λεμεσου - Αλφα Τράπεζα,334
+stops,stop_desc,el,Λεμ-ΑλφαΤρ,334
+stops,stop_name,el,Λεωφόρος Λεμεσου - Σαν Σουσί,335
+stops,stop_desc,el,Λεμ-ΣΣουσι,335
+stops,stop_name,el,Λεωφόρος Λεμεσου - Μελκονιάν,336
+stops,stop_desc,el,Λεμ-Μελκον,336
+stops,stop_name,el,Λεωφ. Λεμεσού - Λύκειο Αρχιεπισκόπου Μακαρίου Γ,337
+stops,stop_desc,el,ΑΣΤΥΝΟΜΙΑ,337
+stops,stop_name,el,Λεωφ. Λεμεσού - Πάρκο Κυκλοφοριακής Αγωγής,338
+stops,stop_desc,el, Κ.Αγωγής,338
+stops,stop_name,el,Λεωφόρος Λεμεσου - Ελλησπόντου,339
+stops,stop_desc,el,Λεμ-Ελλησ,339
+stops,stop_name,el,Λεωφόρος Λεμεσου - Καλησπέρα,340
+stops,stop_desc,el,Λεμ-Καλησπ,340
+stops,stop_name,el,Στάδιο ΓΣΠ,7840
+stops,stop_desc,el,ΣτΓΣΠ,7840
+stops,stop_name,el,Γ.Λεβέντη - Ευαγόρου,7842
+stops,stop_desc,el,ΓΛεβΕυαγ,7842
+trips,trip_headsign,el,ΓΣΠ1,11747441
+trips,trip_headsign,el,ΓΣΠ1,11747442
+trips,trip_headsign,el,ΓΣΠ1,11747443
+trips,trip_headsign,el,ΓΣΠ1,11747444
+trips,trip_headsign,el,ΓΣΠ1,11747445
+trips,trip_headsign,el,ΓΣΠ1,11747446
+trips,trip_headsign,el,ΓΣΠ1,11747447
+trips,trip_headsign,el,ΓΣΠ1,11747448
+trips,trip_headsign,el,ΓΣΠ1,11747449
+trips,trip_headsign,el,ΓΣΠ1,11747450
+trips,trip_headsign,el,ΓΣΠ1,11747451
+trips,trip_headsign,el,ΓΣΠ1,11747452
+trips,trip_headsign,el,ΓΣΠ1,11747453
+trips,trip_headsign,el,ΓΣΠ1,11747454
+trips,trip_headsign,el,ΓΣΠ1,11747455
+trips,trip_headsign,el,ΓΣΠ1,11747456
+trips,trip_headsign,el,ΓΣΠ1,11747457
+trips,trip_headsign,el,ΓΣΠ1,11747458
+trips,trip_headsign,el,ΓΣΠ1,11747459
+trips,trip_headsign,el,ΓΣΠ1,11747460
+trips,trip_headsign,el,ΓΣΠ1,11747461
+trips,trip_headsign,el,ΓΣΠ1,11747462
+trips,trip_headsign,el,ΓΣΠ1,11747463
+trips,trip_headsign,el,ΓΣΠ1,11747464
+trips,trip_headsign,el,ΓΣΠ1,11747465
+trips,trip_headsign,el,ΓΣΠ1,11747466
+trips,trip_headsign,el,ΓΣΠ1,11747467
+trips,trip_headsign,el,ΓΣΠ1,11747468
+trips,trip_headsign,el,ΓΣΠ1,11747469
+trips,trip_headsign,el,ΓΣΠ1,11747470
+trips,trip_headsign,el,ΓΣΠ1,11747471
+trips,trip_headsign,el,ΓΣΠ1,11747472
+trips,trip_headsign,el,ΓΣΠ1,11747473
+trips,trip_headsign,el,ΓΣΠ1,11747474
+trips,trip_headsign,el,ΓΣΠ1,11747475
+trips,trip_headsign,el,ΓΣΠ1,11747476
+trips,trip_headsign,el,ΓΣΠ1,11747477
+trips,trip_headsign,el,ΓΣΠ1,11747478
+trips,trip_headsign,el,ΓΣΠ1,11747479
+trips,trip_headsign,el,ΓΣΠ1,11747480
+trips,trip_headsign,el,ΓΣΠ1,11784139
+trips,trip_headsign,el,ΓΣΠ1,11784140
+trips,trip_headsign,el,ΓΣΠ1,11784141
+trips,trip_headsign,el,ΓΣΠ1,11784142
+trips,trip_headsign,el,ΓΣΠ1,11784143
+trips,trip_headsign,el,ΓΣΠ1,11784144
+trips,trip_headsign,el,ΓΣΠ1,11784145
+trips,trip_headsign,el,ΓΣΠ1,11784146
+trips,trip_headsign,el,ΓΣΠ1,11784147
+trips,trip_headsign,el,ΓΣΠ1,11784148
+trips,trip_headsign,el,ΓΣΠ1,11784149
+trips,trip_headsign,el,ΓΣΠ1,11784150
+trips,trip_headsign,el,ΓΣΠ1,11784151
+trips,trip_headsign,el,ΓΣΠ1,11784152
+trips,trip_headsign,el,ΓΣΠ1,11784153
+trips,trip_headsign,el,ΓΣΠ1,11784154
+trips,trip_headsign,el,ΓΣΠ1,11784155
+trips,trip_headsign,el,ΓΣΠ1,11784156
+trips,trip_headsign,el,ΓΣΠ1,11784157
+trips,trip_headsign,el,ΓΣΠ1,11784158
+trips,trip_headsign,el,ΓΣΠ1,11784159
+trips,trip_headsign,el,ΓΣΠ1,11784160
+trips,trip_headsign,el,ΓΣΠ1,11784161
+trips,trip_headsign,el,ΓΣΠ1,11784162
+trips,trip_headsign,el,ΓΣΠ1,11784163
+trips,trip_headsign,el,ΓΣΠ1,11784164
+trips,trip_headsign,el,ΓΣΠ1,11784165
+trips,trip_headsign,el,ΓΣΠ1,11784166
+trips,trip_headsign,el,ΓΣΠ1,11784167
+trips,trip_headsign,el,ΓΣΠ1,11784168
+trips,trip_headsign,el,ΓΣΠ1,11784169
+trips,trip_headsign,el,ΓΣΠ1,11784170
+trips,trip_headsign,el,ΓΣΠ1,11784171
+trips,trip_headsign,el,ΓΣΠ1,11784172
+trips,trip_headsign,el,ΓΣΠ1,11784173
+trips,trip_headsign,el,ΓΣΠ1,11784174
+trips,trip_headsign,el,ΓΣΠ1,11784175
+trips,trip_headsign,el,ΓΣΠ1,11784176
+trips,trip_headsign,el,ΓΣΠ1,11784177
