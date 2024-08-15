@@ -25,10 +25,14 @@ def read_stops_file(file_path)
   stops = []
   CSV.foreach(file_path, headers: true, col_sep: ",") do |row|
     stop = Stop.new(
-      row['stop_id'],
-      row['stop_name'],
-      row['stop_lat'],
-      row['stop_lon']
+      row[0],
+      row[1],
+      row[2],
+      row[3],
+      # row['stop_id'],
+      # row['stop_name'],
+      # row['stop_lat'],
+      # row['stop_lon']
     )
     stops << stop
   end

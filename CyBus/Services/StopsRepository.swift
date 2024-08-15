@@ -29,7 +29,7 @@ class StopsRepository {
 
         do {
             let data = try Data(contentsOf: url)
-            let stops = try JSONDecoder().decode([BusStop].self, from: data)
+            let stops = try JSONDecoder().decode([Stop].self, from: data)
             self.stops = stops
             return stops
         } catch {

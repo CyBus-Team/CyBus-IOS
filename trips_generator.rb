@@ -33,14 +33,22 @@ def read_trips_file(file_path)
   trips = []
   CSV.foreach(file_path, headers: true, col_sep: ",") do |row|
     trip = Trip.new(
-      row['route_id'],
-      row['service_id'],
-      row['trip_id'],
-      row['trip_headsign'],
-      row['trip_short_name'],
-      row['direction_id'],
-      row['block_id'],
-      row['shape_id']
+      row[0],
+      row[1],
+      row[2],
+      row[3],
+      row[4],
+      row[5],
+      row[6],
+      row[7],
+      # row['route_id'],
+      # row['service_id'],
+      # row['trip_id'],
+      # row['trip_headsign'],
+      # row['trip_short_name'],
+      # row['direction_id'],
+      # row['block_id'],
+      # row['shape_id']
     )
     trips << trip
   end

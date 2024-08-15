@@ -27,11 +27,16 @@ def read_stop_times_file(file_path)
   stop_times = []
   CSV.foreach(file_path, headers: true, col_sep: ",") do |row|
     stop_time = StopTime.new(
-      row['trip_id'],
-      row['arrival_time'],
-      row['departure_time'],
-      row['stop_id'],
-      row['stop_sequence']
+      row[0],
+      row[1],
+      row[2],
+      row[3],
+      row[4]
+      # row['trip_id'],
+      # row['arrival_time'],
+      # row['departure_time'],
+      # row['stop_id'],
+      # row['stop_sequence']
     )
     stop_times << stop_time
   end
