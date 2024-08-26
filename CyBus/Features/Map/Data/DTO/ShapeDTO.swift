@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Shape: Codable, Identifiable {
-    let id: String
+struct ShapeDTO: Codable  {
+    let shapeId: String
     let latitude: String
     let longitude: String
     let sequence: String
 
     enum CodingKeys: String, CodingKey {
-        case id = "shape_id"
+        case shapeId = "shape_id"
         case latitude = "shape_pt_lat"
         case longitude = "shape_pt_lon"
         case sequence = "shape_pt_sequence"

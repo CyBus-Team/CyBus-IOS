@@ -34,20 +34,18 @@ struct MapView: View {
             ) {
                 // Bus marker
                 ForEvery(viewModel.buses) { bus in
-                    MapViewAnnotation(coordinate: bus.location) {
-                        BusMarkerView(bus: bus).onTapGesture {
-                            viewModel.getShapes(for: bus)
+                    MapViewAnnotation(coordinate: bus.position) {
+                        BusLineLabel(lineName: bus.lineName).onTapGesture {
+                            viewModel.onSelectBus(bus: bus)
                         }
                     }.allowOverlap(true)
                 }
                 
                 // Bus route
-                if let busRoute = viewModel.route {
+                if let selectedBus = viewModel.selectedBus {
+                    let busRoute = selectedBus.1
                     ForEvery(busRoute.stops) { stop in
-                        MapViewAnnotation(coordinate:  CLLocationCoordinate2D(
-                            latitude: CLLocationDegrees(stop.latitude) ?? 0,
-                            longitude: CLLocationDegrees(stop.longitude) ?? 0
-                        )) {
+                        MapViewAnnotation(coordinate:  stop.position) {
                             ZStack {
                                 Circle()
                                     .fill(Color.blue)
@@ -61,13 +59,9 @@ struct MapView: View {
                         }
                     }
                     
-                    let shapes = busRoute.shapes
                     PolylineAnnotationGroup {
-                        PolylineAnnotation(id: "route-feature", lineCoordinates: shapes.map { shape in
-                            CLLocationCoordinate2D(
-                                latitude: CLLocationDegrees(shape.latitude ) ?? 0,
-                                longitude: CLLocationDegrees(shape.longitude ) ?? 0
-                            )
+                        PolylineAnnotation(id: "route-feature", lineCoordinates: busRoute.shapes.map { shape in
+                            shape.position
                         })
                         .lineColor(.systemBlue)
                         .lineBorderColor(.systemBlue)
@@ -77,11 +71,10 @@ struct MapView: View {
                     .layerId("route")
                     .lineCap(.round)
                     .slot("middle")
-                    
                 }
             }.onMapLoaded { _ in
                 viewport = .camera(center: center, zoom: zoom)
-                viewModel.loadBuses()
+                viewModel.onMapLoaded()
             }
             
             VStack {
@@ -90,9 +83,9 @@ struct MapView: View {
                     alignment: .center
                 ) {
                     // Clear route button
-                    if (viewModel.route != nil) {
+                    if (viewModel.hasSelection) {
                         ClearRouteButton {
-                            viewModel.clearRoute()
+                            viewModel.onClearSelection()
                         }
                     }
                     // Zoom buttons

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Route: Codable, Identifiable {
-    let id: String
+struct RouteDTO: Codable  {
+    let lineId: String
     let lineName: String
     let routeName: String
     let firstStop: String
@@ -17,7 +17,7 @@ struct Route: Codable, Identifiable {
     let lineLength: String
 
     enum CodingKeys: String, CodingKey {
-        case id = "line_id"
+        case lineId = "line_id"
         case lineName = "line_name"
         case routeName = "route_name"
         case firstStop = "first_stop"

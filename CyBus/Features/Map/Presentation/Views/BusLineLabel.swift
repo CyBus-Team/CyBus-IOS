@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct BusMarkerView: View {
-    var bus: Bus
+struct BusLineLabel: View {
+    var lineName: String
     
     var body: some View {
         VStack {
-            Text(bus.route.lineName)
+            Text(lineName)
                 .font(.caption)
                 .padding(5)
                 .background(Color.white)
