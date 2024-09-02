@@ -23,11 +23,13 @@ class MapViewModel: ObservableObject {
     
     init() {
         let bundle = Bundle.main
+        let routesRepository = RoutesRepository(bundle: bundle)
+        routesUseCases = RoutesUseCases(repository: routesRepository)
         busesUsecases = BusesUseCases(
             repository: BusesRepository(urlSession: URLSession.shared,bundle: bundle),
-            routesUseCases: RoutesUseCases(repository: RoutesRepository(bundle: bundle))
+            routesUseCases: routesUseCases
         )
-        routesUseCases = RoutesUseCases(repository: RoutesRepository(bundle: bundle))
+        
         self.startTimer()
     }
     
@@ -36,7 +38,7 @@ class MapViewModel: ObservableObject {
     }
     
     private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             Task { [weak self] in
                 try await self?.fetchBuses()
             }
@@ -50,7 +52,13 @@ class MapViewModel: ObservableObject {
     
     @MainActor
     private func fetchBuses() async throws {
-        buses = try await busesUsecases.fetchBuses()
+        do {
+            buses = try await busesUsecases.fetchBuses()
+        } catch {
+            print("Failed to fetch busses \(error)")
+        }
+
+        
     }
     
     func onSelectBus(bus: BusEntity) {
@@ -66,7 +74,7 @@ class MapViewModel: ObservableObject {
                 try busesUsecases.fetchServiceUrl()
                 try await routesUseCases.fetchRoutes()
             } catch {
-                print(error)
+                print("Failed to load Map \(error)")
             }
         }
         

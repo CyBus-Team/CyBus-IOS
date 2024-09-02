@@ -10,17 +10,18 @@ import CoreLocation
 
 enum BusesUseCasesError: Error {
     case gftsServiceNotFound
+    case routesIsEmpty
 }
 
 
 class BusesUseCases: BusesUseCasesProtocol {
     
     private let repository: BusesRepositoryProtocol
-    private let routesUseCases: RoutesUseCases
+    private let routesUseCases: RoutesUseCasesProtocol
     
     private var gftsURL: URL?
     
-    init(repository: BusesRepositoryProtocol, routesUseCases: RoutesUseCases) {
+    init(repository: BusesRepositoryProtocol, routesUseCases: RoutesUseCasesProtocol) {
         self.repository = repository
         self.routesUseCases = routesUseCases
     }

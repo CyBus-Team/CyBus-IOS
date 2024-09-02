@@ -58,7 +58,7 @@ class RoutesUseCases: RoutesUseCasesProtocol {
                 sequence: Int($0.sequence) ?? 0)
             },
             stops: stops.map { StopEntity(
-                id: $0.stopId, 
+                id: $0.stopId,
                 position: CLLocationCoordinate2D(
                     latitude: CLLocationDegrees($0.latitude ) ?? 0,
                     longitude: CLLocationDegrees($0.longitude ) ?? 0

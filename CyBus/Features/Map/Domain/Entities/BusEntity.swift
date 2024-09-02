@@ -8,7 +8,7 @@ import CoreLocation
 
 struct BusEntity: Identifiable, Equatable {
     static func == (lhs: BusEntity, rhs: BusEntity) -> Bool {
-        lhs.id == rhs.id
+        lhs.id == rhs.id 
     }
     
     let id: String

@@ -45,6 +45,6 @@ class RoutesRepository: RoutesRepositoryProtocol {
     }
     
     func fetchStopTimes() async throws -> [StopTimeDTO]? {
-        return try await fetchData(fileName: "stoptimes", type: [StopTimeDTO].self)
+        return try await fetchData(fileName: "stop_times", type: [StopTimeDTO].self)
     }
 }
