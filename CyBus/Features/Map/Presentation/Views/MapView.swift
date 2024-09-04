@@ -13,7 +13,7 @@ struct MapView: View {
     // Initializes viewport state as styleDefault,
     // which will use the default camera for the current style.
     @State var viewport: Viewport = .styleDefault
-    @State var zoom: Double = 12
+    @State var zoom: Double = 14
     
     let center = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
     
@@ -32,19 +32,19 @@ struct MapView: View {
             Map(
                 viewport: $viewport
             ) {
-                // Bus marker
-                ForEvery(viewModel.buses) { bus in
-                    MapViewAnnotation(coordinate: bus.position) {
-                        BusLineLabel(lineName: bus.lineName).onTapGesture {
-                            viewModel.onSelectBus(bus: bus)
-                        }
-                    }.allowOverlap(true)
-                }
+                // Buses
+                    ForEvery(viewModel.buses) { bus in
+                        MapViewAnnotation(coordinate: bus.position) {
+                            BusLineLabel(lineName: bus.lineName).onTapGesture {
+                                viewModel.onSelectBus(bus: bus)
+                            }
+                        }.allowOverlap(true)
+                    }
                 
-                // Bus route
-                if let selectedBus = viewModel.selectedBus {
-                    let busRoute = selectedBus.1
-                    ForEvery(busRoute.stops) { stop in
+                // Route
+                if let selection = viewModel.selection {
+                    let route = selection.1
+                    ForEvery(route.stops) { stop in
                         MapViewAnnotation(coordinate:  stop.position) {
                             ZStack {
                                 Circle()
@@ -60,7 +60,7 @@ struct MapView: View {
                     }
                     
                     PolylineAnnotationGroup {
-                        PolylineAnnotation(id: "route-feature", lineCoordinates: busRoute.shapes.map { shape in
+                        PolylineAnnotation(id: "route-feature", lineCoordinates: route.shapes.map { shape in
                             shape.position
                         })
                         .lineColor(.systemBlue)

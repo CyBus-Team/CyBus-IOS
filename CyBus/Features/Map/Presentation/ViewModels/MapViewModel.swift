@@ -10,7 +10,7 @@ import Combine
 
 class MapViewModel: ObservableObject {
     @Published var buses: [BusEntity] = []
-    @Published var selectedBus: (BusEntity, BusRouteEntity)?
+    @Published var selection: (bus: BusEntity, route: BusRouteEntity)?
     
     private let busesUsecases: BusesUseCasesProtocol
     private let routesUseCases: RoutesUseCasesProtocol
@@ -18,7 +18,7 @@ class MapViewModel: ObservableObject {
     private var timer: Timer?
     
     public var hasSelection: Bool {
-        get { selectedBus != nil }
+        get { selection != nil }
     }
     
     init() {
@@ -53,19 +53,18 @@ class MapViewModel: ObservableObject {
     @MainActor
     private func fetchBuses() async throws {
         do {
-            buses = try await busesUsecases.fetchBuses()
+            let buses = try await busesUsecases.fetchBuses()
+            self.buses = hasSelection ? buses.filter { $0 == selection?.bus } : buses
         } catch {
             print("Failed to fetch busses \(error)")
         }
-
+        
         
     }
     
     func onSelectBus(bus: BusEntity) {
-        if let bus = buses.first(where: { $0 == bus }) {
-            let route = routesUseCases.getRoute(for: bus.id)
-            selectedBus = (bus, route)
-        }
+        let route = routesUseCases.getRoute(for: bus.routeID)
+        selection = (bus, route)
     }
     
     func onMapLoaded() {
@@ -80,7 +79,7 @@ class MapViewModel: ObservableObject {
         
     }
     
-    func onClearSelection() {
-        selectedBus = nil
+    func onClearSelection()  {
+        selection = nil
     }
 }
