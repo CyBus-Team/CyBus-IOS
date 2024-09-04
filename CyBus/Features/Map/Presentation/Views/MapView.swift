@@ -91,7 +91,7 @@ struct MapView: View {
                     ZoomButton(
                         action: {
                             zoom -= 1
-                            withViewportAnimation {
+                            withViewportAnimation(.fly) {
                                 viewport = .camera(zoom: zoom)
                             }
                         },
@@ -100,7 +100,7 @@ struct MapView: View {
                     ZoomButton(
                         action: {
                             zoom += 1
-                            withViewportAnimation {
+                            withViewportAnimation(.fly) {
                                 viewport = .camera(zoom: zoom)
                             }
                         },
