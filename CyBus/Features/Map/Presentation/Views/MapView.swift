@@ -10,8 +10,7 @@ import SwiftUI
 
 struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
-    // Initializes viewport state as styleDefault,
-    // which will use the default camera for the current style.
+    
     @State var viewport: Viewport = .styleDefault
     @State var zoom: Double = 14
     

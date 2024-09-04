@@ -189,6 +189,8 @@
 		94891BDA2C3AFC65008AFC53 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				94AF0DA02C7799FE002FE41B /* BusesRepositoryProtocol.swift */,
+				94AF0D9E2C7799F0002FE41B /* RoutesRepositoryProtocol.swift */,
 				94AF0DA92C77A6A8002FE41B /* RoutesRepository.swift */,
 				94AF0DAE2C77B0AB002FE41B /* BusesRepository.swift */,
 			);
@@ -311,7 +313,6 @@
 			isa = PBXGroup;
 			children = (
 				94891BD22C3AFB86008AFC53 /* DTO */,
-				94AF0D9C2C77959D002FE41B /* Protocols */,
 				94891BDA2C3AFC65008AFC53 /* Repositories */,
 			);
 			path = Data;
@@ -321,7 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				94AF0D9D2C779788002FE41B /* Entities */,
-				94AF0D9B2C77957E002FE41B /* Protocols */,
 				94AF0D992C779555002FE41B /* UseCases */,
 			);
 			path = Domain;
@@ -339,28 +339,12 @@
 		94AF0D992C779555002FE41B /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				94AF0DC32C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift */,
+				94AF0DA22C779A8C002FE41B /* BusesUseCasesProtocol.swift */,
 				94AF0DA42C779ADC002FE41B /* BusesUseCases.swift */,
 				94AF0DC12C79FAE7002FE41B /* RoutesUseCases.swift */,
 			);
 			path = UseCases;
-			sourceTree = "<group>";
-		};
-		94AF0D9B2C77957E002FE41B /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				94AF0DA22C779A8C002FE41B /* BusesUseCasesProtocol.swift */,
-				94AF0DC32C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		94AF0D9C2C77959D002FE41B /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				94AF0D9E2C7799F0002FE41B /* RoutesRepositoryProtocol.swift */,
-				94AF0DA02C7799FE002FE41B /* BusesRepositoryProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		94AF0D9D2C779788002FE41B /* Entities */ = {
