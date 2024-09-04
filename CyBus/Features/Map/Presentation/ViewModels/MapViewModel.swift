@@ -14,24 +14,33 @@ class MapViewModel: ObservableObject {
     
     private let busesUsecases: BusesUseCasesProtocol
     private let routesUseCases: RoutesUseCasesProtocol
+    private let mapUseCases: MapUseCasesProtocol
     
     private var timer: Timer?
+    private let bundle = Bundle.main
     
     public var hasSelection: Bool {
         get { selection != nil }
     }
     
     init() {
-        let bundle = Bundle.main
-        let routesRepository = RoutesRepository(bundle: bundle)
-        routesUseCases = RoutesUseCases(repository: routesRepository)
-        busesUsecases = BusesUseCases(
-            repository: BusesRepository(urlSession: URLSession.shared,bundle: bundle),
-            routesUseCases: routesUseCases
-        )
+        do {
+            let routesRepository = RoutesRepository(bundle: bundle)
+            routesUseCases = RoutesUseCases(repository: routesRepository)
+            busesUsecases = BusesUseCases(
+                repository: BusesRepository(urlSession: URLSession.shared,bundle: bundle),
+                routesUseCases: routesUseCases
+            )
+            mapUseCases = MapUseCases(bundle: bundle)
+            try mapUseCases.setup()
+            self.startTimer()
+        } catch {
+            
+        }
         
-        self.startTimer()
     }
+    
+    // Fetch data
     
     deinit {
         stopTimer()
@@ -61,6 +70,8 @@ class MapViewModel: ObservableObject {
         
         
     }
+    
+    // UI Methods
     
     func onSelectBus(bus: BusEntity) {
         let route = routesUseCases.getRoute(for: bus.routeID)

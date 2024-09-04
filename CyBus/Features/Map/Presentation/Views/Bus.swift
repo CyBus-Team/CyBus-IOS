@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BusLineLabel: View {
+struct Bus: View {
     var lineName: String
     
     var body: some View {
