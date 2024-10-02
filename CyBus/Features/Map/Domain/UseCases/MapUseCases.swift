@@ -8,6 +8,11 @@
 import Foundation
 @_spi(Experimental) import MapboxMaps
 
+enum MapUseCasesError: Error {
+    case initializationFailed
+}
+
+
 class MapUseCases : MapUseCasesProtocol {
     private let bundle: Bundle
     
@@ -19,7 +24,7 @@ class MapUseCases : MapUseCasesProtocol {
         if let mapBoxAccessToken = bundle.object(forInfoDictionaryKey: "MBXAccessToken") as? String {
             MapboxOptions.accessToken = mapBoxAccessToken
         } else {
-            assertionFailure("Can't get MBX access token")
+            throw MapUseCasesError.initializationFailed
         }
     }
     

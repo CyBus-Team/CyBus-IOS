@@ -11,7 +11,7 @@ struct StopCircle : View {
     var body: some View {
         ZStack {
             Circle()
-                .fill(Color.blue)
+                .fill(Color.red)
                 .frame(width: 20, height: 20)
             Circle()
                 .fill(Color.white)

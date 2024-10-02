@@ -345,12 +345,12 @@
 		94AF0D992C779555002FE41B /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				94AF0DC32C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift */,
-				94AF0DA22C779A8C002FE41B /* BusesUseCasesProtocol.swift */,
-				94C998642C88CFA8000F0E64 /* MapUseCasesProtocol.swift */,
 				94AF0DA42C779ADC002FE41B /* BusesUseCases.swift */,
+				94AF0DA22C779A8C002FE41B /* BusesUseCasesProtocol.swift */,
 				94AF0DC12C79FAE7002FE41B /* RoutesUseCases.swift */,
+				94AF0DC32C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift */,
 				94C998662C88D28C000F0E64 /* MapUseCases.swift */,
+				94C998642C88CFA8000F0E64 /* MapUseCasesProtocol.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";

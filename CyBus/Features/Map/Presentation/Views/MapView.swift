@@ -30,7 +30,7 @@ struct MapView: View {
                                 viewModel.onSelectBus(bus: bus)
                             }
                     }
-                    .allowOverlap(true)
+                    .allowOverlap(true).variableAnchors([ViewAnnotationAnchorConfig(anchor:.center)])
                 }
                 
                 if let selection = viewModel.selection {
@@ -40,70 +40,70 @@ struct MapView: View {
                     ForEvery(bus.stops) { stop in
                         MapViewAnnotation(coordinate: stop.position) {
                             StopCircle().compositingGroup()
+                        }.allowOverlap(false).variableAnchors([ViewAnnotationAnchorConfig(anchor: .top)])
+                        
+                    }
+                    
+                    // Shapes
+                    PolylineAnnotation(
+                        id: "shapes",
+                        lineCoordinates: bus.shapes.map { shape in
+                            shape.position
                         }
-                
-                    }
-                
-                // Shapes
-                PolylineAnnotation(
-                    id: "shapes",
-                    lineCoordinates: bus.shapes.map { shape in
-                        shape.position
-                    }
-                )
-                .lineColor(.systemBlue)
-                .lineBorderColor(.systemBlue)
-                .lineWidth(10)
-                .lineBorderWidth(2)
-            }
-        }
-        .onMapLoaded { _ in
-            viewport = .camera(center: center, zoom: zoom)
-            viewModel.onMapLoaded()
-        }
-        
-        VStack {
-            Spacer()
-            HStack(alignment: .center) {
-                // Clear route button
-                if viewModel.hasSelection {
-                    ClearRouteButton {
-                        viewModel.onClearSelection()
-                    }
-                }
-                
-                // Zoom buttons
-                ZoomButton(
-                    action: {
-                        zoom -= 1
-                        withViewportAnimation(.fly) {
-                            viewport = .camera(zoom: zoom)
-                        }
-                    },
-                    zoomIn: false
-                )
-                ZoomButton(
-                    action: {
-                        zoom += 1
-                        withViewportAnimation(.fly) {
-                            viewport = .camera(zoom: zoom)
-                        }
-                    },
-                    zoomIn: true
-                )
-                
-                // Get current location button
-                LocationButton {
-                    // TODO: Get current location
-                    withViewportAnimation(.fly) {
-                        viewport = .camera(center: center, zoom: zoom, bearing: 0, pitch: 0)
-                    }
+                    )
+                    .lineColor(.systemBlue)
+                    .lineBorderColor(.systemBlue)
+                    .lineWidth(10)
+                    .lineBorderWidth(2)
                 }
             }
-            .frame(maxWidth: .infinity)
-            .padding(.bottom, 40)
+            .onMapLoaded { _ in
+                viewport = .camera(center: center, zoom: zoom)
+                viewModel.onMapLoaded()
+            }
+            
+            VStack {
+                Spacer()
+                HStack(alignment: .center) {
+                    // Clear route button
+                    if viewModel.hasSelection {
+                        ClearRouteButton {
+                            viewModel.onClearSelection()
+                        }
+                    }
+                    
+                    // Zoom buttons
+                    ZoomButton(
+                        action: {
+                            zoom -= 1
+                            withViewportAnimation(.fly) {
+                                viewport = .camera(zoom: zoom)
+                            }
+                        },
+                        zoomIn: false
+                    )
+                    ZoomButton(
+                        action: {
+                            zoom += 1
+                            withViewportAnimation(.fly) {
+                                viewport = .camera(zoom: zoom)
+                            }
+                        },
+                        zoomIn: true
+                    )
+                    
+                    // Get current location button
+                    LocationButton {
+                        // TODO: Get current location
+                        withViewportAnimation(.fly) {
+                            viewport = .camera(center: center, zoom: zoom, bearing: 0, pitch: 0)
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.bottom, 40)
+            }
         }
-    }
         .ignoresSafeArea()
-}
+    }
 }
