@@ -57,6 +57,7 @@ struct MapView: View {
                     .lineBorderWidth(2)
                 }
             }
+            .cameraBounds(CameraBoundsOptions(maxZoom: 15, minZoom: 12))
             .onMapLoaded { _ in
                 viewport = .camera(center: center, zoom: zoom)
                 viewModel.onMapLoaded()
