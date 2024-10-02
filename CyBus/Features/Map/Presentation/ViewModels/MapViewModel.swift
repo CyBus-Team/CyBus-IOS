@@ -98,13 +98,17 @@ class MapViewModel: ObservableObject {
     }
     
     public func increaseZoom() {
-        zoom += 1
-        viewport = .camera(zoom: zoom)
+        if (zoom < maxZoom) {
+            zoom += 1
+            viewport = .camera(zoom: zoom)
+        }
     }
     
     public func decreaseZoom() {
-        zoom -= 1
-        viewport = .camera(zoom: zoom)
+        if (zoom > minZoom) {
+            zoom -= 1
+            viewport = .camera(zoom: zoom)
+        }
     }
     
     public func goToCurrentLocation() {
