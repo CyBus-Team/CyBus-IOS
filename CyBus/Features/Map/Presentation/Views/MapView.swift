@@ -41,12 +41,10 @@ struct MapView: View {
                         MapViewAnnotation(coordinate: stop.position) {
                             StopCircle().compositingGroup()
                         }.allowOverlap(false).variableAnchors([ViewAnnotationAnchorConfig(anchor: .top)])
-                        
                     }
                     
                     // Shapes
                     PolylineAnnotation(
-                        id: "shapes",
                         lineCoordinates: bus.shapes.map { shape in
                             shape.position
                         }
