@@ -24,8 +24,7 @@ struct MapView: View {
                             .onTapGesture {
                                 viewModel.onSelectBus(bus: bus)
                             }
-                    }
-                    .allowOverlap(true).variableAnchors([ViewAnnotationAnchorConfig(anchor:.center)])
+                    }.allowOverlap(true).variableAnchors([ViewAnnotationAnchorConfig(anchor:.center)])
                 }
                 
                 if let selection = viewModel.selection {
@@ -85,7 +84,6 @@ struct MapView: View {
                     
                     // Get current location button
                     LocationButton {
-                        // TODO: Get current location
                         withViewportAnimation(.fly) {
                             viewModel.goToCurrentLocation()
                         }

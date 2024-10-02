@@ -64,7 +64,11 @@ class MapViewModel: ObservableObject {
     private func fetchBuses() async throws {
         do {
             let buses = try await busesUsecases.fetchBuses()
-            self.buses = hasSelection ? buses.filter { $0 == selection?.bus } : buses
+            if let selectedBus = selection {
+                self.buses = buses.filter { $0 == selectedBus.bus }
+            } else {
+                self.buses = buses
+            }
         } catch {
             print("Failed to fetch busses \(error)")
         }
@@ -104,6 +108,7 @@ class MapViewModel: ObservableObject {
     }
     
     public func goToCurrentLocation() {
+        // TODO: Get current location
         viewport = .camera(center: center, zoom: zoom, bearing: 0, pitch: 0)
     }
     
