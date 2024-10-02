@@ -60,7 +60,7 @@ sh generate.sh
 
 [📋] - Add localization - (issue) [https://github.com/PopovVA/CyBus/issues/4]
 
-[📋] - Update architecture - (issue) [https://github.com/PopovVA/CyBus/issues/5]
+[✅] - Update architecture - (issue) [https://github.com/PopovVA/CyBus/issues/5]
 
 [📋] - Create UI - (issue) [https://github.com/PopovVA/CyBus/issues/6]
 
