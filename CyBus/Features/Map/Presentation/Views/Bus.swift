@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct BusMarkerView: View {
-    var bus: Bus
+struct Bus: View {
+    var lineName: String
     
     var body: some View {
         VStack {
-            Text(bus.route.lineName)
+            Text(lineName)
                 .font(.caption)
                 .padding(5)
                 .background(Color.white)
@@ -20,6 +20,8 @@ struct BusMarkerView: View {
                 .shadow(radius: 3)
             
             Image(systemName: "bus")
+                .resizable()
+                .frame(width: 30, height: 30)
                 .font(.title)
                 .foregroundColor(.black)
         }

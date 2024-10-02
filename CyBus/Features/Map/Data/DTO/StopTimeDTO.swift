@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct StopTime: Codable, Identifiable {
-    let id: String
+struct StopTimeDTO: Codable {
+    let tripId: String
     let arrivalTime: String
     let departureTime: String
     let stopId: String
     let stopSequence: String
 
     enum CodingKeys: String, CodingKey {
-        case id = "trip_id"
+        case tripId = "trip_id"
         case arrivalTime = "arrival_time"
         case departureTime = "departure_time"
         case stopId = "stop_id"
