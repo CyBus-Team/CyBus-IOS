@@ -11,16 +11,11 @@ import SwiftUI
 struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
     
-    @State private var viewport: Viewport = .styleDefault
-    @State private var zoom: Double = 14
-    
-    let center = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
-    
     var body: some View {
         ZStack {
             
             // Map
-            Map(viewport: $viewport) {
+            Map(viewport: $viewModel.viewport) {
                 
                 // Buses
                 ForEvery(viewModel.buses) { bus in
@@ -55,9 +50,8 @@ struct MapView: View {
                     .lineBorderWidth(2)
                 }
             }
-            .cameraBounds(CameraBoundsOptions(maxZoom: 17, minZoom: 12))
+            .cameraBounds(CameraBoundsOptions(maxZoom: viewModel.maxZoom, minZoom: viewModel.minZoom))
             .onMapLoaded { _ in
-                viewport = .camera(center: center, zoom: zoom)
                 viewModel.onMapLoaded()
             }
             
@@ -74,18 +68,16 @@ struct MapView: View {
                     // Zoom buttons
                     ZoomButton(
                         action: {
-                            zoom -= 1
                             withViewportAnimation(.fly) {
-                                viewport = .camera(zoom: zoom)
+                                viewModel.decreaseZoom()
                             }
                         },
                         zoomIn: false
                     )
                     ZoomButton(
                         action: {
-                            zoom += 1
                             withViewportAnimation(.fly) {
-                                viewport = .camera(zoom: zoom)
+                                viewModel.increaseZoom()
                             }
                         },
                         zoomIn: true
@@ -95,7 +87,7 @@ struct MapView: View {
                     LocationButton {
                         // TODO: Get current location
                         withViewportAnimation(.fly) {
-                            viewport = .camera(center: center, zoom: zoom, bearing: 0, pitch: 0)
+                            viewModel.goToCurrentLocation()
                         }
                     }
                 }
