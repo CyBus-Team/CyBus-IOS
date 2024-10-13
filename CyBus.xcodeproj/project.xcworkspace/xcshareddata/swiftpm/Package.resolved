@@ -1,13 +1,13 @@
 {
-  "originHash" : "0b97b49fa2c9d0d87938bd8a8a97666da22b721442771bd2612c7727bf2040c0",
+  "originHash" : "5fbfd1ea3c3d7430ce22fa6d3f913fa5480cb95d845b56cc06a0b05b37ce9e7d",
   "pins" : [
     {
       "identity" : "mapbox-common-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/mapbox-common-ios.git",
       "state" : {
-        "revision" : "add54e4b7d4cfe1e12600d73af6d38a536b37085",
-        "version" : "24.5.0"
+        "revision" : "4efcac86e00b46d58469a9d37965a4a6ab053a73",
+        "version" : "24.7.1"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/mapbox-core-maps-ios.git",
       "state" : {
-        "revision" : "33c88427d47dc075aa1bff8e088570110a19ed1a",
-        "version" : "11.5.1"
+        "revision" : "6f8b7631444c287b700ae59fc3dc27ec492da317",
+        "version" : "11.7.1"
       }
     },
     {
@@ -24,26 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/mapbox-maps-ios.git",
       "state" : {
-        "revision" : "3d063d661ea969be5a0f1cf8fde5461597911924",
-        "version" : "11.5.1"
-      }
-    },
-    {
-      "identity" : "mapbox-navigation-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mapbox/mapbox-navigation-ios.git",
-      "state" : {
-        "revision" : "0e78d8505acec26c17b96171dd1f7e7a97ca6cce",
-        "version" : "3.2.0"
-      }
-    },
-    {
-      "identity" : "mapbox-navigation-native-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mapbox/mapbox-navigation-native-ios.git",
-      "state" : {
-        "revision" : "1d6c1186d468f0ad27ba2653a9a49423a5cd5c81",
-        "version" : "314.0.0"
+        "revision" : "34daef8d1b44d616e80fc0bd67f49fc33d8a1ec0",
+        "version" : "11.7.1"
       }
     },
     {
@@ -56,21 +38,12 @@
       }
     },
     {
-      "identity" : "swift-snapshot-testing",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
-      "state" : {
-        "revision" : "26ed3a2b4a2df47917ca9b790a57f91285b923fb",
-        "version" : "1.12.0"
-      }
-    },
-    {
       "identity" : "turf-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/turf-swift.git",
       "state" : {
-        "revision" : "213050191cfcb3d5aa76e1fa90c6ff1e182a42ca",
-        "version" : "2.8.0"
+        "revision" : "1997fb3c3dc0d8181690a1ec192ed907bcead9e8",
+        "version" : "3.0.0"
       }
     }
   ],
