@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct CyBusApp: App {
+    
+    @AppStorage(ThemeKey.identifier) private var themeMode: String = ThemeKey.defaultValue.mode.rawValue
+    
+    private var isDark: Bool {
+        get { themeMode == ThemeMode.dark.rawValue }
+    }
+    
     var body: some Scene {
         WindowGroup {
-            MapView().environment(\.theme, .light)
+            SplashView()
         }
+        .environment(\.theme, isDark ? .dark : .light)
     }
 }

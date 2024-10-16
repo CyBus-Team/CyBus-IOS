@@ -25,6 +25,7 @@ extension Theme {
 
 struct ThemeKey: EnvironmentKey {
     static let defaultValue: Theme = .light
+    static let identifier: String = "themeMode"
 }
 
 extension EnvironmentValues {

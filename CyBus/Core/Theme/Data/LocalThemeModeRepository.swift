@@ -8,15 +8,15 @@
 import Foundation
 
 class LocalThemeModeRepository: ThemeModeRepositoryProtocol {
-    private let themeKey = "theme"
+    private let themeKey = ThemeKey.identifier
     
     func save(_ themeMode: ThemeMode) {
         UserDefaults.standard.set(themeMode.rawValue, forKey: themeKey)
     }
     
     func load() -> ThemeMode? {
-        if let savedTheme = UserDefaults.standard.string(forKey: themeKey) {
-            return ThemeMode(rawValue: savedTheme)
+        if let savedMode = UserDefaults.standard.string(forKey: themeKey) {
+            return ThemeMode(rawValue: savedMode)
         } else {
             return nil
         }
