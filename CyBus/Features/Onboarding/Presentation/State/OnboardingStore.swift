@@ -45,7 +45,7 @@ struct OnboardingFeature {
                     try? await Task.sleep(for: .seconds(10))
                     await send(.welcome)
                 }
-                
+                return .none
                 //Welcome
             case .welcome:
                 state.page = .welcome
