@@ -6,9 +6,19 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct OnboardingView: View {
+    let store: StoreOf<OnboardingFeature>
+    
     var body: some View {
-        Text("Onboarding")
+        NavigationStack {
+            switch (store.page) {
+                case .logo: OnboardingLogoView(store: store)
+                case .welcome: OnboardingWelcomeView(store: store)
+                case .geolocation: OnboardingGeolocationView(store: store)
+                case .login: OnboardingLoginView(store: store)
+            }
+        }
     }
 }

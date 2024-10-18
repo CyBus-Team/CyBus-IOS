@@ -1,14 +1,16 @@
 //
-//  OnboardingRepository.swift
+//  OnboardingLocalRepository.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 13/10/2024.
 //
 
+import Foundation
+
 class OnboardingRepository : OnboardingRepositoryProtocol {
     
     func finish() {
-        <#code#>
+        UserDefaults.standard.set(true, forKey: OnboardingFeature.onboardingKey)
     }
     
 }
