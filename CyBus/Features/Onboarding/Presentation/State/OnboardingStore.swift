@@ -8,7 +8,6 @@
 import ComposableArchitecture
 
 enum OnboardingPage {
-    case logo
     case welcome
     case geolocation
     case login
@@ -26,8 +25,6 @@ struct OnboardingFeature {
     }
     
     enum Action {
-        case skipLogo
-        case welcome
         case getStartTapped
         case allowLocationTapped
         case notNowGeolocationTapped
@@ -39,17 +36,7 @@ struct OnboardingFeature {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-                //Logo
-            case .skipLogo:
-                return .run { send in
-                    try? await Task.sleep(for: .seconds(10))
-                    await send(.welcome)
-                }
-                return .none
                 //Welcome
-            case .welcome:
-                state.page = .welcome
-                return .none
             case .getStartTapped:
                 state.page = .geolocation
                 return .none

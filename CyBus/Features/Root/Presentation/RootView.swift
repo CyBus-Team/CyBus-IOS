@@ -9,8 +9,12 @@ import SwiftUI
 import ComposableArchitecture
 
 struct RootView: View {
-    @AppStorage(OnboardingFeature.onboardingKey) private var skipOnboarding: Bool = false
+
     @AppStorage(ThemeKey.identifier) private var themeMode: String = ThemeKey.defaultValue.mode.rawValue
+    
+    let rootStore: StoreOf<RootFeature> = Store(initialState: RootFeature.State()) {
+        RootFeature()
+    }
     
     private var isDark: Bool {
         get { themeMode == ThemeMode.dark.rawValue }
@@ -18,13 +22,13 @@ struct RootView: View {
     
     var body: some View {
         NavigationStack {
-            if !skipOnboarding {
-                OnboardingView(store: Store(initialState: OnboardingFeature.State()) {
-                    OnboardingFeature()
-                })
-            } else {
-                MapView()
+            switch (rootStore.page) {
+                case .logo: LogoView()
+                case .onboarding: OnboardingView()
+                case .home: MapView()
             }
-        }.environment(\.theme, isDark ? .dark : .light)
+        }.environment(\.theme, isDark ? .dark : .light).onAppear {
+            rootStore.send(.showLogo)
+        }
     }
 }

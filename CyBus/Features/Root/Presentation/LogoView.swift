@@ -1,5 +1,5 @@
 //
-//  OnboardingLogoView.swift
+//  LogoView.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 18/10/2024.
@@ -8,11 +8,9 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct OnboardingLogoView: View {
+struct LogoView: View {
     
     @Environment(\.theme) var theme
-    
-    let store: StoreOf<OnboardingFeature>
     
     var body: some View {
         VStack {
@@ -28,8 +26,6 @@ struct OnboardingLogoView: View {
             LinearGradient(
                 gradient: Gradient(colors: [theme.colors.foreground, theme.colors.background]), startPoint: .top, endPoint: .bottom
             )
-        ).onAppear {
-            store.send(.skipLogo)
-        }
+        )
     }
 }

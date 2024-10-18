@@ -78,7 +78,8 @@
 		94F3B8812CC2EB3800E38BE2 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8802CC2EB3500E38BE2 /* OnboardingWelcomeView.swift */; };
 		94F3B8832CC2EB4300E38BE2 /* OnboardingGeolocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8822CC2EB3C00E38BE2 /* OnboardingGeolocationView.swift */; };
 		94F3B8852CC2EB5100E38BE2 /* OnboardingLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8842CC2EB4700E38BE2 /* OnboardingLoginView.swift */; };
-		94F3B8892CC2F1B900E38BE2 /* OnboardingLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8882CC2F1B200E38BE2 /* OnboardingLogoView.swift */; };
+		94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8882CC2F1B200E38BE2 /* LogoView.swift */; };
+		94F3B8902CC301A100E38BE2 /* RootStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,7 +178,8 @@
 		94F3B8802CC2EB3500E38BE2 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		94F3B8822CC2EB3C00E38BE2 /* OnboardingGeolocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGeolocationView.swift; sourceTree = "<group>"; };
 		94F3B8842CC2EB4700E38BE2 /* OnboardingLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoginView.swift; sourceTree = "<group>"; };
-		94F3B8882CC2F1B200E38BE2 /* OnboardingLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLogoView.swift; sourceTree = "<group>"; };
+		94F3B8882CC2F1B200E38BE2 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		94F3B88F2CC3019C00E38BE2 /* RootStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,7 +285,6 @@
 				94F220932C5E85C700D776B9 /* trips.json */,
 				94CC17452C4EC6AA00AC358D /* routes.json */,
 				942C53F42C55208B00DE9BD7 /* shapes.json */,
-				94D794862CC0205F0097A2F0 /* RootView.swift */,
 				94ABDF802C29ABBD00970F8C /* CyBusApp.swift */,
 				94ABDF842C29ABBD00970F8C /* Assets.xcassets */,
 				94ABDF862C29ABBD00970F8C /* CyBus.entitlements */,
@@ -320,6 +321,7 @@
 		94AF0D932C7793EF002FE41B /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				94F3B88A2CC3017100E38BE2 /* Root */,
 				94AF24B12CBC13320092EE9B /* Onboarding */,
 				94AF0D942C779402002FE41B /* Map */,
 			);
@@ -557,7 +559,6 @@
 		94F3B8862CC2ECDD00E38BE2 /* Steps */ = {
 			isa = PBXGroup;
 			children = (
-				94F3B8882CC2F1B200E38BE2 /* OnboardingLogoView.swift */,
 				94F3B8802CC2EB3500E38BE2 /* OnboardingWelcomeView.swift */,
 				94F3B8822CC2EB3C00E38BE2 /* OnboardingGeolocationView.swift */,
 				94F3B8842CC2EB4700E38BE2 /* OnboardingLoginView.swift */,
@@ -569,6 +570,32 @@
 			isa = PBXGroup;
 			children = (
 				94D7948A2CC029B50097A2F0 /* OnboardingStore.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		94F3B88A2CC3017100E38BE2 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				94F3B88B2CC3017A00E38BE2 /* Presentation */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		94F3B88B2CC3017A00E38BE2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				94F3B88E2CC3019800E38BE2 /* State */,
+				94D794862CC0205F0097A2F0 /* RootView.swift */,
+				94F3B8882CC2F1B200E38BE2 /* LogoView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		94F3B88E2CC3019800E38BE2 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				94F3B88F2CC3019C00E38BE2 /* RootStore.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -734,6 +761,7 @@
 				94C998692C88DCAB000F0E64 /* StopCircle.swift in Sources */,
 				94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */,
 				94AF24DA2CBC572A0092EE9B /* OnboardingView.swift in Sources */,
+				94F3B8902CC301A100E38BE2 /* RootStore.swift in Sources */,
 				9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */,
 				94AF0DA52C779ADC002FE41B /* BusesUseCases.swift in Sources */,
 				94AF24E32CBC5B340092EE9B /* OnboardingRepository.swift in Sources */,
@@ -741,7 +769,7 @@
 				94AF0DA32C779A8C002FE41B /* BusesUseCasesProtocol.swift in Sources */,
 				94AF0D9F2C7799F0002FE41B /* RoutesRepositoryProtocol.swift in Sources */,
 				94AF0DC22C79FAE7002FE41B /* RoutesUseCases.swift in Sources */,
-				94F3B8892CC2F1B900E38BE2 /* OnboardingLogoView.swift in Sources */,
+				94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */,
 				94F3B8832CC2EB4300E38BE2 /* OnboardingGeolocationView.swift in Sources */,
 				947633D52C6E0747000F20C7 /* StopDTO.swift in Sources */,
 				94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */,
