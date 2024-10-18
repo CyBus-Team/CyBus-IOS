@@ -1,13 +1,22 @@
 {
-  "originHash" : "0b97b49fa2c9d0d87938bd8a8a97666da22b721442771bd2612c7727bf2040c0",
+  "originHash" : "7ad50279e36698dbbef96c526bbe49c542d0d5876c1372ef9e38d71bf0d50ab1",
   "pins" : [
+    {
+      "identity" : "combine-schedulers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/combine-schedulers",
+      "state" : {
+        "revision" : "9fa31f4403da54855f1e2aeaeff478f4f0e40b13",
+        "version" : "1.0.2"
+      }
+    },
     {
       "identity" : "mapbox-common-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/mapbox-common-ios.git",
       "state" : {
-        "revision" : "add54e4b7d4cfe1e12600d73af6d38a536b37085",
-        "version" : "24.5.0"
+        "revision" : "4efcac86e00b46d58469a9d37965a4a6ab053a73",
+        "version" : "24.7.1"
       }
     },
     {
@@ -15,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/mapbox-core-maps-ios.git",
       "state" : {
-        "revision" : "33c88427d47dc075aa1bff8e088570110a19ed1a",
-        "version" : "11.5.1"
+        "revision" : "6f8b7631444c287b700ae59fc3dc27ec492da317",
+        "version" : "11.7.1"
       }
     },
     {
@@ -24,26 +33,98 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/mapbox-maps-ios.git",
       "state" : {
-        "revision" : "3d063d661ea969be5a0f1cf8fde5461597911924",
-        "version" : "11.5.1"
+        "revision" : "34daef8d1b44d616e80fc0bd67f49fc33d8a1ec0",
+        "version" : "11.7.1"
       }
     },
     {
-      "identity" : "mapbox-navigation-ios",
+      "identity" : "swift-case-paths",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mapbox/mapbox-navigation-ios.git",
+      "location" : "https://github.com/pointfreeco/swift-case-paths",
       "state" : {
-        "revision" : "0e78d8505acec26c17b96171dd1f7e7a97ca6cce",
-        "version" : "3.2.0"
+        "revision" : "bc92c4b27f9a84bfb498cdbfdf35d5a357e9161f",
+        "version" : "1.5.6"
       }
     },
     {
-      "identity" : "mapbox-navigation-native-ios",
+      "identity" : "swift-clocks",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mapbox/mapbox-navigation-native-ios.git",
+      "location" : "https://github.com/pointfreeco/swift-clocks",
       "state" : {
-        "revision" : "1d6c1186d468f0ad27ba2653a9a49423a5cd5c81",
-        "version" : "314.0.0"
+        "revision" : "b9b24b69e2adda099a1fa381cda1eeec272d5b53",
+        "version" : "1.0.5"
+      }
+    },
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections",
+      "state" : {
+        "revision" : "671108c96644956dddcd89dd59c203dcdb36cec7",
+        "version" : "1.1.4"
+      }
+    },
+    {
+      "identity" : "swift-composable-architecture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-composable-architecture",
+      "state" : {
+        "revision" : "fc5cbeec88114ff987f6c3cad3a7f3a3713fdb56",
+        "version" : "1.15.1"
+      }
+    },
+    {
+      "identity" : "swift-concurrency-extras",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-concurrency-extras",
+      "state" : {
+        "revision" : "6054df64b55186f08b6d0fd87152081b8ad8d613",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "swift-custom-dump",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-custom-dump",
+      "state" : {
+        "revision" : "82645ec760917961cfa08c9c0c7104a57a0fa4b1",
+        "version" : "1.3.3"
+      }
+    },
+    {
+      "identity" : "swift-dependencies",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-dependencies",
+      "state" : {
+        "revision" : "0fc0255e780bf742abeef29dec80924f5f0ae7b9",
+        "version" : "1.4.1"
+      }
+    },
+    {
+      "identity" : "swift-identified-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-identified-collections",
+      "state" : {
+        "revision" : "2f5ab6e091dd032b63dacbda052405756010dc3b",
+        "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "swift-navigation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-navigation",
+      "state" : {
+        "revision" : "16a27ab7ae0abfefbbcba73581b3e2380b47a579",
+        "version" : "2.2.2"
+      }
+    },
+    {
+      "identity" : "swift-perception",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-perception",
+      "state" : {
+        "revision" : "bc67aa8e461351c97282c2419153757a446ae1c9",
+        "version" : "1.3.5"
       }
     },
     {
@@ -56,12 +137,12 @@
       }
     },
     {
-      "identity" : "swift-snapshot-testing",
+      "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
+      "location" : "https://github.com/swiftlang/swift-syntax",
       "state" : {
-        "revision" : "26ed3a2b4a2df47917ca9b790a57f91285b923fb",
-        "version" : "1.12.0"
+        "revision" : "0687f71944021d616d34d922343dcef086855920",
+        "version" : "600.0.1"
       }
     },
     {
@@ -69,8 +150,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/turf-swift.git",
       "state" : {
-        "revision" : "213050191cfcb3d5aa76e1fa90c6ff1e182a42ca",
-        "version" : "2.8.0"
+        "revision" : "1997fb3c3dc0d8181690a1ec192ed907bcead9e8",
+        "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "xctest-dynamic-overlay",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
+      "state" : {
+        "revision" : "770f990d3e4eececb57ac04a6076e22f8c97daeb",
+        "version" : "1.4.2"
       }
     }
   ],

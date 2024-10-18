@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct CyBusApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            MapView()
+            RootView()
         }
     }
 }

@@ -6,35 +6,36 @@
 //
 
 import SwiftUI
-@_spi(Experimental) import MapboxMaps
+import MapboxMaps
 
 struct MapView: View {
-    @StateObject private var viewModel = MapViewModel()
+    @StateObject private var mapViewModel = MapViewModel()
+    @StateObject private var cameraViewModel = CameraViewModel()
     
     var body: some View {
         ZStack {
             
             // Map
-            Map(viewport: $viewModel.viewport) {
+            Map(viewport: $cameraViewModel.viewport) {
                 
                 // Buses
-                ForEvery(viewModel.buses) { bus in
+                ForEvery(mapViewModel.buses) { bus in
                     MapViewAnnotation(coordinate: bus.position) {
                         Bus(lineName: bus.lineName)
                             .onTapGesture {
-                                viewModel.onSelectBus(bus: bus)
+                                mapViewModel.onSelectBus(bus: bus)
                             }
-                    }.allowOverlap(true).variableAnchors([ViewAnnotationAnchorConfig(anchor:.center)])
+                    }.allowOverlap(true)
                 }
                 
-                if let selection = viewModel.selection {
+                if let selection = mapViewModel.selection {
                     let bus = selection.1
                     
                     // Stops
                     ForEvery(bus.stops) { stop in
                         MapViewAnnotation(coordinate: stop.position) {
                             StopCircle().compositingGroup()
-                        }.allowOverlap(false).variableAnchors([ViewAnnotationAnchorConfig(anchor: .top)])
+                        }.allowOverlap(true)
                     }
                     
                     // Shapes
@@ -49,18 +50,19 @@ struct MapView: View {
                     .lineBorderWidth(2)
                 }
             }
-            .cameraBounds(CameraBoundsOptions(maxZoom: viewModel.maxZoom, minZoom: viewModel.minZoom))
-            .onMapLoaded { _ in
-                viewModel.onMapLoaded()
+            .mapStyle(.standard)
+            .cameraBounds(CameraBoundsOptions(maxZoom: cameraViewModel.maxZoom, minZoom: cameraViewModel.minZoom))
+            .onMapLoaded { map in
+                mapViewModel.onMapLoaded()
             }
             
             VStack {
                 Spacer()
                 HStack(alignment: .center) {
                     // Clear route button
-                    if viewModel.hasSelection {
+                    if mapViewModel.hasSelection {
                         ClearRouteButton {
-                            viewModel.onClearSelection()
+                            mapViewModel.onClearSelection()
                         }
                     }
                     
@@ -68,7 +70,7 @@ struct MapView: View {
                     ZoomButton(
                         action: {
                             withViewportAnimation(.fly) {
-                                viewModel.decreaseZoom()
+                                cameraViewModel.decreaseZoom()
                             }
                         },
                         zoomIn: false
@@ -76,7 +78,7 @@ struct MapView: View {
                     ZoomButton(
                         action: {
                             withViewportAnimation(.fly) {
-                                viewModel.increaseZoom()
+                                cameraViewModel.increaseZoom()
                             }
                         },
                         zoomIn: true
@@ -85,12 +87,12 @@ struct MapView: View {
                     // Get current location button
                     LocationButton {
                         withViewportAnimation(.fly) {
-                            viewModel.goToCurrentLocation()
+                            cameraViewModel.goToCurrentLocation()
                         }
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.bottom, 40)
+                .padding(.bottom, 60)
             }
         }
         .ignoresSafeArea()
