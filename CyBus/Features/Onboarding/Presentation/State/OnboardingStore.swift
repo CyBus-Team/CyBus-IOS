@@ -49,6 +49,7 @@ struct OnboardingFeature {
                 //Welcome
             case .welcome:
                 state.page = .welcome
+                return .none
             case .getStartTapped:
                 state.page = .geolocation
                 return .none
