@@ -28,11 +28,11 @@ jobs:
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.0' 
+          xcode-version: '15.0' 
 
       # Set up swift
       - name: Select Swift version
-        run: sudo xcode-select --switch /Applications/Xcode_16.app
+        run: sudo xcode-select --switch /Applications/Xcode_15.app
 
       # Resolve Swift Package dependencies
       - name: Resolve Swift Package dependencies
@@ -43,8 +43,8 @@ jobs:
         run: defaults write com.apple.dt.Xcode IDESkipPackagePluginFingerprintValidatation -bool YES
 
       - name: Build the project
-        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' -skipMacroValidation build
+        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build
 
       # Run tests
       - name: Run tests
-        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' -skipMacroValidation
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16'
