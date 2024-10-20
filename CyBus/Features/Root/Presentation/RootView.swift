@@ -28,7 +28,7 @@ struct RootView: View {
                 case .home: MapView()
             }
         }.environment(\.theme, isDark ? .dark : .light).onAppear {
-            rootStore.send(.showLogo)
+            rootStore.send(.initApp)
         }
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import ComposableArchitecture
-import SwiftUI
 
 enum RootPage {
     case logo
@@ -17,35 +16,25 @@ enum RootPage {
 @Reducer
 struct RootFeature {
     
-    @AppStorage(OnboardingFeature.onboardingKey) private var skipOnboarding: Bool = false
-    
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var page: RootPage = .logo
         var error: String?
     }
     
     enum Action {
-        case showLogo
-        case goHome
-        case goOnboarding
+        case initApp
     }
     
+    @Dependency(\.onboardingUseCases) var onboardingUseCases
     
-    var body: some ReducerOf<Self> {
+    var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
-                case .showLogo:
-                return .run { send in
-                    try? await Task.sleep(for: .seconds(2))
-                    await send(skipOnboarding ? .goHome : .goOnboarding)
-                }
-            case .goHome:
-                state.page = .home
-                return .none
-            case .goOnboarding:
-                state.page = .onboarding
-                return .none
+            case .initApp:
+                let needToShow = onboardingUseCases.needToShow()
+                state.page = needToShow ? .onboarding : .home
+                return .none   
             }
         }
     }

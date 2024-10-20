@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import ComposableArchitecture
+import Foundation
 
-class OnboardingUseCases : OnboardingUseCasesProtocol {
+public class OnboardingUseCases : OnboardingUseCasesProtocol {
     
     let repository: OnboardingRepositoryProtocol
     
@@ -19,4 +21,19 @@ class OnboardingUseCases : OnboardingUseCasesProtocol {
         repository.finish()
     }
     
+    func needToShow() -> Bool {
+        repository.needToShow()
+    }
+}
+
+struct OnboardingUseCasesKey: DependencyKey {
+    static var liveValue: OnboardingUseCasesProtocol = OnboardingUseCases()
+}
+
+
+extension DependencyValues {
+    var onboardingUseCases: OnboardingUseCasesProtocol {
+        get { self[OnboardingUseCasesKey.self] }
+        set { self[OnboardingUseCasesKey.self] = newValue }
+    }
 }
