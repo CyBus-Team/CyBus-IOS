@@ -31,8 +31,8 @@ jobs:
           xcode-version: '15.0' 
 
       # Set up swift
-      # - name: Select Swift version
-        # run: sudo xcode-select --switch /Applications/Xcode_15.app
+      - name: Select Swift version
+        run: sudo xcode-select --switch /Applications/Xcode_15.app
 
       # Resolve Swift Package dependencies
       - name: Resolve Swift Package dependencies
