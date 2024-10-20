@@ -14,6 +14,10 @@ jobs:
       # Checkout the repository
       - uses: actions/checkout@v4
 
+      # Set mapbox token
+      - name: Set Mapbox Token
+        run: echo "MAPBOX_ACCESS_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }}" >> $GITHUB_ENV
+
       # Set up Xcode
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
