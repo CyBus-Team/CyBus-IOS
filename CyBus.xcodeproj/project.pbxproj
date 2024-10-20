@@ -26,7 +26,6 @@
 		94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF802C29ABBD00970F8C /* CyBusApp.swift */; };
 		94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF842C29ABBD00970F8C /* Assets.xcassets */; };
 		94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDF882C29ABBD00970F8C /* Preview Assets.xcassets */; };
-		94ABDF932C29ABBD00970F8C /* CyBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF922C29ABBD00970F8C /* CyBusTests.swift */; };
 		94ABDF9D2C29ABBE00970F8C /* CyBusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */; };
 		94ABDF9F2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */; };
 		94AF0D9F2C7799F0002FE41B /* RoutesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0D9E2C7799F0002FE41B /* RoutesRepositoryProtocol.swift */; };
@@ -127,7 +126,6 @@
 		94ABDF862C29ABBD00970F8C /* CyBus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CyBus.entitlements; sourceTree = "<group>"; };
 		94ABDF882C29ABBD00970F8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		94ABDF8E2C29ABBD00970F8C /* CyBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CyBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94ABDF922C29ABBD00970F8C /* CyBusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusTests.swift; sourceTree = "<group>"; };
 		94ABDF982C29ABBE00970F8C /* CyBusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CyBusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDF9C2C29ABBE00970F8C /* CyBusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITests.swift; sourceTree = "<group>"; };
 		94ABDF9E2C29ABBE00970F8C /* CyBusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -311,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				94F3B8912CC30B6100E38BE2 /* Features */,
-				94ABDF922C29ABBD00970F8C /* CyBusTests.swift */,
 			);
 			path = CyBusTests;
 			sourceTree = "<group>";
@@ -850,7 +847,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94C1BE7F2CC55D880048789B /* OnboardingStore.swift in Sources */,
-				94ABDF932C29ABBD00970F8C /* CyBusTests.swift in Sources */,
 				945B1AA02CC555460091CED6 /* RootStore.swift in Sources */,
 				94C1BE7D2CC55D7C0048789B /* OnboardingRepository.swift in Sources */,
 				94C1BE7E2CC55D830048789B /* OnboardingRepositoryProtocol.swift in Sources */,
