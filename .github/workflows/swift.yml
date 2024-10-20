@@ -36,8 +36,8 @@ jobs:
 
       # Build the app
       - name: Build the project
-        run: xcodebuild -workspace CyBus.xcworkspace -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build
+        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build
 
       # Run tests
       - name: Run tests
-        run: xcodebuild test -workspace CyBus.xcworkspace -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16'
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16'
