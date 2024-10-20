@@ -24,8 +24,6 @@ struct RootFeature {
     
     enum Action {
         case initApp
-        case goHome
-        case goOnboarding
     }
     
     @Dependency(\.onboardingUseCases) var onboardingUseCases
@@ -33,17 +31,10 @@ struct RootFeature {
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
-                case .initApp:
-                return .run { send in
-                    let needToShow = onboardingUseCases.needToShow()
-                    await send(needToShow ? .goHome : .goOnboarding)
-                }
-            case .goHome:
-                state.page = .home
-                return .none
-            case .goOnboarding:
-                state.page = .onboarding
-                return .none
+            case .initApp:
+                let needToShow = onboardingUseCases.needToShow()
+                state.page = needToShow ? .onboarding : .home
+                return .none   
             }
         }
     }
