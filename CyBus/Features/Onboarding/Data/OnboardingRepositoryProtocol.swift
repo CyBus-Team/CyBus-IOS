@@ -7,4 +7,5 @@
 
 protocol OnboardingRepositoryProtocol {
     func finish()
+    func needToShow() -> Bool
 }

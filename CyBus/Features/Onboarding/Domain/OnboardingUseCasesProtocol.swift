@@ -7,4 +7,5 @@
 
 protocol OnboardingUseCasesProtocol {
     func finish()
+    func needToShow() -> Bool
 }
