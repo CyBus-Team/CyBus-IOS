@@ -32,7 +32,14 @@ jobs:
 
       # Set up swift
       - name: Select Swift version
-        run: sudo xcode-select --switch /Applications/Xcode_15.app
+        run: sudo xcode-select --switch /Applications/Xcode.app
+
+      # Clean Swift Package Manager dependencies
+      - name: Clean Swift Package Manager dependencies
+        run: |
+          rm -rf ~/Library/Developer/Xcode/DerivedData/*
+          rm -rf CyBus.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+          rm -rf .build
 
       # Resolve Swift Package dependencies
       - name: Resolve Swift Package dependencies
@@ -43,8 +50,8 @@ jobs:
         run: defaults write com.apple.dt.Xcode IDESkipPackagePluginFingerprintValidatation -bool YES
 
       - name: Build the project
-        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build
+        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' build
 
       # Run tests
       - name: Run tests
-        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16'
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14'
