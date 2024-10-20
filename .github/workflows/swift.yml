@@ -39,6 +39,9 @@ jobs:
         run: xcodebuild -resolvePackageDependencies
 
       # Build the app
+      - name: Set IDESkipPackagePluginFingerprintValidatation
+        run: defaults write com.apple.dt.Xcode IDESkipPackagePluginFingerprintValidatation -bool YES
+
       - name: Build the project
         run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build
 
