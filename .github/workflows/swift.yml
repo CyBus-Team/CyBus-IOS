@@ -30,6 +30,10 @@ jobs:
         with:
           xcode-version: '16.0' 
 
+      # Set up swift
+      - name: Select Swift version
+        run: sudo xcode-select --switch /Applications/Xcode_16.app
+
       # Resolve Swift Package dependencies
       - name: Resolve Swift Package dependencies
         run: xcodebuild -resolvePackageDependencies
