@@ -6,7 +6,7 @@ iOS application with schedules, routes, and locations of buses in Cyprus.
 
 ## Required
 
-You need to create account on MapBox and generate an access token, just follow [these instruction](https://docs.mapbox.com/ios/navigation/guides/get-started/install/#step-2-create-a-secret-token)
+You need to create account on MapBox and generate an access token, just follow [this instruction](https://docs.mapbox.com/ios/maps/guides/install/)
 
 After, you have to create `Config-Secret.xcconfig` file in the root directory and paste your access token there
 
@@ -14,23 +14,6 @@ After, you have to create `Config-Secret.xcconfig` file in the root directory an
 MBXAccessToken=YOUR_MAPBOX_ACCESS_TOKEN
 GFTSServiceIP=20.19.98.194
 GFTSServiceURL=$(GFTSServiceIP):8328/Api/api/gtfs-realtime //"http://20.19.98.194:8328/Api/api/gtfs-realtime"
-```
-
-
-## Optional
-
-### Generate Protobuf
-Make sure that you've installed `protobuf`:
-```
-brew install protobuf
-```
-
-Geolocation data is provided by a protobuf service. Response data is based on this [specification](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto).
-
-If you want to update it, do this:
-```
-cd Protos
-protoc --swift_out=. gtfs-realtime.proto
 ```
 
 ### Generate GFTS
@@ -48,6 +31,22 @@ gem install rgeo-shapefile -v 3.0.0
 Afterward, run the Ruby script in the root folder:
 ```
 sh generate.sh
+```
+
+## Optional
+
+### Generate Protobuf
+Make sure that you've installed `protobuf`:
+```
+brew install protobuf
+```
+
+Geolocation data is provided by a protobuf service. Response data is based on this [specification](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto).
+
+If you want to update it, do this:
+```
+cd Protos
+protoc --swift_out=. gtfs-realtime.proto
 ```
 
 # TODO for MVP
