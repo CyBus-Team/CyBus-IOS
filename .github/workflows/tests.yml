@@ -58,8 +58,13 @@ jobs:
       steps:
         - name: Send notification to Discord
           run: |
-            PR_URL=${{ github.event.pull_request.html_url }}
+            if [ -z "${{ github.event.pull_request.html_url }}" ]; then
+              PR_URL="Main branch"
+            else
+              PR_URL=${{ github.event.pull_request.html_url }}
+            fi
+
             curl -X POST \
               -H "Content-Type: application/json" \
-              -d "{\"content\": \"Tests completed! Status: ${{ job.status }}. Pull Request: $PR_URL\"}" \
+              -d "{\"content\": \"Tests completed! Status: ${{ job.status }}. Branch/PR: $PR_URL\"}" \
               ${{ secrets.DISCORD_WEBHOOK_URL }}
