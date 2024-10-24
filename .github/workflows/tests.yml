@@ -50,4 +50,4 @@ jobs:
 
       # Run tests
       - name: Run tests
-        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' -quiet
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' -quiet -skipMacroValidation
