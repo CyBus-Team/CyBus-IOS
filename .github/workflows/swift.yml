@@ -42,11 +42,11 @@ jobs:
       #   run: sudo xcode-select --switch /Applications/Xcode.app
 
       # Clean Swift Package Manager dependencies
-      - name: Clean Swift Package Manager dependencies
-        run: |
-          rm -rf ~/Library/Developer/Xcode/DerivedData/*
-          rm -rf CyBus.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
-          rm -rf .build
+      # - name: Clean Swift Package Manager dependencies
+      #   run: |
+      #     rm -rf ~/Library/Developer/Xcode/DerivedData/*
+      #     rm -rf CyBus.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+      #     rm -rf .build
 
       # Resolve Swift Package dependencies
       # - name: Resolve Swift Package dependencies
@@ -58,6 +58,12 @@ jobs:
 
       # - name: Clean the project
       #   run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' clean -quiet
+
+      - name: Install gems
+        run: |
+          gem install rgeo -v 3.0.0
+          gem install dbf -v 4.2.4
+          gem install rgeo-shapefile -v 3.0.0
 
       - name: Generate files
         run: sh generate.sh
