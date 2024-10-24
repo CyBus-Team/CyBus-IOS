@@ -42,11 +42,11 @@ jobs:
       #   run: sudo xcode-select --switch /Applications/Xcode.app
 
       # Clean Swift Package Manager dependencies
-      # - name: Clean Swift Package Manager dependencies
-      #   run: |
-      #     rm -rf ~/Library/Developer/Xcode/DerivedData/*
-      #     rm -rf CyBus.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
-      #     rm -rf .build
+      - name: Clean Swift Package Manager dependencies
+        run: |
+          rm -rf ~/Library/Developer/Xcode/DerivedData/*
+          rm -rf CyBus.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+          rm -rf .build
 
       # Resolve Swift Package dependencies
       # - name: Resolve Swift Package dependencies
