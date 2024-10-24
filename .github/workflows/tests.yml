@@ -51,3 +51,15 @@ jobs:
       # Run tests
       - name: Run tests
         run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' -quiet -skipMacroValidation
+  
+  notify:
+      runs-on: macos-15
+      needs: unit_tests
+      steps:
+        - name: Send notification to Discord
+          run: |
+            PR_URL=${{ github.event.pull_request.html_url }}
+            curl -X POST \
+              -H "Content-Type: application/json" \
+              -d "{\"content\": \"Tests completed! Status: ${{ job.status }}. Pull Request: $PR_URL\"}" \
+              ${{ secrets.DISCORD_WEBHOOK_URL }}
