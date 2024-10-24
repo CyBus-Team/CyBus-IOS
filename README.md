@@ -1,5 +1,8 @@
 
 # CyBus
+
+[![Tests](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml/badge.svg)](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml)
+
 iOS application with schedules, routes, and locations of buses in Cyprus.
 
 # Setup
