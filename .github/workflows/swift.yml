@@ -60,7 +60,7 @@ jobs:
       #   run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' clean -quiet
 
       - name: Build the project
-        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build -quiet -skipMacroValidation
+        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build -quiet
 
       # Run tests
       - name: Run tests
