@@ -38,8 +38,8 @@ jobs:
           echo "GFTSServiceURL=$(GFTSServiceIP):8328/Api/api/gtfs-realtime" >> CyBus/Config-Secret.xcconfig
 
       # Set up swift
-      - name: Select Swift version
-        run: sudo xcode-select --switch /Applications/Xcode.app
+      # - name: Select Swift version
+      #   run: sudo xcode-select --switch /Applications/Xcode.app
 
       # Clean Swift Package Manager dependencies
       - name: Clean Swift Package Manager dependencies
@@ -56,12 +56,13 @@ jobs:
       - name: Set IDESkipPackagePluginFingerprintValidatation
         run: defaults write com.apple.dt.Xcode IDESkipMacroFingerprintValidation -bool YES
 
-      - name: Clean the project
-        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' clean -quiet
+      # - name: Clean the project
+      #   run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' clean -quiet
 
       - name: Build the project
-        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build -quiet
+        # run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build -quiet
+        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus build -quiet
 
       # Run tests
       - name: Run tests
-        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16'
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus
