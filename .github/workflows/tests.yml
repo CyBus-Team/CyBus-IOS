@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  run_tests:
+  unit_tests:
     runs-on: macos-15
 
     steps:
@@ -43,10 +43,11 @@ jobs:
           gem install rgeo -v 3.0.0
           gem install dbf -v 4.2.4
           gem install rgeo-shapefile -v 3.0.0
-
+      
+      # Static files generator
       - name: Generate files
         run: sh generate.sh
 
       # Run tests
       - name: Run tests
-        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' build -quiet -skipMacroValidation
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' -quiet
