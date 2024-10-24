@@ -1,0 +1,65 @@
+name: Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  unit_tests:
+    runs-on: macos-15
+
+    steps:
+      # Checkout the repository
+      - uses: actions/checkout@v4
+
+      # Set up Xcode
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '16.0.0'
+
+      # Set mapbox token
+      - name: Set Mapbox Token
+        run: echo "MAPBOX_SECRET_TOKEN=${{ secrets.MAPBOX_SECRET_TOKEN }}" >> $GITHUB_ENV
+    
+      - name: Setup .netrc for Mapbox
+        run: |
+          echo "machine api.mapbox.com" > ~/.netrc
+          echo "login mapbox" >> ~/.netrc
+          echo "password ${{ secrets.MAPBOX_SECRET_TOKEN }}" >> ~/.netrc
+    
+      # Set mapbox token and other secrets
+      - name: Create Config-Secret.xcconfig
+        run: |
+          echo "MBXAccessToken=${{ secrets.MAPBOX_SECRET_TOKEN }}" > CyBus/Config-Secret.xcconfig
+          echo "GFTSServiceIP=20.19.98.194" >> CyBus/Config-Secret.xcconfig
+          echo "GFTSServiceURL=$(GFTSServiceIP):8328/Api/api/gtfs-realtime" >> CyBus/Config-Secret.xcconfig
+
+      # Setup gems for generator
+      - name: Install gems
+        run: |
+          gem install rgeo -v 3.0.0
+          gem install dbf -v 4.2.4
+          gem install rgeo-shapefile -v 3.0.0
+      
+      # Static files generator
+      - name: Generate files
+        run: sh generate.sh
+
+      # Run tests
+      - name: Run tests
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' -quiet -skipMacroValidation
+  
+  notify:
+      runs-on: macos-15
+      needs: unit_tests
+      steps:
+        - name: Send notification to Discord
+          run: |
+            PR_URL=${{ github.event.pull_request.html_url }}
+            curl -X POST \
+              -H "Content-Type: application/json" \
+              -d "{\"content\": \"Tests completed! Status: ${{ job.status }}. Pull Request: $PR_URL\"}" \
+              ${{ secrets.DISCORD_WEBHOOK_URL }}

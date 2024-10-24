@@ -67,7 +67,7 @@ protoc --swift_out=. gtfs-realtime.proto
 
 [📋] - Move GTFS and routes generation to one REST API service - (issue) [https://github.com/PopovVA/CyBus/issues/7]
 
-[📋] - Add unit tests - (issue) [https://github.com/PopovVA/CyBus/issues/8]
+[✅] - Add unit tests - (issue) [https://github.com/PopovVA/CyBus/issues/8]
 
 [📋] - Add analytics - (issue) [https://github.com/PopovVA/CyBus/issues/9]
 

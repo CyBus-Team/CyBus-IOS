@@ -1,5 +1,5 @@
 {
-  "originHash" : "7ad50279e36698dbbef96c526bbe49c542d0d5876c1372ef9e38d71bf0d50ab1",
+  "originHash" : "a813b5b753faad12a98d5e26c8a46793fa3414fb032d28e39f10b55dc4e59b16",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -132,8 +132,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "9f0c76544701845ad98716f3f6a774a892152bcb",
-        "version" : "1.26.0"
+        "revision" : "ebc7251dd5b37f627c93698e4374084d98409633",
+        "version" : "1.28.2"
       }
     },
     {
