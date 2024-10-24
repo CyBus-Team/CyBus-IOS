@@ -68,8 +68,8 @@ jobs:
       - name: Generate files
         run: sh generate.sh
 
-      - name: Build the project
-        run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' build -quiet -skipMacroValidation
+      # - name: Build the project
+      #   run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' build -quiet -skipMacroValidation
 
       # Run tests
       - name: Run tests
