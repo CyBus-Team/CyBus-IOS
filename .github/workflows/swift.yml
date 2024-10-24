@@ -14,9 +14,6 @@ jobs:
       # Checkout the repository
       - uses: actions/checkout@v4
 
-      - name: Run tests
-        run: swift test -v
-
       # Set up Xcode
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
@@ -52,8 +49,11 @@ jobs:
       #     rm -rf .build
 
       # Resolve Swift Package dependencies
-      # - name: Resolve Swift Package dependencies
-        # run: xcodebuild -resolvePackageDependencies
+      - name: Resolve Swift Package dependencies
+        run: xcodebuild -resolvePackageDependencies
+
+      - name: Run tests
+        run: swift test -v
 
       # Build the app
       # - name: Set IDESkipPackagePluginFingerprintValidatation
