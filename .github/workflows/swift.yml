@@ -59,6 +59,9 @@ jobs:
       # - name: Clean the project
       #   run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' clean -quiet
 
+      - name: Generate files
+        run: sh generate.sh
+
       - name: Build the project
         run: xcodebuild -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' build -quiet -skipMacroValidation
 
