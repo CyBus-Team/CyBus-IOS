@@ -49,12 +49,12 @@ struct RequestGeolocationFeature {
                 return .none
                 
             case .locationTapped:
-                return .run { send in
+                return .run { @MainActor send in
                     do {
-                        try locationUseCases.requestLocation()
-                        await send(.permissionResponse(allowed: true, error: nil))
+                        try await locationUseCases.requestPermission()
+                        send(.permissionResponse(allowed: true, error: nil))
                     } catch {
-                        await send(.permissionResponse(allowed: false, error: error as? LocationUseCasesError))
+                        send(.permissionResponse(allowed: false, error: error as? LocationUseCasesError))
                     }
                 }
             case let .permissionResponse(allowed, error):
@@ -63,7 +63,7 @@ struct RequestGeolocationFeature {
                     state.alert = AlertState {
                         TextState(error?.localizedDescription ?? "")
                     } actions: {
-                        ButtonState(role: .none, action: .openSettingsTapped, label: { TextState("Open settings") })
+                        ButtonState(role: .cancel, action: .openSettingsTapped, label: { TextState("Open settings") })
                     }
                 }
                 return .none

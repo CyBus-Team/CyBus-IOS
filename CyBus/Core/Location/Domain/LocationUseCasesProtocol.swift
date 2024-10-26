@@ -23,7 +23,7 @@ enum LocationUseCasesError: Error, LocalizedError {
 
 protocol LocationUseCasesProtocol {
     
-    func requestLocation() throws
+    func requestPermission() async throws
     
     func listenChanges(onLocationUpdate: @escaping (CLLocationCoordinate2D) -> Void) async throws
     

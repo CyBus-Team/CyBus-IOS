@@ -15,6 +15,8 @@
 		943A86132CB04588007AFF00 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943A86122CB04584007AFF00 /* CameraViewModel.swift */; };
 		944494722CCBC69100A616E2 /* RequestGeolocationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494712CCBC68B00A616E2 /* RequestGeolocationFeature.swift */; };
 		944494732CCBC69100A616E2 /* RequestGeolocationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494712CCBC68B00A616E2 /* RequestGeolocationFeature.swift */; };
+		944494762CCD7D3E00A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494752CCD7CFE00A616E2 /* LocationManagerUseCasesProtocol.swift */; };
+		944494782CCD7DBC00A616E2 /* LocationManagerUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494772CCD7DB400A616E2 /* LocationManagerUseCases.swift */; };
 		9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9CF2C6DFBBA009E98F3 /* ShapeDTO.swift */; };
 		9449C9D82C6E01CE009E98F3 /* TripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D72C6E01CE009E98F3 /* TripDTO.swift */; };
 		945B1AA02CC555460091CED6 /* RootStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootStore.swift */; };
@@ -114,6 +116,8 @@
 		942C53F62C55217400DE9BD7 /* RouteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDTO.swift; sourceTree = "<group>"; };
 		943A86122CB04584007AFF00 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		944494712CCBC68B00A616E2 /* RequestGeolocationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGeolocationFeature.swift; sourceTree = "<group>"; };
+		944494752CCD7CFE00A616E2 /* LocationManagerUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerUseCasesProtocol.swift; sourceTree = "<group>"; };
+		944494772CCD7DB400A616E2 /* LocationManagerUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerUseCases.swift; sourceTree = "<group>"; };
 		9449C9CF2C6DFBBA009E98F3 /* ShapeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeDTO.swift; sourceTree = "<group>"; };
 		9449C9D72C6E01CE009E98F3 /* TripDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDTO.swift; sourceTree = "<group>"; };
 		947633D42C6E0747000F20C7 /* StopDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDTO.swift; sourceTree = "<group>"; };
@@ -475,6 +479,8 @@
 		94D794922CC2CDD30097A2F0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				944494772CCD7DB400A616E2 /* LocationManagerUseCases.swift */,
+				944494752CCD7CFE00A616E2 /* LocationManagerUseCasesProtocol.swift */,
 				94D794902CC2CDD30097A2F0 /* LocationUseCases.swift */,
 				94D794912CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift */,
 			);
@@ -808,6 +814,7 @@
 				94AF0D9F2C7799F0002FE41B /* RoutesRepositoryProtocol.swift in Sources */,
 				94AF0DC22C79FAE7002FE41B /* RoutesUseCases.swift in Sources */,
 				94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */,
+				944494782CCD7DBC00A616E2 /* LocationManagerUseCases.swift in Sources */,
 				94F3B8832CC2EB4300E38BE2 /* OnboardingGeolocationView.swift in Sources */,
 				947633D52C6E0747000F20C7 /* StopDTO.swift in Sources */,
 				94891BD92C3AFC20008AFC53 /* MapViewModel.swift in Sources */,
@@ -837,6 +844,7 @@
 				94D794AA2CC2CDD30097A2F0 /* ThemeModeUseCases.swift in Sources */,
 				94D794AB2CC2CDD30097A2F0 /* LocationUseCases.swift in Sources */,
 				94D794AC2CC2CDD30097A2F0 /* LocationViewModel.swift in Sources */,
+				944494762CCD7D3E00A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */,
 				94D794AD2CC2CDD30097A2F0 /* LocalThemeModeRepository.swift in Sources */,
 				94D794AE2CC2CDD30097A2F0 /* SecondaryButton.swift in Sources */,
 				94D794AF2CC2CDD30097A2F0 /* PrimaryButton.swift in Sources */,

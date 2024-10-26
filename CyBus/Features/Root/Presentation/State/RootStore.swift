@@ -33,7 +33,7 @@ struct RootFeature {
             switch action {
             case .initApp:
                 let needToShow = onboardingUseCases.needToShow()
-                state.page = needToShow ? .onboarding : .home
+                state.page = needToShow ? .onboarding : .onboarding
                 return .none
             }
         }

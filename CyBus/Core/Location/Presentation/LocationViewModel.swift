@@ -27,13 +27,14 @@ class LocationViewModel: ObservableObject {
         self.locationUseCases = LocationUseCases()
     }
     
-    public func requestLocation() {
-        do {
-            try locationUseCases.requestLocation()
-        } catch {
-            print(error)
-        }
-    }
+    //TODO(vadim): Refactor to Reducer feature
+    //    public func requestLocation() {
+    //        do {
+    //            try locationUseCases.requestLocation()
+    //        } catch {
+    //            print(error)
+    //        }
+    //    }
     
     public func listenChanges() {
         Task {
