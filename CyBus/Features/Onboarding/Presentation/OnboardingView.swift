@@ -17,7 +17,7 @@ struct OnboardingView: View {
     var body: some View {
         NavigationStack() {
             switch (onboardingStore.page) {
-            case .welcome: OnboardingWelcomeView(onboardingStore: onboardingStore)
+            case .welcome: OnboardingWelcomeView(store: onboardingStore)
             case .geolocation: OnboardingGeolocationView(store: onboardingStore.scope(state: \.geolocation, action: \.geolocation))
             case .login: OnboardingLoginView(onboardingStore: onboardingStore)
             }

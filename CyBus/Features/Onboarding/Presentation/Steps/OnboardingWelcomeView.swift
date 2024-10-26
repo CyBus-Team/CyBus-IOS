@@ -12,7 +12,7 @@ import ComposableArchitecture
 
 struct OnboardingWelcomeView: View {
     @Environment(\.theme) var theme
-    let store: StoreOf<OnboardingFeature>
+    let store: StoreOf<OnboardingFeatures>
     
     var body: some View {
         
@@ -58,8 +58,8 @@ struct OnboardingWelcomeView: View {
 }
 
 #Preview {
-    OnboardingWelcomeView(store: Store(initialState: OnboardingFeature.State()) {
-        OnboardingFeature()
+    OnboardingWelcomeView(store: Store(initialState: OnboardingFeatures.State()) {
+        OnboardingFeatures()
     })
 }
 
