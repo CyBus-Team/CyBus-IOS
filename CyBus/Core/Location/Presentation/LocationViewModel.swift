@@ -28,7 +28,11 @@ class LocationViewModel: ObservableObject {
     }
     
     public func requestLocation() {
-        locationUseCases.requestLocation()
+        do {
+            try locationUseCases.requestLocation()
+        } catch {
+            print(error)
+        }
     }
     
     public func listenChanges() {

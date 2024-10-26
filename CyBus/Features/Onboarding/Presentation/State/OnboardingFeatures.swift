@@ -1,10 +1,3 @@
-//
-//  Store.swift
-//  CyBus
-//
-//  Created by Vadim Popov on 16/10/2024.
-//
-
 import ComposableArchitecture
 
 enum OnboardingPage {
@@ -14,48 +7,58 @@ enum OnboardingPage {
 }
 
 @Reducer
-struct OnboardingFeature {
+struct OnboardingFeatures {
     
     static let onboardingKey = "skipOnboarding"
     
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var page: OnboardingPage = .welcome
-        var error: String?
+        var geolocation = RequestGeolocationFeature.State()
     }
     
     enum Action {
+        //Welcome
         case getStartTapped
-        case allowLocationTapped
-        case notNowGeolocationTapped
-        case nextTapped
+        
+        //Location
+        case geolocation(RequestGeolocationFeature.Action)
+        
+        //Sign in
         case notNowSignInTapped
         case signInTapped
     }
     
     var body: some ReducerOf<Self> {
+        Scope(state: \.geolocation, action: \.geolocation) {
+            RequestGeolocationFeature()
+        }
         Reduce { state, action in
             switch action {
-                //Welcome
+                
+                // Welcome
             case .getStartTapped:
                 state.page = .geolocation
                 return .none
                 
-                //Geolocation
-            case .allowLocationTapped:
-                return .none
-            case .nextTapped, .notNowGeolocationTapped:
+                // Geolocation
+            case .geolocation(.nextTapped), .geolocation(.notNowTapped):
                 state.page = .login
                 return .none
+            case let .geolocation(.permissionResponse(allowed, _)):
+                if allowed {
+                    state.page = .login
+                }
+                return .none
+            case .geolocation(_):
+                return .none
                 
-                //Login
+                // Sign in
             case .notNowSignInTapped:
-                
                 return .none
             case .signInTapped:
                 return .none
             }
         }
     }
-    
 }

@@ -6,11 +6,7 @@
 //
 
 import CoreLocation
-
-enum LocationUseCasesError: Error {
-    case permissionDenied
-    case locationNotAvailable
-}
+import ComposableArchitecture
 
 final class LocationUseCases : LocationUseCasesProtocol {
     
@@ -22,8 +18,18 @@ final class LocationUseCases : LocationUseCasesProtocol {
         self.locationManager = CLLocationManager()
     }
     
-    func requestLocation() {
-        locationManager.requestWhenInUseAuthorization()
+    func requestLocation() throws {
+        let status = locationManager.authorizationStatus
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            return
+        case .denied, .restricted:
+            throw LocationUseCasesError.permissionDenied
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        @unknown default:
+            throw LocationUseCasesError.permissionDenied
+        }
     }
     
     func getCurrentLocation() async throws -> CLLocationCoordinate2D? {
@@ -48,4 +54,16 @@ final class LocationUseCases : LocationUseCasesProtocol {
         }
     }
     
+}
+
+struct LocationUseCasesKey: DependencyKey {
+    static var liveValue: LocationUseCasesProtocol = LocationUseCases()
+}
+
+
+extension DependencyValues {
+    var locationUseCases: LocationUseCasesProtocol {
+        get { self[LocationUseCasesKey.self] }
+        set { self[LocationUseCasesKey.self] = newValue }
+    }
 }

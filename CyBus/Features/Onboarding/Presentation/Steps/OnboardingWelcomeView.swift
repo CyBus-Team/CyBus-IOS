@@ -9,11 +9,12 @@ import SwiftUI
 import ComposableArchitecture
 
 struct OnboardingWelcomeView: View {
-    let store: StoreOf<OnboardingFeature>
+    
+    @Bindable var onboardingStore: StoreOf<OnboardingFeatures>
     
     var body: some View {
         PrimaryButton(label: "Get Start") {
-            store.send(.getStartTapped)
+            onboardingStore.send(.getStartTapped)
         }
     }
 }

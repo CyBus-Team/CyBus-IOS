@@ -9,15 +9,16 @@ import SwiftUI
 import ComposableArchitecture
 
 struct OnboardingLoginView: View {
-    let store: StoreOf<OnboardingFeature>
+    
+    @Bindable var onboardingStore: StoreOf<OnboardingFeatures>
     
     var body: some View {
         HStack {
             SecondaryButton(label: "Now Now") {
-                store.send(.notNowSignInTapped)
+                onboardingStore.send(.notNowSignInTapped)
             }
             PrimaryButton(label: "Sign in") {
-                store.send(.signInTapped)
+                onboardingStore.send(.signInTapped)
             }
         }
         
