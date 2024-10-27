@@ -17,6 +17,10 @@
 		944494732CCBC69100A616E2 /* RequestGeolocationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494712CCBC68B00A616E2 /* RequestGeolocationFeature.swift */; };
 		944494762CCD7D3E00A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494752CCD7CFE00A616E2 /* LocationManagerUseCasesProtocol.swift */; };
 		944494782CCD7DBC00A616E2 /* LocationManagerUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494772CCD7DB400A616E2 /* LocationManagerUseCases.swift */; };
+		944494792CCE417E00A616E2 /* LocationUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D794902CC2CDD30097A2F0 /* LocationUseCases.swift */; };
+		9444947A2CCE418600A616E2 /* LocationUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D794912CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift */; };
+		9444947B2CCE418C00A616E2 /* LocationManagerUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494772CCD7DB400A616E2 /* LocationManagerUseCases.swift */; };
+		9444947C2CCE419400A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494752CCD7CFE00A616E2 /* LocationManagerUseCasesProtocol.swift */; };
 		9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9CF2C6DFBBA009E98F3 /* ShapeDTO.swift */; };
 		9449C9D82C6E01CE009E98F3 /* TripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D72C6E01CE009E98F3 /* TripDTO.swift */; };
 		945B1AA02CC555460091CED6 /* RootStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootStore.swift */; };
@@ -861,12 +865,16 @@
 			files = (
 				94C1BE7F2CC55D880048789B /* OnboardingFeatures.swift in Sources */,
 				945B1AA02CC555460091CED6 /* RootStore.swift in Sources */,
+				944494792CCE417E00A616E2 /* LocationUseCases.swift in Sources */,
 				944494732CCBC69100A616E2 /* RequestGeolocationFeature.swift in Sources */,
 				94C1BE7D2CC55D7C0048789B /* OnboardingRepository.swift in Sources */,
 				94C1BE7E2CC55D830048789B /* OnboardingRepositoryProtocol.swift in Sources */,
+				9444947A2CCE418600A616E2 /* LocationUseCasesProtocol.swift in Sources */,
 				94C1BE7C2CC55D5F0048789B /* OnboardingUseCasesProtocol.swift in Sources */,
 				945B1AA12CC5576D0091CED6 /* OnboardingUseCases.swift in Sources */,
 				94F3B8972CC30B9500E38BE2 /* RootStoreTests.swift in Sources */,
+				9444947C2CCE419400A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */,
+				9444947B2CCE418C00A616E2 /* LocationManagerUseCases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
