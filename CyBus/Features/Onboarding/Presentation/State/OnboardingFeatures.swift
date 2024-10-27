@@ -9,7 +9,7 @@ enum OnboardingPage {
 @Reducer
 struct OnboardingFeatures {
     
-    static let onboardingKey = "skipOnboarding"
+    static let onboardingKey = "hasLaunchedBefore"
     
     @ObservableState
     struct State: Equatable {
