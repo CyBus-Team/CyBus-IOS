@@ -34,7 +34,7 @@ struct RootFeature {
             case .initApp:
                 let needToShow = onboardingUseCases.needToShow()
                 state.page = needToShow ? .onboarding : .home
-                return .none   
+                return .none
             }
         }
     }

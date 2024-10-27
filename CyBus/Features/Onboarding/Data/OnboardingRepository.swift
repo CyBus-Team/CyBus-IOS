@@ -10,11 +10,11 @@ import Foundation
 class OnboardingRepository : OnboardingRepositoryProtocol {
     
     func finish() {
-        UserDefaults.standard.set(true, forKey: OnboardingFeature.onboardingKey)
+        UserDefaults.standard.set(true, forKey: OnboardingFeatures.onboardingKey)
     }
     
     func needToShow() -> Bool {
-        UserDefaults.standard.bool(forKey: OnboardingFeature.onboardingKey)
+        UserDefaults.standard.bool(forKey: OnboardingFeatures.onboardingKey)
     }
     
 }

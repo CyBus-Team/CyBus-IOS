@@ -9,17 +9,21 @@ import SwiftUI
 import ComposableArchitecture
 
 struct OnboardingGeolocationView: View {
-    let store: StoreOf<OnboardingFeature>
+    
+    @Bindable var store: StoreOf<RequestGeolocationFeature>
     
     var body: some View {
-        HStack {
-            SecondaryButton(label: "Now Now") {
-                store.send(.notNowGeolocationTapped)
+        VStack {
+            SecondaryButton(label: "Not now") {
+                store.send(.notNowTapped)
             }
             PrimaryButton(label: "Next") {
                 store.send(.nextTapped)
             }
+            PrimaryButton(label: "Allow location") {
+                store.send(.locationTapped)
+            }
         }
-        
+        .alert($store.scope(state: \.alert, action: \.alert))
     }
 }
