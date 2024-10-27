@@ -63,7 +63,8 @@ struct RequestGeolocationFeature {
                     state.alert = AlertState {
                         TextState(error?.localizedDescription ?? "")
                     } actions: {
-                        ButtonState(role: .cancel, action: .openSettingsTapped, label: { TextState("Open settings") })
+                        ButtonState(role: .none, action: .openSettingsTapped, label: { TextState("Open settings") })
+                        ButtonState(role: .cancel, label: { TextState("Cancel") })
                     }
                 }
                 return .none
