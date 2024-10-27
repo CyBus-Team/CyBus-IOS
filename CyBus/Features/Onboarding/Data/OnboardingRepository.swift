@@ -13,7 +13,7 @@ class OnboardingRepository : OnboardingRepositoryProtocol {
         UserDefaults.standard.set(true, forKey: OnboardingFeatures.onboardingKey)
     }
     
-    func needToShow() -> Bool {
+    func hasLaunchedBefore() -> Bool {
         UserDefaults.standard.bool(forKey: OnboardingFeatures.onboardingKey)
     }
     
