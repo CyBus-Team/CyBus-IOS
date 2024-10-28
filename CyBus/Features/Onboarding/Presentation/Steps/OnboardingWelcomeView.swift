@@ -12,7 +12,7 @@ import ComposableArchitecture
 
 struct OnboardingWelcomeView: View {
     @Environment(\.theme) var theme
-    let store: StoreOf<OnboardingFeatures>
+    let store: StoreOf<OnboardingWelcomeFeature>
     
     var body: some View {
         
