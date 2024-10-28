@@ -14,15 +14,16 @@ struct OnboardingFeatures {
     @ObservableState
     struct State: Equatable {
         var page: OnboardingPage = .welcome
-        var geolocation = RequestGeolocationFeature.State()
+        var welcome = OnboardingWelcomeFeature.State()
+        var geolocation = OnboardingRequestGeolocationFeature.State()
     }
     
     enum Action {
         //Welcome
-        case getStartTapped
+        case welcome(OnboardingWelcomeFeature.Action)
         
         //Location
-        case geolocation(RequestGeolocationFeature.Action)
+        case geolocation(OnboardingRequestGeolocationFeature.Action)
         
         //Sign in
         case notNowSignInTapped
@@ -30,14 +31,17 @@ struct OnboardingFeatures {
     }
     
     var body: some ReducerOf<Self> {
+        Scope(state: \.welcome, action: \.welcome) {
+            OnboardingWelcomeFeature()
+        }
         Scope(state: \.geolocation, action: \.geolocation) {
-            RequestGeolocationFeature()
+            OnboardingRequestGeolocationFeature()
         }
         Reduce { state, action in
             switch action {
                 
                 // Welcome
-            case .getStartTapped:
+            case .welcome(.getStartTapped):
                 state.page = .geolocation
                 return .none
                 

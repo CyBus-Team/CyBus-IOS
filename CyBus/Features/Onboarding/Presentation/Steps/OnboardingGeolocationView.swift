@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 struct OnboardingGeolocationView: View {
     
-    @Bindable var store: StoreOf<RequestGeolocationFeature>
+    @Bindable var store: StoreOf<OnboardingRequestGeolocationFeature>
     
     var body: some View {
         VStack {
