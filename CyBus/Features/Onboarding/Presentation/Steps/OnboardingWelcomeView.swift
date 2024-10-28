@@ -8,8 +8,6 @@
 import SwiftUI
 import ComposableArchitecture
 
-
-
 struct OnboardingWelcomeView: View {
     @Environment(\.theme) var theme
     let store: StoreOf<OnboardingWelcomeFeature>
