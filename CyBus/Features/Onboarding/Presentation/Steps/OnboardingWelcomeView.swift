@@ -58,8 +58,8 @@ struct OnboardingWelcomeView: View {
 }
 
 #Preview {
-    OnboardingWelcomeView(store: Store(initialState: OnboardingFeatures.State()) {
-        OnboardingFeatures()
+    OnboardingWelcomeView(store: Store(initialState: OnboardingWelcomeFeature.State()) {
+        OnboardingWelcomeFeature()
     })
 }
 
