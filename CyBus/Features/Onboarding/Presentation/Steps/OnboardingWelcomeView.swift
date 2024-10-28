@@ -8,11 +8,9 @@
 import SwiftUI
 import ComposableArchitecture
 
-
-
 struct OnboardingWelcomeView: View {
     @Environment(\.theme) var theme
-    let store: StoreOf<OnboardingFeatures>
+    let store: StoreOf<OnboardingWelcomeFeature>
     
     var body: some View {
         
@@ -58,8 +56,8 @@ struct OnboardingWelcomeView: View {
 }
 
 #Preview {
-    OnboardingWelcomeView(store: Store(initialState: OnboardingFeatures.State()) {
-        OnboardingFeatures()
+    OnboardingWelcomeView(store: Store(initialState: OnboardingWelcomeFeature.State()) {
+        OnboardingWelcomeFeature()
     })
 }
 

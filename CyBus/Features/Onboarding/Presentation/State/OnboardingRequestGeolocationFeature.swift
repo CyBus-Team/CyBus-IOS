@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 @Reducer
-struct RequestGeolocationFeature {
+struct OnboardingRequestGeolocationFeature {
     
     @ObservableState
     struct State : Equatable {
