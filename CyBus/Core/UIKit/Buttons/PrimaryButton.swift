@@ -19,7 +19,7 @@ struct PrimaryButton : View {
         }) {
             Text(label)
                 .font(theme.typography.title)
-                .padding(.vertical, 13)
+                .padding(.vertical, 10)
                 .padding(.horizontal, 30)
                 .foregroundStyle(theme.colors.background)
                 .background(
