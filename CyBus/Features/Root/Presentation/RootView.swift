@@ -9,10 +9,10 @@ import SwiftUI
 import ComposableArchitecture
 
 struct RootView: View {
-
+    
     @AppStorage(ThemeKey.identifier) private var themeMode: String = ThemeKey.defaultValue.mode.rawValue
     
-    let rootStore: StoreOf<RootFeature> = Store(initialState: RootFeature.State()) {
+    let store: StoreOf<RootFeature> = Store(initialState: RootFeature.State()) {
         RootFeature()
     }
     
@@ -22,13 +22,16 @@ struct RootView: View {
     
     var body: some View {
         NavigationStack {
-            switch (rootStore.page) {
-                case .logo: LogoView()
-                case .onboarding: OnboardingView()
-                case .home: MapView()
+            switch store.page {
+            case .home: HomeView()
+            case .onboarding: OnboardingView()
+            case .logo: LogoView()
             }
-        }.environment(\.theme, isDark ? .dark : .light).onAppear {
-            rootStore.send(.initApp)
         }
+        .environment(\.theme, isDark ? .dark : .light)
+        .onAppear {
+            store.send(.initApp)
+        }
+        
     }
 }

@@ -92,7 +92,7 @@ struct MapView: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.bottom, 60)
+                .padding(.bottom, 100)
             }
         }
         .ignoresSafeArea()

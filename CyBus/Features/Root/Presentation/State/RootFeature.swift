@@ -7,19 +7,18 @@
 
 import ComposableArchitecture
 
-enum RootPage {
-    case logo
-    case onboarding
-    case home
-}
-
 @Reducer
 struct RootFeature {
     
+    enum Page {
+        case home
+        case onboarding
+        case logo
+    }
+    
     @ObservableState
-    struct State: Equatable {
-        var page: RootPage = .logo
-        var error: String?
+    struct State : Equatable {
+        var page = Page.logo
     }
     
     enum Action {
@@ -39,4 +38,3 @@ struct RootFeature {
         }
     }
 }
-
