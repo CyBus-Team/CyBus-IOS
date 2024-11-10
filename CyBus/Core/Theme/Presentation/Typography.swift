@@ -12,6 +12,7 @@ struct Typography {
     let title: Font
     let largeTitleLogo: Font
     let titleLogo: Font
+    let regular: Font
 }
 
 extension Typography {
@@ -19,6 +20,7 @@ extension Typography {
         largeTitle: .system(size: .init(34), weight: .bold, design: .default),
         title: .system(size: .init(24), weight: .semibold, design: .default),
         largeTitleLogo: .custom("Madimi One", size: 47),
-        titleLogo: .custom("Madimi One", size: 36)
+        titleLogo: .custom("Madimi One", size: 36),
+        regular: .system(size: .init(14), weight: .regular, design: .default)
     )
 }
