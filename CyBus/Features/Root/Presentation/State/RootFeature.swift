@@ -17,7 +17,7 @@ struct RootFeature {
     }
     
     @ObservableState
-    struct State {
+    struct State : Equatable {
         var page = Page.logo
     }
     
