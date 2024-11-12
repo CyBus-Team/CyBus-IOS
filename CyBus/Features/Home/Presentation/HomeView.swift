@@ -17,12 +17,12 @@ struct HomeView: View {
         TabView {
             MapView()
                 .tabItem {
-                    Label("Map", systemImage: "map.fill")
+                    Label("Map", systemImage: "map")
                 }
                 .tag(1)
             Text("In progress...")
                 .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
+                    Label("Search", systemImage: "point.bottomleft.forward.to.point.topright.scurvepath")
                 }
                 .tag(2)
             Text("In progress...")

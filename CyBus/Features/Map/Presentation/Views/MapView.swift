@@ -50,7 +50,7 @@ struct MapView: View {
                     .lineBorderWidth(2)
                 }
             }
-            .mapStyle(.standard)
+            .mapStyle(.light)
             .cameraBounds(CameraBoundsOptions(maxZoom: cameraViewModel.maxZoom, minZoom: cameraViewModel.minZoom))
             .onMapLoaded { map in
                 mapViewModel.onMapLoaded()
