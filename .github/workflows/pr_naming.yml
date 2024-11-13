@@ -1,0 +1,27 @@
+name: PR naming
+
+on:
+  pull_request:
+    types: [opened, edited, reopened]
+
+jobs:
+  check-pr-title:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check PR title
+        id: check_title
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+
+          if [[ ! "$PR_TITLE" =~ ^(feat|fix|chore|refactor): ]]; then
+            echo "PR title does not meet the required format. Must start with 'feat:', 'fix:', 'chore:', or 'refactor:'."
+            exit 1
+          else
+            echo "PR title is valid."
+          fi
+
+      - name: Set PR status
+        if: failure()
+        run: |
+          echo "PR title validation failed. Please rename the PR title to follow the required format."
