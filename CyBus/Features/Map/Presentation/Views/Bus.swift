@@ -7,8 +7,8 @@
 
 import SwiftUI
 struct Bus: View {
-    var lineName: String
-    var lineColor: Color
+    var name: String
+    var color: Color
     
     var body: some View {
         ZStack {
@@ -16,11 +16,11 @@ struct Bus: View {
                 .frame(width: 37, height: 51)
             
             VStack(spacing: 00) {
-                Text(lineName)
+                Text(name)
                     .frame(width: 35)
                     .foregroundColor(.white)
                     .font(.caption)
-                    .background(lineColor)
+                    .background(color)
                     .cornerRadius(16)
                     .padding(.bottom, 11)
                 
@@ -30,7 +30,7 @@ struct Bus: View {
             }
         }
         .shadow(radius: 3, x: 1, y: 1)
-        .foregroundStyle(lineColor)
+        .foregroundStyle(color)
     }
     
 }
