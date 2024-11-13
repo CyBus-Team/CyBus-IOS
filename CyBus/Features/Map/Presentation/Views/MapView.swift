@@ -21,7 +21,7 @@ struct MapView: View {
                 // Buses
                 ForEvery(mapViewModel.buses) { bus in
                     MapViewAnnotation(coordinate: bus.position) {
-                        Bus(lineName: bus.lineName)
+                        Bus(lineName: bus.lineName, lineColor: .accentColor)
                             .onTapGesture {
                                 mapViewModel.onSelectBus(bus: bus)
                             }
@@ -98,3 +98,4 @@ struct MapView: View {
         .ignoresSafeArea()
     }
 }
+

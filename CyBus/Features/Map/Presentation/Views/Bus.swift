@@ -6,21 +6,34 @@
 //
 
 import SwiftUI
-
 struct Bus: View {
     var lineName: String
+    var lineColor: Color
     
     var body: some View {
-        VStack(spacing: 00) {
-            Text(lineName)
-                .font(.caption)
-                .padding(3)
-                .background(Color.white)
-                .cornerRadius(5)
-                .shadow(radius: 3)
-            Image("bus")
-                .resizable()
-                .frame(width: 40, height: 40)
+        ZStack {
+            MarkerIcon()
+                .frame(width: 37, height: 51)
+            
+            VStack(spacing: 00) {
+                Text(lineName)
+                    .frame(width: 35)
+                    .foregroundColor(.white)
+                    .font(.caption)
+                    .background(lineColor)
+                    .cornerRadius(16)
+                    .padding(.bottom, 11)
+                
+                Image(systemName: "bus.fill")
+                    .frame(width: 19.41, height: 19.5)
+                    .padding(.bottom, 40)
+            }
         }
+        .shadow(radius: 3, x: 1, y: 1)
+        .foregroundStyle(lineColor)
     }
+    
 }
+
+
+
