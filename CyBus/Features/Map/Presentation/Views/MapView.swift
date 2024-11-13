@@ -12,6 +12,8 @@ struct MapView: View {
     @StateObject private var mapViewModel = MapViewModel()
     @StateObject private var cameraViewModel = CameraViewModel()
     
+    @Environment(\.theme) var theme
+    
     var body: some View {
         ZStack {
             
@@ -21,7 +23,7 @@ struct MapView: View {
                 // Buses
                 ForEvery(mapViewModel.buses) { bus in
                     MapViewAnnotation(coordinate: bus.position) {
-                        Bus(lineName: bus.lineName)
+                        Bus(name: bus.lineName, color: theme.colors.primary)
                             .onTapGesture {
                                 mapViewModel.onSelectBus(bus: bus)
                             }
@@ -98,3 +100,4 @@ struct MapView: View {
         .ignoresSafeArea()
     }
 }
+
