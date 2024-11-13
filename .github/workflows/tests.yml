@@ -1,10 +1,10 @@
 name: Tests
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_run:
+    workflows: ["pr_naming"]
+    types:
+      - completed
 
 jobs:
   unit_tests:
