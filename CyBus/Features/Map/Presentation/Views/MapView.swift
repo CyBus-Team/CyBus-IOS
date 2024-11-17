@@ -20,6 +20,10 @@ struct MapView: View {
             // Map
             Map(viewport: $cameraViewModel.viewport) {
                 
+                //User location
+                Puck2D(bearing: .heading)
+                    .showsAccuracyRing(true)
+                
                 // Buses
                 ForEvery(mapViewModel.buses) { bus in
                     MapViewAnnotation(coordinate: bus.position) {
@@ -37,7 +41,8 @@ struct MapView: View {
                     ForEvery(bus.stops) { stop in
                         MapViewAnnotation(coordinate: stop.position) {
                             StopCircle().compositingGroup()
-                        }.allowOverlap(true)
+                        }
+                        .allowOverlap(true)
                     }
                     
                     // Shapes
