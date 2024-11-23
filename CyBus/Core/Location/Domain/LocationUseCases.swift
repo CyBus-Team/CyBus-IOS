@@ -39,8 +39,12 @@ final class LocationUseCases : LocationUseCasesProtocol {
     
     func getCurrentLocation() async throws -> CLLocationCoordinate2D? {
         let status = locationManagerUseCases.getCurrentAuthorizationStatus()
-        if let currentLocation = location {
-            return currentLocation
+        if (status == .authorizedAlways || status == .authorizedWhenInUse) {
+            let updatedLocation = locationManagerUseCases.getLocation()?.coordinate
+            guard updatedLocation?.latitude != nil && updatedLocation?.longitude != nil else {
+                return location
+            }
+            return updatedLocation
         } else if (status != .authorizedAlways || status != .authorizedWhenInUse) {
             throw LocationUseCasesError.permissionDenied
         } else {

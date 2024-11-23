@@ -7,10 +7,22 @@
 
 import SwiftUI
 import MapboxMaps
+import ComposableArchitecture
 
 struct MapView: View {
     @StateObject private var mapViewModel = MapViewModel()
-    @StateObject private var cameraViewModel = CameraViewModel()
+//    @StateObject private var cameraViewModel = CameraViewModel()
+    
+//    let mapStore: StoreOf<MapFeature> = Store(initialState: MapFeature.State()) {
+//        MapFeature()
+//    }
+    
+    @Bindable var mapStore: StoreOf<MapFeature>
+    @Bindable var cameraStore: StoreOf<CameraFeature>
+    @Bindable var locationStore: StoreOf<LocationFeature>
+    
+//    let mapStore: StoreOf<MapFeature>
+//    let cameraStore: StoreOf<CameraFeature>
     
     @Environment(\.theme) var theme
     
@@ -18,7 +30,7 @@ struct MapView: View {
         ZStack {
             
             // Map
-            Map(viewport: $cameraViewModel.viewport) {
+            Map(viewport: $cameraStore.viewport) {
                 
                 //User location
                 Puck2D(bearing: .heading)
@@ -58,7 +70,7 @@ struct MapView: View {
                 }
             }
             .mapStyle(.light)
-            .cameraBounds(CameraBoundsOptions(maxZoom: cameraViewModel.maxZoom, minZoom: cameraViewModel.minZoom))
+            .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
             .onMapLoaded { map in
                 mapViewModel.onMapLoaded()
             }
@@ -76,33 +88,29 @@ struct MapView: View {
                     // Zoom buttons
                     ZoomButton(
                         action: {
-                            withViewportAnimation(.fly) {
-                                cameraViewModel.decreaseZoom()
-                            }
+                            cameraStore.send(.decreaseZoom)
                         },
                         zoomIn: false
                     )
                     ZoomButton(
                         action: {
-                            withViewportAnimation(.fly) {
-                                cameraViewModel.increaseZoom()
-                            }
+                            cameraStore.send(.increaseZoom)
                         },
                         zoomIn: true
                     )
                     
                     // Get current location button
                     LocationButton {
-                        withViewportAnimation(.fly) {
-                            cameraViewModel.goToCurrentLocation()
-                        }
+                        locationStore.send(.goToCurrentLocation)
+//                            mapStore.send(.goToCurrentLocation)
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.bottom, 100)
             }
-        }
+        }.alert($mapStore.scope(state: \.alert, action: \.alert))
         .ignoresSafeArea()
+        
     }
 }
 

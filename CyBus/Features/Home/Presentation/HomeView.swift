@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct HomeView: View {
     
@@ -13,9 +14,17 @@ struct HomeView: View {
         UITabBar.appearance().backgroundColor = .white
     }
     
+    let mapStore: StoreOf<MapFeature> = Store(initialState: MapFeature.State()) {
+        MapFeature()
+    }
+    
     var body: some View {
         TabView {
-            MapView()
+            MapView(
+                mapStore: mapStore,
+                cameraStore: mapStore.scope(state: \.mapCamera, action: \.mapCamera),
+                locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation)
+            )
                 .tabItem {
                     Label("Map", systemImage: "map")
                 }
