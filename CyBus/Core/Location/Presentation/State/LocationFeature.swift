@@ -13,8 +13,7 @@ struct LocationFeature {
     
     @ObservableState
     struct State: Equatable {
-        //Limassol by default
-        var location: CLLocationCoordinate2D? = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
+        var location: CLLocationCoordinate2D?
         var error: String?
     }
     

@@ -18,7 +18,8 @@ struct CameraFeature {
     @ObservableState
     struct State: Equatable {
         var zoom: Double = 14
-        var viewport: Viewport = .styleDefault
+        //Limassol by default
+        var viewport: Viewport = .camera(center: CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617), zoom: 14)
     }
     
     enum Action: BindableAction {
