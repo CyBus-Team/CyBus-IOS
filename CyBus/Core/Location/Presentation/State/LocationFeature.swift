@@ -32,19 +32,23 @@ struct LocationFeature {
             switch action {
             case .listenLocationChanges:
                 return .none
+                
             case let .onLocationUpdate(location), let .initialLocationResponse(location):
                 state.location = location
                 return .none
+                
             case .getInitialLocation:
                 return .run { @MainActor send in
                     let location = try? await locationUseCases.getCurrentLocation()
                     send(.initialLocationResponse(location))
                 }
+                
             case .goToCurrentLocation:
                 return .run { @MainActor send in
                     let location = try? await locationUseCases.getCurrentLocation()
                     send(.onLocationUpdate(location))
                 }
+                
             }
         }
     }
