@@ -11,18 +11,10 @@ import ComposableArchitecture
 
 struct MapView: View {
     @StateObject private var mapViewModel = MapViewModel()
-//    @StateObject private var cameraViewModel = CameraViewModel()
-    
-//    let mapStore: StoreOf<MapFeature> = Store(initialState: MapFeature.State()) {
-//        MapFeature()
-//    }
     
     @Bindable var mapStore: StoreOf<MapFeature>
     @Bindable var cameraStore: StoreOf<CameraFeature>
     @Bindable var locationStore: StoreOf<LocationFeature>
-    
-//    let mapStore: StoreOf<MapFeature>
-//    let cameraStore: StoreOf<CameraFeature>
     
     @Environment(\.theme) var theme
     
@@ -72,6 +64,7 @@ struct MapView: View {
             .mapStyle(.light)
             .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
             .onMapLoaded { map in
+                mapStore.send(.onMapInit)
                 mapViewModel.onMapLoaded()
             }
             
@@ -102,7 +95,6 @@ struct MapView: View {
                     // Get current location button
                     LocationButton {
                         locationStore.send(.goToCurrentLocation)
-//                            mapStore.send(.goToCurrentLocation)
                     }
                 }
                 .frame(maxWidth: .infinity)

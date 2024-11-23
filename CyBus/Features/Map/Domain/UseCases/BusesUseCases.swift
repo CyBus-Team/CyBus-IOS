@@ -7,12 +7,12 @@
 
 import Foundation
 import CoreLocation
+import ComposableArchitecture
 
 enum BusesUseCasesError: Error {
     case gftsServiceNotFound
     case routesIsEmpty
 }
-
 
 class BusesUseCases: BusesUseCasesProtocol {
     
@@ -21,7 +21,7 @@ class BusesUseCases: BusesUseCasesProtocol {
     
     private var gftsURL: URL?
     
-    init(repository: BusesRepositoryProtocol, routesUseCases: RoutesUseCasesProtocol) {
+    init(repository: BusesRepositoryProtocol = BusesRepository(), routesUseCases: RoutesUseCasesProtocol = RoutesUseCases()) {
         self.repository = repository
         self.routesUseCases = routesUseCases
     }
@@ -70,4 +70,16 @@ class BusesUseCases: BusesUseCasesProtocol {
         }
     }
     
+}
+
+struct BusesUseCasesKey: DependencyKey {
+    static var liveValue: BusesUseCasesProtocol = BusesUseCases()
+}
+
+
+extension DependencyValues {
+    var busesUseCases: BusesUseCasesProtocol {
+        get { self[BusesUseCasesKey.self] }
+        set { self[BusesUseCasesKey.self] = newValue }
+    }
 }

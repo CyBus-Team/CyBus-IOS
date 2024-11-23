@@ -22,6 +22,8 @@ struct MapFeature {
         
         //State vars
         var error: String?
+//        var buses: [BusEntity] = []
+//        var selection: (bus: BusEntity, route: BusRouteEntity)?
         
     }
     
@@ -29,11 +31,18 @@ struct MapFeature {
         case userLocation(LocationFeature.Action)
         case mapCamera(CameraFeature.Action)
         
+        case onMapInit
+        case onMapLoaded(error: String?)
+        
         case alert(PresentationAction<Alert>)
         enum Alert: Equatable {
             case openSettingsTapped
         }
     }
+    
+    @Dependency(\.mapUseCases) var mapUseCases
+    @Dependency(\.busesUseCases) var busesUseCases
+    @Dependency(\.routesUseCases) var routesUseCases
     
     var body: some ReducerOf<Self> {
         Scope(state: \.userLocation, action: \.userLocation) {
@@ -44,6 +53,24 @@ struct MapFeature {
         }
         Reduce { state, action in
             switch action {
+            case let .onMapLoaded(error):
+                // TODO: UI errors
+                if let mapError = error {
+                    state.error = mapError
+                }
+                return .none
+            case .onMapInit:
+                return .run { @MainActor send in
+                    var initializationError: String?
+                    do {
+                        try busesUseCases.fetchServiceUrl()
+                        try await routesUseCases.fetchRoutes()
+                    } catch {
+                        // TODO: UI errors
+                        initializationError = "Failed to load Map \(error)"
+                    }
+                    send(.onMapLoaded(error: initializationError))
+                }
             case .userLocation(.onLocationUpdate):
                 if let location = state.userLocation.location {
                     return .send(.mapCamera(.onViewportChange(location)))

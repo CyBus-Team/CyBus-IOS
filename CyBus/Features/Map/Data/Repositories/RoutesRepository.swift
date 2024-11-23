@@ -15,7 +15,7 @@ class RoutesRepository: RoutesRepositoryProtocol {
     
     private let bundle: Bundle
     
-    init(bundle: Bundle) {
+    init(bundle: Bundle = .main) {
         self.bundle = bundle
     }
     

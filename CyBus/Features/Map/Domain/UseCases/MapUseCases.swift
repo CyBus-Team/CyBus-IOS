@@ -6,17 +6,17 @@
 //
 
 import Foundation
-@_spi(Experimental) import MapboxMaps
+import ComposableArchitecture
+import MapboxMaps
 
 enum MapUseCasesError: Error {
     case initializationFailed
 }
 
-
 class MapUseCases : MapUseCasesProtocol {
     private let bundle: Bundle
     
-    init(bundle: Bundle) {
+    init(bundle: Bundle = .main) {
         self.bundle = bundle
     }
     
@@ -28,4 +28,15 @@ class MapUseCases : MapUseCasesProtocol {
         }
     }
     
+}
+
+struct MapUseCasesKey: DependencyKey {
+    static var liveValue: MapUseCasesProtocol = MapUseCases()
+}
+
+extension DependencyValues {
+    var mapUseCases: MapUseCasesProtocol {
+        get { self[MapUseCasesKey.self] }
+        set { self[MapUseCasesKey.self] = newValue }
+    }
 }
