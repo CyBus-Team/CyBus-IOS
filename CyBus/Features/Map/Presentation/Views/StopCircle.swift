@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct StopCircle : View {
+    var color: Color
     var body: some View {
         ZStack {
             Circle()
-                .fill(Color.red)
-                .frame(width: 20, height: 20)
-            Circle()
-                .fill(Color.white)
-                .frame(width: 10, height: 10)
-                .blendMode(.destinationOut)
+                .fill(color)
+                .frame(width: 11, height: 11)
         }
+        .shadow(radius: 3, x: 1, y: 1)
     }
 }

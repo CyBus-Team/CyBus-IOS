@@ -36,7 +36,7 @@ struct MapView: View {
                     // Stops
                     ForEvery(bus.stops) { stop in
                         MapViewAnnotation(coordinate: stop.position) {
-                            StopCircle().compositingGroup()
+                            StopCircle(color: theme.colors.primary).compositingGroup()
                         }.allowOverlap(true)
                     }
                     
@@ -47,9 +47,7 @@ struct MapView: View {
                         }
                     )
                     .lineColor(.systemBlue)
-                    .lineBorderColor(.systemBlue)
-                    .lineWidth(10)
-                    .lineBorderWidth(2)
+                    .lineWidth(3)
                 }
             }
             .mapStyle(.light)
