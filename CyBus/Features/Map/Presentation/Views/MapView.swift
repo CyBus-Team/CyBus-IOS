@@ -10,28 +10,37 @@ import MapboxMaps
 import ComposableArchitecture
 
 struct MapView: View {
-    @StateObject private var mapViewModel = MapViewModel()
     
     @Bindable var mapStore: StoreOf<MapFeature>
     @Bindable var cameraStore: StoreOf<CameraFeature>
     @Bindable var locationStore: StoreOf<LocationFeature>
+    @Bindable var busesStore: StoreOf<BusesFeature>
     
     @Environment(\.theme) var theme
     
+    private func onInit() {
+        mapStore.send(.onMapInit)
+        busesStore.send(.initialize)
+    }
+    
     var body: some View {
+        
         NavigationStack {
+            
             if mapStore.error != nil {
                 VStack {
                     Text(mapStore.error ?? "Unknown error")
                     PrimaryButton(label:"Retry") {
-                        mapStore.send(.onMapInit)
+                        onInit()
                     }
                 }
+                
             } else if mapStore.isLoading {
                 VStack {
                     ProgressView()
                     Text("Loading...")
                 }
+                
             } else {
                 ZStack {
                     
@@ -43,20 +52,22 @@ struct MapView: View {
                             .showsAccuracyRing(true)
                         
                         // Buses
-                        ForEvery(mapViewModel.buses) { bus in
+                        ForEvery(busesStore.buses) { bus in
                             MapViewAnnotation(coordinate: bus.position) {
                                 Bus(name: bus.lineName, color: theme.colors.primary)
                                     .onTapGesture {
-                                        mapViewModel.onSelectBus(bus: bus)
+                                        busesStore.send(.selectBus(bus))
                                     }
                             }.allowOverlap(true)
                         }
                         
-                        if let selection = mapViewModel.selection {
-                            let bus = selection.1
+                        if busesStore.hasSelectedBus {
+                            let route = busesStore.selectedRoute
+                            let stops = route?.stops ?? []
+                            let shapes = route?.shapes ?? []
                             
                             // Stops
-                            ForEvery(bus.stops) { stop in
+                            ForEvery(stops) { stop in
                                 MapViewAnnotation(coordinate: stop.position) {
                                     StopCircle().compositingGroup()
                                 }
@@ -65,7 +76,7 @@ struct MapView: View {
                             
                             // Shapes
                             PolylineAnnotation(
-                                lineCoordinates: bus.shapes.map { shape in
+                                lineCoordinates: shapes.map { shape in
                                     shape.position
                                 }
                             )
@@ -77,17 +88,14 @@ struct MapView: View {
                     }
                     .mapStyle(.light)
                     .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
-                    .onMapLoaded { map in
-                        mapViewModel.onMapLoaded()
-                    }
                     
                     VStack {
                         Spacer()
                         HStack(alignment: .center) {
                             // Clear route button
-                            if mapViewModel.hasSelection {
+                            if busesStore.hasSelectedBus {
                                 ClearRouteButton {
-                                    mapViewModel.onClearSelection()
+                                    busesStore.send(.clearSelection)
                                 }
                             }
                             
@@ -117,9 +125,9 @@ struct MapView: View {
                 .alert($mapStore.scope(state: \.alert, action: \.alert))
                 .ignoresSafeArea()
             }
-            
-        }.onAppear() {
-            mapStore.send(.onMapInit)
+        }
+        .onAppear() {
+            onInit()
         }
         
     }

@@ -19,25 +19,18 @@ struct MapFeature {
         // Features
         var userLocation = LocationFeature.State()
         var mapCamera = CameraFeature.State()
-//        var buses = BusesFeature.State()
-//        var routes = RoutesFeature.State()
         
         //State vars
         var error: String?
         var isLoading: Bool = true
-//        var buses: [BusEntity] = []
-//        var selection: (bus: BusEntity, route: BusRouteEntity)?
         
     }
     
     enum Action {
         case userLocation(LocationFeature.Action)
         case mapCamera(CameraFeature.Action)
-//        case buses(BusesFeature.Action)
-//        case routes(RoutesFeature.Action)
         
         case onMapInit
-//        case onMapLoaded
         
         case alert(PresentationAction<Alert>)
         enum Alert: Equatable {
@@ -46,8 +39,6 @@ struct MapFeature {
     }
     
     @Dependency(\.mapUseCases) var mapUseCases
-    @Dependency(\.busesUseCases) var busesUseCases
-    @Dependency(\.routesUseCases) var routesUseCases
     
     var body: some ReducerOf<Self> {
         Scope(state: \.userLocation, action: \.userLocation) {
@@ -69,12 +60,14 @@ struct MapFeature {
                     state.error = "Failed to init Map \(error)"
                 }
                 return .none
+                
             case .userLocation(.initialLocationResponse):
                 state.isLoading = false
                 if let location = state.userLocation.location {
                     return .send(.mapCamera(.onViewportChange(location, withAnimation: false)))
                 }
                 return .none
+                
             case .userLocation(.onLocationUpdate):
                 if let location = state.userLocation.location {
                     return .send(.mapCamera(.onViewportChange(location, withAnimation: true)))
@@ -87,6 +80,7 @@ struct MapFeature {
                     }
                     return .none
                 }
+                
             case .alert(.presented(.openSettingsTapped)):
                 guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
                     return .none
@@ -95,8 +89,10 @@ struct MapFeature {
                     UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                 }
                 return .none
+                
             case .alert(_), .userLocation(_), .mapCamera(_):
                 return .none
+                
             }
         }.ifLet(\.$alert, action: \.alert)
     }
