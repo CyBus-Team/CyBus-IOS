@@ -25,15 +25,19 @@ struct CameraFeature {
         case binding(BindingAction<State>)
         case increaseZoom
         case decreaseZoom
-        case onViewportChange(CLLocationCoordinate2D)
+        case onViewportChange(CLLocationCoordinate2D, withAnimation: Bool)
     }
     
     var body: some ReducerOf<Self> {
         BindingReducer()
         Reduce { state, action in
             switch action {
-            case let .onViewportChange(location):
-                withViewportAnimation(.fly) {
+            case let .onViewportChange(location, withAnimation):
+                if withAnimation {
+                    withViewportAnimation(.fly) {
+                        state.viewport = .camera(center: location, zoom: state.zoom)
+                    }
+                } else {
                     state.viewport = .camera(center: location, zoom: state.zoom)
                 }
                 return .none

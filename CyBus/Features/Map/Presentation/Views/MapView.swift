@@ -19,89 +19,108 @@ struct MapView: View {
     @Environment(\.theme) var theme
     
     var body: some View {
-        ZStack {
-            
-            // Map
-            Map(viewport: $cameraStore.viewport) {
-                
-                //User location
-                Puck2D(bearing: .heading)
-                    .showsAccuracyRing(true)
-                
-                // Buses
-                ForEvery(mapViewModel.buses) { bus in
-                    MapViewAnnotation(coordinate: bus.position) {
-                        Bus(name: bus.lineName, color: theme.colors.primary)
-                            .onTapGesture {
-                                mapViewModel.onSelectBus(bus: bus)
+        NavigationStack {
+            if mapStore.error != nil {
+                VStack {
+                    Text(mapStore.error ?? "Unknown error")
+                    PrimaryButton(label:"Retry") {
+                        mapStore.send(.onMapInit)
+                    }
+                }
+            } else if mapStore.isLoading {
+                VStack {
+                    ProgressView()
+                    Text("Loading...")
+                }
+            } else {
+                ZStack {
+                    
+                    // Map
+                    Map(viewport: $cameraStore.viewport) {
+                        
+                        //User location
+                        Puck2D(bearing: .heading)
+                            .showsAccuracyRing(true)
+                        
+                        // Buses
+                        ForEvery(mapViewModel.buses) { bus in
+                            MapViewAnnotation(coordinate: bus.position) {
+                                Bus(name: bus.lineName, color: theme.colors.primary)
+                                    .onTapGesture {
+                                        mapViewModel.onSelectBus(bus: bus)
+                                    }
+                            }.allowOverlap(true)
+                        }
+                        
+                        if let selection = mapViewModel.selection {
+                            let bus = selection.1
+                            
+                            // Stops
+                            ForEvery(bus.stops) { stop in
+                                MapViewAnnotation(coordinate: stop.position) {
+                                    StopCircle().compositingGroup()
+                                }
+                                .allowOverlap(true)
                             }
-                    }.allowOverlap(true)
-                }
-                
-                if let selection = mapViewModel.selection {
-                    let bus = selection.1
-                    
-                    // Stops
-                    ForEvery(bus.stops) { stop in
-                        MapViewAnnotation(coordinate: stop.position) {
-                            StopCircle().compositingGroup()
+                            
+                            // Shapes
+                            PolylineAnnotation(
+                                lineCoordinates: bus.shapes.map { shape in
+                                    shape.position
+                                }
+                            )
+                            .lineColor(.systemBlue)
+                            .lineBorderColor(.systemBlue)
+                            .lineWidth(10)
+                            .lineBorderWidth(2)
                         }
-                        .allowOverlap(true)
+                    }
+                    .mapStyle(.light)
+                    .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
+                    .onMapLoaded { map in
+                        mapViewModel.onMapLoaded()
                     }
                     
-                    // Shapes
-                    PolylineAnnotation(
-                        lineCoordinates: bus.shapes.map { shape in
-                            shape.position
+                    VStack {
+                        Spacer()
+                        HStack(alignment: .center) {
+                            // Clear route button
+                            if mapViewModel.hasSelection {
+                                ClearRouteButton {
+                                    mapViewModel.onClearSelection()
+                                }
+                            }
+                            
+                            // Zoom buttons
+                            ZoomButton(
+                                action: {
+                                    cameraStore.send(.decreaseZoom)
+                                },
+                                zoomIn: false
+                            )
+                            ZoomButton(
+                                action: {
+                                    cameraStore.send(.increaseZoom)
+                                },
+                                zoomIn: true
+                            )
+                            
+                            // Get current location button
+                            LocationButton {
+                                locationStore.send(.goToCurrentLocation)
+                            }
                         }
-                    )
-                    .lineColor(.systemBlue)
-                    .lineBorderColor(.systemBlue)
-                    .lineWidth(10)
-                    .lineBorderWidth(2)
+                        .frame(maxWidth: .infinity)
+                        .padding(.bottom, 100)
+                    }
                 }
-            }
-            .mapStyle(.light)
-            .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
-            .onMapLoaded { map in
-                mapStore.send(.onMapInit)
-                mapViewModel.onMapLoaded()
+                .alert($mapStore.scope(state: \.alert, action: \.alert))
+                .ignoresSafeArea()
             }
             
-            VStack {
-                Spacer()
-                HStack(alignment: .center) {
-                    // Clear route button
-                    if mapViewModel.hasSelection {
-                        ClearRouteButton {
-                            mapViewModel.onClearSelection()
-                        }
-                    }
-                    
-                    // Zoom buttons
-                    ZoomButton(
-                        action: {
-                            cameraStore.send(.decreaseZoom)
-                        },
-                        zoomIn: false
-                    )
-                    ZoomButton(
-                        action: {
-                            cameraStore.send(.increaseZoom)
-                        },
-                        zoomIn: true
-                    )
-                    
-                    // Get current location button
-                    LocationButton {
-                        locationStore.send(.goToCurrentLocation)
-                    }
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.bottom, 100)
-            }
-        }.alert($mapStore.scope(state: \.alert, action: \.alert))
-        .ignoresSafeArea()
+        }.onAppear() {
+            mapStore.send(.onMapInit)
+        }
         
     }
 }

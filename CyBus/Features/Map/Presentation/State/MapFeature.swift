@@ -19,9 +19,12 @@ struct MapFeature {
         // Features
         var userLocation = LocationFeature.State()
         var mapCamera = CameraFeature.State()
+//        var buses = BusesFeature.State()
+//        var routes = RoutesFeature.State()
         
         //State vars
         var error: String?
+        var isLoading: Bool = true
 //        var buses: [BusEntity] = []
 //        var selection: (bus: BusEntity, route: BusRouteEntity)?
         
@@ -30,9 +33,11 @@ struct MapFeature {
     enum Action {
         case userLocation(LocationFeature.Action)
         case mapCamera(CameraFeature.Action)
+//        case buses(BusesFeature.Action)
+//        case routes(RoutesFeature.Action)
         
         case onMapInit
-        case onMapLoaded(error: String?)
+//        case onMapLoaded
         
         case alert(PresentationAction<Alert>)
         enum Alert: Equatable {
@@ -53,27 +58,26 @@ struct MapFeature {
         }
         Reduce { state, action in
             switch action {
-            case let .onMapLoaded(error):
-                // TODO: UI errors
-                if let mapError = error {
-                    state.error = mapError
+            case .onMapInit:
+                do {
+                    state.isLoading = true
+                    try mapUseCases.setup()
+                    return .send(.userLocation(.getInitialLocation))
+                } catch {
+                    // TODO: UI errors
+                    state.isLoading = false
+                    state.error = "Failed to init Map \(error)"
                 }
                 return .none
-            case .onMapInit:
-                return .run { @MainActor send in
-                    var initializationError: String?
-                    do {
-                        try busesUseCases.fetchServiceUrl()
-                        try await routesUseCases.fetchRoutes()
-                    } catch {
-                        // TODO: UI errors
-                        initializationError = "Failed to load Map \(error)"
-                    }
-                    send(.onMapLoaded(error: initializationError))
+            case .userLocation(.initialLocationResponse):
+                state.isLoading = false
+                if let location = state.userLocation.location {
+                    return .send(.mapCamera(.onViewportChange(location, withAnimation: false)))
                 }
+                return .none
             case .userLocation(.onLocationUpdate):
                 if let location = state.userLocation.location {
-                    return .send(.mapCamera(.onViewportChange(location)))
+                    return .send(.mapCamera(.onViewportChange(location, withAnimation: true)))
                 } else {
                     state.alert = AlertState {
                         TextState("Location is not available")
