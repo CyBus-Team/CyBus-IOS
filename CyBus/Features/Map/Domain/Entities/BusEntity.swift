@@ -16,7 +16,7 @@ struct BusEntity: Identifiable, Equatable {
     let lineName: String
     let position: CLLocationCoordinate2D
     
-    init(id: String, position: CLLocationCoordinate2D, lineName: String, routeID: String) {
+    init(id: String, position: CLLocationCoordinate2D, routeID: String, lineName: String) {
         self.id = id
         self.routeID = routeID
         self.position = position

@@ -26,9 +26,10 @@ class BusesUseCases: BusesUseCasesProtocol {
         self.routesUseCases = routesUseCases
     }
     
-    func fetchServiceUrl() throws {
+    func fetchServiceUrl() async throws {
         do {
             self.gftsURL = try repository.getServiceUrl()
+            try await routesUseCases.fetchRoutes()
         } catch {
             throw error
         }
@@ -51,8 +52,8 @@ class BusesUseCases: BusesUseCasesProtocol {
                             latitude: CLLocationDegrees(entity.vehicle.position.latitude),
                             longitude: CLLocationDegrees(entity.vehicle.position.longitude)
                         ),
-                        lineName: route.lineName,
-                        routeID: entity.vehicle.trip.routeID
+                        routeID: entity.vehicle.trip.routeID,
+                        lineName: route.lineName
                     )
                     return bus
                 } else {

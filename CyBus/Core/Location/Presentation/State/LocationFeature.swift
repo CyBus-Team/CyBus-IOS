@@ -18,11 +18,8 @@ struct LocationFeature {
     }
     
     enum Action {
-        case goToCurrentLocation
-        case listenLocationChanges
-        case getInitialLocation
-        case initialLocationResponse(CLLocationCoordinate2D?)
-        case onLocationUpdate(CLLocationCoordinate2D?)
+        case getCurrentLocation
+        case onLocationResponse(CLLocationCoordinate2D?)
     }
     
     @Dependency(\.locationUseCases) var locationUseCases
@@ -30,23 +27,15 @@ struct LocationFeature {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .listenLocationChanges:
-                return .none
                 
-            case let .onLocationUpdate(location), let .initialLocationResponse(location):
+            case let .onLocationResponse(location):
                 state.location = location
                 return .none
                 
-            case .getInitialLocation:
+            case .getCurrentLocation:
                 return .run { @MainActor send in
                     let location = try? await locationUseCases.getCurrentLocation()
-                    send(.initialLocationResponse(location))
-                }
-                
-            case .goToCurrentLocation:
-                return .run { @MainActor send in
-                    let location = try? await locationUseCases.getCurrentLocation()
-                    send(.onLocationUpdate(location))
+                    send(.onLocationResponse(location))
                 }
                 
             }

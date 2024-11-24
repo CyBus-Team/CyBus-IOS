@@ -6,32 +6,28 @@
 //
 
 import ComposableArchitecture
-import MapboxMaps
-import UIKit
 
 @Reducer
 struct BusesFeature {
     
-    static let tick = 10
+    static let tick = 5
     
     @ObservableState
     struct State: Equatable {
         var isInitialized: Bool = false
         var isFetching: Bool = false
         var buses: [BusEntity] = []
-        var hasSelectedBus: Bool = false {
+        var hasSelectedBus: Bool = false
+        var selectedBus : BusEntity? {
             didSet {
-                selectedBus = nil
-                selectedRoute = nil
+                hasSelectedBus = true
             }
         }
-        var selectedBus : BusEntity?
-        var selectedRoute: BusRouteEntity?
     }
     
     enum Action {
-        case initialize
-        case initializeResponse(Bool, error: String?)
+        case setUp
+        case setUpResponse(Bool, error: String?)
         
         case startFetchingLoop
         case stopFetchingLoop
@@ -46,12 +42,11 @@ struct BusesFeature {
     }
     
     @Dependency(\.busesUseCases) var busesUseCases
-    @Dependency(\.routesUseCases) var routesUseCases
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case let .initializeResponse(isInited, error):
+            case let .setUpResponse(isInited, error):
                 state.isInitialized = isInited
                 if !isInited {
                     // TODO: UI errors
@@ -60,13 +55,13 @@ struct BusesFeature {
                 }
                 return .send(.startFetchingLoop)
                 
-            case .initialize:
+            case .setUp:
                 return .run { send in
                     do {
-                        try busesUseCases.fetchServiceUrl()
-                        return await send(.initializeResponse(true, error: nil))
+                        try await busesUseCases.fetchServiceUrl()
+                        return await send(.setUpResponse(true, error: nil))
                     } catch {
-                        return await send(.initializeResponse(false, error: error.localizedDescription))
+                        return await send(.setUpResponse(false, error: error.localizedDescription))
                     }
                 }
                 
@@ -106,7 +101,6 @@ struct BusesFeature {
                 return .none
                 
             case let .selectBus(bus):
-                state.selectedRoute = routesUseCases.getRoute(for: bus.routeID)
                 state.selectedBus = bus
                 return .none
                 

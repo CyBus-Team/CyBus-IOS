@@ -50,6 +50,7 @@ class RoutesUseCases: RoutesUseCasesProtocol {
         let stopIds = stopTimes.map { $0.stopId }
         let stops = _stops.filter { stopIds.contains($0.stopId) }
         return BusRouteEntity(
+            routeId: routeID,
             shapes: shapes.map { ShapeEntity(
                 id: $0.shapeId,
                 position: CLLocationCoordinate2D(

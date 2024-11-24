@@ -30,7 +30,7 @@ struct MapFeature {
         case userLocation(LocationFeature.Action)
         case mapCamera(CameraFeature.Action)
         
-        case onMapInit
+        case setUp
         
         case alert(PresentationAction<Alert>)
         enum Alert: Equatable {
@@ -49,11 +49,12 @@ struct MapFeature {
         }
         Reduce { state, action in
             switch action {
-            case .onMapInit:
+            case .setUp:
                 do {
                     state.isLoading = true
                     try mapUseCases.setup()
-                    return .send(.userLocation(.getInitialLocation))
+                    state.isLoading = false
+                    return .send(.userLocation(.getCurrentLocation))
                 } catch {
                     // TODO: UI errors
                     state.isLoading = false
@@ -61,16 +62,9 @@ struct MapFeature {
                 }
                 return .none
                 
-            case .userLocation(.initialLocationResponse):
-                state.isLoading = false
+            case .userLocation(.onLocationResponse):
                 if let location = state.userLocation.location {
-                    return .send(.mapCamera(.onViewportChange(location, withAnimation: false)))
-                }
-                return .none
-                
-            case .userLocation(.onLocationUpdate):
-                if let location = state.userLocation.location {
-                    return .send(.mapCamera(.onViewportChange(location, withAnimation: true)))
+                    return .send(.mapCamera(.onViewportChange(location)))
                 } else {
                     state.alert = AlertState {
                         TextState("Location is not available")

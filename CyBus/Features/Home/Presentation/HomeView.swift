@@ -22,13 +22,18 @@ struct HomeView: View {
         BusesFeature()
     }
     
+    let routesStore: StoreOf<RoutesFeature> = Store(initialState: RoutesFeature.State()) {
+        RoutesFeature()
+    }
+    
     var body: some View {
         TabView {
             MapView(
                 mapStore: mapStore,
                 cameraStore: mapStore.scope(state: \.mapCamera, action: \.mapCamera),
                 locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
-                busesStore: busesStore
+                busesStore: busesStore,
+                routesStore: routesStore
             )
                 .tabItem {
                     Label("Map", systemImage: "map")

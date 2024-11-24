@@ -10,6 +10,7 @@ import CoreLocation
 
 struct BusRouteEntity : Equatable {
     
+    let routeId: String
     let shapes: [ShapeEntity]
     let stops: [StopEntity]
     

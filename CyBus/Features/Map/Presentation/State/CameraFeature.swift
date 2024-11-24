@@ -14,31 +14,29 @@ struct CameraFeature {
     
     static public let maxZoom: Double = 17
     static public let minZoom: Double = 12
+    static public let defaultZoom: Double = 14
+    //Limassol by default
+    static public let defaultLocation = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
     
     @ObservableState
     struct State: Equatable {
-        var zoom: Double = 14
-        //Limassol by default
-        var viewport: Viewport = .camera(center: CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617), zoom: 14)
+        var zoom: Double = CameraFeature.defaultZoom
+        var viewport: Viewport = .camera(center: defaultLocation, zoom: CameraFeature.defaultZoom)
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case increaseZoom
         case decreaseZoom
-        case onViewportChange(CLLocationCoordinate2D, withAnimation: Bool)
+        case onViewportChange(CLLocationCoordinate2D)
     }
     
     var body: some ReducerOf<Self> {
         BindingReducer()
         Reduce { state, action in
             switch action {
-            case let .onViewportChange(location, withAnimation):
-                if withAnimation {
-                    withViewportAnimation(.fly) {
-                        state.viewport = .camera(center: location, zoom: state.zoom)
-                    }
-                } else {
+            case let .onViewportChange(location):
+                withViewportAnimation(.fly) {
                     state.viewport = .camera(center: location, zoom: state.zoom)
                 }
                 return .none

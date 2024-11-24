@@ -15,12 +15,14 @@ struct MapView: View {
     @Bindable var cameraStore: StoreOf<CameraFeature>
     @Bindable var locationStore: StoreOf<LocationFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
+    @Bindable var routesStore: StoreOf<RoutesFeature>
     
     @Environment(\.theme) var theme
     
     private func onInit() {
-        mapStore.send(.onMapInit)
-        busesStore.send(.initialize)
+        mapStore.send(.setUp)
+        routesStore.send(.setUp)
+        busesStore.send(.setUp)
     }
     
     var body: some View {
@@ -57,12 +59,13 @@ struct MapView: View {
                                 Bus(name: bus.lineName, color: theme.colors.primary)
                                     .onTapGesture {
                                         busesStore.send(.selectBus(bus))
+                                        routesStore.send(.selectRoute(id: bus.routeID))
                                     }
                             }.allowOverlap(true)
                         }
                         
-                        if busesStore.hasSelectedBus {
-                            let route = busesStore.selectedRoute
+                        if routesStore.hasSelectedRoute {
+                            let route = routesStore.selectedRoute
                             let stops = route?.stops ?? []
                             let shapes = route?.shapes ?? []
                             
@@ -94,6 +97,7 @@ struct MapView: View {
                             if busesStore.hasSelectedBus {
                                 ClearRouteButton {
                                     busesStore.send(.clearSelection)
+                                    routesStore.send(.clearSelection)
                                 }
                             }
                             
@@ -113,7 +117,7 @@ struct MapView: View {
                             
                             // Get current location button
                             LocationButton {
-                                locationStore.send(.goToCurrentLocation)
+                                locationStore.send(.getCurrentLocation)
                             }
                         }
                         .frame(maxWidth: .infinity)
