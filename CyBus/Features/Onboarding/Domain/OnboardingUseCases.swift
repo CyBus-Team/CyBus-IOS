@@ -30,7 +30,6 @@ struct OnboardingUseCasesKey: DependencyKey {
     static var liveValue: OnboardingUseCasesProtocol = OnboardingUseCases()
 }
 
-
 extension DependencyValues {
     var onboardingUseCases: OnboardingUseCasesProtocol {
         get { self[OnboardingUseCasesKey.self] }

@@ -7,12 +7,12 @@
 
 import Foundation
 import CoreLocation
+import ComposableArchitecture
 
 enum BusesUseCasesError: Error {
     case gftsServiceNotFound
     case routesIsEmpty
 }
-
 
 class BusesUseCases: BusesUseCasesProtocol {
     
@@ -21,14 +21,15 @@ class BusesUseCases: BusesUseCasesProtocol {
     
     private var gftsURL: URL?
     
-    init(repository: BusesRepositoryProtocol, routesUseCases: RoutesUseCasesProtocol) {
+    init(repository: BusesRepositoryProtocol = BusesRepository(), routesUseCases: RoutesUseCasesProtocol = RoutesUseCases()) {
         self.repository = repository
         self.routesUseCases = routesUseCases
     }
     
-    func fetchServiceUrl() throws {
+    func fetchServiceUrl() async throws {
         do {
             self.gftsURL = try repository.getServiceUrl()
+            try await routesUseCases.fetchRoutes()
         } catch {
             throw error
         }
@@ -51,8 +52,8 @@ class BusesUseCases: BusesUseCasesProtocol {
                             latitude: CLLocationDegrees(entity.vehicle.position.latitude),
                             longitude: CLLocationDegrees(entity.vehicle.position.longitude)
                         ),
-                        lineName: route.lineName,
-                        routeID: entity.vehicle.trip.routeID
+                        routeID: entity.vehicle.trip.routeID,
+                        lineName: route.lineName
                     )
                     return bus
                 } else {
@@ -70,4 +71,16 @@ class BusesUseCases: BusesUseCasesProtocol {
         }
     }
     
+}
+
+struct BusesUseCasesKey: DependencyKey {
+    static var liveValue: BusesUseCasesProtocol = BusesUseCases()
+}
+
+
+extension DependencyValues {
+    var busesUseCases: BusesUseCasesProtocol {
+        get { self[BusesUseCasesKey.self] }
+        set { self[BusesUseCasesKey.self] = newValue }
+    }
 }

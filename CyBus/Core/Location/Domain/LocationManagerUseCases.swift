@@ -37,6 +37,10 @@ extension LocationManagerUseCases: CLLocationManagerDelegate {
 }
 
 extension LocationManagerUseCases : LocationManagerUseCasesProtocol {
+    func getLocation() -> CLLocation? {
+        locationManager.location
+    }
+    
     func getCurrentAuthorizationStatus() -> CLAuthorizationStatus {
         locationManager.authorizationStatus
     }

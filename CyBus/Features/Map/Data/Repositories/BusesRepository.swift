@@ -17,7 +17,7 @@ class BusesRepository: BusesRepositoryProtocol {
     private let urlSession: URLSession
     private let bundle: Bundle
     
-    init(urlSession: URLSession, bundle: Bundle) {
+    init(urlSession: URLSession = .shared, bundle: Bundle = .main) {
         self.urlSession = urlSession
         self.bundle = bundle
     }

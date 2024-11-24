@@ -7,95 +7,134 @@
 
 import SwiftUI
 import MapboxMaps
+import ComposableArchitecture
 
 struct MapView: View {
-    @StateObject private var mapViewModel = MapViewModel()
-    @StateObject private var cameraViewModel = CameraViewModel()
+    
+    @Bindable var mapStore: StoreOf<MapFeature>
+    @Bindable var cameraStore: StoreOf<CameraFeature>
+    @Bindable var locationStore: StoreOf<LocationFeature>
+    @Bindable var busesStore: StoreOf<BusesFeature>
+    @Bindable var routesStore: StoreOf<RoutesFeature>
     
     @Environment(\.theme) var theme
     
+    private func onInit() {
+        mapStore.send(.setUp)
+        routesStore.send(.setUp)
+        busesStore.send(.setUp)
+    }
+    
     var body: some View {
-        ZStack {
+        
+        NavigationStack {
             
-            // Map
-            Map(viewport: $cameraViewModel.viewport) {
-                
-                // Buses
-                ForEvery(mapViewModel.buses) { bus in
-                    MapViewAnnotation(coordinate: bus.position) {
-                        Bus(name: bus.lineName, color: theme.colors.primary)
-                            .onTapGesture {
-                                mapViewModel.onSelectBus(bus: bus)
-                            }
-                    }.allowOverlap(true)
+            if mapStore.error != nil {
+                VStack {
+                    Text(mapStore.error ?? "Unknown error")
+                    PrimaryButton(label:"Retry") {
+                        onInit()
+                    }
                 }
                 
-                if let selection = mapViewModel.selection {
-                    let bus = selection.1
-                    
-                    // Stops
-                    ForEvery(bus.stops) { stop in
-                        MapViewAnnotation(coordinate: stop.position) {
-                            StopCircle(color: theme.colors.primary).compositingGroup()
-                        }.allowOverlap(true)
-                    }
-                    
-                    // Shapes
-                    PolylineAnnotation(
-                        lineCoordinates: bus.shapes.map { shape in
-                            shape.position
-                        }
-                    )
-                    .lineColor(.systemBlue)
-                    .lineWidth(3)
+            } else if mapStore.isLoading {
+                VStack {
+                    ProgressView()
+                    Text("Loading...")
                 }
-            }
-            .mapStyle(.light)
-            .cameraBounds(CameraBoundsOptions(maxZoom: cameraViewModel.maxZoom, minZoom: cameraViewModel.minZoom))
-            .onMapLoaded { map in
-                mapViewModel.onMapLoaded()
-            }
-            
-            VStack {
-                Spacer()
-                HStack(alignment: .center) {
-                    // Clear route button
-                    if mapViewModel.hasSelection {
-                        ClearRouteButton {
-                            mapViewModel.onClearSelection()
+                
+            } else {
+                ZStack {
+                    
+                    // Map
+                    Map(viewport: $cameraStore.viewport) {
+                        
+                        //User location
+                        Puck2D(bearing: .heading)
+                            .showsAccuracyRing(true)
+                        
+                        // Buses
+                        ForEvery(busesStore.buses) { bus in
+                            MapViewAnnotation(coordinate: bus.position) {
+                                Bus(name: bus.lineName,
+                                    color: theme.colors.primary,
+                                    isIncative: busesStore.hasSelectedBus && bus != busesStore.selectedBus
+                                )
+                                .onTapGesture {
+                                    busesStore.send(.selectBus(bus))
+                                    routesStore.send(.selectRoute(id: bus.routeID))
+                                }
+                            }.allowOverlap(true)
+                        }
+                        
+                        if routesStore.hasSelectedRoute {
+                            let route = routesStore.selectedRoute
+                            let stops = route?.stops ?? []
+                            let shapes = route?.shapes ?? []
+                            
+                            // Stops
+                            ForEvery(stops) { stop in
+                                MapViewAnnotation(coordinate: stop.position) {
+                                    StopCircle(color: theme.colors.primary).compositingGroup()
+                                }
+                                .allowOverlap(true)
+                            }
+                            
+                            // Shapes
+                            PolylineAnnotation(
+                                lineCoordinates: shapes.map { shape in
+                                    shape.position
+                                }
+                            )
+                            .lineColor(.systemBlue)
+                            .lineWidth(3)
                         }
                     }
+                    .mapStyle(.light)
+                    .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
                     
-                    // Zoom buttons
-                    ZoomButton(
-                        action: {
-                            withViewportAnimation(.fly) {
-                                cameraViewModel.decreaseZoom()
+                    VStack {
+                        Spacer()
+                        HStack(alignment: .center) {
+                            // Clear route button
+                            if busesStore.hasSelectedBus {
+                                ClearRouteButton {
+                                    busesStore.send(.clearSelection)
+                                    routesStore.send(.clearSelection)
+                                }
                             }
-                        },
-                        zoomIn: false
-                    )
-                    ZoomButton(
-                        action: {
-                            withViewportAnimation(.fly) {
-                                cameraViewModel.increaseZoom()
+                            
+                            // Zoom buttons
+                            ZoomButton(
+                                action: {
+                                    cameraStore.send(.decreaseZoom)
+                                },
+                                zoomIn: false
+                            )
+                            ZoomButton(
+                                action: {
+                                    cameraStore.send(.increaseZoom)
+                                },
+                                zoomIn: true
+                            )
+                            
+                            // Get current location button
+                            LocationButton {
+                                locationStore.send(.getCurrentLocation)
                             }
-                        },
-                        zoomIn: true
-                    )
-                    
-                    // Get current location button
-                    LocationButton {
-                        withViewportAnimation(.fly) {
-                            cameraViewModel.goToCurrentLocation()
                         }
+                        .frame(maxWidth: .infinity)
+                        .padding(.bottom, 100)
                     }
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.bottom, 100)
+                .alert($mapStore.scope(state: \.alert, action: \.alert))
+                .ignoresSafeArea()
             }
         }
-        .ignoresSafeArea()
+        .onAppear() {
+            onInit()
+        }
+        
     }
 }
 

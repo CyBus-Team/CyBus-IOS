@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import ComposableArchitecture
 
 class RoutesUseCases: RoutesUseCasesProtocol {
     
@@ -38,7 +39,7 @@ class RoutesUseCases: RoutesUseCasesProtocol {
         get { _trips }
     }
     
-    init(repository: RoutesRepositoryProtocol) {
+    init(repository: RoutesRepositoryProtocol = RoutesRepository()) {
         self.repository = repository
     }
     
@@ -49,6 +50,7 @@ class RoutesUseCases: RoutesUseCasesProtocol {
         let stopIds = stopTimes.map { $0.stopId }
         let stops = _stops.filter { stopIds.contains($0.stopId) }
         return BusRouteEntity(
+            routeId: routeID,
             shapes: shapes.map { ShapeEntity(
                 id: $0.shapeId,
                 position: CLLocationCoordinate2D(
@@ -87,4 +89,16 @@ class RoutesUseCases: RoutesUseCasesProtocol {
         }
     }
     
+}
+
+struct RoutesUseCasesKey: DependencyKey {
+    static var liveValue: RoutesUseCasesProtocol = RoutesUseCases()
+}
+
+
+extension DependencyValues {
+    var routesUseCases: RoutesUseCasesProtocol {
+        get { self[RoutesUseCasesKey.self] }
+        set { self[RoutesUseCasesKey.self] = newValue }
+    }
 }

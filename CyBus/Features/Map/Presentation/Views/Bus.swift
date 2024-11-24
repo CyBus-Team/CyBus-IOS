@@ -9,6 +9,7 @@ import SwiftUI
 struct Bus: View {
     var name: String
     var color: Color
+    var isIncative: Bool = false
     
     var body: some View {
         ZStack {
@@ -31,6 +32,7 @@ struct Bus: View {
         }
         .shadow(radius: 3, x: 1, y: 1)
         .foregroundStyle(color)
+        .opacity(isIncative ? 0.5 : 1)
     }
     
 }
