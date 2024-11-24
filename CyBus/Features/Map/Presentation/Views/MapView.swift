@@ -60,7 +60,6 @@ struct MapView: View {
                                     color: theme.colors.primary,
                                     isIncative: busesStore.hasSelectedBus && bus != busesStore.selectedBus
                                 )
-                                .opacity(1)
                                 .onTapGesture {
                                     busesStore.send(.selectBus(bus))
                                     routesStore.send(.selectRoute(id: bus.routeID))
