@@ -14,7 +14,7 @@ jobs:
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
 
-          if [[ ! "$PR_TITLE" =~ ^(feat|fix|chore|refactor): ]]; then
+          if [[ ! "$PR_TITLE" =~ ^(feat|fix|chore|refactor) ]]; then
             echo "PR title does not meet the required format. Must start with 'feat', 'fix', 'chore', or 'refactor'."
             exit 1
           else
