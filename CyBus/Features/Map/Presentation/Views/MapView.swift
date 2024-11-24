@@ -56,11 +56,15 @@ struct MapView: View {
                         // Buses
                         ForEvery(busesStore.buses) { bus in
                             MapViewAnnotation(coordinate: bus.position) {
-                                Bus(name: bus.lineName, color: theme.colors.primary)
-                                    .onTapGesture {
-                                        busesStore.send(.selectBus(bus))
-                                        routesStore.send(.selectRoute(id: bus.routeID))
-                                    }
+                                Bus(name: bus.lineName,
+                                    color: theme.colors.primary,
+                                    isIncative: busesStore.hasSelectedBus && bus != busesStore.selectedBus
+                                )
+                                .opacity(1)
+                                .onTapGesture {
+                                    busesStore.send(.selectBus(bus))
+                                    routesStore.send(.selectRoute(id: bus.routeID))
+                                }
                             }.allowOverlap(true)
                         }
                         
