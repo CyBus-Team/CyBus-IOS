@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUICore
 
 protocol BusesRepositoryProtocol {
     
@@ -13,4 +14,5 @@ protocol BusesRepositoryProtocol {
     
     func fetchBuses(url: URL) async throws -> [TransitRealtime_FeedEntity]
     
+    func getLineColors() throws -> [Int?: Color]
 }

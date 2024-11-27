@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import ComposableArchitecture
+import SwiftUI
 
 enum BusesUseCasesError: Error {
     case gftsServiceNotFound
@@ -20,6 +21,7 @@ class BusesUseCases: BusesUseCasesProtocol {
     private let routesUseCases: RoutesUseCasesProtocol
     
     private var gftsURL: URL?
+    @Environment(\.theme) var theme
     
     init(repository: BusesRepositoryProtocol = BusesRepository(), routesUseCases: RoutesUseCasesProtocol = RoutesUseCases()) {
         self.repository = repository
@@ -36,16 +38,20 @@ class BusesUseCases: BusesUseCasesProtocol {
     }
     
     func fetchBuses() async throws -> [BusEntity] {
+        
         guard let url = gftsURL else {
             throw BusesUseCasesError.gftsServiceNotFound
         }
         do {
             let feedBuses = try await repository.fetchBuses(url: url)
+            let lineColors = try repository.getLineColors()
+            
             let buses = feedBuses.compactMap { entity -> BusEntity? in
                 if !entity.hasVehicle {
                     return nil
                 }
                 if let route = routesUseCases.routes.first(where: { $0.lineId == entity.vehicle.trip.routeID }) {
+                    let intLineName = Int(route.lineName)
                     let bus = BusEntity(
                         id: entity.vehicle.vehicle.id,
                         position: CLLocationCoordinate2D(
@@ -53,7 +59,8 @@ class BusesUseCases: BusesUseCasesProtocol {
                             longitude: CLLocationDegrees(entity.vehicle.position.longitude)
                         ),
                         routeID: entity.vehicle.trip.routeID,
-                        lineName: route.lineName
+                        lineName: route.lineName,
+                        lineColor: lineColors[intLineName, default: theme.colors.primary]
                     )
                     return bus
                 } else {

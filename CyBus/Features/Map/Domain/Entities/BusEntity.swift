@@ -5,6 +5,7 @@
 //  Created by Vadim Popov on 07/07/2024.
 //
 import CoreLocation
+import SwiftUICore
 
 struct BusEntity: Identifiable, Equatable {
     static func == (lhs: BusEntity, rhs: BusEntity) -> Bool {
@@ -15,11 +16,13 @@ struct BusEntity: Identifiable, Equatable {
     let routeID: String
     let lineName: String
     let position: CLLocationCoordinate2D
+    let lineColor: Color
     
-    init(id: String, position: CLLocationCoordinate2D, routeID: String, lineName: String) {
+    init(id: String, position: CLLocationCoordinate2D, routeID: String, lineName: String, lineColor: Color) {
         self.id = id
         self.routeID = routeID
         self.position = position
         self.lineName = lineName
+        self.lineColor = lineColor
     }
 }
