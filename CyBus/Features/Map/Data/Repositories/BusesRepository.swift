@@ -39,7 +39,7 @@ class BusesRepository: BusesRepositoryProtocol {
         return feedMessage.entity
     }
     
-    func getLineColors() -> [Int?: Color] {
+    func getLineColors() -> [Int: Color] {
           [
                9: .orange,
                14: .blue,
