@@ -32,7 +32,7 @@ class MockGoOnboardingUseCase : OnboardingUseCasesProtocol {
 struct RootFeatureTests {
     
   @Test
-  func showOnboarding() async {
+  func showHome() async {
       
       let skipOnboardingUseCase = MockSkipOnboardingUseCase()
       
@@ -53,7 +53,7 @@ struct RootFeatureTests {
   }
     
     @Test
-    func showHome() async {
+    func showOnboarding() async {
         let skipOnboardingUseCase = MockGoOnboardingUseCase()
         
         let store = TestStore(initialState: RootFeature.State()) {
