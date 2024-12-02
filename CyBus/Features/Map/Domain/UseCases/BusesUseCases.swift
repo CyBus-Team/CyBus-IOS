@@ -28,13 +28,16 @@ class BusesUseCases: BusesUseCasesProtocol {
     
     func group(buses: [BusEntity], by distance: Double) async throws -> [BusGroupEntity] {
         guard !buses.isEmpty else { return [] }
-        
-        let sorted = buses.sorted{$0.position.distance(to: $1.position) < $1.position.distance(to: $0.position)}
+        let referencePoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        let proximityComparator = BusEntity.ProximityTo(order: .forward, referencePoint: referencePoint)
+        let sorted = buses.sorted(using: proximityComparator)
         var result : [[BusEntity]] = []
         var currentGroup: [BusEntity] = [sorted.first!]
         
-        for (index, value) in sorted.enumerated() {
-            if value.position.distance(to: sorted[index - 1].position).isLess(than: distance) {
+        for index in 1..<sorted.count {
+            let value = sorted[index]
+            let prevDistance = value.position.distance(to: sorted[index - 1].position)
+            if prevDistance.isLess(than: distance) {
                 currentGroup.append(value)
             } else {
                 result.append(currentGroup)
@@ -42,7 +45,7 @@ class BusesUseCases: BusesUseCasesProtocol {
             }
         }
         
-        return result.map{ BusGroupEntity(id: $0.first!.id, position: $0.first!.position, buses: $0) }
+        return result.map{ BusGroupEntity(id: $0.map{ $0.id }.joined(), position: $0.first!.position, buses: $0) }
     }
     
     func fetchServiceUrl() async throws {

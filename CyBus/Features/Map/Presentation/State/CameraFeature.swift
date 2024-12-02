@@ -15,11 +15,15 @@ struct CameraFeature {
     static public let maxZoom: Double = 17
     static public let minZoom: Double = 12
     static public let defaultZoom: Double = 14
+    static public let minScale: Double = 0.8
+    static public let maxScale: Double = 1.0
     //Limassol by default
     static public let defaultLocation = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
     
     @ObservableState
     struct State: Equatable {
+//        var scale: Double = 0.8
+        var scale: Double = 1.0
         var zoom: Double = CameraFeature.defaultZoom
         var viewport: Viewport = .camera(center: defaultLocation, zoom: CameraFeature.defaultZoom)
     }
@@ -29,6 +33,12 @@ struct CameraFeature {
         case increaseZoom
         case decreaseZoom
         case onViewportChange(CLLocationCoordinate2D)
+    }
+    
+    private func calculateScale(current: Double) -> Double {
+        guard CameraFeature.minZoom != CameraFeature.maxZoom else { return CameraFeature.minScale }
+        let normalized = (current - CameraFeature.minZoom ) / (CameraFeature.maxZoom -  CameraFeature.minZoom)
+        return CameraFeature.minScale + normalized * (CameraFeature.maxScale - CameraFeature.minScale)
     }
     
     var body: some ReducerOf<Self> {
@@ -45,6 +55,7 @@ struct CameraFeature {
                     withViewportAnimation(.fly) {
                         state.zoom += 1
                         state.viewport = .camera(zoom: state.zoom)
+                        state.scale = calculateScale(current: state.zoom)
                     }
                 }
                 return .none
@@ -53,6 +64,7 @@ struct CameraFeature {
                     withViewportAnimation(.fly) {
                         state.zoom -= 1
                         state.viewport = .camera(zoom: state.zoom)
+                        state.scale = calculateScale(current: state.zoom)
                     }
                 }
                 return .none

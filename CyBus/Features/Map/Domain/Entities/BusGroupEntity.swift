@@ -25,7 +25,7 @@ struct BusGroupEntity: Identifiable, Equatable {
 
 extension BusGroupEntity {
     
-    var lineNames: [String] {
+    var lines: [String] {
         buses.map{$0.lineName}
     }
     
