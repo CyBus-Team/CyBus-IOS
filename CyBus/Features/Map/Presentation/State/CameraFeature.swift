@@ -15,15 +15,14 @@ struct CameraFeature {
     static public let maxZoom: Double = 17
     static public let minZoom: Double = 12
     static public let defaultZoom: Double = 14
-    static public let minScale: Double = 0.8
+    static public let minScale: Double = 0.7
     static public let maxScale: Double = 1.0
     //Limassol by default
     static public let defaultLocation = CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617)
     
     @ObservableState
     struct State: Equatable {
-//        var scale: Double = 0.8
-        var scale: Double = 1.0
+        var scale: Double = 0.7
         var zoom: Double = CameraFeature.defaultZoom
         var viewport: Viewport = .camera(center: defaultLocation, zoom: CameraFeature.defaultZoom)
     }
