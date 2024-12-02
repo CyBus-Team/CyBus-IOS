@@ -32,7 +32,7 @@ struct Bus: View {
                 
                 Image(systemName: "bus.fill")
                     .frame(width: 20, height: 20)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 15)
             }
         }
         .shadow(radius: 3, x: 1, y: 1)
