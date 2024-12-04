@@ -5,7 +5,6 @@
 //  Created by Vadim Popov on 07/07/2024.
 //
 import CoreLocation
-import SwiftUICore
 
 struct BusEntity: Identifiable, Equatable {
     static func == (lhs: BusEntity, rhs: BusEntity) -> Bool {

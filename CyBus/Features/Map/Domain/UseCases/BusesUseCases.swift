@@ -8,7 +8,6 @@
 import Foundation
 import CoreLocation
 import ComposableArchitecture
-import SwiftUI
 
 enum BusesUseCasesError: Error {
     case gftsServiceNotFound
@@ -21,7 +20,6 @@ class BusesUseCases: BusesUseCasesProtocol {
     private let routesUseCases: RoutesUseCasesProtocol
     
     private var gftsURL: URL?
-    @Environment(\.theme) var theme
     
     init(repository: BusesRepositoryProtocol = BusesRepository(), routesUseCases: RoutesUseCasesProtocol = RoutesUseCases()) {
         self.repository = repository
@@ -76,10 +74,6 @@ class BusesUseCases: BusesUseCasesProtocol {
             }
         }
     }
-    
-}
-
-func blabla(a: Int = 1) {
     
 }
 
