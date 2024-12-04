@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUICore
 
 enum BusesRepositoryError: Error {
     case GFTSNotFound
@@ -39,12 +38,12 @@ class BusesRepository: BusesRepositoryProtocol {
         return feedMessage.entity
     }
     
-    func getLineColors() -> [Int: Color] {
+    func getLineColors() -> [String: String] {
           [
-               9: .orange,
-               14: .blue,
-               30: .red,
-               21: .green,
+               "9":  "#ff0000",
+               "14": "#3cb371",
+               "30": "#ffa500",
+               "21": "#0000ff",
           ]
     }
 }

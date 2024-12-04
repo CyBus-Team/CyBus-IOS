@@ -51,7 +51,6 @@ class BusesUseCases: BusesUseCasesProtocol {
                     return nil
                 }
                 if let route = routesUseCases.routes.first(where: { $0.lineId == entity.vehicle.trip.routeID }) {
-                    let intLineName = Int(route.lineName)
                     let bus = BusEntity(
                         id: entity.vehicle.vehicle.id,
                         position: CLLocationCoordinate2D(
@@ -60,7 +59,7 @@ class BusesUseCases: BusesUseCasesProtocol {
                         ),
                         routeID: entity.vehicle.trip.routeID,
                         lineName: route.lineName,
-                        lineColor: lineColors[intLineName, default: theme.colors.primary]
+                        lineColor: lineColors[route.lineName]
                     )
                     return bus
                 } else {
@@ -77,6 +76,10 @@ class BusesUseCases: BusesUseCasesProtocol {
             }
         }
     }
+    
+}
+
+func blabla(a: Int = 1) {
     
 }
 

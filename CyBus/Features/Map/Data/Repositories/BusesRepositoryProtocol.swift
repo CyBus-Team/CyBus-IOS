@@ -14,5 +14,5 @@ protocol BusesRepositoryProtocol {
     
     func fetchBuses(url: URL) async throws -> [TransitRealtime_FeedEntity]
     
-    func getLineColors() throws -> [Int: Color]
+    func getLineColors() throws -> [String: String]
 }
