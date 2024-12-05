@@ -36,11 +36,14 @@ class BusesUseCases: BusesUseCasesProtocol {
     }
     
     func fetchBuses() async throws -> [BusEntity] {
+        
         guard let url = gftsURL else {
             throw BusesUseCasesError.gftsServiceNotFound
         }
         do {
             let feedBuses = try await repository.fetchBuses(url: url)
+            let lineColors = try repository.getLineColors()
+            
             let buses = feedBuses.compactMap { entity -> BusEntity? in
                 if !entity.hasVehicle {
                     return nil
@@ -53,7 +56,8 @@ class BusesUseCases: BusesUseCasesProtocol {
                             longitude: CLLocationDegrees(entity.vehicle.position.longitude)
                         ),
                         routeID: entity.vehicle.trip.routeID,
-                        lineName: route.lineName
+                        lineName: route.lineName,
+                        lineColor: lineColors[route.lineName]
                     )
                     return bus
                 } else {

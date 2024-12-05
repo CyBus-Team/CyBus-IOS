@@ -57,7 +57,7 @@ struct MapView: View {
                         ForEvery(busesStore.buses) { bus in
                             MapViewAnnotation(coordinate: bus.position) {
                                 Bus(name: bus.lineName,
-                                    color: theme.colors.primary,
+                                    color: bus.lineColor != nil ? Color(fromHex: bus.lineColor!) : theme.colors.primary,
                                     isIncative: busesStore.hasSelectedBus && bus != busesStore.selectedBus
                                 )
                                 .onTapGesture {

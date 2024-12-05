@@ -7,10 +7,11 @@
 
 import SwiftUI
 struct Bus: View {
+    @Environment(\.theme) var theme
     var name: String
     var color: Color
     var isIncative: Bool = false
-    
+  
     var body: some View {
         ZStack {
             MarkerIcon()
@@ -31,7 +32,7 @@ struct Bus: View {
             }
         }
         .shadow(radius: 3, x: 1, y: 1)
-        .foregroundStyle(color)
+        .foregroundStyle(theme.colors.primary)
         .opacity(isIncative ? 0.5 : 1)
     }
     
