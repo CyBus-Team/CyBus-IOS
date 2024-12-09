@@ -54,15 +54,17 @@ struct MapView: View {
                             .showsAccuracyRing(true)
                         
                         // Buses
-                        ForEvery(busesStore.buses) { bus in
-                            MapViewAnnotation(coordinate: bus.position) {
-                                Bus(name: bus.lineName,
-                                    color: bus.lineColor != nil ? Color(fromHex: bus.lineColor!) : theme.colors.primary,
-                                    isIncative: busesStore.hasSelectedBus && bus != busesStore.selectedBus
+                        ForEvery(busesStore.groupedBuses) { busGroup in
+                            MapViewAnnotation(coordinate: busGroup.position) {
+                                Bus(
+                                    lines: busGroup.lines,
+                                    color: busGroup.lineColor != nil ? Color(fromHex: busGroup.lineColor!) : theme.colors.primary,
+                                    isIncative: busesStore.hasSelectedBus && busGroup.buses.first != busesStore.selectedBus,
+                                    scale: cameraStore.scale
                                 )
                                 .onTapGesture {
-                                    busesStore.send(.selectBus(bus))
-                                    routesStore.send(.selectRoute(id: bus.routeID))
+                                    busesStore.send(.selectBus(busGroup.buses.first!))
+                                    routesStore.send(.selectRoute(id: busGroup.buses.first!.routeID))
                                 }
                             }.allowOverlap(true)
                         }

@@ -16,7 +16,7 @@ struct BusesFeature {
     struct State: Equatable {
         var isInitialized: Bool = false
         var isFetching: Bool = false
-        var buses: [BusEntity] = []
+        var groupedBuses: [BusGroupEntity] = []
         var hasSelectedBus: Bool = false
         var selectedBus : BusEntity? {
             didSet {
@@ -34,7 +34,7 @@ struct BusesFeature {
         case tick
         
         case fetchBuses
-        case fetchBusesResponse([BusEntity])
+        case fetchBusesResponse([BusGroupEntity])
         case fetchBusesError(String)
         
         case selectBus(BusEntity)
@@ -85,7 +85,10 @@ struct BusesFeature {
                 return .run { @MainActor send in
                     do {
                         let buses = try await busesUseCases.fetchBuses()
-                        send(.fetchBusesResponse(buses))
+//                        print("buses: \(buses.count)")
+                        let groupedBuses = try await busesUseCases.group(buses: buses, by: 300)
+//                        print("groupedBuses: \(groupedBuses.count)")
+                        send(.fetchBusesResponse(groupedBuses))
                     } catch {
                         send(.fetchBusesError("Error: \(error.localizedDescription)"))
                     }
@@ -96,8 +99,8 @@ struct BusesFeature {
                 print("Error: \(error)")
                 return .none
                 
-            case let .fetchBusesResponse(buses):
-                state.buses = buses
+            case let .fetchBusesResponse(groupedBuses):
+                state.groupedBuses = groupedBuses
                 return .none
                 
             case let .selectBus(bus):

@@ -19,16 +19,38 @@ class BusesUseCases: BusesUseCasesProtocol {
     private let repository: BusesRepositoryProtocol
     private let routesUseCases: RoutesUseCasesProtocol
     
-    private var gftsURL: URL?
+    private var googleFeedTrasportServiceURL: URL?
     
     init(repository: BusesRepositoryProtocol = BusesRepository(), routesUseCases: RoutesUseCasesProtocol = RoutesUseCases()) {
         self.repository = repository
         self.routesUseCases = routesUseCases
     }
     
+    func group(buses: [BusEntity], by distance: Double) async throws -> [BusGroupEntity] {
+        guard !buses.isEmpty else { return [] }
+        let referencePoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        let proximityComparator = BusEntity.ProximityTo(order: .forward, referencePoint: referencePoint)
+        let sorted = buses.sorted(using: proximityComparator)
+        var result : [[BusEntity]] = []
+        var currentGroup: [BusEntity] = [sorted.first!]
+        
+        for index in 1..<sorted.count {
+            let value = sorted[index]
+            let prevDistance = value.position.distance(to: sorted[index - 1].position)
+            if prevDistance.isLess(than: distance) {
+                currentGroup.append(value)
+            } else {
+                result.append(currentGroup)
+                currentGroup = [value]
+            }
+        }
+        
+        return result.map{ BusGroupEntity(id: $0.map{ $0.id }.joined(), position: $0.first!.position, buses: $0) }
+    }
+    
     func fetchServiceUrl() async throws {
         do {
-            self.gftsURL = try repository.getServiceUrl()
+            self.googleFeedTrasportServiceURL = try repository.getServiceUrl()
             try await routesUseCases.fetchRoutes()
         } catch {
             throw error
@@ -36,18 +58,13 @@ class BusesUseCases: BusesUseCasesProtocol {
     }
     
     func fetchBuses() async throws -> [BusEntity] {
-        
-        guard let url = gftsURL else {
+        guard let googleFeedUrl = googleFeedTrasportServiceURL else {
             throw BusesUseCasesError.gftsServiceNotFound
         }
         do {
-            let feedBuses = try await repository.fetchBuses(url: url)
+            let feedBuses = try await repository.fetchBuses(url: googleFeedUrl)
             let lineColors = try repository.getLineColors()
-            
-            let buses = feedBuses.compactMap { entity -> BusEntity? in
-                if !entity.hasVehicle {
-                    return nil
-                }
+            let buses = feedBuses.filter{ $0.hasVehicle }.compactMap{ entity -> BusEntity? in
                 if let route = routesUseCases.routes.first(where: { $0.lineId == entity.vehicle.trip.routeID }) {
                     let bus = BusEntity(
                         id: entity.vehicle.vehicle.id,
