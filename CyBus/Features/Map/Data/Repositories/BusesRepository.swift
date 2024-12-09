@@ -37,4 +37,13 @@ class BusesRepository: BusesRepositoryProtocol {
         let feedMessage = try TransitRealtime_FeedMessage(serializedBytes: data)
         return feedMessage.entity
     }
+    
+    func getLineColors() -> [String: String] {
+          [
+               "9":  "#ff0000",
+               "14": "#3cb371",
+               "30": "#ffa500",
+               "21": "#0000ff",
+          ]
+    }
 }

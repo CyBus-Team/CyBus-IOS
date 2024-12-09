@@ -29,4 +29,8 @@ extension BusGroupEntity {
         buses.map{$0.lineName}
     }
     
+    var lineColor: String? {
+        buses.first?.lineColor
+    }
+    
 }

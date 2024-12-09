@@ -12,6 +12,8 @@ struct Bus: View {
     var color: Color
     var isIncative: Bool = false
     var scale: Double
+
+    @Environment(\.theme) var theme
     
     var body: some View {
         VStack {
@@ -36,7 +38,7 @@ struct Bus: View {
             }
         }
         .shadow(radius: 3, x: 1, y: 1)
-        .foregroundStyle(color)
+        .foregroundStyle(theme.colors.primary)
         .opacity(isIncative ? 0.5 : 1)
         .scaleEffect(scale)
     }

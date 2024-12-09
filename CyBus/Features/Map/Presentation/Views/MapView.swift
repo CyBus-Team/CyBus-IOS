@@ -58,7 +58,7 @@ struct MapView: View {
                             MapViewAnnotation(coordinate: busGroup.position) {
                                 Bus(
                                     lines: busGroup.lines,
-                                    color: theme.colors.primary,
+                                    color: busGroup.lineColor != nil ? Color(fromHex: busGroup.lineColor!) : theme.colors.primary,
                                     isIncative: busesStore.hasSelectedBus && busGroup.buses.first != busesStore.selectedBus,
                                     scale: cameraStore.scale
                                 )

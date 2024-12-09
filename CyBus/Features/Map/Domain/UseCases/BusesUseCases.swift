@@ -63,6 +63,7 @@ class BusesUseCases: BusesUseCasesProtocol {
         }
         do {
             let feedBuses = try await repository.fetchBuses(url: googleFeedUrl)
+            let lineColors = try repository.getLineColors()
             let buses = feedBuses.filter{ $0.hasVehicle }.compactMap{ entity -> BusEntity? in
                 if let route = routesUseCases.routes.first(where: { $0.lineId == entity.vehicle.trip.routeID }) {
                     let bus = BusEntity(
@@ -72,7 +73,8 @@ class BusesUseCases: BusesUseCasesProtocol {
                             longitude: CLLocationDegrees(entity.vehicle.position.longitude)
                         ),
                         routeID: entity.vehicle.trip.routeID,
-                        lineName: route.lineName
+                        lineName: route.lineName,
+                        lineColor: lineColors[route.lineName]
                     )
                     return bus
                 } else {
