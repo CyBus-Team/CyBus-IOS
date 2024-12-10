@@ -30,7 +30,7 @@ extension BusGroupEntity {
     }
     
     var lineColor: String? {
-        buses.first?.lineColor
+        buses.count > 1 ? nil : buses.first?.lineColor
     }
     
 }

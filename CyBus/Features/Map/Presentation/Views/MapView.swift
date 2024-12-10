@@ -66,7 +66,9 @@ struct MapView: View {
                                     busesStore.send(.selectBus(busGroup.buses.first!))
                                     routesStore.send(.selectRoute(id: busGroup.buses.first!.routeID))
                                 }
-                            }.allowOverlap(true)
+                            }
+                            .variableAnchors([.init(anchor: .bottom)])
+                            .allowOverlap(true)
                         }
                         
                         if routesStore.hasSelectedRoute {
