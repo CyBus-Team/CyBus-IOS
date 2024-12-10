@@ -41,14 +41,9 @@ struct HomeView: View {
                 .tag(1)
             Text("In progress...")
                 .tabItem {
-                    Label("Search", systemImage: "point.bottomleft.forward.to.point.topright.scurvepath")
-                }
-                .tag(2)
-            Text("In progress...")
-                .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }
-                .tag(3)
+                .tag(2)
         }
     }
     
