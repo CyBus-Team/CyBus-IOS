@@ -85,9 +85,7 @@ struct BusesFeature {
                 return .run { @MainActor send in
                     do {
                         let buses = try await busesUseCases.fetchBuses()
-//                        print("buses: \(buses.count)")
                         let groupedBuses = try await busesUseCases.group(buses: buses, by: 300)
-//                        print("groupedBuses: \(groupedBuses.count)")
                         send(.fetchBusesResponse(groupedBuses))
                     } catch {
                         send(.fetchBusesError("Error: \(error.localizedDescription)"))
