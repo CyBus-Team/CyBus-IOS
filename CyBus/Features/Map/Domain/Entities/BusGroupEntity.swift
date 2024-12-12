@@ -25,7 +25,12 @@ struct BusGroupEntity: Identifiable, Equatable {
 
 extension BusGroupEntity {
     
-    var lines: [String] {
+    var uniqueLines: [String] {
+        var uniqies = Set<String>()
+        return allLines.filter { uniqies.insert($0).inserted }
+    }
+    
+    var allLines: [String] {
         buses.map{$0.lineName}
     }
     

@@ -12,19 +12,21 @@ struct Bus: View {
     var color: Color
     var isIncative: Bool = false
     var scale: Double
+    var activeBusIndex: Int?
 
     @Environment(\.theme) var theme
     
     var body: some View {
         VStack {
             VStack {
-                ForEach(Array(Set(lines)).indices, id: \.self) { index in
+                ForEach(lines.indices, id: \.self) { index in
                     Text(lines[index])
                         .frame(width: 36)
                         .foregroundColor(.white)
                         .font(.caption)
                         .background(color)
                         .cornerRadius(16)
+//                        .opacity(activeBusIndex == index ? 0 : 0.5)
                 }
             }
             

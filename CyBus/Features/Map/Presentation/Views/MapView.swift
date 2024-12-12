@@ -57,10 +57,11 @@ struct MapView: View {
                         ForEvery(busesStore.groupedBuses) { busGroup in
                             MapViewAnnotation(coordinate: busGroup.position) {
                                 Bus(
-                                    lines: busGroup.lines,
+                                    lines: busGroup.uniqueLines,
                                     color: busGroup.lineColor != nil ? Color(fromHex: busGroup.lineColor!) : theme.colors.primary,
-                                    isIncative: busesStore.hasSelectedBus && busGroup.buses.first != busesStore.selectedBus,
-                                    scale: cameraStore.scale
+                                    isIncative: busesStore.hasSelectedBus && !busGroup.buses.contains(busesStore.selectedBus!),
+                                    scale: cameraStore.scale,
+                                    activeBusIndex: busesStore.selectedBus == nil ? nil : busGroup.buses.firstIndex(of:  busesStore.selectedBus!)
                                 )
                                 .onTapGesture {
                                     busesStore.send(.selectBus(busGroup.buses.first!))
