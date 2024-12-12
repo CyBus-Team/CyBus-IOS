@@ -18,7 +18,7 @@ struct Bus: View {
     var body: some View {
         VStack {
             VStack {
-                ForEach(lines.indices, id: \.self) { index in
+                ForEach(Array(Set(lines)).indices, id: \.self) { index in
                     Text(lines[index])
                         .frame(width: 36)
                         .foregroundColor(.white)
