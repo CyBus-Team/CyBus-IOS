@@ -15,14 +15,13 @@ struct MapView: View {
     @Bindable var cameraStore: StoreOf<CameraFeature>
     @Bindable var locationStore: StoreOf<LocationFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
-    @Bindable var routesStore: StoreOf<RoutesFeature>
     
     @Environment(\.theme) var theme
     
     private func onInit() {
         mapStore.send(.setUp)
-        routesStore.send(.setUp)
         busesStore.send(.setUp)
+        busesStore.send(.routes(.setUp))
     }
     
     var body: some View {
@@ -56,23 +55,21 @@ struct MapView: View {
                         // Buses
                         ForEvery(busesStore.groupedBuses) { busGroup in
                             MapViewAnnotation(coordinate: busGroup.position) {
-                                Bus(
-                                    lines: busGroup.lines,
-                                    color: busGroup.lineColor != nil ? Color(fromHex: busGroup.lineColor!) : theme.colors.primary,
-                                    isIncative: busesStore.hasSelectedBus && busGroup.buses.first != busesStore.selectedBus,
+                                BusGroup(
+                                    activeBus: busesStore.selectedBusGroupState?.bus,
+                                    buses: busGroup.buses,
                                     scale: cameraStore.scale
                                 )
                                 .onTapGesture {
-                                    busesStore.send(.selectBus(busGroup.buses.first!))
-                                    routesStore.send(.selectRoute(id: busGroup.buses.first!.routeID))
+                                    busesStore.send(.select(busGroup))
                                 }
                             }
                             .variableAnchors([.init(anchor: .bottom)])
                             .allowOverlap(true)
                         }
                         
-                        if routesStore.hasSelectedRoute {
-                            let route = routesStore.selectedRoute
+                        if busesStore.routes.hasSelectedRoute {
+                            let route = busesStore.routes.selectedRoute
                             let stops = route?.stops ?? []
                             let shapes = route?.shapes ?? []
                             
@@ -81,6 +78,7 @@ struct MapView: View {
                                 MapViewAnnotation(coordinate: stop.position) {
                                     StopCircle(color: theme.colors.primary).compositingGroup()
                                 }
+                                .allowZElevate(true)
                                 .allowOverlap(true)
                             }
                             
@@ -101,10 +99,9 @@ struct MapView: View {
                         Spacer()
                         HStack(alignment: .center) {
                             // Clear route button
-                            if busesStore.hasSelectedBus {
+                            if busesStore.hasSelection {
                                 ClearRouteButton {
                                     busesStore.send(.clearSelection)
-                                    routesStore.send(.clearSelection)
                                 }
                             }
                             

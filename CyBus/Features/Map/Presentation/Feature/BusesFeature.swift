@@ -16,13 +16,14 @@ struct BusesFeature {
     struct State: Equatable {
         var isInitialized: Bool = false
         var isFetching: Bool = false
+        
         var groupedBuses: [BusGroupEntity] = []
-        var hasSelectedBus: Bool = false
-        var selectedBus : BusEntity? {
-            didSet {
-                hasSelectedBus = true
-            }
-        }
+        
+        var hasSelection: Bool { selectedBusGroupState != nil }
+        var selectedBusGroupState: SelectedBusGroupState?
+        
+        var routes = RoutesFeature.State()
+        
     }
     
     enum Action {
@@ -37,13 +38,19 @@ struct BusesFeature {
         case fetchBusesResponse([BusGroupEntity])
         case fetchBusesError(String)
         
-        case selectBus(BusEntity)
+        case select(BusGroupEntity)
         case clearSelection
+        case selectResponse
+        
+        case routes(RoutesFeature.Action)
     }
     
     @Dependency(\.busesUseCases) var busesUseCases
     
     var body: some ReducerOf<Self> {
+        Scope(state: \.routes, action: \.routes) {
+            RoutesFeature()
+        }
         Reduce { state, action in
             switch action {
             case let .setUpResponse(isInited, error):
@@ -85,9 +92,7 @@ struct BusesFeature {
                 return .run { @MainActor send in
                     do {
                         let buses = try await busesUseCases.fetchBuses()
-//                        print("buses: \(buses.count)")
-                        let groupedBuses = try await busesUseCases.group(buses: buses, by: 300)
-//                        print("groupedBuses: \(groupedBuses.count)")
+                        let groupedBuses = try await busesUseCases.group(buses: buses, by: 200)
                         send(.fetchBusesResponse(groupedBuses))
                     } catch {
                         send(.fetchBusesError("Error: \(error.localizedDescription)"))
@@ -103,14 +108,35 @@ struct BusesFeature {
                 state.groupedBuses = groupedBuses
                 return .none
                 
-            case let .selectBus(bus):
-                state.selectedBus = bus
-                return .none
-                
+            case let .select(busGroup):
+                if let selectedBusGroupState = state.selectedBusGroupState {
+                    if selectedBusGroupState.group == busGroup {
+                        let currentIndex = selectedBusGroupState.index
+                        let newIndex = currentIndex + 1 >= busGroup.buses.count ? 0 : currentIndex + 1
+                        state.selectedBusGroupState = SelectedBusGroupState(
+                            group: busGroup,
+                            index: newIndex,
+                            bus: busGroup.buses[newIndex]
+                        )
+                    } else {
+                        state.selectedBusGroupState = .defaultValue(group: busGroup)
+                    }
+                } else {
+                    state.selectedBusGroupState = .defaultValue(group: busGroup)
+                }
+                return .send(.selectResponse)
             case .clearSelection:
-                state.hasSelectedBus.toggle()
+                state.selectedBusGroupState = nil
+                return .send(.selectResponse)
+            case .selectResponse:
+                if let selectedGroup = state.selectedBusGroupState {
+                    let routeId = selectedGroup.bus.routeID
+                    return .send(.routes(.select(id: routeId)))
+                } else {
+                    return .send(.routes(.clearSelection))
+                }
+            case .routes(_):
                 return .none
-                
             }
         }
     }

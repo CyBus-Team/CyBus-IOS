@@ -25,12 +25,8 @@ struct BusGroupEntity: Identifiable, Equatable {
 
 extension BusGroupEntity {
     
-    var lines: [String] {
+    var allLines: [String] {
         buses.map{$0.lineName}
-    }
-    
-    var lineColor: String? {
-        buses.count > 1 ? nil : buses.first?.lineColor
     }
     
 }
