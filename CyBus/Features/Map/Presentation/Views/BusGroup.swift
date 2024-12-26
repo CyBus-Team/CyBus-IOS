@@ -31,9 +31,9 @@ struct BusGroup: View {
             ZStack {
                 MarkerIcon()
                     .frame(width: 36, height: 50)
-                
                 Image(systemName: "bus.fill")
                     .frame(width: 20, height: 20)
+                    .foregroundColor(.white)
                     .padding(.bottom, 15)
             }
         }
