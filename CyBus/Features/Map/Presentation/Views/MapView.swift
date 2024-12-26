@@ -15,14 +15,13 @@ struct MapView: View {
     @Bindable var cameraStore: StoreOf<CameraFeature>
     @Bindable var locationStore: StoreOf<LocationFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
-    @Bindable var routesStore: StoreOf<RoutesFeature>
     
     @Environment(\.theme) var theme
     
     private func onInit() {
         mapStore.send(.setUp)
-        routesStore.send(.setUp)
         busesStore.send(.setUp)
+        busesStore.send(.routes(.setUp))
     }
     
     var body: some View {
@@ -58,22 +57,21 @@ struct MapView: View {
                             MapViewAnnotation(coordinate: busGroup.position) {
                                 Bus(
                                     lines: busGroup.uniqueLines,
-                                    state: busesStore.selectedBusState?.group != busGroup
+                                    state: busesStore.selectedBusGroupState?.group != busGroup
                                     ? busesStore.hasSelection ? .inactive : .none : .active,
                                     scale: cameraStore.scale,
-                                    activeBusIndex: busesStore.selectedBusState?.index
+                                    activeBusIndex: busesStore.selectedBusGroupState?.index
                                 )
                                 .onTapGesture {
                                     busesStore.send(.select(busGroup))
-                                    //                                    routesStore.send(.selectRoute)
                                 }
                             }
                             .variableAnchors([.init(anchor: .bottom)])
                             .allowOverlap(true)
                         }
                         
-                        if routesStore.hasSelectedRoute {
-                            let route = routesStore.selectedRoute
+                        if busesStore.routes.hasSelectedRoute {
+                            let route = busesStore.routes.selectedRoute
                             let stops = route?.stops ?? []
                             let shapes = route?.shapes ?? []
                             
@@ -105,7 +103,6 @@ struct MapView: View {
                             if busesStore.hasSelection {
                                 ClearRouteButton {
                                     busesStore.send(.clearSelection)
-                                    routesStore.send(.clearSelection)
                                 }
                             }
                             

@@ -26,7 +26,7 @@ struct RoutesFeature {
         case setUp
         case setUpResponse(Bool, error: String?)
         
-        case selectRoute(id: String)
+        case select(id: String)
         case clearSelection
     }
     
@@ -50,7 +50,7 @@ struct RoutesFeature {
                 state.error = error
                 return .none
              
-            case let .selectRoute(id):
+            case let .select(id):
                 state.selectedRoute = routesUseCases.getRoute(for: id)
                 return .none
                 

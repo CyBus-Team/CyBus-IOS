@@ -19,8 +19,10 @@ struct BusesFeature {
         
         var groupedBuses: [BusGroupEntity] = []
         
-        var hasSelection: Bool { selectedBusState != nil }
-        var selectedBusState: SelectedBusGroupState?
+        var hasSelection: Bool { selectedBusGroupState != nil }
+        var selectedBusGroupState: SelectedBusGroupState?
+        
+        var routes = RoutesFeature.State()
         
     }
     
@@ -38,11 +40,17 @@ struct BusesFeature {
         
         case select(BusGroupEntity)
         case clearSelection
+        case selectResponse
+        
+        case routes(RoutesFeature.Action)
     }
     
     @Dependency(\.busesUseCases) var busesUseCases
     
     var body: some ReducerOf<Self> {
+        Scope(state: \.routes, action: \.routes) {
+            RoutesFeature()
+        }
         Reduce { state, action in
             switch action {
             case let .setUpResponse(isInited, error):
@@ -101,27 +109,34 @@ struct BusesFeature {
                 return .none
                 
             case let .select(busGroup):
-                if let selectedBusState = state.selectedBusState {
-                    if state.selectedBusState?.group == busGroup {
-                        let currentIndex = selectedBusState.index
+                if let selectedBusGroupState = state.selectedBusGroupState {
+                    if selectedBusGroupState.group == busGroup {
+                        let currentIndex = selectedBusGroupState.index
                         let newIndex = currentIndex + 1 >= busGroup.buses.count ? 0 : currentIndex + 1
-                        state.selectedBusState = SelectedBusGroupState(
+                        state.selectedBusGroupState = SelectedBusGroupState(
                             group: busGroup,
                             index: newIndex,
                             bus: busGroup.buses[newIndex]
                         )
                     } else {
-                        state.selectedBusState = .defaultValue(group: busGroup)
+                        state.selectedBusGroupState = .defaultValue(group: busGroup)
                     }
                 } else {
-                    state.selectedBusState = .defaultValue(group: busGroup)
+                    state.selectedBusGroupState = .defaultValue(group: busGroup)
                 }
-                return .none
-                
+                return .send(.selectResponse)
             case .clearSelection:
-                state.selectedBusState = nil
+                state.selectedBusGroupState = nil
+                return .send(.selectResponse)
+            case .selectResponse:
+                if let selectedGroup = state.selectedBusGroupState {
+                    let routeId = selectedGroup.bus.routeID
+                    return .send(.routes(.select(id: routeId)))
+                } else {
+                    return .send(.routes(.clearSelection))
+                }
+            case .routes(_):
                 return .none
-                
             }
         }
     }

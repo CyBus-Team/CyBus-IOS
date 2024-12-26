@@ -275,12 +275,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		945843A22CD18179006D9893 /* State */ = {
+		945843A22CD18179006D9893 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
 				94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */,
 			);
-			path = State;
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		945843A32CD18203006D9893 /* Presentation */ = {
@@ -538,7 +538,7 @@
 		94AF24B42CBC134D0092EE9B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				94F3B8872CC2ED3200E38BE2 /* State */,
+				94F3B8872CC2ED3200E38BE2 /* Feature */,
 				94F3B8862CC2ECDD00E38BE2 /* Steps */,
 				94AF24D92CBC57230092EE9B /* OnboardingView.swift */,
 			);
@@ -685,7 +685,7 @@
 			path = Steps;
 			sourceTree = "<group>";
 		};
-		94F3B8872CC2ED3200E38BE2 /* State */ = {
+		94F3B8872CC2ED3200E38BE2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
 				9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */,
@@ -693,7 +693,7 @@
 				9420D1C32CD017AA00150F5B /* OnboardingSigninFeature.swift */,
 				94D7948A2CC029B50097A2F0 /* OnboardingFeatures.swift */,
 			);
-			path = State;
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		94F3B88A2CC3017100E38BE2 /* Root */ = {
@@ -707,7 +707,7 @@
 		94F3B88B2CC3017A00E38BE2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				945843A22CD18179006D9893 /* State */,
+				945843A22CD18179006D9893 /* Feature */,
 				94D794862CC0205F0097A2F0 /* RootView.swift */,
 				94F3B8882CC2F1B200E38BE2 /* LogoView.swift */,
 			);
