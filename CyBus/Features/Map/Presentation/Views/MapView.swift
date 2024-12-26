@@ -56,7 +56,7 @@ struct MapView: View {
                         ForEvery(busesStore.groupedBuses) { busGroup in
                             MapViewAnnotation(coordinate: busGroup.position) {
                                 Bus(
-                                    lines: busGroup.uniqueLines,
+                                    lines: busGroup.allLines,
                                     state: busesStore.selectedBusGroupState?.group != busGroup
                                     ? busesStore.hasSelection ? .inactive : .none : .active,
                                     scale: cameraStore.scale,

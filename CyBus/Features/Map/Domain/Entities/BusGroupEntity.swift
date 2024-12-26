@@ -34,8 +34,4 @@ extension BusGroupEntity {
         buses.map{$0.lineName}
     }
     
-    var lineColor: String? {
-        buses.count > 1 ? nil : buses.first?.lineColor
-    }
-    
 }

@@ -18,7 +18,7 @@ struct Bus: View {
     var state: BusState
     var scale: Double
     var activeBusIndex: Int?
-
+    
     @Environment(\.theme) var theme
     
     var body: some View {
@@ -29,9 +29,9 @@ struct Bus: View {
                         .frame(width: 36)
                         .foregroundColor(.white)
                         .font(.caption)
-                        .background(state == .active && activeBusIndex == index ? theme.colors.secondary : theme.colors.primary)
+                        .background(theme.colors.primary)
                         .cornerRadius(16)
-//                        .opacity(activeBusIndex == index ? 0 : 0.5)
+                        .opacity(state == .none ? 1 : state == .active && activeBusIndex == index ? 1 : 0.5)
                 }
             }
             
