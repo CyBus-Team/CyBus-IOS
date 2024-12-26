@@ -23,7 +23,7 @@ struct HomeView: View {
 
         let appearance = UITabBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = UIColor.systemGray6
+        appearance.backgroundColor = UIColor.systemGray3
                 
         appearance.backgroundImage = UIImage()
         appearance.shadowImage = image

@@ -58,14 +58,14 @@ struct MapView: View {
                             MapViewAnnotation(coordinate: busGroup.position) {
                                 Bus(
                                     lines: busGroup.uniqueLines,
-                                    color: busGroup.lineColor != nil ? Color(fromHex: busGroup.lineColor!) : theme.colors.primary,
-                                    isIncative: busesStore.hasSelectedBus && !busGroup.buses.contains(busesStore.selectedBus!),
+                                    state: busesStore.selectedBusState?.group != busGroup
+                                    ? busesStore.hasSelection ? .inactive : .none : .active,
                                     scale: cameraStore.scale,
-                                    activeBusIndex: busesStore.selectedBus == nil ? nil : busGroup.buses.firstIndex(of:  busesStore.selectedBus!)
+                                    activeBusIndex: busesStore.selectedBusState?.index
                                 )
                                 .onTapGesture {
-                                    busesStore.send(.selectBus(busGroup.buses.first!))
-                                    routesStore.send(.selectRoute(id: busGroup.buses.first!.routeID))
+                                    busesStore.send(.select(busGroup))
+                                    //                                    routesStore.send(.selectRoute)
                                 }
                             }
                             .variableAnchors([.init(anchor: .bottom)])
@@ -102,7 +102,7 @@ struct MapView: View {
                         Spacer()
                         HStack(alignment: .center) {
                             // Clear route button
-                            if busesStore.hasSelectedBus {
+                            if busesStore.hasSelection {
                                 ClearRouteButton {
                                     busesStore.send(.clearSelection)
                                     routesStore.send(.clearSelection)

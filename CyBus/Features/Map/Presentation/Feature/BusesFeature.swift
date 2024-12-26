@@ -16,13 +16,12 @@ struct BusesFeature {
     struct State: Equatable {
         var isInitialized: Bool = false
         var isFetching: Bool = false
+        
         var groupedBuses: [BusGroupEntity] = []
-        var hasSelectedBus: Bool = false
-        var selectedBus : BusEntity? {
-            didSet {
-                hasSelectedBus = true
-            }
-        }
+        
+        var hasSelection: Bool { selectedBusState != nil }
+        var selectedBusState: SelectedBusGroupState?
+        
     }
     
     enum Action {
@@ -37,7 +36,7 @@ struct BusesFeature {
         case fetchBusesResponse([BusGroupEntity])
         case fetchBusesError(String)
         
-        case selectBus(BusEntity)
+        case select(BusGroupEntity)
         case clearSelection
     }
     
@@ -101,12 +100,26 @@ struct BusesFeature {
                 state.groupedBuses = groupedBuses
                 return .none
                 
-            case let .selectBus(bus):
-                state.selectedBus = bus
+            case let .select(busGroup):
+                if let selectedBusState = state.selectedBusState {
+                    if state.selectedBusState?.group == busGroup {
+                        let currentIndex = selectedBusState.index
+                        let newIndex = currentIndex + 1 >= busGroup.buses.count ? 0 : currentIndex + 1
+                        state.selectedBusState = SelectedBusGroupState(
+                            group: busGroup,
+                            index: newIndex,
+                            bus: busGroup.buses[newIndex]
+                        )
+                    } else {
+                        state.selectedBusState = .defaultValue(group: busGroup)
+                    }
+                } else {
+                    state.selectedBusState = .defaultValue(group: busGroup)
+                }
                 return .none
                 
             case .clearSelection:
-                state.hasSelectedBus.toggle()
+                state.selectedBusState = nil
                 return .none
                 
             }

@@ -7,10 +7,15 @@
 
 import SwiftUI
 
+enum BusState {
+    case active
+    case inactive
+    case none
+}
+
 struct Bus: View {
     var lines: [String]
-    var color: Color
-    var isIncative: Bool = false
+    var state: BusState
     var scale: Double
     var activeBusIndex: Int?
 
@@ -24,7 +29,7 @@ struct Bus: View {
                         .frame(width: 36)
                         .foregroundColor(.white)
                         .font(.caption)
-                        .background(color)
+                        .background(state == .active && activeBusIndex == index ? theme.colors.secondary : theme.colors.primary)
                         .cornerRadius(16)
 //                        .opacity(activeBusIndex == index ? 0 : 0.5)
                 }
@@ -41,7 +46,7 @@ struct Bus: View {
         }
         .shadow(radius: 3, x: 1, y: 1)
         .foregroundStyle(theme.colors.primary)
-        .opacity(isIncative ? 0.5 : 1)
+        .opacity(state == .inactive ? 0.5 : 1)
         .scaleEffect(scale)
     }
     
