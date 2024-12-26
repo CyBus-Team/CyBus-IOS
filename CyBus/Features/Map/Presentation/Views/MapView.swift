@@ -55,12 +55,10 @@ struct MapView: View {
                         // Buses
                         ForEvery(busesStore.groupedBuses) { busGroup in
                             MapViewAnnotation(coordinate: busGroup.position) {
-                                Bus(
-                                    lines: busGroup.allLines,
-                                    state: busesStore.selectedBusGroupState?.group != busGroup
-                                    ? busesStore.hasSelection ? .inactive : .none : .active,
-                                    scale: cameraStore.scale,
-                                    activeBusIndex: busesStore.selectedBusGroupState?.index
+                                BusGroup(
+                                    activeBus: busesStore.selectedBusGroupState?.bus,
+                                    buses: busGroup.buses,
+                                    scale: cameraStore.scale
                                 )
                                 .onTapGesture {
                                     busesStore.send(.select(busGroup))
@@ -80,6 +78,7 @@ struct MapView: View {
                                 MapViewAnnotation(coordinate: stop.position) {
                                     StopCircle(color: theme.colors.primary).compositingGroup()
                                 }
+                                .allowZElevate(true)
                                 .allowOverlap(true)
                             }
                             

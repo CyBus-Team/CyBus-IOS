@@ -92,7 +92,7 @@ struct BusesFeature {
                 return .run { @MainActor send in
                     do {
                         let buses = try await busesUseCases.fetchBuses()
-                        let groupedBuses = try await busesUseCases.group(buses: buses, by: 100)
+                        let groupedBuses = try await busesUseCases.group(buses: buses, by: 200)
                         send(.fetchBusesResponse(groupedBuses))
                     } catch {
                         send(.fetchBusesError("Error: \(error.localizedDescription)"))
