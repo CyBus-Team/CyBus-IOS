@@ -31,6 +31,7 @@
 		9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9CF2C6DFBBA009E98F3 /* ShapeDTO.swift */; };
 		9449C9D82C6E01CE009E98F3 /* TripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D72C6E01CE009E98F3 /* TripDTO.swift */; };
 		94575D672D1D827B00CC3C03 /* SelectedBusGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D662D1D827600CC3C03 /* SelectedBusGroup.swift */; };
+		94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D6E2D1F314700CC3C03 /* SearchView.swift */; };
 		945843A92CD18862006D9893 /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843A82CD1885F006D9893 /* MapFeature.swift */; };
 		945843AB2CD1923E006D9893 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843AA2CD19236006D9893 /* HomeView.swift */; };
 		945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
@@ -143,6 +144,7 @@
 		9449C9CF2C6DFBBA009E98F3 /* ShapeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeDTO.swift; sourceTree = "<group>"; };
 		9449C9D72C6E01CE009E98F3 /* TripDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDTO.swift; sourceTree = "<group>"; };
 		94575D662D1D827600CC3C03 /* SelectedBusGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBusGroup.swift; sourceTree = "<group>"; };
+		94575D6E2D1F314700CC3C03 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		947633D42C6E0747000F20C7 /* StopDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDTO.swift; sourceTree = "<group>"; };
@@ -265,6 +267,46 @@
 				943A86122CB04584007AFF00 /* CameraFeature.swift */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		94575D692D1F302900CC3C03 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				94575D6A2D1F303000CC3C03 /* Data */,
+				94575D6B2D1F303300CC3C03 /* Domain */,
+				94575D6C2D1F303800CC3C03 /* Presentation */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		94575D6A2D1F303000CC3C03 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		94575D6B2D1F303300CC3C03 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		94575D6C2D1F303800CC3C03 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				94575D6D2D1F314100CC3C03 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		94575D6D2D1F314100CC3C03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				94575D6E2D1F314700CC3C03 /* SearchView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		945843A12CD17F0A006D9893 /* Home */ = {
@@ -437,6 +479,7 @@
 				94AF24B12CBC13320092EE9B /* Onboarding */,
 				945843A12CD17F0A006D9893 /* Home */,
 				94AF0D942C779402002FE41B /* Map */,
+				94575D692D1F302900CC3C03 /* Search */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -927,6 +970,7 @@
 				94D794872CC020630097A2F0 /* RootView.swift in Sources */,
 				94F3B8812CC2EB3800E38BE2 /* OnboardingWelcomeView.swift in Sources */,
 				94AF0DC62C7CF956002FE41B /* BusRouteEntity.swift in Sources */,
+				94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */,
 				942C53F72C55217400DE9BD7 /* RouteDTO.swift in Sources */,
 				94AF24DC2CBC5A150092EE9B /* OnboardingUseCasesProtocol.swift in Sources */,
 				94F2208C2C5E704100D776B9 /* LocationButton.swift in Sources */,

@@ -14,6 +14,7 @@ struct ColorPalette {
     let foreground: Color
     let secondary: Color
     let linkTitle: Color
+    let textFieldBackground: Color
 }
 
 extension ColorPalette {
@@ -22,7 +23,8 @@ extension ColorPalette {
         background: Color.white, // White
         foreground: .init(red: 213/255, green: 240/255, blue: 252/255), // Light blue
         secondary: .init(red: 33/255, green: 59/255, blue: 155/255), // Dark Blue
-        linkTitle: .init(red: 120/255, green: 119/255, blue: 120/255) // Grey
+        linkTitle: .init(red: 120/255, green: 119/255, blue: 120/255), // Grey
+        textFieldBackground: .init(red: 244/255, green: 244/255, blue: 244/255) // Light Grey
     )
     
     static let dark = ColorPalette(
@@ -30,7 +32,8 @@ extension ColorPalette {
         background: Color.black,
         foreground: .init(red: 213/255, green: 240/255, blue: 252/255), // Light blue
         secondary: .init(red: 33/255, green: 59/255, blue: 155/255), // Dark Blue
-        linkTitle: .init(red: 120/255, green: 119/255, blue: 120/255) // Grey
+        linkTitle: .init(red: 120/255, green: 119/255, blue: 120/255), // Grey
+        textFieldBackground: .init(red: 244/255, green: 244/255, blue: 244/255) // Light Grey
     )
 }
 

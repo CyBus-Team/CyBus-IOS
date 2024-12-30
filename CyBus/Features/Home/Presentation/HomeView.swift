@@ -10,6 +10,8 @@ import ComposableArchitecture
 
 struct HomeView: View {
     
+    @State private var isSearchPresented = true
+    
     init() {
         UITabBar.appearance().backgroundColor = .white
         
@@ -20,14 +22,14 @@ struct HomeView: View {
                 UIColor.black.withAlphaComponent(0.1).cgColor
             ]
         )
-
+        
         let appearance = UITabBarAppearance()
         appearance.configureWithTransparentBackground()
         appearance.backgroundColor = UIColor.systemGray3
-                
+        
         appearance.backgroundImage = UIImage()
         appearance.shadowImage = image
-
+        
         UITabBar.appearance().standardAppearance = appearance
     }
     
@@ -41,16 +43,19 @@ struct HomeView: View {
     
     var body: some View {
         TabView {
-            MapView(
-                mapStore: mapStore,
-                cameraStore: mapStore.scope(state: \.mapCamera, action: \.mapCamera),
-                locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
-                busesStore: busesStore
-            )
-                .tabItem {
-                    Label("Map", systemImage: "map")
-                }
-                .tag(1)
+            VStack {
+                MapView(
+                    mapStore: mapStore,
+                    cameraStore: mapStore.scope(state: \.mapCamera, action: \.mapCamera),
+                    locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
+                    busesStore: busesStore
+                )
+                SearchView()
+            }
+            .tabItem {
+                Label("Map", systemImage: "map")
+            }
+            .tag(1)
             Text("In progress...")
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")

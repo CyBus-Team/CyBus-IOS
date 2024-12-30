@@ -125,8 +125,9 @@ struct MapView: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.bottom, 100)
+                        .padding(.bottom, 20)
                     }
+                    
                 }
                 .alert($mapStore.scope(state: \.alert, action: \.alert))
                 .ignoresSafeArea()
