@@ -41,6 +41,10 @@ struct HomeView: View {
         BusesFeature()
     }
     
+    let searchStore: StoreOf<SearchFeatures> = Store(initialState: SearchFeatures.State()) {
+        SearchFeatures()
+    }
+    
     var body: some View {
         TabView {
             VStack {
@@ -50,7 +54,7 @@ struct HomeView: View {
                     locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
                     busesStore: busesStore
                 )
-                SearchView()
+                SearchView(store: searchStore)
             }
             .tabItem {
                 Label("Map", systemImage: "map")
