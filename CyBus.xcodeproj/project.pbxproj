@@ -37,13 +37,14 @@
 		94575D792D2321C100CC3C03 /* SearchFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D782D2321BC00CC3C03 /* SearchFeatures.swift */; };
 		94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D7A2D232E6400CC3C03 /* ClearButton.swift */; };
 		94575D7D2D23331700CC3C03 /* AddressAutocompleteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D7C2D23330D00CC3C03 /* AddressAutocompleteFeature.swift */; };
-		94575D7F2D23345400CC3C03 /* AddressAutocompleteUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D7E2D23344800CC3C03 /* AddressAutocompleteUseCasesProtocol.swift */; };
+		94575D7F2D23345400CC3C03 /* AddressSearchUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */; };
 		94575D812D23346100CC3C03 /* AddressSearchRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D802D23345800CC3C03 /* AddressSearchRepositoryProtocol.swift */; };
 		94575D882D23350400CC3C03 /* AddressSearchMapBoxRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D872D23350200CC3C03 /* AddressSearchMapBoxRepository.swift */; };
 		94575D8A2D23359300CC3C03 /* AddressSearchDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D892D23358500CC3C03 /* AddressSearchDTO.swift */; };
 		94575D8D2D2336D500CC3C03 /* AddressEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D8C2D2336D000CC3C03 /* AddressEntity.swift */; };
 		94575D902D23396D00CC3C03 /* MapboxSearch in Frameworks */ = {isa = PBXBuildFile; productRef = 94575D8F2D23396D00CC3C03 /* MapboxSearch */; };
 		94575D922D23396D00CC3C03 /* MapboxSearchUI in Frameworks */ = {isa = PBXBuildFile; productRef = 94575D912D23396D00CC3C03 /* MapboxSearchUI */; };
+		94575D942D2345C400CC3C03 /* AddressSearchMapBoxUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */; };
 		945843A92CD18862006D9893 /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843A82CD1885F006D9893 /* MapFeature.swift */; };
 		945843AB2CD1923E006D9893 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843AA2CD19236006D9893 /* HomeView.swift */; };
 		945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
@@ -162,11 +163,12 @@
 		94575D782D2321BC00CC3C03 /* SearchFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeatures.swift; sourceTree = "<group>"; };
 		94575D7A2D232E6400CC3C03 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		94575D7C2D23330D00CC3C03 /* AddressAutocompleteFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteFeature.swift; sourceTree = "<group>"; };
-		94575D7E2D23344800CC3C03 /* AddressAutocompleteUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteUseCasesProtocol.swift; sourceTree = "<group>"; };
+		94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchUseCasesProtocol.swift; sourceTree = "<group>"; };
 		94575D802D23345800CC3C03 /* AddressSearchRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchRepositoryProtocol.swift; sourceTree = "<group>"; };
 		94575D872D23350200CC3C03 /* AddressSearchMapBoxRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchMapBoxRepository.swift; sourceTree = "<group>"; };
 		94575D892D23358500CC3C03 /* AddressSearchDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchDTO.swift; sourceTree = "<group>"; };
 		94575D8C2D2336D000CC3C03 /* AddressEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressEntity.swift; sourceTree = "<group>"; };
+		94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchMapBoxUseCases.swift; sourceTree = "<group>"; };
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		947633D42C6E0747000F20C7 /* StopDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDTO.swift; sourceTree = "<group>"; };
@@ -369,7 +371,8 @@
 		94575D852D23348E00CC3C03 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				94575D7E2D23344800CC3C03 /* AddressAutocompleteUseCasesProtocol.swift */,
+				94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */,
+				94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1037,6 +1040,7 @@
 				941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */,
 				94AF24E32CBC5B340092EE9B /* OnboardingRepository.swift in Sources */,
 				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,
+				94575D942D2345C400CC3C03 /* AddressSearchMapBoxUseCases.swift in Sources */,
 				94AF0DA32C779A8C002FE41B /* BusesUseCasesProtocol.swift in Sources */,
 				94575D762D23206B00CC3C03 /* SearchBarView.swift in Sources */,
 				94AF0D9F2C7799F0002FE41B /* RoutesRepositoryProtocol.swift in Sources */,
@@ -1089,7 +1093,7 @@
 				94D794AF2CC2CDD30097A2F0 /* PrimaryButton.swift in Sources */,
 				94575D882D23350400CC3C03 /* AddressSearchMapBoxRepository.swift in Sources */,
 				94D794B02CC2CDD30097A2F0 /* ColorPalette.swift in Sources */,
-				94575D7F2D23345400CC3C03 /* AddressAutocompleteUseCasesProtocol.swift in Sources */,
+				94575D7F2D23345400CC3C03 /* AddressSearchUseCasesProtocol.swift in Sources */,
 				94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* BusEntity.swift in Sources */,
 				94AF0DAA2C77A6A8002FE41B /* RoutesRepository.swift in Sources */,

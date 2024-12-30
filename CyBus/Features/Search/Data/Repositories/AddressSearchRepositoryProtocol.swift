@@ -11,5 +11,6 @@ enum AddressSearchRepositoryError: Error {
 
 protocol AddressSearchRepositoryProtocol {
     func setup() throws
-    func fetch(query: String) -> (AddressDTO) -> Void
+    func fetch<T: Decodable>(query: String, completion: @escaping ([T]?) -> Void)
+    func select<T>(suggestion: T) throws
 }

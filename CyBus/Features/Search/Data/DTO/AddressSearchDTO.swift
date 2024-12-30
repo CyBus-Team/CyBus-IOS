@@ -6,8 +6,8 @@
 //
 
 struct AddressDTO {
-    let id: String
-    let label: String
-    let longitude: Double
-    let latitude: Double
+    let id: String?
+    let label: String?
+    let longitude: Double?
+    let latitude: Double?
 }
