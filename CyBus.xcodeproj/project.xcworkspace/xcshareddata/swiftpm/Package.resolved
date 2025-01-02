@@ -1,5 +1,5 @@
 {
-  "originHash" : "4e51ed8a2073526b72b76c18b53f94560c4787fde5b2afd7198e5d2d923be8b8",
+  "originHash" : "8d2098cd34c32b313e9e3a9c1e6f20e7061c72325b5d923f65e32d5eec38ea4e",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/search-ios.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "5b9c37987b3416167d8ea794f255cc67a9f5bd9c"
+        "revision" : "8354c0aa0432156a99d6938cc7d80132cf55f32f",
+        "version" : "2.7.1"
       }
     },
     {

@@ -1490,8 +1490,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mapbox/search-ios.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
 			};
 		};
 		94AF24AE2CBC0BD60092EE9B /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {

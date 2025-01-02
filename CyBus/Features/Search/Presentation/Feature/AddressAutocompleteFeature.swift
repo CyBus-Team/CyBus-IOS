@@ -6,8 +6,7 @@
 //
 
 import ComposableArchitecture
-import UIKit
-import Foundation
+import MapboxSearch
 
 @Reducer
 struct AddressAutocompleteFeature {
@@ -16,16 +15,20 @@ struct AddressAutocompleteFeature {
     struct State : Equatable {
         var isLoading: Bool = false
         var query: String = ""
-        var results: [AddressEntity]
+        var results: [AddressEntity] = []
     }
     
-    enum Action {
+    enum Action: BindableAction {
+        case binding(BindingAction<State>)
         case onSubmit
         case onGetResults([AddressEntity])
         case onChoose(AddressEntity)
     }
     
+    @Dependency(\.addressAutocompleteUseCases) var useCases
+    
     var body: some ReducerOf<Self> {
+        BindingReducer()
         Reduce { state, action in
             switch action {
             case let .onGetResults(results):
@@ -35,11 +38,22 @@ struct AddressAutocompleteFeature {
                 
             case .onSubmit:
                 state.isLoading = true
-                return .none
-            
+                let query = state.query
+                return .run { @MainActor send in
+                    useCases.fetch(query: query) { (result: Result<[AddressEntity], Error>) in
+                        switch result {
+                        case .success(let suggestions):
+                            send(.onGetResults(suggestions))
+                        case .failure(let error):
+                            send(.onGetResults([]))
+                        }
+                    }
+                }
             case let .onChoose(address):
                 return .none
                 
+            case .binding(_):
+                return .none
             }
         }
     }

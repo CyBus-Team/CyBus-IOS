@@ -45,6 +45,10 @@ struct HomeView: View {
         SearchFeatures()
     }
     
+    let autocompleteStore: StoreOf<AddressAutocompleteFeature> = Store(initialState: AddressAutocompleteFeature.State()) {
+        AddressAutocompleteFeature()
+    }
+    
     var body: some View {
         TabView {
             VStack {
@@ -54,7 +58,7 @@ struct HomeView: View {
                     locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
                     busesStore: busesStore
                 )
-                SearchView(store: searchStore)
+                SearchView(store: searchStore, autocompleteStore: autocompleteStore)
             }
             .tabItem {
                 Label("Map", systemImage: "map")

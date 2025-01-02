@@ -6,17 +6,19 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct AddressAutocompleteView : View {
     @Environment(\.theme) var theme
-    
     @FocusState private var isFocused: Bool
+    
+    @Bindable var store: StoreOf<AddressAutocompleteFeature>
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             TextField(
                 "Type your destination...",
-                text: $query
+                text: $store.query
             )
             .padding()
             .autocorrectionDisabled()
@@ -25,7 +27,7 @@ struct AddressAutocompleteView : View {
                 //
             }
             .overlay {
-                ClearButton(text: $query)
+                ClearButton(text: $store.query)
                     .padding(.trailing)
                     .padding(.top, 8)
             }
@@ -36,8 +38,8 @@ struct AddressAutocompleteView : View {
             .cornerRadius(12)
             .border(.primary)
             
-            List(self.results) { address in
-                Text(address)
+            List(store.results) { suggestion in
+                Text(suggestion.label)
                     .listRowBackground(theme.colors.background)
             }
             .listStyle(.plain)

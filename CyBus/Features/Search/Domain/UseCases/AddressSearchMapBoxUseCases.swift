@@ -6,6 +6,8 @@
 //
 
 import MapboxSearch
+import Foundation
+import ComposableArchitecture
 
 class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
     
@@ -16,21 +18,38 @@ class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
     }
     
     func setup() throws {
-        
+        do {
+            try repository.setup()
+        } catch {
+            throw error
+        }
     }
     
-    func fetch<T>(query: String, completion: @escaping ([T]?) -> Void) throws {
+    func fetch(query: String, completion: @escaping (Result<[AddressEntity], Error>) -> Void) {
         repository.fetch(query: query) { suggestions in
-            if let suggestions = suggestions {
-                print("Fetched suggestions: \(suggestions)")
+            if let result = suggestions {
+                let entities = result.compactMap { AddressEntity.from(dto: $0) }
+                completion(.success(entities))
             } else {
-                print("No results or an error occurred.")
+                completion(.failure(AddressSearchUseCasesError.fetchFailed))
             }
         }
     }
     
-    func select<T>(address: T) throws {
-        <#code#>
+    func select(suggestion: AddressEntity) throws {
+        print("TODO")
     }
     
 }
+
+struct AddressAutocompleteUseCasesKey: DependencyKey {
+    static var liveValue: AddressSearchUseCasesProtocol = AddressSearchMapBoxUseCases()
+}
+
+extension DependencyValues {
+    var addressAutocompleteUseCases: AddressSearchUseCasesProtocol {
+        get { self[AddressAutocompleteUseCasesKey.self] }
+        set { self[AddressAutocompleteUseCasesKey.self] = newValue }
+    }
+}
+

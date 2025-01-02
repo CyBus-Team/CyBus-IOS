@@ -4,12 +4,13 @@
 //
 //  Created by Vadim Popov on 30/12/2024.
 //
+
 import SwiftUI
 import ComposableArchitecture
 
 struct SearchBarView : View {
     @Environment(\.theme) var theme
-    let store: StoreOf<SearchFeatures>
+    @Bindable var store: StoreOf<SearchFeatures>
     
     var body: some View {
         HStack {

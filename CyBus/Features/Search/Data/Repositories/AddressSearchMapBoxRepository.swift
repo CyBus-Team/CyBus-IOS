@@ -23,17 +23,18 @@ class AddressSearchMapBoxRepository: AddressSearchRepositoryProtocol {
         }
     }
     
-    func select<T>(suggestion: T) throws {
-        <#code#>
+    func select(suggestion: AddressEntity) throws {
+        print("TODO")
     }
     
-    func fetch<T>(query: String, completion: @escaping ([T]?) -> Void) where T : Decodable {
+    func fetch(query: String, completion: @escaping ([AddressDTO]?) -> Void) {
         placeAutocomplete?.suggestions(for: query) { result in
             switch result {
             case .success(let suggestions):
-                completion(suggestions as? [T])
+                let result = suggestions.map { AddressDTO(id: $0.mapboxId, suggestion: $0) }
+                completion(result)
             case .failure(let error):
-                debugPrint(error)
+                debugPrint("Error: \(error)")
                 completion(nil)
             }
         }
