@@ -16,7 +16,7 @@ struct AddressAutocompleteView : View {
     
     var body: some View {
         
-        VStack(alignment: store.isLoading ? .center : .leading, spacing: 0) {
+        VStack(alignment: store.isLoading || store.error != nil ? .center : .leading, spacing: 0) {
             
             TextField(
                 "Type your destination...",
@@ -37,7 +37,9 @@ struct AddressAutocompleteView : View {
             .cornerRadius(12)
             .border(.primary)
             
-            if store.isLoading {
+            if store.error != nil {
+                Text("Something went wrong, please retry")
+            } else if store.isLoading {
                 Spacer()
                 ProgressView()
                 Spacer()

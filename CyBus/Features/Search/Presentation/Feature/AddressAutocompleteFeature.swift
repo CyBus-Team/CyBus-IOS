@@ -13,6 +13,7 @@ struct AddressAutocompleteFeature {
     
     @ObservableState
     struct State : Equatable {
+        var error: String?
         var isLoading: Bool = false
         var query: String = ""
         var suggestions: [SuggestionEntity] = []
