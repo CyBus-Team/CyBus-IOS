@@ -14,6 +14,6 @@ enum AddressSearchRepositoryError: Error {
 
 protocol AddressSearchRepositoryProtocol {
     func setup() throws
-    func fetch(query: String, userLocation: CLLocationCoordinate2D) async throws -> [AddressDTO]
-    func select(suggestion: AddressEntity) throws
+    func fetch(query: String, userLocation: CLLocationCoordinate2D) async throws -> [SuggestionDTO]
+    func select(suggestion: SuggestionEntity) async throws -> DetailedSuggestionDTO
 }

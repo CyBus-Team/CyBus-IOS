@@ -7,8 +7,8 @@
 import CoreLocation
 import MapboxSearch
 
-struct AddressEntity: Identifiable, Equatable, Hashable {
-    static func == (lhs: AddressEntity, rhs: AddressEntity) -> Bool {
+struct SuggestionEntity: Identifiable, Equatable, Hashable {
+    static func == (lhs: SuggestionEntity, rhs: SuggestionEntity) -> Bool {
         lhs.id == rhs.id
     }
     
@@ -20,7 +20,7 @@ struct AddressEntity: Identifiable, Equatable, Hashable {
     let label: String
     let suggestion: PlaceAutocomplete.Suggestion
     
-    static func from(dto: AddressDTO) -> AddressEntity? {
+    static func from(dto: SuggestionDTO) -> SuggestionEntity? {
         guard let id = dto.id else {
             return nil
         }

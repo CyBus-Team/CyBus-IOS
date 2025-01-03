@@ -25,11 +25,7 @@ class AddressSearchMapBoxRepository: AddressSearchRepositoryProtocol {
         }
     }
     
-    func select(suggestion: AddressEntity) throws {
-        debugPrint("TODO")
-    }
-    
-    func fetch(query: String, userLocation: CLLocationCoordinate2D) async throws -> [AddressDTO] {
+    func fetch(query: String, userLocation: CLLocationCoordinate2D) async throws -> [SuggestionDTO] {
         guard let placeAutocomplete, let cyprus = suggestionCountry else {
             throw AddressSearchRepositoryError.initializationFailed
         }
@@ -37,8 +33,24 @@ class AddressSearchMapBoxRepository: AddressSearchRepositoryProtocol {
             placeAutocomplete.suggestions(for: query, proximity: userLocation, filterBy: .init(countries: [cyprus] )) { result in
                 switch result {
                 case .success(let suggestions):
-                    let dtos = suggestions.map { AddressDTO(id: $0.mapboxId, suggestion: $0) }
+                    let dtos = suggestions.map { SuggestionDTO(id: $0.mapboxId, suggestion: $0) }
                     continuation.resume(returning: dtos)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+    
+    func select(suggestion: SuggestionEntity) async throws -> DetailedSuggestionDTO {
+        guard let placeAutocomplete, let cyprus = suggestionCountry else {
+            throw AddressSearchRepositoryError.initializationFailed
+        }
+        return try await withCheckedThrowingContinuation { continuation in
+            placeAutocomplete.select(suggestion: suggestion.suggestion) { result in
+                switch result {
+                case .success(let detailedSuggestion):
+                    continuation.resume(returning: DetailedSuggestionDTO(id: detailedSuggestion.mapboxId, result: detailedSuggestion))
                 case .failure(let error):
                     continuation.resume(throwing: error)
                 }

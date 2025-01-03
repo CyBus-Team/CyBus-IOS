@@ -15,7 +15,9 @@ struct AddressAutocompleteView : View {
     @Bindable var store: StoreOf<AddressAutocompleteFeature>
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        
+        VStack(alignment: store.isLoading ? .center : .leading, spacing: 0) {
+            
             TextField(
                 "Type your destination...",
                 text: $store.query
@@ -35,12 +37,21 @@ struct AddressAutocompleteView : View {
             .cornerRadius(12)
             .border(.primary)
             
-            List(store.results) { suggestion in
-                Text(suggestion.label)
-                    .listRowBackground(theme.colors.background)
+            if store.isLoading {
+                Spacer()
+                ProgressView()
+                Spacer()
+            } else {
+                List(store.suggestions) { suggestion in
+                    Text(suggestion.label)
+                        .listRowBackground(theme.colors.background)
+                        .onTapGesture {
+                            store.send(.onSelect(suggestion))
+                        }
+                }
+                .listStyle(.plain)
+                .scrollContentBackground(.hidden)
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
         }
         .padding()
         .background(theme.colors.background)

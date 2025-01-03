@@ -9,10 +9,11 @@
 enum AddressSearchUseCasesError: Error {
     case initializationFailed
     case fetchFailed
+    case selectionFailed
 }
 
 protocol AddressSearchUseCasesProtocol {
     func setup() throws
-    func fetch(query: String) async throws -> [AddressEntity]?
-    func select(suggestion: AddressEntity) throws
+    func fetch(query: String) async throws -> [SuggestionEntity]?
+    func select(suggestion: SuggestionEntity) async throws -> DetailedSuggestionEntity?
 }

@@ -27,20 +27,25 @@ class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
         }
     }
     
-    func fetch(query: String) async throws -> [AddressEntity]? {
+    func fetch(query: String) async throws -> [SuggestionEntity]? {
         do {
             guard let userLocation = try await locationUseCases.getCurrentLocation() else {
                 throw AddressSearchUseCasesError.fetchFailed
             }
-            return try await repository.fetch(query: query, userLocation: userLocation).compactMap { AddressEntity.from(dto: $0) }
+            return try await repository.fetch(query: query, userLocation: userLocation).compactMap { SuggestionEntity.from(dto: $0) }
         } catch {
             throw AddressSearchUseCasesError.fetchFailed
         }
         
     }
     
-    func select(suggestion: AddressEntity) throws {
-        print("TODO")
+    func select(suggestion: SuggestionEntity) async throws -> DetailedSuggestionEntity? {
+        do {
+            let dto = try await repository.select(suggestion: suggestion)
+            return DetailedSuggestionEntity.from(dto: dto)
+        } catch {
+            throw AddressSearchUseCasesError.selectionFailed
+        }
     }
     
 }

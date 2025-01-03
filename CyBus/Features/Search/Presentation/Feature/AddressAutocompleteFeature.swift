@@ -15,15 +15,17 @@ struct AddressAutocompleteFeature {
     struct State : Equatable {
         var isLoading: Bool = false
         var query: String = ""
-        var results: [AddressEntity] = []
+        var suggestions: [SuggestionEntity] = []
+        var detailedSuggestion: DetailedSuggestionEntity?
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case setup
         case onSubmit
-        case onGetResults([AddressEntity]?)
-        case onChoose(AddressEntity)
+        case onGetSuggestions([SuggestionEntity]?)
+        case onSelect(SuggestionEntity)
+        case onGetDetailedSuggestion(DetailedSuggestionEntity?)
     }
     
     @Dependency(\.addressAutocompleteUseCases) var useCases
@@ -36,33 +38,49 @@ struct AddressAutocompleteFeature {
                 return .run { send in
                     try useCases.setup()
                 }
-            case let .onGetResults(results):
-                state.results = results ?? []
-                state.isLoading = false
-                return .none
                 
             case .onSubmit:
+                state.detailedSuggestion = nil
                 state.isLoading = true
                 let query = state.query
                 return .run { send in
                     do {
                         if let result = try await useCases.fetch(query: query) {
-                            debugPrint("feature result \(result.count)")
-                            await send(.onGetResults(result))
+                            await send(.onGetSuggestions(result))
                         } else {
-                            debugPrint("feature nil")
-                            await send(.onGetResults(nil))
+                            await send(.onGetSuggestions(nil))
                         }
                     } catch {
-                        debugPrint("feature nil 2")
-                        await send(.onGetResults(nil))
+                        await send(.onGetSuggestions(nil))
                     }
                 }
-            case let .onChoose(suggestion):
+                
+            case let .onGetSuggestions(suggestions):
+                state.suggestions = suggestions ?? []
+                state.isLoading = false
+                return .none
+                
+                
+            case let .onSelect(suggestion):
+                return .run { send in
+                    do {
+                        if let result = try await useCases.select(suggestion: suggestion) {
+                            await send(.onGetDetailedSuggestion(result))
+                        } else {
+                            await send(.onGetDetailedSuggestion(nil))
+                        }
+                    } catch {
+                        await send(.onGetDetailedSuggestion(nil))
+                    }
+                }
+                
+            case let .onGetDetailedSuggestion(detailedSuggestion):
+                state.detailedSuggestion = detailedSuggestion
                 return .none
                 
             case .binding(_):
                 return .none
+                
             }
         }
     }
