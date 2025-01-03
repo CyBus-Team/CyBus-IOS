@@ -1,5 +1,5 @@
 //
-//  AddressAutocompleteView.swift
+//  AddressSearchView.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 30/12/2024.
@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct AddressAutocompleteView : View {
+struct AddressSearchView : View {
     @Environment(\.theme) var theme
     @FocusState private var isFocused: Bool
     

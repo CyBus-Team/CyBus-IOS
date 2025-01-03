@@ -32,7 +32,7 @@
 		9449C9D82C6E01CE009E98F3 /* TripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D72C6E01CE009E98F3 /* TripDTO.swift */; };
 		94575D672D1D827B00CC3C03 /* SelectedBusGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D662D1D827600CC3C03 /* SelectedBusGroup.swift */; };
 		94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D6E2D1F314700CC3C03 /* SearchView.swift */; };
-		94575D742D231DF600CC3C03 /* AddressAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D732D231DE200CC3C03 /* AddressAutocompleteView.swift */; };
+		94575D742D231DF600CC3C03 /* AddressSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D732D231DE200CC3C03 /* AddressSearchView.swift */; };
 		94575D762D23206B00CC3C03 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D752D23200C00CC3C03 /* SearchBarView.swift */; };
 		94575D792D2321C100CC3C03 /* SearchFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D782D2321BC00CC3C03 /* SearchFeatures.swift */; };
 		94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D7A2D232E6400CC3C03 /* ClearButton.swift */; };
@@ -160,7 +160,7 @@
 		9449C9D72C6E01CE009E98F3 /* TripDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDTO.swift; sourceTree = "<group>"; };
 		94575D662D1D827600CC3C03 /* SelectedBusGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBusGroup.swift; sourceTree = "<group>"; };
 		94575D6E2D1F314700CC3C03 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		94575D732D231DE200CC3C03 /* AddressAutocompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteView.swift; sourceTree = "<group>"; };
+		94575D732D231DE200CC3C03 /* AddressSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchView.swift; sourceTree = "<group>"; };
 		94575D752D23200C00CC3C03 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		94575D782D2321BC00CC3C03 /* SearchFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeatures.swift; sourceTree = "<group>"; };
 		94575D7A2D232E6400CC3C03 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
@@ -341,7 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				94575D752D23200C00CC3C03 /* SearchBarView.swift */,
-				94575D732D231DE200CC3C03 /* AddressAutocompleteView.swift */,
+				94575D732D231DE200CC3C03 /* AddressSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1043,7 +1043,7 @@
 				94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */,
 				9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */,
 				94AF0DA52C779ADC002FE41B /* BusesUseCases.swift in Sources */,
-				94575D742D231DF600CC3C03 /* AddressAutocompleteView.swift in Sources */,
+				94575D742D231DF600CC3C03 /* AddressSearchView.swift in Sources */,
 				941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */,
 				94AF24E32CBC5B340092EE9B /* OnboardingRepository.swift in Sources */,
 				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,

@@ -17,7 +17,7 @@ struct SearchView : View {
     var body: some View {
         SearchBarView(store: store)
             .sheet(isPresented: $store.autoCompleteOpened) {
-                AddressAutocompleteView(store: autocompleteStore).presentationDetents([.large])
+                AddressSearchView(store: autocompleteStore).presentationDetents([.large])
             }
     }
 }
