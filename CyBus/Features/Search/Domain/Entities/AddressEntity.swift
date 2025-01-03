@@ -18,15 +18,12 @@ struct AddressEntity: Identifiable, Equatable, Hashable {
     
     let id: String
     let label: String
-    let location: CLLocationCoordinate2D
     let suggestion: PlaceAutocomplete.Suggestion
     
     static func from(dto: AddressDTO) -> AddressEntity? {
-        guard let id = dto.id,
-              let location = dto.suggestion.coordinate
-        else {
+        guard let id = dto.id else {
             return nil
         }
-        return .init(id: id, label: dto.suggestion.name, location: location, suggestion: dto.suggestion)
+        return .init(id: id, label: "\(dto.suggestion.name), \(dto.suggestion.description ?? ""), \(dto.suggestion.distance)",  suggestion: dto.suggestion)
     }
 }

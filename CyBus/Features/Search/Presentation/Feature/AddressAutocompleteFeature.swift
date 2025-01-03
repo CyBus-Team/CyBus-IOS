@@ -20,8 +20,9 @@ struct AddressAutocompleteFeature {
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case setup
         case onSubmit
-        case onGetResults([AddressEntity])
+        case onGetResults([AddressEntity]?)
         case onChoose(AddressEntity)
     }
     
@@ -31,25 +32,33 @@ struct AddressAutocompleteFeature {
         BindingReducer()
         Reduce { state, action in
             switch action {
+            case .setup:
+                return .run { send in
+                    try useCases.setup()
+                }
             case let .onGetResults(results):
-                state.results = results
+                state.results = results ?? []
                 state.isLoading = false
                 return .none
                 
             case .onSubmit:
                 state.isLoading = true
                 let query = state.query
-                return .run { @MainActor send in
-                    useCases.fetch(query: query) { (result: Result<[AddressEntity], Error>) in
-                        switch result {
-                        case .success(let suggestions):
-                            send(.onGetResults(suggestions))
-                        case .failure(let error):
-                            send(.onGetResults([]))
+                return .run { send in
+                    do {
+                        if let result = try await useCases.fetch(query: query) {
+                            debugPrint("feature result \(result.count)")
+                            await send(.onGetResults(result))
+                        } else {
+                            debugPrint("feature nil")
+                            await send(.onGetResults(nil))
                         }
+                    } catch {
+                        debugPrint("feature nil 2")
+                        await send(.onGetResults(nil))
                     }
                 }
-            case let .onChoose(address):
+            case let .onChoose(suggestion):
                 return .none
                 
             case .binding(_):

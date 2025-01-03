@@ -12,9 +12,11 @@ import ComposableArchitecture
 class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
     
     private let repository: AddressSearchRepositoryProtocol
+    private let locationUseCases: LocationUseCasesProtocol
     
-    init(repository: AddressSearchRepositoryProtocol = AddressSearchMapBoxRepository()) {
+    init(repository: AddressSearchRepositoryProtocol = AddressSearchMapBoxRepository(), locationUseCases: LocationUseCasesProtocol = LocationUseCases()) {
         self.repository = repository
+        self.locationUseCases = locationUseCases
     }
     
     func setup() throws {
@@ -25,15 +27,16 @@ class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
         }
     }
     
-    func fetch(query: String, completion: @escaping (Result<[AddressEntity], Error>) -> Void) {
-        repository.fetch(query: query) { suggestions in
-            if let result = suggestions {
-                let entities = result.compactMap { AddressEntity.from(dto: $0) }
-                completion(.success(entities))
-            } else {
-                completion(.failure(AddressSearchUseCasesError.fetchFailed))
+    func fetch(query: String) async throws -> [AddressEntity]? {
+        do {
+            guard let userLocation = try await locationUseCases.getCurrentLocation() else {
+                throw AddressSearchUseCasesError.fetchFailed
             }
+            return try await repository.fetch(query: query, userLocation: userLocation).compactMap { AddressEntity.from(dto: $0) }
+        } catch {
+            throw AddressSearchUseCasesError.fetchFailed
         }
+        
     }
     
     func select(suggestion: AddressEntity) throws {

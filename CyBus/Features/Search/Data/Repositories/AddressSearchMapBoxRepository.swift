@@ -8,6 +8,8 @@ import MapboxSearch
 
 class AddressSearchMapBoxRepository: AddressSearchRepositoryProtocol {
     
+    public let suggestionCountry = Country(countryCode: "CY")
+    
     private let bundle: Bundle
     private var placeAutocomplete: PlaceAutocomplete?
     
@@ -24,18 +26,22 @@ class AddressSearchMapBoxRepository: AddressSearchRepositoryProtocol {
     }
     
     func select(suggestion: AddressEntity) throws {
-        print("TODO")
+        debugPrint("TODO")
     }
     
-    func fetch(query: String, completion: @escaping ([AddressDTO]?) -> Void) {
-        placeAutocomplete?.suggestions(for: query) { result in
-            switch result {
-            case .success(let suggestions):
-                let result = suggestions.map { AddressDTO(id: $0.mapboxId, suggestion: $0) }
-                completion(result)
-            case .failure(let error):
-                debugPrint("Error: \(error)")
-                completion(nil)
+    func fetch(query: String, userLocation: CLLocationCoordinate2D) async throws -> [AddressDTO] {
+        guard let placeAutocomplete, let cyprus = suggestionCountry else {
+            throw AddressSearchRepositoryError.initializationFailed
+        }
+        return try await withCheckedThrowingContinuation { continuation in
+            placeAutocomplete.suggestions(for: query, proximity: userLocation, filterBy: .init(countries: [cyprus] )) { result in
+                switch result {
+                case .success(let suggestions):
+                    let dtos = suggestions.map { AddressDTO(id: $0.mapboxId, suggestion: $0) }
+                    continuation.resume(returning: dtos)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
             }
         }
     }

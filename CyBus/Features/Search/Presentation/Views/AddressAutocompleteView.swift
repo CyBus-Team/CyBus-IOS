@@ -24,22 +24,19 @@ struct AddressAutocompleteView : View {
             .autocorrectionDisabled()
             .focused($isFocused)
             .onSubmit {
-                //
+                store.send(.onSubmit)
             }
             .overlay {
                 ClearButton(text: $store.query)
                     .padding(.trailing)
                     .padding(.top, 8)
             }
-            .onAppear {
-                isFocused = true
-            }
             .textInputAutocapitalization(.never)
             .cornerRadius(12)
             .border(.primary)
             
             List(store.results) { suggestion in
-                Text(suggestion.label)
+                Text("\(suggestion.label), \(suggestion.suggestion.description ?? "")")
                     .listRowBackground(theme.colors.background)
             }
             .listStyle(.plain)
@@ -48,6 +45,11 @@ struct AddressAutocompleteView : View {
         .padding()
         .background(theme.colors.background)
         .edgesIgnoringSafeArea(.bottom)
+        
+        .onAppear {
+            store.send(.setup)
+            isFocused = true
+        }
     }
 }
 

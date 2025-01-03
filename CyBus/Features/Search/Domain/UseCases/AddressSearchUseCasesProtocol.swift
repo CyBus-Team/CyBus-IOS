@@ -13,6 +13,6 @@ enum AddressSearchUseCasesError: Error {
 
 protocol AddressSearchUseCasesProtocol {
     func setup() throws
-    func fetch(query: String, completion: @escaping (Result<[AddressEntity], Error>) -> Void)
+    func fetch(query: String) async throws -> [AddressEntity]?
     func select(suggestion: AddressEntity) throws
 }
