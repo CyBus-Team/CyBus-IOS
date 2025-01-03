@@ -36,7 +36,7 @@ struct AddressAutocompleteView : View {
             .border(.primary)
             
             List(store.results) { suggestion in
-                Text("\(suggestion.label), \(suggestion.suggestion.description ?? "")")
+                Text(suggestion.label)
                     .listRowBackground(theme.colors.background)
             }
             .listStyle(.plain)

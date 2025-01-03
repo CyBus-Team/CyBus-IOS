@@ -24,6 +24,6 @@ struct AddressEntity: Identifiable, Equatable, Hashable {
         guard let id = dto.id else {
             return nil
         }
-        return .init(id: id, label: "\(dto.suggestion.name), \(dto.suggestion.description ?? ""), \(dto.suggestion.distance)",  suggestion: dto.suggestion)
+        return .init(id: id, label: "\(dto.suggestion.name), \(dto.suggestion.description ?? "")",  suggestion: dto.suggestion)
     }
 }
