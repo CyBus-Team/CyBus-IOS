@@ -50,7 +50,6 @@ class AddressSearchMapBoxRepository: AddressSearchRepositoryProtocol {
             placeSDK.select(suggestion: suggestion.suggestion) { result in
                 switch result {
                 case .success(let detailedSuggestion):
-                    debugPrint("detailedSuggestion : \(detailedSuggestion)")
                     continuation.resume(returning: DetailedSuggestionDTO(id: detailedSuggestion.mapboxId, result: detailedSuggestion))
                 case .failure(let error):
                     continuation.resume(throwing: error)
