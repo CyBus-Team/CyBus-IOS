@@ -17,13 +17,25 @@ struct DetailedSuggestionEntity: Identifiable, Equatable, Hashable {
     }
     
     let id: String
-    let label: String
-    let result: PlaceAutocomplete.Result
+    let name: String
+    let description: String
+    let result: PlaceAutocomplete.Result?
     
     static func from(dto: DetailedSuggestionDTO) -> DetailedSuggestionEntity? {
         guard let id = dto.id else {
             return nil
         }
-        return .init(id: id, label: "\(dto.result.name), \(dto.result.description ?? "")",  result: dto.result)
+        return .init(id: id, name: dto.result.name, description: dto.result.description ?? "", result: dto.result)
+    }
+}
+
+extension DetailedSuggestionEntity {
+    static var mock: DetailedSuggestionEntity {
+        return DetailedSuggestionEntity(
+            id: UUID().uuidString,
+            name: "Mock name",
+            description: "Mock Description",
+            result: nil
+        )
     }
 }

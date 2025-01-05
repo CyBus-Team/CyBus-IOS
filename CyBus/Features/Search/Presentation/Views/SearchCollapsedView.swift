@@ -17,7 +17,7 @@ struct SearchCollapsedView : View {
         HStack {
             // MARK: Open search button
             Button {
-                store.send(.onOpenAutoComplete)
+                store.send(.onOpenAddressSearch)
             } label: {
                 Text("Search here")
                     .font(theme.typography.regular)
@@ -34,6 +34,7 @@ struct SearchCollapsedView : View {
                 action: { store.send(.onOpenFavourites) },
                 isActive: true
             )
+            .padding(12)
         }
         .padding(.horizontal, 12)
         .padding(.bottom, 14)

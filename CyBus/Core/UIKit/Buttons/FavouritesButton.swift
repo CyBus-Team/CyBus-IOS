@@ -18,7 +18,6 @@ struct FavouritesButton: View {
             action()
         } label: {
             Image(systemName: isActive ? "bookmark.fill" : "bookmark")
-                .padding(12)
                 .background(theme.colors.textFieldBackground)
                 .cornerRadius(12)
         }

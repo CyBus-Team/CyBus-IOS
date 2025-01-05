@@ -6,44 +6,60 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+import MapboxSearch
 
-struct AddressSearchResultView {
+struct AddressSearchResultView : View {
     @Environment(\.theme) var theme
     
-    var name: String
+    @Bindable var store: StoreOf<AddressSearchResultFeature>
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            
+            Spacer()
+            
             // MARK: Place info
-            HStack {
-                Text(name)
-                    .font(theme.typography.regular)
-                Spacer()
-                Button {
-                    
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                }
-            }
+            Text(store.detailedSuggestion?.name ?? "-")
+                .font(theme.typography.title)
+            
+            Text(store.detailedSuggestion?.description ?? "-")
+                .font(theme.typography.regular)
+            
+            Spacer()
             
             // MARK: Actions
-            HStack {
+            HStack() {
                 // MARK: Directions
                 // TODO: Implement directions
-                Button {
-                    
-                } label: {
-                    Text("Get directions")
-                        .font(theme.typography.regular)
-                }
+                PrimaryButton(
+                    label: "Directions",
+                    action: {
+                        
+                    }, font: theme.typography.regular)
                 
                 // MARK: Favourites
                 // TODO: Implement favourites
-                FavouritesButton(
-                    action: { },
-                    isActive: true
+                SecondaryButton(
+                    label: "Add to favourites",
+                    action: {
+                        
+                    },
+                    font: theme.typography.regular
                 )
+                
+                Spacer()
             }
         }
+        .padding()
+        .background(theme.colors.background)
     }
+}
+
+#Preview {
+    AddressSearchResultView(store: Store(initialState: AddressSearchResultFeature.State(
+        detailedSuggestion: DetailedSuggestionEntity.mock
+    )) {
+        AddressSearchResultFeature()
+    })
 }

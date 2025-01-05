@@ -13,11 +13,19 @@ struct SearchView : View {
     
     @Bindable var store: StoreOf<SearchFeatures>
     @Bindable var addressSearchStore: StoreOf<AddressSearchFeature>
+    @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
     
     var body: some View {
         SearchCollapsedView(store: store)
-            .sheet(isPresented: $store.autoCompleteOpened) {
-                AddressSearchView(store: addressSearchStore).presentationDetents([.large])
+            .sheet(isPresented: $store.addressResultOpened) {
+                AddressSearchResultView(store: addressResultStore)
+                    .presentationDragIndicator(.visible)
+                    .presentationDetents([.fraction(0.2)])
+            }
+            .sheet(isPresented: $store.addressSearchOpened) {
+                AddressSearchView(store: addressSearchStore)
+                    .presentationDragIndicator(.visible)
+                    .presentationDetents([.large])
             }
     }
 }
@@ -27,5 +35,7 @@ struct SearchView : View {
         SearchFeatures()
     }, addressSearchStore: Store(initialState: AddressSearchFeature.State()) {
         AddressSearchFeature()
+    }, addressResultStore: Store(initialState: AddressSearchResultFeature.State()) {
+        AddressSearchResultFeature()
     })
 }

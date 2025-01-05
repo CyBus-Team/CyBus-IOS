@@ -45,9 +45,13 @@ struct HomeView: View {
         SearchFeatures()
     }
     
-    let addressSearchStore: StoreOf<AddressSearchFeature> = Store(initialState: AddressSearchFeature.State()) {
-        AddressSearchFeature()
-    }
+//    let addressSearchStore: StoreOf<AddressSearchFeature> = Store(initialState: AddressSearchFeature.State()) {
+//        AddressSearchFeature()
+//    }
+//    
+//    let addressResultStore: StoreOf<AddressSearchResultFeature> = Store(initialState: AddressSearchResultFeature.State()) {
+//        AddressSearchResultFeature()
+//    }
     
     var body: some View {
         TabView {
@@ -58,7 +62,11 @@ struct HomeView: View {
                     locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
                     busesStore: busesStore
                 )
-                SearchView(store: searchStore, addressSearchStore: addressSearchStore)
+                SearchView(
+                    store: searchStore,
+                    addressSearchStore: searchStore.scope(state: \.searchAddress, action: \.searchAddress),
+                    addressResultStore: searchStore.scope(state: \.searchAddressResult, action: \.searchAddressResult)
+                )
             }
             .tabItem {
                 Label("Map", systemImage: "map")
