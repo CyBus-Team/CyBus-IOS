@@ -45,14 +45,6 @@ struct HomeView: View {
         SearchFeatures()
     }
     
-//    let addressSearchStore: StoreOf<AddressSearchFeature> = Store(initialState: AddressSearchFeature.State()) {
-//        AddressSearchFeature()
-//    }
-//    
-//    let addressResultStore: StoreOf<AddressSearchResultFeature> = Store(initialState: AddressSearchResultFeature.State()) {
-//        AddressSearchResultFeature()
-//    }
-    
     var body: some View {
         TabView {
             VStack {
@@ -60,7 +52,8 @@ struct HomeView: View {
                     mapStore: mapStore,
                     cameraStore: mapStore.scope(state: \.mapCamera, action: \.mapCamera),
                     locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
-                    busesStore: busesStore
+                    busesStore: busesStore,
+                    addressResultStore: searchStore.scope(state: \.searchAddressResult, action: \.searchAddressResult)
                 )
                 SearchView(
                     store: searchStore,

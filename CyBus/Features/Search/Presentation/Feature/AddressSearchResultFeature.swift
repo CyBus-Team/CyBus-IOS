@@ -13,11 +13,13 @@ struct AddressSearchResultFeature {
     
     @ObservableState
     struct State : Equatable {
+        var isLoading: Bool = true
         var detailedSuggestion: DetailedSuggestionEntity?
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case setup(DetailedSuggestionEntity?)
         case onGetDirections
         case onClose
     }
@@ -26,6 +28,11 @@ struct AddressSearchResultFeature {
         BindingReducer()
         Reduce { state, action in
             switch action {
+            case let .setup(suggestion):
+                state.detailedSuggestion = suggestion
+                state.isLoading = false
+                return .none
+                
             case .onGetDirections:
                 return .none
                 

@@ -19,13 +19,14 @@ struct DetailedSuggestionEntity: Identifiable, Equatable, Hashable {
     let id: String
     let name: String
     let description: String
+    let location: CLLocationCoordinate2D
     let result: PlaceAutocomplete.Result?
     
     static func from(dto: DetailedSuggestionDTO) -> DetailedSuggestionEntity? {
-        guard let id = dto.id else {
+        guard let id = dto.id, let location = dto.result.coordinate else {
             return nil
         }
-        return .init(id: id, name: dto.result.name, description: dto.result.description ?? "", result: dto.result)
+        return .init(id: id, name: dto.result.name, description: dto.result.description ?? "", location: location, result: dto.result)
     }
 }
 
@@ -35,6 +36,7 @@ extension DetailedSuggestionEntity {
             id: UUID().uuidString,
             name: "Mock name",
             description: "Mock Description",
+            location: CameraFeature.defaultLocation,
             result: nil
         )
     }

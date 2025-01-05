@@ -15,6 +15,7 @@ struct MapView: View {
     @Bindable var cameraStore: StoreOf<CameraFeature>
     @Bindable var locationStore: StoreOf<LocationFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
+    @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
     
     @Environment(\.theme) var theme
     
@@ -90,6 +91,12 @@ struct MapView: View {
                             )
                             .lineColor(.systemBlue)
                             .lineWidth(3)
+                        }
+                        
+                        if addressResultStore.detailedSuggestion?.result?.coordinate != nil {
+                            MapViewAnnotation(coordinate: addressResultStore.detailedSuggestion!.result!.coordinate!) {
+                                Image(systemName: "mappin.circle.fill").background(theme.colors.primary)
+                            }
                         }
                     }
                     .mapStyle(.light)

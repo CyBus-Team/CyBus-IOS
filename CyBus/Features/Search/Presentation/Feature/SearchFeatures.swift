@@ -54,17 +54,18 @@ struct SearchFeatures {
                 return .none
             // Search suggestions
             case let .searchAddress(.onGetDetailedSuggestion(detailedSuggestion)):
-                state.searchAddressResult.detailedSuggestion = detailedSuggestion
                 state.addressSearchOpened = false
                 state.addressResultOpened = true
-                return .none
+                return .run { send in
+                    await send(.searchAddressResult(.setup(detailedSuggestion)))
+                }
             case .searchAddress(_):
                 return .none
             // Search results
             case .searchAddressResult(.onClose), .searchAddressResult(.binding(_)):
                 state.addressResultOpened = false
                 return .none
-            case .searchAddressResult(.onGetDirections):
+            case .searchAddressResult(_):
                 return .none
             }
         }
