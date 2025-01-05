@@ -15,7 +15,7 @@ struct MapView: View {
     @Bindable var cameraStore: StoreOf<CameraFeature>
     @Bindable var locationStore: StoreOf<LocationFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
-    @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
+    @Bindable var searchStore: StoreOf<SearchFeatures>
     
     @Environment(\.theme) var theme
     
@@ -93,10 +93,10 @@ struct MapView: View {
                             .lineWidth(3)
                         }
                         
-                        if addressResultStore.detailedSuggestion?.result?.coordinate != nil {
-                            MapViewAnnotation(coordinate: addressResultStore.detailedSuggestion!.result!.coordinate!) {
-                                Image(systemName: "mappin.circle.fill").background(theme.colors.primary)
-                            }
+                        if searchStore.searchAddressResult.detailedSuggestion?.location != nil {
+                            MapViewAnnotation(coordinate: searchStore.searchAddressResult.detailedSuggestion!.location) {
+                                Image(systemName: "mappin.circle.fill").resizable().scaledToFit().frame(width: 50, height: 50).foregroundColor(theme.colors.primary)
+                            }.allowOverlap(true)
                         }
                     }
                     .mapStyle(.light)
