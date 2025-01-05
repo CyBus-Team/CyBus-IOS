@@ -12,7 +12,7 @@ struct AddressSearchView : View {
     @Environment(\.theme) var theme
     @FocusState private var isFocused: Bool
     
-    @Bindable var store: StoreOf<AddressAutocompleteFeature>
+    @Bindable var store: StoreOf<AddressSearchFeature>
     
     var body: some View {
         

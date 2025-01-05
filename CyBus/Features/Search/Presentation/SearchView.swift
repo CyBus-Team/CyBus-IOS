@@ -12,12 +12,12 @@ struct SearchView : View {
     @Environment(\.theme) var theme
     
     @Bindable var store: StoreOf<SearchFeatures>
-    @Bindable var autocompleteStore: StoreOf<AddressAutocompleteFeature>
+    @Bindable var addressSearchStore: StoreOf<AddressSearchFeature>
     
     var body: some View {
         SearchBarView(store: store)
             .sheet(isPresented: $store.autoCompleteOpened) {
-                AddressSearchView(store: autocompleteStore).presentationDetents([.large])
+                AddressSearchView(store: addressSearchStore).presentationDetents([.large])
             }
     }
 }
@@ -25,7 +25,7 @@ struct SearchView : View {
 #Preview {
     SearchView(store: Store(initialState: SearchFeatures.State()) {
         SearchFeatures()
-    }, autocompleteStore: Store(initialState: AddressAutocompleteFeature.State()) {
-        AddressAutocompleteFeature()
+    }, addressSearchStore: Store(initialState: AddressSearchFeature.State()) {
+        AddressSearchFeature()
     })
 }

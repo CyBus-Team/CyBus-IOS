@@ -45,8 +45,8 @@ struct HomeView: View {
         SearchFeatures()
     }
     
-    let autocompleteStore: StoreOf<AddressAutocompleteFeature> = Store(initialState: AddressAutocompleteFeature.State()) {
-        AddressAutocompleteFeature()
+    let addressSearchStore: StoreOf<AddressSearchFeature> = Store(initialState: AddressSearchFeature.State()) {
+        AddressSearchFeature()
     }
     
     var body: some View {
@@ -58,7 +58,7 @@ struct HomeView: View {
                     locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
                     busesStore: busesStore
                 )
-                SearchView(store: searchStore, autocompleteStore: autocompleteStore)
+                SearchView(store: searchStore, addressSearchStore: addressSearchStore)
             }
             .tabItem {
                 Label("Map", systemImage: "map")

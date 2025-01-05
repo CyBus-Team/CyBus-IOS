@@ -20,7 +20,7 @@ struct SearchFeatures {
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case onOpenAutoComplete
-        case onCloseAutoComplete
+        case onOpenSearchResults
         case onOpenFavourites
     }
     
@@ -31,9 +31,11 @@ struct SearchFeatures {
             switch action {
             case .onOpenAutoComplete:
                 state.autoCompleteOpened = true
+                state.autoCompleteResultsOpened = false
                 return .none
-            case .onCloseAutoComplete:
+            case .onOpenSearchResults:
                 state.autoCompleteOpened = false
+                state.autoCompleteResultsOpened = true
                 return .none
             case .onOpenFavourites:
                 return .none

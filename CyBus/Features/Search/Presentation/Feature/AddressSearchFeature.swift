@@ -9,7 +9,7 @@ import ComposableArchitecture
 import MapboxSearch
 
 @Reducer
-struct AddressAutocompleteFeature {
+struct AddressSearchFeature {
     
     @ObservableState
     struct State : Equatable {
