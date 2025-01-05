@@ -17,7 +17,7 @@ struct AddressSearchView : View {
     var body: some View {
         
         VStack(alignment: store.isLoading || store.error != nil ? .center : .leading, spacing: 0) {
-            
+            // MARK: Search Text field
             TextField(
                 "Type your destination...",
                 text: $store.query
@@ -38,12 +38,16 @@ struct AddressSearchView : View {
             .border(.primary)
             
             if store.error != nil {
+                // MARK: Error
+                // TODO: Implement something went wrong component
                 Text("Something went wrong, please retry")
             } else if store.isLoading {
+                // MARK: Loading
                 Spacer()
                 ProgressView()
                 Spacer()
             } else {
+                // MARK: Suggestions
                 List(store.suggestions) { suggestion in
                     Text(suggestion.label)
                         .listRowBackground(theme.colors.background)

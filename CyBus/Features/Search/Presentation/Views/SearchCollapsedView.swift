@@ -13,11 +13,14 @@ struct SearchCollapsedView : View {
     @Bindable var store: StoreOf<SearchFeatures>
     
     var body: some View {
+        // MARK: Actions
         HStack {
+            // MARK: Open search button
             Button {
                 store.send(.onOpenAutoComplete)
             } label: {
                 Text("Search here")
+                    .font(theme.typography.regular)
                     .padding(12)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(theme.colors.textFieldBackground)
@@ -26,14 +29,11 @@ struct SearchCollapsedView : View {
             
             Spacer()
             
-            Button {
-                store.send(.onOpenFavourites)
-            } label: {
-                Image(systemName: "bookmark.fill")
-                    .padding(12)
-                    .background(theme.colors.textFieldBackground)
-                    .cornerRadius(12)
-            }
+            // MARK: Favourites
+            FavouritesButton(
+                action: { store.send(.onOpenFavourites) },
+                isActive: true
+            )
         }
         .padding(.horizontal, 12)
         .padding(.bottom, 14)
