@@ -15,7 +15,7 @@ struct SearchView : View {
     @Bindable var addressSearchStore: StoreOf<AddressSearchFeature>
     
     var body: some View {
-        SearchBarView(store: store)
+        SearchCollapsedView(store: store)
             .sheet(isPresented: $store.autoCompleteOpened) {
                 AddressSearchView(store: addressSearchStore).presentationDetents([.large])
             }
