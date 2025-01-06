@@ -50,7 +50,7 @@ struct MapView: View {
                     Map(viewport: $cameraStore.viewport) {
                         
                         //MARK: User location
-                        Puck2D(bearing: .heading)
+                        Puck2D(bearing: .course)
                             .showsAccuracyRing(true)
                         
                         //MARK: Buses

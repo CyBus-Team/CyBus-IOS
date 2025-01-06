@@ -15,6 +15,7 @@ struct ColorPalette {
     let secondary: Color
     let linkTitle: Color
     let textFieldBackground: Color
+    let destinationColor: Color
 }
 
 fileprivate let max = 255.0
@@ -22,20 +23,22 @@ fileprivate let max = 255.0
 extension ColorPalette {
     static let light = ColorPalette(
         primary: .init(red: 39/max, green: 113/max, blue: max/max), // Blue
-        background: Color.white, // White
+        background: .white, // White
         foreground: .init(red: 213/max, green: 240/max, blue: 252/max), // Light blue
         secondary: .init(red: 33/max, green: 59/max, blue: 155/max), // Dark Blue
         linkTitle: .init(red: 120/max, green: 119/max, blue: 120/max), // Grey
-        textFieldBackground: .init(red: 244/max, green: 244/max, blue: 244/max) // Light Grey
+        textFieldBackground: .init(red: 244/max, green: 244/max, blue: 244/max), // Light Grey
+        destinationColor: .red
     )
     
     static let dark = ColorPalette(
         primary: .init(red: 39/max, green: 113/max, blue: 255/max), // Blue
-        background: Color.black, // Black
+        background: .black, // Black
         foreground: .init(red: 213/max, green: 240/max, blue: 252/max), // Light blue
         secondary: .init(red: 33/max, green: 59/max, blue: 155/max), // Dark Blue
         linkTitle: .init(red: 120/max, green: 119/max, blue: 120/max), // Grey
-        textFieldBackground: .init(red: 244/max, green: 244/max, blue: 244/max) // Light Grey
+        textFieldBackground: .init(red: 244/max, green: 244/max, blue: 244/max), // Light Grey
+        destinationColor: .red
     )
 }
 

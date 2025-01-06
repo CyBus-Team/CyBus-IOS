@@ -17,7 +17,7 @@ struct DestinationMarker: View {
             .resizable()
             .scaledToFit()
             .frame(width: 40, height: 40)
-            .foregroundColor(.red)
+            .foregroundColor(theme.colors.destinationColor)
             .background(Circle().fill(theme.colors.background))
         
             .onTapGesture {
