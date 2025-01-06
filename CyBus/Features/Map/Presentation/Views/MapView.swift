@@ -46,14 +46,14 @@ struct MapView: View {
             } else {
                 ZStack {
                     
-                    // Map
+                    //MARK: - Map view
                     Map(viewport: $cameraStore.viewport) {
                         
-                        //User location
+                        //MARK: User location
                         Puck2D(bearing: .heading)
                             .showsAccuracyRing(true)
                         
-                        // Buses
+                        //MARK: Buses
                         ForEvery(busesStore.groupedBuses) { busGroup in
                             MapViewAnnotation(coordinate: busGroup.position) {
                                 BusGroup(
@@ -74,7 +74,7 @@ struct MapView: View {
                             let stops = route?.stops ?? []
                             let shapes = route?.shapes ?? []
                             
-                            // Stops
+                            //MARK: Stops
                             ForEvery(stops) { stop in
                                 MapViewAnnotation(coordinate: stop.position) {
                                     StopCircle(color: theme.colors.primary).compositingGroup()
@@ -83,7 +83,7 @@ struct MapView: View {
                                 .allowOverlap(true)
                             }
                             
-                            // Shapes
+                            //MARK: Shapes
                             PolylineAnnotation(
                                 lineCoordinates: shapes.map { shape in
                                     shape.position
@@ -105,14 +105,16 @@ struct MapView: View {
                     VStack {
                         Spacer()
                         HStack(alignment: .center) {
-                            // Clear route button
+                            //MARK: - Navigation bar
+                            
+                            // MARK: Clear route button
                             if busesStore.hasSelection {
                                 ClearRouteButton {
                                     busesStore.send(.clearSelection)
                                 }
                             }
                             
-                            // Zoom buttons
+                            //MARK: Zoom buttons
                             ZoomButton(
                                 action: {
                                     cameraStore.send(.decreaseZoom)
@@ -126,7 +128,7 @@ struct MapView: View {
                                 zoomIn: true
                             )
                             
-                            // Get current location button
+                            //MARK: Get current location button
                             LocationButton {
                                 locationStore.send(.getCurrentLocation)
                             }

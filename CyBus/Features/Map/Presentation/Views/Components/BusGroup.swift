@@ -1,5 +1,4 @@
-//
-//  BusGruup.swift
+//  Bus.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 22/07/2024.
