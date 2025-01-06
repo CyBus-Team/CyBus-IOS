@@ -14,7 +14,12 @@ struct AddressSearchResultFeature {
     @ObservableState
     struct State : Equatable {
         var isLoading: Bool = true
-        var detailedSuggestion: DetailedSuggestionEntity?
+        var hasSuggestion: Bool = false
+        var detailedSuggestion: DetailedSuggestionEntity? {
+            didSet {
+                hasSuggestion = detailedSuggestion != nil
+            }
+        }
     }
     
     enum Action: BindableAction {

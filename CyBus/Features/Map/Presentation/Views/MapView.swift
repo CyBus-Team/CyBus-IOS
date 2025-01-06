@@ -93,10 +93,13 @@ struct MapView: View {
                             .lineWidth(3)
                         }
                         
-                        if searchStore.searchAddressResult.detailedSuggestion?.location != nil {
+                        //MARK: - Destination marker
+                        if searchStore.searchAddressResult.hasSuggestion {
                             MapViewAnnotation(coordinate: searchStore.searchAddressResult.detailedSuggestion!.location) {
-                                Image(systemName: "mappin.circle.fill").resizable().scaledToFit().frame(width: 50, height: 50).foregroundColor(theme.colors.primary)
-                            }.allowOverlap(true)
+                                DestinationMarker()
+                            }
+                            .allowZElevate(false)
+                            .allowOverlap(true)
                         }
                     }
                     .mapStyle(.light)
