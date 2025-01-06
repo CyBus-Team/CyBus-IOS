@@ -20,7 +20,6 @@ struct ClearButton: View {
                     text = ""
                 } label: {
                     Image(systemName: "multiply.circle.fill")
-                        .foregroundColor(Color(red: 0.7, green: 0.7, blue: 0.7))
                 }
                 .foregroundColor(.secondary)
             }

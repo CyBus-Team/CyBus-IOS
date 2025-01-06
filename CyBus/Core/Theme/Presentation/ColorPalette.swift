@@ -17,7 +17,7 @@ struct ColorPalette {
     let textFieldBackground: Color
 }
 
-fileprivate let max = 255
+fileprivate let max = 255.0
 
 extension ColorPalette {
     static let light = ColorPalette(

@@ -31,7 +31,7 @@ struct AddressSearchView : View {
             .overlay {
                 ClearButton(text: $store.query)
                     .padding(.trailing)
-                    .padding(.top, 8)
+                    .padding(.top, 4)
             }
             .textInputAutocapitalization(.never)
             .cornerRadius(12)
