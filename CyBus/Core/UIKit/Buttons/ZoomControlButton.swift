@@ -10,8 +10,8 @@ import SwiftUI
 struct ZoomControlView: View {
     @Environment(\.theme) var theme
     
-    var onZoomIn: () -> Void
-    var onZoomOut: () -> Void
+    let onZoomIn: () -> Void
+    let onZoomOut: () -> Void
 
     var body: some View {
         VStack(spacing: 14) {

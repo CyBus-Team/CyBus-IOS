@@ -10,17 +10,25 @@ import SwiftUI
 struct DestinationMarker: View {
     @Environment(\.theme) var theme
     
+    let action: () -> Void
+    
     var body: some View {
         Image(systemName: "mappin.circle.fill")
             .resizable()
             .scaledToFit()
             .frame(width: 40, height: 40)
             .foregroundColor(.red)
-            .background(.white)
+            .background(Circle().fill(theme.colors.background))
+        
+            .onTapGesture {
+               action()
+            }
     }
     
 }
 
 #Preview {
-    DestinationMarker()
+    DestinationMarker {
+        debugPrint("OnTap")
+    }
 }

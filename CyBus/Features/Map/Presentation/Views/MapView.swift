@@ -56,14 +56,12 @@ struct MapView: View {
                         //MARK: Buses
                         ForEvery(busesStore.groupedBuses) { busGroup in
                             MapViewAnnotation(coordinate: busGroup.position) {
-                                BusGroup(
+                                BusGroup (
+                                    action: { busesStore.send(.select(busGroup)) },
                                     activeBus: busesStore.selectedBusGroupState?.bus,
                                     buses: busGroup.buses,
                                     scale: cameraStore.scale
                                 )
-                                .onTapGesture {
-                                    busesStore.send(.select(busGroup))
-                                }
                             }
                             .variableAnchors([.init(anchor: .bottom)])
                             .allowOverlap(true)
@@ -96,7 +94,9 @@ struct MapView: View {
                         //MARK: - Destination marker
                         if searchStore.searchAddressResult.hasSuggestion {
                             MapViewAnnotation(coordinate: searchStore.searchAddressResult.detailedSuggestion!.location) {
-                                DestinationMarker()
+                                DestinationMarker {
+                                    searchStore.send(.onOpenAddressSearchResults)
+                                }
                             }
                             .allowZElevate(false)
                             .allowOverlap(true)
