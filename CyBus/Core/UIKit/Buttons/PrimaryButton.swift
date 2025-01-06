@@ -12,13 +12,14 @@ struct PrimaryButton : View {
     
     var label: String
     var action: () -> Void
+    var font: Font?
     
     var body: some View {
         Button(action: {
             action()
         }) {
             Text(label)
-                .font(theme.typography.title)
+                .font(font ?? theme.typography.title)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 30)
                 .foregroundStyle(theme.colors.background)

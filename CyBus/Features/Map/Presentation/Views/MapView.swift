@@ -15,6 +15,7 @@ struct MapView: View {
     @Bindable var cameraStore: StoreOf<CameraFeature>
     @Bindable var locationStore: StoreOf<LocationFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
+    @Bindable var searchStore: StoreOf<SearchFeatures>
     
     @Environment(\.theme) var theme
     
@@ -91,6 +92,12 @@ struct MapView: View {
                             .lineColor(.systemBlue)
                             .lineWidth(3)
                         }
+                        
+                        if searchStore.searchAddressResult.detailedSuggestion?.location != nil {
+                            MapViewAnnotation(coordinate: searchStore.searchAddressResult.detailedSuggestion!.location) {
+                                Image(systemName: "mappin.circle.fill").resizable().scaledToFit().frame(width: 50, height: 50).foregroundColor(theme.colors.primary)
+                            }.allowOverlap(true)
+                        }
                     }
                     .mapStyle(.light)
                     .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
@@ -127,8 +134,9 @@ struct MapView: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.bottom, 100)
+                        .padding(.bottom, 20)
                     }
+                    
                 }
                 .alert($mapStore.scope(state: \.alert, action: \.alert))
                 .ignoresSafeArea()

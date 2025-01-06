@@ -12,13 +12,14 @@ struct SecondaryButton : View {
     
     var label: String
     var action: () -> Void
+    var font: Font?
     
     var body: some View {
         Button(action: {
             action()
         }) {
             Text(label)
-                .font(theme.typography.title)
+                .font(font ?? theme.typography.title)
                 .foregroundColor(theme.colors.primary)
                 .padding(.vertical, 8)
                 .padding(.horizontal, 30)

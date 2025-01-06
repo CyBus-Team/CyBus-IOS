@@ -19,6 +19,7 @@ struct MapFeature {
         // Features
         var userLocation = LocationFeature.State()
         var mapCamera = CameraFeature.State()
+        var search = SearchFeatures.State()
         
         //State vars
         var error: String?
@@ -29,6 +30,7 @@ struct MapFeature {
     enum Action {
         case userLocation(LocationFeature.Action)
         case mapCamera(CameraFeature.Action)
+        case search(SearchFeatures.Action)
         
         case setUp
         
@@ -46,6 +48,9 @@ struct MapFeature {
         }
         Scope(state: \.mapCamera, action: \.mapCamera) {
             CameraFeature()
+        }
+        Scope(state: \.search, action: \.search) {
+            SearchFeatures()
         }
         Reduce { state, action in
             switch action {
@@ -83,10 +88,12 @@ struct MapFeature {
                     UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                 }
                 return .none
-                
-            case .alert(_), .userLocation(_), .mapCamera(_):
+            case let .search(.searchAddressResult(.setup(suggestion))):
+                return .run { send in
+                    await send(.mapCamera(.onViewportChange(suggestion!.location)))
+                }
+            case .alert(_), .userLocation(_), .mapCamera(_), .search(_):
                 return .none
-                
             }
         }.ifLet(\.$alert, action: \.alert)
     }

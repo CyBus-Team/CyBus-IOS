@@ -31,6 +31,26 @@
 		9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9CF2C6DFBBA009E98F3 /* ShapeDTO.swift */; };
 		9449C9D82C6E01CE009E98F3 /* TripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D72C6E01CE009E98F3 /* TripDTO.swift */; };
 		94575D672D1D827B00CC3C03 /* SelectedBusGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D662D1D827600CC3C03 /* SelectedBusGroup.swift */; };
+		94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D6E2D1F314700CC3C03 /* SearchView.swift */; };
+		94575D742D231DF600CC3C03 /* AddressSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D732D231DE200CC3C03 /* AddressSearchView.swift */; };
+		94575D762D23206B00CC3C03 /* SearchCollapsedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D752D23200C00CC3C03 /* SearchCollapsedView.swift */; };
+		94575D792D2321C100CC3C03 /* SearchFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D782D2321BC00CC3C03 /* SearchFeatures.swift */; };
+		94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D7A2D232E6400CC3C03 /* ClearButton.swift */; };
+		94575D7D2D23331700CC3C03 /* AddressSearchFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D7C2D23330D00CC3C03 /* AddressSearchFeature.swift */; };
+		94575D7F2D23345400CC3C03 /* AddressSearchUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */; };
+		94575D812D23346100CC3C03 /* AddressSearchRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D802D23345800CC3C03 /* AddressSearchRepositoryProtocol.swift */; };
+		94575D882D23350400CC3C03 /* AddressSearchMapBoxRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D872D23350200CC3C03 /* AddressSearchMapBoxRepository.swift */; };
+		94575D8A2D23359300CC3C03 /* SuggestionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D892D23358500CC3C03 /* SuggestionDTO.swift */; };
+		94575D8D2D2336D500CC3C03 /* SuggestionsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D8C2D2336D000CC3C03 /* SuggestionsEntity.swift */; };
+		94575D902D23396D00CC3C03 /* MapboxSearch in Frameworks */ = {isa = PBXBuildFile; productRef = 94575D8F2D23396D00CC3C03 /* MapboxSearch */; };
+		94575D922D23396D00CC3C03 /* MapboxSearchUI in Frameworks */ = {isa = PBXBuildFile; productRef = 94575D912D23396D00CC3C03 /* MapboxSearchUI */; };
+		94575D942D2345C400CC3C03 /* AddressSearchMapBoxUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */; };
+		94575D9C2D2731E000CC3C03 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 94575D9B2D2731E000CC3C03 /* MapboxMaps */; };
+		94575D9E2D28760800CC3C03 /* DetailedSuggestionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D9D2D28760800CC3C03 /* DetailedSuggestionDTO.swift */; };
+		94575DA02D2877C500CC3C03 /* DetailedSuggestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D9F2D2877C500CC3C03 /* DetailedSuggestionEntity.swift */; };
+		94575DA42D28867700CC3C03 /* AddressSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA32D28866E00CC3C03 /* AddressSearchResultView.swift */; };
+		94575DA62D2AAF3300CC3C03 /* FavouritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA52D2AAF2E00CC3C03 /* FavouritesButton.swift */; };
+		94575DA82D2AB47A00CC3C03 /* AddressSearchResultFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */; };
 		945843A92CD18862006D9893 /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843A82CD1885F006D9893 /* MapFeature.swift */; };
 		945843AB2CD1923E006D9893 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843AA2CD19236006D9893 /* HomeView.swift */; };
 		945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
@@ -58,7 +78,6 @@
 		94AF0DC22C79FAE7002FE41B /* RoutesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC12C79FAE7002FE41B /* RoutesUseCases.swift */; };
 		94AF0DC42C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC32C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift */; };
 		94AF0DC62C7CF956002FE41B /* BusRouteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC52C7CF956002FE41B /* BusRouteEntity.swift */; };
-		94AF24B02CBC0BD60092EE9B /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 94AF24AF2CBC0BD60092EE9B /* MapboxMaps */; };
 		94AF24DA2CBC572A0092EE9B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24D92CBC57230092EE9B /* OnboardingView.swift */; };
 		94AF24DC2CBC5A150092EE9B /* OnboardingUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24DB2CBC5A090092EE9B /* OnboardingUseCasesProtocol.swift */; };
 		94AF24DE2CBC5A450092EE9B /* OnboardingUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24DD2CBC5A400092EE9B /* OnboardingUseCases.swift */; };
@@ -143,6 +162,23 @@
 		9449C9CF2C6DFBBA009E98F3 /* ShapeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeDTO.swift; sourceTree = "<group>"; };
 		9449C9D72C6E01CE009E98F3 /* TripDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDTO.swift; sourceTree = "<group>"; };
 		94575D662D1D827600CC3C03 /* SelectedBusGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBusGroup.swift; sourceTree = "<group>"; };
+		94575D6E2D1F314700CC3C03 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		94575D732D231DE200CC3C03 /* AddressSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchView.swift; sourceTree = "<group>"; };
+		94575D752D23200C00CC3C03 /* SearchCollapsedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollapsedView.swift; sourceTree = "<group>"; };
+		94575D782D2321BC00CC3C03 /* SearchFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeatures.swift; sourceTree = "<group>"; };
+		94575D7A2D232E6400CC3C03 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		94575D7C2D23330D00CC3C03 /* AddressSearchFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchFeature.swift; sourceTree = "<group>"; };
+		94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchUseCasesProtocol.swift; sourceTree = "<group>"; };
+		94575D802D23345800CC3C03 /* AddressSearchRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchRepositoryProtocol.swift; sourceTree = "<group>"; };
+		94575D872D23350200CC3C03 /* AddressSearchMapBoxRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchMapBoxRepository.swift; sourceTree = "<group>"; };
+		94575D892D23358500CC3C03 /* SuggestionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionDTO.swift; sourceTree = "<group>"; };
+		94575D8C2D2336D000CC3C03 /* SuggestionsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsEntity.swift; sourceTree = "<group>"; };
+		94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchMapBoxUseCases.swift; sourceTree = "<group>"; };
+		94575D9D2D28760800CC3C03 /* DetailedSuggestionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSuggestionDTO.swift; sourceTree = "<group>"; };
+		94575D9F2D2877C500CC3C03 /* DetailedSuggestionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSuggestionEntity.swift; sourceTree = "<group>"; };
+		94575DA32D28866E00CC3C03 /* AddressSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResultView.swift; sourceTree = "<group>"; };
+		94575DA52D2AAF2E00CC3C03 /* FavouritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesButton.swift; sourceTree = "<group>"; };
+		94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResultFeature.swift; sourceTree = "<group>"; };
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		947633D42C6E0747000F20C7 /* StopDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDTO.swift; sourceTree = "<group>"; };
@@ -225,9 +261,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94AF24B02CBC0BD60092EE9B /* MapboxMaps in Frameworks */,
+				94575D922D23396D00CC3C03 /* MapboxSearchUI in Frameworks */,
+				94575D902D23396D00CC3C03 /* MapboxSearch in Frameworks */,
 				94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */,
 				94D794852CC01F6D0097A2F0 /* ComposableArchitecture in Frameworks */,
+				94575D9C2D2731E000CC3C03 /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +303,100 @@
 				943A86122CB04584007AFF00 /* CameraFeature.swift */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		94575D692D1F302900CC3C03 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				94575D6A2D1F303000CC3C03 /* Data */,
+				94575D6B2D1F303300CC3C03 /* Domain */,
+				94575D6C2D1F303800CC3C03 /* Presentation */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		94575D6A2D1F303000CC3C03 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				94575D842D23348800CC3C03 /* DTO */,
+				94575D832D23347F00CC3C03 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		94575D6B2D1F303300CC3C03 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				94575D862D2334A200CC3C03 /* Entities */,
+				94575D852D23348E00CC3C03 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		94575D6C2D1F303800CC3C03 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				94575D772D23219500CC3C03 /* Feature */,
+				94575D6D2D1F314100CC3C03 /* Views */,
+				94575D6E2D1F314700CC3C03 /* SearchView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		94575D6D2D1F314100CC3C03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				94575D752D23200C00CC3C03 /* SearchCollapsedView.swift */,
+				94575D732D231DE200CC3C03 /* AddressSearchView.swift */,
+				94575DA32D28866E00CC3C03 /* AddressSearchResultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		94575D772D23219500CC3C03 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				94575D7C2D23330D00CC3C03 /* AddressSearchFeature.swift */,
+				94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */,
+				94575D782D2321BC00CC3C03 /* SearchFeatures.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		94575D832D23347F00CC3C03 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				94575D872D23350200CC3C03 /* AddressSearchMapBoxRepository.swift */,
+				94575D802D23345800CC3C03 /* AddressSearchRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		94575D842D23348800CC3C03 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				94575D9D2D28760800CC3C03 /* DetailedSuggestionDTO.swift */,
+				94575D892D23358500CC3C03 /* SuggestionDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		94575D852D23348E00CC3C03 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */,
+				94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		94575D862D2334A200CC3C03 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				94575D8C2D2336D000CC3C03 /* SuggestionsEntity.swift */,
+				94575D9F2D2877C500CC3C03 /* DetailedSuggestionEntity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		945843A12CD17F0A006D9893 /* Home */ = {
@@ -437,6 +569,7 @@
 				94AF24B12CBC13320092EE9B /* Onboarding */,
 				945843A12CD17F0A006D9893 /* Home */,
 				94AF0D942C779402002FE41B /* Map */,
+				94575D692D1F302900CC3C03 /* Search */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -645,6 +778,8 @@
 		94D794A32CC2CDD30097A2F0 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				94575DA52D2AAF2E00CC3C03 /* FavouritesButton.swift */,
+				94575D7A2D232E6400CC3C03 /* ClearButton.swift */,
 				94D794A12CC2CDD30097A2F0 /* PrimaryButton.swift */,
 				94D794A22CC2CDD30097A2F0 /* SecondaryButton.swift */,
 				94F220892C5E701F00D776B9 /* ClearRouteButton.swift */,
@@ -773,8 +908,10 @@
 			name = CyBus;
 			packageProductDependencies = (
 				94BB5BC62C35CBDF00404028 /* SwiftProtobuf */,
-				94AF24AF2CBC0BD60092EE9B /* MapboxMaps */,
 				94D794842CC01F6D0097A2F0 /* ComposableArchitecture */,
+				94575D8F2D23396D00CC3C03 /* MapboxSearch */,
+				94575D912D23396D00CC3C03 /* MapboxSearchUI */,
+				94575D9B2D2731E000CC3C03 /* MapboxMaps */,
 			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
@@ -850,8 +987,9 @@
 			mainGroup = 94ABDF742C29ABBD00970F8C;
 			packageReferences = (
 				9400C25E2C35C99500355A0F /* XCRemoteSwiftPackageReference "swift-protobuf" */,
-				94AF24AE2CBC0BD60092EE9B /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 				94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				94575D8E2D23396D00CC3C03 /* XCRemoteSwiftPackageReference "search-ios" */,
+				94575D9A2D2731E000CC3C03 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
@@ -907,21 +1045,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CC17482C4ECF7C00AC358D /* BusGroup.swift in Sources */,
+				94575DA82D2AB47A00CC3C03 /* AddressSearchResultFeature.swift in Sources */,
 				94AF0DAF2C77B0AB002FE41B /* BusesRepository.swift in Sources */,
 				94D7948B2CC029BA0097A2F0 /* OnboardingFeatures.swift in Sources */,
+				94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */,
 				94AF0DC42C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift in Sources */,
 				948CBE612CF23066006C8B1C /* BusesFeature.swift in Sources */,
 				94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */,
 				AC894B972CE4CB90001A660C /* MarkerIcon.swift in Sources */,
 				94AF24DA2CBC572A0092EE9B /* OnboardingView.swift in Sources */,
+				94575D9E2D28760800CC3C03 /* DetailedSuggestionDTO.swift in Sources */,
 				9435C90C2CF78ED40041A986 /* BusGroupEntity.swift in Sources */,
 				94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */,
+				94575DA42D28867700CC3C03 /* AddressSearchResultView.swift in Sources */,
 				9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */,
 				94AF0DA52C779ADC002FE41B /* BusesUseCases.swift in Sources */,
+				94575D742D231DF600CC3C03 /* AddressSearchView.swift in Sources */,
 				941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */,
 				94AF24E32CBC5B340092EE9B /* OnboardingRepository.swift in Sources */,
 				94891BC82C3AF77A008AFC53 /* gtfs-realtime.pb.swift in Sources */,
+				94575D942D2345C400CC3C03 /* AddressSearchMapBoxUseCases.swift in Sources */,
 				94AF0DA32C779A8C002FE41B /* BusesUseCasesProtocol.swift in Sources */,
+				94575D762D23206B00CC3C03 /* SearchCollapsedView.swift in Sources */,
 				94AF0D9F2C7799F0002FE41B /* RoutesRepositoryProtocol.swift in Sources */,
 				94AF0DC22C79FAE7002FE41B /* RoutesUseCases.swift in Sources */,
 				94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */,
@@ -933,18 +1079,23 @@
 				94D794872CC020630097A2F0 /* RootView.swift in Sources */,
 				94F3B8812CC2EB3800E38BE2 /* OnboardingWelcomeView.swift in Sources */,
 				94AF0DC62C7CF956002FE41B /* BusRouteEntity.swift in Sources */,
+				94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */,
 				942C53F72C55217400DE9BD7 /* RouteDTO.swift in Sources */,
+				94575D812D23346100CC3C03 /* AddressSearchRepositoryProtocol.swift in Sources */,
 				94AF24DC2CBC5A150092EE9B /* OnboardingUseCasesProtocol.swift in Sources */,
 				947633D72C6E079A000F20C7 /* StopTimeDTO.swift in Sources */,
 				9449C9D82C6E01CE009E98F3 /* TripDTO.swift in Sources */,
 				AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */,
 				94C998672C88D28C000F0E64 /* MapUseCases.swift in Sources */,
 				94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */,
+				94575D7D2D23331700CC3C03 /* AddressSearchFeature.swift in Sources */,
+				94575D8A2D23359300CC3C03 /* SuggestionDTO.swift in Sources */,
 				94AF24DE2CBC5A450092EE9B /* OnboardingUseCases.swift in Sources */,
 				945843AB2CD1923E006D9893 /* HomeView.swift in Sources */,
 				9420D1C42CD017AA00150F5B /* OnboardingSigninFeature.swift in Sources */,
 				943A86132CB04588007AFF00 /* CameraFeature.swift in Sources */,
 				94C998652C88CFA8000F0E64 /* MapUseCasesProtocol.swift in Sources */,
+				94575DA62D2AAF3300CC3C03 /* FavouritesButton.swift in Sources */,
 				94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */,
 				94F3B8852CC2EB5100E38BE2 /* OnboardingSignInView.swift in Sources */,
 				94AF0DA12C7799FE002FE41B /* BusesRepositoryProtocol.swift in Sources */,
@@ -955,18 +1106,23 @@
 				94D794A72CC2CDD30097A2F0 /* ThemeModeUseCasesProtocol.swift in Sources */,
 				945843A92CD18862006D9893 /* MapFeature.swift in Sources */,
 				94D794A82CC2CDD30097A2F0 /* Typography.swift in Sources */,
+				94575D8D2D2336D500CC3C03 /* SuggestionsEntity.swift in Sources */,
 				AC1D3FA12D26B1D70005D3EE /* BusGroup.swift in Sources */,
 				AC1D3FA22D26B1D70005D3EE /* LocationButton.swift in Sources */,
 				9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */,
 				9435C90A2CF334CC0041A986 /* RoutesFeature.swift in Sources */,
 				94D794A92CC2CDD30097A2F0 /* Theme.swift in Sources */,
+				94575D792D2321C100CC3C03 /* SearchFeatures.swift in Sources */,
+				94575DA02D2877C500CC3C03 /* DetailedSuggestionEntity.swift in Sources */,
 				94D794AA2CC2CDD30097A2F0 /* ThemeModeUseCases.swift in Sources */,
 				94D794AB2CC2CDD30097A2F0 /* LocationUseCases.swift in Sources */,
 				944494762CCD7D3E00A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */,
 				94D794AD2CC2CDD30097A2F0 /* LocalThemeModeRepository.swift in Sources */,
 				94D794AE2CC2CDD30097A2F0 /* SecondaryButton.swift in Sources */,
 				94D794AF2CC2CDD30097A2F0 /* PrimaryButton.swift in Sources */,
+				94575D882D23350400CC3C03 /* AddressSearchMapBoxRepository.swift in Sources */,
 				94D794B02CC2CDD30097A2F0 /* ColorPalette.swift in Sources */,
+				94575D7F2D23345400CC3C03 /* AddressSearchUseCasesProtocol.swift in Sources */,
 				94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* BusEntity.swift in Sources */,
 				94AF0DAA2C77A6A8002FE41B /* RoutesRepository.swift in Sources */,
@@ -1359,12 +1515,20 @@
 				minimumVersion = 1.26.0;
 			};
 		};
-		94AF24AE2CBC0BD60092EE9B /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+		94575D8E2D23396D00CC3C03 /* XCRemoteSwiftPackageReference "search-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/search-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.7.1;
+			};
+		};
+		94575D9A2D2731E000CC3C03 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.7.1;
+				kind = exactVersion;
+				version = 11.9.0;
 			};
 		};
 		94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
@@ -1378,9 +1542,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		94AF24AF2CBC0BD60092EE9B /* MapboxMaps */ = {
+		94575D8F2D23396D00CC3C03 /* MapboxSearch */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 94AF24AE2CBC0BD60092EE9B /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
+			package = 94575D8E2D23396D00CC3C03 /* XCRemoteSwiftPackageReference "search-ios" */;
+			productName = MapboxSearch;
+		};
+		94575D912D23396D00CC3C03 /* MapboxSearchUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94575D8E2D23396D00CC3C03 /* XCRemoteSwiftPackageReference "search-ios" */;
+			productName = MapboxSearchUI;
+		};
+		94575D9B2D2731E000CC3C03 /* MapboxMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94575D9A2D2731E000CC3C03 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
 			productName = MapboxMaps;
 		};
 		94BB5BC62C35CBDF00404028 /* SwiftProtobuf */ = {
