@@ -34,17 +34,14 @@ struct AddressSearchResultView : View {
                 // MARK: Actions
                 HStack() {
                     // MARK: Directions
-                    if store.isDirectionsLoading {
-                        ProgressView()
-                    } else {
-                        PrimaryButton(
-                            label: "Directions",
-                            action: {
-                                store.send(.onGetDirections)
-                            },
-                            font: theme.typography.regular
-                        )
-                    }
+                    PrimaryButton(
+                        label: "Directions",
+                        action: {
+                            store.send(.onGetDirections)
+                        },
+                        isLoading: store.isDirectionsLoading,
+                        font: theme.typography.regular
+                    )
                     // MARK: Favourites
                     // TODO: Implement favourites
                     SecondaryButton(
