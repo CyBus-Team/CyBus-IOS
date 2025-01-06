@@ -14,6 +14,7 @@ struct AddressSearchResultFeature {
     @ObservableState
     struct State : Equatable {
         var isLoading: Bool = true
+        var isDirectionsLoading: Bool = false
         var hasSuggestion: Bool = false
         var detailedSuggestion: DetailedSuggestionEntity? {
             didSet {
@@ -26,6 +27,7 @@ struct AddressSearchResultFeature {
         case binding(BindingAction<State>)
         case setup(DetailedSuggestionEntity?)
         case onGetDirections
+        case onGetDirectionsResponse
         case onClose
     }
     
@@ -39,6 +41,11 @@ struct AddressSearchResultFeature {
                 return .none
                 
             case .onGetDirections:
+                state.isDirectionsLoading = true
+                return .none
+                
+            case .onGetDirectionsResponse:
+                state.isDirectionsLoading = false
                 return .none
                 
             case .binding(_), .onClose:
