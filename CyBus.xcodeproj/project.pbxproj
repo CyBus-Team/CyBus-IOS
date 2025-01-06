@@ -123,7 +123,7 @@
 		AC1D3FA12D26B1D70005D3EE /* BusGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusGroup.swift */; };
 		AC1D3FA22D26B1D70005D3EE /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9F2D26B1D70005D3EE /* LocationButton.swift */; };
 		AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3FA52D270DF70005D3EE /* StopCircle.swift */; };
-		AC894B972CE4CB90001A660C /* MarkerIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894B962CE4CB90001A660C /* MarkerIcon.swift */; };
+		AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894B962CE4CB90001A660C /* BusMarker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -253,7 +253,7 @@
 		AC1D3F9E2D26B1D70005D3EE /* BusGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusGroup.swift; sourceTree = "<group>"; };
 		AC1D3F9F2D26B1D70005D3EE /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		AC1D3FA52D270DF70005D3EE /* StopCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCircle.swift; sourceTree = "<group>"; };
-		AC894B962CE4CB90001A660C /* MarkerIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerIcon.swift; sourceTree = "<group>"; };
+		AC894B962CE4CB90001A660C /* BusMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -885,7 +885,7 @@
 			children = (
 				AC1D3FA52D270DF70005D3EE /* StopCircle.swift */,
 				AC1D3F9E2D26B1D70005D3EE /* BusGroup.swift */,
-				AC894B962CE4CB90001A660C /* MarkerIcon.swift */,
+				AC894B962CE4CB90001A660C /* BusMarker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1051,7 +1051,7 @@
 				94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */,
 				94AF0DC42C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift in Sources */,
 				948CBE612CF23066006C8B1C /* BusesFeature.swift in Sources */,
-				AC894B972CE4CB90001A660C /* MarkerIcon.swift in Sources */,
+				AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */,
 				94AF24DA2CBC572A0092EE9B /* OnboardingView.swift in Sources */,
 				94575D9E2D28760800CC3C03 /* DetailedSuggestionDTO.swift in Sources */,
 				9435C90C2CF78ED40041A986 /* BusGroupEntity.swift in Sources */,

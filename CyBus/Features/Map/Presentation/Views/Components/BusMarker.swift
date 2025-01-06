@@ -1,5 +1,5 @@
 //
-//  MarkerIcon.swift
+//  BusMarker.swift
 //  CyBus
 //
 //  Created by Artem on 13.11.2024.
@@ -7,7 +7,7 @@
 import Foundation
 import SwiftUI
 
-struct MarkerIcon: Shape {
+struct BusMarker: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let width = rect.size.width
