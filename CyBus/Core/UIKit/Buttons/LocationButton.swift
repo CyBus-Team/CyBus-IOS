@@ -8,20 +8,28 @@
 import SwiftUI
 
 struct LocationButton: View {
+    @Environment(\.theme) var theme
+    
     var action: () -> Void
-
+    
     var body: some View {
-        Button(action: {
-            action()
-        }) {
+        Button(action: action) {
             Image(systemName: "location.fill")
                 .font(.system(size: 24))
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .clipShape(Circle())
-                .shadow(radius: 10)
+                .foregroundColor(theme.colors.primary)
         }
+        .frame(width: 70, height: 70)
+        .background(
+            Circle()
+                .fill(Color.white)
+                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
+        )
         
     }
+}
+
+#Preview {
+    LocationButton(
+        action: { debugPrint("get location") }
+    )
 }

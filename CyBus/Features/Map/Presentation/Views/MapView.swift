@@ -102,10 +102,10 @@ struct MapView: View {
                     .mapStyle(.light)
                     .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
                     
+                    //MARK: - Map actions
                     VStack {
                         Spacer()
                         HStack(alignment: .center) {
-                            //MARK: - Navigation bar
                             
                             // MARK: Clear route button
                             if busesStore.hasSelection {
@@ -114,19 +114,10 @@ struct MapView: View {
                                 }
                             }
                             
-                            //MARK: Zoom buttons
-                            ZoomButton(
-                                action: {
-                                    cameraStore.send(.decreaseZoom)
-                                },
-                                zoomIn: false
-                            )
-                            ZoomButton(
-                                action: {
-                                    cameraStore.send(.increaseZoom)
-                                },
-                                zoomIn: true
-                            )
+                            //MARK: Zoom button
+                            ZoomControlView(onZoomIn: { cameraStore.send(.increaseZoom) }, onZoomOut: { cameraStore.send(.decreaseZoom) } )
+                            
+                            Spacer()
                             
                             //MARK: Get current location button
                             LocationButton {
@@ -134,7 +125,8 @@ struct MapView: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 50)
+                        .padding(.horizontal, 20)
                     }
                     
                 }

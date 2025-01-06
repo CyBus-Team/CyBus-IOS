@@ -51,6 +51,7 @@
 		94575DA42D28867700CC3C03 /* AddressSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA32D28866E00CC3C03 /* AddressSearchResultView.swift */; };
 		94575DA62D2AAF3300CC3C03 /* FavouritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA52D2AAF2E00CC3C03 /* FavouritesButton.swift */; };
 		94575DA82D2AB47A00CC3C03 /* AddressSearchResultFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */; };
+		94575DAA2D2C484A00CC3C03 /* ZoomControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA92D2C484500CC3C03 /* ZoomControlButton.swift */; };
 		945843A92CD18862006D9893 /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843A82CD1885F006D9893 /* MapFeature.swift */; };
 		945843AB2CD1923E006D9893 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843AA2CD19236006D9893 /* HomeView.swift */; };
 		945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
@@ -106,7 +107,6 @@
 		94D794B02CC2CDD30097A2F0 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7949C2CC2CDD30097A2F0 /* ColorPalette.swift */; };
 		94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D794912CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift */; };
 		94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220892C5E701F00D776B9 /* ClearRouteButton.swift */; };
-		94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */; };
 		94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F2208F2C5E85A600D776B9 /* trips_generator.rb */; };
 		94F220922C5E85B200D776B9 /* generate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 94F220912C5E85B200D776B9 /* generate.sh */; };
 		94F220942C5E85C700D776B9 /* trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F220932C5E85C700D776B9 /* trips.json */; };
@@ -179,6 +179,7 @@
 		94575DA32D28866E00CC3C03 /* AddressSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResultView.swift; sourceTree = "<group>"; };
 		94575DA52D2AAF2E00CC3C03 /* FavouritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesButton.swift; sourceTree = "<group>"; };
 		94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResultFeature.swift; sourceTree = "<group>"; };
+		94575DA92D2C484500CC3C03 /* ZoomControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControlButton.swift; sourceTree = "<group>"; };
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		947633D42C6E0747000F20C7 /* StopDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDTO.swift; sourceTree = "<group>"; };
@@ -236,7 +237,6 @@
 		94D794A12CC2CDD30097A2F0 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		94D794A22CC2CDD30097A2F0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		94F220892C5E701F00D776B9 /* ClearRouteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearRouteButton.swift; sourceTree = "<group>"; };
-		94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomButton.swift; sourceTree = "<group>"; };
 		94F2208F2C5E85A600D776B9 /* trips_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = trips_generator.rb; sourceTree = "<group>"; };
 		94F220912C5E85B200D776B9 /* generate.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate.sh; sourceTree = "<group>"; };
 		94F220932C5E85C700D776B9 /* trips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trips.json; sourceTree = "<group>"; };
@@ -783,8 +783,8 @@
 				94D794A12CC2CDD30097A2F0 /* PrimaryButton.swift */,
 				94D794A22CC2CDD30097A2F0 /* SecondaryButton.swift */,
 				94F220892C5E701F00D776B9 /* ClearRouteButton.swift */,
-				94F2208D2C5E7E5000D776B9 /* ZoomButton.swift */,
 				AC1D3F9F2D26B1D70005D3EE /* LocationButton.swift */,
+				94575DA92D2C484500CC3C03 /* ZoomControlButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1045,18 +1045,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94CC17482C4ECF7C00AC358D /* BusGroup.swift in Sources */,
 				94575DA82D2AB47A00CC3C03 /* AddressSearchResultFeature.swift in Sources */,
 				94AF0DAF2C77B0AB002FE41B /* BusesRepository.swift in Sources */,
 				94D7948B2CC029BA0097A2F0 /* OnboardingFeatures.swift in Sources */,
 				94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */,
 				94AF0DC42C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift in Sources */,
 				948CBE612CF23066006C8B1C /* BusesFeature.swift in Sources */,
-				94F2208E2C5E7E5000D776B9 /* ZoomButton.swift in Sources */,
 				AC894B972CE4CB90001A660C /* MarkerIcon.swift in Sources */,
 				94AF24DA2CBC572A0092EE9B /* OnboardingView.swift in Sources */,
 				94575D9E2D28760800CC3C03 /* DetailedSuggestionDTO.swift in Sources */,
 				9435C90C2CF78ED40041A986 /* BusGroupEntity.swift in Sources */,
+				94575DAA2D2C484A00CC3C03 /* ZoomControlButton.swift in Sources */,
 				94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */,
 				94575DA42D28867700CC3C03 /* AddressSearchResultView.swift in Sources */,
 				9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */,
