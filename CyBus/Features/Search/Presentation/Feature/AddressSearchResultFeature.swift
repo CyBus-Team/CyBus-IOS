@@ -31,6 +31,9 @@ struct AddressSearchResultFeature {
         case onClose
     }
     
+    @Dependency(\.addressPathUseCases) var useCases
+    @Dependency(\.locationUseCases) var locationUseCases
+    
     var body: some ReducerOf<Self> {
         BindingReducer()
         Reduce { state, action in
@@ -42,7 +45,13 @@ struct AddressSearchResultFeature {
                 
             case .onGetDirections:
                 state.isDirectionsLoading = true
-                return .none
+                let to = state.detailedSuggestion!.location
+                debugPrint("to \(to)")
+                return .run { @MainActor send in
+                    let from = try await locationUseCases.getCurrentLocation()
+                    debugPrint("from \(from)")
+                    try await useCases.findPath(from: from!, to: to)
+                }
                 
             case .onGetDirectionsResponse:
                 state.isDirectionsLoading = false
