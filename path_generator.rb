@@ -103,7 +103,7 @@ def generate_stops(stops_file, stop_times_file, output_file)
 
   uniq_stops_ids.each_with_index do |stop_id, index|
     if index % 1000 == 0
-      puts "Processing stop #{index + 1} of #{uniq_stops_ids.size}: stop_id=#{stop_id}"
+      puts "Processing stop #{index + 1} of #{uniq_stops_ids.size}"
     end
 
     found_stop = stops_data.find { |stop| stop['stop_id'] == stop_id }
