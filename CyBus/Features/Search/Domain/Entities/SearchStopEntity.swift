@@ -7,8 +7,10 @@
 
 import CoreLocation
 
+typealias SearchStopEntityID = String
+
 struct SearchStopEntity {
-    let id: String
+    let id: SearchStopEntityID
     let tripIds: [String]
     let location: CLLocationCoordinate2D
     

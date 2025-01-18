@@ -8,6 +8,7 @@
 import CoreLocation
 
 enum SearchTripUseCasesError: Error {
+    case noRouteFound
     case noStartStopFound
     case noEndStopFound
 }

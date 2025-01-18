@@ -9,7 +9,7 @@ import CoreLocation
 
 struct SearchTripEntity {
     let id: String
-    let stopsIds: [String]
+    let stopsIds: [SearchStopEntityID]
     let shapes: [TripShapeEntity]
     
     static func from(dto: SearchTripDTO) -> SearchTripEntity {

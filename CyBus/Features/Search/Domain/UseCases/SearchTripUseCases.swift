@@ -43,15 +43,21 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             debugPrint("Start stop: \(startStop.id), End stop: \(endStop.id)")
             
             // Perform a breadth-first search (BFS) to find the route
-            let res = bfs(from: startStop, to: endStop, trips: tripsEntities)
-
-//            if let route = findRoute(from: from, to: to) {
-//                print("Route found: \(route.map { $0.id })")
-//            } else {
-//                print("No route found.")
-//            }
+            let stops = breadthFirstSearch(from: startStop, to: endStop, trips: tripsEntities, stops: stopsEntities)
+            
+            guard let tripStops = stops else {
+                debugPrint("No route found")
+                throw SearchTripUseCasesError.noRouteFound
+            }
+            
+            var result: [TripNodeEntity] = []
+            for stop in tripStops {
+                result.append(TripNodeEntity(type: .busStop, location: stop.location))
+            }
+            return result
         } catch {
-            print(error)
+            debugPrint(error)
+            throw SearchTripUseCasesError.noRouteFound
         }
         
     }
@@ -60,7 +66,12 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
         stops.min(by: { $0.location.distance(to: location) < $1.location.distance(to: location) })
     }
     
-    func bfs(from start: SearchStopEntity, to destination: SearchStopEntity, trips: [SearchTripEntity]) -> [SearchStopEntity]? {
+    func breadthFirstSearch(
+        from start: SearchStopEntity,
+        to destination: SearchStopEntity,
+        trips: [SearchTripEntity],
+        stops: [SearchStopEntity]
+    ) -> [SearchStopEntity]? {
         var queue: [[SearchStopEntity]] = [[start]]
         var visited: Set<String> = [start.id]
         
@@ -78,7 +89,8 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             for route in trips where route.stopsIds.contains(where: { $0 == currentStop.id }) {
                 for stop in route.stopsIds where !visited.contains(stop) {
                     visited.insert(stop)
-                    queue.append(path + [stop])
+                    let detailedStop = stops.first(where: { $0.id == stop })
+                    queue.append(path + [detailedStop!])
                 }
             }
         }
