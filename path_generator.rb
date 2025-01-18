@@ -2,24 +2,22 @@ require 'json'
 require 'rgeo'
 require 'rgeo/shapefile'
 
-# Define a structure to store route stop data
-class RouteStopEntity
-  attr_accessor :id, :latitude, :longitude, :trip_ids
+# Define a structure to store stop data
+class StopEntity
+  attr_accessor :id, :longitude, :latitude, :trip_ids
 
-  def initialize(id, latitude, longitude, trip_ids)
+  def initialize(id, longitude, latitude , trip_ids)
     @id = id
-    @latitude = latitude
     @longitude = longitude
+    @latitude = latitude
     @trip_ids = trip_ids
   end
 
   def to_hash
     {
       id: @id,
-      location: {
-        latitude: @latitude,
-        longitude: @longitude
-      },
+      longitude: @longitude,
+      latitude: @latitude,
       trip_ids: @trip_ids
     }
   end
@@ -27,10 +25,8 @@ class RouteStopEntity
   def inspect
     {
       id: @id,
-      location: {
-        latitude: @latitude,
-        longitude: @longitude
-      }.to_s,
+      longitude: @longitude,
+      latitude: @latitude,
       trip_ids: @trip_ids
     }.to_s
   end
@@ -38,99 +34,164 @@ end
 
 # Define a structure to store trip data
 class TripEntity
-  attr_accessor :id, :stops
+  attr_accessor :id, :stops, :shapes
 
-  def initialize(id, stops)
+  def initialize(id, stops, shapes)
     @id = id
     @stops = stops
+    @shapes = shapes
   end
 
   def to_hash
     {
       id: @id,
-      stops: @stops.map(&:to_hash)
+      stops: @stops,
+      shapes: @shapes.map(&:to_hash)
     }
   end
 
   def inspect
     {
       id: @id,
-      stops: @stops.map(&:inspect)
+      stops: @stops.map(&:inspect),
+      shapes: @stops.map(&:inspect)
     }.to_s
   end
 end
 
-# Generate routes and stops based on provided data
-def generate_routes_and_stops(trips_file, routes_file, stops_file, stop_times_file, output_file)
-  puts "Loading data..."
-  trips_data = JSON.parse(File.read(trips_file))
-  routes_data = JSON.parse(File.read(routes_file))
+# Define a structure to store shape data
+class ShapeEntity
+  attr_accessor :id, :longitude, :latitude, :sequence
+
+  def initialize(id, longitude, latitude, sequence)
+    @id = id
+    @longitude = longitude
+    @latitude = latitude
+    @sequence = sequence
+  end
+
+  def to_hash
+    {
+      id: @id,
+      longitude: @longitude,
+      latitude: @latitude,
+      sequence: @sequence
+    }
+  end
+
+  def inspect
+    {
+      id: @id,
+      longitude: @longitude,
+      latitude: @latitude,
+      sequence: @sequence
+    }.to_s
+  end
+end
+
+def generate_stops(stops_file, stop_times_file, output_file)
+  puts("Generate stops...")
+
   stops_data = JSON.parse(File.read(stops_file))
   stop_times_data = JSON.parse(File.read(stop_times_file))
-  puts "Data loaded successfully."
 
+  # @type [Array<StopEntity>]
   all_stops = []
 
-  # Get unique trip IDs
-  unique_trips = stop_times_data.map { |stop_time| stop_time['trip_id'] }.compact.uniq
-  puts "Found #{unique_trips.size} unique trips."
+  # @type [Array<String>]
+  uniq_stops_ids = stop_times_data.map { |stop_time| stop_time['stop_id'] }.uniq
 
-  unique_trips.each_with_index do |trip_id, trip_index|
-    puts "Processing trip #{trip_index + 1} of #{unique_trips.size} (ID: #{trip_id})..."
-
-    stop_ids = stop_times_data
-                 .select { |stop_time| stop_time['trip_id'] == trip_id }
-                 .map { |stop_time| stop_time['stop_id'] }
-
-    stops = stops_data
-              .select { |stop| stop_ids.include?(stop['stop_id']) }
-              .compact
-              .uniq
-              .map do |stop|
-      trip = trips_data.find { |trip| trip['trip_id'] == trip_id }
-      RouteStopEntity.new(
-        stop['stop_id'],
-        stop['stop_lat'].to_f,
-        stop['stop_lon'].to_f,
-        routes_data
-          .select { |route| route['line_id'] == trip['route_id'] }
-          .map { |route| route['line_id'] }
-      )
+  uniq_stops_ids.each_with_index do |stop_id, index|
+    if index % 1000 == 0
+      puts "Processing stop #{index + 1} of #{uniq_stops_ids.size}: stop_id=#{stop_id}"
     end
 
-    puts "  Found #{stops.size} stops for trip #{trip_id}."
+    found_stop = stops_data.find { |stop| stop['stop_id'] == stop_id }
+    found_stop_id = found_stop['stop_id']
+    found_stop_times = stop_times_data.select { |stop_time| stop_time["stop_id"] == found_stop_id }
+    found_trip_ids = found_stop_times.map { |stop_time| stop_time['trip_id'] }.uniq
 
-    all_stops.concat(stops)
+    converted = StopEntity.new(
+      found_stop_id,
+      found_stop['stop_lon'].to_f,
+      found_stop['stop_lat'].to_f,
+      found_trip_ids
+    )
+
+    all_stops.append(converted)
   end
 
-  puts "Total stops processed: #{all_stops.size}"
-
-  all_trips = trips_data.map { |trip| trip['route_id'] }.uniq.map.with_index do |route_id, index|
-    puts "Processing route #{index + 1} of #{trips_data.size} (Route ID: #{route_id})..."
-    line_id = routes_data.find { |route| route['line_id'] == route_id }&.fetch('line_id', nil)
-    stops_for_route = all_stops.select { |stop| stop.trip_ids.include?(line_id) }
-    puts "  Found #{stops_for_route.size} stops for route #{route_id}."
-    TripEntity.new(line_id, stops_for_route)
-  end
-
-  puts "Total routes processed: #{all_trips.size}"
-
-  all_data = all_trips.map(&:to_hash).to_json
-  puts "All data size: #{all_data.size}"
+  all_data = all_stops.map(&:to_hash).to_json
 
   File.open(output_file, 'w') do |file|
     puts "Writing data to #{output_file}..."
-    file.write(all_trips.map(&:to_hash).to_json)
+    file.write(all_data)
   end
 
-  puts "Data successfully written to #{output_file}."
+  puts "Stops data successfully written to #{output_file}."
+
+end
+
+def generate_trips(trip_stops_file, trips_file, routes_file, shapes_file, output_file)
+  puts("Generate trips...")
+
+  trip_stops_data = JSON.parse(File.read(trip_stops_file))
+  trips_data = JSON.parse(File.read(trips_file))
+  shapes_data = JSON.parse(File.read(shapes_file))
+
+  # @type [Array<TripEntity>]
+  all_trips = []
+
+  # @type [Array<String>]
+  uniq_trip_ids = trips_data.map { |trip| trip['trip_id'] }.uniq
+
+  uniq_trip_ids.each_with_index do |trip_id, index|
+    if index % 1000 == 0
+      puts "Processing trip_id #{index + 1} of #{uniq_trip_ids.size}"
+    end
+
+    found_stops = trip_stops_data.select { |stop| stop["trip_ids"].include?(trip_id) }.map { |stop| stop["id"] }
+
+    trip = trips_data[index]
+    route_id = trip["route_id"]
+    found_shapes = shapes_data.select { |shape| shape["shape_id"] == route_id }
+    # @type [Array<ShapeEntity>]
+    converted_shapes = found_shapes.map { |shape| ShapeEntity.new(
+                         shape["shape_id"],
+                         shape["shape_pt_lot"],
+                         shape["shape_pt_lat"],
+                         shape["shape_pt_sequence"].to_i
+                       )}
+
+    converted = TripEntity.new(
+      trip_id,
+      found_stops,
+      converted_shapes,
+    )
+
+    all_trips.append(converted)
+  end
+
+  all_data = all_trips.map(&:to_hash).to_json
+
+  File.open(output_file, 'w') do |file|
+    puts "Writing data to #{output_file}..."
+    file.write(all_data)
+  end
+
+  puts "Trips data successfully written to #{output_file}."
 end
 
 # Example usage
-generate_routes_and_stops(
-  'CyBus/trips.json',
-  'CyBus/routes.json',
+generate_stops(
   'CyBus/stops.json',
   'CyBus/stop_times.json',
-  'CyBus/paths.json'
+  'CyBus/trip_stops.json'
+)
+generate_trips(
+  'CyBus/trip_stops.json',
+  'CyBus/trips.json',
+  'CyBus/routes.json',
+  'CyBus/shapes.json',
+  'CyBus/all_trips.json'
 )
