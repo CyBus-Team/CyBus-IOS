@@ -22,17 +22,20 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
     func findTrip(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [TripNodeEntity] {
         do {
             
-            let trips = try await repository.getTrips()
-            let stops = try await repository.getStops()
+            let tripsDTO = try await repository.getTrips()
+            let stopsDTO = try await repository.getStops()
+            
+            let tripsEntities = tripsDTO.map { SearchTripEntity.from(dto: $0) }
+            let stopsEntities = stopsDTO.map { SearchStopEntity.from(dto: $0) }
             
             debugPrint("Finding route from \(from) to \(to)")
             
             // Find the closest stops to the start and destination
-            guard let startStop = findClosestStop(to: from) else {
+            guard let startStop = findClosestStop(to: from, stops: stopsEntities) else {
                 debugPrint("No start stop found near \(from)")
                 throw SearchTripUseCasesError.noStartStopFound
             }
-            guard let endStop = findClosestStop(to: to) else {
+            guard let endStop = findClosestStop(to: to, stops: stopsEntities) else {
                 debugPrint("No destination stop found near \(to)")
                 throw SearchTripUseCasesError.noEndStopFound
             }
@@ -40,7 +43,7 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             debugPrint("Start stop: \(startStop.id), End stop: \(endStop.id)")
             
             // Perform a breadth-first search (BFS) to find the route
-            let res = bfs(from: startStop, to: endStop)
+            let res = bfs(from: startStop, to: endStop, trips: tripsEntities)
 
 //            if let route = findRoute(from: from, to: to) {
 //                print("Route found: \(route.map { $0.id })")
@@ -53,12 +56,12 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
         
     }
     
-    func findClosestStop(to location: CLLocationCoordinate2D) -> SearchStopDTO? {
+    func findClosestStop(to location: CLLocationCoordinate2D, stops: [SearchStopEntity]) -> SearchStopEntity? {
         stops.min(by: { $0.location.distance(to: location) < $1.location.distance(to: location) })
     }
     
-    func bfs(from start: SearchStopDTO, to destination: SearchStopDTO) -> [SearchStopDTO]? {
-        var queue: [[RouteStopEntity]] = [[start]]
+    func bfs(from start: SearchStopEntity, to destination: SearchStopEntity, trips: [SearchTripEntity]) -> [SearchStopEntity]? {
+        var queue: [[SearchStopEntity]] = [[start]]
         var visited: Set<String> = [start.id]
         
         while !queue.isEmpty {
@@ -72,9 +75,9 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             }
             
             // Explore connected stops via routes
-            for route in routes where route.stops.contains(where: { $0.id == currentStop.id }) {
-                for stop in route.stops where !visited.contains(stop.id) {
-                    visited.insert(stop.id)
+            for route in trips where route.stopsIds.contains(where: { $0 == currentStop.id }) {
+                for stop in route.stopsIds where !visited.contains(stop) {
+                    visited.insert(stop)
                     queue.append(path + [stop])
                 }
             }

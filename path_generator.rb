@@ -158,8 +158,8 @@ def generate_trips(trip_stops_file, trips_file, shapes_file, output_file)
     # @type [Array<ShapeEntity>]
     converted_shapes = found_shapes.map { |shape| ShapeEntity.new(
                          shape["shape_id"],
-                         shape["shape_pt_lot"],
-                         shape["shape_pt_lat"],
+                         shape["shape_pt_lon"].to_f,
+                         shape["shape_pt_lat"].to_f,
                          shape["shape_pt_sequence"].to_i
                        )}
 

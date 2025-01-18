@@ -14,6 +14,8 @@
 		9406EB522D3C2B4C00C17ABF /* all_trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 9406EB512D3C2B4C00C17ABF /* all_trips.json */; };
 		9406EB542D3C363D00C17ABF /* SerachStopDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406EB532D3C363800C17ABF /* SerachStopDTO.swift */; };
 		9406EB562D3C418800C17ABF /* SearchTripUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */; };
+		9406EB582D3C44C700C17ABF /* SearchStopEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406EB572D3C44BD00C17ABF /* SearchStopEntity.swift */; };
+		9406EB5A2D3C44CE00C17ABF /* SearchTripEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406EB592D3C44CA00C17ABF /* SearchTripEntity.swift */; };
 		941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941F3A4D2D08B5F1006F1C10 /* UIImage.swift */; };
 		9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
 		9420D1C22CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
@@ -162,6 +164,8 @@
 		9406EB512D3C2B4C00C17ABF /* all_trips.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = all_trips.json; sourceTree = "<group>"; };
 		9406EB532D3C363800C17ABF /* SerachStopDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachStopDTO.swift; sourceTree = "<group>"; };
 		9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripUseCasesProtocol.swift; sourceTree = "<group>"; };
+		9406EB572D3C44BD00C17ABF /* SearchStopEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStopEntity.swift; sourceTree = "<group>"; };
+		9406EB592D3C44CA00C17ABF /* SearchTripEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripEntity.swift; sourceTree = "<group>"; };
 		941F3A4D2D08B5F1006F1C10 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeFeature.swift; sourceTree = "<group>"; };
 		9420D1C32CD017AA00150F5B /* OnboardingSigninFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSigninFeature.swift; sourceTree = "<group>"; };
@@ -397,8 +401,8 @@
 		94575D842D23348800CC3C03 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				9406EB532D3C363800C17ABF /* SerachStopDTO.swift */,
 				9403C9232D3C0CDC000EDB25 /* SearchTripDTO.swift */,
+				9406EB532D3C363800C17ABF /* SerachStopDTO.swift */,
 				94575D9D2D28760800CC3C03 /* DetailedSuggestionDTO.swift */,
 				94575D892D23358500CC3C03 /* SuggestionDTO.swift */,
 			);
@@ -419,6 +423,8 @@
 		94575D862D2334A200CC3C03 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9406EB592D3C44CA00C17ABF /* SearchTripEntity.swift */,
+				9406EB572D3C44BD00C17ABF /* SearchStopEntity.swift */,
 				94575DB32D319A0700CC3C03 /* TripNodeEntity.swift */,
 				94575D8C2D2336D000CC3C03 /* SuggestionsEntity.swift */,
 				94575D9F2D2877C500CC3C03 /* DetailedSuggestionEntity.swift */,
@@ -1153,6 +1159,7 @@
 				94575DA02D2877C500CC3C03 /* DetailedSuggestionEntity.swift in Sources */,
 				94D794AA2CC2CDD30097A2F0 /* ThemeModeUseCases.swift in Sources */,
 				94D794AB2CC2CDD30097A2F0 /* LocationUseCases.swift in Sources */,
+				9406EB5A2D3C44CE00C17ABF /* SearchTripEntity.swift in Sources */,
 				944494762CCD7D3E00A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */,
 				94D794AD2CC2CDD30097A2F0 /* LocalThemeModeRepository.swift in Sources */,
 				94D794AE2CC2CDD30097A2F0 /* SecondaryButton.swift in Sources */,
@@ -1162,6 +1169,7 @@
 				9406EB542D3C363D00C17ABF /* SerachStopDTO.swift in Sources */,
 				94D794B02CC2CDD30097A2F0 /* ColorPalette.swift in Sources */,
 				94575D7F2D23345400CC3C03 /* AddressSearchUseCasesProtocol.swift in Sources */,
+				9406EB582D3C44C700C17ABF /* SearchStopEntity.swift in Sources */,
 				94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* BusEntity.swift in Sources */,
 				94AF0DAA2C77A6A8002FE41B /* RoutesRepository.swift in Sources */,
