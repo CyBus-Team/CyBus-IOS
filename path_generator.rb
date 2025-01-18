@@ -183,11 +183,11 @@ def generate_trips(trip_stops_file, trips_file, shapes_file, output_file)
 end
 
 # Example usage
-# generate_stops(
-#   'CyBus/stops.json',
-#   'CyBus/stop_times.json',
-#   'CyBus/trip_stops.json'
-# )
+generate_stops(
+  'CyBus/stops.json',
+  'CyBus/stop_times.json',
+  'CyBus/trip_stops.json'
+)
 generate_trips(
   'CyBus/trip_stops.json',
   'CyBus/trips.json',
