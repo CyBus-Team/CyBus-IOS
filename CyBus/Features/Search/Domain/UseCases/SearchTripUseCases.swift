@@ -14,12 +14,25 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
     private let routesUseCases: RoutesUseCasesProtocol
     private let repository: SearchTripRepositoryProtocol
     
-    init(routesUseCases: RoutesUseCasesProtocol = RoutesUseCases(), repository: SearchTripRepositoryProtocol = SearchTripRepositoryLocal()) {
+    init(
+        routesUseCases: RoutesUseCasesProtocol = RoutesUseCases(),
+        repository: SearchTripRepositoryProtocol = SearchTripRepositoryLocal()
+    ) {
         self.routesUseCases = routesUseCases
         self.repository = repository
     }
     
-    func findTrip(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [TripNodeEntity] {
+    func getNodes(from stops: [SearchStopEntity]) async throws -> [TripNodeEntity] {
+        var result: [TripNodeEntity] = []
+        
+        for stop in stops {
+            result.append(TripNodeEntity(type: .busStop, location: stop.location))
+        }
+        
+        return result
+    }
+    
+    func getStops(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [SearchStopEntity] {
         do {
             
             let tripsDTO = try await repository.getTrips()
@@ -43,18 +56,17 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             debugPrint("Start stop: \(startStop.id), End stop: \(endStop.id)")
             
             // Perform a breadth-first search (BFS) to find the route
-            let stops = breadthFirstSearch(from: startStop, to: endStop, trips: tripsEntities, stops: stopsEntities)
+            let stopIds = breadthFirstSearch(from: startStop, to: endStop, trips: tripsEntities)
             
-            guard let tripStops = stops else {
+            guard let stopIds else {
                 debugPrint("No route found")
                 throw SearchTripUseCasesError.noRouteFound
             }
             
-            var result: [TripNodeEntity] = []
-            for stop in tripStops {
-                result.append(TripNodeEntity(type: .busStop, location: stop.location))
+            return stopIds.compactMap { stopId in
+                stopsEntities.first { $0.id == stopId }
             }
-            return result
+            
         } catch {
             debugPrint(error)
             throw SearchTripUseCasesError.noRouteFound
@@ -69,10 +81,9 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
     func breadthFirstSearch(
         from start: SearchStopEntity,
         to destination: SearchStopEntity,
-        trips: [SearchTripEntity],
-        stops: [SearchStopEntity]
-    ) -> [SearchStopEntity]? {
-        var queue: [[SearchStopEntity]] = [[start]]
+        trips: [SearchTripEntity]
+    ) -> [SearchStopEntityID]? {
+        var queue: [[SearchStopEntityID]] = [[start.id]]
         var visited: Set<String> = [start.id]
         
         while !queue.isEmpty {
@@ -80,17 +91,16 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             guard let currentStop = path.last else { continue }
             
             // Check if we reached the destination
-            if currentStop.id == destination.id {
-                debugPrint("Found path: \(path.map { $0.id })")
+            if currentStop == destination.id {
+                debugPrint("Found path: \(path.map { $0 })")
                 return path
             }
             
             // Explore connected stops via routes
-            for route in trips where route.stopsIds.contains(where: { $0 == currentStop.id }) {
+            for route in trips where route.stopsIds.contains(where: { $0 == currentStop }) {
                 for stop in route.stopsIds where !visited.contains(stop) {
                     visited.insert(stop)
-                    let detailedStop = stops.first(where: { $0.id == stop })
-                    queue.append(path + [detailedStop!])
+                    queue.append(path + [stop])
                 }
             }
         }

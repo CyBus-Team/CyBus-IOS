@@ -49,8 +49,10 @@ struct AddressSearchResultFeature {
                 debugPrint("to \(to)")
                 return .run { @MainActor send in
                     let from = try await locationUseCases.getCurrentLocation()
-                    debugPrint("from \(from)")
-                    try await useCases.findPath(from: from!, to: to)
+                    debugPrint("from \(from!)")
+                    let stops = try await useCases.getStops(from: from!, to: to)
+                    let nodes = try await useCases.getNodes(from: stops)
+                    debugPrint("nodes: \(nodes)")
                 }
                 
             case .onGetDirectionsResponse:

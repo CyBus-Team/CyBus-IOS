@@ -14,5 +14,6 @@ enum SearchTripUseCasesError: Error {
 }
 
 protocol SearchTripUseCasesProtocol {
-    func findTrip(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [TripNodeEntity]
+    func getStops(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [SearchStopEntity]
+    func getNodes(from stops: [SearchStopEntity]) async throws -> [TripNodeEntity]
 }
