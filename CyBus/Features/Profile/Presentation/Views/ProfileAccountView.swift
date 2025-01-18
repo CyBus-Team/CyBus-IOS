@@ -12,8 +12,8 @@ struct ProfileAccountView: View {
     @Environment(\.theme) var theme
     //    let store: StoreOf<>
     
-    
-    let loginned = false
+    let loginned = true
+
     let imageAvatar: String = "profile_cybus"
     
     // TOOO: image from Fairbase if exist
