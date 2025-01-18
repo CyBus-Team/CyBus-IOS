@@ -132,7 +132,7 @@ def generate_stops(stops_file, stop_times_file, output_file)
 
 end
 
-def generate_trips(trip_stops_file, trips_file, routes_file, shapes_file, output_file)
+def generate_trips(trip_stops_file, trips_file, shapes_file, output_file)
   puts("Generate trips...")
 
   trip_stops_data = JSON.parse(File.read(trip_stops_file))
@@ -183,15 +183,14 @@ def generate_trips(trip_stops_file, trips_file, routes_file, shapes_file, output
 end
 
 # Example usage
-generate_stops(
-  'CyBus/stops.json',
-  'CyBus/stop_times.json',
-  'CyBus/trip_stops.json'
-)
+# generate_stops(
+#   'CyBus/stops.json',
+#   'CyBus/stop_times.json',
+#   'CyBus/trip_stops.json'
+# )
 generate_trips(
   'CyBus/trip_stops.json',
   'CyBus/trips.json',
-  'CyBus/routes.json',
   'CyBus/shapes.json',
   'CyBus/all_trips.json'
 )
