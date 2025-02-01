@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -279,6 +279,10 @@
 		AC1D3FA52D270DF70005D3EE /* StopCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCircle.swift; sourceTree = "<group>"; };
 		AC894B962CE4CB90001A660C /* BusMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		ACB69EF82D3C14AA0037132F /* Profile */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Profile; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		94ABDF7A2C29ABBD00970F8C /* Frameworks */ = {
@@ -600,6 +604,7 @@
 		94AF0D932C7793EF002FE41B /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				ACB69EF82D3C14AA0037132F /* Profile */,
 				94F3B88A2CC3017100E38BE2 /* Root */,
 				94AF24B12CBC13320092EE9B /* Onboarding */,
 				945843A12CD17F0A006D9893 /* Home */,
@@ -940,6 +945,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				ACB69EF82D3C14AA0037132F /* Profile */,
 			);
 			name = CyBus;
 			packageProductDependencies = (
