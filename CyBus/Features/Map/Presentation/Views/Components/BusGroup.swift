@@ -7,11 +7,12 @@
 import SwiftUI
 
 struct BusGroup: View {
+    @Environment(\.theme) var theme
+    
+    let action: () -> Void
     let activeBus: BusEntity?
     let buses: [BusEntity]
     let scale: Double
-    
-    @Environment(\.theme) var theme
     
     var body: some View {
         VStack {
@@ -28,7 +29,7 @@ struct BusGroup: View {
             }
             
             ZStack {
-                MarkerIcon()
+                BusMarker()
                     .frame(width: 36, height: 50)
                 Image(systemName: "bus.fill")
                     .frame(width: 20, height: 20)
@@ -40,6 +41,10 @@ struct BusGroup: View {
         .foregroundStyle(theme.colors.primary)
         .opacity(activeBus == nil ? 1 : buses.contains(activeBus!) ? 1 : 0.5)
         .scaleEffect(scale)
+        
+        .onTapGesture {
+           action()
+        }
     }
     
 }

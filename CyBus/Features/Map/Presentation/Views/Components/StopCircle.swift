@@ -18,3 +18,7 @@ struct StopCircle : View {
         .shadow(radius: 3, x: 1, y: 1)
     }
 }
+
+#Preview {
+    StopCircle(color: .blue)
+}

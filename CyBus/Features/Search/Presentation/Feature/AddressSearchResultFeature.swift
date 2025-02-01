@@ -13,16 +13,27 @@ struct AddressSearchResultFeature {
     
     @ObservableState
     struct State : Equatable {
+        var nodes: [TripNodeEntity] = []
         var isLoading: Bool = true
-        var detailedSuggestion: DetailedSuggestionEntity?
+        var isNodesLoading: Bool = false
+        var hasSuggestion: Bool = false
+        var detailedSuggestion: DetailedSuggestionEntity? {
+            didSet {
+                hasSuggestion = detailedSuggestion != nil
+            }
+        }
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case setup(DetailedSuggestionEntity?)
         case onGetDirections
+        case onGetDirectionsResponse([TripNodeEntity])
         case onClose
     }
+    
+    @Dependency(\.addressPathUseCases) var useCases
+    @Dependency(\.locationUseCases) var locationUseCases
     
     var body: some ReducerOf<Self> {
         BindingReducer()
@@ -34,6 +45,19 @@ struct AddressSearchResultFeature {
                 return .none
                 
             case .onGetDirections:
+                state.isNodesLoading = true
+                state.nodes = []
+                let to = state.detailedSuggestion!.location
+                return .run { @MainActor send in
+                    let from = try await locationUseCases.getCurrentLocation()
+                    let stops = try await useCases.getStops(from: from!, to: to)
+                    let nodes = try await useCases.getNodes(from: stops)
+                    return send(.onGetDirectionsResponse(nodes))
+                }
+                
+            case let .onGetDirectionsResponse(nodes):
+                state.isNodesLoading = false
+                state.nodes = nodes
                 return .none
                 
             case .binding(_), .onClose:

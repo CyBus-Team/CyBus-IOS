@@ -4,6 +4,11 @@ CyBus/stop_times.json
 CyBus/stops.json
 CyBus/trips.json
 CyBus/shapes.json
+CyBus/trip_stops.json
+CyBus/all_trips.json
+
+# Idea
+.idea/
 
 # Ignoring Config-Secret.xcconfig to avoid exposing sensitive information
 Config-Secret.xcconfig

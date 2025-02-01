@@ -50,20 +50,18 @@ struct MapView: View {
                     Map(viewport: $cameraStore.viewport) {
                         
                         //MARK: User location
-                        Puck2D(bearing: .heading)
+                        Puck2D(bearing: .course)
                             .showsAccuracyRing(true)
                         
                         //MARK: Buses
                         ForEvery(busesStore.groupedBuses) { busGroup in
                             MapViewAnnotation(coordinate: busGroup.position) {
-                                BusGroup(
+                                BusGroup (
+                                    action: { busesStore.send(.select(busGroup)) },
                                     activeBus: busesStore.selectedBusGroupState?.bus,
                                     buses: busGroup.buses,
                                     scale: cameraStore.scale
                                 )
-                                .onTapGesture {
-                                    busesStore.send(.select(busGroup))
-                                }
                             }
                             .variableAnchors([.init(anchor: .bottom)])
                             .allowOverlap(true)
@@ -93,19 +91,40 @@ struct MapView: View {
                             .lineWidth(3)
                         }
                         
-                        if searchStore.searchAddressResult.detailedSuggestion?.location != nil {
-                            MapViewAnnotation(coordinate: searchStore.searchAddressResult.detailedSuggestion!.location) {
-                                Image(systemName: "mappin.circle.fill").resizable().scaledToFit().frame(width: 50, height: 50).foregroundColor(theme.colors.primary)
-                            }.allowOverlap(true)
+                        //MARK: - Destaniation path
+                        let nodes = searchStore.searchAddressResult.nodes
+                        if !nodes.isEmpty {
+                            ForEvery(nodes) { node in
+                                MapViewAnnotation(coordinate: node.location) {
+                                    VStack {
+                                        Text(node.id)
+                                        StopCircle(color: theme.colors.secondary)
+                                    }
+                                }
+                                .allowZElevate(false)
+                                .allowOverlap(true)
+                            }
                         }
+                        
+                        //MARK: - Destination marker
+                        if searchStore.searchAddressResult.hasSuggestion {
+                            MapViewAnnotation(coordinate: searchStore.searchAddressResult.detailedSuggestion!.location) {
+                                DestinationMarker {
+                                    searchStore.send(.onOpenAddressSearchResults)
+                                }
+                            }
+                            .allowZElevate(false)
+                            .allowOverlap(true)
+                        }
+                        
                     }
                     .mapStyle(.light)
                     .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
                     
+                    //MARK: - Map actions
                     VStack {
                         Spacer()
                         HStack(alignment: .center) {
-                            //MARK: - Navigation bar
                             
                             // MARK: Clear route button
                             if busesStore.hasSelection {
@@ -114,19 +133,10 @@ struct MapView: View {
                                 }
                             }
                             
-                            //MARK: Zoom buttons
-                            ZoomButton(
-                                action: {
-                                    cameraStore.send(.decreaseZoom)
-                                },
-                                zoomIn: false
-                            )
-                            ZoomButton(
-                                action: {
-                                    cameraStore.send(.increaseZoom)
-                                },
-                                zoomIn: true
-                            )
+                            //MARK: Zoom button
+                            ZoomControlView(onZoomIn: { cameraStore.send(.increaseZoom) }, onZoomOut: { cameraStore.send(.decreaseZoom) } )
+                            
+                            Spacer()
                             
                             //MARK: Get current location button
                             LocationButton {
@@ -134,7 +144,8 @@ struct MapView: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 50)
+                        .padding(.horizontal, 20)
                     }
                     
                 }
