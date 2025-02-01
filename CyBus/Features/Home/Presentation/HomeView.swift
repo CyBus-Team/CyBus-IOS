@@ -61,7 +61,7 @@ struct HomeView: View {
                 Label("Map", systemImage: "map")
             }
             .tag(1)
-            ProfileAccountView()
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }

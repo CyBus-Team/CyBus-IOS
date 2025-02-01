@@ -8,21 +8,16 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct ProfileAccountView: View {
+struct ProfileView: View {
     @Environment(\.theme) var theme
-    //    let store: StoreOf<>
-    
     let loginned = true
-
     let imageAvatar: String = "profile_cybus"
     
     // TOOO: image from Fairbase if exist
-    
+
     var body: some View {
         
         ZStack {
-            
-            
             VStack {
                 Image(imageAvatar)
                     .resizable()
@@ -32,42 +27,36 @@ struct ProfileAccountView: View {
                     .onTapGesture {
                         // TODO: Edit image avatar
                     }
-                
                 Text("Cybus")
                     .font(theme.typography.title)
                     .foregroundStyle(.black)
-                
                 Text("@cybus")
                     .font(theme.typography.regular)
                     .foregroundStyle(.gray)
-                
-              
-                    if loginned == false {
-                        HStack {
+                if loginned == false {
+                    HStack {
                         SecondaryButton(label: "Sing up") {
                             // TODO: Sing up navigation
                         }
-                        .padding(.all, 15)
-                        
                         PrimaryButton(label: "Sing in") {
                             // TODO: Sing in navigation
                         }
-                        .padding(.all, 15)
-                        }
                     }
-                    else {
-                        
-                        PrimaryButton(label: "Edit profile") {
-                            // TODO: Edit prifile page
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.all, 15)
-                  
+                    .padding(.all, 15)
+                }
+                else {
+                    
+                    PrimaryButton(label: "Edit profile") {
+                        // TODO: Edit prifile page
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.all, 15)
+                    
                 }
                 Divider()
                 NavigationView {
                     VStack(alignment: .leading, spacing: 25) {
-                        MenuItem(icon: "gear", title: "Setting")
+                        MenuItem(icon: "gear", title: "Settings")
                             .onTapGesture {
                                 // TODO: Menu navigation
                             }
@@ -89,13 +78,13 @@ struct ProfileAccountView: View {
                                     // TODO: Menu navigation
                                 }
                         }
-
+                        
                         Spacer()
                     }
                     .padding()
                     
                 }
-
+                
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.horizontal, 5)
@@ -124,7 +113,6 @@ struct MenuItem: View {
     }
 }
 
-
 #Preview {
-    ProfileAccountView();
+    ProfileView();
 }
