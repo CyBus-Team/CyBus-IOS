@@ -13,7 +13,8 @@ enum NodeType {
     case walk
 }
 
-struct TripNodeEntity : Equatable {
+struct TripNodeEntity : Equatable, Identifiable {
+    let id: String
     let type: NodeType
     let location: CLLocationCoordinate2D
 }

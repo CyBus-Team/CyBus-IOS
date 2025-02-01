@@ -25,8 +25,9 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
     func getNodes(from stops: [SearchStopEntity]) async throws -> [TripNodeEntity] {
         var result: [TripNodeEntity] = []
         
-        for stop in stops {
-            result.append(TripNodeEntity(type: .busStop, location: stop.location))
+        for stop in stops.indices {
+//            result.append(TripNodeEntity(id: UUID().uuidString, type: .busStop, location: stop.location))
+            result.append(TripNodeEntity(id: stops[stop].id, type: .busStop, location: stops[stop].location))
         }
         
         return result
@@ -34,12 +35,23 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
     
     func getStops(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [SearchStopEntity] {
         do {
-            
             let tripsDTO = try await repository.getTrips()
+            debugPrint("tripsDTO \(tripsDTO.count)")
             let stopsDTO = try await repository.getStops()
+            debugPrint("stopsDTO \(stopsDTO.count)")
+            let shapes = routesUseCases.shapes
+            debugPrint("shapes \(shapes.count)")
             
-            let tripsEntities = tripsDTO.map { SearchTripEntity.from(dto: $0) }
+            let tripsEntities = tripsDTO
+                .map {
+                    SearchTripEntity.from(
+                        dto: $0,
+                        shapes: shapes.map { TripShapeEntity.from(dto: $0) }
+                    )
+                }
+            debugPrint("tripsEntities \(tripsEntities.count)")
             let stopsEntities = stopsDTO.map { SearchStopEntity.from(dto: $0) }
+            debugPrint("stopsEntities \(stopsEntities.count)")
             
             debugPrint("Finding route from \(from) to \(to)")
             

@@ -39,7 +39,7 @@ struct AddressSearchResultView : View {
                         action: {
                             store.send(.onGetDirections)
                         },
-                        isLoading: store.isDirectionsLoading,
+                        isLoading: store.isNodesLoading,
                         font: theme.typography.regular
                     )
                     // MARK: Favourites
@@ -65,7 +65,7 @@ struct AddressSearchResultView : View {
 #Preview {
     AddressSearchResultView(store: Store(initialState: AddressSearchResultFeature.State(
         isLoading: false,
-        isDirectionsLoading: true,
+        isNodesLoading: true,
         detailedSuggestion: DetailedSuggestionEntity.mock
     )) {
         AddressSearchResultFeature()

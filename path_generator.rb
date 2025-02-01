@@ -46,7 +46,8 @@ class TripEntity
     {
       id: @id,
       stops: @stops,
-      shapes: @shapes.map(&:to_hash)
+      shapes: @shapes
+      # shapes: @shapes.map(&:to_hash)
     }
   end
 
@@ -155,13 +156,15 @@ def generate_trips(trip_stops_file, trips_file, shapes_file, output_file)
     trip = trips_data[index]
     route_id = trip["route_id"]
     found_shapes = shapes_data.select { |shape| shape["shape_id"] == route_id }
+    # @type [Array<Strng>]
+    converted_shapes = found_shapes.map { |shape| shape["shape_id"] }
     # @type [Array<ShapeEntity>]
-    converted_shapes = found_shapes.map { |shape| ShapeEntity.new(
-                         shape["shape_id"],
-                         shape["shape_pt_lon"].to_f,
-                         shape["shape_pt_lat"].to_f,
-                         shape["shape_pt_sequence"].to_i
-                       )}
+    # converted_shapes = found_shapes.map { |shape| ShapeEntity.new(
+    #                      shape["shape_id"],
+    #                      shape["shape_pt_lon"].to_f,
+    #                      shape["shape_pt_lat"].to_f,
+    #                      shape["shape_pt_sequence"].to_i
+    #                    )}
 
     converted = TripEntity.new(
       trip_id,
@@ -183,11 +186,11 @@ def generate_trips(trip_stops_file, trips_file, shapes_file, output_file)
 end
 
 # Example usage
-generate_stops(
-  'CyBus/stops.json',
-  'CyBus/stop_times.json',
-  'CyBus/trip_stops.json'
-)
+# generate_stops(
+#   'CyBus/stops.json',
+#   'CyBus/stop_times.json',
+#   'CyBus/trip_stops.json'
+# )
 generate_trips(
   'CyBus/trip_stops.json',
   'CyBus/trips.json',

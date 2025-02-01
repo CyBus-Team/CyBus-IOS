@@ -5,21 +5,12 @@
 //  Created by Vadim Popov on 18/01/2025.
 //
 
-struct SearchTripDTO: Codable{
+struct SearchTripDTO: Codable {
     let id: String
-    let stopsIds: [String]
-    let shapes: [TripShapeDTO]
+    let stops: [String]
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case stopsIds = "stop_ids"
-        case shapes = "shapes"
+        case stops = "stops"
     }
-}
-
-struct TripShapeDTO: Codable {
-    let id: String
-    let longitude: Double
-    let latitude: Double
-    let sequence: Int
 }

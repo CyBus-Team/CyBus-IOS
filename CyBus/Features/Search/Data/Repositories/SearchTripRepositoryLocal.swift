@@ -12,7 +12,7 @@ class SearchTripRepositoryLocal: SearchTripRepositoryProtocol {
     private let tripsPath: String
     private let stopsPath: String
     
-    init(bundle: Bundle = .main, tripsPath: String = "paths", stopsPath: String = "stops") {
+    init(bundle: Bundle = .main, tripsPath: String = "all_trips", stopsPath: String = "trip_stops") {
         self.bundle = bundle
         self.tripsPath = tripsPath
         self.stopsPath = stopsPath

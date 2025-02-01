@@ -13,8 +13,9 @@ struct AddressSearchResultFeature {
     
     @ObservableState
     struct State : Equatable {
+        var nodes: [TripNodeEntity] = []
         var isLoading: Bool = true
-        var isDirectionsLoading: Bool = false
+        var isNodesLoading: Bool = false
         var hasSuggestion: Bool = false
         var detailedSuggestion: DetailedSuggestionEntity? {
             didSet {
@@ -27,7 +28,7 @@ struct AddressSearchResultFeature {
         case binding(BindingAction<State>)
         case setup(DetailedSuggestionEntity?)
         case onGetDirections
-        case onGetDirectionsResponse
+        case onGetDirectionsResponse([TripNodeEntity])
         case onClose
     }
     
@@ -44,19 +45,19 @@ struct AddressSearchResultFeature {
                 return .none
                 
             case .onGetDirections:
-                state.isDirectionsLoading = true
+                state.isNodesLoading = true
+                state.nodes = []
                 let to = state.detailedSuggestion!.location
-                debugPrint("to \(to)")
                 return .run { @MainActor send in
                     let from = try await locationUseCases.getCurrentLocation()
-                    debugPrint("from \(from!)")
                     let stops = try await useCases.getStops(from: from!, to: to)
                     let nodes = try await useCases.getNodes(from: stops)
-                    debugPrint("nodes: \(nodes)")
+                    return send(.onGetDirectionsResponse(nodes))
                 }
                 
-            case .onGetDirectionsResponse:
-                state.isDirectionsLoading = false
+            case let .onGetDirectionsResponse(nodes):
+                state.isNodesLoading = false
+                state.nodes = nodes
                 return .none
                 
             case .binding(_), .onClose:

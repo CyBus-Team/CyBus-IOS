@@ -91,6 +91,21 @@ struct MapView: View {
                             .lineWidth(3)
                         }
                         
+                        //MARK: - Destaniation path
+                        let nodes = searchStore.searchAddressResult.nodes
+                        if !nodes.isEmpty {
+                            ForEvery(nodes) { node in
+                                MapViewAnnotation(coordinate: node.location) {
+                                    VStack {
+                                        Text(node.id)
+                                        StopCircle(color: theme.colors.secondary)
+                                    }
+                                }
+                                .allowZElevate(false)
+                                .allowOverlap(true)
+                            }
+                        }
+                        
                         //MARK: - Destination marker
                         if searchStore.searchAddressResult.hasSuggestion {
                             MapViewAnnotation(coordinate: searchStore.searchAddressResult.detailedSuggestion!.location) {
@@ -101,6 +116,7 @@ struct MapView: View {
                             .allowZElevate(false)
                             .allowOverlap(true)
                         }
+                        
                     }
                     .mapStyle(.light)
                     .cameraBounds(CameraBoundsOptions(maxZoom: CameraFeature.maxZoom, minZoom: CameraFeature.minZoom))
