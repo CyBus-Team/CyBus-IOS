@@ -61,7 +61,7 @@ struct HomeView: View {
                 Label("Map", systemImage: "map")
             }
             .tag(1)
-            Text("In progress...")
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }
