@@ -142,7 +142,7 @@ struct MapView: View {
                             
                             // MARK: Clear route button
                             if busesStore.hasSelection {
-                                ClearNodesButton {
+                                ClearRouteButton {
                                     busesStore.send(.clearSelection)
                                 }
                                 Spacer()
