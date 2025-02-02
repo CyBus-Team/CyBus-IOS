@@ -35,10 +35,10 @@ struct ProfileView: View {
                     .foregroundStyle(.gray)
                 if loginned == false {
                     HStack {
-                        SecondaryButton(label: "Sing up") {
+                        SecondaryButton(label: String(localized: "Sing up")) {
                             // TODO: Sing up navigation
                         }
-                        PrimaryButton(label: "Sing in") {
+                        PrimaryButton(label: String(localized: "Sing in")) {
                             // TODO: Sing in navigation
                         }
                     }
@@ -46,7 +46,7 @@ struct ProfileView: View {
                 }
                 else {
                     
-                    PrimaryButton(label: "Edit profile") {
+                    PrimaryButton(label: String(localized: "Edit profile")) {
                         // TODO: Edit prifile page
                     }
                     .frame(maxWidth: .infinity)
@@ -56,24 +56,24 @@ struct ProfileView: View {
                 Divider()
                 NavigationView {
                     VStack(alignment: .leading, spacing: 25) {
-                        MenuItem(icon: "gear", title: "Settings")
+                        MenuItem(icon: "gear", title: String(localized: "Settings"))
                             .onTapGesture {
                                 // TODO: Menu navigation
                             }
-                        MenuItem(icon: "person.circle", title: "Support")
+                        MenuItem(icon: "person.circle", title: String(localized: "Support"))
                             .onTapGesture {
                                 // TODO: Menu navigation
                             }
-                        MenuItem(icon: "square.and.arrow.up", title: "Share")
+                        MenuItem(icon: "square.and.arrow.up", title: String(localized: "Share"))
                             .onTapGesture {
                                 // TODO: Menu navigation
                             }
-                        MenuItem(icon: "questionmark.circle", title: "About us")
+                        MenuItem(icon: "questionmark.circle", title: String(localized:"About us"))
                             .onTapGesture {
                                 // TODO: Menu navigation
                             }
                         if loginned == true {
-                            MenuItem(icon: "arrowshape.turn.up.left", title: "Log Out")
+                            MenuItem(icon: "arrowshape.turn.up.left", title: String(localized:"Log Out"))
                                 .onTapGesture {
                                     // TODO: Menu navigation
                                 }

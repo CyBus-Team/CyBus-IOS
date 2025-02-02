@@ -43,11 +43,12 @@ struct OnboardingGeolocationView: View {
                 Spacer()
                 
                 HStack {
-                    PrimaryButton(label: "Allow") {
+                    PrimaryButton(label: String(localized: "Allow")) {
                         store.send(.locationTapped)
+                        
                     }
                     Spacer()
-                    SecondaryButton(label: "Not now") {
+                    SecondaryButton(label: String(localized: "Not now")) {
                         store.send(.notNowTapped)
                     }
                 }

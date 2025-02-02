@@ -10,6 +10,8 @@ import ComposableArchitecture
 
 struct OnboardingWelcomeView: View {
     @Environment(\.theme) var theme
+    @State private var width = UIScreen.main.bounds.size.width / 1.3
+    @State private var height = UIScreen.main.bounds.size.height / 1.5
     let store: StoreOf<OnboardingWelcomeFeature>
     
     var body: some View {
@@ -23,32 +25,32 @@ struct OnboardingWelcomeView: View {
                 .ignoresSafeArea()
   
             VStack {
-                Text("Welcome to \nCyprusGo!")
+                Text("Welcome to CyprusGo!")
                     .font(theme.typography.largeTitle)
                     .fontWeight(.bold)
-                    .aspectRatio(contentMode: .fill)
                     .padding(.bottom, 20)
+                    .lineLimit(nil)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("Track buses in real time, plan \nroutes and add your favorite \nstops to your favorites.")
+                Text("Track buses in real time, plan routes and add your favorite stops to your favorites.")
                     .padding(.bottom, 25)
                     .font(theme.typography.title)
                     .fontWeight(.medium)
                     .foregroundStyle(theme.colors.primary)
-                    .aspectRatio(contentMode: .fill)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .lineLimit(nil)
+                  .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Image("onboard_welcome")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Spacer()
-                PrimaryButton(label: "Get Start") {
+                PrimaryButton(label: String(localized: "Get Start")) {
                     store.send(.getStartTapped)
                 } .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.horizontal, 37)
-            .padding(.vertical, 34)
+            .padding(.horizontal, 34)
+            .padding(.vertical, 25)
         }
         
     }
