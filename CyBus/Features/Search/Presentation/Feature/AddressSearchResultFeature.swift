@@ -59,7 +59,9 @@ struct AddressSearchResultFeature {
             case let .onGetDirectionsResponse(nodes):
                 state.isNodesLoading = false
                 state.nodes = nodes
-                return .none
+                return .run { send in
+                    return await send(.onClose)
+                }
             
             case .onReset:
                 state.nodes = []
