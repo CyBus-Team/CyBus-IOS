@@ -108,8 +108,8 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             }
             
             // Explore connected stops via routes
-            for route in trips where route.stopsIds.contains(where: { $0 == currentStop }) {
-                for stop in route.stopsIds where !visited.contains(stop) {
+            for trip in trips where trip.stopsIds.contains(where: { $0 == currentStop }) {
+                for stop in trip.stopsIds where !visited.contains(stop) {
                     visited.insert(stop)
                     queue.append(path + [stop])
                 }
