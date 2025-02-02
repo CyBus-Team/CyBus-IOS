@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -132,10 +132,12 @@
 		94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8882CC2F1B200E38BE2 /* LogoView.swift */; };
 		94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
 		94F3B8972CC30B9500E38BE2 /* RootStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8962CC30B8800E38BE2 /* RootStoreTests.swift */; };
+		AC11DEAB2D4FE657006F4831 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11DEA72D4FE657006F4831 /* ProfileView.swift */; };
 		AC1D3FA12D26B1D70005D3EE /* BusGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusGroup.swift */; };
 		AC1D3FA22D26B1D70005D3EE /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9F2D26B1D70005D3EE /* LocationButton.swift */; };
 		AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3FA52D270DF70005D3EE /* StopCircle.swift */; };
 		AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894B962CE4CB90001A660C /* BusMarker.swift */; };
+		ACBEE2142D4FA9D700C1A753 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,15 +276,13 @@
 		94F3B8882CC2F1B200E38BE2 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
 		94F3B8962CC30B8800E38BE2 /* RootStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootStoreTests.swift; sourceTree = "<group>"; };
+		AC11DEA72D4FE657006F4831 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AC1D3F9E2D26B1D70005D3EE /* BusGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusGroup.swift; sourceTree = "<group>"; };
 		AC1D3F9F2D26B1D70005D3EE /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		AC1D3FA52D270DF70005D3EE /* StopCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCircle.swift; sourceTree = "<group>"; };
 		AC894B962CE4CB90001A660C /* BusMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarker.swift; sourceTree = "<group>"; };
+		ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		ACB69EF82D3C14AA0037132F /* Profile */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Profile; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		94ABDF7A2C29ABBD00970F8C /* Frameworks */ = {
@@ -526,6 +526,7 @@
 		94ABDF742C29ABBD00970F8C = {
 			isa = PBXGroup;
 			children = (
+				ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */,
 				94F220912C5E85B200D776B9 /* generate.sh */,
 				942C53EC2C55152E00DE9BD7 /* README.md */,
 				94F220972C5E886E00D776B9 /* stops_generator.rb */,
@@ -604,7 +605,7 @@
 		94AF0D932C7793EF002FE41B /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				ACB69EF82D3C14AA0037132F /* Profile */,
+				AC11DEAA2D4FE657006F4831 /* Profile */,
 				94F3B88A2CC3017100E38BE2 /* Root */,
 				94AF24B12CBC13320092EE9B /* Onboarding */,
 				945843A12CD17F0A006D9893 /* Home */,
@@ -920,6 +921,30 @@
 			path = State;
 			sourceTree = "<group>";
 		};
+		AC11DEA82D4FE657006F4831 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC11DEA72D4FE657006F4831 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AC11DEA92D4FE657006F4831 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AC11DEA82D4FE657006F4831 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AC11DEAA2D4FE657006F4831 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AC11DEA92D4FE657006F4831 /* Presentation */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		AC1D3FA02D26B1D70005D3EE /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -945,9 +970,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				ACB69EF82D3C14AA0037132F /* Profile */,
 			);
 			name = CyBus;
 			packageProductDependencies = (
@@ -1004,8 +1026,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					Onboard,
+				);
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					94ABDF7C2C29ABBD00970F8C = {
 						CreatedOnToolsVersion = 15.4;
@@ -1027,6 +1052,9 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				uk,
+				"el-CY",
 			);
 			mainGroup = 94ABDF742C29ABBD00970F8C;
 			packageReferences = (
@@ -1052,6 +1080,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9406EB522D3C2B4C00C17ABF /* all_trips.json in Resources */,
+				ACBEE2142D4FA9D700C1A753 /* Localizable.xcstrings in Resources */,
 				94F220942C5E85C700D776B9 /* trips.json in Resources */,
 				942C53EE2C55152E00DE9BD7 /* README.md in Resources */,
 				94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */,
@@ -1131,6 +1160,7 @@
 				94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */,
 				942C53F72C55217400DE9BD7 /* RouteDTO.swift in Sources */,
 				94575D812D23346100CC3C03 /* AddressSearchRepositoryProtocol.swift in Sources */,
+				AC11DEAB2D4FE657006F4831 /* ProfileView.swift in Sources */,
 				94AF24DC2CBC5A150092EE9B /* OnboardingUseCasesProtocol.swift in Sources */,
 				94575DAC2D2C501200CC3C03 /* DestinationMarker.swift in Sources */,
 				947633D72C6E079A000F20C7 /* StopTimeDTO.swift in Sources */,
@@ -1291,6 +1321,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1347,6 +1378,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};

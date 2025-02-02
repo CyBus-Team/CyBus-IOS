@@ -26,7 +26,7 @@ struct PrimaryButton : View {
                     .font(font ?? theme.typography.title)
             }
         }
-        .padding(.vertical, 10)
+        .padding(.vertical, 8)
         .padding(.horizontal, 30)
         .foregroundStyle(theme.colors.background)
         .background(

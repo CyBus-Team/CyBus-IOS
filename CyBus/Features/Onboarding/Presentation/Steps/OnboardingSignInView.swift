@@ -43,11 +43,11 @@ struct OnboardingSignInView: View {
                 Spacer()
                 
                 HStack {
-                    PrimaryButton(label: "Sign up") {
+                    PrimaryButton(label: String(localized: "Sign up")) {
                         store.send(.signUpTapped)
                     }
                     Spacer()
-                    SecondaryButton(label: "Not Now") {
+                    SecondaryButton(label: String(localized: "Not Now")) {
                         store.send(.notNowTapped)
                     }
                 }
