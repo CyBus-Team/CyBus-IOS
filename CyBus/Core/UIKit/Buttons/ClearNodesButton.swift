@@ -8,20 +8,28 @@
 import SwiftUI
 
 struct ClearNodesButton: View {
+    @Environment(\.theme) var theme
+    
     var action: () -> Void
-
+    
     var body: some View {
         Button(action: {
             action()
         }) {
+            Text("Finish")
             Image(systemName: "mappin.circle.fill")
-                .font(.system(size: 24))
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .clipShape(Circle())
-                .shadow(radius: 10)
         }
+        .padding()
+        .background(theme.colors.primary)
+        .foregroundColor(theme.colors.background)
+        .clipShape(.capsule)
+        .shadow(radius: 10)
     }
+}
+
+#Preview {
+    ClearNodesButton(action: {
+        print("Clear")
+    })
 }
 
