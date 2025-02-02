@@ -26,7 +26,6 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
         var result: [TripNodeEntity] = []
         
         for stop in stops.indices {
-//            result.append(TripNodeEntity(id: UUID().uuidString, type: .busStop, location: stop.location))
             result.append(TripNodeEntity(id: stops[stop].id, type: .busStop, location: stops[stop].location))
         }
         
@@ -134,7 +133,7 @@ extension DependencyValues {
     }
 }
 
-extension CLLocationCoordinate2D {
+private extension CLLocationCoordinate2D {
     func distance(to other: CLLocationCoordinate2D) -> Double {
         let deltaLat = self.latitude - other.latitude
         let deltaLon = self.longitude - other.longitude

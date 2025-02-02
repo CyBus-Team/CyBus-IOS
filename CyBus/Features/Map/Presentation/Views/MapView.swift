@@ -67,6 +67,7 @@ struct MapView: View {
                             .allowOverlap(true)
                         }
                         
+                        //MARK: Shapes and Stops
                         if busesStore.routes.hasSelectedRoute {
                             let route = busesStore.routes.selectedRoute
                             let stops = route?.stops ?? []
@@ -91,7 +92,7 @@ struct MapView: View {
                             .lineWidth(3)
                         }
                         
-                        //MARK: - Destaniation path
+                        //MARK: Destaniation nodes
                         let nodes = searchStore.searchAddressResult.nodes
                         if !nodes.isEmpty {
                             ForEvery(nodes) { node in
@@ -126,17 +127,18 @@ struct MapView: View {
                         Spacer()
                         HStack(alignment: .center) {
                             
+                            //MARK: Zoom button
+                            ZoomControlView(onZoomIn: { cameraStore.send(.increaseZoom) }, onZoomOut: { cameraStore.send(.decreaseZoom) } )
+                            
+                            Spacer()
+                            
                             // MARK: Clear route button
                             if busesStore.hasSelection {
                                 ClearRouteButton {
                                     busesStore.send(.clearSelection)
                                 }
+                                Spacer()
                             }
-                            
-                            //MARK: Zoom button
-                            ZoomControlView(onZoomIn: { cameraStore.send(.increaseZoom) }, onZoomOut: { cameraStore.send(.decreaseZoom) } )
-                            
-                            Spacer()
                             
                             //MARK: Get current location button
                             LocationButton {
