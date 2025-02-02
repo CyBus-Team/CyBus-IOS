@@ -24,6 +24,7 @@ struct AddressSearchFeature {
         case binding(BindingAction<State>)
         case setup
         case onSubmit
+        case onReset
         case onGetSuggestions([SuggestionEntity]?)
         case onSelect(SuggestionEntity)
         case onGetDetailedSuggestion(DetailedSuggestionEntity?)
@@ -77,6 +78,10 @@ struct AddressSearchFeature {
                 
             case let .onGetDetailedSuggestion(detailedSuggestion):
                 state.detailedSuggestion = detailedSuggestion
+                return .none
+            
+            case .onReset:
+                state.detailedSuggestion = nil
                 return .none
                 
             case .binding(_):

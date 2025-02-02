@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ClearRouteButton: View {
+    @Environment(\.theme) var theme
+    
     var action: () -> Void
 
     var body: some View {
@@ -23,5 +25,11 @@ struct ClearRouteButton: View {
                 .shadow(radius: 10)
         }
     }
+}
+
+#Preview {
+    ClearRouteButton(action: {
+        print("Clear")
+    })
 }
 
