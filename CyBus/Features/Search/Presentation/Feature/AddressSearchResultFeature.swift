@@ -30,6 +30,7 @@ struct AddressSearchResultFeature {
         case onGetDirections
         case onGetDirectionsResponse([TripNodeEntity])
         case onClose
+        case onReset
     }
     
     @Dependency(\.addressPathUseCases) var useCases
@@ -58,6 +59,10 @@ struct AddressSearchResultFeature {
             case let .onGetDirectionsResponse(nodes):
                 state.isNodesLoading = false
                 state.nodes = nodes
+                return .none
+            
+            case .onReset:
+                state.nodes = []
                 return .none
                 
             case .binding(_), .onClose:

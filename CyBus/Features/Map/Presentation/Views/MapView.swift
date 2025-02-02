@@ -50,8 +50,16 @@ struct MapView: View {
                     Map(viewport: $cameraStore.viewport) {
                         
                         //MARK: User location
-                        Puck2D(bearing: .course)
-                            .showsAccuracyRing(true)
+                        if locationStore.location != nil {
+                            MapViewAnnotation(coordinate: locationStore.location!) {
+                                Image(systemName: "location.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(theme.colors.primary)
+                            }
+                            .allowZElevate(true)
+                            .allowOverlap(true)
+                        }
                         
                         //MARK: Buses
                         ForEvery(busesStore.groupedBuses) { busGroup in
@@ -134,8 +142,15 @@ struct MapView: View {
                             
                             // MARK: Clear route button
                             if busesStore.hasSelection {
-                                ClearRouteButton {
+                                ClearNodesButton {
                                     busesStore.send(.clearSelection)
+                                }
+                                Spacer()
+                            }
+                            // MARK: Clear nodes and destinations
+                            if !searchStore.searchAddressResult.nodes.isEmpty {
+                                ClearNodesButton {
+                                    searchStore.send(.onReset)
                                 }
                                 Spacer()
                             }
