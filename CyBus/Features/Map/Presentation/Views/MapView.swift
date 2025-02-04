@@ -61,6 +61,18 @@ struct MapView: View {
                             .allowOverlap(true)
                         }
                         
+                        //MARK: Destaniation nodes
+                        let nodes = searchStore.searchAddressResult.nodes
+                        if !nodes.isEmpty {
+                            ForEvery(nodes) { node in
+                                MapViewAnnotation(coordinate: node.location) {
+                                    NodeStop(line: node.line)
+                                }
+                                .allowZElevate(false)
+                                .allowOverlap(true)
+                            }
+                        }
+                        
                         //MARK: Buses
                         ForEvery(busesStore.groupedBuses) { busGroup in
                             MapViewAnnotation(coordinate: busGroup.position) {
@@ -98,21 +110,6 @@ struct MapView: View {
                             )
                             .lineColor(.systemBlue)
                             .lineWidth(3)
-                        }
-                        
-                        //MARK: Destaniation nodes
-                        let nodes = searchStore.searchAddressResult.nodes
-                        if !nodes.isEmpty {
-                            ForEvery(nodes) { node in
-                                MapViewAnnotation(coordinate: node.location) {
-                                    VStack {
-                                        Text(node.id)
-                                        StopCircle(color: theme.colors.secondary)
-                                    }
-                                }
-                                .allowZElevate(false)
-                                .allowOverlap(true)
-                            }
                         }
                         
                         //MARK: - Destination marker

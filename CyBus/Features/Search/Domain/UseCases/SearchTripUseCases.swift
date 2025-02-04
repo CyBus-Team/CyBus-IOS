@@ -25,8 +25,15 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
     func getNodes(from stops: [SearchStopEntity]) async throws -> [TripNodeEntity] {
         var result: [TripNodeEntity] = []
         
-        for stop in stops.indices {
-            result.append(TripNodeEntity(id: stops[stop].id, type: .busStop, location: stops[stop].location))
+        try await routesUseCases.fetchRoutes()
+        let routesDTO = routesUseCases.routes
+        let tripsDTO = routesUseCases.trips
+        
+        for stop in stops {
+            let tripIds = stop.tripIds
+            let routeIds = tripsDTO.filter { tripIds.contains($0.tripId) }.compactMap { $0.routeId }
+            let lineName = routesDTO.filter { routeIds.contains($0.lineId) }.first?.lineName ?? ""
+            result.append(TripNodeEntity(id: stop.id, line: lineName, type: .busStop, location: stop.location))
         }
         
         return result

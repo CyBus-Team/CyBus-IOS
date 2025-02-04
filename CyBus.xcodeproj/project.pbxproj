@@ -133,6 +133,7 @@
 		94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8882CC2F1B200E38BE2 /* LogoView.swift */; };
 		94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
 		94F3B8972CC30B9500E38BE2 /* RootStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8962CC30B8800E38BE2 /* RootStoreTests.swift */; };
+		94F3E7262D52A733007803F5 /* NodeStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3E7252D52A6E1007803F5 /* NodeStop.swift */; };
 		AC11DEAB2D4FE657006F4831 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11DEA72D4FE657006F4831 /* ProfileView.swift */; };
 		AC1D3FA12D26B1D70005D3EE /* BusGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusGroup.swift */; };
 		AC1D3FA22D26B1D70005D3EE /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9F2D26B1D70005D3EE /* LocationButton.swift */; };
@@ -278,6 +279,7 @@
 		94F3B8882CC2F1B200E38BE2 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
 		94F3B8962CC30B8800E38BE2 /* RootStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootStoreTests.swift; sourceTree = "<group>"; };
+		94F3E7252D52A6E1007803F5 /* NodeStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeStop.swift; sourceTree = "<group>"; };
 		AC11DEA72D4FE657006F4831 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AC1D3F9E2D26B1D70005D3EE /* BusGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusGroup.swift; sourceTree = "<group>"; };
 		AC1D3F9F2D26B1D70005D3EE /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
@@ -951,6 +953,7 @@
 		AC1D3FA02D26B1D70005D3EE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				94F3E7252D52A6E1007803F5 /* NodeStop.swift */,
 				94575DAB2D2C4F4900CC3C03 /* DestinationMarker.swift */,
 				AC1D3FA52D270DF70005D3EE /* StopCircle.swift */,
 				AC1D3F9E2D26B1D70005D3EE /* BusGroup.swift */,
@@ -1156,6 +1159,7 @@
 				94575D672D1D827B00CC3C03 /* SelectedBusGroup.swift in Sources */,
 				94F3B8832CC2EB4300E38BE2 /* OnboardingGeolocationView.swift in Sources */,
 				947633D52C6E0747000F20C7 /* StopDTO.swift in Sources */,
+				94F3E7262D52A733007803F5 /* NodeStop.swift in Sources */,
 				94AF24E12CBC5AB40092EE9B /* OnboardingRepositoryProtocol.swift in Sources */,
 				94D794872CC020630097A2F0 /* RootView.swift in Sources */,
 				94F3B8812CC2EB3800E38BE2 /* OnboardingWelcomeView.swift in Sources */,

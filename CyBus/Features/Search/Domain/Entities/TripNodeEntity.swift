@@ -15,6 +15,7 @@ enum NodeType {
 
 struct TripNodeEntity : Equatable, Identifiable {
     let id: String
+    let line: String
     let type: NodeType
     let location: CLLocationCoordinate2D
 }
