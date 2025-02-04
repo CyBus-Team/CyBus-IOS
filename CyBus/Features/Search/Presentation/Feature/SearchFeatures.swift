@@ -24,6 +24,7 @@ struct SearchFeatures {
         case binding(BindingAction<State>)
         case onOpenAddressSearch
         case onOpenAddressSearchResults
+        case onReset
         case onOpenFavourites
         case searchAddressResult(AddressSearchResultFeature.Action)
         case searchAddress(AddressSearchFeature.Action)
@@ -67,6 +68,12 @@ struct SearchFeatures {
                 return .none
             case .searchAddressResult(_):
                 return .none
+            // Map actions
+            case .onReset:
+                return .run { send in
+                    await send(.searchAddressResult(.onReset))
+                    await send(.searchAddress(.onReset))
+                }
             }
         }
     }
