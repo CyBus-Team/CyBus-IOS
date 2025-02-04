@@ -21,7 +21,7 @@ public class OnboardingUseCases : OnboardingUseCasesProtocol {
     }
     
     func needToShow() -> Bool {
-        true
+        !repository.hasLaunchedBefore()
     }
 }
 
