@@ -50,8 +50,16 @@ struct MapView: View {
                     Map(viewport: $cameraStore.viewport) {
                         
                         //MARK: User location
-                        Puck2D(bearing: .course)
-                            .showsAccuracyRing(true)
+                        if locationStore.location != nil {
+                            MapViewAnnotation(coordinate: locationStore.location!) {
+                                Image(systemName: "location.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(theme.colors.primary)
+                            }
+                            .allowZElevate(true)
+                            .allowOverlap(true)
+                        }
                         
                         //MARK: Buses
                         ForEvery(busesStore.groupedBuses) { busGroup in
@@ -67,6 +75,7 @@ struct MapView: View {
                             .allowOverlap(true)
                         }
                         
+                        //MARK: Shapes and Stops
                         if busesStore.routes.hasSelectedRoute {
                             let route = busesStore.routes.selectedRoute
                             let stops = route?.stops ?? []
@@ -91,7 +100,7 @@ struct MapView: View {
                             .lineWidth(3)
                         }
                         
-                        //MARK: - Destaniation path
+                        //MARK: Destaniation nodes
                         let nodes = searchStore.searchAddressResult.nodes
                         if !nodes.isEmpty {
                             ForEvery(nodes) { node in
@@ -126,17 +135,25 @@ struct MapView: View {
                         Spacer()
                         HStack(alignment: .center) {
                             
+                            //MARK: Zoom button
+                            ZoomControlView(onZoomIn: { cameraStore.send(.increaseZoom) }, onZoomOut: { cameraStore.send(.decreaseZoom) } )
+                            
+                            Spacer()
+                            
                             // MARK: Clear route button
                             if busesStore.hasSelection {
                                 ClearRouteButton {
                                     busesStore.send(.clearSelection)
                                 }
+                                Spacer()
                             }
-                            
-                            //MARK: Zoom button
-                            ZoomControlView(onZoomIn: { cameraStore.send(.increaseZoom) }, onZoomOut: { cameraStore.send(.decreaseZoom) } )
-                            
-                            Spacer()
+                            // MARK: Clear nodes and destinations
+                            if !searchStore.searchAddressResult.nodes.isEmpty {
+                                ClearNodesButton {
+                                    searchStore.send(.onReset)
+                                }
+                                Spacer()
+                            }
                             
                             //MARK: Get current location button
                             LocationButton {

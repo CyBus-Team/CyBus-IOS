@@ -92,6 +92,12 @@ struct MapFeature {
                 return .run { send in
                     await send(.mapCamera(.onViewportChange(suggestion!.location)))
                 }
+            case let .search(.searchAddressResult(.onGetDirectionsResponse(nodes))):
+                return .run { send in
+                    if let node = nodes.first {
+                        await send(.mapCamera(.onViewportChange(node.location)))
+                    }
+                }
             case .alert(_), .userLocation(_), .mapCamera(_), .search(_):
                 return .none
             }
