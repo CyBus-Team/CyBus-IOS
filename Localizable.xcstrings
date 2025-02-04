@@ -26,6 +26,28 @@
         }
       }
     },
+    "Add to favourites" : {
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προσθήκη στα αγαπημένα"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавить в избранное"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати в обране"
+          }
+        }
+      }
+    },
     "Allow" : {
       "comment" : "OnboardingGeolocationView",
       "extractionState" : "manual",
@@ -141,6 +163,28 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "Directions" : {
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διαδρομές"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Маршруты"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Маршрути"
+          }
+        }
+      }
     },
     "Edit profile" : {
       "localizations" : {
@@ -454,6 +498,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Профіль"
+          }
+        }
+      }
+    },
+    "Retry" : {
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ξαναπροσπάθεια"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повторить"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спробувати"
           }
         }
       }

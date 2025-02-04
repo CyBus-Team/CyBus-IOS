@@ -32,7 +32,7 @@ struct MapView: View {
             if mapStore.error != nil {
                 VStack {
                     Text(mapStore.error ?? "Unknown error")
-                    PrimaryButton(label:"Retry") {
+                    PrimaryButton(label:String(localized: "Retry")) {
                         onInit()
                     }
                 }
