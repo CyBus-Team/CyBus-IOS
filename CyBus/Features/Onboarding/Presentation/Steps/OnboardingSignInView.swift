@@ -51,7 +51,7 @@ struct OnboardingSignInView: View {
                         store.send(.notNowTapped)
                     }
                 }
-                .padding(.bottom, 27)
+                .padding(.bottom, 30)
                 
                 HStack {
                     Text("Already have an account?")
