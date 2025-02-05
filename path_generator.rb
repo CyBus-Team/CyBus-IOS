@@ -34,58 +34,24 @@ end
 
 # Define a structure to store trip data
 class TripEntity
-  attr_accessor :id, :stops, :shapes
+  attr_accessor :id, :stops
 
-  def initialize(id, stops, shapes)
+  def initialize(id, stops)
     @id = id
     @stops = stops
-    @shapes = shapes
   end
 
   def to_hash
     {
       id: @id,
-      stops: @stops,
-      shapes: @shapes
-      # shapes: @shapes.map(&:to_hash)
+      stops: @stops
     }
   end
 
   def inspect
     {
       id: @id,
-      stops: @stops.map(&:inspect),
-      shapes: @stops.map(&:inspect)
-    }.to_s
-  end
-end
-
-# Define a structure to store shape data
-class ShapeEntity
-  attr_accessor :id, :longitude, :latitude, :sequence
-
-  def initialize(id, longitude, latitude, sequence)
-    @id = id
-    @longitude = longitude
-    @latitude = latitude
-    @sequence = sequence
-  end
-
-  def to_hash
-    {
-      id: @id,
-      longitude: @longitude,
-      latitude: @latitude,
-      sequence: @sequence
-    }
-  end
-
-  def inspect
-    {
-      id: @id,
-      longitude: @longitude,
-      latitude: @latitude,
-      sequence: @sequence
+      stops: @stops.map(&:inspect)
     }.to_s
   end
 end
@@ -133,12 +99,11 @@ def generate_stops(stops_file, stop_times_file, output_file)
 
 end
 
-def generate_trips(trip_stops_file, trips_file, shapes_file, output_file)
+def generate_trips(trip_stops_file, trips_file, output_file)
   puts("Generate trips...")
 
   trip_stops_data = JSON.parse(File.read(trip_stops_file))
   trips_data = JSON.parse(File.read(trips_file))
-  shapes_data = JSON.parse(File.read(shapes_file))
 
   # @type [Array<TripEntity>]
   all_trips = []
@@ -153,23 +118,9 @@ def generate_trips(trip_stops_file, trips_file, shapes_file, output_file)
 
     found_stops = trip_stops_data.select { |stop| stop["trip_ids"].include?(trip_id) }.map { |stop| stop["id"] }
 
-    trip = trips_data[index]
-    route_id = trip["route_id"]
-    found_shapes = shapes_data.select { |shape| shape["shape_id"] == route_id }
-    # @type [Array<Strng>]
-    converted_shapes = found_shapes.map { |shape| shape["shape_id"] }
-    # @type [Array<ShapeEntity>]
-    # converted_shapes = found_shapes.map { |shape| ShapeEntity.new(
-    #                      shape["shape_id"],
-    #                      shape["shape_pt_lon"].to_f,
-    #                      shape["shape_pt_lat"].to_f,
-    #                      shape["shape_pt_sequence"].to_i
-    #                    )}
-
     converted = TripEntity.new(
       trip_id,
-      found_stops,
-      converted_shapes,
+      found_stops
     )
 
     all_trips.append(converted)
@@ -194,6 +145,5 @@ generate_stops(
 generate_trips(
   'CyBus/trip_stops.json',
   'CyBus/trips.json',
-  'CyBus/shapes.json',
   'CyBus/all_trips.json'
 )
