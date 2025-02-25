@@ -11,6 +11,7 @@ enum SearchTripUseCasesError: Error {
     case noRouteFound
     case noStartStopFound
     case noEndStopFound
+    case cityNotFound
 }
 
 protocol SearchTripUseCasesProtocol {

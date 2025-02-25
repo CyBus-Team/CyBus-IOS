@@ -39,6 +39,20 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
         return result
     }
     
+    func nearestCity(to coordinate: CLLocationCoordinate2D) throws -> String? {
+        do {
+            let cities = try repository.getCities()
+            return cities.min(by: {
+                let dist1 = pow($0.latitude - coordinate.latitude, 2) + pow($0.longitude - coordinate.longitude, 2)
+                let dist2 = pow($1.latitude - coordinate.latitude, 2) + pow($1.longitude - coordinate.longitude, 2)
+                return dist1 < dist2
+            })?.name
+        } catch {
+            debugPrint(error)
+            throw SearchTripUseCasesError.cityNotFound
+        }
+    }
+    
     func getStops(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [SearchStopEntity] {
         do {
             let tripsDTO = try await repository.getTrips()
@@ -46,7 +60,10 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             let stopsDTO = try await repository.getStops()
             debugPrint("stopsDTO \(stopsDTO.count)")
             
-            let city = "Limassol"
+            guard let city = try nearestCity(to: from) else {
+                throw SearchTripUseCasesError.cityNotFound
+            }
+            debugPrint("City \(city)")
             
             let tripsEntities = tripsDTO.map { SearchTripEntity.from(dto: $0) }.filter {$0.city.elementsEqual(city)}
             debugPrint("tripsEntities \(tripsEntities.count)")

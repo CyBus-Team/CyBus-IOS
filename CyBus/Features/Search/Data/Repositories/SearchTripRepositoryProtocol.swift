@@ -12,4 +12,5 @@ enum TripSearchRepositoryError: Error {
 protocol SearchTripRepositoryProtocol {
     func getTrips() async throws -> [SearchTripDTO]
     func getStops() async throws -> [SearchStopDTO]
+    func getCities() throws -> [CityDTO]
 }

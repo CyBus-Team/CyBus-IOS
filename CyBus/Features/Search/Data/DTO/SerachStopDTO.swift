@@ -5,7 +5,7 @@
 //  Created by Vadim Popov on 18/01/2025.
 //
 
-struct SearchStopDTO: Codable{
+struct SearchStopDTO: Codable {
     let id: String
     let tripIds: [String]
     let longitude: Double
