@@ -25,11 +25,32 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
     func getNodes(from stops: [SearchStopEntity]) async throws -> [TripNodeEntity] {
         var result: [TripNodeEntity] = []
         
-        for stop in stops.indices {
-            result.append(TripNodeEntity(id: stops[stop].id, type: .busStop, location: stops[stop].location))
+        try await routesUseCases.fetchRoutes()
+        let routesDTO = routesUseCases.routes
+        let tripsDTO = routesUseCases.trips
+        
+        for stop in stops {
+            let tripIds = stop.tripIds
+            let routeIds = tripsDTO.filter { tripIds.contains($0.tripId) }.compactMap { $0.routeId }
+            let lineName = routesDTO.filter { routeIds.contains($0.lineId) }.first?.lineName ?? ""
+            result.append(TripNodeEntity(id: stop.id, line: lineName, type: .busStop, location: stop.location))
         }
         
         return result
+    }
+    
+    func nearestCity(to coordinate: CLLocationCoordinate2D) throws -> String? {
+        do {
+            let cities = try repository.getCities()
+            return cities.min(by: {
+                let dist1 = pow($0.latitude - coordinate.latitude, 2) + pow($0.longitude - coordinate.longitude, 2)
+                let dist2 = pow($1.latitude - coordinate.latitude, 2) + pow($1.longitude - coordinate.longitude, 2)
+                return dist1 < dist2
+            })?.name
+        } catch {
+            debugPrint(error)
+            throw SearchTripUseCasesError.cityNotFound
+        }
     }
     
     func getStops(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [SearchStopEntity] {
@@ -38,18 +59,15 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             debugPrint("tripsDTO \(tripsDTO.count)")
             let stopsDTO = try await repository.getStops()
             debugPrint("stopsDTO \(stopsDTO.count)")
-            let shapes = routesUseCases.shapes
-            debugPrint("shapes \(shapes.count)")
             
-            let tripsEntities = tripsDTO
-                .map {
-                    SearchTripEntity.from(
-                        dto: $0,
-                        shapes: shapes.map { TripShapeEntity.from(dto: $0) }
-                    )
-                }
+            guard let city = try nearestCity(to: from) else {
+                throw SearchTripUseCasesError.cityNotFound
+            }
+            debugPrint("City \(city)")
+            
+            let tripsEntities = tripsDTO.map { SearchTripEntity.from(dto: $0) }.filter {$0.city.elementsEqual(city)}
             debugPrint("tripsEntities \(tripsEntities.count)")
-            let stopsEntities = stopsDTO.map { SearchStopEntity.from(dto: $0) }
+            let stopsEntities = stopsDTO.map { SearchStopEntity.from(dto: $0) }.filter {$0.city.elementsEqual(city)}
             debugPrint("stopsEntities \(stopsEntities.count)")
             
             debugPrint("Finding route from \(from) to \(to)")

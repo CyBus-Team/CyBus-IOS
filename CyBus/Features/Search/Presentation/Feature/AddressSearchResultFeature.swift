@@ -53,6 +53,7 @@ struct AddressSearchResultFeature {
                     let from = try await locationUseCases.getCurrentLocation()
                     let stops = try await useCases.getStops(from: from!, to: to)
                     let nodes = try await useCases.getNodes(from: stops)
+                    print("nodes: \(nodes)")
                     return send(.onGetDirectionsResponse(nodes))
                 }
                 

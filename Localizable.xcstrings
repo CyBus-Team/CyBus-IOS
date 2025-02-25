@@ -208,6 +208,9 @@
         }
       }
     },
+    "Finish" : {
+
+    },
     "Get Start" : {
       "comment" : "OnboardingWelcomeView",
       "extractionState" : "manual",

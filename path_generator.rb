@@ -1,16 +1,22 @@
 require 'json'
-require 'rgeo'
-require 'rgeo/shapefile'
 
-# Define a structure to store stop data
+CITIES = JSON.parse(File.read('CyBus/cities.json'))
+
+def find_nearest_city(latitude, longitude)
+  CITIES.min_by do |city|
+    (city['latitude'] - latitude).abs + (city['longitude'] - longitude).abs
+  end['name']
+end
+
 class StopEntity
-  attr_accessor :id, :longitude, :latitude, :trip_ids
+  attr_accessor :id, :longitude, :latitude, :trip_ids, :city
 
-  def initialize(id, longitude, latitude , trip_ids)
+  def initialize(id, longitude, latitude, trip_ids, city)
     @id = id
     @longitude = longitude
     @latitude = latitude
     @trip_ids = trip_ids
+    @city = city
   end
 
   def to_hash
@@ -18,75 +24,27 @@ class StopEntity
       id: @id,
       longitude: @longitude,
       latitude: @latitude,
-      trip_ids: @trip_ids
+      trip_ids: @trip_ids,
+      city: @city
     }
-  end
-
-  def inspect
-    {
-      id: @id,
-      longitude: @longitude,
-      latitude: @latitude,
-      trip_ids: @trip_ids
-    }.to_s
   end
 end
 
-# Define a structure to store trip data
 class TripEntity
-  attr_accessor :id, :stops, :shapes
+  attr_accessor :id, :stops, :city
 
-  def initialize(id, stops, shapes)
+  def initialize(id, stops, city)
     @id = id
     @stops = stops
-    @shapes = shapes
+    @city = city
   end
 
   def to_hash
     {
       id: @id,
       stops: @stops,
-      shapes: @shapes
-      # shapes: @shapes.map(&:to_hash)
+      city: @city
     }
-  end
-
-  def inspect
-    {
-      id: @id,
-      stops: @stops.map(&:inspect),
-      shapes: @stops.map(&:inspect)
-    }.to_s
-  end
-end
-
-# Define a structure to store shape data
-class ShapeEntity
-  attr_accessor :id, :longitude, :latitude, :sequence
-
-  def initialize(id, longitude, latitude, sequence)
-    @id = id
-    @longitude = longitude
-    @latitude = latitude
-    @sequence = sequence
-  end
-
-  def to_hash
-    {
-      id: @id,
-      longitude: @longitude,
-      latitude: @latitude,
-      sequence: @sequence
-    }
-  end
-
-  def inspect
-    {
-      id: @id,
-      longitude: @longitude,
-      latitude: @latitude,
-      sequence: @sequence
-    }.to_s
   end
 end
 
@@ -96,96 +54,70 @@ def generate_stops(stops_file, stop_times_file, output_file)
   stops_data = JSON.parse(File.read(stops_file))
   stop_times_data = JSON.parse(File.read(stop_times_file))
 
-  # @type [Array<StopEntity>]
   all_stops = []
-
-  # @type [Array<String>]
   uniq_stops_ids = stop_times_data.map { |stop_time| stop_time['stop_id'] }.uniq
 
   uniq_stops_ids.each_with_index do |stop_id, index|
-    if index % 1000 == 0
-      puts "Processing stop #{index + 1} of #{uniq_stops_ids.size}"
-    end
+    puts "Processing stop #{index + 1} of #{uniq_stops_ids.size}" if index % 1000 == 0
 
     found_stop = stops_data.find { |stop| stop['stop_id'] == stop_id }
     found_stop_id = found_stop['stop_id']
     found_stop_times = stop_times_data.select { |stop_time| stop_time["stop_id"] == found_stop_id }
     found_trip_ids = found_stop_times.map { |stop_time| stop_time['trip_id'] }.uniq
 
+    city = find_nearest_city(found_stop['stop_lat'].to_f, found_stop['stop_lon'].to_f)
+
     converted = StopEntity.new(
       found_stop_id,
       found_stop['stop_lon'].to_f,
       found_stop['stop_lat'].to_f,
-      found_trip_ids
+      found_trip_ids,
+      city
     )
 
     all_stops.append(converted)
   end
 
   all_data = all_stops.map(&:to_hash).to_json
-
-  File.open(output_file, 'w') do |file|
-    puts "Writing data to #{output_file}..."
-    file.write(all_data)
-  end
-
+  File.open(output_file, 'w') { |file| file.write(all_data) }
   puts "Stops data successfully written to #{output_file}."
-
 end
 
-def generate_trips(trip_stops_file, trips_file, shapes_file, output_file)
+def generate_trips(trip_stops_file, trips_file, output_file)
   puts("Generate trips...")
 
   trip_stops_data = JSON.parse(File.read(trip_stops_file))
   trips_data = JSON.parse(File.read(trips_file))
-  shapes_data = JSON.parse(File.read(shapes_file))
 
-  # @type [Array<TripEntity>]
   all_trips = []
-
-  # @type [Array<String>]
   uniq_trip_ids = trips_data.map { |trip| trip['trip_id'] }.uniq
 
   uniq_trip_ids.each_with_index do |trip_id, index|
-    if index % 1000 == 0
-      puts "Processing trip_id #{index + 1} of #{uniq_trip_ids.size}"
+    puts "Processing trip_id #{index + 1} of #{uniq_trip_ids.size}" if index % 1000 == 0
+
+    found_stops = trip_stops_data.select { |stop| stop["trip_ids"].include?(trip_id) }
+
+    if found_stops.empty?
+      city = nil
+    else
+      city = found_stops.map { |stop| stop["city"] }.uniq
+      city = city.length == 1 ? city.first : "Multiple Cities"
     end
-
-    found_stops = trip_stops_data.select { |stop| stop["trip_ids"].include?(trip_id) }.map { |stop| stop["id"] }
-
-    trip = trips_data[index]
-    route_id = trip["route_id"]
-    found_shapes = shapes_data.select { |shape| shape["shape_id"] == route_id }
-    # @type [Array<Strng>]
-    converted_shapes = found_shapes.map { |shape| shape["shape_id"] }
-    # @type [Array<ShapeEntity>]
-    # converted_shapes = found_shapes.map { |shape| ShapeEntity.new(
-    #                      shape["shape_id"],
-    #                      shape["shape_pt_lon"].to_f,
-    #                      shape["shape_pt_lat"].to_f,
-    #                      shape["shape_pt_sequence"].to_i
-    #                    )}
 
     converted = TripEntity.new(
       trip_id,
-      found_stops,
-      converted_shapes,
+      found_stops.map { |stop| stop["id"] },
+      city
     )
 
     all_trips.append(converted)
   end
 
   all_data = all_trips.map(&:to_hash).to_json
-
-  File.open(output_file, 'w') do |file|
-    puts "Writing data to #{output_file}..."
-    file.write(all_data)
-  end
-
+  File.open(output_file, 'w') { |file| file.write(all_data) }
   puts "Trips data successfully written to #{output_file}."
 end
 
-# Example usage
 generate_stops(
   'CyBus/stops.json',
   'CyBus/stop_times.json',
@@ -194,6 +126,5 @@ generate_stops(
 generate_trips(
   'CyBus/trip_stops.json',
   'CyBus/trips.json',
-  'CyBus/shapes.json',
   'CyBus/all_trips.json'
 )
