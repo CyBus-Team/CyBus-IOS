@@ -13,6 +13,7 @@ struct SearchStopEntity {
     let id: SearchStopEntityID
     let tripIds: [String]
     let location: CLLocationCoordinate2D
+    let city: String
     
     static func from(dto: SearchStopDTO) -> SearchStopEntity {
         SearchStopEntity(
@@ -21,7 +22,8 @@ struct SearchStopEntity {
             location: CLLocationCoordinate2D(
                 latitude: dto.latitude,
                 longitude: dto.longitude
-            )
+            ),
+            city: dto.city
         )
     }
 }

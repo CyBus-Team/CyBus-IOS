@@ -45,18 +45,12 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             debugPrint("tripsDTO \(tripsDTO.count)")
             let stopsDTO = try await repository.getStops()
             debugPrint("stopsDTO \(stopsDTO.count)")
-            let shapes = routesUseCases.shapes
-            debugPrint("shapes \(shapes.count)")
             
-            let tripsEntities = tripsDTO
-                .map {
-                    SearchTripEntity.from(
-                        dto: $0,
-                        shapes: shapes.map { TripShapeEntity.from(dto: $0) }
-                    )
-                }
+            let city = "Limassol"
+            
+            let tripsEntities = tripsDTO.map { SearchTripEntity.from(dto: $0) }.filter {$0.city.elementsEqual(city)}
             debugPrint("tripsEntities \(tripsEntities.count)")
-            let stopsEntities = stopsDTO.map { SearchStopEntity.from(dto: $0) }
+            let stopsEntities = stopsDTO.map { SearchStopEntity.from(dto: $0) }.filter {$0.city.elementsEqual(city)}
             debugPrint("stopsEntities \(stopsEntities.count)")
             
             debugPrint("Finding route from \(from) to \(to)")
