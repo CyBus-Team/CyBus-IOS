@@ -66,7 +66,7 @@ struct MapView: View {
                         if !nodes.isEmpty {
                             ForEvery(nodes) { node in
                                 MapViewAnnotation(coordinate: node.location) {
-                                    NodeStop(line: node.line)
+                                    NodeStop(line: node.line, scale: cameraStore.scale)
                                 }
                                 .allowZElevate(false)
                                 .allowOverlap(true)

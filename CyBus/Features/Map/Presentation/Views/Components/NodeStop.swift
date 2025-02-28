@@ -11,19 +11,29 @@ struct NodeStop: View {
     @Environment(\.theme) var theme
     
     let line: String
+    let scale: Double
     
     var body: some View {
-        VStack(spacing: 2) {
+        VStack(spacing: 10) {
             Text(line)
                 .font(theme.typography.title)
-                .foregroundColor(theme.colors.nodeColor)
-            StopCircle(color: theme.colors.nodeColor)
+                .frame(width: 30)
+                .foregroundColor(theme.colors.foreground)
+                .background(theme.colors.primary)
+                .cornerRadius(16)
+            Image(systemName: "figure.wave.circle.fill")
+                .resizable()
+                .frame(width: 32, height: 32)
+                .foregroundStyle(theme.colors.primary)
         }
+        .foregroundStyle(theme.colors.primary)
+        .scaleEffect(scale)
+        
     }
     
 }
 
 
 #Preview {
-    NodeStop(line: "21")
+    NodeStop(line: "21", scale: 1)
 }
