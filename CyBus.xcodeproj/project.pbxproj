@@ -136,6 +136,7 @@
 		94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
 		94F3B8972CC30B9500E38BE2 /* RootStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8962CC30B8800E38BE2 /* RootStoreTests.swift */; };
 		94F3E7262D52A733007803F5 /* NodeStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3E7252D52A6E1007803F5 /* NodeStop.swift */; };
+		94F8AC992D72419F00D9948A /* MapboxDirections in Frameworks */ = {isa = PBXBuildFile; productRef = 94F8AC982D72419F00D9948A /* MapboxDirections */; };
 		AC11DEAB2D4FE657006F4831 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11DEA72D4FE657006F4831 /* ProfileView.swift */; };
 		AC1D3FA12D26B1D70005D3EE /* BusGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusGroup.swift */; };
 		AC1D3FA22D26B1D70005D3EE /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9F2D26B1D70005D3EE /* LocationButton.swift */; };
@@ -298,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94575D922D23396D00CC3C03 /* MapboxSearchUI in Frameworks */,
+				94F8AC992D72419F00D9948A /* MapboxDirections in Frameworks */,
 				94575D902D23396D00CC3C03 /* MapboxSearch in Frameworks */,
 				94BB5BC72C35CBDF00404028 /* SwiftProtobuf in Frameworks */,
 				94D794852CC01F6D0097A2F0 /* ComposableArchitecture in Frameworks */,
@@ -427,8 +429,8 @@
 			children = (
 				9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */,
 				94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */,
-				94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */,
 				94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */,
+				94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -990,6 +992,7 @@
 				94575D8F2D23396D00CC3C03 /* MapboxSearch */,
 				94575D912D23396D00CC3C03 /* MapboxSearchUI */,
 				94575D9B2D2731E000CC3C03 /* MapboxMaps */,
+				94F8AC982D72419F00D9948A /* MapboxDirections */,
 			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
@@ -1678,6 +1681,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		94F8AC982D72419F00D9948A /* MapboxDirections */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MapboxDirections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

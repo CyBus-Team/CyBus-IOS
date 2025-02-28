@@ -8,22 +8,30 @@
 import Foundation
 import CoreLocation
 import ComposableArchitecture
+import MapboxDirections
 
 class SearchTripUseCases: SearchTripUseCasesProtocol {
     
     private let routesUseCases: RoutesUseCasesProtocol
     private let repository: SearchTripRepositoryProtocol
+    private let bundle: Bundle
     
     init(
         routesUseCases: RoutesUseCasesProtocol = RoutesUseCases(),
-        repository: SearchTripRepositoryProtocol = SearchTripRepositoryLocal()
+        repository: SearchTripRepositoryProtocol = SearchTripRepositoryLocal(),
+        bundle: Bundle = .main
     ) {
         self.routesUseCases = routesUseCases
         self.repository = repository
+        self.bundle = bundle
     }
     
-    func getNodes(from stops: [SearchStopEntity]) async throws -> [TripNodeEntity] {
-        var result: [TripNodeEntity] = []
+    func getNodes(
+        for stops: [SearchStopEntity],
+        from userLocation: CLLocationCoordinate2D,
+        to destionation: CLLocationCoordinate2D
+    ) async throws -> [TripNodeEntity] {
+        var nodes: [TripNodeEntity] = []
         
         try await routesUseCases.fetchRoutes()
         let routesDTO = routesUseCases.routes
@@ -33,10 +41,67 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
             let tripIds = stop.tripIds
             let routeIds = tripsDTO.filter { tripIds.contains($0.tripId) }.compactMap { $0.routeId }
             let lineName = routesDTO.filter { routeIds.contains($0.lineId) }.first?.lineName ?? ""
-            result.append(TripNodeEntity(id: stop.id, line: lineName, type: .busStop, location: stop.location))
+            nodes.append(TripNodeEntity(id: stop.id, line: lineName, type: .busStop, location: stop.location))
         }
         
-        return result
+        // From user location to first stop
+        guard let firstNode = nodes.first else {
+            return nodes
+        }
+        let walkToFirstPoint = try await getWalkPoints(from: userLocation, to: firstNode.location)
+        let startNodes = walkToFirstPoint
+            .map {
+                TripNodeEntity(
+                    id: UUID().uuidString,
+                    line: firstNode.line,
+                    type: .walk,
+                    location: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
+                )
+            }
+        nodes.insert(contentsOf: startNodes, at: nodes.startIndex)
+        
+        // From last stop to destination
+        guard let lastStopLocation = stops.last?.location else {
+            return nodes
+        }
+        let walkToDestination = try await getWalkPoints(from: lastStopLocation, to: destionation)
+        let lastNodes = walkToDestination
+            .map {
+                TripNodeEntity(
+                    id: UUID().uuidString,
+                    line: firstNode.line,
+                    type: .walk,
+                    location: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
+                )
+            }
+        nodes.insert(contentsOf: lastNodes, at: nodes.endIndex)
+        
+        return nodes
+    }
+    
+    func getWalkPoints(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [CLLocationCoordinate2D] {
+        let walkPoints = [
+            Waypoint(coordinate: from),
+            Waypoint(coordinate: to)
+        ]
+        
+        let options = RouteOptions(waypoints: walkPoints, profileIdentifier: .walking)
+        
+        guard let mapBoxAccessToken = bundle.object(forInfoDictionaryKey: "MBXAccessToken") as? String else {
+            throw SearchTripUseCasesError.apiNotAvailable
+        }
+        
+        let directions = Directions(accessToken: mapBoxAccessToken)
+        return try await withCheckedThrowingContinuation { continuation in
+            directions.calculate(options) { (waypoints, routes, error) in
+                guard error != nil || waypoints != nil else {
+                    continuation.resume(throwing: error ?? SearchTripUseCasesError.apiNotAvailable)
+                    return
+                }
+                continuation.resume(returning: routes?.first?.coordinates ?? [])
+            }
+        }
+
     }
     
     func nearestCity(to coordinate: CLLocationCoordinate2D) throws -> String? {
@@ -137,7 +202,6 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
         debugPrint("No path found from \(start.id) to \(destination.id)")
         return nil
     }
-    
 }
 
 struct SearchTripUseCasesKey: DependencyKey {

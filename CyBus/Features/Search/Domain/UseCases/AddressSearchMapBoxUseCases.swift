@@ -14,7 +14,10 @@ class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
     private let repository: AddressSearchRepositoryProtocol
     private let locationUseCases: LocationUseCasesProtocol
     
-    init(repository: AddressSearchRepositoryProtocol = AddressSearchMapBoxRepository(), locationUseCases: LocationUseCasesProtocol = LocationUseCases()) {
+    init(
+        repository: AddressSearchRepositoryProtocol = AddressSearchMapBoxRepository(),
+        locationUseCases: LocationUseCasesProtocol = LocationUseCases()
+    ) {
         self.repository = repository
         self.locationUseCases = locationUseCases
     }

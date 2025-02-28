@@ -65,11 +65,19 @@ struct MapView: View {
                         let nodes = searchStore.searchAddressResult.nodes
                         if !nodes.isEmpty {
                             ForEvery(nodes) { node in
-                                MapViewAnnotation(coordinate: node.location) {
-                                    NodeStop(line: node.line, scale: cameraStore.scale)
+                                switch node.type {
+                                case .busStop:
+                                    MapViewAnnotation(coordinate: node.location) {
+                                        NodeStop(line: node.line, scale: cameraStore.scale)
+                                    }
+                                    .allowZElevate(false)
+                                    .allowOverlap(true)
+                                    
+                                case .walk:
+                                    PolylineAnnotation(lineCoordinates: [node.location])
+                                        .lineColor(.systemBlue)
+                                        .lineWidth(3)
                                 }
-                                .allowZElevate(false)
-                                .allowOverlap(true)
                             }
                         }
                         

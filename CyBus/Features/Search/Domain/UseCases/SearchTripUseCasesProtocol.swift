@@ -8,6 +8,7 @@
 import CoreLocation
 
 enum SearchTripUseCasesError: Error {
+    case apiNotAvailable
     case noRouteFound
     case noStartStopFound
     case noEndStopFound
@@ -16,5 +17,9 @@ enum SearchTripUseCasesError: Error {
 
 protocol SearchTripUseCasesProtocol {
     func getStops(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) async throws -> [SearchStopEntity]
-    func getNodes(from stops: [SearchStopEntity]) async throws -> [TripNodeEntity]
+    func getNodes(
+        for stops: [SearchStopEntity],
+        from userLocation: CLLocationCoordinate2D,
+        to destionation: CLLocationCoordinate2D
+    ) async throws -> [TripNodeEntity]
 }

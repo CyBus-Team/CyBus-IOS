@@ -52,8 +52,7 @@ struct AddressSearchResultFeature {
                 return .run { @MainActor send in
                     let from = try await locationUseCases.getCurrentLocation()
                     let stops = try await useCases.getStops(from: from!, to: to)
-                    let nodes = try await useCases.getNodes(from: stops)
-                    print("nodes: \(nodes)")
+                    let nodes = try await useCases.getNodes(for: stops, from: from!, to: to)
                     return send(.onGetDirectionsResponse(nodes))
                 }
                 

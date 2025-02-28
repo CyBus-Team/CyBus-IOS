@@ -21,16 +21,18 @@ struct NodeStop: View {
                 .foregroundColor(theme.colors.foreground)
                 .background(theme.colors.primary)
                 .cornerRadius(16)
-            Image(systemName: "figure.wave.circle.fill")
-                .resizable()
-                .frame(width: 32, height: 32)
-                .foregroundStyle(theme.colors.primary)
+            ZStack {
+                Circle()
+                    .fill(theme.colors.background)
+                    .frame(width: 32, height: 32)
+                Image(systemName: "figure.wave.circle.fill")
+                    .resizable()
+                    .frame(width: 32, height: 32)
+                    .foregroundColor(theme.colors.primary)
+            }
         }
-        .foregroundStyle(theme.colors.primary)
         .scaleEffect(scale)
-        
     }
-    
 }
 
 
