@@ -36,7 +36,6 @@ class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
         } catch {
             throw AddressSearchUseCasesError.fetchFailed
         }
-        
     }
     
     func select(suggestion: SuggestionEntity) async throws -> DetailedSuggestionEntity? {

@@ -33,7 +33,9 @@ class AddressSearchMapBoxRepository: AddressSearchRepositoryProtocol {
             placeSDK.suggestions(for: query, proximity: userLocation, filterBy: .init(countries: [cyprus] )) { result in
                 switch result {
                 case .success(let suggestions):
-                    let dtos = suggestions.map { SuggestionDTO(id: $0.mapboxId, suggestion: $0) }
+                    let dtos = suggestions
+                        .sorted { $0.distance ?? 0 < $1.distance ?? 0 }
+                        .map { SuggestionDTO(id: $0.mapboxId, suggestion: $0) }
                     continuation.resume(returning: dtos)
                 case .failure(let error):
                     continuation.resume(throwing: error)
