@@ -1,5 +1,5 @@
 {
-  "originHash" : "8775cb452eb163b63594cf3ae7ca769a6ae7df9a887eff42878d6228b2e5648e",
+  "originHash" : "b2c4e4bd21e1ea0ec84bf267ca6c18273aeb48f8014d75fcf05029ae48bcf6fe",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -29,12 +29,30 @@
       }
     },
     {
+      "identity" : "mapbox-directions-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mapbox/mapbox-directions-swift",
+      "state" : {
+        "revision" : "65857d14080afa1e5463e0dbadd9dec23e66a6f3",
+        "version" : "0.30.0"
+      }
+    },
+    {
       "identity" : "mapbox-maps-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/mapbox-maps-ios.git",
       "state" : {
         "revision" : "e267bb4abeae73b14be760bb5cd6b30756970db0",
         "version" : "11.9.0"
+      }
+    },
+    {
+      "identity" : "polyline",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/raphaelmor/Polyline.git",
+      "state" : {
+        "revision" : "011fbc1b0f27a3398bd0fb7c5e2cf5c62ae82717",
+        "version" : "4.2.1"
       }
     },
     {

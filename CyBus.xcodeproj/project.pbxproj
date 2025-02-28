@@ -1074,6 +1074,7 @@
 				94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				94575D8E2D23396D00CC3C03 /* XCRemoteSwiftPackageReference "search-ios" */,
 				94575D9A2D2731E000CC3C03 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+				94F8AC972D7240ED00D9948A /* XCRemoteSwiftPackageReference "mapbox-directions-swift" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
@@ -1640,6 +1641,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.15.1;
+			};
+		};
+		94F8AC972D7240ED00D9948A /* XCRemoteSwiftPackageReference "mapbox-directions-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-directions-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
