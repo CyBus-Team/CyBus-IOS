@@ -20,7 +20,7 @@ struct ClearNodesButton: View {
             Image(systemName: "mappin.circle.fill")
         }
         .padding()
-        .background(theme.colors.primary)
+        .background(theme.colors.destinationColor)
         .foregroundColor(theme.colors.background)
         .clipShape(.capsule)
         .shadow(radius: 10)

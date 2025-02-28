@@ -13,7 +13,7 @@ struct NodeStop: View {
     let line: String
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 2) {
             Text(line)
                 .font(theme.typography.title)
                 .foregroundColor(theme.colors.nodeColor)
