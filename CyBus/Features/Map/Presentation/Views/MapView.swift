@@ -77,6 +77,7 @@ struct MapView: View {
                                     PolylineAnnotation(lineCoordinates: node.path ?? [])
                                         .lineColor(.systemBlue)
                                         .lineWidth(3)
+                                        .lineGapWidth(1)
                                 }
                             }
                         }
