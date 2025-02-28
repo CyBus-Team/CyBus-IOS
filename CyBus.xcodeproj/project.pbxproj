@@ -65,7 +65,7 @@
 		94575DA82D2AB47A00CC3C03 /* AddressSearchResultFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */; };
 		94575DAA2D2C484A00CC3C03 /* ZoomControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA92D2C484500CC3C03 /* ZoomControlButton.swift */; };
 		94575DAC2D2C501200CC3C03 /* DestinationMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DAB2D2C4F4900CC3C03 /* DestinationMarker.swift */; };
-		94575DB22D2DA3A700CC3C03 /* SearchTripUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */; };
+		94575DB22D2DA3A700CC3C03 /* SearchTripMapBoxUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DB12D2DA39800CC3C03 /* SearchTripMapBoxUseCases.swift */; };
 		94575DB42D319A1000CC3C03 /* TripNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DB32D319A0700CC3C03 /* TripNodeEntity.swift */; };
 		945843A92CD18862006D9893 /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843A82CD1885F006D9893 /* MapFeature.swift */; };
 		945843AB2CD1923E006D9893 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843AA2CD19236006D9893 /* HomeView.swift */; };
@@ -212,7 +212,7 @@
 		94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResultFeature.swift; sourceTree = "<group>"; };
 		94575DA92D2C484500CC3C03 /* ZoomControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControlButton.swift; sourceTree = "<group>"; };
 		94575DAB2D2C4F4900CC3C03 /* DestinationMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationMarker.swift; sourceTree = "<group>"; };
-		94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripUseCases.swift; sourceTree = "<group>"; };
+		94575DB12D2DA39800CC3C03 /* SearchTripMapBoxUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripMapBoxUseCases.swift; sourceTree = "<group>"; };
 		94575DB32D319A0700CC3C03 /* TripNodeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripNodeEntity.swift; sourceTree = "<group>"; };
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -428,7 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */,
-				94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */,
+				94575DB12D2DA39800CC3C03 /* SearchTripMapBoxUseCases.swift */,
 				94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */,
 				94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */,
 			);
@@ -1151,7 +1151,7 @@
 				94575DAA2D2C484A00CC3C03 /* ZoomControlButton.swift in Sources */,
 				9406EB562D3C418800C17ABF /* SearchTripUseCasesProtocol.swift in Sources */,
 				94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */,
-				94575DB22D2DA3A700CC3C03 /* SearchTripUseCases.swift in Sources */,
+				94575DB22D2DA3A700CC3C03 /* SearchTripMapBoxUseCases.swift in Sources */,
 				94575DA42D28867700CC3C03 /* AddressSearchResultView.swift in Sources */,
 				9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */,
 				94AF0DA52C779ADC002FE41B /* BusesUseCases.swift in Sources */,

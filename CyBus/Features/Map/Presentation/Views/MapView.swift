@@ -74,7 +74,7 @@ struct MapView: View {
                                     .allowOverlap(true)
                                     
                                 case .walk:
-                                    PolylineAnnotation(lineCoordinates: [node.location])
+                                    PolylineAnnotation(lineCoordinates: node.path ?? [])
                                         .lineColor(.systemBlue)
                                         .lineWidth(3)
                                 }

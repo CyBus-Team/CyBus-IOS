@@ -18,4 +18,5 @@ struct TripNodeEntity : Equatable, Identifiable {
     let line: String
     let type: NodeType
     let location: CLLocationCoordinate2D
+    let path: [CLLocationCoordinate2D]?
 }
