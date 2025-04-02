@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Factory
 
 struct HomeView: View {
     
@@ -31,42 +32,53 @@ struct HomeView: View {
         appearance.shadowImage = image
         
         UITabBar.appearance().standardAppearance = appearance
+        
+        homeStore.send(.setup)
     }
     
+    //MARK: DI
+    @Injected(\Container.homeFeature) var homeStore: StoreOf<HomeFeature>
     let mapStore: StoreOf<MapFeature> = Store(initialState: MapFeature.State()) {
         MapFeature()
     }
-    
     let busesStore: StoreOf<BusesFeature> = Store(initialState: BusesFeature.State()) {
         BusesFeature()
     }
     
     var body: some View {
-        TabView {
-            VStack {
-                MapView(
-                    mapStore: mapStore,
-                    cameraStore: mapStore.scope(state: \.mapCamera, action: \.mapCamera),
-                    locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
-                    busesStore: busesStore,
-                    searchStore: mapStore.scope(state: \.search, action: \.search)
-                )
-                SearchView(
-                    store: mapStore.scope(state: \.search, action: \.search),
-                    addressSearchStore: mapStore.scope(state: \.search, action: \.search).scope(state: \.searchAddress, action: \.searchAddress),
-                    addressResultStore: mapStore.scope(state: \.search, action: \.search).scope(state: \.searchAddressResult, action: \.searchAddressResult)
-                )
-            }
-            .tabItem {
-                Label("Map", systemImage: "map")
-            }
-            .tag(1)
-            ProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "person.crop.circle")
+        if !homeStore.error.isEmpty {
+            Text("Error: \(homeStore.error)")
+        } else if homeStore.isLoading {
+            ProgressView()
+        } else {
+            TabView {
+                VStack {
+                    MapView(
+                        mapStore: mapStore,
+                        cameraStore: mapStore.scope(state: \.mapCamera, action: \.mapCamera),
+                        locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
+                        busesStore: busesStore,
+                        searchStore: mapStore.scope(state: \.search, action: \.search)
+                    )
+                    SearchView(
+                        store: mapStore.scope(state: \.search, action: \.search),
+                        addressSearchStore: mapStore.scope(state: \.search, action: \.search).scope(state: \.searchAddress, action: \.searchAddress),
+                        addressResultStore: mapStore.scope(state: \.search, action: \.search).scope(state: \.searchAddressResult, action: \.searchAddressResult)
+                    )
                 }
-                .tag(2)
+                .tabItem {
+                    Label("Map", systemImage: "map")
+                }
+                .tag(1)
+                
+                EmptyView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
+                    .tag(2)
+            }
         }
+        
     }
     
 }

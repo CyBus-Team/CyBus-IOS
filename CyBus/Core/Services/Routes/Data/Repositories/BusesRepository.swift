@@ -32,7 +32,9 @@ class BusesRepository: BusesRepositoryProtocol {
     }
     
     func fetchBuses(url: URL) async throws -> [BusesDTO] {
-        return []
+        let (data, _) = try await urlSession.data(from: url)
+        let feedMessage = try TransitRealtime_FeedMessage(serializedBytes: data)
+        return feedMessage.entity
     }
     
 }

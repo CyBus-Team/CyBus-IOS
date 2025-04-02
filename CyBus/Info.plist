@@ -19,19 +19,6 @@
         
         <key>MBXAccessToken</key>
         <string>$(MBXAccessToken)</string>
-
-        <key>GFTSServiceURL</key>
-        <string>$(GFTSServiceURL)</string>
         
-        <key>NSExceptionDomains</key>
-        <dict>
-            <key>$(GFTSServiceIP)</key>
-            <dict>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSIncludesSubdomains</key>
-                <true/>
-            </dict>
-        </dict>
     </dict>
 </plist>
