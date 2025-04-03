@@ -9,11 +9,7 @@ import Factory
 
 class AppConfigurationUseCases : AppConfigurationUseCasesProtocol {
     
-    private let repository: AppConfiguraionRepositoryProtocol
-    
-    init(repository: AppConfiguraionRepositoryProtocol = Container.shared.appConfigurationRepository()) {
-        self.repository = repository
-    }
+    @Injected(\.appConfigurationRepository) var repository: AppConfiguraionRepositoryProtocol
     
     var appConfiguration: AppConfiguration!
     

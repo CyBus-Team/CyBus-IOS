@@ -1,5 +1,5 @@
 //
-//  TransitFeedRepository.swift
+//  BusesRepository.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 22/08/2024.
@@ -7,32 +7,21 @@
 
 import Foundation
 
-enum BusesRepositoryError: Error {
-    case invalidURL
-}
-
 class BusesRepository: BusesRepositoryProtocol {
     
     private let urlSession: URLSession
-    private let bundle: Bundle
     
-    init(urlSession: URLSession = .shared, bundle: Bundle = .main) {
+    init(urlSession: URLSession = .shared) {
         self.urlSession = urlSession
-        self.bundle = bundle
     }
     
-    func getServiceUrl() throws -> URL {
-        guard let domain = Bundle.main.object(forInfoDictionaryKey: "ProductionURL") as? String else {
-            throw BusesRepositoryError.invalidURL
-        }
-        guard let url = URL(string: domain) else {
-            throw BusesRepositoryError.invalidURL
-        }
-        return url
-    }
-    
-    func fetchBuses(url: URL) async throws -> [BusesDTO] {
-        return []
+    func fetchBuses() async throws -> BusesDTO {
+        return BusesDTO(
+            busCount: 10,
+            buses: ["10": BusDTO(
+                label: "String", latitude: 10, longitude: 10, bearing: 10, startTime: "", speedKmPerHour: 10, tripID: "", routeID: "", routeShortName: "", routeLongName: "", receivedFromBusAt: ""
+            )]
+        )
     }
     
 }

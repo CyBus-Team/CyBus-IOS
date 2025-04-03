@@ -21,14 +21,12 @@ struct BusEntity: Identifiable, Equatable, Hashable {
     let routeID: String
     let lineName: String
     let position: CLLocationCoordinate2D
-    let lineColor: String?
     
-    init(id: String, position: CLLocationCoordinate2D, routeID: String, lineName: String, lineColor: String?) {
+    init(id: String, position: CLLocationCoordinate2D, routeID: String, lineName: String) {
         self.id = id
         self.routeID = routeID
         self.position = position
         self.lineName = lineName
-        self.lineColor = lineColor
     }
 }
 

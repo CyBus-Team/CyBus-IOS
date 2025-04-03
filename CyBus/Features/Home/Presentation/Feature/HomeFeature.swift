@@ -23,7 +23,7 @@ struct HomeFeature {
         case setupFailed(error: String)
     }
     
-    let appConfugurationUseCases: AppConfigurationUseCasesProtocol = Container.shared.appConfigurationUseCases()
+    @Injected(\.appConfigurationUseCases) var appConfugurationUseCases: AppConfigurationUseCasesProtocol
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in

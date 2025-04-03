@@ -37,13 +37,15 @@ struct HomeView: View {
     }
     
     //MARK: DI
-    @Injected(\Container.homeFeature) var homeStore: StoreOf<HomeFeature>
-    let mapStore: StoreOf<MapFeature> = Store(initialState: MapFeature.State()) {
-        MapFeature()
-    }
-    let busesStore: StoreOf<BusesFeature> = Store(initialState: BusesFeature.State()) {
-        BusesFeature()
-    }
+    @Injected(\.homeFeature) var homeStore: StoreOf<HomeFeature>
+    @Injected(\.mapFeature) var mapStore: StoreOf<MapFeature>
+    @Injected(\.busesFeature) var busesStore: StoreOf<BusesFeature>
+//    let mapStore: StoreOf<MapFeature> = Store(initialState: MapFeature.State()) {
+//        MapFeature()
+//    }
+//    let busesStore: StoreOf<BusesFeature> = Store(initialState: BusesFeature.State()) {
+//        BusesFeature()
+//    }
     
     var body: some View {
         if !homeStore.error.isEmpty {

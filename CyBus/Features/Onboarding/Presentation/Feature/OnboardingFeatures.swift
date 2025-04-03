@@ -66,9 +66,6 @@ struct OnboardingFeatures {
             case .geolocation(_):
                 return .none
                 
-                // Sign in
-                // TODO(admin): add different routes (login, sign up, map)
-                // Always map for now
             case .signIn(_):
                 state.finished = true
                 state.page = .home

@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import MapboxMaps
 import UIKit
+import Factory
 
 @Reducer
 struct MapFeature {
@@ -40,7 +41,7 @@ struct MapFeature {
         }
     }
     
-    @Dependency(\.mapUseCases) var mapUseCases
+    @Injected(\.mapUseCases) var mapUseCases: MapUseCasesProtocol
     
     var body: some ReducerOf<Self> {
         Scope(state: \.userLocation, action: \.userLocation) {

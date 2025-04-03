@@ -24,6 +24,15 @@
 		942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53ED2C55152E00DE9BD7 /* routes_generator.rb */; };
 		942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F02C55201900DE9BD7 /* shapes_generator.rb */; };
 		942C53F72C55217400DE9BD7 /* RouteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F62C55217400DE9BD7 /* RouteDTO.swift */; };
+		942F51CA2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */; };
+		942F51CB2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */; };
+		942F51CE2D9DB6D2007F6F7D /* MapDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51CD2D9DB6CF007F6F7D /* MapDI.swift */; };
+		942F51D02D9DC030007F6F7D /* StaticFilesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51CF2D9DC02A007F6F7D /* StaticFilesRepositoryProtocol.swift */; };
+		942F51D32D9DC177007F6F7D /* StaticFilesDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51D22D9DC174007F6F7D /* StaticFilesDI.swift */; };
+		942F51D52D9DC67F007F6F7D /* BusesDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51D42D9DC67D007F6F7D /* BusesDI.swift */; };
+		942F51D72D9F1206007F6F7D /* RoutesUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51D62D9F1200007F6F7D /* RoutesUseCasesProtocol.swift */; };
+		942F51D92D9F120E007F6F7D /* RoutesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51D82D9F1208007F6F7D /* RoutesUseCases.swift */; };
+		942F51DC2D9F127F007F6F7D /* RoutesDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51DB2D9F127C007F6F7D /* RoutesDI.swift */; };
 		9432A1802D4FB19E00E05BCB /* ClearNodesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432A17F2D4FB19E00E05BCB /* ClearNodesButton.swift */; };
 		9435C90A2CF334CC0041A986 /* RoutesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435C9092CF334C50041A986 /* RoutesFeature.swift */; };
 		9435C90C2CF78ED40041A986 /* BusGroupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435C90B2CF78EC20041A986 /* BusGroupEntity.swift */; };
@@ -94,11 +103,10 @@
 		94AF0DA12C7799FE002FE41B /* BusesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DA02C7799FE002FE41B /* BusesRepositoryProtocol.swift */; };
 		94AF0DA32C779A8C002FE41B /* BusesUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DA22C779A8C002FE41B /* BusesUseCasesProtocol.swift */; };
 		94AF0DA52C779ADC002FE41B /* BusesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DA42C779ADC002FE41B /* BusesUseCases.swift */; };
-		94AF0DAA2C77A6A8002FE41B /* RoutesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DA92C77A6A8002FE41B /* RoutesRepository.swift */; };
-		94AF0DAF2C77B0AB002FE41B /* BusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DAE2C77B0AB002FE41B /* BusesRepository.swift */; };
-		94AF0DC22C79FAE7002FE41B /* RoutesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC12C79FAE7002FE41B /* RoutesUseCases.swift */; };
-		94AF0DC42C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC32C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift */; };
-		94AF0DC62C7CF956002FE41B /* BusRouteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC52C7CF956002FE41B /* BusRouteEntity.swift */; };
+		94AF0DAA2C77A6A8002FE41B /* StaticFilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DA92C77A6A8002FE41B /* StaticFilesRepository.swift */; };
+		94AF0DC22C79FAE7002FE41B /* StaticFilesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC12C79FAE7002FE41B /* StaticFilesUseCases.swift */; };
+		94AF0DC42C7CF2E5002FE41B /* StaticFilesUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC32C7CF2E5002FE41B /* StaticFilesUseCasesProtocol.swift */; };
+		94AF0DC62C7CF956002FE41B /* RouteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC52C7CF956002FE41B /* RouteEntity.swift */; };
 		94AF24DA2CBC572A0092EE9B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24D92CBC57230092EE9B /* OnboardingView.swift */; };
 		94AF24DC2CBC5A150092EE9B /* OnboardingUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24DB2CBC5A090092EE9B /* OnboardingUseCasesProtocol.swift */; };
 		94AF24DE2CBC5A450092EE9B /* OnboardingUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24DD2CBC5A400092EE9B /* OnboardingUseCases.swift */; };
@@ -178,6 +186,14 @@
 		942C53ED2C55152E00DE9BD7 /* routes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = routes_generator.rb; sourceTree = "<group>"; };
 		942C53F02C55201900DE9BD7 /* shapes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = shapes_generator.rb; sourceTree = "<group>"; };
 		942C53F62C55217400DE9BD7 /* RouteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDTO.swift; sourceTree = "<group>"; };
+		942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDI.swift; sourceTree = "<group>"; };
+		942F51CD2D9DB6CF007F6F7D /* MapDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDI.swift; sourceTree = "<group>"; };
+		942F51CF2D9DC02A007F6F7D /* StaticFilesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFilesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		942F51D22D9DC174007F6F7D /* StaticFilesDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFilesDI.swift; sourceTree = "<group>"; };
+		942F51D42D9DC67D007F6F7D /* BusesDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesDI.swift; sourceTree = "<group>"; };
+		942F51D62D9F1200007F6F7D /* RoutesUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesUseCasesProtocol.swift; sourceTree = "<group>"; };
+		942F51D82D9F1208007F6F7D /* RoutesUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesUseCases.swift; sourceTree = "<group>"; };
+		942F51DB2D9F127C007F6F7D /* RoutesDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesDI.swift; sourceTree = "<group>"; };
 		9432A17F2D4FB19E00E05BCB /* ClearNodesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNodesButton.swift; sourceTree = "<group>"; };
 		9435C9092CF334C50041A986 /* RoutesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesFeature.swift; sourceTree = "<group>"; };
 		9435C90B2CF78EC20041A986 /* BusGroupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusGroupEntity.swift; sourceTree = "<group>"; };
@@ -241,11 +257,10 @@
 		94AF0DA02C7799FE002FE41B /* BusesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		94AF0DA22C779A8C002FE41B /* BusesUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesUseCasesProtocol.swift; sourceTree = "<group>"; };
 		94AF0DA42C779ADC002FE41B /* BusesUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesUseCases.swift; sourceTree = "<group>"; };
-		94AF0DA92C77A6A8002FE41B /* RoutesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesRepository.swift; sourceTree = "<group>"; };
-		94AF0DAE2C77B0AB002FE41B /* BusesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesRepository.swift; sourceTree = "<group>"; };
-		94AF0DC12C79FAE7002FE41B /* RoutesUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesUseCases.swift; sourceTree = "<group>"; };
-		94AF0DC32C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesUseCasesProtocol.swift; sourceTree = "<group>"; };
-		94AF0DC52C7CF956002FE41B /* BusRouteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRouteEntity.swift; sourceTree = "<group>"; };
+		94AF0DA92C77A6A8002FE41B /* StaticFilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFilesRepository.swift; sourceTree = "<group>"; };
+		94AF0DC12C79FAE7002FE41B /* StaticFilesUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFilesUseCases.swift; sourceTree = "<group>"; };
+		94AF0DC32C7CF2E5002FE41B /* StaticFilesUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFilesUseCasesProtocol.swift; sourceTree = "<group>"; };
+		94AF0DC52C7CF956002FE41B /* RouteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteEntity.swift; sourceTree = "<group>"; };
 		94AF24D92CBC57230092EE9B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		94AF24DB2CBC5A090092EE9B /* OnboardingUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUseCasesProtocol.swift; sourceTree = "<group>"; };
 		94AF24DD2CBC5A400092EE9B /* OnboardingUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUseCases.swift; sourceTree = "<group>"; };
@@ -328,6 +343,32 @@
 				941F3A4D2D08B5F1006F1C10 /* UIImage.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		942F51C82D9DB1C7007F6F7D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		942F51CC2D9DB6CA007F6F7D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				942F51DB2D9F127C007F6F7D /* RoutesDI.swift */,
+				942F51D42D9DC67D007F6F7D /* BusesDI.swift */,
+				942F51CD2D9DB6CF007F6F7D /* MapDI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		942F51D12D9DC170007F6F7D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				942F51D22D9DC174007F6F7D /* StaticFilesDI.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		94575D682D1D82F900CC3C03 /* Feature */ = {
@@ -507,26 +548,27 @@
 			isa = PBXGroup;
 			children = (
 				948525552D949A59008EB3A0 /* AppConfiguration */,
-				948525422D949523008EB3A0 /* Routes */,
+				948525422D949523008EB3A0 /* StaticFiles */,
 				94D794952CC2CDD30097A2F0 /* Location */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		948525422D949523008EB3A0 /* Routes */ = {
+		948525422D949523008EB3A0 /* StaticFiles */ = {
 			isa = PBXGroup;
 			children = (
+				942F51D12D9DC170007F6F7D /* DI */,
 				948525452D9495FD008EB3A0 /* Data */,
 				948525442D949556008EB3A0 /* Domain */,
 			);
-			path = Routes;
+			path = StaticFiles;
 			sourceTree = "<group>";
 		};
 		948525442D949556008EB3A0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				94AF0DC12C79FAE7002FE41B /* RoutesUseCases.swift */,
-				94AF0DC32C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift */,
+				94AF0DC12C79FAE7002FE41B /* StaticFilesUseCases.swift */,
+				94AF0DC32C7CF2E5002FE41B /* StaticFilesUseCasesProtocol.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -625,8 +667,8 @@
 		94891BDA2C3AFC65008AFC53 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				94AF0DA92C77A6A8002FE41B /* RoutesRepository.swift */,
-				94AF0DAE2C77B0AB002FE41B /* BusesRepository.swift */,
+				942F51CF2D9DC02A007F6F7D /* StaticFilesRepositoryProtocol.swift */,
+				94AF0DA92C77A6A8002FE41B /* StaticFilesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -726,6 +768,7 @@
 		94AF0D942C779402002FE41B /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				942F51CC2D9DB6CA007F6F7D /* DI */,
 				94AF0D962C779431002FE41B /* Data */,
 				94AF0D972C779436002FE41B /* Domain */,
 				94AF0D982C77943A002FE41B /* Presentation */,
@@ -764,6 +807,8 @@
 		94AF0D992C779555002FE41B /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				942F51D82D9F1208007F6F7D /* RoutesUseCases.swift */,
+				942F51D62D9F1200007F6F7D /* RoutesUseCasesProtocol.swift */,
 				94AF0DA42C779ADC002FE41B /* BusesUseCases.swift */,
 				94AF0DA22C779A8C002FE41B /* BusesUseCasesProtocol.swift */,
 				94C998662C88D28C000F0E64 /* MapUseCases.swift */,
@@ -777,7 +822,7 @@
 			children = (
 				9435C90B2CF78EC20041A986 /* BusGroupEntity.swift */,
 				94891BDF2C3B017B008AFC53 /* BusEntity.swift */,
-				94AF0DC52C7CF956002FE41B /* BusRouteEntity.swift */,
+				94AF0DC52C7CF956002FE41B /* RouteEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -794,6 +839,7 @@
 		94AF24B12CBC13320092EE9B /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				942F51C82D9DB1C7007F6F7D /* DI */,
 				94AF24DF2CBC5A6A0092EE9B /* Data */,
 				94AF24B32CBC13440092EE9B /* Domain */,
 				94AF24B42CBC134D0092EE9B /* Presentation */,
@@ -1199,13 +1245,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				94575DA82D2AB47A00CC3C03 /* AddressSearchResultFeature.swift in Sources */,
-				94AF0DAF2C77B0AB002FE41B /* BusesRepository.swift in Sources */,
+				942F51D52D9DC67F007F6F7D /* BusesDI.swift in Sources */,
 				94D7948B2CC029BA0097A2F0 /* OnboardingFeatures.swift in Sources */,
 				94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */,
+				942F51DC2D9F127F007F6F7D /* RoutesDI.swift in Sources */,
 				9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */,
 				9485253B2D948891008EB3A0 /* BusesDTO.swift in Sources */,
 				94575DB42D319A1000CC3C03 /* TripNodeEntity.swift in Sources */,
-				94AF0DC42C7CF2E5002FE41B /* RoutesUseCasesProtocol.swift in Sources */,
+				942F51D32D9DC177007F6F7D /* StaticFilesDI.swift in Sources */,
+				94AF0DC42C7CF2E5002FE41B /* StaticFilesUseCasesProtocol.swift in Sources */,
 				948525592D949ABA008EB3A0 /* AppConfigurationUseCasesProtocol.swift in Sources */,
 				948CBE612CF23066006C8B1C /* BusesFeature.swift in Sources */,
 				AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */,
@@ -1220,6 +1268,7 @@
 				9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */,
 				94AF0DA52C779ADC002FE41B /* BusesUseCases.swift in Sources */,
 				941C66B62D6E428E00C90714 /* CityDTO.swift in Sources */,
+				942F51D92D9F120E007F6F7D /* RoutesUseCases.swift in Sources */,
 				94575D742D231DF600CC3C03 /* AddressSearchView.swift in Sources */,
 				9403C9262D3C0E58000EDB25 /* SearchTripRepositoryProtocol.swift in Sources */,
 				941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */,
@@ -1229,7 +1278,7 @@
 				948525662D95F2F0008EB3A0 /* HomeDI.swift in Sources */,
 				9485255E2D949C73008EB3A0 /* AppConfigurationRepositoryProtocol.swift in Sources */,
 				94575D762D23206B00CC3C03 /* SearchCollapsedView.swift in Sources */,
-				94AF0DC22C79FAE7002FE41B /* RoutesUseCases.swift in Sources */,
+				94AF0DC22C79FAE7002FE41B /* StaticFilesUseCases.swift in Sources */,
 				9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */,
 				94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */,
 				944494782CCD7DBC00A616E2 /* LocationManagerUseCases.swift in Sources */,
@@ -1241,7 +1290,7 @@
 				94AF24E12CBC5AB40092EE9B /* OnboardingRepositoryProtocol.swift in Sources */,
 				94D794872CC020630097A2F0 /* RootView.swift in Sources */,
 				94F3B8812CC2EB3800E38BE2 /* OnboardingWelcomeView.swift in Sources */,
-				94AF0DC62C7CF956002FE41B /* BusRouteEntity.swift in Sources */,
+				94AF0DC62C7CF956002FE41B /* RouteEntity.swift in Sources */,
 				94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */,
 				948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */,
 				942C53F72C55217400DE9BD7 /* RouteDTO.swift in Sources */,
@@ -1255,6 +1304,7 @@
 				AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */,
 				94C998672C88D28C000F0E64 /* MapUseCases.swift in Sources */,
 				94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */,
+				942F51D02D9DC030007F6F7D /* StaticFilesRepositoryProtocol.swift in Sources */,
 				94575D7D2D23331700CC3C03 /* AddressSearchFeature.swift in Sources */,
 				94575D8A2D23359300CC3C03 /* SuggestionDTO.swift in Sources */,
 				94AF24DE2CBC5A450092EE9B /* OnboardingUseCases.swift in Sources */,
@@ -1269,14 +1319,17 @@
 				94AF0DA12C7799FE002FE41B /* BusesRepositoryProtocol.swift in Sources */,
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
 				94D794A62CC2CDD30097A2F0 /* ThemeModeRepositoryProtocol.swift in Sources */,
+				942F51CB2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */,
 				944494722CCBC69100A616E2 /* OnboardingRequestGeolocationFeature.swift in Sources */,
 				94AA6D832CEA5FB6004A25A9 /* LocationFeature.swift in Sources */,
 				9403C9242D3C0CE8000EDB25 /* SearchTripDTO.swift in Sources */,
 				94D794A72CC2CDD30097A2F0 /* ThemeModeUseCasesProtocol.swift in Sources */,
+				942F51CE2D9DB6D2007F6F7D /* MapDI.swift in Sources */,
 				945843A92CD18862006D9893 /* MapFeature.swift in Sources */,
 				94D794A82CC2CDD30097A2F0 /* Typography.swift in Sources */,
 				94575D8D2D2336D500CC3C03 /* SuggestionsEntity.swift in Sources */,
 				AC1D3FA12D26B1D70005D3EE /* BusGroup.swift in Sources */,
+				942F51D72D9F1206007F6F7D /* RoutesUseCasesProtocol.swift in Sources */,
 				AC1D3FA22D26B1D70005D3EE /* LocationButton.swift in Sources */,
 				9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */,
 				9435C90A2CF334CC0041A986 /* RoutesFeature.swift in Sources */,
@@ -1298,7 +1351,7 @@
 				9406EB582D3C44C700C17ABF /* SearchStopEntity.swift in Sources */,
 				94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* BusEntity.swift in Sources */,
-				94AF0DAA2C77A6A8002FE41B /* RoutesRepository.swift in Sources */,
+				94AF0DAA2C77A6A8002FE41B /* StaticFilesRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1309,6 +1362,7 @@
 				94C1BE7F2CC55D880048789B /* OnboardingFeatures.swift in Sources */,
 				9420D1C22CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */,
 				947D9F6F2CFA59ED00C8C830 /* BusesUseCasesTests.swift in Sources */,
+				942F51CA2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */,
 				945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */,
 				944494792CCE417E00A616E2 /* LocationUseCases.swift in Sources */,
 				9420D1C52CD017AA00150F5B /* OnboardingSigninFeature.swift in Sources */,

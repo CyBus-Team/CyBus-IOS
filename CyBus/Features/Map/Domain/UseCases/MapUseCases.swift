@@ -29,14 +29,3 @@ class MapUseCases : MapUseCasesProtocol {
     }
     
 }
-
-struct MapUseCasesKey: DependencyKey {
-    static var liveValue: MapUseCasesProtocol = MapUseCases()
-}
-
-extension DependencyValues {
-    var mapUseCases: MapUseCasesProtocol {
-        get { self[MapUseCasesKey.self] }
-        set { self[MapUseCasesKey.self] = newValue }
-    }
-}

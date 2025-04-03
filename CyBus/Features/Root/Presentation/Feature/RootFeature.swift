@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Factory
 
 @Reducer
 struct RootFeature {
@@ -25,7 +26,7 @@ struct RootFeature {
         case initApp
     }
     
-    @Dependency(\.onboardingUseCases) var onboardingUseCases
+    @Injected(\.onboardingUseCases) var onboardingUseCases: OnboardingUseCasesProtocol
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in

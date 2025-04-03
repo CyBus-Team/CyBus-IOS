@@ -1,5 +1,5 @@
 //
-//  GeoDataRepository.swift
+//  StaticFilesRepository.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 22/08/2024.
@@ -11,7 +11,7 @@ enum RoutesRepositoryError: Error {
     case fileNotFound
 }
 
-class RoutesRepository: RoutesRepositoryProtocol {
+class StaticFilesRepository: StaticFilesRepositoryProtocol {
     
     private let bundle: Bundle
     

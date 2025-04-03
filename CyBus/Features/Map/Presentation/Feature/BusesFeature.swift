@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Factory
 
 @Reducer
 struct BusesFeature {
@@ -45,7 +46,7 @@ struct BusesFeature {
         case routes(RoutesFeature.Action)
     }
     
-    @Dependency(\.busesUseCases) var busesUseCases
+    @Injected(\.busesUseCases) var busesUseCases: BusesUseCasesProtocol
     
     var body: some ReducerOf<Self> {
         Scope(state: \.routes, action: \.routes) {

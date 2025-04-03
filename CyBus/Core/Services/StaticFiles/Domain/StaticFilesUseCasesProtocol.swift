@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RoutesUseCasesProtocol {
+protocol StaticFilesUseCasesProtocol {
     var routes: [RouteDTO] { get }
     
     var shapes: [ShapeDTO] { get }
@@ -18,7 +18,6 @@ protocol RoutesUseCasesProtocol {
     
     var trips: [TripDTO] { get }
     
-    func fetchRoutes() async throws
-    
-    func getRoute(for routeID: String) -> BusRouteEntity
+    func fetch() async throws
+
 }

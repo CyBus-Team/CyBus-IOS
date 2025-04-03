@@ -7,12 +7,11 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Factory
 
 struct OnboardingView: View {
     
-    let onboardingStore: StoreOf<OnboardingFeatures> = Store(initialState: OnboardingFeatures.State()) {
-        OnboardingFeatures()
-    }
+    @Injected(\Container.onboardingFeature) var onboardingStore: StoreOf<OnboardingFeatures>
     
     var body: some View {
         NavigationStack() {
