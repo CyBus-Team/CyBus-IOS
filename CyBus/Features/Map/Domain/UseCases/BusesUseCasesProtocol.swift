@@ -11,6 +11,4 @@ protocol BusesUseCasesProtocol {
     
     func fetchBuses() async throws -> [BusEntity]
     
-    func getRoute(for routeID: String) -> BusRouteEntity
-    
 }

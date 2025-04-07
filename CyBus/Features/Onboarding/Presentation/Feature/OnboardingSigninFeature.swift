@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import UIKit
 import Foundation
+import Factory
 
 @Reducer
 struct OnboardingSignInFeature {
@@ -21,7 +22,7 @@ struct OnboardingSignInFeature {
         case notNowTapped
     }
     
-    @Dependency(\.onboardingUseCases) var onboardingUseCases
+    @Injected(\.onboardingUseCases) var onboardingUseCases: OnboardingUseCasesProtocol
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in

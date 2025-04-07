@@ -12,4 +12,6 @@ protocol LocationManagerUseCasesProtocol {
     func requestAuthorizationStatus() async -> CLAuthorizationStatus
     
     func getCurrentAuthorizationStatus() -> CLAuthorizationStatus
+    
+    func getLocation() -> CLLocation?
 }

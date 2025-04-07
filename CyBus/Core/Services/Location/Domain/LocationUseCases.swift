@@ -7,14 +7,15 @@
 
 import CoreLocation
 import ComposableArchitecture
+import Factory
 
 final class LocationUseCases : LocationUseCasesProtocol {
     
     private var location: CLLocationCoordinate2D?
     
-    let locationManagerUseCases: LocationManagerUseCases
+    @Injected(\.locationManagerUseCases) var locationManagerUseCases: LocationManagerUseCasesProtocol
     
-    init(locationManagerUseCases: LocationManagerUseCases = LocationManagerUseCases()) {
+    init(locationManagerUseCases: LocationManagerUseCasesProtocol = Container.shared.locationManagerUseCases()) {
         self.locationManagerUseCases = locationManagerUseCases
     }
     
@@ -64,16 +65,4 @@ final class LocationUseCases : LocationUseCasesProtocol {
         }
     }
     
-}
-
-struct LocationUseCasesKey: DependencyKey {
-    static var liveValue: LocationUseCasesProtocol = LocationUseCases()
-}
-
-
-extension DependencyValues {
-    var locationUseCases: LocationUseCasesProtocol {
-        get { self[LocationUseCasesKey.self] }
-        set { self[LocationUseCasesKey.self] = newValue }
-    }
 }

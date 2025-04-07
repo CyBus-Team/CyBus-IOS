@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import MapboxSearch
+import Factory
 
 @Reducer
 struct AddressSearchFeature {
@@ -30,7 +31,7 @@ struct AddressSearchFeature {
         case onGetDetailedSuggestion(DetailedSuggestionEntity?)
     }
     
-    @Dependency(\.addressAutocompleteUseCases) var useCases
+    @Injected(\.addressSearchUseCases) var useCases
     
     var body: some ReducerOf<Self> {
         BindingReducer()

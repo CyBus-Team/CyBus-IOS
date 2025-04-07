@@ -7,16 +7,16 @@
 
 import MapboxSearch
 import Foundation
-import ComposableArchitecture
+import Factory
 
 class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
     
-    private let repository: AddressSearchRepositoryProtocol
-    private let locationUseCases: LocationUseCasesProtocol
+    @Injected(\.addressSearchRepository) var repository: AddressSearchRepositoryProtocol
+    @Injected(\.locationUseCases) var locationUseCases: LocationUseCasesProtocol
     
     init(
-        repository: AddressSearchRepositoryProtocol = AddressSearchMapBoxRepository(),
-        locationUseCases: LocationUseCasesProtocol = LocationUseCases()
+        repository: AddressSearchRepositoryProtocol = Container.shared.addressSearchRepository(),
+        locationUseCases: LocationUseCasesProtocol = Container.shared.locationUseCases()
     ) {
         self.repository = repository
         self.locationUseCases = locationUseCases
@@ -51,15 +51,3 @@ class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
     }
     
 }
-
-struct AddressAutocompleteUseCasesKey: DependencyKey {
-    static var liveValue: AddressSearchUseCasesProtocol = AddressSearchMapBoxUseCases()
-}
-
-extension DependencyValues {
-    var addressAutocompleteUseCases: AddressSearchUseCasesProtocol {
-        get { self[AddressAutocompleteUseCasesKey.self] }
-        set { self[AddressAutocompleteUseCasesKey.self] = newValue }
-    }
-}
-

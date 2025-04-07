@@ -21,8 +21,6 @@ struct MapView: View {
     
     private func onInit() {
         mapStore.send(.setUp)
-        busesStore.send(.setUp)
-        busesStore.send(.routes(.setUp))
     }
     
     var body: some View {
@@ -83,12 +81,12 @@ struct MapView: View {
                         }
                         
                         //MARK: Buses
-                        ForEvery(busesStore.groupedBuses) { busGroup in
-                            MapViewAnnotation(coordinate: busGroup.position) {
+                        ForEvery(busesStore.buses) { bus in
+                            MapViewAnnotation(coordinate: bus.position) {
                                 BusGroup (
-                                    action: { busesStore.send(.select(busGroup)) },
-                                    activeBus: busesStore.selectedBusGroupState?.bus,
-                                    buses: busGroup.buses,
+                                    action: { busesStore.send(.select(bus)) },
+                                    activeBus: busesStore.selectedBus,
+                                    buses: [bus],
                                     scale: cameraStore.scale
                                 )
                             }

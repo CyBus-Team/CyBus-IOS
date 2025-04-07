@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-class LocationManagerUseCases : NSObject {
+class LocationManagerUseCases : NSObject, LocationManagerUseCasesProtocol {
     
     private var authorizationContinuation: CheckedContinuation<CLAuthorizationStatus, Never>?
     private let locationManager = CLLocationManager()
@@ -17,26 +17,6 @@ class LocationManagerUseCases : NSObject {
         locationManager.delegate = self
     }
     
-}
-
-extension LocationManagerUseCases: CLLocationManagerDelegate {
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        
-        guard manager.authorizationStatus != .notDetermined else {
-            return
-        }
-        
-        guard let continuation = authorizationContinuation else {
-            return
-        }
-        
-        authorizationContinuation = nil
-        
-        continuation.resume(returning: manager.authorizationStatus)
-    }
-}
-
-extension LocationManagerUseCases : LocationManagerUseCasesProtocol {
     func getLocation() -> CLLocation? {
         locationManager.location
     }
@@ -59,5 +39,23 @@ extension LocationManagerUseCases : LocationManagerUseCasesProtocol {
             authorizationContinuation = continuation
             locationManager.requestWhenInUseAuthorization()
         }
+    }
+    
+}
+
+extension LocationManagerUseCases: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        
+        guard manager.authorizationStatus != .notDetermined else {
+            return
+        }
+        
+        guard let continuation = authorizationContinuation else {
+            return
+        }
+        
+        authorizationContinuation = nil
+        
+        continuation.resume(returning: manager.authorizationStatus)
     }
 }

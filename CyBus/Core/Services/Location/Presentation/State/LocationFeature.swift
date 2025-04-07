@@ -7,6 +7,7 @@
 
 import CoreLocation
 import ComposableArchitecture
+import Factory
 
 @Reducer
 struct LocationFeature {
@@ -22,7 +23,7 @@ struct LocationFeature {
         case onLocationResponse(CLLocationCoordinate2D?)
     }
     
-    @Dependency(\.locationUseCases) var locationUseCases
+    @Injected(\.locationUseCases) var locationUseCases
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
