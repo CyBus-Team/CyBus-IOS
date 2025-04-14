@@ -34,44 +34,59 @@ struct MapView: View {
             }
             
         } else {
-            Map(
-                position: $position,
-                interactionModes: MapInteractionModes.all,
-                scope: mapScope
-            ) {
-                UserAnnotation()
-                ForEach(busesStore.busList) { bus in
-                    Annotation("", coordinate: bus.position, anchor: .bottom) {
-                        BusView(
-                            bus: bus,
-                            isActive: bus == busesStore.selectedBus
-                        ) {
-                            busesStore.send(.select(bus))
+            ZStack {
+                // MARK: Map
+                Map(
+                    position: $position,
+                    interactionModes: MapInteractionModes.all,
+                    scope: mapScope
+                ) {
+                    UserAnnotation()
+                    ForEach(busesStore.busList) { bus in
+                        Annotation("", coordinate: bus.position, anchor: .bottom) {
+                            BusView(
+                                bus: bus,
+                                isActive: !busesStore.hasSelection || bus == busesStore.selectedBus
+                            ) {
+                                busesStore.send(.select(bus))
+                            }
+                        }
+                    }
+                    
+                    //MARK: Shapes and Stops
+                    //                    if busesStore.routes.hasSelectedRoute {
+                    //                        let route = busesStore.routes.selectedRoute
+                    //                        let stops = route?.stops ?? []
+                    //                        let shapes = route?.shapes ?? []
+                    //
+                    //                        //MARK: Stops
+                    //                        ForEach(stops) { stop in
+                    //                            MapAnnotation(coordinate: stop.position) {
+                    //                                StopCircle(color: theme.colors.primary).compositingGroup()
+                    //                            }
+                    //                        }
+                    //                    }
+                }
+                .mapControls {
+                    MapPitchToggle(scope: mapScope)
+                    MapUserLocationButton(scope: mapScope)
+                }
+                .mapStyle(.standard)
+                .mapControlVisibility(.visible)
+                .alert($mapStore.scope(state: \.alert, action: \.alert))
+                
+                // MARK: Clear route button
+                VStack {
+                    Spacer()
+                    if busesStore.hasSelection {
+                        ClearRouteButton {
+                            busesStore.send(.clearSelection)
                         }
                     }
                 }
-                
-                //MARK: Shapes and Stops
-                //                    if busesStore.routes.hasSelectedRoute {
-                //                        let route = busesStore.routes.selectedRoute
-                //                        let stops = route?.stops ?? []
-                //                        let shapes = route?.shapes ?? []
-                //
-                //                        //MARK: Stops
-                //                        ForEach(stops) { stop in
-                //                            MapAnnotation(coordinate: stop.position) {
-                //                                StopCircle(color: theme.colors.primary).compositingGroup()
-                //                            }
-                //                        }
-                //                    }
+                .padding(.bottom, 30)
             }
-            .mapControls {
-                MapPitchToggle(scope: mapScope)
-                MapUserLocationButton(scope: mapScope)
-            }
-            .mapStyle(.standard)
-            .mapControlVisibility(.visible)
-            .alert($mapStore.scope(state: \.alert, action: \.alert))
+            
         }
     }
 }
