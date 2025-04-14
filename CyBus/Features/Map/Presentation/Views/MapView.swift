@@ -21,6 +21,7 @@ struct MapView: View {
     
     private func onInit() {
         mapStore.send(.setUp)
+        busesStore.send(.startFetchingLoop)
     }
     
     var body: some View {

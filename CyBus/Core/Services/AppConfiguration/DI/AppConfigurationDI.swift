@@ -8,11 +8,13 @@
 import Factory
 import Foundation
 
+struct AppConfiguration {
+    let backendURL: URL
+    let language: String
+}
+
 extension Container {
-    var appConfigurationRepository: Factory<AppConfiguraionRepositoryProtocol> {
-        self { AppConfiguraionLocalRepository() }
-   }
-    var appConfigurationUseCases: Factory<AppConfigurationUseCasesProtocol> {
-         self { AppConfigurationUseCases() }
+    var appConfiguration: Factory<AppConfiguration> {
+        self { AppConfiguration(backendURL: URL(string: "https://cyprusbus.info/")!, language: "en") }
     }
 }

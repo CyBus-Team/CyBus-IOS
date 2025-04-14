@@ -397,6 +397,7 @@
       }
     },
     "Map" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
@@ -552,6 +553,7 @@
       }
     },
     "Settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {

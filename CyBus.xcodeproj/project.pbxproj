@@ -86,12 +86,6 @@
 		9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525472D949656008EB3A0 /* BusesRepository.swift */; };
 		9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485254C2D9496FF008EB3A0 /* BusDTO.swift */; };
 		948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */; };
-		948525592D949ABA008EB3A0 /* AppConfigurationUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525582D949AA2008EB3A0 /* AppConfigurationUseCasesProtocol.swift */; };
-		9485255C2D949B5E008EB3A0 /* AppConfigurationUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485255B2D949B57008EB3A0 /* AppConfigurationUseCases.swift */; };
-		9485255E2D949C73008EB3A0 /* AppConfigurationRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485255D2D949C6A008EB3A0 /* AppConfigurationRepositoryProtocol.swift */; };
-		948525602D949C86008EB3A0 /* AppConfiguraionLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485255F2D949C78008EB3A0 /* AppConfiguraionLocalRepository.swift */; };
-		948525622D94A126008EB3A0 /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525612D94A126008EB3A0 /* HomeFeature.swift */; };
-		948525662D95F2F0008EB3A0 /* HomeDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525652D95F2F0008EB3A0 /* HomeDI.swift */; };
 		94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
 		94891BE02C3B017B008AFC53 /* BusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDF2C3B017B008AFC53 /* BusEntity.swift */; };
 		948CBE612CF23066006C8B1C /* BusesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948CBE602CF2305C006C8B1C /* BusesFeature.swift */; };
@@ -237,12 +231,6 @@
 		948525472D949656008EB3A0 /* BusesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesRepository.swift; sourceTree = "<group>"; };
 		9485254C2D9496FF008EB3A0 /* BusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDTO.swift; sourceTree = "<group>"; };
 		948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationDI.swift; sourceTree = "<group>"; };
-		948525582D949AA2008EB3A0 /* AppConfigurationUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationUseCasesProtocol.swift; sourceTree = "<group>"; };
-		9485255B2D949B57008EB3A0 /* AppConfigurationUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationUseCases.swift; sourceTree = "<group>"; };
-		9485255D2D949C6A008EB3A0 /* AppConfigurationRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationRepositoryProtocol.swift; sourceTree = "<group>"; };
-		9485255F2D949C78008EB3A0 /* AppConfiguraionLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguraionLocalRepository.swift; sourceTree = "<group>"; };
-		948525612D94A126008EB3A0 /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
-		948525652D95F2F0008EB3A0 /* HomeDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDI.swift; sourceTree = "<group>"; };
 		94891BD62C3AFBCF008AFC53 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		94891BDF2C3B017B008AFC53 /* BusEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusEntity.swift; sourceTree = "<group>"; };
 		948CBE602CF2305C006C8B1C /* BusesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesFeature.swift; sourceTree = "<group>"; };
@@ -508,7 +496,6 @@
 		945843A12CD17F0A006D9893 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				948525642D95F2EA008EB3A0 /* DI */,
 				945843A32CD18203006D9893 /* Presentation */,
 			);
 			path = Home;
@@ -525,7 +512,6 @@
 		945843A32CD18203006D9893 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				948525632D94A12B008EB3A0 /* Feature */,
 				945843AA2CD19236006D9893 /* HomeView.swift */,
 			);
 			path = Presentation;
@@ -615,50 +601,14 @@
 			isa = PBXGroup;
 			children = (
 				9485255A2D949ACE008EB3A0 /* DI */,
-				948525562D949A64008EB3A0 /* Data */,
-				948525572D949A68008EB3A0 /* Domain */,
 			);
 			path = AppConfiguration;
-			sourceTree = "<group>";
-		};
-		948525562D949A64008EB3A0 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				9485255F2D949C78008EB3A0 /* AppConfiguraionLocalRepository.swift */,
-				9485255D2D949C6A008EB3A0 /* AppConfigurationRepositoryProtocol.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		948525572D949A68008EB3A0 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				9485255B2D949B57008EB3A0 /* AppConfigurationUseCases.swift */,
-				948525582D949AA2008EB3A0 /* AppConfigurationUseCasesProtocol.swift */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		9485255A2D949ACE008EB3A0 /* DI */ = {
 			isa = PBXGroup;
 			children = (
 				948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
-		948525632D94A12B008EB3A0 /* Feature */ = {
-			isa = PBXGroup;
-			children = (
-				948525612D94A126008EB3A0 /* HomeFeature.swift */,
-			);
-			path = Feature;
-			sourceTree = "<group>";
-		};
-		948525642D95F2EA008EB3A0 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				948525652D95F2F0008EB3A0 /* HomeDI.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -1256,7 +1206,6 @@
 				94575DB42D319A1000CC3C03 /* TripNodeEntity.swift in Sources */,
 				942F51D32D9DC177007F6F7D /* StaticFilesDI.swift in Sources */,
 				94AF0DC42C7CF2E5002FE41B /* StaticFilesUseCasesProtocol.swift in Sources */,
-				948525592D949ABA008EB3A0 /* AppConfigurationUseCasesProtocol.swift in Sources */,
 				948CBE612CF23066006C8B1C /* BusesFeature.swift in Sources */,
 				AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */,
 				94AF24DA2CBC572A0092EE9B /* OnboardingView.swift in Sources */,
@@ -1278,14 +1227,11 @@
 				94AF24E32CBC5B340092EE9B /* OnboardingRepository.swift in Sources */,
 				94575D942D2345C400CC3C03 /* AddressSearchMapBoxUseCases.swift in Sources */,
 				94AF0DA32C779A8C002FE41B /* BusesUseCasesProtocol.swift in Sources */,
-				948525662D95F2F0008EB3A0 /* HomeDI.swift in Sources */,
-				9485255E2D949C73008EB3A0 /* AppConfigurationRepositoryProtocol.swift in Sources */,
 				94575D762D23206B00CC3C03 /* SearchCollapsedView.swift in Sources */,
 				94AF0DC22C79FAE7002FE41B /* StaticFilesUseCases.swift in Sources */,
 				9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */,
 				94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */,
 				944494782CCD7DBC00A616E2 /* LocationManagerUseCases.swift in Sources */,
-				9485255C2D949B5E008EB3A0 /* AppConfigurationUseCases.swift in Sources */,
 				94F3B8832CC2EB4300E38BE2 /* OnboardingGeolocationView.swift in Sources */,
 				947633D52C6E0747000F20C7 /* StopDTO.swift in Sources */,
 				94F3E7262D52A733007803F5 /* NodeStop.swift in Sources */,
@@ -1301,7 +1247,6 @@
 				94AF24DC2CBC5A150092EE9B /* OnboardingUseCasesProtocol.swift in Sources */,
 				94575DAC2D2C501200CC3C03 /* DestinationMarker.swift in Sources */,
 				947633D72C6E079A000F20C7 /* StopTimeDTO.swift in Sources */,
-				948525602D949C86008EB3A0 /* AppConfiguraionLocalRepository.swift in Sources */,
 				9449C9D82C6E01CE009E98F3 /* TripDTO.swift in Sources */,
 				AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */,
 				94C998672C88D28C000F0E64 /* MapUseCases.swift in Sources */,
@@ -1312,7 +1257,6 @@
 				94575D8A2D23359300CC3C03 /* SuggestionDTO.swift in Sources */,
 				94AF24DE2CBC5A450092EE9B /* OnboardingUseCases.swift in Sources */,
 				945843AB2CD1923E006D9893 /* HomeView.swift in Sources */,
-				948525622D94A126008EB3A0 /* HomeFeature.swift in Sources */,
 				9420D1C42CD017AA00150F5B /* OnboardingSigninFeature.swift in Sources */,
 				943A86132CB04588007AFF00 /* CameraFeature.swift in Sources */,
 				94C998652C88CFA8000F0E64 /* MapUseCasesProtocol.swift in Sources */,

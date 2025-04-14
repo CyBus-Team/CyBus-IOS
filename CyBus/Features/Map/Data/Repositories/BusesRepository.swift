@@ -6,22 +6,30 @@
 //
 
 import Foundation
+import Factory
 
 class BusesRepository: BusesRepositoryProtocol {
     
     private let urlSession: URLSession
+    private var appConfiguration: AppConfiguration
     
-    init(urlSession: URLSession = .shared) {
+    init(urlSession: URLSession = .shared, appConfiguration: AppConfiguration = Container.shared.appConfiguration()) {
         self.urlSession = urlSession
+        self.appConfiguration = appConfiguration
     }
     
     func fetchBuses() async throws -> BusesDTO {
-        return BusesDTO(
-            busCount: 10,
-            buses: ["10": BusDTO(
-                label: "String", latitude: 10, longitude: 10, bearing: 10, startTime: "", speedKmPerHour: 10, tripID: "", routeID: "", routeShortName: "", routeLongName: "", receivedFromBusAt: ""
-            )]
-        )
+        var request = URLRequest(url: appConfiguration.backendURL.appendingPathComponent("api/buses"))
+        request.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+        
+        let decoded = try JSONDecoder().decode(BusesDTO.self, from: data)
+        return decoded
     }
     
 }

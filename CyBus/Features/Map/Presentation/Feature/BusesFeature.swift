@@ -15,7 +15,6 @@ struct BusesFeature {
     
     @ObservableState
     struct State: Equatable {
-        var isInitialized: Bool = false
         var isFetching: Bool = false
         
         var buses: [BusEntity] = []
