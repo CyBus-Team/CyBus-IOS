@@ -36,7 +36,7 @@ extension DetailedSuggestionEntity {
             id: UUID().uuidString,
             name: "Mock name",
             description: "Mock Description",
-            location: CameraFeature.defaultLocation,
+            location: CLLocationCoordinate2D(latitude: 34.707130, longitude: 33.022617),
             result: nil
         )
     }

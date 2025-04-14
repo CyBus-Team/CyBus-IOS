@@ -19,7 +19,6 @@ struct MapFeature {
         
         // Features
         var userLocation = LocationFeature.State()
-        var mapCamera = CameraFeature.State()
         var search = SearchFeatures.State()
         
         //State vars
@@ -30,7 +29,6 @@ struct MapFeature {
     
     enum Action {
         case userLocation(LocationFeature.Action)
-        case mapCamera(CameraFeature.Action)
         case search(SearchFeatures.Action)
         
         case setUp
@@ -46,9 +44,6 @@ struct MapFeature {
     var body: some ReducerOf<Self> {
         Scope(state: \.userLocation, action: \.userLocation) {
             LocationFeature()
-        }
-        Scope(state: \.mapCamera, action: \.mapCamera) {
-            CameraFeature()
         }
         Scope(state: \.search, action: \.search) {
             SearchFeatures()
@@ -68,19 +63,6 @@ struct MapFeature {
                 }
                 return .none
                 
-            case .userLocation(.onLocationResponse):
-                if let location = state.userLocation.location {
-                    return .send(.mapCamera(.onViewportChange(location)))
-                } else {
-                    state.alert = AlertState {
-                        TextState("Location is not available")
-                    } actions: {
-                        ButtonState(role: .none, action: .openSettingsTapped, label: { TextState("Open settings") })
-                        ButtonState(role: .cancel, label: { TextState("Cancel") })
-                    }
-                    return .none
-                }
-                
             case .alert(.presented(.openSettingsTapped)):
                 guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
                     return .none
@@ -90,16 +72,18 @@ struct MapFeature {
                 }
                 return .none
             case let .search(.searchAddressResult(.setup(suggestion))):
-                return .run { send in
-                    await send(.mapCamera(.onViewportChange(suggestion!.location)))
-                }
+                return .none
+//                return .run { send in
+//                    await send(.mapCamera(.onViewportChange(suggestion!.location)))
+//                }
             case let .search(.searchAddressResult(.onGetDirectionsResponse(nodes))):
-                return .run { send in
-                    if let node = nodes.first {
-                        await send(.mapCamera(.onViewportChange(node.location)))
-                    }
-                }
-            case .alert(_), .userLocation(_), .mapCamera(_), .search(_):
+//                return .run { send in
+//                    if let node = nodes.first {
+//                        await send(.mapCamera(.onViewportChange(node.location)))
+//                    }
+//                }
+                return .none
+            case .alert(_), .userLocation(_), .search(_):
                 return .none
             }
         }.ifLet(\.$alert, action: \.alert)

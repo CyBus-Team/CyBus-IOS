@@ -17,7 +17,7 @@ struct BusesFeature {
     struct State: Equatable {
         var isFetching: Bool = false
         
-        var buses: [BusEntity] = []
+        var busList: [BusEntity] = []
         
         var hasSelection: Bool { selectedBus != nil }
         var selectedBus: BusEntity?
@@ -82,7 +82,7 @@ struct BusesFeature {
                 return .none
                 
             case let .fetchBusesResponse(buses):
-                state.buses = buses
+                state.busList = buses
                 return .none
                 
             case let .select(bus):

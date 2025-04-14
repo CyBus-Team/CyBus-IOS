@@ -27,10 +27,17 @@ class BusesUseCases: BusesUseCasesProtocol {
         do {
             let buses = try await repository.fetchBuses()
             return buses.buses
-                .map{BusEntity(id: $0.value.label, position: CLLocationCoordinate2D(
-                    latitude: CLLocationDegrees($0.value.latitude ),
-                    longitude: CLLocationDegrees($0.value.longitude )
-                ), routeID: $0.value.routeID, lineName: $0.value.routeShortName)}
+                .map {
+                    BusEntity(
+                        id: $0.value.label,
+                        routeID:$0.value.routeID,
+                        lineName:  $0.value.routeShortName,
+                        position: CLLocationCoordinate2D(
+                            latitude: CLLocationDegrees($0.value.latitude),
+                            longitude: CLLocationDegrees($0.value.longitude)
+                        )
+                    )
+                }
         } catch {
             throw error
         }

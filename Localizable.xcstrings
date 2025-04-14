@@ -281,6 +281,7 @@
       }
     },
     "Location is not available" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
@@ -509,6 +510,7 @@
       }
     },
     "Retry" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {

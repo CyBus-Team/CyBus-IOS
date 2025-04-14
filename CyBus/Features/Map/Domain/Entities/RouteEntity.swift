@@ -8,10 +8,12 @@
 import Foundation
 import CoreLocation
 
-struct RouteEntity : Equatable {
+struct RouteEntity : Identifiable, Equatable {
     let routeId: String
     let shapes: [ShapeEntity]
     let stops: [StopEntity]
+    
+    var id : String { routeId }
 }
 
 struct StopEntity : Identifiable, Equatable {
@@ -19,7 +21,7 @@ struct StopEntity : Identifiable, Equatable {
     let position: CLLocationCoordinate2D
 }
 
-struct ShapeEntity : Equatable {
+struct ShapeEntity : Identifiable, Equatable {
     let id: String
     let position: CLLocationCoordinate2D
     let sequence: Int
