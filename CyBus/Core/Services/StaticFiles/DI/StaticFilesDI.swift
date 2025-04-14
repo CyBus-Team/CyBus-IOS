@@ -9,10 +9,11 @@ import Factory
 import Foundation
 
 extension Container {
+    var staticFilesUseCases: Factory<StaticFilesUseCasesProtocol> {
+        self { StaticFilesUseCases() }
+            .singleton
+    }
     var staticFilesRepository: Factory<StaticFilesRepositoryProtocol> {
         self { StaticFilesRepository() }
    }
-    var staticFilesUseCases: Factory<StaticFilesUseCasesProtocol> {
-        self { StaticFilesUseCases() }
-    }
 }

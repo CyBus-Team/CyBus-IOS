@@ -15,10 +15,6 @@ final class LocationUseCases : LocationUseCasesProtocol {
     
     @Injected(\.locationManagerUseCases) var locationManagerUseCases: LocationManagerUseCasesProtocol
     
-    init(locationManagerUseCases: LocationManagerUseCasesProtocol = Container.shared.locationManagerUseCases()) {
-        self.locationManagerUseCases = locationManagerUseCases
-    }
-    
     func requestPermission() async throws {
         let status = locationManagerUseCases.getCurrentAuthorizationStatus()
         switch status {

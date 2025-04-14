@@ -36,6 +36,11 @@
 		942F51DF2DA43DC7007F6F7D /* LocationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51DE2DA43DC5007F6F7D /* LocationDI.swift */; };
 		942F51E02DA43DC7007F6F7D /* LocationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51DE2DA43DC5007F6F7D /* LocationDI.swift */; };
 		942F51E32DA4405B007F6F7D /* SearchDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51E22DA44058007F6F7D /* SearchDI.swift */; };
+		942F51E92DAD40F3007F6F7D /* trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 942F51E82DAD40F3007F6F7D /* trips.json */; };
+		942F51EA2DAD40F3007F6F7D /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = 942F51E42DAD40F3007F6F7D /* routes.json */; };
+		942F51EB2DAD40F3007F6F7D /* shapes.json in Resources */ = {isa = PBXBuildFile; fileRef = 942F51E52DAD40F3007F6F7D /* shapes.json */; };
+		942F51EC2DAD40F3007F6F7D /* stop_times.json in Resources */ = {isa = PBXBuildFile; fileRef = 942F51E62DAD40F3007F6F7D /* stop_times.json */; };
+		942F51ED2DAD40F3007F6F7D /* stops.json in Resources */ = {isa = PBXBuildFile; fileRef = 942F51E72DAD40F3007F6F7D /* stops.json */; };
 		9432A1802D4FB19E00E05BCB /* ClearNodesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432A17F2D4FB19E00E05BCB /* ClearNodesButton.swift */; };
 		9435C90A2CF334CC0041A986 /* RoutesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435C9092CF334C50041A986 /* RoutesFeature.swift */; };
 		944494722CCBC69100A616E2 /* OnboardingRequestGeolocationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494712CCBC68B00A616E2 /* OnboardingRequestGeolocationFeature.swift */; };
@@ -188,6 +193,11 @@
 		942F51DB2D9F127C007F6F7D /* RoutesDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesDI.swift; sourceTree = "<group>"; };
 		942F51DE2DA43DC5007F6F7D /* LocationDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDI.swift; sourceTree = "<group>"; };
 		942F51E22DA44058007F6F7D /* SearchDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDI.swift; sourceTree = "<group>"; };
+		942F51E42DAD40F3007F6F7D /* routes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
+		942F51E52DAD40F3007F6F7D /* shapes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = shapes.json; sourceTree = "<group>"; };
+		942F51E62DAD40F3007F6F7D /* stop_times.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stop_times.json; sourceTree = "<group>"; };
+		942F51E72DAD40F3007F6F7D /* stops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
+		942F51E82DAD40F3007F6F7D /* trips.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trips.json; sourceTree = "<group>"; };
 		9432A17F2D4FB19E00E05BCB /* ClearNodesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNodesButton.swift; sourceTree = "<group>"; };
 		9435C9092CF334C50041A986 /* RoutesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesFeature.swift; sourceTree = "<group>"; };
 		944494712CCBC68B00A616E2 /* OnboardingRequestGeolocationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRequestGeolocationFeature.swift; sourceTree = "<group>"; };
@@ -668,6 +678,11 @@
 		94ABDF7F2C29ABBD00970F8C /* CyBus */ = {
 			isa = PBXGroup;
 			children = (
+				942F51E42DAD40F3007F6F7D /* routes.json */,
+				942F51E52DAD40F3007F6F7D /* shapes.json */,
+				942F51E62DAD40F3007F6F7D /* stop_times.json */,
+				942F51E72DAD40F3007F6F7D /* stops.json */,
+				942F51E82DAD40F3007F6F7D /* trips.json */,
 				94D794A52CC2CDD30097A2F0 /* Core */,
 				94AF0D932C7793EF002FE41B /* Features */,
 				9400C2532C35BA3600355A0F /* Info.plist */,
@@ -1153,6 +1168,11 @@
 				ACBEE2142D4FA9D700C1A753 /* Localizable.xcstrings in Resources */,
 				942C53EE2C55152E00DE9BD7 /* README.md in Resources */,
 				94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */,
+				942F51E92DAD40F3007F6F7D /* trips.json in Resources */,
+				942F51EA2DAD40F3007F6F7D /* routes.json in Resources */,
+				942F51EB2DAD40F3007F6F7D /* shapes.json in Resources */,
+				942F51EC2DAD40F3007F6F7D /* stop_times.json in Resources */,
+				942F51ED2DAD40F3007F6F7D /* stops.json in Resources */,
 				94F220922C5E85B200D776B9 /* generate.sh in Resources */,
 				942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */,
 				94F220992C5E886E00D776B9 /* stops_generator.rb in Resources */,

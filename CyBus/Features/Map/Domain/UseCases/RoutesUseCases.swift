@@ -13,12 +13,6 @@ class RoutesUseCases : RoutesUseCasesProtocol {
     
     @Injected(\.staticFilesUseCases) var staticFilesUseCases: StaticFilesUseCasesProtocol
     
-    init(
-        staticFilesUseCases: StaticFilesUseCasesProtocol = Container.shared.staticFilesUseCases()
-    ) {
-        self.staticFilesUseCases = staticFilesUseCases
-    }
-    
     func getRoute(for routeID: String) -> RouteEntity {
         let shapes = staticFilesUseCases.shapes.filter { $0.shapeId == routeID }
         let trip = staticFilesUseCases.trips.first {$0.routeId == routeID }

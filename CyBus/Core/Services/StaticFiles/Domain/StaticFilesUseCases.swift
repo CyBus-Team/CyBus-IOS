@@ -40,10 +40,6 @@ class StaticFilesUseCases: StaticFilesUseCasesProtocol {
         get { _trips }
     }
     
-    init(repository: StaticFilesRepositoryProtocol = Container.shared.staticFilesRepository()) {
-        self.repository = repository
-    }
-    
     func fetch() async throws {
         async let routes = repository.fetchRoutes()
         async let shapes = repository.fetchShapes()

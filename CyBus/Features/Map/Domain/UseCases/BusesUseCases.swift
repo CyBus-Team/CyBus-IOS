@@ -17,12 +17,6 @@ class BusesUseCases: BusesUseCasesProtocol {
     
     @Injected(\.busesRepository) var repository: BusesRepositoryProtocol
     
-    init(
-        repository: BusesRepositoryProtocol = Container.shared.busesRepository()
-    ) {
-        self.repository = repository
-    }
-    
     func fetchBuses() async throws -> [BusEntity] {
         do {
             let buses = try await repository.fetchBuses()

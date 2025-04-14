@@ -21,6 +21,15 @@ struct MapView: View {
     @State private var position: MapCameraPosition = .userLocation(followsHeading: true, fallback: .automatic)
     @Namespace private var mapScope
     
+    let strokeStyle = StrokeStyle(
+        lineWidth: 3,
+        lineCap: .round,
+        lineJoin: .round,
+        dash: [5, 5]
+    )
+        
+    let gradient = Gradient(colors: [.red, .green, .blue])
+    
     var body: some View {
         if mapStore.error != nil {
             VStack {
@@ -53,19 +62,27 @@ struct MapView: View {
                         }
                     }
                     
-                    //MARK: Shapes and Stops
-                    //                    if busesStore.routes.hasSelectedRoute {
-                    //                        let route = busesStore.routes.selectedRoute
-                    //                        let stops = route?.stops ?? []
-                    //                        let shapes = route?.shapes ?? []
-                    //
-                    //                        //MARK: Stops
-                    //                        ForEach(stops) { stop in
-                    //                            MapAnnotation(coordinate: stop.position) {
-                    //                                StopCircle(color: theme.colors.primary).compositingGroup()
-                    //                            }
-                    //                        }
-                    //                    }
+                    //MARK: Stops
+                    if busesStore.routes.hasSelectedRoute {
+                        let route = busesStore.routes.selectedRoute
+                        let stops = route?.stops ?? []
+                        let shapes = route?.shapes ?? []
+                        
+                        //MARK: Stops
+                        ForEach(stops) { stop in
+                            Annotation("", coordinate: stop.position) {
+                                StopCircle(color: theme.colors.primary).compositingGroup()
+                            }
+                        }
+                        
+                        //MARK: Shapes
+                        MapPolyline(
+                            coordinates: shapes.map { shape in
+                                shape.position
+                            }
+                        )
+                        .stroke(gradient, style: strokeStyle)
+                    }
                 }
                 .mapControls {
                     MapPitchToggle(scope: mapScope)
