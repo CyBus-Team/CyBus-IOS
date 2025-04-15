@@ -62,7 +62,7 @@ struct MapView: View {
                         }
                     }
                     
-                    //MARK: Stops
+                    //MARK: Stops and Shapes
                     if busesStore.routes.hasSelectedRoute {
                         let route = busesStore.routes.selectedRoute
                         let stops = route?.stops ?? []
@@ -82,6 +82,12 @@ struct MapView: View {
                             }
                         )
                         .stroke(gradient, style: strokeStyle)
+                    }
+                    
+                    //MARK: Destination marker
+                    if searchStore.searchAddressResult.hasSuggestion {
+                        let suggestion = searchStore.searchAddressResult.detailedSuggestion
+                        Marker(suggestion?.name, coordinate: suggestion?.location)
                     }
                 }
                 .mapControls {
