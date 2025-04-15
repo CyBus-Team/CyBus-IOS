@@ -17,13 +17,15 @@ struct ClearRouteButton: View {
             action()
         }) {
             Image(systemName: "xmark.circle.fill")
-                .font(.system(size: 24))
-                .padding()
-                .background(Color.blue)
                 .foregroundColor(.white)
                 .clipShape(Circle())
-                .shadow(radius: 10)
+            Image(systemName: "bus.fill")
         }
+        .padding()
+        .background(theme.colors.primary)
+        .foregroundColor(theme.colors.background)
+        .clipShape(.capsule)
+        .shadow(radius: 10)
     }
 }
 

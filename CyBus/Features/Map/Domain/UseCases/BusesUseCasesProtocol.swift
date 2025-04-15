@@ -11,8 +11,4 @@ protocol BusesUseCasesProtocol {
     
     func fetchBuses() async throws -> [BusEntity]
     
-    func group(buses: [BusEntity], by distance: Double) async throws -> [BusGroupEntity] 
-    
-    func fetchServiceUrl() async throws
-    
 }

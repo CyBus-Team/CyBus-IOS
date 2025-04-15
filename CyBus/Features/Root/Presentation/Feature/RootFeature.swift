@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Factory
 
 @Reducer
 struct RootFeature {
@@ -25,7 +26,8 @@ struct RootFeature {
         case initApp
     }
     
-    @Dependency(\.onboardingUseCases) var onboardingUseCases
+    @Injected(\.onboardingUseCases) var onboardingUseCases: OnboardingUseCasesProtocol
+    @Injected(\.staticFilesUseCases) var staticFilesUseCases: StaticFilesUseCasesProtocol
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in
@@ -33,7 +35,9 @@ struct RootFeature {
             case .initApp:
                 let needToShow = onboardingUseCases.needToShow()
                 state.page = needToShow ? .onboarding : .home
-                return .none
+                return .run { send in
+                    try await staticFilesUseCases.fetch()
+                }
             }
         }
     }

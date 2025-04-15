@@ -16,11 +16,13 @@ struct ClearNodesButton: View {
         Button(action: {
             action()
         }) {
-            Text("Finish")
-            Image(systemName: "mappin.circle.fill")
+            Image(systemName: "xmark.circle.fill")
+                .foregroundColor(.white)
+                .clipShape(Circle())
+            Image(systemName: "mappin")
         }
         .padding()
-        .background(theme.colors.primary)
+        .background(theme.colors.destinationColor)
         .foregroundColor(theme.colors.background)
         .clipShape(.capsule)
         .shadow(radius: 10)

@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import MapboxSearch
+import Factory
 
 @Reducer
 struct AddressSearchResultFeature {
@@ -33,8 +34,8 @@ struct AddressSearchResultFeature {
         case onReset
     }
     
-    @Dependency(\.addressPathUseCases) var useCases
-    @Dependency(\.locationUseCases) var locationUseCases
+    @Injected(\.searchTripUseCases) var useCases
+    @Injected(\.locationUseCases) var locationUseCases
     
     var body: some ReducerOf<Self> {
         BindingReducer()
@@ -51,10 +52,7 @@ struct AddressSearchResultFeature {
                 let to = state.detailedSuggestion!.location
                 return .run { @MainActor send in
                     let from = try await locationUseCases.getCurrentLocation()
-                    let stops = try await useCases.getStops(from: from!, to: to)
-                    let nodes = try await useCases.getNodes(from: stops)
-                    print("nodes: \(nodes)")
-                    return send(.onGetDirectionsResponse(nodes))
+                    return send(.onGetDirectionsResponse([]))
                 }
                 
             case let .onGetDirectionsResponse(nodes):

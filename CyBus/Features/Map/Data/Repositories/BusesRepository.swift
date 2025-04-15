@@ -1,49 +1,35 @@
 //
-//  TransitFeedRepository.swift
+//  BusesRepository.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 22/08/2024.
 //
 
 import Foundation
-
-enum BusesRepositoryError: Error {
-    case GFTSNotFound
-    case invalidURL
-}
+import Factory
 
 class BusesRepository: BusesRepositoryProtocol {
     
     private let urlSession: URLSession
-    private let bundle: Bundle
+    private var appConfiguration: AppConfiguration
     
-    init(urlSession: URLSession = .shared, bundle: Bundle = .main) {
+    init(urlSession: URLSession = .shared, appConfiguration: AppConfiguration = Container.shared.appConfiguration()) {
         self.urlSession = urlSession
-        self.bundle = bundle
+        self.appConfiguration = appConfiguration
     }
     
-    func getServiceUrl() throws -> URL {
-        guard let domain = Bundle.main.object(forInfoDictionaryKey: "GFTSServiceURL") as? String else {
-            throw BusesRepositoryError.GFTSNotFound
+    func fetchBuses() async throws -> BusesDTO {
+        var request = URLRequest(url: appConfiguration.backendURL.appendingPathComponent("api/buses"))
+        request.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
         }
-        guard let url = URL(string: "http://\(domain)") else {
-            throw BusesRepositoryError.invalidURL
-        }
-        return url
+        
+        let decoded = try JSONDecoder().decode(BusesDTO.self, from: data)
+        return decoded
     }
     
-    func fetchBuses(url: URL) async throws -> [TransitRealtime_FeedEntity] {
-        let (data, _) = try await urlSession.data(from: url)
-        let feedMessage = try TransitRealtime_FeedMessage(serializedBytes: data)
-        return feedMessage.entity
-    }
-    
-    func getLineColors() -> [String: String] {
-          [
-               "9":  "#ff0000",
-               "14": "#3cb371",
-               "30": "#ffa500",
-               "21": "#0000ff",
-          ]
-    }
 }

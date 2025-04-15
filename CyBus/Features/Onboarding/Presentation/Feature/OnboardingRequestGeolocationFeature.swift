@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import UIKit
 import Foundation
+import Factory
 
 @Reducer
 struct OnboardingRequestGeolocationFeature {
@@ -36,7 +37,7 @@ struct OnboardingRequestGeolocationFeature {
         }
     }
     
-    @Dependency(\.locationUseCases) var locationUseCases
+    @Injected(\.locationUseCases) var locationUseCases
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in

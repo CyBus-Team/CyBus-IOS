@@ -7,14 +7,11 @@
 
 import Foundation
 import ComposableArchitecture
+import Factory
 
 public class OnboardingUseCases : OnboardingUseCasesProtocol {
     
-    let repository: OnboardingRepositoryProtocol
-    
-    init(repository: OnboardingRepositoryProtocol = OnboardingRepository()) {
-        self.repository = repository
-    }
+    @Injected(\.onboardingRepository) var repository: OnboardingRepositoryProtocol
     
     func finish() {
         repository.finish()
@@ -22,16 +19,5 @@ public class OnboardingUseCases : OnboardingUseCasesProtocol {
     
     func needToShow() -> Bool {
         !repository.hasLaunchedBefore()
-    }
-}
-
-struct OnboardingUseCasesKey: DependencyKey {
-    static var liveValue: OnboardingUseCasesProtocol = OnboardingUseCases()
-}
-
-extension DependencyValues {
-    var onboardingUseCases: OnboardingUseCasesProtocol {
-        get { self[OnboardingUseCasesKey.self] }
-        set { self[OnboardingUseCasesKey.self] = newValue }
     }
 }
