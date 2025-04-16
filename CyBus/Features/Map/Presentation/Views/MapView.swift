@@ -85,10 +85,10 @@ struct MapView: View {
                     }
                     
                     //MARK: Destination marker
-                    if searchStore.searchAddressResult.hasSuggestion {
-                        let suggestion = searchStore.searchAddressResult.detailedSuggestion
-                        Marker(suggestion?.name, coordinate: suggestion?.location)
-                    }
+//                    if searchStore.searchAddressResult.hasSuggestion {
+//                        let suggestion = searchStore.searchAddressResult.detailedSuggestion
+//                        Marker(suggestion?.name, coordinate: suggestion?.location)
+//                    }
                 }
                 .mapControls {
                     MapPitchToggle(scope: mapScope)
