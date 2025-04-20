@@ -9,17 +9,20 @@ import SwiftUI
 import MapKit
 import ComposableArchitecture
 
+func booleanToString(_ b: Bool) -> String {
+    String(b)
+}
+
 struct MapView: View {
     
     @Bindable var mapStore: StoreOf<MapFeature>
-    @Bindable var locationStore: StoreOf<LocationFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
     @Bindable var searchStore: StoreOf<SearchFeatures>
     
     @Environment(\.theme) var theme
     
-    @State private var position: MapCameraPosition = .userLocation(followsHeading: true, fallback: .automatic)
     @Namespace private var mapScope
+    @State private var selection: Int?
     
     let strokeStyle = StrokeStyle(
         lineWidth: 3,
@@ -27,7 +30,7 @@ struct MapView: View {
         lineJoin: .round,
         dash: [5, 5]
     )
-        
+    
     let gradient = Gradient(colors: [.red, .green, .blue])
     
     var body: some View {
@@ -46,9 +49,9 @@ struct MapView: View {
             ZStack {
                 // MARK: Map
                 Map(
-                    position: $position,
+                    position: $mapStore.cameraPosition,
                     interactionModes: MapInteractionModes.all,
-                    scope: mapScope
+                    selection: $selection
                 ) {
                     UserAnnotation()
                     ForEach(busesStore.busList) { bus in
@@ -85,14 +88,22 @@ struct MapView: View {
                     }
                     
                     //MARK: Destination marker
-//                    if searchStore.searchAddressResult.hasSuggestion {
-//                        let suggestion = searchStore.searchAddressResult.detailedSuggestion
-//                        Marker(suggestion?.name, coordinate: suggestion?.location)
-//                    }
+                    if searchStore.searchAddressResult.hasSuggestion {
+                        let suggestion = searchStore.searchAddressResult.detailedSuggestion
+                        if let location = suggestion?.location {
+                            Annotation(suggestion?.name ?? "-", coordinate: location) {
+                                DestinationMarker {
+                                    searchStore.send(.onOpenAddressSearchResults)
+                                }
+                            }
+                        }
+                    }
+                    
+                    //MARK: Trip
                 }
                 .mapControls {
-                    MapPitchToggle(scope: mapScope)
-                    MapUserLocationButton(scope: mapScope)
+                    MapPitchToggle()
+                    MapUserLocationButton()
                 }
                 .mapStyle(.standard)
                 .mapControlVisibility(.visible)

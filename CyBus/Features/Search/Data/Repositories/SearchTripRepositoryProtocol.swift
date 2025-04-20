@@ -5,12 +5,8 @@
 //  Created by Vadim Popov on 18/01/2025.
 //
 
-enum TripSearchRepositoryError: Error {
-    case fileNotFound
-}
+import CoreLocation
 
 protocol SearchTripRepositoryProtocol {
-    func getTrips() async throws -> [SearchTripDTO]
-    func getStops() async throws -> [SearchStopDTO]
-    func getCities() throws -> [CityDTO]
+    func fetchTrips(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D, date: Date) async throws -> TripResponseDTO 
 }

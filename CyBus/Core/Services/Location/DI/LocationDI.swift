@@ -10,9 +10,9 @@ import Foundation
 
 extension Container {
     var locationManagerUseCases: Factory<LocationManagerUseCasesProtocol> {
-        self { LocationManagerUseCases() }
+        self { LocationManagerUseCases() }.singleton
     }
     var locationUseCases: Factory<LocationUseCasesProtocol> {
-        self { LocationUseCases() }
+        self { LocationUseCases() }.singleton
     }
 }

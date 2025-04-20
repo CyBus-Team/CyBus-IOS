@@ -25,6 +25,7 @@
       }
     },
     "Add to favourites" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
@@ -164,22 +165,23 @@
       "shouldTranslate" : false
     },
     "Directions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Διαδρομές"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Маршруты"
           }
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Маршрути"
           }
         }
@@ -210,6 +212,17 @@
     },
     "Error: %@" : {
 
+    },
+    "Get directions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get directions"
+          }
+        }
+      }
     },
     "Get Start" : {
       "comment" : "OnboardingWelcomeView",
@@ -443,6 +456,7 @@
       }
     },
     "Not Now" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {

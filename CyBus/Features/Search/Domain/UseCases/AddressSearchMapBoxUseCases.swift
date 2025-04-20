@@ -14,14 +14,6 @@ class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
     @Injected(\.addressSearchRepository) var repository: AddressSearchRepositoryProtocol
     @Injected(\.locationUseCases) var locationUseCases: LocationUseCasesProtocol
     
-    init(
-        repository: AddressSearchRepositoryProtocol = Container.shared.addressSearchRepository(),
-        locationUseCases: LocationUseCasesProtocol = Container.shared.locationUseCases()
-    ) {
-        self.repository = repository
-        self.locationUseCases = locationUseCases
-    }
-    
     func setup() throws {
         do {
             try repository.setup()

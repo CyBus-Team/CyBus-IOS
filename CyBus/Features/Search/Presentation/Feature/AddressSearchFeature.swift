@@ -38,7 +38,7 @@ struct AddressSearchFeature {
         Reduce { state, action in
             switch action {
             case .setup:
-                return .run { send in
+                return .run { @MainActor send in
                     try useCases.setup()
                 }
                 
@@ -46,15 +46,15 @@ struct AddressSearchFeature {
                 state.detailedSuggestion = nil
                 state.isLoading = true
                 let query = state.query
-                return .run { send in
+                return  .run { @MainActor send in
                     do {
                         if let result = try await useCases.fetch(query: query) {
-                            await send(.onGetSuggestions(result))
+                            send(.onGetSuggestions(result))
                         } else {
-                            await send(.onGetSuggestions(nil))
+                            send(.onGetSuggestions(nil))
                         }
                     } catch {
-                        await send(.onGetSuggestions(nil))
+                        send(.onGetSuggestions(nil))
                     }
                 }
                 
@@ -65,23 +65,25 @@ struct AddressSearchFeature {
                 
                 
             case let .onSelect(suggestion):
-                return .run { send in
+                return .run { @MainActor send in
                     do {
                         if let result = try await useCases.select(suggestion: suggestion) {
-                            await send(.onGetDetailedSuggestion(result))
+                            send(.onGetDetailedSuggestion(result))
                         } else {
-                            await send(.onGetDetailedSuggestion(nil))
+                            send(.onGetDetailedSuggestion(nil))
                         }
                     } catch {
-                        await send(.onGetDetailedSuggestion(nil))
+                        send(.onGetDetailedSuggestion(nil))
                     }
                 }
                 
             case let .onGetDetailedSuggestion(detailedSuggestion):
                 state.detailedSuggestion = detailedSuggestion
                 return .none
-            
+                
             case .onReset:
+                state.query = ""
+                state.suggestions = []
                 state.detailedSuggestion = nil
                 return .none
                 

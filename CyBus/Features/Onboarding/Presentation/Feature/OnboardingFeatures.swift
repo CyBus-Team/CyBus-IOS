@@ -10,7 +10,6 @@ import ComposableArchitecture
 enum OnboardingPage {
     case welcome
     case geolocation
-    case login
     case home
 }
 
@@ -27,13 +26,11 @@ struct OnboardingFeatures {
         // Features
         var welcome = OnboardingWelcomeFeature.State()
         var geolocation = OnboardingRequestGeolocationFeature.State()
-        var signIn = OnboardingSignInFeature.State()
     }
     
     enum Action {
         case welcome(OnboardingWelcomeFeature.Action)
         case geolocation(OnboardingRequestGeolocationFeature.Action)
-        case signIn(OnboardingSignInFeature.Action)
     }
     
     var body: some ReducerOf<Self> {
@@ -42,9 +39,6 @@ struct OnboardingFeatures {
         }
         Scope(state: \.geolocation, action: \.geolocation) {
             OnboardingRequestGeolocationFeature()
-        }
-        Scope(state: \.signIn, action: \.signIn) {
-            OnboardingSignInFeature()
         }
         Reduce { state, action in
             switch action {
@@ -56,19 +50,16 @@ struct OnboardingFeatures {
                 
                 // Geolocation
             case .geolocation(.nextTapped), .geolocation(.notNowTapped):
-                state.page = .login
+                state.finished = true
+                state.page = .home
                 return .none
             case let .geolocation(.permissionResponse(allowed, _)):
                 if allowed {
-                    state.page = .login
+                    state.finished = true
+                    state.page = .home
                 }
                 return .none
             case .geolocation(_):
-                return .none
-                
-            case .signIn(_):
-                state.finished = true
-                state.page = .home
                 return .none
                 
             }

@@ -35,7 +35,7 @@ struct AddressSearchResultView : View {
                 HStack() {
                     // MARK: Directions
                     PrimaryButton(
-                        label: String(localized: "Directions"),
+                        label: String(localized: "Get directions"),
                         action: {
                             store.send(.onGetDirections)
                         },
@@ -44,13 +44,13 @@ struct AddressSearchResultView : View {
                     )
                     // MARK: Favourites
                     // TODO: Implement favourites
-                    SecondaryButton(
-                        label: String(localized: "Add to favourites"),
-                        action: {
-                            
-                        },
-                        font: theme.typography.regular
-                    )
+//                    SecondaryButton(
+//                        label: String(localized: "Add to favourites"),
+//                        action: {
+//                            
+//                        },
+//                        font: theme.typography.regular
+//                    )
                     
                     Spacer()
                 }
