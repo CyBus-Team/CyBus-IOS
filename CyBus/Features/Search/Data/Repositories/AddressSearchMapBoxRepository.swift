@@ -27,12 +27,10 @@ class AddressSearchMapBoxRepository: AddressSearchRepositoryProtocol {
     
     func fetch(query: String, userLocation: CLLocationCoordinate2D) async throws -> [SuggestionDTO] {
         guard let placeSDK = self.placeAutocomplete, let cyprus = suggestionCountry else {
-            print("AddressSearchRepositoryError.initializationFailed")
             throw AddressSearchRepositoryError.initializationFailed
         }
         return try await withCheckedThrowingContinuation { continuation in
             placeSDK.suggestions(for: query, proximity: userLocation, filterBy: .init(countries: [cyprus] )) { result in
-                print(result)
                 switch result {
                 case .success(let suggestions):
                     let dtos = suggestions

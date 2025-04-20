@@ -21,7 +21,6 @@ struct HomeView: View {
         VStack {
             MapView(
                 mapStore: mapStore,
-                locationStore: mapStore.scope(state: \.userLocation, action: \.userLocation),
                 busesStore: busesStore,
                 searchStore: mapStore.scope(state: \.search, action: \.search)
             )

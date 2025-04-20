@@ -25,6 +25,7 @@
       }
     },
     "Add to favourites" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
@@ -164,6 +165,7 @@
       "shouldTranslate" : false
     },
     "Directions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
