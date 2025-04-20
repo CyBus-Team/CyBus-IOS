@@ -22,7 +22,7 @@ struct AddressSearchView : View {
                 .padding(12)
                 .background(
                     RoundedRectangle(cornerRadius: 12)
-                        .fill(Color(.systemGray6))
+                        .fill(theme.colors.textFieldBackground)
                 )
                 .overlay(
                     HStack {
@@ -38,8 +38,7 @@ struct AddressSearchView : View {
                         }
                     }
                 )
-                .font(.body)
-                .foregroundColor(.primary)
+                .font(theme.typography.regular)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 .focused($isFocused)
