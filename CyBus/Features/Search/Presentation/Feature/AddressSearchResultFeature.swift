@@ -14,7 +14,12 @@ struct AddressSearchResultFeature {
     
     @ObservableState
     struct State : Equatable {
-        var nodes: [String] = []
+        var trips: [SearchTripEntity] = [] {
+            didSet {
+                hasTrips = !trips.isEmpty
+            }
+        }
+        var hasTrips: Bool = false
         var isLoading: Bool = true
         var isNodesLoading: Bool = false
         var hasSuggestion: Bool = false
@@ -29,7 +34,7 @@ struct AddressSearchResultFeature {
         case binding(BindingAction<State>)
         case setup(DetailedSuggestionEntity?)
         case onGetDirections
-        case onGetDirectionsResponse([String])
+        case onGetDirectionsResponse([SearchTripEntity])
         case onClose
         case onReset
     }
@@ -48,25 +53,25 @@ struct AddressSearchResultFeature {
                 
             case .onGetDirections:
                 state.isNodesLoading = true
-                state.nodes = []
+                state.trips = []
                 let to = state.detailedSuggestion!.location
                 return .run { @MainActor send in
                     if let from = try await locationUseCases.getCurrentLocation() {
                         let trips = try await useCases.fetchTrips(from: from, to: to)
-                        return send(.onGetDirectionsResponse([]))
+                        return send(.onGetDirectionsResponse(trips))
                     }
                     return send(.onGetDirectionsResponse([]))
                 }
                 
-            case let .onGetDirectionsResponse(nodes):
+            case let .onGetDirectionsResponse(trips):
                 state.isNodesLoading = false
-                state.nodes = nodes
+                state.trips = trips
                 return .run { send in
                     return await send(.onClose)
                 }
             
             case .onReset:
-                state.nodes = []
+                state.trips = []
                 return .none
                 
             case .binding(_), .onClose:
