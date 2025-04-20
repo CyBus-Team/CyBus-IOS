@@ -29,7 +29,7 @@ struct AddressSearchView : View {
                         Spacer()
                         if !store.query.isEmpty {
                             Button {
-                                store.query = ""
+                                store.send(.onReset)
                             } label: {
                                 Image(systemName: "xmark.circle.fill")
                                     .foregroundColor(.gray)
