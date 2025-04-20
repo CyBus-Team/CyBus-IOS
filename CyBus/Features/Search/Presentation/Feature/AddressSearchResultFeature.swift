@@ -14,7 +14,7 @@ struct AddressSearchResultFeature {
     
     @ObservableState
     struct State : Equatable {
-        var nodes: [TripNodeEntity] = []
+        var nodes: [String] = []
         var isLoading: Bool = true
         var isNodesLoading: Bool = false
         var hasSuggestion: Bool = false
@@ -29,7 +29,7 @@ struct AddressSearchResultFeature {
         case binding(BindingAction<State>)
         case setup(DetailedSuggestionEntity?)
         case onGetDirections
-        case onGetDirectionsResponse([TripNodeEntity])
+        case onGetDirectionsResponse([String])
         case onClose
         case onReset
     }

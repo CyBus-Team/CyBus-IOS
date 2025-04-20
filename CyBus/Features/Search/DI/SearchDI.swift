@@ -10,7 +10,7 @@ import Foundation
 
 extension Container {
     var searchTripRepository: Factory<SearchTripRepositoryProtocol> {
-        self { SearchTripRepositoryLocal() }
+        self { SearchTripRepository() }
     }
     var searchTripUseCases: Factory<SearchTripUseCasesProtocol> {
         self { SearchTripMapBoxUseCases() }
