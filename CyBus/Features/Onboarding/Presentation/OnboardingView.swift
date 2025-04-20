@@ -22,9 +22,6 @@ struct OnboardingView: View {
             case .geolocation: OnboardingGeolocationView(
                 store: onboardingStore.scope(state: \.geolocation, action: \.geolocation)
             )
-            case .login: OnboardingSignInView(
-                store: onboardingStore.scope(state: \.signIn, action: \.signIn)
-            )
             case .home:
                 HomeView()
             }

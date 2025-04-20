@@ -9,6 +9,10 @@ import SwiftUI
 import MapKit
 import ComposableArchitecture
 
+func booleanToString(_ b: Bool) -> String {
+    String(b)
+}
+
 struct MapView: View {
     
     @Bindable var mapStore: StoreOf<MapFeature>
@@ -85,10 +89,12 @@ struct MapView: View {
                     }
                     
                     //MARK: Destination marker
-//                    if searchStore.searchAddressResult.hasSuggestion {
-//                        let suggestion = searchStore.searchAddressResult.detailedSuggestion
-//                        Marker(suggestion?.name, coordinate: suggestion?.location)
-//                    }
+                    if searchStore.searchAddressResult.hasSuggestion {
+                        let suggestion = searchStore.searchAddressResult.detailedSuggestion
+                        if let location = suggestion?.location {
+                            Marker(suggestion?.name ?? "-", coordinate: location)
+                        }
+                    }
                 }
                 .mapControls {
                     MapPitchToggle(scope: mapScope)
