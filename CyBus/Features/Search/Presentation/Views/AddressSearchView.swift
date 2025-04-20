@@ -18,24 +18,34 @@ struct AddressSearchView : View {
         
         VStack(alignment: store.isLoading || store.error != nil ? .center : .leading, spacing: 0) {
             // MARK: Search Text field
-            TextField(
-                "Type your destination...",
-                text: $store.query
-            )
-            .padding()
-            .autocorrectionDisabled()
-            .focused($isFocused)
-            .onSubmit {
-                store.send(.onSubmit)
-            }
-            .overlay {
-                ClearButton(text: $store.query)
-                    .padding(.trailing)
-                    .padding(.top, 4)
-            }
-            .textInputAutocapitalization(.never)
-            .cornerRadius(12)
-            .border(.primary)
+            TextField("Type your destination...", text: $store.query)
+                .padding(12)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color(.systemGray6))
+                )
+                .overlay(
+                    HStack {
+                        Spacer()
+                        if !store.query.isEmpty {
+                            Button {
+                                store.query = ""
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(.gray)
+                            }
+                            .padding(.trailing, 8)
+                        }
+                    }
+                )
+                .font(.body)
+                .foregroundColor(.primary)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
+                .focused($isFocused)
+                .onSubmit {
+                    store.send(.onSubmit)
+                }
             
             if store.error != nil {
                 // MARK: Error
