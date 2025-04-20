@@ -13,7 +13,7 @@ extension Container {
         self { SearchTripRepository() }
     }
     var searchTripUseCases: Factory<SearchTripUseCasesProtocol> {
-        self { SearchTripMapBoxUseCases() }
+        self { SearchTripUseCases() }
     }
     var addressSearchUseCases: Factory<AddressSearchUseCasesProtocol> {
         self { AddressSearchMapBoxUseCases()}

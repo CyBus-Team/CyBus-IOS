@@ -67,7 +67,7 @@
 		94575DA62D2AAF3300CC3C03 /* FavouritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA52D2AAF2E00CC3C03 /* FavouritesButton.swift */; };
 		94575DA82D2AB47A00CC3C03 /* AddressSearchResultFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */; };
 		94575DAC2D2C501200CC3C03 /* DestinationMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DAB2D2C4F4900CC3C03 /* DestinationMarker.swift */; };
-		94575DB22D2DA3A700CC3C03 /* SearchTripMapBoxUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DB12D2DA39800CC3C03 /* SearchTripMapBoxUseCases.swift */; };
+		94575DB22D2DA3A700CC3C03 /* SearchTripUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */; };
 		945843A92CD18862006D9893 /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843A82CD1885F006D9893 /* MapFeature.swift */; };
 		945843AB2CD1923E006D9893 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843AA2CD19236006D9893 /* HomeView.swift */; };
 		945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
@@ -108,6 +108,8 @@
 		94C1BE7F2CC55D880048789B /* OnboardingFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7948A2CC029B50097A2F0 /* OnboardingFeatures.swift */; };
 		94C998652C88CFA8000F0E64 /* MapUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C998642C88CFA8000F0E64 /* MapUseCasesProtocol.swift */; };
 		94C998672C88D28C000F0E64 /* MapUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C998662C88D28C000F0E64 /* MapUseCases.swift */; };
+		94CE03062DB58188004C3CE8 /* SearchTripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03052DB58175004C3CE8 /* SearchTripDTO.swift */; };
+		94CE03082DB58CA4004C3CE8 /* SearchTripEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03072DB58C86004C3CE8 /* SearchTripEntity.swift */; };
 		94D794852CC01F6D0097A2F0 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 94D794842CC01F6D0097A2F0 /* ComposableArchitecture */; };
 		94D794872CC020630097A2F0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D794862CC0205F0097A2F0 /* RootView.swift */; };
 		94D7948B2CC029BA0097A2F0 /* OnboardingFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7948A2CC029B50097A2F0 /* OnboardingFeatures.swift */; };
@@ -208,7 +210,7 @@
 		94575DA52D2AAF2E00CC3C03 /* FavouritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesButton.swift; sourceTree = "<group>"; };
 		94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResultFeature.swift; sourceTree = "<group>"; };
 		94575DAB2D2C4F4900CC3C03 /* DestinationMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationMarker.swift; sourceTree = "<group>"; };
-		94575DB12D2DA39800CC3C03 /* SearchTripMapBoxUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripMapBoxUseCases.swift; sourceTree = "<group>"; };
+		94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripUseCases.swift; sourceTree = "<group>"; };
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		947633D42C6E0747000F20C7 /* StopDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDTO.swift; sourceTree = "<group>"; };
@@ -251,6 +253,8 @@
 		94CC173D2C4EC65300AC358D /* routes.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.prj; sourceTree = "<group>"; };
 		94CC173F2C4EC65300AC358D /* routes.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shx; sourceTree = "<group>"; };
 		94CC17402C4EC65300AC358D /* routes.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.dbf; sourceTree = "<group>"; };
+		94CE03052DB58175004C3CE8 /* SearchTripDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripDTO.swift; sourceTree = "<group>"; };
+		94CE03072DB58C86004C3CE8 /* SearchTripEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripEntity.swift; sourceTree = "<group>"; };
 		94D794862CC0205F0097A2F0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		94D7948A2CC029B50097A2F0 /* OnboardingFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeatures.swift; sourceTree = "<group>"; };
 		94D794902CC2CDD30097A2F0 /* LocationUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUseCases.swift; sourceTree = "<group>"; };
@@ -445,6 +449,7 @@
 		94575D842D23348800CC3C03 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				94CE03052DB58175004C3CE8 /* SearchTripDTO.swift */,
 				94575D9D2D28760800CC3C03 /* DetailedSuggestionDTO.swift */,
 				94575D892D23358500CC3C03 /* SuggestionDTO.swift */,
 			);
@@ -455,7 +460,7 @@
 			isa = PBXGroup;
 			children = (
 				9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */,
-				94575DB12D2DA39800CC3C03 /* SearchTripMapBoxUseCases.swift */,
+				94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */,
 				94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */,
 				94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */,
 			);
@@ -465,6 +470,7 @@
 		94575D862D2334A200CC3C03 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				94CE03072DB58C86004C3CE8 /* SearchTripEntity.swift */,
 				94575D8C2D2336D000CC3C03 /* SuggestionsEntity.swift */,
 				94575D9F2D2877C500CC3C03 /* DetailedSuggestionEntity.swift */,
 			);
@@ -1181,6 +1187,7 @@
 			files = (
 				94575DA82D2AB47A00CC3C03 /* AddressSearchResultFeature.swift in Sources */,
 				942F51D52D9DC67F007F6F7D /* BusesDI.swift in Sources */,
+				94CE03062DB58188004C3CE8 /* SearchTripDTO.swift in Sources */,
 				94D7948B2CC029BA0097A2F0 /* OnboardingFeatures.swift in Sources */,
 				94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */,
 				942F51DC2D9F127F007F6F7D /* RoutesDI.swift in Sources */,
@@ -1195,7 +1202,7 @@
 				9406EB562D3C418800C17ABF /* SearchTripUseCasesProtocol.swift in Sources */,
 				94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */,
 				942F51E32DA4405B007F6F7D /* SearchDI.swift in Sources */,
-				94575DB22D2DA3A700CC3C03 /* SearchTripMapBoxUseCases.swift in Sources */,
+				94575DB22D2DA3A700CC3C03 /* SearchTripUseCases.swift in Sources */,
 				94575DA42D28867700CC3C03 /* AddressSearchResultView.swift in Sources */,
 				9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */,
 				94AF0DA52C779ADC002FE41B /* BusesUseCases.swift in Sources */,
@@ -1211,6 +1218,7 @@
 				9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */,
 				94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */,
 				944494782CCD7DBC00A616E2 /* LocationManagerUseCases.swift in Sources */,
+				94CE03082DB58CA4004C3CE8 /* SearchTripEntity.swift in Sources */,
 				94F3B8832CC2EB4300E38BE2 /* OnboardingGeolocationView.swift in Sources */,
 				947633D52C6E0747000F20C7 /* StopDTO.swift in Sources */,
 				94F3E7262D52A733007803F5 /* NodeStop.swift in Sources */,

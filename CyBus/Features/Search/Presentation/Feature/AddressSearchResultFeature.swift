@@ -51,7 +51,10 @@ struct AddressSearchResultFeature {
                 state.nodes = []
                 let to = state.detailedSuggestion!.location
                 return .run { @MainActor send in
-                    let from = try await locationUseCases.getCurrentLocation()
+                    if let from = try await locationUseCases.getCurrentLocation() {
+                        let trips = try await useCases.fetchTrips(from: from, to: to)
+                        return send(.onGetDirectionsResponse([]))
+                    }
                     return send(.onGetDirectionsResponse([]))
                 }
                 

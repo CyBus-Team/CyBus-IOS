@@ -21,8 +21,8 @@ class BusesRepository: BusesRepositoryProtocol {
     func fetchBuses() async throws -> BusesDTO {
         var request = URLRequest(url: appConfiguration.backendURL.appendingPathComponent("api/buses"))
         request.httpMethod = "GET"
-        
-        let (data, response) = try await URLSession.shared.data(for: request)
+
+        let (data, response) = try await urlSession.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw URLError(.badServerResponse)
