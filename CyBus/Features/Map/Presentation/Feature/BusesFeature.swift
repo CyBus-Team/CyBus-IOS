@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import Factory
+import SwiftUI
 
 @Reducer
 struct BusesFeature {
@@ -82,7 +83,9 @@ struct BusesFeature {
                 return .none
                 
             case let .fetchBusesResponse(buses):
-                state.busList = buses
+                withAnimation(.easeInOut(duration: 1.0)) {
+                    state.busList = buses
+                }
                 return .none
                 
             case let .select(bus):
