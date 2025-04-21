@@ -37,21 +37,22 @@ struct AddressSearchResultView : View {
                     PrimaryButton(
                         label: String(localized: "Get directions"),
                         action: {
-                            store.send(.onGetDirections)
+                            store.send(.onGetTrips)
                         },
-                        isLoading: store.isNodesLoading,
+                        isLoading: store.isTripsLoading,
                         font: theme.typography.regular
                     )
-                    // MARK: Favourites
-                    // TODO: Implement favourites
-//                    SecondaryButton(
-//                        label: String(localized: "Add to favourites"),
-//                        action: {
-//                            
-//                        },
-//                        font: theme.typography.regular
-//                    )
-                    
+                    if (store.hasSuggestedTrips) {
+                        // MARK: Finish route
+                        SecondaryButton(
+                            label: String(localized: "Finish"),
+                            action: {
+                                store.send(.onReset)
+                                store.send(.onClose)
+                            },
+                            font: theme.typography.regular
+                        )
+                    }
                     Spacer()
                 }
             }
@@ -65,7 +66,7 @@ struct AddressSearchResultView : View {
 #Preview {
     AddressSearchResultView(store: Store(initialState: AddressSearchResultFeature.State(
         isLoading: false,
-        isNodesLoading: true,
+        isTripsLoading: true,
         detailedSuggestion: DetailedSuggestionEntity.mock
     )) {
         AddressSearchResultFeature()

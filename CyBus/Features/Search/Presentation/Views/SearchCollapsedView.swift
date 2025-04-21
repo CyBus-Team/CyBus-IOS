@@ -28,13 +28,6 @@ struct SearchCollapsedView : View {
             }
             
             Spacer()
-            
-            // MARK: Favourites
-//            FavouritesButton(
-//                action: { store.send(.onOpenFavourites) },
-//                isActive: true
-//            )
-//            .padding(12)
         }
         .padding(.horizontal, 12)
         .padding(.bottom, 14)

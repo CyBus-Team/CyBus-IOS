@@ -14,14 +14,15 @@ struct AddressSearchResultFeature {
     
     @ObservableState
     struct State : Equatable {
-        var trips: [SearchTripEntity] = [] {
+        var suggestedTrips: [SearchTripEntity] = [] {
             didSet {
-                hasTrips = !trips.isEmpty
+                hasSuggestedTrips = !suggestedTrips.isEmpty
             }
         }
-        var hasTrips: Bool = false
+        var hasSuggestedTrips: Bool = false
+        var selectedTrip: SearchTripEntity?
         var isLoading: Bool = true
-        var isNodesLoading: Bool = false
+        var isTripsLoading: Bool = false
         var hasSuggestion: Bool = false
         var detailedSuggestion: DetailedSuggestionEntity? {
             didSet {
@@ -33,9 +34,11 @@ struct AddressSearchResultFeature {
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case setup(DetailedSuggestionEntity?)
-        case onGetDirections
-        case onGetDirectionsResponse([SearchTripEntity])
+        case onGetTrips
+        case onGetTripsResponse([SearchTripEntity])
+        case onChooseTrip(SearchTripEntity?)
         case onClose
+        case onCloseTrips
         case onReset
     }
     
@@ -51,32 +54,34 @@ struct AddressSearchResultFeature {
                 state.isLoading = false
                 return .none
                 
-            case .onGetDirections:
-                state.isNodesLoading = true
-                state.trips = []
+            case .onGetTrips:
+                state.isTripsLoading = true
+                state.suggestedTrips = []
                 let to = state.detailedSuggestion!.location
                 return .run { @MainActor send in
                     if let from = try await locationUseCases.getCurrentLocation() {
                         let trips = try await useCases.fetchTrips(from: from, to: to)
-                        return send(.onGetDirectionsResponse(trips))
+                        return send(.onGetTripsResponse(trips))
                     }
-                    return send(.onGetDirectionsResponse([]))
+                    return send(.onGetTripsResponse([]))
                 }
                 
-            case let .onGetDirectionsResponse(trips):
-                state.isNodesLoading = false
-                state.trips = trips
+            case let .onGetTripsResponse(trips):
+                state.isTripsLoading = false
+                state.suggestedTrips = trips
                 return .run { send in
                     return await send(.onClose)
                 }
-            
+            case let .onChooseTrip(trip):
+                state.selectedTrip = trip
+                return .none
             case .onReset:
-                state.trips = []
+                state.suggestedTrips = []
+                state.selectedTrip = nil
                 return .none
                 
-            case .binding(_), .onClose:
+            case .binding(_), .onClose, .onCloseTrips:
                 return .none
-                
             }
         }
     }

@@ -15,6 +15,7 @@ struct SearchFeatures {
         // State vars
         var addressSearchOpened: Bool = false
         var addressResultOpened: Bool = false
+        var tripSelectorOpened: Bool = false
         // Features
         var searchAddressResult = AddressSearchResultFeature.State()
         var searchAddress = AddressSearchFeature.State()
@@ -44,9 +45,11 @@ struct SearchFeatures {
             case .onOpenAddressSearch:
                 state.addressSearchOpened = true
                 state.addressResultOpened = false
+                state.tripSelectorOpened = false
                 return .none
             case .onOpenAddressSearchResults:
                 state.addressSearchOpened = false
+                state.tripSelectorOpened = false
                 state.addressResultOpened = true
                 return .none
             case .onOpenFavourites:
@@ -56,6 +59,7 @@ struct SearchFeatures {
             // Search suggestions
             case let .searchAddress(.onGetDetailedSuggestion(detailedSuggestion)):
                 state.addressSearchOpened = false
+                state.tripSelectorOpened = false
                 state.addressResultOpened = true
                 return .run { send in
                     await send(.searchAddressResult(.setup(detailedSuggestion)))
@@ -63,8 +67,18 @@ struct SearchFeatures {
             case .searchAddress(_):
                 return .none
             // Search results
+            case .searchAddressResult(.onCloseTrips):
+                state.addressSearchOpened = false
+                state.addressResultOpened = false
+                state.tripSelectorOpened = false
+                return .none
             case .searchAddressResult(.onClose), .searchAddressResult(.binding(_)):
                 state.addressResultOpened = false
+                return .none
+            case .searchAddressResult(.onGetTripsResponse(_)):
+                state.addressSearchOpened = false
+                state.addressResultOpened = false
+                state.tripSelectorOpened = true
                 return .none
             case .searchAddressResult(_):
                 return .none
