@@ -33,14 +33,21 @@ struct PathTips: View {
                         default:
                             Label("Unknown", systemImage: "questionmark.square.dashed")
                         }
-                        
                         HStack(spacing: 2) {
+                            if leg.mode == .bus {
+                                Rectangle()
+                                    .fill(leg.lineColor)
+                                    .frame(width: 16, height: 4)
+                            } else {
                                 ForEach(0..<3) { _ in
                                     Circle()
                                         .fill(leg.lineColor)
                                         .frame(width: 4, height: 4)
                                 }
                             }
+                        }
+                        
+                        
                     }
                 }
             }

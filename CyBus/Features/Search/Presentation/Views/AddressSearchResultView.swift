@@ -48,6 +48,7 @@ struct AddressSearchResultView : View {
                             label: String(localized: "Finish"),
                             action: {
                                 store.send(.onReset)
+                                store.send(.onClose)
                             },
                             font: theme.typography.regular
                         )

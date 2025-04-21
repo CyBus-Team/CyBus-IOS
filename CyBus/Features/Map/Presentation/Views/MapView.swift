@@ -9,6 +9,18 @@ import SwiftUI
 import MapKit
 import ComposableArchitecture
 
+let footStroke = StrokeStyle(
+    lineWidth: 3,
+    lineCap: .round,
+    lineJoin: .round,
+    dash: [5, 5]
+)
+let busStroke = StrokeStyle(
+    lineWidth: 3,
+    lineCap: .round,
+    lineJoin: .round
+)
+
 struct MapView: View {
     
     @Bindable var mapStore: StoreOf<MapFeature>
@@ -16,7 +28,7 @@ struct MapView: View {
     @Bindable var searchStore: StoreOf<SearchFeatures>
     
     @Environment(\.theme) var theme
-    
+
     var body: some View {
         if mapStore.error != nil {
             VStack {
@@ -67,13 +79,7 @@ struct MapView: View {
                                 shape.position
                             }
                         )
-                        .stroke(
-                            .blue, style: StrokeStyle(
-                                lineWidth: 3,
-                                lineCap: .round,
-                                lineJoin: .round
-                            )
-                        )
+                        .stroke(.blue, style: busStroke)
                     }
                     
                     //MARK: Destination marker
@@ -90,17 +96,12 @@ struct MapView: View {
                     
                     //MARK: Trip
                     if searchStore.searchAddressResult.hasSuggestedTrips {
-                        let legs = searchStore.searchAddressResult.suggestedTrips.first!.legs
+                        let legs = searchStore.searchAddressResult.suggestedTrips.last!.legs
                         ForEach(legs) { leg in
                             MapPolyline(coordinates: leg.points)
                                 .stroke(
                                     leg.lineColor,
-                                    style: StrokeStyle(
-                                        lineWidth: 3,
-                                        lineCap: .round,
-                                        lineJoin: .round,
-                                        dash: [5, 5]
-                                    )
+                                    style: leg.mode == .bus ? busStroke : footStroke
                                 )
                         }
                     }
@@ -118,7 +119,7 @@ struct MapView: View {
                     // MARK: Path tips
                     if searchStore.searchAddressResult.hasSuggestedTrips {
                         PathTips(
-                            legs: searchStore.searchAddressResult.suggestedTrips.first!.legs,
+                            legs: searchStore.searchAddressResult.suggestedTrips.last!.legs,
                             hasSelectedLine: busesStore.hasSelection
                         )
                         .frame(maxWidth: .infinity)
