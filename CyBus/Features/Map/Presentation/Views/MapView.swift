@@ -9,10 +9,6 @@ import SwiftUI
 import MapKit
 import ComposableArchitecture
 
-func booleanToString(_ b: Bool) -> String {
-    String(b)
-}
-
 struct MapView: View {
     
     @Bindable var mapStore: StoreOf<MapFeature>
@@ -20,18 +16,6 @@ struct MapView: View {
     @Bindable var searchStore: StoreOf<SearchFeatures>
     
     @Environment(\.theme) var theme
-    
-    @Namespace private var mapScope
-    @State private var selection: Int?
-    
-    let strokeStyle = StrokeStyle(
-        lineWidth: 3,
-        lineCap: .round,
-        lineJoin: .round,
-        dash: [5, 5]
-    )
-    
-    let gradient = Gradient(colors: [.red, .green, .blue])
     
     var body: some View {
         if mapStore.error != nil {
@@ -50,8 +34,7 @@ struct MapView: View {
                 // MARK: Map
                 Map(
                     position: $mapStore.cameraPosition,
-                    interactionModes: MapInteractionModes.all,
-                    selection: $selection
+                    interactionModes: MapInteractionModes.all
                 ) {
                     UserAnnotation()
                     ForEach(busesStore.busList) { bus in
@@ -84,7 +67,13 @@ struct MapView: View {
                                 shape.position
                             }
                         )
-                        .stroke(gradient, style: strokeStyle)
+                        .stroke(
+                            .blue, style: StrokeStyle(
+                                lineWidth: 3,
+                                lineCap: .round,
+                                lineJoin: .round
+                            )
+                        )
                     }
                     
                     //MARK: Destination marker
@@ -100,6 +89,21 @@ struct MapView: View {
                     }
                     
                     //MARK: Trip
+                    if searchStore.searchAddressResult.hasSuggestedTrips {
+                        let legs = searchStore.searchAddressResult.suggestedTrips.first!.legs
+                        ForEach(legs) { leg in
+                            MapPolyline(coordinates: leg.points)
+                                .stroke(
+                                    leg.lineColor,
+                                    style: StrokeStyle(
+                                        lineWidth: 3,
+                                        lineCap: .round,
+                                        lineJoin: .round,
+                                        dash: [5, 5]
+                                    )
+                                )
+                        }
+                    }
                 }
                 .mapControls {
                     MapPitchToggle()
@@ -109,9 +113,20 @@ struct MapView: View {
                 .mapControlVisibility(.visible)
                 .alert($mapStore.scope(state: \.alert, action: \.alert))
                 
-                // MARK: Clear route button
+                
                 VStack {
+                    // MARK: Path tips
+                    if searchStore.searchAddressResult.hasSuggestedTrips {
+                        PathTips(
+                            legs: searchStore.searchAddressResult.suggestedTrips.first!.legs,
+                            hasSelectedLine: busesStore.hasSelection
+                        )
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                    }
+                    
                     Spacer()
+                    // MARK: Clear route button
                     if busesStore.hasSelection {
                         ClearRouteButton {
                             busesStore.send(.clearSelection)

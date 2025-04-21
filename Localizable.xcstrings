@@ -213,6 +213,12 @@
     "Error: %@" : {
 
     },
+    "Finish" : {
+
+    },
+    "Foot path" : {
+
+    },
     "Get directions" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -568,6 +574,9 @@
         }
       }
     },
+    "Selected line" : {
+
+    },
     "Settings" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -796,6 +805,9 @@
           }
         }
       }
+    },
+    "Unknown" : {
+
     },
     "Welcome to CyprusGo!" : {
       "localizations" : {

@@ -42,16 +42,16 @@ struct AddressSearchResultView : View {
                         isLoading: store.isNodesLoading,
                         font: theme.typography.regular
                     )
-                    // MARK: Favourites
-                    // TODO: Implement favourites
-//                    SecondaryButton(
-//                        label: String(localized: "Add to favourites"),
-//                        action: {
-//                            
-//                        },
-//                        font: theme.typography.regular
-//                    )
-                    
+                    if (store.hasSuggestedTrips) {
+                        // MARK: Finish route
+                        SecondaryButton(
+                            label: String(localized: "Finish"),
+                            action: {
+                                store.send(.onReset)
+                            },
+                            font: theme.typography.regular
+                        )
+                    }
                     Spacer()
                 }
             }

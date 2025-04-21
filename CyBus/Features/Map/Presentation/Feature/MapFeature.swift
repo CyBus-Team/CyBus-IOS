@@ -81,12 +81,10 @@ struct MapFeature {
                     }
                 }
                 return .none
-            case let .search(.searchAddressResult(.onGetDirectionsResponse(nodes))):
-                //                return .run { send in
-                //                    if let node = nodes.first {
-                //                        await send(.mapCamera(.onViewportChange(node.location)))
-                //                    }
-                //                }
+            case let .search(.searchAddressResult(.onGetDirectionsResponse(trips))):
+                withAnimation(.easeInOut(duration: 1.0)) {
+                    state.cameraPosition = .userLocation(followsHeading: true, fallback: .automatic)
+                }
                 return .none
             case .alert(_), .userLocation(_), .search(_), .binding(_):
                 return .none

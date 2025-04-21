@@ -14,12 +14,12 @@ struct AddressSearchResultFeature {
     
     @ObservableState
     struct State : Equatable {
-        var trips: [SearchTripEntity] = [] {
+        var suggestedTrips: [SearchTripEntity] = [] {
             didSet {
-                hasTrips = !trips.isEmpty
+                hasSuggestedTrips = !suggestedTrips.isEmpty
             }
         }
-        var hasTrips: Bool = false
+        var hasSuggestedTrips: Bool = false
         var isLoading: Bool = true
         var isNodesLoading: Bool = false
         var hasSuggestion: Bool = false
@@ -53,7 +53,7 @@ struct AddressSearchResultFeature {
                 
             case .onGetDirections:
                 state.isNodesLoading = true
-                state.trips = []
+                state.suggestedTrips = []
                 let to = state.detailedSuggestion!.location
                 return .run { @MainActor send in
                     if let from = try await locationUseCases.getCurrentLocation() {
@@ -65,13 +65,13 @@ struct AddressSearchResultFeature {
                 
             case let .onGetDirectionsResponse(trips):
                 state.isNodesLoading = false
-                state.trips = trips
+                state.suggestedTrips = trips
                 return .run { send in
                     return await send(.onClose)
                 }
             
             case .onReset:
-                state.trips = []
+                state.suggestedTrips = []
                 return .none
                 
             case .binding(_), .onClose:

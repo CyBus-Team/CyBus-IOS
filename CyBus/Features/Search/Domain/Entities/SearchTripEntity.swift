@@ -7,8 +7,9 @@
 
 import Foundation
 import CoreLocation
+import SwiftUICore
 
-enum LegMode {
+enum LegMode : Equatable {
     case foot
     case bus
     case unowned (String)
@@ -39,5 +40,6 @@ struct LegEntity: Identifiable, Equatable {
     let points: [CLLocationCoordinate2D]
     let mode: LegMode
     let line: String?
+    let lineColor: Color
 }
 
