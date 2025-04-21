@@ -37,9 +37,9 @@ struct AddressSearchResultView : View {
                     PrimaryButton(
                         label: String(localized: "Get directions"),
                         action: {
-                            store.send(.onGetDirections)
+                            store.send(.onGetTrips)
                         },
-                        isLoading: store.isNodesLoading,
+                        isLoading: store.isTripsLoading,
                         font: theme.typography.regular
                     )
                     if (store.hasSuggestedTrips) {
@@ -66,7 +66,7 @@ struct AddressSearchResultView : View {
 #Preview {
     AddressSearchResultView(store: Store(initialState: AddressSearchResultFeature.State(
         isLoading: false,
-        isNodesLoading: true,
+        isTripsLoading: true,
         detailedSuggestion: DetailedSuggestionEntity.mock
     )) {
         AddressSearchResultFeature()

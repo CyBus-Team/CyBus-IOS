@@ -35,8 +35,8 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
                     duration: durationFromSeconds(trip.duration),
                     distance: trip.distance,
                     formattedDistance: formattedDistance(trip.distance),
-                    startTime: dateFromISO8601String(trip.expectedStartTime),
-                    endTime: dateFromISO8601String(trip.expectedEndTime),
+                    startTime: dateFromISO8601String(trip.expectedStartTime) ?? Date(),
+                    endTime: dateFromISO8601String(trip.expectedEndTime) ?? Date(),
                     legs: trip.legs.map { leg in
                         LegEntity(
                             id: UUID().uuidString,

@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    " - " : {
+
+    },
     "About us" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -141,6 +144,9 @@
         }
       }
     },
+    "Click on trip to select" : {
+
+    },
     "Cybus" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -216,7 +222,7 @@
     "Finish" : {
 
     },
-    "Foot path" : {
+    "Finish at" : {
 
     },
     "Get directions" : {
@@ -253,6 +259,9 @@
           }
         }
       }
+    },
+    "Go" : {
+
     },
     "Loading..." : {
       "localizations" : {
@@ -715,6 +724,9 @@
         }
       }
     },
+    "Start at" : {
+
+    },
     "Support" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -737,6 +749,9 @@
           }
         }
       }
+    },
+    "Then press here" : {
+
     },
     "To show you your current location and the nearest buses, we need access to your geolocation." : {
       "comment" : "OnboardingGeolocationView",
@@ -807,6 +822,9 @@
       }
     },
     "Unknown" : {
+
+    },
+    "Walk" : {
 
     },
     "Welcome to CyprusGo!" : {

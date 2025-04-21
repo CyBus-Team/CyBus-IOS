@@ -27,7 +27,7 @@ struct PathTips: View {
                     HStack(spacing: 8) {
                         switch leg.mode {
                         case .foot:
-                            Label("Foot path", systemImage: "figure.walk")
+                            Label("Walk", systemImage: "figure.walk")
                         case .bus:
                             Label(leg.line ?? "bus", systemImage: "bus.fill")
                         default:

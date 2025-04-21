@@ -81,7 +81,7 @@ struct MapFeature {
                     }
                 }
                 return .none
-            case let .search(.searchAddressResult(.onGetDirectionsResponse(trips))):
+            case .search(.searchAddressResult(.onGetTripsResponse(_))):
                 withAnimation(.easeInOut(duration: 1.0)) {
                     state.cameraPosition = .userLocation(followsHeading: true, fallback: .automatic)
                 }

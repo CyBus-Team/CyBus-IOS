@@ -27,6 +27,11 @@ struct SearchView : View {
                     .presentationDragIndicator(.visible)
                     .presentationDetents([.large])
             }
+            .sheet(isPresented: $store.tripSelectorOpened) {
+                TripSelectionView(store: addressResultStore)
+                    .presentationDragIndicator(.visible)
+                    .presentationDetents([.large])
+            }
     }
 }
 

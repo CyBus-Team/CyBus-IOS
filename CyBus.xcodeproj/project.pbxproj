@@ -111,6 +111,7 @@
 		94CE03062DB58188004C3CE8 /* SearchTripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03052DB58175004C3CE8 /* SearchTripDTO.swift */; };
 		94CE03082DB58CA4004C3CE8 /* SearchTripEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03072DB58C86004C3CE8 /* SearchTripEntity.swift */; };
 		94CE030A2DB5AC12004C3CE8 /* PathTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03092DB5AC05004C3CE8 /* PathTips.swift */; };
+		94CE030C2DB69175004C3CE8 /* TripsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE030B2DB69163004C3CE8 /* TripsSelectionView.swift */; };
 		94D794852CC01F6D0097A2F0 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 94D794842CC01F6D0097A2F0 /* ComposableArchitecture */; };
 		94D794872CC020630097A2F0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D794862CC0205F0097A2F0 /* RootView.swift */; };
 		94D7948B2CC029BA0097A2F0 /* OnboardingFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7948A2CC029B50097A2F0 /* OnboardingFeatures.swift */; };
@@ -256,6 +257,7 @@
 		94CE03052DB58175004C3CE8 /* SearchTripDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripDTO.swift; sourceTree = "<group>"; };
 		94CE03072DB58C86004C3CE8 /* SearchTripEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripEntity.swift; sourceTree = "<group>"; };
 		94CE03092DB5AC05004C3CE8 /* PathTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTips.swift; sourceTree = "<group>"; };
+		94CE030B2DB69163004C3CE8 /* TripsSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsSelectionView.swift; sourceTree = "<group>"; };
 		94D794862CC0205F0097A2F0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		94D7948A2CC029B50097A2F0 /* OnboardingFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeatures.swift; sourceTree = "<group>"; };
 		94D794902CC2CDD30097A2F0 /* LocationUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUseCases.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 		94575D6D2D1F314100CC3C03 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				94CE030B2DB69163004C3CE8 /* TripsSelectionView.swift */,
 				94575D752D23200C00CC3C03 /* SearchCollapsedView.swift */,
 				94575D732D231DE200CC3C03 /* AddressSearchView.swift */,
 				94575DA32D28866E00CC3C03 /* AddressSearchResultView.swift */,
@@ -1269,6 +1272,7 @@
 				94D794AB2CC2CDD30097A2F0 /* LocationUseCases.swift in Sources */,
 				944494762CCD7D3E00A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */,
 				94D794AD2CC2CDD30097A2F0 /* LocalThemeModeRepository.swift in Sources */,
+				94CE030C2DB69175004C3CE8 /* TripsSelectionView.swift in Sources */,
 				94D794AE2CC2CDD30097A2F0 /* SecondaryButton.swift in Sources */,
 				94D794AF2CC2CDD30097A2F0 /* PrimaryButton.swift in Sources */,
 				94575D882D23350400CC3C03 /* AddressSearchMapBoxRepository.swift in Sources */,

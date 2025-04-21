@@ -95,9 +95,8 @@ struct MapView: View {
                     }
                     
                     //MARK: Trip
-                    if searchStore.searchAddressResult.hasSuggestedTrips {
-                        let legs = searchStore.searchAddressResult.suggestedTrips.last!.legs
-                        ForEach(legs) { leg in
+                    if let selectedTrip = searchStore.searchAddressResult.selectedTrip {
+                        ForEach(selectedTrip.legs) { leg in
                             MapPolyline(coordinates: leg.points)
                                 .stroke(
                                     leg.lineColor,
