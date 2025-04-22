@@ -7,6 +7,7 @@
 
 import Testing
 import ComposableArchitecture
+import Factory
 
 @testable import CyBus
 
@@ -19,7 +20,7 @@ class MockSkipOnboardingUseCase : OnboardingUseCasesProtocol {
     }
 }
 
-class MockGoOnboardingUseCase : OnboardingUseCasesProtocol {
+class MockShowOnboardingUseCase : OnboardingUseCasesProtocol {
     
     func finish() {}
     
@@ -36,10 +37,10 @@ struct RootFeatureTests {
       
       let skipOnboardingUseCase = MockSkipOnboardingUseCase()
       
+      Container.shared.onboardingUseCases.register { skipOnboardingUseCase }
+      
       let store = TestStore(initialState: RootFeature.State()) {
           RootFeature()
-      } withDependencies: {
-          $0.onboardingUseCases = skipOnboardingUseCase
       }
       store.exhaustivity = .off
       
@@ -54,12 +55,12 @@ struct RootFeatureTests {
     
     @Test
     func showOnboarding() async {
-        let skipOnboardingUseCase = MockGoOnboardingUseCase()
+        let showOnboardingUseCase = MockShowOnboardingUseCase()
+        
+        Container.shared.onboardingUseCases.register { showOnboardingUseCase }
         
         let store = TestStore(initialState: RootFeature.State()) {
             RootFeature()
-        } withDependencies: {
-            $0.onboardingUseCases = skipOnboardingUseCase
         }
         store.exhaustivity = .off
         
