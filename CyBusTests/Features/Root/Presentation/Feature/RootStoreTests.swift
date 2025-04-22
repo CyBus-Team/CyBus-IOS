@@ -32,42 +32,45 @@ class MockShowOnboardingUseCase : OnboardingUseCasesProtocol {
 @MainActor
 struct RootFeatureTests {
     
-  @Test
-  func showHome() async {
-      
-      let skipOnboardingUseCase = MockSkipOnboardingUseCase()
-      
-      Container.shared.onboardingUseCases.register { skipOnboardingUseCase }
-      
-      let store = TestStore(initialState: RootFeature.State()) {
-          RootFeature()
-      }
-      store.exhaustivity = .off
-      
-      store.assert { state in
-          state.page = .logo
-      }
-      
-      await store.send(.initApp) {
-          $0.page = .home
-      }
-  }
-    
     @Test
-    func showOnboarding() async {
-        let showOnboardingUseCase = MockShowOnboardingUseCase()
-        
-        Container.shared.onboardingUseCases.register { showOnboardingUseCase }
-        
+    func test_navigatesToHome_whenShouldSkipOnboarding() async {
+        // GIVEN
+        let skipOnboardingUseCase = MockSkipOnboardingUseCase()
+        Container.shared.onboardingUseCases.register { skipOnboardingUseCase }
+
         let store = TestStore(initialState: RootFeature.State()) {
             RootFeature()
         }
         store.exhaustivity = .off
-        
+
+        // WHEN
         store.assert { state in
             state.page = .logo
         }
-        
+
+        // THEN
+        await store.send(.initApp) {
+            $0.page = .home
+        }
+    }
+    
+    @Test
+    func test_navigatesToOnboarding_whenShouldShowOnboarding() async {
+        // GIVEN
+        let showOnboardingUseCase = MockShowOnboardingUseCase()
+        Container.shared.onboardingUseCases.register { showOnboardingUseCase }
+
+        let store = TestStore(initialState: RootFeature.State()) {
+            RootFeature()
+        }
+        store.exhaustivity = .off
+
+        // WHEN
+        store.assert { state in
+            state.page = .logo
+        }
+
+        // THEN
         await store.send(.initApp) {
             $0.page = .onboarding
         }
