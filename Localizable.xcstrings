@@ -4,6 +4,12 @@
     " - " : {
 
     },
+    "➡" : {
+
+    },
+    "🏁" : {
+
+    },
     "About us" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -749,9 +755,6 @@
           }
         }
       }
-    },
-    "Then press here" : {
-
     },
     "To show you your current location and the nearest buses, we need access to your geolocation." : {
       "comment" : "OnboardingGeolocationView",

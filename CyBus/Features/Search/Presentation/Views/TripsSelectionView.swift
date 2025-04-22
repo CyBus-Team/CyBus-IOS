@@ -43,15 +43,19 @@ struct TripSelectionView : View {
                         }
                         LazyVGrid(columns: columns, spacing: 8) {
                             ForEach(trip.legs) { leg in
-                                VStack(spacing: 2) {
-                                    Image(systemName: leg.mode == .foot ? "figure.walk" : "bus.fill")
-                                    Text(leg.line ?? "Walk")
+                                HStack {
+                                    VStack(spacing: 2) {
+                                        Image(systemName: leg.mode == .foot ? "figure.walk" : "bus.fill")
+                                        Text(leg.line ?? "Walk")
+                                    }
+                                    .padding(.vertical, 4)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundStyle(.white)
+                                    .background(leg.lineColor)
+                                    .cornerRadius(12)
+                                    Text(leg == trip.legs.last ? "🏁" : "➡")
+                                        .backgroundStyle(.separator)
                                 }
-                                .padding(.vertical, 4)
-                                .frame(maxWidth: .infinity)
-                                .foregroundStyle(.white)
-                                .background(leg.lineColor)
-                                .cornerRadius(12)
                             }
                         }
                     }
