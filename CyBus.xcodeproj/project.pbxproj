@@ -136,7 +136,6 @@
 		94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8882CC2F1B200E38BE2 /* LogoView.swift */; };
 		94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
 		94F3B8972CC30B9500E38BE2 /* RootStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8962CC30B8800E38BE2 /* RootStoreTests.swift */; };
-		94F8AC992D72419F00D9948A /* MapboxDirections in Frameworks */ = {isa = PBXBuildFile; productRef = 94F8AC982D72419F00D9948A /* MapboxDirections */; };
 		AC1D3FA12D26B1D70005D3EE /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusView.swift */; };
 		AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3FA52D270DF70005D3EE /* StopCircle.swift */; };
 		AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894B962CE4CB90001A660C /* BusMarker.swift */; };
@@ -293,7 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94575D922D23396D00CC3C03 /* MapboxSearchUI in Frameworks */,
-				94F8AC992D72419F00D9948A /* MapboxDirections in Frameworks */,
 				94575D902D23396D00CC3C03 /* MapboxSearch in Frameworks */,
 				9485253E2D949276008EB3A0 /* Factory in Frameworks */,
 				94D794852CC01F6D0097A2F0 /* ComposableArchitecture in Frameworks */,
@@ -1045,7 +1043,6 @@
 				94575D8F2D23396D00CC3C03 /* MapboxSearch */,
 				94575D912D23396D00CC3C03 /* MapboxSearchUI */,
 				94575D9B2D2731E000CC3C03 /* MapboxMaps */,
-				94F8AC982D72419F00D9948A /* MapboxDirections */,
 				9485253D2D949276008EB3A0 /* Factory */,
 			);
 			productName = CyBus;
@@ -1130,7 +1127,6 @@
 				94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				94575D8E2D23396D00CC3C03 /* XCRemoteSwiftPackageReference "search-ios" */,
 				94575D9A2D2731E000CC3C03 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
-				94F8AC972D7240ED00D9948A /* XCRemoteSwiftPackageReference "mapbox-directions-swift" */,
 				9485253C2D949276008EB3A0 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
@@ -1698,14 +1694,6 @@
 				minimumVersion = 1.15.1;
 			};
 		};
-		94F8AC972D7240ED00D9948A /* XCRemoteSwiftPackageReference "mapbox-directions-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mapbox/mapbox-directions-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.15.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1733,10 +1721,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		94F8AC982D72419F00D9948A /* MapboxDirections */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MapboxDirections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
