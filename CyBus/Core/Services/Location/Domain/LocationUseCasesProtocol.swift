@@ -25,8 +25,6 @@ protocol LocationUseCasesProtocol {
     
     func requestPermission() async throws
     
-    func listenChanges(onLocationUpdate: @escaping (CLLocationCoordinate2D) -> Void) async throws
-    
     func getCurrentLocation() async throws -> CLLocationCoordinate2D?
 
 }

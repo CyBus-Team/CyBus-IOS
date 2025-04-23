@@ -49,16 +49,4 @@ final class LocationUseCases : LocationUseCasesProtocol {
         }
     }
     
-    func listenChanges(onLocationUpdate: @escaping (CLLocationCoordinate2D) -> Void) async throws {
-        for try await locationUpdate in CLLocationUpdate.liveUpdates() {
-            if let location = locationUpdate.location {
-                let coordinate = CLLocationCoordinate2D(
-                    latitude: location.coordinate.latitude,
-                    longitude: location.coordinate.longitude
-                )
-                onLocationUpdate(coordinate)
-            }
-        }
-    }
-    
 }

@@ -177,6 +177,7 @@
 		94B1306C2DB832370017C201 /* AddressSearchMapBoxRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D872D23350200CC3C03 /* AddressSearchMapBoxRepository.swift */; };
 		94B1306D2DB832370017C201 /* SearchTripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03052DB58175004C3CE8 /* SearchTripDTO.swift */; };
 		94B1306E2DB832630017C201 /* AppConfigurationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */; };
+		94B130702DB8CE670017C201 /* OnboardingRequestGeolocationFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B1306F2DB8CE5E0017C201 /* OnboardingRequestGeolocationFeatureTests.swift */; };
 		94C1BE7C2CC55D5F0048789B /* OnboardingUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24DB2CBC5A090092EE9B /* OnboardingUseCasesProtocol.swift */; };
 		94C1BE7D2CC55D7C0048789B /* OnboardingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24E22CBC5B310092EE9B /* OnboardingRepository.swift */; };
 		94C1BE7E2CC55D830048789B /* OnboardingRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24E02CBC5AAB0092EE9B /* OnboardingRepositoryProtocol.swift */; };
@@ -321,6 +322,7 @@
 		94AF24E02CBC5AAB0092EE9B /* OnboardingRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepositoryProtocol.swift; sourceTree = "<group>"; };
 		94AF24E22CBC5B310092EE9B /* OnboardingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepository.swift; sourceTree = "<group>"; };
 		94B1302F2DB82E020017C201 /* OnboardingFeaturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeaturesTests.swift; sourceTree = "<group>"; };
+		94B1306F2DB8CE5E0017C201 /* OnboardingRequestGeolocationFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRequestGeolocationFeatureTests.swift; sourceTree = "<group>"; };
 		94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Config-Secret.xcconfig"; path = "CyBus/Config-Secret.xcconfig"; sourceTree = "<group>"; };
 		94C998642C88CFA8000F0E64 /* MapUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUseCasesProtocol.swift; sourceTree = "<group>"; };
 		94C998662C88D28C000F0E64 /* MapUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUseCases.swift; sourceTree = "<group>"; };
@@ -893,6 +895,7 @@
 		94B1302E2DB82DFC0017C201 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				94B1306F2DB8CE5E0017C201 /* OnboardingRequestGeolocationFeatureTests.swift */,
 				94B1302F2DB82E020017C201 /* OnboardingFeaturesTests.swift */,
 			);
 			path = Feature;
@@ -1451,6 +1454,7 @@
 				94F3B8972CC30B9500E38BE2 /* RootStoreTests.swift in Sources */,
 				9444947C2CCE419400A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */,
 				94AA6D822CEA5FB6004A25A9 /* LocationFeature.swift in Sources */,
+				94B130702DB8CE670017C201 /* OnboardingRequestGeolocationFeatureTests.swift in Sources */,
 				9444947B2CCE418C00A616E2 /* LocationManagerUseCases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
