@@ -12,14 +12,19 @@ import Factory
 @Reducer
 struct AddressSearchFeature {
     
+    
+    
     @ObservableState
     struct State : Equatable {
         var error: String?
         var isLoading: Bool = false
         var query: String = ""
+        var debouncedQuery: String = ""
         var suggestions: [SuggestionEntity] = []
         var detailedSuggestion: DetailedSuggestionEntity?
     }
+    
+    
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
