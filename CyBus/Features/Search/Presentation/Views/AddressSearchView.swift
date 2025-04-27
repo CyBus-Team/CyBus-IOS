@@ -55,8 +55,8 @@ struct AddressSearchView: View {
                     store.send(.onSubmit)
                 }
                 .onChange(of: store.debouncedQuery) { _, newValue in
-                        store.query = newValue
-                        store.send(.onSubmit)
+                    store.query = newValue
+                    store.send(.onSubmit)
                 }
             if store.error != nil {
                 // MARK: Error
