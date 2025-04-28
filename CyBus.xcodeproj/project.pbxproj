@@ -128,7 +128,6 @@
 		94B130402DB832240017C201 /* RoutesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51D82D9F1208007F6F7D /* RoutesUseCases.swift */; };
 		94B130412DB832240017C201 /* BusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525472D949656008EB3A0 /* BusesRepository.swift */; };
 		94B130422DB832240017C201 /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusView.swift */; };
-		94B130432DB832240017C201 /* MapUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C998662C88D28C000F0E64 /* MapUseCases.swift */; };
 		94B130442DB832240017C201 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
 		94B130452DB832240017C201 /* BusesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485253A2D94888A008EB3A0 /* BusesDTO.swift */; };
 		94B130462DB832240017C201 /* RouteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC52C7CF956002FE41B /* RouteEntity.swift */; };
@@ -141,7 +140,6 @@
 		94B1304D2DB832240017C201 /* BusesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948CBE602CF2305C006C8B1C /* BusesFeature.swift */; };
 		94B1304E2DB832240017C201 /* BusMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894B962CE4CB90001A660C /* BusMarker.swift */; };
 		94B1304F2DB832240017C201 /* StopCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3FA52D270DF70005D3EE /* StopCircle.swift */; };
-		94B130502DB832240017C201 /* MapUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C998642C88CFA8000F0E64 /* MapUseCasesProtocol.swift */; };
 		94B130512DB832240017C201 /* PathTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03092DB5AC05004C3CE8 /* PathTips.swift */; };
 		94B130522DB832240017C201 /* RoutesUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51D62D9F1200007F6F7D /* RoutesUseCasesProtocol.swift */; };
 		94B130532DB832240017C201 /* BusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDF2C3B017B008AFC53 /* BusEntity.swift */; };
@@ -175,8 +173,6 @@
 		94C1BE7D2CC55D7C0048789B /* OnboardingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24E22CBC5B310092EE9B /* OnboardingRepository.swift */; };
 		94C1BE7E2CC55D830048789B /* OnboardingRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24E02CBC5AAB0092EE9B /* OnboardingRepositoryProtocol.swift */; };
 		94C1BE7F2CC55D880048789B /* OnboardingFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7948A2CC029B50097A2F0 /* OnboardingFeatures.swift */; };
-		94C998652C88CFA8000F0E64 /* MapUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C998642C88CFA8000F0E64 /* MapUseCasesProtocol.swift */; };
-		94C998672C88D28C000F0E64 /* MapUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C998662C88D28C000F0E64 /* MapUseCases.swift */; };
 		94CE03062DB58188004C3CE8 /* SearchTripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03052DB58175004C3CE8 /* SearchTripDTO.swift */; };
 		94CE03082DB58CA4004C3CE8 /* SearchTripEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03072DB58C86004C3CE8 /* SearchTripEntity.swift */; };
 		94CE030A2DB5AC12004C3CE8 /* PathTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE03092DB5AC05004C3CE8 /* PathTips.swift */; };
@@ -315,8 +311,6 @@
 		94B1302F2DB82E020017C201 /* OnboardingFeaturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeaturesTests.swift; sourceTree = "<group>"; };
 		94B1306F2DB8CE5E0017C201 /* OnboardingRequestGeolocationFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRequestGeolocationFeatureTests.swift; sourceTree = "<group>"; };
 		94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Config-Secret.xcconfig"; path = "CyBus/Config-Secret.xcconfig"; sourceTree = "<group>"; };
-		94C998642C88CFA8000F0E64 /* MapUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUseCasesProtocol.swift; sourceTree = "<group>"; };
-		94C998662C88D28C000F0E64 /* MapUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUseCases.swift; sourceTree = "<group>"; };
 		94CC17362C4EC42C00AC358D /* routes.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shp; sourceTree = "<group>"; };
 		94CC173D2C4EC65300AC358D /* routes.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.prj; sourceTree = "<group>"; };
 		94CC173F2C4EC65300AC358D /* routes.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shx; sourceTree = "<group>"; };
@@ -799,8 +793,6 @@
 				942F51D62D9F1200007F6F7D /* RoutesUseCasesProtocol.swift */,
 				94AF0DA42C779ADC002FE41B /* BusesUseCases.swift */,
 				94AF0DA22C779A8C002FE41B /* BusesUseCasesProtocol.swift */,
-				94C998662C88D28C000F0E64 /* MapUseCases.swift */,
-				94C998642C88CFA8000F0E64 /* MapUseCasesProtocol.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1293,7 +1285,6 @@
 				947633D72C6E079A000F20C7 /* StopTimeDTO.swift in Sources */,
 				9449C9D82C6E01CE009E98F3 /* TripDTO.swift in Sources */,
 				AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */,
-				94C998672C88D28C000F0E64 /* MapUseCases.swift in Sources */,
 				94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */,
 				942F51D02D9DC030007F6F7D /* StaticFilesRepositoryProtocol.swift in Sources */,
 				94575D7D2D23331700CC3C03 /* AddressSearchFeature.swift in Sources */,
@@ -1301,7 +1292,6 @@
 				94575D8A2D23359300CC3C03 /* SuggestionDTO.swift in Sources */,
 				94AF24DE2CBC5A450092EE9B /* OnboardingUseCases.swift in Sources */,
 				945843AB2CD1923E006D9893 /* HomeView.swift in Sources */,
-				94C998652C88CFA8000F0E64 /* MapUseCasesProtocol.swift in Sources */,
 				94575DA62D2AAF3300CC3C03 /* FavouritesButton.swift in Sources */,
 				94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */,
 				94AF0DA12C7799FE002FE41B /* BusesRepositoryProtocol.swift in Sources */,
@@ -1360,7 +1350,6 @@
 				94B130402DB832240017C201 /* RoutesUseCases.swift in Sources */,
 				94B130412DB832240017C201 /* BusesRepository.swift in Sources */,
 				94B130422DB832240017C201 /* BusView.swift in Sources */,
-				94B130432DB832240017C201 /* MapUseCases.swift in Sources */,
 				94B130442DB832240017C201 /* MapView.swift in Sources */,
 				94B130452DB832240017C201 /* BusesDTO.swift in Sources */,
 				94B130462DB832240017C201 /* RouteEntity.swift in Sources */,
@@ -1373,7 +1362,6 @@
 				94B1304D2DB832240017C201 /* BusesFeature.swift in Sources */,
 				94B1304E2DB832240017C201 /* BusMarker.swift in Sources */,
 				94B1304F2DB832240017C201 /* StopCircle.swift in Sources */,
-				94B130502DB832240017C201 /* MapUseCasesProtocol.swift in Sources */,
 				94B130512DB832240017C201 /* PathTips.swift in Sources */,
 				94B130522DB832240017C201 /* RoutesUseCasesProtocol.swift in Sources */,
 				94B130532DB832240017C201 /* BusEntity.swift in Sources */,

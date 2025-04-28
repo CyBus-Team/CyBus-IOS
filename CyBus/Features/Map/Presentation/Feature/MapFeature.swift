@@ -41,8 +41,6 @@ struct MapFeature {
         }
     }
     
-    @Injected(\.mapUseCases) var mapUseCases: MapUseCasesProtocol
-    
     var body: some ReducerOf<Self> {
         Scope(state: \.userLocation, action: \.userLocation) {
             LocationFeature()
@@ -55,8 +53,6 @@ struct MapFeature {
             switch action {
             case .setUp:
                 do {
-                    state.isLoading = true
-                    try mapUseCases.setup()
                     state.isLoading = false
                     return .send(.userLocation(.getCurrentLocation))
                 } catch {

@@ -7,7 +7,6 @@
 
 import ComposableArchitecture
 import Factory
-import MapboxSearch
 
 @Reducer
 struct AddressSearchFeature {
