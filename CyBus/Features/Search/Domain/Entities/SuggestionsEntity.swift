@@ -1,29 +1,25 @@
 //
-//  AddressEntity.swift
+//  SuggestionEntity.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 30/12/2024.
 //
 import CoreLocation
-import MapboxSearch
 
-struct SuggestionEntity: Identifiable, Equatable, Hashable {
+struct SuggestionEntity: Identifiable, Equatable {
     static func == (lhs: SuggestionEntity, rhs: SuggestionEntity) -> Bool {
         lhs.id == rhs.id
     }
     
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    let id: String
+    let id: Int
     let label: String
-    let suggestion: PlaceAutocomplete.Suggestion
+    let location: CLLocationCoordinate2D
     
     static func from(dto: SuggestionDTO) -> SuggestionEntity? {
-        guard let id = dto.id else {
+        guard let latitude = Double(dto.lat), let longitude = Double(dto.lon) else {
             return nil
         }
-        return .init(id: id, label: "\(dto.suggestion.name), \(dto.suggestion.description ?? "")",  suggestion: dto.suggestion)
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        return .init(id: dto.id, label: dto.displayName, location: location)
     }
 }

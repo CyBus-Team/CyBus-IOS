@@ -57,12 +57,12 @@ struct SearchFeatures {
             case .binding(_):
                 return .none
             // Search suggestions
-            case let .searchAddress(.onGetDetailedSuggestion(detailedSuggestion)):
+            case let .searchAddress(.onSelect(suggestion)):
                 state.addressSearchOpened = false
                 state.tripSelectorOpened = false
                 state.addressResultOpened = true
                 return .run { send in
-                    await send(.searchAddressResult(.setup(detailedSuggestion)))
+                    await send(.searchAddressResult(.setup(suggestion)))
                 }
             case .searchAddress(_):
                 return .none

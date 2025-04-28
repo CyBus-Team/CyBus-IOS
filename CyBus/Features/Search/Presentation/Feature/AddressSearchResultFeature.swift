@@ -6,7 +6,6 @@
 //
 
 import ComposableArchitecture
-import MapboxSearch
 import Factory
 
 @Reducer
@@ -24,16 +23,16 @@ struct AddressSearchResultFeature {
         var isLoading: Bool = true
         var isTripsLoading: Bool = false
         var hasSuggestion: Bool = false
-        var detailedSuggestion: DetailedSuggestionEntity? {
+        var suggestion: SuggestionEntity? {
             didSet {
-                hasSuggestion = detailedSuggestion != nil
+                hasSuggestion = suggestion != nil
             }
         }
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
-        case setup(DetailedSuggestionEntity?)
+        case setup(SuggestionEntity?)
         case onGetTrips
         case onGetTripsResponse([SearchTripEntity])
         case onChooseTrip(SearchTripEntity?)
@@ -50,14 +49,16 @@ struct AddressSearchResultFeature {
         Reduce { state, action in
             switch action {
             case let .setup(suggestion):
-                state.detailedSuggestion = suggestion
+                state.suggestion = suggestion
                 state.isLoading = false
                 return .none
                 
             case .onGetTrips:
                 state.isTripsLoading = true
                 state.suggestedTrips = []
-                let to = state.detailedSuggestion!.location
+                guard let to = state.suggestion?.location else {
+                    return .none
+                }
                 return .run { @MainActor send in
                     if let from = try await locationUseCases.getCurrentLocation() {
                         let trips = try await useCases.fetchTrips(from: from, to: to)

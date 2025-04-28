@@ -7,7 +7,6 @@
 
 import Foundation
 import ComposableArchitecture
-import MapboxMaps
 
 enum MapUseCasesError: Error {
     case initializationFailed
@@ -21,11 +20,11 @@ class MapUseCases : MapUseCasesProtocol {
     }
     
     func setup() throws {
-        if let mapBoxAccessToken = bundle.object(forInfoDictionaryKey: "MBXAccessToken") as? String {
-            MapboxOptions.accessToken = mapBoxAccessToken
-        } else {
-            throw MapUseCasesError.initializationFailed
-        }
+//        if let mapBoxAccessToken = bundle.object(forInfoDictionaryKey: "MBXAccessToken") as? String {
+//            MapboxOptions.accessToken = mapBoxAccessToken
+//        } else {
+//            throw MapUseCasesError.initializationFailed
+//        }
     }
     
 }

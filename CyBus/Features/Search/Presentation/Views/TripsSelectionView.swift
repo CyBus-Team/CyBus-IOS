@@ -7,8 +7,8 @@
 
 import SwiftUI
 import ComposableArchitecture
-import MapboxSearch
 import Foundation
+import CoreLocation
 
 struct TripSelectionView : View {
     @Environment(\.theme) var theme

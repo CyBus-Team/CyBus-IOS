@@ -16,7 +16,7 @@ struct MapFeature {
     let defaultCameraDistance = 1500.0
     
     @ObservableState
-    struct State: Equatable {
+    struct State {
         @Presents var alert: AlertState<Action.Alert>?
         
         // Features

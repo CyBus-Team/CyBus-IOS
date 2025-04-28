@@ -16,11 +16,11 @@ extension Container {
         self { SearchTripUseCases() }
     }
     var addressSearchUseCases: Factory<AddressSearchUseCasesProtocol> {
-        self { AddressSearchMapBoxUseCases()}
+        self { AddressSearchUseCases()}
             .singleton
     }
     var addressSearchRepository: Factory<AddressSearchRepositoryProtocol> {
-        self { AddressSearchMapBoxRepository()}
+        self { AddressSearchRepository()}
             .singleton
     }
 }

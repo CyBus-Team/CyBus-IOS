@@ -7,18 +7,6 @@ iOS application with schedules, routes, and locations of buses in Cyprus.
 
 # Setup
 
-## Required
-
-You need to create account on MapBox and generate an access token, just follow [this instruction](https://docs.mapbox.com/ios/maps/guides/install/)
-
-After, you have to create `Config-Secret.xcconfig` file in the root directory and paste your access token there
-
-```
-MBXAccessToken=YOUR_MAPBOX_ACCESS_TOKEN
-GFTSServiceIP=20.19.98.194
-GFTSServiceURL=$(GFTSServiceIP):8328/Api/api/gtfs-realtime //"http://20.19.98.194:8328/Api/api/gtfs-realtime"
-```
-
 ### Generate GFTS
 Routes are static files from [motionbuscard](https://motionbuscard.org.cy/opendata).
 
@@ -40,11 +28,7 @@ sh generate.sh
 
 [📋] - Setup CI/CD - (issue) [https://github.com/PopovVA/CyBus/issues/2]
 
-[📋] - Add localization - (issue) [https://github.com/PopovVA/CyBus/issues/4]
-
 # TODO enhancement
-
-[📋] - Add unit tests - (issue) [https://github.com/PopovVA/CyBus/issues/8]
 
 [📋] - Add analytics - (issue) [https://github.com/PopovVA/CyBus/issues/9]
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
-import MapboxSearch
+import CoreLocation
 
 struct AddressSearchResultView : View {
     @Environment(\.theme) var theme
@@ -23,11 +23,11 @@ struct AddressSearchResultView : View {
                 Spacer()
                 
                 // MARK: Place info
-                Text(store.detailedSuggestion?.name ?? "-")
+                Text(store.suggestion?.label ?? "-")
                     .font(theme.typography.title)
                 
-                Text(store.detailedSuggestion?.description ?? "-")
-                    .font(theme.typography.regular)
+                //                Text(store.detailedSuggestion?.description ?? "-")
+                //                    .font(theme.typography.regular)
                 
                 Spacer()
                 
@@ -67,7 +67,11 @@ struct AddressSearchResultView : View {
     AddressSearchResultView(store: Store(initialState: AddressSearchResultFeature.State(
         isLoading: false,
         isTripsLoading: true,
-        detailedSuggestion: DetailedSuggestionEntity.mock
+        suggestion: SuggestionEntity(
+            id: 1,
+            label: "My mall",
+            location: CLLocationCoordinate2D(latitude: 1, longitude: 1)
+        )
     )) {
         AddressSearchResultFeature()
     })

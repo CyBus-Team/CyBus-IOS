@@ -13,7 +13,7 @@ import Factory
 struct LocationFeature {
     
     @ObservableState
-    struct State: Equatable {
+    struct State {
         var location: CLLocationCoordinate2D?
         var error: String?
     }
