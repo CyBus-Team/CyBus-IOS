@@ -89,9 +89,8 @@ struct AddressSearchView: View {
         .padding()
         .background(theme.colors.background)
         .edgesIgnoringSafeArea(.bottom)
-
-        .onAppear {
-            store.send(.setup)
+        
+        .task {
             isFocused = true
         }
     }

@@ -10,9 +10,6 @@ import Foundation
 import ComposableArchitecture
 
 extension Container {
-    var mapUseCases: Factory<MapUseCasesProtocol> {
-        self { MapUseCases() }
-    }
     var mapFeature: Factory<StoreOf<MapFeature>> {
         self {
             @MainActor in Store(initialState: MapFeature.State()) {

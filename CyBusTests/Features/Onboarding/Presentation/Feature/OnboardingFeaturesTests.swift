@@ -11,8 +11,21 @@ import Factory
 
 @testable import CyBus
 
-@MainActor
-struct OnboardingFeaturesTests {
+class MockOnboardingUseCases : OnboardingUseCasesProtocol {
+    var finishOnboardingCallCount = 0
+    
+    func finish() {
+        print("executed")
+        finishOnboardingCallCount += 1
+    }
+    
+    func needToShow() -> Bool {
+        return true
+    }
+    
+}
+
+@MainActor struct OnboardingFeaturesTests {
     
     @Test
     func test_initialPageIsWelcome() async {
@@ -110,7 +123,7 @@ struct OnboardingFeaturesTests {
     }
     
     @Test
-    func test_StayGeolocationPageWhenPermissionsAreNotAllowed() async {
+    func test_stayGeolocationPageWhenPermissionsAreNotAllowed() async {
         
         // GIVEN
         let store = TestStore(initialState: OnboardingFeatures.State()) {
@@ -128,4 +141,24 @@ struct OnboardingFeaturesTests {
             state.finished = false
         }
     }
+    
+    @Test
+    func test_finishOnboardingUseCasesMathodCalled() async {
+        
+        // GIVEN
+        let useCase = MockOnboardingUseCases()
+        Container.shared.onboardingUseCases.register { useCase }
+        let store = TestStore(initialState: OnboardingFeatures.State()) {
+            OnboardingFeatures()
+        }
+        store.exhaustivity = .off
+
+        // WHEN
+        await store.send(.welcome(.getStartTapped))
+        await store.send(.geolocation(.permissionResponse(allowed: true, error: nil)))
+        
+        //THEN
+        #expect(useCase.finishOnboardingCallCount > 0)
+    }
+    
 }

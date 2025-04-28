@@ -84,9 +84,9 @@ struct MapView: View {
                     
                     //MARK: Destination marker
                     if searchStore.searchAddressResult.hasSuggestion {
-                        let suggestion = searchStore.searchAddressResult.detailedSuggestion
+                        let suggestion = searchStore.searchAddressResult.suggestion
                         if let location = suggestion?.location {
-                            Annotation(suggestion?.name ?? "-", coordinate: location) {
+                            Annotation(suggestion?.label ?? "-", coordinate: location) {
                                 DestinationMarker {
                                     searchStore.send(.onOpenAddressSearchResults)
                                 }
@@ -116,9 +116,9 @@ struct MapView: View {
                 
                 VStack {
                     // MARK: Path tips
-                    if searchStore.searchAddressResult.hasSuggestedTrips {
+                    if let trip = searchStore.searchAddressResult.selectedTrip {
                         PathTips(
-                            legs: searchStore.searchAddressResult.suggestedTrips.last!.legs,
+                            legs: trip.legs,
                             hasSelectedLine: busesStore.hasSelection
                         )
                         .frame(maxWidth: .infinity)

@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Factory
 
 enum OnboardingPage {
     case welcome
@@ -17,6 +18,8 @@ enum OnboardingPage {
 struct OnboardingFeatures {
     
     static let onboardingKey = "hasLaunchedBefore"
+    
+    @Injected(\.onboardingUseCases) var useCases
     
     @ObservableState
     struct State: Equatable {
@@ -50,11 +53,13 @@ struct OnboardingFeatures {
                 
                 // Geolocation
             case .geolocation(.nextTapped), .geolocation(.notNowTapped):
+                useCases.finish()
                 state.finished = true
                 state.page = .home
                 return .none
             case let .geolocation(.permissionResponse(allowed, _)):
                 if allowed {
+                    useCases.finish()
                     state.finished = true
                     state.page = .home
                 }

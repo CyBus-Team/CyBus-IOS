@@ -5,22 +5,13 @@
 //  Created by Vadim Popov on 30/12/2024.
 //
 
-import MapboxSearch
 import Foundation
 import Factory
 
-class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
+class AddressSearchUseCases : AddressSearchUseCasesProtocol {
     
     @Injected(\.addressSearchRepository) var repository: AddressSearchRepositoryProtocol
     @Injected(\.locationUseCases) var locationUseCases: LocationUseCasesProtocol
-    
-    func setup() throws {
-        do {
-            try repository.setup()
-        } catch {
-            throw error
-        }
-    }
     
     func fetch(query: String) async throws -> [SuggestionEntity]? {
         do {
@@ -30,15 +21,6 @@ class AddressSearchMapBoxUseCases : AddressSearchUseCasesProtocol {
             return try await repository.fetch(query: query, userLocation: userLocation).compactMap { SuggestionEntity.from(dto: $0) }
         } catch {
             throw AddressSearchUseCasesError.fetchFailed
-        }
-    }
-    
-    func select(suggestion: SuggestionEntity) async throws -> DetailedSuggestionEntity? {
-        do {
-            let dto = try await repository.select(suggestion: suggestion)
-            return DetailedSuggestionEntity.from(dto: dto)
-        } catch {
-            throw AddressSearchUseCasesError.selectionFailed
         }
     }
     
