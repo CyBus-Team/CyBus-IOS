@@ -7,19 +7,20 @@
 
 import ComposableArchitecture
 import Factory
+import MapboxSearch
 
 @Reducer
 struct AddressSearchFeature {
-    
+
     @ObservableState
-    struct State : Equatable {
+    struct State: Equatable {
         var error: String?
         var isLoading: Bool = false
         var query: String = ""
         var suggestions: [SuggestionEntity] = []
         var selection: SuggestionEntity?
     }
-    
+
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case onSubmit
@@ -27,9 +28,9 @@ struct AddressSearchFeature {
         case onGetSuggestions([SuggestionEntity]?)
         case onSelect(SuggestionEntity)
     }
-    
+
     @Injected(\.addressSearchUseCases) var useCases
-    
+
     var body: some ReducerOf<Self> {
         BindingReducer()
         Reduce { state, action in
@@ -38,7 +39,7 @@ struct AddressSearchFeature {
                 state.selection = nil
                 state.isLoading = true
                 let query = state.query
-                return  .run { @MainActor send in
+                return .run { @MainActor send in
                     do {
                         let suggestions = try await useCases.fetch(query: query)
                         send(.onGetSuggestions(suggestions))
@@ -46,7 +47,7 @@ struct AddressSearchFeature {
                         send(.onGetSuggestions(nil))
                     }
                 }
-                
+
             case let .onGetSuggestions(suggestions):
                 state.suggestions = suggestions ?? []
                 state.isLoading = false
@@ -55,18 +56,18 @@ struct AddressSearchFeature {
             case let .onSelect(suggestion):
                 state.selection = suggestion
                 return .none
-                
+
             case .onReset:
                 state.query = ""
                 state.suggestions = []
                 state.selection = nil
                 return .none
-                
+
             case .binding(_):
                 return .none
-                
+
             }
         }
     }
-    
+
 }

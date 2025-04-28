@@ -5,20 +5,39 @@
 //  Created by Vadim Popov on 30/12/2024.
 //
 
-import SwiftUI
+import Combine
 import ComposableArchitecture
+import SwiftUI
 
-struct AddressSearchView : View {
+struct AddressSearchView: View {
     @Environment(\.theme) var theme
     @FocusState private var isFocused: Bool
-    
+
     @Bindable var store: StoreOf<AddressSearchFeature>
-    
+
     var body: some View {
-        
-        VStack(alignment: store.isLoading || store.error != nil ? .center : .leading, spacing: 0) {
+
+        VStack(
+            alignment: store.isLoading || store.error != nil
+                ? .center : .leading,
+            spacing: 0
+        ) {
             // MARK: Search Text field
+            @State var searchText: String = store.query
+            let searchTextPublisher = PassthroughSubject<String, Never>()
             TextField("Type your destination...", text: $store.query)
+                .onChange(of: searchText) { _, searchText in
+                    searchTextPublisher.send(searchText)
+                }
+                .onReceive(
+                    searchTextPublisher
+                        .debounce(
+                            for: .seconds(1),
+                            scheduler: DispatchQueue.main
+                        )
+                ) { debouncedSearchText in
+                    store.send(.onSubmit)
+                }
                 .padding(12)
                 .background(
                     RoundedRectangle(cornerRadius: 12)
@@ -45,7 +64,6 @@ struct AddressSearchView : View {
                 .onSubmit {
                     store.send(.onSubmit)
                 }
-            
             if store.error != nil {
                 // MARK: Error
                 // TODO: Implement something went wrong component
@@ -77,4 +95,3 @@ struct AddressSearchView : View {
         }
     }
 }
-
