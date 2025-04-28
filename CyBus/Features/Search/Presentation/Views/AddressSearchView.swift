@@ -5,12 +5,12 @@
 //  Created by Vadim Popov on 30/12/2024.
 //
 
+import Combine
 import ComposableArchitecture
 import SwiftUI
 
 struct AddressSearchView: View {
     @Environment(\.theme) var theme
-    /// <#Description#>
     @FocusState private var isFocused: Bool
 
     @Bindable var store: StoreOf<AddressSearchFeature>
@@ -23,11 +23,21 @@ struct AddressSearchView: View {
             spacing: 0
         ) {
             // MARK: Search Text field
+            @State var searchText: String = store.query
+            let searchTextPublisher = PassthroughSubject<String, Never>()
             TextField("Type your destination...", text: $store.query)
-                .debounced(
-                    text: $store.query,
-                    debouncedText: $store.debouncedQuery
-                )
+                .onChange(of: searchText) { _, searchText in
+                    searchTextPublisher.send(searchText)
+                }
+                .onReceive(
+                    searchTextPublisher
+                        .debounce(
+                            for: .seconds(1),
+                            scheduler: DispatchQueue.main
+                        )
+                ) { debouncedSearchText in
+                    store.send(.onSubmit)
+                }
                 .padding(12)
                 .background(
                     RoundedRectangle(cornerRadius: 12)
@@ -52,10 +62,6 @@ struct AddressSearchView: View {
                 .disableAutocorrection(true)
                 .focused($isFocused)
                 .onSubmit {
-                    store.send(.onSubmit)
-                }
-                .onChange(of: store.debouncedQuery) { _, newValue in
-                    store.query = newValue
                     store.send(.onSubmit)
                 }
             if store.error != nil {
@@ -89,53 +95,4 @@ struct AddressSearchView: View {
             isFocused = true
         }
     }
-}
-
-class DebounceViewModel: ObservableObject {
-    @Published var userInput: String = ""
-}
-
-struct DebouncedModifier: ViewModifier {
-    @State private var viewModel = DebounceViewModel()
-
-    @Binding var text: String
-    @Binding var debouncedText: String
-    let debounceInterval: TimeInterval
-
-    func body(content: Content) -> some View {
-        content
-            .onReceive(
-                viewModel.$userInput.debounce(
-                    for:
-                        RunLoop.SchedulerTimeType.Stride(debounceInterval),
-                    scheduler:
-                        RunLoop.main
-                )
-            ) { value in
-                debouncedText = value
-            }
-            .onChange(of: text) { _, newValue in
-                viewModel.userInput = newValue
-            }
-    }
-}
-
-extension View {
-    public func debounced(
-        text:
-            Binding<String>,
-        debouncedText: Binding<String>,
-        debounceInterval: TimeInterval = 1
-    )
-        -> some View
-    {
-        modifier(
-            DebouncedModifier(
-                text: text,
-                debouncedText: debouncedText,
-                debounceInterval: debounceInterval
-            )
-        )
-    }
-
 }
