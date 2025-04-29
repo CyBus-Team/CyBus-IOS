@@ -11,7 +11,7 @@ import Factory
 
 struct OnboardingView: View {
     
-    @Injected(\Container.onboardingFeature) var onboardingStore: StoreOf<OnboardingFeatures>
+    @Injected(\.onboardingFeature) var onboardingStore: StoreOf<OnboardingFeatures>
     
     var body: some View {
         NavigationStack() {
