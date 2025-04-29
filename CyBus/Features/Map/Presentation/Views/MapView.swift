@@ -128,6 +128,9 @@ struct MapView: View {
                         )
                         .frame(maxWidth: .infinity)
                         .padding(.horizontal)
+                        .onTapGesture {
+                            searchStore.send(.onOpenAddressSearchResults)
+                        }
                     }
                     
                     Spacer()
