@@ -28,7 +28,7 @@ struct MapView: View {
     @Bindable var searchStore: StoreOf<SearchFeatures>
     
     @Environment(\.theme) var theme
-
+    
     var body: some View {
         if mapStore.error != nil {
             VStack {
@@ -102,6 +102,11 @@ struct MapView: View {
                                     leg.lineColor,
                                     style: leg.mode == .bus ? busStroke : footStroke
                                 )
+                            if let last = leg.points.last {
+                                Annotation("", coordinate: last) {
+                                    StopCircle(color: leg.lineColor).compositingGroup()
+                                }
+                            }
                         }
                     }
                 }
@@ -123,6 +128,9 @@ struct MapView: View {
                         )
                         .frame(maxWidth: .infinity)
                         .padding(.horizontal)
+                        .onTapGesture {
+                            searchStore.send(.onOpenAddressSearchResults)
+                        }
                     }
                     
                     Spacer()
