@@ -25,7 +25,9 @@ struct AddressSearchResultFeature {
         var hasSuggestion: Bool = false
         var suggestion: SuggestionEntity? {
             didSet {
-                hasSuggestion = suggestion != nil
+                if let suggestion {
+                    hasSuggestion = true
+                }
             }
         }
     }

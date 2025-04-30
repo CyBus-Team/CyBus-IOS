@@ -30,7 +30,7 @@ struct MapView: View {
     @Environment(\.theme) var theme
     
     var body: some View {
-        if mapStore.error != nil {
+        if let error = mapStore.error {
             VStack {
                 Text(mapStore.error ?? "Unknown error")
             }
