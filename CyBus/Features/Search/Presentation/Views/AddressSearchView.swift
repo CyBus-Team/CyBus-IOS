@@ -14,9 +14,7 @@ struct AddressSearchView: View {
     @FocusState private var isFocused: Bool
 
     @Bindable var store: StoreOf<AddressSearchFeature>
-
     var body: some View {
-
         VStack(
             alignment: { () -> HorizontalAlignment in
                 if store.isLoading {
@@ -74,7 +72,7 @@ struct AddressSearchView: View {
             if let error = store.error {
                 // MARK: Error
                 // TODO: Implement something went wrong component
-                Text("Something went wrong, please retry")
+                Text("Something went wrong, please retry:" + error)
             } else if store.isLoading {
                 // MARK: Loading
                 Spacer()

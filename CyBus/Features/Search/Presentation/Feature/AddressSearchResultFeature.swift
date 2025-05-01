@@ -22,14 +22,7 @@ struct AddressSearchResultFeature {
         var selectedTrip: SearchTripEntity?
         var isLoading: Bool = true
         var isTripsLoading: Bool = false
-        var hasSuggestion: Bool = false
-        var suggestion: SuggestionEntity? {
-            didSet {
-                if let suggestion {
-                    hasSuggestion = true
-                }
-            }
-        }
+        var suggestion: SuggestionEntity? 
     }
     
     enum Action: BindableAction {

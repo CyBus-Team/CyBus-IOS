@@ -30,9 +30,10 @@ struct MapView: View {
     @Environment(\.theme) var theme
     
     var body: some View {
+        
         if let error = mapStore.error {
             VStack {
-                Text(mapStore.error ?? "Unknown error")
+                Text(mapStore.error ?? "Unknown error: \(error)")
             }
             
         } else if mapStore.isLoading {
@@ -83,13 +84,10 @@ struct MapView: View {
                     }
                     
                     //MARK: Destination marker
-                    if searchStore.searchAddressResult.hasSuggestion {
-                        let suggestion = searchStore.searchAddressResult.suggestion
-                        if let location = suggestion?.location {
-                            Annotation(suggestion?.label ?? "-", coordinate: location) {
-                                DestinationMarker {
-                                    searchStore.send(.onOpenAddressSearchResults)
-                                }
+                    if let suggestion = searchStore.searchAddressResult.suggestion {
+                        Annotation(suggestion.label, coordinate: suggestion.location) {
+                            DestinationMarker {
+                                searchStore.send(.onOpenAddressSearchResults)
                             }
                         }
                     }

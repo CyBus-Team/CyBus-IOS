@@ -19,7 +19,7 @@ struct BusesFeature {
         var isFetching: Bool = false
         
         var busList: [BusEntity] = []
-        var hasSelection: Bool { if let selectedBus = selectedBus
+        var hasSelection: Bool { if let _ = selectedBus
             { return true } else { return false }}
         var selectedBus: BusEntity?
         var routes = RoutesFeature.State()
