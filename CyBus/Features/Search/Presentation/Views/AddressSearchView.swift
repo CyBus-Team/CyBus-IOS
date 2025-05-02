@@ -14,12 +14,17 @@ struct AddressSearchView: View {
     @FocusState private var isFocused: Bool
 
     @Bindable var store: StoreOf<AddressSearchFeature>
-
     var body: some View {
-
         VStack(
-            alignment: store.isLoading || store.error != nil
-                ? .center : .leading,
+            alignment: { () -> HorizontalAlignment in
+                if store.isLoading {
+                    return .center
+                } else if let _ = store.error {
+                    return .center
+                } else {
+                    return .leading
+                }
+            }(),
             spacing: 0
         ) {
             // MARK: Search Text field
@@ -64,10 +69,10 @@ struct AddressSearchView: View {
                 .onSubmit {
                     store.send(.onSubmit)
                 }
-            if store.error != nil {
+            if let error = store.error {
                 // MARK: Error
                 // TODO: Implement something went wrong component
-                Text("Something went wrong, please retry")
+                Text("Something went wrong, please retry:" + error)
             } else if store.isLoading {
                 // MARK: Loading
                 Spacer()

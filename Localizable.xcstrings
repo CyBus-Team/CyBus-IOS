@@ -709,6 +709,7 @@
       }
     },
     "Something went wrong, please retry" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {

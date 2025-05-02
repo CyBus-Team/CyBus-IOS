@@ -10,12 +10,12 @@ import SwiftUI
 struct PathTips: View {
     
     let legs: [LegEntity]
-    let hasSelectedLine: Bool
+    let selectedBus: BusEntity?
     
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                if hasSelectedLine {
+                if let bus = selectedBus {
                     HStack(spacing: 8) {
                         Label("Selected line", systemImage: "bus.fill")
                         Rectangle()

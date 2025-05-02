@@ -52,15 +52,8 @@ struct MapFeature {
         Reduce { state, action in
             switch action {
             case .setUp:
-                do {
-                    state.isLoading = false
-                    return .send(.userLocation(.getCurrentLocation))
-                } catch {
-                    // TODO: UI errors
-                    state.isLoading = false
-                    state.error = "Failed to init Map \(error)"
-                }
-                return .none
+                state.isLoading = false
+                return .send(.userLocation(.getCurrentLocation))
                 
             case .alert(.presented(.openSettingsTapped)):
                 guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
