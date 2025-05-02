@@ -23,12 +23,12 @@ fileprivate let max = 255.0
 
 extension ColorPalette {
     static let light = ColorPalette(
-        primary: .blue,                        // .init(red: 39, 113, 255)
+        primary: .blue,
         background: .white,
-        foreground: Color(.systemTeal),        // .init(red: 213, 240, 252)
-        secondary: Color(.systemBlue),         // .init(red: 33, 59, 155)
-        linkTitle: .gray,                      // .init(red: 120, 119, 120)
-        textFieldBackground: Color(.systemGray6), // .init(red: 244, 244, 244)
+        foreground: Color(.systemTeal),
+        secondary: Color(.systemBlue),
+        linkTitle: .gray,
+        textFieldBackground: Color(.systemGray6),
         destinationColor: .red,
         nodeColor: .green
     )

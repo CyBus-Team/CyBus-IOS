@@ -6,11 +6,17 @@
 
 import SwiftUI
 
+enum BusViewState {
+    case selected
+    case unselected
+    case none
+}
+
 struct BusView: View {
     @Environment(\.theme) var theme
     
     let bus: BusEntity
-    let isActive: Bool?
+    let state: BusViewState
     let action: () -> Void
     
     var body: some View {
@@ -21,7 +27,7 @@ struct BusView: View {
                 .font(.caption)
                 .background(theme.colors.primary)
                 .cornerRadius(16)
-                .opacity(isActive == nil ? 1 : isActive == true ? 1 : 0.5)
+                .opacity(state == .none ? 1 : state == .selected ? 1 : 0.5)
             
             ZStack {
                 BusMarker()
@@ -34,7 +40,7 @@ struct BusView: View {
         }
         .shadow(radius: 3, x: 1, y: 1)
         .foregroundStyle(theme.colors.primary)
-        .opacity(isActive == nil ? 1 : isActive == true ? 1 : 0.5)
+        .opacity(state == .none ? 1 : state == .selected ? 1 : 0.5)
         .onTapGesture {
            action()
         }

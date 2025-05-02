@@ -38,9 +38,7 @@ final class LocationUseCases : LocationUseCasesProtocol {
         let status = locationManagerUseCases.getCurrentAuthorizationStatus()
         if (status == .authorizedAlways || status == .authorizedWhenInUse) {
             let updatedLocation = locationManagerUseCases.getLocation()?.coordinate
-            if let latitude = updatedLocation?.latitude , let longitude  = updatedLocation?.longitude {
-                location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            }  else {
+            guard let latitude = updatedLocation?.latitude, let longitude = updatedLocation?.longitude else {
                 return location
             }
             return updatedLocation

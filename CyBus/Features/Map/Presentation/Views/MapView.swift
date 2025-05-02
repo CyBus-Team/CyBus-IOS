@@ -52,10 +52,7 @@ struct MapView: View {
                     UserAnnotation()
                     ForEach(busesStore.busList) { bus in
                         Annotation("", coordinate: bus.position, anchor: .bottom) {
-                            BusView(
-                                bus: bus,
-                                isActive: !busesStore.hasSelection || bus == busesStore.selectedBus
-                            ) {
+                            busItemView(for: bus, selectedBus: busesStore.selectedBus) {
                                 busesStore.send(.select(bus))
                             }
                         }
@@ -120,20 +117,17 @@ struct MapView: View {
                 VStack {
                     // MARK: Path tips
                     if let trip = searchStore.searchAddressResult.selectedTrip {
-                        PathTips(
-                            legs: trip.legs,
-                            hasSelectedLine: busesStore.hasSelection
-                        )
-                        .frame(maxWidth: .infinity)
-                        .padding(.horizontal)
-                        .onTapGesture {
-                            searchStore.send(.onOpenAddressSearchResults)
-                        }
+                        PathTips(legs: trip.legs, selectedBus: busesStore.selectedBus)
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal)
+                            .onTapGesture {
+                                searchStore.send(.onOpenAddressSearchResults)
+                            }
                     }
                     
                     Spacer()
                     // MARK: Clear route button
-                    if busesStore.hasSelection {
+                    if let _ = busesStore.selectedBus {
                         ClearRouteButton {
                             busesStore.send(.clearSelection)
                         }
@@ -143,6 +137,19 @@ struct MapView: View {
             }
             
         }
+    }
+    
+    @ViewBuilder
+    func busItemView(for bus: BusEntity, selectedBus: BusEntity?, action: @escaping () -> Void) -> some View {
+        let state: BusViewState = {
+            if let selected = selectedBus {
+                return selected == bus ? .selected : .unselected
+            } else {
+                return .none
+            }
+        }()
+        
+        BusView(bus: bus, state: state, action: action)
     }
 }
 
