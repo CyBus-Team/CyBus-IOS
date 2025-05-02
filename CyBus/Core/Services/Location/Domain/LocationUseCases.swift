@@ -38,10 +38,11 @@ final class LocationUseCases : LocationUseCasesProtocol {
         let status = locationManagerUseCases.getCurrentAuthorizationStatus()
         if (status == .authorizedAlways || status == .authorizedWhenInUse) {
             let updatedLocation = locationManagerUseCases.getLocation()?.coordinate
-            guard let latitude = updatedLocation?.latitude, let longitude = updatedLocation?.longitude else {
+            if let newLocation = updatedLocation {
+                return newLocation
+            } else {
                 return location
             }
-            return updatedLocation
         } else if (status != .authorizedAlways || status != .authorizedWhenInUse) {
             throw LocationUseCasesError.permissionDenied
         } else {
