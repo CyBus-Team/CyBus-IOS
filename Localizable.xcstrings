@@ -17,19 +17,19 @@
         "el-CY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Επιτρέπω"
+            "value" : "Εντάξει"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Разрешить"
+            "value" : "OK"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Дозволити"
+            "value" : "Добре"
           }
         }
       }
@@ -685,9 +685,6 @@
           }
         }
       }
-    },
-    "Разрешить" : {
-
     }
   },
   "version" : "1.0"
