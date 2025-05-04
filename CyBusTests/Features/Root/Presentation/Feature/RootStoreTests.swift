@@ -1,5 +1,5 @@
 //
-//  RootStoreTests.swift
+//  RootTests.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 19/10/2024.
@@ -11,32 +11,24 @@ import Factory
 
 @testable import CyBus
 
-class MockSkipOnboardingUseCase : OnboardingUseCasesProtocol {
-    
+class MockSkip : OnboardingUseCasesProtocol {
     func finish() {}
-    
-    func needToShow() -> Bool {
-        false
-    }
+    func needToShow() -> Bool { false }
 }
 
-class MockShowOnboardingUseCase : OnboardingUseCasesProtocol {
-    
+class MockShow : OnboardingUseCasesProtocol {
     func finish() {}
-    
-    func needToShow() -> Bool {
-        true
-    }
+    func needToShow() -> Bool { true }
 }
 
 @MainActor
-struct RootFeatureTests {
-    
-    @Test
-    func test_navigatesToHome_whenShouldSkipOnboarding() async {
+struct RootTests {
+
+    @Test("Second launch skips onboarding")
+    func skipOndoarding() async {
         // GIVEN
-        let skipOnboardingUseCase = MockSkipOnboardingUseCase()
-        Container.shared.onboardingUseCases.register { skipOnboardingUseCase }
+        let skip = MockSkip()
+        Container.shared.onboardingUseCases.register { skip }
 
         let store = TestStore(initialState: RootFeature.State()) {
             RootFeature()
@@ -44,21 +36,19 @@ struct RootFeatureTests {
         store.exhaustivity = .off
 
         // WHEN
-        store.assert { state in
-            state.page = .logo
-        }
+        store.assert { $0.page = .logo }
 
         // THEN
         await store.send(.initApp) {
             $0.page = .home
         }
     }
-    
-    @Test
-    func test_navigatesToOnboarding_whenShouldShowOnboarding() async {
+
+    @Test("First launch shows onboarding")
+    func showOnboarding() async {
         // GIVEN
-        let showOnboardingUseCase = MockShowOnboardingUseCase()
-        Container.shared.onboardingUseCases.register { showOnboardingUseCase }
+        let show = MockShow()
+        Container.shared.onboardingUseCases.register { show }
 
         let store = TestStore(initialState: RootFeature.State()) {
             RootFeature()
@@ -66,9 +56,7 @@ struct RootFeatureTests {
         store.exhaustivity = .off
 
         // WHEN
-        store.assert { state in
-            state.page = .logo
-        }
+        store.assert { $0.page = .logo }
 
         // THEN
         await store.send(.initApp) {

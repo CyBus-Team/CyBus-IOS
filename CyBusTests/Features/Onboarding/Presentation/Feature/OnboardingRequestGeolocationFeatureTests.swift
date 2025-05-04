@@ -13,7 +13,7 @@ import XCTest
 
 @testable import CyBus
 
-class MockGrantLocationPermissionsUseCases : LocationUseCasesProtocol {
+class MockGrant : LocationUseCasesProtocol {
     func requestPermission() async throws {
         return
     }
@@ -23,7 +23,7 @@ class MockGrantLocationPermissionsUseCases : LocationUseCasesProtocol {
     }
 }
 
-class MockDeniedLocationPermissionsUseCases : LocationUseCasesProtocol {
+class MockDenied : LocationUseCasesProtocol {
     func requestPermission() async throws {
         throw LocationUseCasesError.permissionDenied
     }
@@ -36,11 +36,11 @@ class MockDeniedLocationPermissionsUseCases : LocationUseCasesProtocol {
 @MainActor
 struct OnboardingRequestGeolocationFeatureTests {
     
-    @Test
-    func test_grantPermissionsForAuthorizedStatuses() async {
+    @Test("Permissions grant for authorized status")
+    func grantPermissions() async {
         
         //GIVEN
-        Container.shared.locationUseCases.register { MockGrantLocationPermissionsUseCases() }
+        Container.shared.locationUseCases.register { MockGrant() }
         let store = TestStore(initialState: OnboardingRequestGeolocationFeature.State()) {
             OnboardingRequestGeolocationFeature()
         }
@@ -60,11 +60,11 @@ struct OnboardingRequestGeolocationFeatureTests {
         
     }
     
-    @Test
-    func test_hasAlertForDeniedStatuses() async {
+    @Test("Permissions denied for unauthorized status")
+    func deniedPermissions() async {
         
         //GIVEN
-        Container.shared.locationUseCases.register { MockDeniedLocationPermissionsUseCases() }
+        Container.shared.locationUseCases.register { MockDenied() }
         let store = TestStore(initialState: OnboardingRequestGeolocationFeature.State()) {
             OnboardingRequestGeolocationFeature()
         }

@@ -15,7 +15,6 @@ class MockOnboardingUseCases : OnboardingUseCasesProtocol {
     var finishOnboardingCallCount = 0
     
     func finish() {
-        print("executed")
         finishOnboardingCallCount += 1
     }
     
@@ -25,10 +24,11 @@ class MockOnboardingUseCases : OnboardingUseCasesProtocol {
     
 }
 
-@MainActor struct OnboardingFeaturesTests {
+@MainActor
+struct OnboardingFeaturesTests {
     
-    @Test
-    func test_initialPageIsWelcome() async {
+    @Test("Initial page is welcome")
+    func initialPageIsWelcome() async {
         
         // GIVEN
         let store = TestStore(initialState: OnboardingFeatures.State()) {
@@ -43,8 +43,8 @@ class MockOnboardingUseCases : OnboardingUseCasesProtocol {
         }
     }
     
-    @Test
-    func test_navigatesToGeolocationPageAfterGetStarted() async {
+    @Test("Second page is geolocation")
+    func secondPageIsWelcome() async {
         
         // GIVEN
         let store = TestStore(initialState: OnboardingFeatures.State()) {
@@ -62,8 +62,8 @@ class MockOnboardingUseCases : OnboardingUseCasesProtocol {
         }
     }
 
-    @Test
-    func test_finishesOnboardingAfterNextTapped() async {
+    @Test("Onboarding finishes after next page")
+    func finishOnboarding() async {
         
         // GIVEN
         let store = TestStore(initialState: OnboardingFeatures.State()) {
@@ -82,8 +82,8 @@ class MockOnboardingUseCases : OnboardingUseCasesProtocol {
         }
     }
     
-    @Test
-    func test_finishesOnboardingAfterSkipedGeolocation() async {
+    @Test("Skip geolocation and finish onboarding")
+    func skipGeolocation() async {
         
         // GIVEN
         let store = TestStore(initialState: OnboardingFeatures.State()) {
@@ -102,8 +102,8 @@ class MockOnboardingUseCases : OnboardingUseCasesProtocol {
         }
     }
     
-    @Test
-    func test_finishesOnboardingWhenAllowPermissions() async {
+    @Test("Onboarding finishes when permissions are allowed")
+    func finishOnboardingWithPermissions() async {
         
         // GIVEN
         let store = TestStore(initialState: OnboardingFeatures.State()) {
@@ -122,8 +122,8 @@ class MockOnboardingUseCases : OnboardingUseCasesProtocol {
         }
     }
     
-    @Test
-    func test_stayGeolocationPageWhenPermissionsAreNotAllowed() async {
+    @Test("Onboarding stays on geolocation page when permissions are not allowed")
+    func finishOnboardingWitoutPermissions() async {
         
         // GIVEN
         let store = TestStore(initialState: OnboardingFeatures.State()) {
@@ -142,8 +142,8 @@ class MockOnboardingUseCases : OnboardingUseCasesProtocol {
         }
     }
     
-    @Test
-    func test_finishOnboardingUseCasesMathodCalled() async {
+    @Test("Onboarding use cases method executes more than once")
+    func onboardingUseCasesExecutes() async {
         
         // GIVEN
         let useCase = MockOnboardingUseCases()
