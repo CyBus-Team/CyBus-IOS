@@ -22,7 +22,7 @@ class MockShow : OnboardingUseCasesProtocol {
 }
 
 @MainActor
-struct RootTests {
+struct RootFeatureTests {
 
     @Test("Second launch skips onboarding")
     func skipOndoarding() async {

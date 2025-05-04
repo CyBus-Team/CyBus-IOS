@@ -13,26 +13,6 @@ import XCTest
 
 @testable import CyBus
 
-class MockGrant : LocationUseCasesProtocol {
-    func requestPermission() async throws {
-        return
-    }
-    
-    func getCurrentLocation() async throws -> CLLocationCoordinate2D? {
-        CLLocationCoordinate2D(latitude: 1, longitude: 1)
-    }
-}
-
-class MockDenied : LocationUseCasesProtocol {
-    func requestPermission() async throws {
-        throw LocationUseCasesError.permissionDenied
-    }
-    
-    func getCurrentLocation() async throws -> CLLocationCoordinate2D? {
-        nil
-    }
-}
-
 @MainActor
 struct OnboardingRequestGeolocationFeatureTests {
     
