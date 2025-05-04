@@ -1,7 +1,7 @@
 
 # CyBus
 
-[![Tests](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml/badge.svg)](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml)
+[![Tests](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml/badge.svg)](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml) ![Platforms](https://img.shields.io/badge/platforms-iPhone-lightgrey)
 
 iOS application with schedules, routes, and locations of buses in Cyprus.
 
@@ -31,7 +31,3 @@ sh generate.sh
 # TODO enhancement
 
 [📋] - Add analytics - (issue) [https://github.com/PopovVA/CyBus/issues/9]
-
-# TODO ideas
-
-[📋] - Add Bolt integration - (issue) [https://github.com/PopovVA/CyBus/issues/10]

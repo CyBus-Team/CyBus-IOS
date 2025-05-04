@@ -1,5 +1,5 @@
 //
-//  LocationViewModel.swift
+//  LocationFeature.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 04/10/2024.
@@ -13,9 +13,19 @@ import Factory
 struct LocationFeature {
     
     @ObservableState
-    struct State {
+    struct State : Equatable {
         var location: CLLocationCoordinate2D?
-        var error: String?
+        
+        static func == (lhs: State, rhs: State) -> Bool {
+            switch (lhs.location, rhs.location) {
+            case let (.some(lhsLoc), .some(rhsLoc)):
+                return lhsLoc.latitude == rhsLoc.latitude && lhsLoc.longitude == rhsLoc.longitude
+            case (nil, nil):
+                return true
+            default:
+                return false
+            }
+        }
     }
     
     enum Action {
@@ -29,14 +39,14 @@ struct LocationFeature {
         Reduce { state, action in
             switch action {
                 
-            case let .onLocationResponse(location):
-                state.location = location
+            case let .onLocationResponse(currentLocation):
+                state.location = currentLocation
                 return .none
                 
             case .getCurrentLocation:
                 return .run { @MainActor send in
-                    let location = try? await locationUseCases.getCurrentLocation()
-                    send(.onLocationResponse(location))
+                    let currentLocation = try? await locationUseCases.getCurrentLocation()
+                    send(.onLocationResponse(currentLocation))
                 }
                 
             }
