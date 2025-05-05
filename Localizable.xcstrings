@@ -2,59 +2,13 @@
   "sourceLanguage" : "en",
   "strings" : {
     " - " : {
-
+      "shouldTranslate" : false
     },
     "➡" : {
-
+      "shouldTranslate" : false
     },
     "🏁" : {
-
-    },
-    "About us" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Σχετικά με εμάς"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "О нас"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Про нас"
-          }
-        }
-      }
-    },
-    "Add to favourites" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Προσθήκη στα αγαπημένα"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавить в избранное"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Додати в обране"
-          }
-        }
-      }
+      "shouldTranslate" : false
     },
     "Allow" : {
       "comment" : "OnboardingGeolocationView",
@@ -63,19 +17,19 @@
         "el-CY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Επιτρέπω"
+            "value" : "Εντάξει"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Разрешить"
+            "value" : "OK"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Дозволити"
+            "value" : "Добре"
           }
         }
       }
@@ -151,19 +105,26 @@
       }
     },
     "Click on trip to select" : {
-
-    },
-    "Cybus" : {
-      "extractionState" : "stale",
       "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πάτησε στο ταξίδι για να επιλέξεις"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cybus"
+            "value" : "Нажмите на маршрут, чтобы выбрать"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Натисніть на подорож, щоб вибрати"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "CyprusGo" : {
       "localizations" : {
@@ -176,68 +137,97 @@
       },
       "shouldTranslate" : false
     },
-    "Directions" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Διαδρομές"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Маршруты"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Маршрути"
-          }
-        }
-      }
-    },
-    "Edit profile" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Επεξεργασία προφίλ"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактировать профиль"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редагувати профіль"
-          }
-        }
-      }
-    },
     "Error: %@" : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σφάλμα:  %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Помилка:  %@"
+          }
+        }
+      }
     },
     "Finish" : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ολοκλήρωση"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завершить"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завершити"
+          }
+        }
+      }
     },
     "Finish at" : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ολοκλήρωση στις"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завершить в"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завершити о"
+          }
+        }
+      }
     },
     "Get directions" : {
       "extractionState" : "manual",
       "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Λήψη οδηγιών"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Get directions"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проложить маршрут"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прокласти маршрут"
           }
         }
       }
@@ -267,7 +257,26 @@
       }
     },
     "Go" : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πάμε"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Начать"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поїхали"
+          }
+        }
+      }
     },
     "Loading..." : {
       "localizations" : {
@@ -310,29 +319,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Дані про місцезнаходження наразі недоступні. Потрібно увімкнути служби геолокації в налаштуваннях пристрою."
-          }
-        }
-      }
-    },
-    "Location is not available" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Η τοποθεσία δεν είναι διαθέσιμη"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположение недоступно"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Місцезнаходження недоступне"
           }
         }
       }
@@ -408,76 +394,7 @@
         }
       }
     },
-    "Log Out" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Αποσύνδεση"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выйти"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вийти"
-          }
-        }
-      }
-    },
-    "Map" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Χάρτης"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карта"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карта"
-          }
-        }
-      }
-    },
     "Not now" : {
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Όχι τώρα"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не сейчас"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не зараз"
-          }
-        }
-      }
-    },
-    "Not Now" : {
-      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
@@ -521,52 +438,6 @@
         }
       }
     },
-    "Profile" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Προφίλ"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профіль"
-          }
-        }
-      }
-    },
-    "Retry" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ξαναπροσπάθεια"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Повторить"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Спробувати"
-          }
-        }
-      }
-    },
     "Search here" : {
       "localizations" : {
         "el-CY" : {
@@ -590,50 +461,23 @@
       }
     },
     "Selected line" : {
-
-    },
-    "Settings" : {
-      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ρυθμίσεις"
+            "value" : "Επιλεγμένη διαδρομή"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Настройки"
+            "value" : "Выбранный маршрут"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Налаштування"
-          }
-        }
-      }
-    },
-    "Share" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Μοιραστείτε"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поделиться"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поділитися"
+            "value" : "Вибраний маршрут"
           }
         }
       }
@@ -662,97 +506,24 @@
         }
       }
     },
-    "Sing in" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Σύνδεση"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Войти"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Увійти"
-          }
-        }
-      }
-    },
-    "Sing up" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Εγγραφή"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Зарегистрироваться"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Зареєструватися"
-          }
-        }
-      }
-    },
-    "Something went wrong, please retry" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Κάτι πήγε στραβά, παρακαλώ δοκιμάστε ξανά."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Что-то пошло не так, пожалуйста, попробуйте снова."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Щось пішло не так, будь ласка, спробуйте ще раз."
-          }
-        }
-      }
-    },
     "Start at" : {
-
-    },
-    "Support" : {
-      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Υποστήριξη"
+            "value" : "Ξεκινά από"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Поддержка"
+            "value" : "Начать от"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Підтримка"
+            "value" : "Почати від"
           }
         }
       }
@@ -826,10 +597,48 @@
       }
     },
     "Unknown" : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Άγνωστο"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неизвестно"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Невідомо"
+          }
+        }
+      }
     },
     "Walk" : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Περπάτημα"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пешком"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пішки"
+          }
+        }
+      }
     },
     "Welcome to CyprusGo!" : {
       "localizations" : {
