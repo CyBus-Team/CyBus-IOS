@@ -29,7 +29,7 @@ struct RootView: View {
             }
         }
         .environment(\.theme, isDark ? .dark : .light)
-        .onAppear {
+        .task(priority: .background) {
             store.send(.initApp)
         }
         

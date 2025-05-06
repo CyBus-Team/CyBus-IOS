@@ -19,23 +19,11 @@ jobs:
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '16.0.0'
-
-      # Set mapbox token
-      - name: Set Mapbox Token
-        run: echo "MAPBOX_SECRET_TOKEN=${{ secrets.MAPBOX_SECRET_TOKEN }}" >> $GITHUB_ENV
     
-      - name: Setup .netrc for Mapbox
-        run: |
-          echo "machine api.mapbox.com" > ~/.netrc
-          echo "login mapbox" >> ~/.netrc
-          echo "password ${{ secrets.MAPBOX_SECRET_TOKEN }}" >> ~/.netrc
-    
-      # Set mapbox token and other secrets
+      # Set secrets
       - name: Create Config-Secret.xcconfig
         run: |
-          echo "MBXAccessToken=${{ secrets.MAPBOX_SECRET_TOKEN }}" > CyBus/Config-Secret.xcconfig
-          echo "GFTSServiceIP=20.19.98.194" >> CyBus/Config-Secret.xcconfig
-          echo "GFTSServiceURL=$(GFTSServiceIP):8328/Api/api/gtfs-realtime" >> CyBus/Config-Secret.xcconfig
+          echo "SentryDSN=${{ secrets.SENTRY_DSN }}" > CyBus/Config-Secret.xcconfig
 
       # Setup gems for generator
       - name: Install gems
