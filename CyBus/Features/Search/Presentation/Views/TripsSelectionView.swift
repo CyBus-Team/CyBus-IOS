@@ -62,7 +62,7 @@ struct TripSelectionView : View {
                     .padding(4)
                     .overlay(
                         RoundedRectangle(cornerRadius: 6)
-                            .stroke(trip == store.selectedTrip ? .blue : .white, lineWidth: 2)
+                            .stroke(trip == store.selectedTrip ? .blue : .black.opacity(0), lineWidth: 2)
                     )
                     .font(.caption)
                     .onTapGesture {
@@ -88,8 +88,6 @@ struct TripSelectionView : View {
             }
         }
         .padding()
-        .background(theme.colors.background)
-        
     }
 }
 
