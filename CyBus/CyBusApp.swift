@@ -17,26 +17,10 @@ struct CyBusApp: App {
                 return
             }
             options.dsn = "https://\(dsn)"
-            options.debug = true // Enabling debug when first installing is always helpful
-
+            options.debug = true // Enabled debug when first installing is always helpful
             // Adds IP for users.
             // For more information, visit: https://docs.sentry.io/platforms/apple/data-management/data-collected/
             options.sendDefaultPii = true
-
-            // Set tracesSampleRate to 1.0 to capture 100% of transactions for tracing.
-            // We recommend adjusting this value in production.
-            options.tracesSampleRate = 1.0
-
-            // Configure the profiler to start profiling when there is an active root span
-            // For more information, visit: https://docs.sentry.io/platforms/apple/profiling/
-            options.configureProfiling = {
-                $0.lifecycle = .trace
-                $0.sessionSampleRate = 1.0
-            }
-
-            // Record Session Replays for 100% of Errors and 10% of Sessions
-            options.sessionReplay.onErrorSampleRate = 1.0
-            options.sessionReplay.sessionSampleRate = 0.1
         }
     }
     
