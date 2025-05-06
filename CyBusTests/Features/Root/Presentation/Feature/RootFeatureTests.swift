@@ -1,5 +1,5 @@
 //
-//  RootTests.swift
+//  RootFeatureTests.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 19/10/2024.

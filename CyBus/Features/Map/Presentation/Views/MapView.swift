@@ -50,10 +50,20 @@ struct MapView: View {
                     interactionModes: MapInteractionModes.all
                 ) {
                     UserAnnotation()
-                    ForEach(busesStore.busList) { bus in
-                        Annotation("", coordinate: bus.position, anchor: .bottom) {
-                            busItemView(for: bus, selectedBus: busesStore.selectedBus) {
-                                busesStore.send(.select(bus))
+                    if let selectedLines = searchStore.searchAddressResult.selectedTrip?.legs.compactMap({ $0.line }) {
+                        ForEach(busesStore.busList.filter { selectedLines.contains($0.lineName) } ) { bus in
+                            Annotation("", coordinate: bus.position, anchor: .bottom) {
+                                busItemView(for: bus, selectedBus: busesStore.selectedBus) {
+                                    busesStore.send(.select(bus))
+                                }
+                            }
+                        }
+                    } else {
+                        ForEach(busesStore.busList) { bus in
+                            Annotation("", coordinate: bus.position, anchor: .bottom) {
+                                busItemView(for: bus, selectedBus: busesStore.selectedBus) {
+                                    busesStore.send(.select(bus))
+                                }
                             }
                         }
                     }
