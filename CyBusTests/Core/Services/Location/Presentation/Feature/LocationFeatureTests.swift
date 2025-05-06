@@ -1,8 +1,8 @@
 //
-//  RootTests.swift
+//  LocationFeatureTests.swift
 //  CyBus
 //
-//  Created by Vadim Popov on 19/10/2024.
+//  Created by Vadim Popov on 05/05/2025.
 //
 
 import Testing
