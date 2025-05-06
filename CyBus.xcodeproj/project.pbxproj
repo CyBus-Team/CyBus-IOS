@@ -46,6 +46,9 @@
 		9444947C2CCE419400A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944494752CCD7CFE00A616E2 /* LocationManagerUseCasesProtocol.swift */; };
 		9449B22D2DC7B3B100643B5A /* LocationFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449B22C2DC7B3B100643B5A /* LocationFeatureTests.swift */; };
 		9449B2312DC7B5EA00643B5A /* LocationMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449B2302DC7B5E500643B5A /* LocationMocks.swift */; };
+		9449B23C2DCA658900643B5A /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 9449B23B2DCA658900643B5A /* Sentry */; };
+		9449B23E2DCA658900643B5A /* Sentry-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9449B23D2DCA658900643B5A /* Sentry-Dynamic */; };
+		9449B2402DCA658900643B5A /* SentrySwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9449B23F2DCA658900643B5A /* SentrySwiftUI */; };
 		9449C9D02C6DFBBA009E98F3 /* ShapeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9CF2C6DFBBA009E98F3 /* ShapeDTO.swift */; };
 		9449C9D82C6E01CE009E98F3 /* TripDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C9D72C6E01CE009E98F3 /* TripDTO.swift */; };
 		94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D6E2D1F314700CC3C03 /* SearchView.swift */; };
@@ -358,7 +361,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9485253E2D949276008EB3A0 /* Factory in Frameworks */,
+				9449B2402DCA658900643B5A /* SentrySwiftUI in Frameworks */,
+				9449B23E2DCA658900643B5A /* Sentry-Dynamic in Frameworks */,
 				94D794852CC01F6D0097A2F0 /* ComposableArchitecture in Frameworks */,
+				9449B23C2DCA658900643B5A /* Sentry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,6 +1157,9 @@
 			packageProductDependencies = (
 				94D794842CC01F6D0097A2F0 /* ComposableArchitecture */,
 				9485253D2D949276008EB3A0 /* Factory */,
+				9449B23B2DCA658900643B5A /* Sentry */,
+				9449B23D2DCA658900643B5A /* Sentry-Dynamic */,
+				9449B23F2DCA658900643B5A /* SentrySwiftUI */,
 			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
@@ -1233,6 +1242,7 @@
 			packageReferences = (
 				94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				9485253C2D949276008EB3A0 /* XCRemoteSwiftPackageReference "Factory" */,
+				9449B23A2DCA658900643B5A /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
@@ -1837,6 +1847,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9449B23A2DCA658900643B5A /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.50.0;
+			};
+		};
 		9485253C2D949276008EB3A0 /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory.git";
@@ -1856,6 +1874,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9449B23B2DCA658900643B5A /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9449B23A2DCA658900643B5A /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+		9449B23D2DCA658900643B5A /* Sentry-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9449B23A2DCA658900643B5A /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = "Sentry-Dynamic";
+		};
+		9449B23F2DCA658900643B5A /* SentrySwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9449B23A2DCA658900643B5A /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = SentrySwiftUI;
+		};
 		9485253D2D949276008EB3A0 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9485253C2D949276008EB3A0 /* XCRemoteSwiftPackageReference "Factory" */;
