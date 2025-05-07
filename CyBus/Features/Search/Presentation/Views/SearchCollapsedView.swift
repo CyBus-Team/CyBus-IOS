@@ -32,7 +32,6 @@ struct SearchCollapsedView : View {
         .padding(.horizontal, 12)
         .padding(.bottom, 14)
         .padding(.top, 6)
-        .background(.white)
         .foregroundColor(theme.colors.linkTitle)
         .cornerRadius(12)
     }

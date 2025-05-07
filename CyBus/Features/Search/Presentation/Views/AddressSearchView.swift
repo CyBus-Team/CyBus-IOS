@@ -82,7 +82,6 @@ struct AddressSearchView: View {
                 // MARK: Suggestions
                 List(store.suggestions) { suggestion in
                     Text(suggestion.label)
-                        .listRowBackground(theme.colors.background)
                         .onTapGesture {
                             store.send(.onSelect(suggestion))
                         }
@@ -92,7 +91,6 @@ struct AddressSearchView: View {
             }
         }
         .padding()
-        .background(theme.colors.background)
         .edgesIgnoringSafeArea(.bottom)
         
         .task {

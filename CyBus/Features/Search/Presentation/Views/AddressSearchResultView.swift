@@ -57,7 +57,6 @@ struct AddressSearchResultView : View {
                 }
             }
             .padding()
-            .background(theme.colors.background)
         }
         
     }
