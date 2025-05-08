@@ -126,16 +126,25 @@
         }
       }
     },
+    "CyBus" : {
+
+    },
     "CyprusGo" : {
+      "extractionState" : "stale",
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "CyBus"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "CyprusGo"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "Error: %@" : {
       "localizations" : {
@@ -640,24 +649,34 @@
         }
       }
     },
+    "Welcome to CyBus!" : {
+
+    },
     "Welcome to CyprusGo!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Καλώς ήρθατε στο CyBus!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
             "state" : "translated",
-            "value" : "Καλώς ήρθατε στο CyprusGo!"
+            "value" : "Welcome to CyBus"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добро пожаловать\nCyprusGo!"
+            "state" : "needs_review",
+            "value" : "Добро пожаловать\nCyBus!"
           }
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ласкаво просимо до CyprusGo!"
+            "state" : "needs_review",
+            "value" : "Ласкаво просимо до CyBus!"
           }
         }
       }

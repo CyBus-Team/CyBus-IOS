@@ -25,7 +25,7 @@ struct OnboardingWelcomeView: View {
                 .ignoresSafeArea()
   
             VStack {
-                Text("Welcome to CyprusGo!")
+                Text("Welcome to CyBus!")
                     .font(theme.typography.largeTitle)
                     .fontWeight(.bold)
                     .padding(.bottom, 20)

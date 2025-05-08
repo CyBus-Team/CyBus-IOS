@@ -11,16 +11,6 @@ import Factory
 
 @testable import CyBus
 
-class MockSkip : OnboardingUseCasesProtocol {
-    func finish() {}
-    func needToShow() -> Bool { false }
-}
-
-class MockShow : OnboardingUseCasesProtocol {
-    func finish() {}
-    func needToShow() -> Bool { true }
-}
-
 @MainActor
 struct RootFeatureTests {
 
@@ -35,10 +25,8 @@ struct RootFeatureTests {
         }
         store.exhaustivity = .off
 
-        // WHEN
-        store.assert { $0.page = .logo }
-
         // THEN
+        store.assert { $0.page = .logo }
         await store.send(.initApp) {
             $0.page = .home
         }
@@ -54,11 +42,9 @@ struct RootFeatureTests {
             RootFeature()
         }
         store.exhaustivity = .off
-
-        // WHEN
-        store.assert { $0.page = .logo }
-
+        
         // THEN
+        store.assert { $0.page = .logo }
         await store.send(.initApp) {
             $0.page = .onboarding
         }
