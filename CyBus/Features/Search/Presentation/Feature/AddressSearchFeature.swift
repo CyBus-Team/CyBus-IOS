@@ -60,6 +60,7 @@ struct AddressSearchFeature {
                 state.query = ""
                 state.suggestions = []
                 state.selection = nil
+                state.isLoading = false
                 return .none
 
             case .binding(_):

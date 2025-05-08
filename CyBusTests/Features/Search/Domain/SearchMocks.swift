@@ -7,29 +7,23 @@
 
 import CoreLocation
 
-struct ErrorAddressSearchUseCase: AddressSearchUseCasesProtocol {
+struct MockErrorAddressSearchUseCase: AddressSearchUseCasesProtocol {
     func fetch(query: String) async throws -> [SuggestionEntity]? {
         throw AddressSearchUseCasesError.fetchFailed
     }
 }
 
-struct EmptyAddressSearchUseCase: AddressSearchUseCasesProtocol {
-    func fetch(query: String) async throws -> [SuggestionEntity]? {
-        []
-    }
-}
-
-struct SuccessAddressSearchUseCase: AddressSearchUseCasesProtocol {
+struct MockSuccessAddressSearchUseCase: AddressSearchUseCasesProtocol {
     
-    static let items = [
-        SuggestionEntity(id: 1, label: "First", location: SuccessAddressSearchUseCase.location),
-        SuggestionEntity(id: 2, label: "Second", location: SuccessAddressSearchUseCase.location),
-        SuggestionEntity(id: 3, label: "Third", location: SuccessAddressSearchUseCase.location),
+    static let items : [SuggestionEntity] = [
+        SuggestionEntity(id: 1, label: "First", location: MockSuccessAddressSearchUseCase.location),
+        SuggestionEntity(id: 2, label: "Second", location: MockSuccessAddressSearchUseCase.location),
+        SuggestionEntity(id: 3, label: "Third", location: MockSuccessAddressSearchUseCase.location),
     ]
         
     static let location = CLLocationCoordinate2D(latitude: 1, longitude: 1)
     
     func fetch(query: String) async throws -> [SuggestionEntity]? {
-        SuccessAddressSearchUseCase.items
+        MockSuccessAddressSearchUseCase.items
     }
 }
