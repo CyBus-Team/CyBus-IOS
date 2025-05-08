@@ -15,7 +15,7 @@ struct PathTips: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                if let bus = selectedBus {
+                if let _ = selectedBus {
                     HStack(spacing: 8) {
                         Label("Selected line", systemImage: "bus.fill")
                         Rectangle()

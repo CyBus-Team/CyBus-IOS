@@ -60,12 +60,15 @@
 		94575D882D23350400CC3C03 /* AddressSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D872D23350200CC3C03 /* AddressSearchRepository.swift */; };
 		94575D8A2D23359300CC3C03 /* SuggestionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D892D23358500CC3C03 /* SuggestionDTO.swift */; };
 		94575D8D2D2336D500CC3C03 /* SuggestionsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D8C2D2336D000CC3C03 /* SuggestionsEntity.swift */; };
-		94575D942D2345C400CC3C03 /* AddressSearchMapBoxUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */; };
+		94575D942D2345C400CC3C03 /* AddressSearchUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D932D2345AF00CC3C03 /* AddressSearchUseCases.swift */; };
 		94575DA42D28867700CC3C03 /* AddressSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA32D28866E00CC3C03 /* AddressSearchResultView.swift */; };
 		94575DA62D2AAF3300CC3C03 /* FavouritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA52D2AAF2E00CC3C03 /* FavouritesButton.swift */; };
 		94575DA82D2AB47A00CC3C03 /* AddressSearchResultFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */; };
 		94575DAC2D2C501200CC3C03 /* DestinationMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DAB2D2C4F4900CC3C03 /* DestinationMarker.swift */; };
 		94575DB22D2DA3A700CC3C03 /* SearchTripUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */; };
+		9457A61B2DCD28ED00DDD471 /* AddressSearchFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9457A61A2DCD28DF00DDD471 /* AddressSearchFeatureTests.swift */; };
+		9457A61E2DCD29DE00DDD471 /* RootMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9457A61D2DCD29D900DDD471 /* RootMocks.swift */; };
+		9457A6212DCD2A0400DDD471 /* SearchMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9457A6202DCD2A0000DDD471 /* SearchMocks.swift */; };
 		945843A92CD18862006D9893 /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843A82CD1885F006D9893 /* MapFeature.swift */; };
 		945843AB2CD1923E006D9893 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843AA2CD19236006D9893 /* HomeView.swift */; };
 		945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
@@ -159,7 +162,7 @@
 		94B130602DB832370017C201 /* AddressSearchRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D802D23345800CC3C03 /* AddressSearchRepositoryProtocol.swift */; };
 		94B130612DB832370017C201 /* SearchTripUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */; };
 		94B130622DB832370017C201 /* SearchFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D782D2321BC00CC3C03 /* SearchFeatures.swift */; };
-		94B130632DB832370017C201 /* AddressSearchMapBoxUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */; };
+		94B130632DB832370017C201 /* AddressSearchUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D932D2345AF00CC3C03 /* AddressSearchUseCases.swift */; };
 		94B130642DB832370017C201 /* AddressSearchResultFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */; };
 		94B130652DB832370017C201 /* AddressSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575D732D231DE200CC3C03 /* AddressSearchView.swift */; };
 		94B130662DB832370017C201 /* AddressSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94575DA32D28866E00CC3C03 /* AddressSearchResultView.swift */; };
@@ -273,12 +276,15 @@
 		94575D872D23350200CC3C03 /* AddressSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchRepository.swift; sourceTree = "<group>"; };
 		94575D892D23358500CC3C03 /* SuggestionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionDTO.swift; sourceTree = "<group>"; };
 		94575D8C2D2336D000CC3C03 /* SuggestionsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsEntity.swift; sourceTree = "<group>"; };
-		94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchMapBoxUseCases.swift; sourceTree = "<group>"; };
+		94575D932D2345AF00CC3C03 /* AddressSearchUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchUseCases.swift; sourceTree = "<group>"; };
 		94575DA32D28866E00CC3C03 /* AddressSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResultView.swift; sourceTree = "<group>"; };
 		94575DA52D2AAF2E00CC3C03 /* FavouritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesButton.swift; sourceTree = "<group>"; };
 		94575DA72D2AB47A00CC3C03 /* AddressSearchResultFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResultFeature.swift; sourceTree = "<group>"; };
 		94575DAB2D2C4F4900CC3C03 /* DestinationMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationMarker.swift; sourceTree = "<group>"; };
 		94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripUseCases.swift; sourceTree = "<group>"; };
+		9457A61A2DCD28DF00DDD471 /* AddressSearchFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchFeatureTests.swift; sourceTree = "<group>"; };
+		9457A61D2DCD29D900DDD471 /* RootMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMocks.swift; sourceTree = "<group>"; };
+		9457A6202DCD2A0000DDD471 /* SearchMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMocks.swift; sourceTree = "<group>"; };
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		947633D42C6E0747000F20C7 /* StopDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDTO.swift; sourceTree = "<group>"; };
@@ -576,7 +582,7 @@
 				9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */,
 				94575DB12D2DA39800CC3C03 /* SearchTripUseCases.swift */,
 				94575D7E2D23344800CC3C03 /* AddressSearchUseCasesProtocol.swift */,
-				94575D932D2345AF00CC3C03 /* AddressSearchMapBoxUseCases.swift */,
+				94575D932D2345AF00CC3C03 /* AddressSearchUseCases.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -588,6 +594,47 @@
 				94575D8C2D2336D000CC3C03 /* SuggestionsEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		9457A6172DCD28C500DDD471 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				9457A61F2DCD29FA00DDD471 /* Domain */,
+				9457A6182DCD28D100DDD471 /* Presentation */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		9457A6182DCD28D100DDD471 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9457A6192DCD28D700DDD471 /* Feature */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9457A6192DCD28D700DDD471 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				9457A61A2DCD28DF00DDD471 /* AddressSearchFeatureTests.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		9457A61C2DCD29D400DDD471 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9457A61D2DCD29D900DDD471 /* RootMocks.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9457A61F2DCD29FA00DDD471 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9457A6202DCD2A0000DDD471 /* SearchMocks.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		945843A12CD17F0A006D9893 /* Home */ = {
@@ -1092,6 +1139,7 @@
 		94F3B8912CC30B6100E38BE2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				9457A6172DCD28C500DDD471 /* Search */,
 				94F3B8932CC30B6F00E38BE2 /* Root */,
 				94B1302C2DB82DCA0017C201 /* Onboarding */,
 			);
@@ -1101,6 +1149,7 @@
 		94F3B8932CC30B6F00E38BE2 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				9457A61C2DCD29D400DDD471 /* Domain */,
 				94F3B8942CC30B7C00E38BE2 /* Presentation */,
 			);
 			path = Root;
@@ -1206,7 +1255,7 @@
 					Onboard,
 				);
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					94ABDF7C2C29ABBD00970F8C = {
 						CreatedOnToolsVersion = 15.4;
@@ -1319,7 +1368,7 @@
 				9403C9262D3C0E58000EDB25 /* SearchTripRepositoryProtocol.swift in Sources */,
 				941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */,
 				94AF24E32CBC5B340092EE9B /* OnboardingRepository.swift in Sources */,
-				94575D942D2345C400CC3C03 /* AddressSearchMapBoxUseCases.swift in Sources */,
+				94575D942D2345C400CC3C03 /* AddressSearchUseCases.swift in Sources */,
 				94AF0DA32C779A8C002FE41B /* BusesUseCasesProtocol.swift in Sources */,
 				94575D762D23206B00CC3C03 /* SearchCollapsedView.swift in Sources */,
 				94AF0DC22C79FAE7002FE41B /* StaticFilesUseCases.swift in Sources */,
@@ -1411,6 +1460,7 @@
 				94B130422DB832240017C201 /* BusView.swift in Sources */,
 				94B130442DB832240017C201 /* MapView.swift in Sources */,
 				94B130452DB832240017C201 /* BusesDTO.swift in Sources */,
+				9457A61E2DCD29DE00DDD471 /* RootMocks.swift in Sources */,
 				94B130462DB832240017C201 /* RouteEntity.swift in Sources */,
 				94B130472DB832240017C201 /* RoutesFeature.swift in Sources */,
 				94B130482DB832240017C201 /* MapFeature.swift in Sources */,
@@ -1418,6 +1468,7 @@
 				94B1304A2DB832240017C201 /* BusesDI.swift in Sources */,
 				94B1304B2DB832240017C201 /* BusDTO.swift in Sources */,
 				94B1304C2DB832240017C201 /* DestinationMarker.swift in Sources */,
+				9457A6212DCD2A0400DDD471 /* SearchMocks.swift in Sources */,
 				94B1304D2DB832240017C201 /* BusesFeature.swift in Sources */,
 				94B1304E2DB832240017C201 /* BusMarker.swift in Sources */,
 				94B1304F2DB832240017C201 /* StopCircle.swift in Sources */,
@@ -1442,6 +1493,7 @@
 				94B130572DB832370017C201 /* SearchTripUseCases.swift in Sources */,
 				94B130592DB832370017C201 /* SearchTripEntity.swift in Sources */,
 				94B1305B2DB832370017C201 /* SuggestionDTO.swift in Sources */,
+				9457A61B2DCD28ED00DDD471 /* AddressSearchFeatureTests.swift in Sources */,
 				94B1305C2DB832370017C201 /* SearchCollapsedView.swift in Sources */,
 				94B1305D2DB832370017C201 /* SearchTripRepository.swift in Sources */,
 				94B1305E2DB832370017C201 /* SuggestionsEntity.swift in Sources */,
@@ -1449,7 +1501,7 @@
 				94B130602DB832370017C201 /* AddressSearchRepositoryProtocol.swift in Sources */,
 				94B130612DB832370017C201 /* SearchTripUseCasesProtocol.swift in Sources */,
 				94B130622DB832370017C201 /* SearchFeatures.swift in Sources */,
-				94B130632DB832370017C201 /* AddressSearchMapBoxUseCases.swift in Sources */,
+				94B130632DB832370017C201 /* AddressSearchUseCases.swift in Sources */,
 				94B130642DB832370017C201 /* AddressSearchResultFeature.swift in Sources */,
 				94B130652DB832370017C201 /* AddressSearchView.swift in Sources */,
 				94B130662DB832370017C201 /* AddressSearchResultView.swift in Sources */,
@@ -1515,6 +1567,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1579,6 +1632,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -17,7 +17,7 @@ struct LogoView: View {
             Spacer()
             VStack {
                 Image("splash_logo").resizable().frame(width: 160, height: 142)
-                Text("CyprusGo").font(theme.typography.largeTitleLogo).foregroundStyle(theme.colors.primary)
+                Text("CyBus").font(theme.typography.largeTitleLogo).foregroundStyle(theme.colors.primary)
             }
             Spacer()
         }
