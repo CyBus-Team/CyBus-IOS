@@ -126,7 +126,11 @@
         }
       }
     },
+    "CyBus" : {
+
+    },
     "CyprusGo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -645,7 +649,11 @@
         }
       }
     },
+    "Welcome to CyBus!" : {
+
+    },
     "Welcome to CyprusGo!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
