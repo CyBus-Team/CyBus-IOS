@@ -20,7 +20,7 @@ struct AddressSearchFeaturesTests {
         let store = TestStore(initialState: AddressSearchFeature.State(
             query: "query",
             suggestions: MockSuccessAddressSearchUseCase.items,
-            selection: MockSuccessAddressSearchUseCase.items.first,
+            selection: MockSuccessAddressSearchUseCase.items.first
         )) {
             AddressSearchFeature()
         }
@@ -46,7 +46,7 @@ struct AddressSearchFeaturesTests {
         let store = TestStore(initialState: AddressSearchFeature.State(
             query: query,
             suggestions: MockSuccessAddressSearchUseCase.items,
-            selection: nil,
+            selection: nil
         )) {
             AddressSearchFeature()
         }
