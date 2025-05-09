@@ -54,12 +54,6 @@ workflows:
         script: |
           echo "SentryDSN=$SentryDSN" > CyBus/Config-Secret.xcconfig
 
-      - name: Install CocoaPods dependencies
-
-        script: | 
-
-          pod install
-
       - name: Set up provisioning profiles settings on Xcode project
 
         script: xcode-project use-profiles
