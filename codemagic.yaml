@@ -12,7 +12,7 @@ workflows:
 
     integrations:
 
-      app_store_connect: codemagic
+      app_store_connect: Codemagic Key
 
     environment:
 
