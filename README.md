@@ -1,7 +1,7 @@
 
 # CyBus
 
-[![Tests](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml/badge.svg)](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml) ![Platforms](https://img.shields.io/badge/platforms-iPhone-lightgrey)
+[![Tests](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml/badge.svg)](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml) ![Platforms](https://img.shields.io/badge/platforms-iPhone%20%7C%20iPad-lightgrey)
 
 iOS application with schedules, routes, and locations of buses in Cyprus.
 
