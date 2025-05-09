@@ -12,7 +12,7 @@ workflows:
 
     integrations:
 
-      app_store_connect: Codemagic Key
+      app_store_connect: Codemagic CyBus API Key
 
     environment:
 
