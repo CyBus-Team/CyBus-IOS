@@ -4,7 +4,8 @@ import PackageDescription
 let package = Package(
     name: "CyBus",
     platforms: [
-        .iOS(.v15)
+        .iOS(.v15),
+        .macOS(.v10_15)
     ],
     products: [
         .executable(name: "CyBus", targets: ["CyBus"])
@@ -23,11 +24,12 @@ let package = Package(
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
             ],
             path: "CyBus",
-            resources: [
-                .process("../Config"),
-                .process("../Config-Secret"),
-                .process("../Localizable"),
-                .process("../Generated")
+            exclude: [
+                "Package.swift",
+                "../Config",
+                "../Config-Secret",
+                "../Localizable",
+                "../Generated"
             ]
         ),
         .testTarget(
