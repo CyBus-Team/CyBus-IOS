@@ -73,7 +73,7 @@ workflows:
           xcodebuild build \
             -project CyBus.xcodeproj \
             -scheme CyBus \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination 'generic/platform=iOS' \
             -quiet \
             -skipMacroValidation
 
