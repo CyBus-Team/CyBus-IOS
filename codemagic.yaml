@@ -70,9 +70,10 @@ workflows:
 
       - name: Build ipa for distribution
         script: |
-          swift build -c release
-          swift package generate-xcodeproj
-          xcodebuild -scheme CyBus -destination 'generic/platform=iOS' archive
+          xcodebuild -scheme CyBus \
+          -destination 'generic/platform=iOS' \
+          -configuration Release \
+          build
 
     artifacts:
 

@@ -130,6 +130,7 @@
 
     },
     "Error: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
