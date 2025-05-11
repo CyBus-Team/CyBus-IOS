@@ -36,7 +36,3 @@ Afterward, run the Ruby script in the root folder:
 ```
 sh generate.sh
 ```
-
-# TODO for MVP
-
-[📋] - Setup CI/CD - (issue) [https://github.com/PopovVA/CyBus/issues/2]
