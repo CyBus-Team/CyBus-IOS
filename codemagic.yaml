@@ -101,7 +101,7 @@ workflows:
 
           success: true
 
-          failure: false
+          failure: true
 
       app_store_connect:
 
