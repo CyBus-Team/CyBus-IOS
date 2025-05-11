@@ -70,10 +70,9 @@ workflows:
 
       - name: Build ipa for distribution
         script: |
-          xcode-project build-ipa \
-          --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
-          --scheme "$XCODE_SCHEME" \
-          --archive-flags "-destination 'generic/platform=iOS'"
+          swift build -c release
+          swift package generate-xcodeproj
+          xcodebuild -scheme CyBus -destination 'generic/platform=iOS' archive
 
     artifacts:
 
