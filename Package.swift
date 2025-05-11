@@ -1,10 +1,3 @@
-//
-//  Package.swift
-//  CyBus
-//
-//  Created by Vadim Popov on 11/05/2025.
-//
-
 // swift-tools-version: 5.9
 import PackageDescription
 
