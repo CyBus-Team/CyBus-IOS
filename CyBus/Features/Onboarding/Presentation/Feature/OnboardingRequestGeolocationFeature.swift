@@ -6,9 +6,11 @@
 //
 
 import ComposableArchitecture
-import UIKit
 import Foundation
 import Factory
+#if canImport(UIKit)
+import UIKit
+#endif
 
 @Reducer
 struct OnboardingRequestGeolocationFeature {
