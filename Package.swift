@@ -4,8 +4,7 @@ import PackageDescription
 let package = Package(
     name: "CyBus",
     platforms: [
-        .iOS(.v15),
-        .macOS(.v10_15)
+        .iOS(.v15)
     ],
     products: [
         .executable(name: "CyBus", targets: ["CyBus"])
