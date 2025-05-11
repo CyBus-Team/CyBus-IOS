@@ -73,7 +73,7 @@ workflows:
           xcode-project build-ipa \
             --project "$CM_BUILD_DIR/CyBus.xcodeproj" \
             --scheme "CyBus" \
-            --export-method "app-store"
+            --export-options-method app-store
 
     artifacts:
 
