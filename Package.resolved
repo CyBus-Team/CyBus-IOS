@@ -1,5 +1,4 @@
 {
-  "originHash" : "5482353cb3363810988c315ed3f6aca4569a514706a9cd0a1ffa64c5a908c3e6",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -15,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hmlongco/Factory.git",
       "state" : {
-        "revision" : "c8110886836ab4dd1136dbac0c04f0f36cd68540",
-        "version" : "2.4.5"
+        "revision" : "f1e35a1672fcb71a40ef6b7aaf1ea38a458c4485",
+        "version" : "2.4.12"
       }
     },
     {
@@ -24,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getsentry/sentry-cocoa.git",
       "state" : {
-        "revision" : "491c87a32af58414bd03825b3029526640d3e73d",
-        "version" : "8.50.0"
+        "revision" : "6c81e671154e63464dd6749b7ba3279dd390a146",
+        "version" : "8.50.1"
       }
     },
     {
@@ -58,7 +57,7 @@
     {
       "identity" : "swift-composable-architecture",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pointfreeco/swift-composable-architecture",
+      "location" : "https://github.com/pointfreeco/swift-composable-architecture.git",
       "state" : {
         "revision" : "b1d27a82b498b8e697acabd8cc01b585d26aab19",
         "version" : "1.19.1"
@@ -87,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-dependencies",
       "state" : {
-        "revision" : "fee6aa29908a75437506ddcbe7434c460605b7e6",
-        "version" : "1.9.1"
+        "revision" : "4c90d6b2b9bf0911af87b103bb40f41771891596",
+        "version" : "1.9.2"
       }
     },
     {
@@ -123,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-sharing",
       "state" : {
-        "revision" : "732871fabfc6b38fcdff5ad2f7336327dbf78e81",
-        "version" : "2.4.0"
+        "revision" : "75e846ee3159dc75b3a29bfc24b6ce5a557ddca9",
+        "version" : "2.5.2"
       }
     },
     {
@@ -146,5 +145,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }
