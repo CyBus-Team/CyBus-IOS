@@ -71,8 +71,9 @@ workflows:
       - name: Build ipa for distribution
         script: |
           xcode-project build-ipa \
-            --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
-            --scheme "$XCODE_SCHEME"
+          --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
+          --scheme "$XCODE_SCHEME" \
+          --archive-flags "-destination 'generic/platform=iOS'"
 
     artifacts:
 

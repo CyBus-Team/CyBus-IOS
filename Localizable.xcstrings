@@ -129,23 +129,6 @@
     "CyBus" : {
 
     },
-    "CyprusGo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CyBus"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "CyprusGo"
-          }
-        }
-      }
-    },
     "Error: %@" : {
       "localizations" : {
         "el-CY" : {
@@ -651,35 +634,6 @@
     },
     "Welcome to CyBus!" : {
 
-    },
-    "Welcome to CyprusGo!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Καλώς ήρθατε στο CyBus!"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Welcome to CyBus"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Добро пожаловать\nCyBus!"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Ласкаво просимо до CyBus!"
-          }
-        }
-      }
     },
     "You can sign in to save your favorite routes and receive personalized notifications. " : {
       "comment" : "OnboardingSignInView.swift",
