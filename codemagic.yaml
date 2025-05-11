@@ -1,5 +1,13 @@
 
 
+
+trigger:
+  events:
+    - push
+  branch_patterns:
+    - pattern: main
+      include: true
+
 workflows:
 
   ios-native-workflow:
