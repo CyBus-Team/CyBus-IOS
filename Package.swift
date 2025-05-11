@@ -24,10 +24,7 @@ let package = Package(
             ],
             path: "CyBus",
             exclude: [
-                "Package.swift",
-                "../Config",
-                "../Config-Secret",
-                "../Localizable",
+                "../Package.swift",
                 "../Generated"
             ]
         ),

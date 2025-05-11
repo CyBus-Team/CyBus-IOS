@@ -70,10 +70,12 @@ workflows:
 
       - name: Build ipa for distribution
         script: |
-          xcodebuild -scheme CyBus \
-          -destination 'generic/platform=iOS' \
-          -configuration Release \
-          build
+          xcodebuild build \
+            -project CyBus.xcodeproj \
+            -scheme CyBus \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -quiet \
+            -skipMacroValidation
 
     artifacts:
 
