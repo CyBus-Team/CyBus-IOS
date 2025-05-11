@@ -71,8 +71,9 @@ workflows:
       - name: Build ipa for distribution
         script: |
           xcode-project build-ipa \
-            --project "$CM_BUILD_DIR/CyBus.xcodeproj" \
-            --scheme "CyBus"
+          --project "$CM_BUILD_DIR/CyBus.xcodeproj" \
+          --scheme "CyBus" \
+          --archive-flags "-skipMacroValidation"
 
     artifacts:
 
