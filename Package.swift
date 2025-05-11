@@ -1,5 +1,5 @@
 //
-//  Packages.swift
+//  Package.swift
 //  CyBus
 //
 //  Created by Vadim Popov on 11/05/2025.
