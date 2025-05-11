@@ -70,12 +70,10 @@ workflows:
 
       - name: Build ipa for distribution
         script: |
-          xcodebuild build \
-            -project CyBus.xcodeproj \
-            -scheme CyBus \
-            -destination 'generic/platform=iOS' \
-            -quiet \
-            -skipMacroValidation
+          xcode-project build-ipa \
+            --project "$CM_BUILD_DIR/CyBus.xcodeproj" \
+            --scheme "CyBus" \
+            --export-method "app-store"
 
     artifacts:
 
