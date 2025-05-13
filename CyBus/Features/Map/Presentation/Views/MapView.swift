@@ -137,8 +137,8 @@ struct MapView: View {
                     
                     Spacer()
                     // MARK: Clear route button
-                    if let _ = busesStore.selectedBus {
-                        ClearRouteButton {
+                    if let selectedBus = busesStore.selectedBus {
+                        ClearRouteButton(label: selectedBus.lineName) {
                             busesStore.send(.clearSelection)
                         }
                     }

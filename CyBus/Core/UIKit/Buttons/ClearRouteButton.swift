@@ -10,8 +10,9 @@ import SwiftUI
 struct ClearRouteButton: View {
     @Environment(\.theme) var theme
     
+    var label: String
     var action: () -> Void
-
+    
     var body: some View {
         Button(action: {
             action()
@@ -19,6 +20,7 @@ struct ClearRouteButton: View {
             Image(systemName: "xmark.circle.fill")
                 .foregroundColor(.white)
                 .clipShape(Circle())
+            Text(label)
             Image(systemName: "bus.fill")
         }
         .padding()
@@ -30,8 +32,11 @@ struct ClearRouteButton: View {
 }
 
 #Preview {
-    ClearRouteButton(action: {
-        print("Clear")
-    })
+    ClearRouteButton(
+        label: "10",
+        action: {
+            print("Clear")
+        }
+    )
 }
 
