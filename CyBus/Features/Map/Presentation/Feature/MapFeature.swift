@@ -36,6 +36,7 @@ struct MapFeature {
         case search(SearchFeatures.Action)
         case setUp
         case alert(PresentationAction<Alert>)
+        case tapOnMap(CLLocationCoordinate2D)
         enum Alert: Equatable {
             case openSettingsTapped
         }
@@ -75,6 +76,20 @@ struct MapFeature {
                     state.cameraPosition = .userLocation(followsHeading: true, fallback: .automatic)
                 }
                 return .none
+            case let .tapOnMap(location):
+                if let _ = state.search.searchAddressResult.selectedTrip {
+                    return .none
+                } else if let _ = state.search.searchAddress.selection {
+                    return .none
+                }
+                
+                if let _ = state.search.searchAddressResult.suggestion {
+                    return .send(.search(.searchAddressResult(.onReset)))
+                } else {
+                    let suggestion = SuggestionEntity(id: 1, label: "Dropped pin", location: location)
+                    return .send(.search(.searchAddressResult(.setup(suggestion))))
+                }
+                
             case .alert(_), .userLocation(_), .search(_), .binding(_):
                 return .none
             }
