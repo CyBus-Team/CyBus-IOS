@@ -51,7 +51,6 @@ struct AddressSearchFeature {
                 state.suggestions = suggestions ?? []
                 state.isLoading = false
                 return .none
-                
             case let .onSelect(suggestion):
                 state.selection = suggestion
                 return .none

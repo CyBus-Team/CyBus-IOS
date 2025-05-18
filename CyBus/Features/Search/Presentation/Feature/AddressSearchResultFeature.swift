@@ -22,7 +22,7 @@ struct AddressSearchResultFeature {
         var selectedTrip: SearchTripEntity?
         var isLoading: Bool = true
         var isTripsLoading: Bool = false
-        var suggestion: SuggestionEntity? 
+        var suggestion: SuggestionEntity?
     }
     
     enum Action: BindableAction {
@@ -47,7 +47,6 @@ struct AddressSearchResultFeature {
                 state.suggestion = suggestion
                 state.isLoading = false
                 return .none
-                
             case .onGetTrips:
                 state.isTripsLoading = true
                 state.suggestedTrips = []
@@ -72,6 +71,7 @@ struct AddressSearchResultFeature {
                 state.selectedTrip = trip
                 return .none
             case .onReset:
+                state.suggestion = nil
                 state.suggestedTrips = []
                 state.selectedTrip = nil
                 return .none

@@ -26,9 +26,6 @@ struct AddressSearchResultView : View {
                 Text(store.suggestion?.label ?? "-")
                     .font(theme.typography.title)
                 
-                //                Text(store.detailedSuggestion?.description ?? "-")
-                //                    .font(theme.typography.regular)
-                
                 Spacer()
                 
                 // MARK: Actions
