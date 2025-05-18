@@ -60,6 +60,7 @@ struct TripSelectionView : View {
                         }
                     }
                     .padding(4)
+                    .contentShape(Rectangle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 6)
                             .stroke(trip == store.selectedTrip ? .blue : .black.opacity(0), lineWidth: 2)
