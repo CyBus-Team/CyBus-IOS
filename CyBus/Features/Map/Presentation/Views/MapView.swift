@@ -62,7 +62,7 @@ struct MapView: View {
                             }
                         // All buses
                         } else {
-                            ForEach(busesStore.busList) { bus in
+                            ForEach(busesStore.buses) { bus in
                                 Annotation("", coordinate: bus.position, anchor: .bottom) {
                                     busItemView(for: bus, selectedBus: busesStore.selectedBus) {
                                         busesStore.send(.select(bus))
