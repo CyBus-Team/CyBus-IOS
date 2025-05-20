@@ -18,7 +18,7 @@ struct BusesFeature {
     struct State: Equatable {
         var isFetching: Bool = false
         
-        var busList: [BusEntity] = []
+        var buses: [BusEntity] = []
 
         var selectedBus: BusEntity?
         var routes = RoutesFeature.State()
@@ -82,7 +82,7 @@ struct BusesFeature {
                 
             case let .fetchBusesResponse(buses):
                 withAnimation(.easeInOut(duration: 1.0)) {
-                    state.busList = buses
+                    state.buses = buses
                 }
                 return .none
                 

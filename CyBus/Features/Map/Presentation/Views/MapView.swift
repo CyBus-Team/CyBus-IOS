@@ -51,14 +51,16 @@ struct MapView: View {
                         interactionModes: MapInteractionModes.all
                     ) {
                         UserAnnotation()
+                        // Selected trip buses
                         if let selectedLines = searchStore.searchAddressResult.selectedTrip?.legs.compactMap({ $0.line }) {
-                            ForEach(busesStore.busList.filter { selectedLines.contains($0.lineName) } ) { bus in
+                            ForEach(busesStore.buses.filter { selectedLines.contains($0.lineName) } ) { bus in
                                 Annotation("", coordinate: bus.position, anchor: .bottom) {
                                     busItemView(for: bus, selectedBus: busesStore.selectedBus) {
                                         busesStore.send(.select(bus))
                                     }
                                 }
                             }
+                        // All buses
                         } else {
                             ForEach(busesStore.busList) { bus in
                                 Annotation("", coordinate: bus.position, anchor: .bottom) {
