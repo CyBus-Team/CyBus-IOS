@@ -9,6 +9,8 @@ import ComposableArchitecture
 import Factory
 import SwiftUI
 
+typealias Distance = Double
+
 @Reducer
 struct BusesFeature {
     
@@ -16,9 +18,11 @@ struct BusesFeature {
     
     @ObservableState
     struct State: Equatable {
+        var distance: Distance = MapFeature.defaultCameraDistance
         var isFetching: Bool = false
         
         var buses: [BusEntity] = []
+        var clusters: [BusClusterEntity] = []
 
         var selectedBus: BusEntity?
         var routes = RoutesFeature.State()
@@ -31,12 +35,14 @@ struct BusesFeature {
         case tick
         
         case fetchBuses
-        case fetchBusesResponse([BusEntity])
+        case fetchBusesResponse([BusEntity], [BusClusterEntity])
         case fetchBusesError(String)
         
         case select(BusEntity)
         case clearSelection
         case selectResponse
+        
+        case onDistanceChanged(Distance)
         
         case routes(RoutesFeature.Action)
     }
@@ -66,10 +72,12 @@ struct BusesFeature {
                 return state.isFetching ? .send(.fetchBuses) : .none
                 
             case .fetchBuses:
+                let distance = state.distance
                 return .run { @MainActor send in
                     do {
                         let buses = try await busesUseCases.fetchBuses()
-                        send(.fetchBusesResponse(buses))
+                        let clusters = busesUseCases.fetchClusters(from: buses, withDistance: distance);
+                        send(.fetchBusesResponse(buses, clusters))
                     } catch {
                         send(.fetchBusesError("Error: \(error.localizedDescription)"))
                     }
@@ -80,9 +88,10 @@ struct BusesFeature {
                 print("Error: \(error)")
                 return .none
                 
-            case let .fetchBusesResponse(buses):
+            case let .fetchBusesResponse(buses, clusters):
                 withAnimation(.easeInOut(duration: 1.0)) {
                     state.buses = buses
+                    state.clusters = clusters
                 }
                 return .none
                 
@@ -99,6 +108,11 @@ struct BusesFeature {
                     return .send(.routes(.clearSelection))
                 }
             case .routes(_):
+                return .none
+            case let .onDistanceChanged(distance):
+                if (distance.rounded() != state.distance.rounded()) {
+                    state.distance = distance
+                }
                 return .none
             }
         }

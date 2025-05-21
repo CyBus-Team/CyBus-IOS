@@ -9,6 +9,8 @@ import Foundation
 
 protocol BusesUseCasesProtocol {
     
+    func fetchClusters(from buses: [BusEntity], withDistance distance: Distance) -> [BusClusterEntity]
+    
     func fetchBuses() async throws -> [BusEntity]
     
 }

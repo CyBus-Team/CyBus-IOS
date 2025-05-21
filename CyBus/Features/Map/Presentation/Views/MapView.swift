@@ -62,10 +62,21 @@ struct MapView: View {
                             }
                         // All buses
                         } else {
-                            ForEach(busesStore.buses) { bus in
-                                Annotation("", coordinate: bus.position, anchor: .bottom) {
-                                    busItemView(for: bus, selectedBus: busesStore.selectedBus) {
-                                        busesStore.send(.select(bus))
+                            ForEach(busesStore.clusters) { cluster in
+                                Annotation("", coordinate: cluster.coordinate, anchor: .bottom) {
+                                    if cluster.buses.count == 1 {
+                                        busItemView(for: cluster.buses[0], selectedBus: busesStore.selectedBus) {
+                                            busesStore.send(.select(cluster.buses[0]))
+                                        }
+                                    } else {
+                                        ZStack {
+                                            Circle()
+                                                .fill(Color.blue)
+                                                .frame(width: 30, height: 30)
+                                            Text("\(cluster.buses.count)")
+                                                .foregroundColor(.white)
+                                                .font(.caption)
+                                        }
                                     }
                                 }
                             }
@@ -121,6 +132,9 @@ struct MapView: View {
                             }
                         }
                     }
+                    .onMapCameraChange(frequency: .onEnd) { context in
+                        busesStore.send(.onDistanceChanged(context.camera.distance))
+                    }
                     .mapControls {
                         MapPitchToggle()
                         MapUserLocationButton()
@@ -173,4 +187,3 @@ struct MapView: View {
         BusView(bus: bus, state: state, action: action)
     }
 }
-
