@@ -70,10 +70,15 @@ workflows:
 
           cd $CM_BUILD_DIR
 
-          # LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID")
-          LATEST_BUILD_NUMBER=2
+          INFO_PLIST_PATH="CyBus/Info.plist"
 
-          agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
+          CURRENT_BUILD=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFO_PLIST_PATH")
+          echo "Current build number: $CURRENT_BUILD"
+
+          NEXT_BUILD=$((CURRENT_BUILD + 1))
+          echo "Next build number: $NEXT_BUILD"
+
+          agvtool new-version -all $NEXT_BUILD
 
       - name: Build ipa for distribution
         script: |

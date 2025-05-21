@@ -13,7 +13,7 @@ import SwiftUI
 @Reducer
 struct MapFeature {
     
-    let defaultCameraDistance = 1500.0
+    static let defaultCameraDistance = 1500.0
     
     @ObservableState
     struct State {
@@ -67,7 +67,12 @@ struct MapFeature {
             case let .search(.searchAddressResult(.setup(suggestion))):
                 if let location = suggestion?.location {
                     withAnimation(.easeInOut(duration: 1.0)) {
-                        state.cameraPosition = .camera(.init(centerCoordinate: location, distance: state.cameraPosition.camera?.distance ?? defaultCameraDistance))
+                        state.cameraPosition = .camera(
+                            .init(
+                                centerCoordinate: location,
+                                distance: state.cameraPosition.camera?.distance ?? MapFeature.defaultCameraDistance
+                            )
+                        )
                     }
                 }
                 return .none
