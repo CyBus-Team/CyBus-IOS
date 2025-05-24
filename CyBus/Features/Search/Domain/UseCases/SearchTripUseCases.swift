@@ -5,7 +5,7 @@
 //  Created by Vadim Popov on 07/01/2025.
 //
 
-import Factory
+import FactoryKit
 import CoreLocation
 import SwiftUI
 

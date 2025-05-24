@@ -5,7 +5,7 @@
 //  Created by Vadim Popov on 26/03/2025.
 //
 
-import Factory
+import FactoryKit
 import Foundation
 
 struct AppConfiguration {

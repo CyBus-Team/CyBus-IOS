@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 import ComposableArchitecture
-import Factory
+import FactoryKit
 
 class StaticFilesUseCases: StaticFilesUseCasesProtocol {
     

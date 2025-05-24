@@ -7,7 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
-import Factory
+import FactoryKit
 
 struct OnboardingView: View {
     

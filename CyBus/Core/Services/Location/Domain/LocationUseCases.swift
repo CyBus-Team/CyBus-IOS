@@ -7,7 +7,7 @@
 
 import CoreLocation
 import ComposableArchitecture
-import Factory
+import FactoryKit
 
 final class LocationUseCases : LocationUseCasesProtocol {
     

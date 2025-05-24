@@ -7,7 +7,7 @@
 
 import CoreLocation
 import ComposableArchitecture
-import Factory
+import FactoryKit
 
 @Reducer
 struct LocationFeature {

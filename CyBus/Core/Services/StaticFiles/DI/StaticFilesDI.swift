@@ -5,7 +5,7 @@
 //  Created by Vadim Popov on 02/04/2025.
 //
 
-import Factory
+import FactoryKit
 import Foundation
 
 extension Container {

@@ -7,7 +7,7 @@
 
 import Testing
 import ComposableArchitecture
-import Factory
+import FactoryKit
 import CoreLocation
 import XCTest
 

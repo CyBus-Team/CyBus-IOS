@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreLocation
-import Factory
+import FactoryKit
 
 enum BusesUseCasesError: Error {
     case routesIsEmpty
