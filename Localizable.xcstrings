@@ -232,28 +232,6 @@
         }
       }
     },
-    "Go" : {
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Πάμε"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Начать"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поїхали"
-          }
-        }
-      }
-    },
     "Loading..." : {
       "localizations" : {
         "el-CY" : {
