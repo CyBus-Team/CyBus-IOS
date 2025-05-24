@@ -133,7 +133,26 @@
 
     },
     "Expected arrival time: %@" : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αναμενόμενη ώρα άφιξης:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ожидаемое время прибытия:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очікуваний час прибуття:"
+          }
+        }
+      }
     },
     "Finish" : {
       "localizations" : {

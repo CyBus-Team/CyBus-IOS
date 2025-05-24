@@ -18,7 +18,7 @@ struct SearchView : View {
     var body: some View {
         if let selectedTrip = addressResultStore.selectedTrip, !store.tripSelectorOpened {
             ActiveTripView(
-                title: selectedTrip.id,
+                title: "Your location -> Destination",
                 arrivalTime: selectedTrip.endTime) {
                     store.send(.onReset)
                 }
