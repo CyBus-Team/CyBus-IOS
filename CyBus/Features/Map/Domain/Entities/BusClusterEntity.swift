@@ -12,7 +12,7 @@ struct BusClusterEntity: Identifiable, Equatable {
         lhs.id == rhs.id
     }
     
-    let id = UUID()
+    let id: String
     let buses: [BusEntity]
 
     var coordinate: CLLocationCoordinate2D {

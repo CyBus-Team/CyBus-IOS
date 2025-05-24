@@ -33,13 +33,17 @@ struct MapView: View {
         
         if let error = mapStore.error {
             VStack {
+                Spacer()
                 Text(mapStore.error ?? "Unknown error: \(error)")
+                Spacer()
             }
             
         } else if mapStore.isLoading {
             VStack {
+                Spacer()
                 ProgressView()
                 Text("Loading...")
+                Spacer()
             }
             
         } else {
@@ -51,7 +55,7 @@ struct MapView: View {
                         interactionModes: MapInteractionModes.all
                     ) {
                         UserAnnotation()
-                        // Selected trip buses
+                        //MARK: Selected trip buses
                         if let selectedLines = searchStore.searchAddressResult.selectedTrip?.legs.compactMap({ $0.line }) {
                             ForEach(busesStore.buses.filter { selectedLines.contains($0.lineName) } ) { bus in
                                 Annotation("", coordinate: bus.position, anchor: .bottom) {
@@ -60,7 +64,7 @@ struct MapView: View {
                                     }
                                 }
                             }
-                        // All buses
+                        //MARK: All buses
                         } else {
                             ForEach(busesStore.clusters) { cluster in
                                 Annotation("", coordinate: cluster.coordinate, anchor: .bottom) {
