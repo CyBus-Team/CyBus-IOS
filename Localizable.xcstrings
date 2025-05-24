@@ -132,29 +132,6 @@
     "CyBus" : {
 
     },
-    "Error: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Σφάλμα:  %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ошибка: %@"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Помилка:  %@"
-          }
-        }
-      }
-    },
     "Finish" : {
       "localizations" : {
         "el-CY" : {
