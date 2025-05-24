@@ -64,7 +64,7 @@ struct MapView: View {
                                     }
                                 }
                             }
-                        //MARK: All buses
+                            //MARK: All buses
                         } else {
                             ForEach(busesStore.clusters) { cluster in
                                 Annotation("", coordinate: cluster.coordinate, anchor: .bottom) {
@@ -173,9 +173,47 @@ struct MapView: View {
                     }
                 }
                 .padding(.bottom, 30)
+                
+                // MARK: Bus Loading notification
+                VStack {
+                    if busesStore.isFetching && busesStore.buses.isEmpty {
+                        busesFirstLoadingNotification()
+                    }
+                    Spacer()
+                }
+                .transition(.move(edge: .top).combined(with: .opacity))
+                .animation(.easeInOut, value: busesStore.isFetching)
             }
             
         }
+    }
+    
+    @ViewBuilder
+    func busesFirstLoadingNotification() -> some View {
+        HStack(spacing: 12) {
+            Image(systemName: "bus.fill")
+                .foregroundColor(.white)
+                .padding(6)
+                .background(Circle().fill(Color.blue))
+            
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Updating buses and routes...")
+                    .font(.subheadline)
+                    .bold()
+                Text("This will only take a few seconds")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            
+            Spacer()
+            
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle())
+        }
+        .padding()
+        .background(.ultraThinMaterial)
+        .cornerRadius(14)
+        .shadow(radius: 8)
     }
     
     @ViewBuilder
