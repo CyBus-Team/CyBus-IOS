@@ -132,6 +132,9 @@
     "CyBus" : {
 
     },
+    "Expected arrival time: %@" : {
+
+    },
     "Finish" : {
       "localizations" : {
         "el-CY" : {

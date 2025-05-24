@@ -16,22 +16,30 @@ struct SearchView : View {
     @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
     
     var body: some View {
-        SearchCollapsedView(store: store)
-            .sheet(isPresented: $store.addressResultOpened) {
-                AddressSearchResultView(store: addressResultStore)
-                    .presentationDragIndicator(.visible)
-                    .presentationDetents([.fraction(0.2)])
-            }
-            .sheet(isPresented: $store.addressSearchOpened) {
-                AddressSearchView(store: addressSearchStore)
-                    .presentationDragIndicator(.visible)
-                    .presentationDetents([.large])
-            }
-            .sheet(isPresented: $store.tripSelectorOpened) {
-                TripSelectionView(store: addressResultStore)
-                    .presentationDragIndicator(.visible)
-                    .presentationDetents([.large])
-            }
+        if let selectedTrip = addressResultStore.selectedTrip, !store.tripSelectorOpened {
+            ActiveTripView(
+                title: selectedTrip.id,
+                arrivalTime: selectedTrip.endTime) {
+                    store.send(.onReset)
+                }
+        } else {
+            SearchCollapsedView(store: store)
+                .sheet(isPresented: $store.addressResultOpened) {
+                    AddressSearchResultView(store: addressResultStore)
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.fraction(0.2)])
+                }
+                .sheet(isPresented: $store.addressSearchOpened) {
+                    AddressSearchView(store: addressSearchStore)
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.large])
+                }
+                .sheet(isPresented: $store.tripSelectorOpened) {
+                    TripSelectionView(store: addressResultStore)
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.large])
+                }
+        }
     }
 }
 
