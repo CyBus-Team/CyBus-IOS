@@ -70,9 +70,7 @@ workflows:
 
           cd $CM_BUILD_DIR
 
-          INFO_PLIST_PATH="CyBus/Info.plist"
-
-          CURRENT_BUILD=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFO_PLIST_PATH")
+          CURRENT_BUILD=$(xcodebuild -showBuildSettings | grep CURRENT_PROJECT_VERSION | awk '{print $3}')
           echo "Current build number: $CURRENT_BUILD"
 
           NEXT_BUILD=$((CURRENT_BUILD + 1))
