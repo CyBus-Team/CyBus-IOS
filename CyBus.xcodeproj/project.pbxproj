@@ -13,7 +13,6 @@
 		94161B252DD0D813008E63BD /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 94161B242DD0D813008E63BD /* Factory */; };
 		941B317E2DDE431C005C5F00 /* BusClusterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B317D2DDE4318005C5F00 /* BusClusterEntity.swift */; };
 		941B317F2DDE431C005C5F00 /* BusClusterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B317D2DDE4318005C5F00 /* BusClusterEntity.swift */; };
-		941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941F3A4D2D08B5F1006F1C10 /* UIImage.swift */; };
 		9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
 		9420D1C22CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
 		942C53EE2C55152E00DE9BD7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 942C53EC2C55152E00DE9BD7 /* README.md */; };
@@ -239,7 +238,6 @@
 		9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripUseCasesProtocol.swift; sourceTree = "<group>"; };
 		94161B262DD0DFD0008E63BD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		941B317D2DDE4318005C5F00 /* BusClusterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusClusterEntity.swift; sourceTree = "<group>"; };
-		941F3A4D2D08B5F1006F1C10 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeFeature.swift; sourceTree = "<group>"; };
 		942C53EC2C55152E00DE9BD7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		942C53ED2C55152E00DE9BD7 /* routes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = routes_generator.rb; sourceTree = "<group>"; };
@@ -391,14 +389,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		941F3A4C2D08B5EB006F1C10 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				941F3A4D2D08B5F1006F1C10 /* UIImage.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		942F51C82D9DB1C7007F6F7D /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1089,7 +1079,6 @@
 		94D794A42CC2CDD30097A2F0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				941F3A4C2D08B5EB006F1C10 /* Extension */,
 				94D794A32CC2CDD30097A2F0 /* Buttons */,
 			);
 			path = UIKit;
@@ -1373,7 +1362,6 @@
 				942F51D92D9F120E007F6F7D /* RoutesUseCases.swift in Sources */,
 				94575D742D231DF600CC3C03 /* AddressSearchView.swift in Sources */,
 				9403C9262D3C0E58000EDB25 /* SearchTripRepositoryProtocol.swift in Sources */,
-				941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */,
 				94AF24E32CBC5B340092EE9B /* OnboardingRepository.swift in Sources */,
 				94575D942D2345C400CC3C03 /* AddressSearchUseCases.swift in Sources */,
 				94AF0DA32C779A8C002FE41B /* BusesUseCasesProtocol.swift in Sources */,
