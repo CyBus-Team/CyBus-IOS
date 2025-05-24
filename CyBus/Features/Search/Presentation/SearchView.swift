@@ -16,30 +16,36 @@ struct SearchView : View {
     @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
     
     var body: some View {
-        if let selectedTrip = addressResultStore.selectedTrip, !store.tripSelectorOpened {
-            ActiveTripView(
-                title: "Your location -> Destination",
-                arrivalTime: selectedTrip.endTime) {
+        ZStack {
+            if let selectedTrip = addressResultStore.selectedTrip, !store.tripSelectorOpened {
+                ActiveTripView(
+                    title: "Your location -> Destination",
+                    arrivalTime: selectedTrip.endTime
+                ) {
                     store.send(.onReset)
                 }
-        } else {
-            SearchCollapsedView(store: store)
-                .sheet(isPresented: $store.addressResultOpened) {
-                    AddressSearchResultView(store: addressResultStore)
-                        .presentationDragIndicator(.visible)
-                        .presentationDetents([.fraction(0.2)])
-                }
-                .sheet(isPresented: $store.addressSearchOpened) {
-                    AddressSearchView(store: addressSearchStore)
-                        .presentationDragIndicator(.visible)
-                        .presentationDetents([.large])
-                }
-                .sheet(isPresented: $store.tripSelectorOpened) {
-                    TripSelectionView(store: addressResultStore)
-                        .presentationDragIndicator(.visible)
-                        .presentationDetents([.large])
-                }
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+            } else {
+                SearchCollapsedView(store: store)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .sheet(isPresented: $store.addressResultOpened) {
+                        AddressSearchResultView(store: addressResultStore)
+                            .presentationDragIndicator(.visible)
+                            .presentationDetents([.fraction(0.2)])
+                    }
+                    .sheet(isPresented: $store.addressSearchOpened) {
+                        AddressSearchView(store: addressSearchStore)
+                            .presentationDragIndicator(.visible)
+                            .presentationDetents([.large])
+                    }
+                    .sheet(isPresented: $store.tripSelectorOpened) {
+                        TripSelectionView(store: addressResultStore)
+                            .presentationDragIndicator(.visible)
+                            .presentationDetents([.large])
+                    }
+            }
         }
+        .animation(.easeInOut(duration: 0.3), value: addressResultStore.selectedTrip)
     }
 }
 

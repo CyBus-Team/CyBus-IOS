@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import SwiftUI
 
 @Reducer
 struct SearchFeatures {
@@ -68,9 +69,11 @@ struct SearchFeatures {
                 return .none
             // Search results
             case .searchAddressResult(.onCloseTrips):
-                state.addressSearchOpened = false
-                state.addressResultOpened = false
-                state.tripSelectorOpened = false
+                withAnimation(.easeOut(duration: 0.5)) {
+                    state.addressSearchOpened = false
+                    state.addressResultOpened = false
+                    state.tripSelectorOpened = false
+                }
                 return .none
             case .searchAddressResult(.onClose), .searchAddressResult(.binding(_)):
                 state.addressResultOpened = false
