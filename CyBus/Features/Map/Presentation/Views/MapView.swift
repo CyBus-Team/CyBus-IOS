@@ -204,9 +204,9 @@ struct MapView: View {
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
-            
+
             Spacer()
-            
+
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle())
         }
@@ -214,6 +214,7 @@ struct MapView: View {
         .background(.ultraThinMaterial)
         .cornerRadius(14)
         .shadow(radius: 8)
+        .padding(.horizontal)
     }
     
     @ViewBuilder
