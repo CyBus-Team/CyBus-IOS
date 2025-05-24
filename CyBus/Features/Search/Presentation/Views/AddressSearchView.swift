@@ -77,6 +77,7 @@ struct AddressSearchView: View {
                 // MARK: Loading
                 Spacer()
                 ProgressView()
+                    .scaleEffect(1.5)
                 Spacer()
             } else {
                 // MARK: Suggestions
@@ -97,4 +98,17 @@ struct AddressSearchView: View {
             isFocused = true
         }
     }
+}
+
+#Preview {
+    AddressSearchView(
+        store: .init(
+            initialState: AddressSearchFeature.State(
+                isLoading: true, query: "test"
+            ),
+            reducer: {
+                AddressSearchFeature()
+            }
+        )
+    )
 }

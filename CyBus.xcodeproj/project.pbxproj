@@ -10,10 +10,8 @@
 		9403C9262D3C0E58000EDB25 /* SearchTripRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403C9252D3C0E46000EDB25 /* SearchTripRepositoryProtocol.swift */; };
 		9403C9282D3C0F3D000EDB25 /* SearchTripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403C9272D3C0EDA000EDB25 /* SearchTripRepository.swift */; };
 		9406EB562D3C418800C17ABF /* SearchTripUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */; };
-		94161B252DD0D813008E63BD /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 94161B242DD0D813008E63BD /* Factory */; };
 		941B317E2DDE431C005C5F00 /* BusClusterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B317D2DDE4318005C5F00 /* BusClusterEntity.swift */; };
 		941B317F2DDE431C005C5F00 /* BusClusterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941B317D2DDE4318005C5F00 /* BusClusterEntity.swift */; };
-		941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941F3A4D2D08B5F1006F1C10 /* UIImage.swift */; };
 		9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
 		9420D1C22CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
 		942C53EE2C55152E00DE9BD7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 942C53EC2C55152E00DE9BD7 /* README.md */; };
@@ -76,6 +74,9 @@
 		945843AB2CD1923E006D9893 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843AA2CD19236006D9893 /* HomeView.swift */; };
 		945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B88F2CC3019C00E38BE2 /* RootFeature.swift */; };
 		945B1AA12CC5576D0091CED6 /* OnboardingUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF24DD2CBC5A400092EE9B /* OnboardingUseCases.swift */; };
+		947443E62DE1FF5800305EAF /* ActiveTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947443E52DE1FF4700305EAF /* ActiveTripView.swift */; };
+		947443E72DE1FF5800305EAF /* ActiveTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947443E52DE1FF4700305EAF /* ActiveTripView.swift */; };
+		947443EA2DE207FC00305EAF /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 947443E92DE207FC00305EAF /* FactoryKit */; };
 		947633D52C6E0747000F20C7 /* StopDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947633D42C6E0747000F20C7 /* StopDTO.swift */; };
 		947633D72C6E079A000F20C7 /* StopTimeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947633D62C6E0799000F20C7 /* StopTimeDTO.swift */; };
 		9485253B2D948891008EB3A0 /* BusesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485253A2D94888A008EB3A0 /* BusesDTO.swift */; };
@@ -239,7 +240,6 @@
 		9406EB552D3C417E00C17ABF /* SearchTripUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripUseCasesProtocol.swift; sourceTree = "<group>"; };
 		94161B262DD0DFD0008E63BD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		941B317D2DDE4318005C5F00 /* BusClusterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusClusterEntity.swift; sourceTree = "<group>"; };
-		941F3A4D2D08B5F1006F1C10 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeFeature.swift; sourceTree = "<group>"; };
 		942C53EC2C55152E00DE9BD7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		942C53ED2C55152E00DE9BD7 /* routes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = routes_generator.rb; sourceTree = "<group>"; };
@@ -291,6 +291,7 @@
 		9457A6202DCD2A0000DDD471 /* SearchMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMocks.swift; sourceTree = "<group>"; };
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		947443E52DE1FF4700305EAF /* ActiveTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTripView.swift; sourceTree = "<group>"; };
 		947633D42C6E0747000F20C7 /* StopDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDTO.swift; sourceTree = "<group>"; };
 		947633D62C6E0799000F20C7 /* StopTimeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTimeDTO.swift; sourceTree = "<group>"; };
 		9485253A2D94888A008EB3A0 /* BusesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesDTO.swift; sourceTree = "<group>"; };
@@ -368,7 +369,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94161B252DD0D813008E63BD /* Factory in Frameworks */,
+				947443EA2DE207FC00305EAF /* FactoryKit in Frameworks */,
 				94D794852CC01F6D0097A2F0 /* ComposableArchitecture in Frameworks */,
 				9449B23C2DCA658900643B5A /* Sentry in Frameworks */,
 			);
@@ -391,14 +392,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		941F3A4C2D08B5EB006F1C10 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				941F3A4D2D08B5F1006F1C10 /* UIImage.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		942F51C82D9DB1C7007F6F7D /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +535,7 @@
 		94575D6D2D1F314100CC3C03 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				947443E52DE1FF4700305EAF /* ActiveTripView.swift */,
 				94CE030B2DB69163004C3CE8 /* TripsSelectionView.swift */,
 				94575D752D23200C00CC3C03 /* SearchCollapsedView.swift */,
 				94575D732D231DE200CC3C03 /* AddressSearchView.swift */,
@@ -1089,7 +1083,6 @@
 		94D794A42CC2CDD30097A2F0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				941F3A4C2D08B5EB006F1C10 /* Extension */,
 				94D794A32CC2CDD30097A2F0 /* Buttons */,
 			);
 			path = UIKit;
@@ -1208,7 +1201,7 @@
 			packageProductDependencies = (
 				94D794842CC01F6D0097A2F0 /* ComposableArchitecture */,
 				9449B23B2DCA658900643B5A /* Sentry */,
-				94161B242DD0D813008E63BD /* Factory */,
+				947443E92DE207FC00305EAF /* FactoryKit */,
 			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
@@ -1291,7 +1284,7 @@
 			packageReferences = (
 				94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				9449B23A2DCA658900643B5A /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
-				94161B232DD0D813008E63BD /* XCRemoteSwiftPackageReference "Factory" */,
+				947443E82DE207FC00305EAF /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
@@ -1373,7 +1366,6 @@
 				942F51D92D9F120E007F6F7D /* RoutesUseCases.swift in Sources */,
 				94575D742D231DF600CC3C03 /* AddressSearchView.swift in Sources */,
 				9403C9262D3C0E58000EDB25 /* SearchTripRepositoryProtocol.swift in Sources */,
-				941F3A4E2D08B5F9006F1C10 /* UIImage.swift in Sources */,
 				94AF24E32CBC5B340092EE9B /* OnboardingRepository.swift in Sources */,
 				94575D942D2345C400CC3C03 /* AddressSearchUseCases.swift in Sources */,
 				94AF0DA32C779A8C002FE41B /* BusesUseCasesProtocol.swift in Sources */,
@@ -1390,6 +1382,7 @@
 				94F3B8812CC2EB3800E38BE2 /* OnboardingWelcomeView.swift in Sources */,
 				94AF0DC62C7CF956002FE41B /* RouteEntity.swift in Sources */,
 				94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */,
+				947443E72DE1FF5800305EAF /* ActiveTripView.swift in Sources */,
 				948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */,
 				942C53F72C55217400DE9BD7 /* RouteDTO.swift in Sources */,
 				9432A1802D4FB19E00E05BCB /* ClearNodesButton.swift in Sources */,
@@ -1515,6 +1508,7 @@
 				94B130662DB832370017C201 /* AddressSearchResultView.swift in Sources */,
 				94B130672DB832370017C201 /* SearchDI.swift in Sources */,
 				94B130682DB832370017C201 /* SearchTripRepositoryProtocol.swift in Sources */,
+				947443E62DE1FF5800305EAF /* ActiveTripView.swift in Sources */,
 				94B130692DB832370017C201 /* AddressSearchFeature.swift in Sources */,
 				94B1306A2DB832370017C201 /* TripsSelectionView.swift in Sources */,
 				94B1306B2DB832370017C201 /* SearchView.swift in Sources */,
@@ -1699,7 +1693,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CyBus/CyBus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CyBus/Preview Content\"";
 				DEVELOPMENT_TEAM = 55X4R3755D;
@@ -1742,7 +1736,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CyBus/CyBus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CyBus/Preview Content\"";
 				DEVELOPMENT_TEAM = 55X4R3755D;
@@ -1909,20 +1903,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		94161B232DD0D813008E63BD /* XCRemoteSwiftPackageReference "Factory" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hmlongco/Factory.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.4.3;
-			};
-		};
 		9449B23A2DCA658900643B5A /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.50.0;
+			};
+		};
+		947443E82DE207FC00305EAF /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.2;
 			};
 		};
 		94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
@@ -1936,15 +1930,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		94161B242DD0D813008E63BD /* Factory */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 94161B232DD0D813008E63BD /* XCRemoteSwiftPackageReference "Factory" */;
-			productName = Factory;
-		};
 		9449B23B2DCA658900643B5A /* Sentry */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9449B23A2DCA658900643B5A /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
 			productName = Sentry;
+		};
+		947443E92DE207FC00305EAF /* FactoryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 947443E82DE207FC00305EAF /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = FactoryKit;
 		};
 		94D794842CC01F6D0097A2F0 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

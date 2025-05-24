@@ -5,7 +5,7 @@
 //  Created by Vadim Popov on 03/04/2025.
 //
 
-import Factory
+import FactoryKit
 import Foundation
 import ComposableArchitecture
 

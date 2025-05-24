@@ -68,23 +68,12 @@ struct TripSelectionView : View {
                     .font(.caption)
                     .onTapGesture {
                         store.send(.onChooseTrip(trip))
+                        store.send(.onCloseTrips)
                     }
                     Divider()
                         .frame(height: 1)
                         .background(.separator)
                 }
-                Spacer()
-            }
-            Spacer()
-            HStack {
-                PrimaryButton(
-                    label: String(localized: "Go"),
-                    action: {
-                        store.send(.onCloseTrips)
-                    },
-                    isLoading: false,
-                    font: theme.typography.regular
-                )
                 Spacer()
             }
         }

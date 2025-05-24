@@ -7,7 +7,7 @@
 
 import Foundation
 import ComposableArchitecture
-import Factory
+import FactoryKit
 
 public class OnboardingUseCases : OnboardingUseCasesProtocol {
     

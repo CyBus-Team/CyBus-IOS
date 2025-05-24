@@ -6,7 +6,7 @@
 //
 
 import ComposableArchitecture
-import Factory
+import FactoryKit
 import SwiftUI
 
 typealias Distance = Double

@@ -132,25 +132,24 @@
     "CyBus" : {
 
     },
-    "Error: %@" : {
-      "extractionState" : "stale",
+    "Expected arrival time: %@" : {
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Σφάλμα:  %@"
+            "value" : "Αναμενόμενη ώρα άφιξης:"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ошибка: %@"
+            "value" : "Ожидаемое время прибытия:"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Помилка:  %@"
+            "value" : "Очікуваний час прибуття:"
           }
         }
       }
@@ -248,28 +247,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Розпочати"
-          }
-        }
-      }
-    },
-    "Go" : {
-      "localizations" : {
-        "el-CY" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Πάμε"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Начать"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поїхали"
           }
         }
       }
@@ -524,6 +501,28 @@
         }
       }
     },
+    "This will only take a few seconds" : {
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αυτό θα διαρκέσει μόνο λίγα δευτερόλεπτα"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Это займет всего несколько секунд"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Це займе лише кілька секунд"
+          }
+        }
+      }
+    },
     "To show you your current location and the nearest buses, we need access to your geolocation." : {
       "comment" : "OnboardingGeolocationView",
       "extractionState" : "manual",
@@ -610,6 +609,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Невідомо"
+          }
+        }
+      }
+    },
+    "Updating buses and routes..." : {
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ενημέρωση λεωφορείων και διαδρομών…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузка автобусов и маршрутов…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оновлення автобусів і маршрутів…"
           }
         }
       }

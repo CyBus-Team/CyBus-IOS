@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 import Foundation
-import Factory
+import FactoryKit
 #if canImport(UIKit)
 import UIKit
 #endif

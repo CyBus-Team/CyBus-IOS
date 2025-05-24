@@ -7,7 +7,7 @@
 
 import Testing
 import ComposableArchitecture
-import Factory
+import FactoryKit
 
 @testable import CyBus
 
