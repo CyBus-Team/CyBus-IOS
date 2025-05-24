@@ -19,7 +19,7 @@ class BusesUseCases: BusesUseCasesProtocol {
     
     func fetchClusters(from buses: [BusEntity], withDistance distance: Distance) -> [BusClusterEntity] {
         // If the map is zoomed in close (distance < 5 km), skip clustering and show individual buses
-        guard distance > 5000 else {
+        guard distance > 15000 else {
             return buses.map { BusClusterEntity(buses: [$0]) }
         }
         
