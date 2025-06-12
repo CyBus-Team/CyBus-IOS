@@ -3,6 +3,8 @@
 
 [![Tests](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml/badge.svg)](https://github.com/CyBus-Team/CyBus/actions/workflows/tests.yml) ![Platforms](https://img.shields.io/badge/platforms-iPhone%20%7C%20iPad-lightgrey)
 
+[![Download on the App Store](https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us)](https://apps.apple.com/us/app/cybus/id6745707612)
+
 iOS application with schedules, routes, and locations of buses in Cyprus.
 
 # Setup
