@@ -7,19 +7,6 @@ iOS application with schedules, routes, and locations of buses in Cyprus.
 
 # Setup
 
-### ENV
-
-Create `Config-Secret.xcconfig` and paste your sentry DSN excluding `https://` part
-
-```
-SentryDSN=YOUR_DSN_URL
-```
-Example
-```
-SentryDSN=123@123.ingest.de.sentry.io/123
-```
-
-
 ### Generate GFTS
 Routes are static files from [motionbuscard](https://motionbuscard.org.cy/opendata).
 

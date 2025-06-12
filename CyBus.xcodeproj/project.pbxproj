@@ -299,7 +299,6 @@
 		94891BD62C3AFBCF008AFC53 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		94891BDF2C3B017B008AFC53 /* BusEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusEntity.swift; sourceTree = "<group>"; };
 		948CBE602CF2305C006C8B1C /* BusesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesFeature.swift; sourceTree = "<group>"; };
-		949765732C516EFE001321CA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		94AA6D812CEA5FB6004A25A9 /* LocationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFeature.swift; sourceTree = "<group>"; };
 		94ABDF7D2C29ABBD00970F8C /* CyBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDF802C29ABBD00970F8C /* CyBusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyBusApp.swift; sourceTree = "<group>"; };
@@ -324,7 +323,6 @@
 		94AF24E22CBC5B310092EE9B /* OnboardingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepository.swift; sourceTree = "<group>"; };
 		94B1302F2DB82E020017C201 /* OnboardingFeaturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeaturesTests.swift; sourceTree = "<group>"; };
 		94B1306F2DB8CE5E0017C201 /* OnboardingRequestGeolocationFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRequestGeolocationFeatureTests.swift; sourceTree = "<group>"; };
-		94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Config-Secret.xcconfig"; path = "CyBus/Config-Secret.xcconfig"; sourceTree = "<group>"; };
 		94CC17362C4EC42C00AC358D /* routes.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shp; sourceTree = "<group>"; };
 		94CC173D2C4EC65300AC358D /* routes.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.prj; sourceTree = "<group>"; };
 		94CC173F2C4EC65300AC358D /* routes.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shx; sourceTree = "<group>"; };
@@ -768,8 +766,6 @@
 				94F2208F2C5E85A600D776B9 /* trips_generator.rb */,
 				942C53F02C55201900DE9BD7 /* shapes_generator.rb */,
 				942C53ED2C55152E00DE9BD7 /* routes_generator.rb */,
-				94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */,
-				949765732C516EFE001321CA /* Config.xcconfig */,
 				94BB5BC82C35CCCB00404028 /* Generated */,
 				94ABDF7F2C29ABBD00970F8C /* CyBus */,
 				94ABDF912C29ABBD00970F8C /* CyBusTests */,
@@ -1559,7 +1555,6 @@
 /* Begin XCBuildConfiguration section */
 		94ABDFA02C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1624,7 +1619,6 @@
 		};
 		94ABDFA12C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1681,7 +1675,6 @@
 		};
 		94ABDFA32C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1724,7 +1717,6 @@
 		};
 		94ABDFA42C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1767,7 +1759,6 @@
 		};
 		94ABDFA62C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1790,7 +1781,6 @@
 		};
 		94ABDFA72C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1813,7 +1803,6 @@
 		};
 		94ABDFA92C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1835,7 +1824,6 @@
 		};
 		94ABDFAA2C29ABBE00970F8C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94C7454A2C6E390300390B36 /* Config-Secret.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
