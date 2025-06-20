@@ -22,8 +22,20 @@ struct TripSelectionView : View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack {
-                Text(LocalizedStringKey("Click on trip to select"))
-                    .padding()
+                if store.suggestedTrips.isEmpty {
+                    Spacer()
+                    Image("tripselection_no_routes")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Spacer()
+                    Text(LocalizedStringKey("No trips found. There might not be any available buses at the moment. Please also make sure location access is enabled in your settings so we can find the best options near you."))
+                        .multilineTextAlignment(.center)
+                }
+                else {
+                    Text(LocalizedStringKey("Click on trip to select"))
+                        .padding()
+                }
+             
                 ForEach(store.suggestedTrips) { (trip: SearchTripEntity) in
                     VStack(spacing: 8) {
                         HStack(spacing: 4) {
