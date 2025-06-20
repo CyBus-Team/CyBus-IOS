@@ -91,7 +91,7 @@ struct MapFeature {
                 if let _ = state.search.searchAddressResult.suggestion {
                     return .send(.search(.searchAddressResult(.onReset)))
                 } else {
-                    let suggestion = SuggestionEntity(id: 1, label: "Dropped pin", location: location)
+                    let suggestion = SuggestionEntity(id: 1, label: String(localized: "Dropped pin"), location: location)
                     return .run { @MainActor send in
                         send(.search(.searchAddressResult(.setup(suggestion))))
                         send(.search(.onOpenAddressSearchResults))

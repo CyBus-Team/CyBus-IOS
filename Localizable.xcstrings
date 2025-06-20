@@ -5,7 +5,7 @@
       "shouldTranslate" : false
     },
     "%lld" : {
-
+      "shouldTranslate" : false
     },
     "➡" : {
       "shouldTranslate" : false
@@ -130,7 +130,29 @@
       }
     },
     "CyBus" : {
-
+      "shouldTranslate" : false
+    },
+    "Dropped pin" : {
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σημείο στην κάρτα"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Метка на карте"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мітка на карті"
+          }
+        }
+      }
     },
     "Expected arrival time: %@" : {
       "localizations" : {
@@ -363,6 +385,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Увійдіть для зручнішого користування"
+          }
+        }
+      }
+    },
+    "No trips found. There might not be any available buses at the moment. Please also make sure location access is enabled in your settings so we can find the best options near you." : {
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν βρέθηκαν δρομολόγια. Ίσως να μην υπάρχουν διαθέσιμα λεωφορεία αυτή τη στιγμή. Παρακαλούμε βεβαιωθείτε ότι η πρόσβαση στην τοποθεσία είναι ενεργοποιημένη στις ρυθμίσεις της συσκευής σας, ώστε να μπορούμε να σας δείξουμε τις καλύτερες επιλογές κοντά σας."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Маршруты не найдены. Возможно, в данный момент нет доступных автобусов. Пожалуйста, также убедитесь, что в настройках устройства включён доступ к геолокации - это поможет нам найти лучшие варианты рядом с вами."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Маршрути не знайдені. Можливо, зараз немає доступних автобусів. Будь ласка, переконайтеся, що в налаштуваннях пристрою увімкнено доступ до геолокації — це допоможе нам знайти найкращі варіанти поруч з вами."
           }
         }
       }
@@ -658,7 +702,26 @@
       }
     },
     "Welcome to CyBus!" : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Καλώς ήρθατε στο CyprusGo!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добро пожаловать\\nCyprusGo!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ласкаво просимо до CyprusGo!"
+          }
+        }
+      }
     },
     "You can sign in to save your favorite routes and receive personalized notifications. " : {
       "comment" : "OnboardingSignInView.swift",
