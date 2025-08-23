@@ -15,8 +15,6 @@
 		9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
 		9420D1C22CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
 		942C53EE2C55152E00DE9BD7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 942C53EC2C55152E00DE9BD7 /* README.md */; };
-		942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53ED2C55152E00DE9BD7 /* routes_generator.rb */; };
-		942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 942C53F02C55201900DE9BD7 /* shapes_generator.rb */; };
 		942C53F72C55217400DE9BD7 /* RouteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C53F62C55217400DE9BD7 /* RouteDTO.swift */; };
 		942F51CA2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */; };
 		942F51CB2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */; };
@@ -200,10 +198,6 @@
 		94D794B02CC2CDD30097A2F0 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7949C2CC2CDD30097A2F0 /* ColorPalette.swift */; };
 		94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D794912CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift */; };
 		94F2208A2C5E701F00D776B9 /* ClearRouteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F220892C5E701F00D776B9 /* ClearRouteButton.swift */; };
-		94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F2208F2C5E85A600D776B9 /* trips_generator.rb */; };
-		94F220922C5E85B200D776B9 /* generate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 94F220912C5E85B200D776B9 /* generate.sh */; };
-		94F220992C5E886E00D776B9 /* stops_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F220972C5E886E00D776B9 /* stops_generator.rb */; };
-		94F2209A2C5E886E00D776B9 /* stop_times_generator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 94F220982C5E886E00D776B9 /* stop_times_generator.rb */; };
 		94F3B8812CC2EB3800E38BE2 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8802CC2EB3500E38BE2 /* OnboardingWelcomeView.swift */; };
 		94F3B8832CC2EB4300E38BE2 /* OnboardingGeolocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8822CC2EB3C00E38BE2 /* OnboardingGeolocationView.swift */; };
 		94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3B8882CC2F1B200E38BE2 /* LogoView.swift */; };
@@ -240,8 +234,6 @@
 		941B317D2DDE4318005C5F00 /* BusClusterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusClusterEntity.swift; sourceTree = "<group>"; };
 		9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeFeature.swift; sourceTree = "<group>"; };
 		942C53EC2C55152E00DE9BD7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		942C53ED2C55152E00DE9BD7 /* routes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = routes_generator.rb; sourceTree = "<group>"; };
-		942C53F02C55201900DE9BD7 /* shapes_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = shapes_generator.rb; sourceTree = "<group>"; };
 		942C53F62C55217400DE9BD7 /* RouteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDTO.swift; sourceTree = "<group>"; };
 		942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDI.swift; sourceTree = "<group>"; };
 		942F51CD2D9DB6CF007F6F7D /* MapDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDI.swift; sourceTree = "<group>"; };
@@ -323,10 +315,6 @@
 		94AF24E22CBC5B310092EE9B /* OnboardingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepository.swift; sourceTree = "<group>"; };
 		94B1302F2DB82E020017C201 /* OnboardingFeaturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeaturesTests.swift; sourceTree = "<group>"; };
 		94B1306F2DB8CE5E0017C201 /* OnboardingRequestGeolocationFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRequestGeolocationFeatureTests.swift; sourceTree = "<group>"; };
-		94CC17362C4EC42C00AC358D /* routes.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shp; sourceTree = "<group>"; };
-		94CC173D2C4EC65300AC358D /* routes.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.prj; sourceTree = "<group>"; };
-		94CC173F2C4EC65300AC358D /* routes.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.shx; sourceTree = "<group>"; };
-		94CC17402C4EC65300AC358D /* routes.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = routes.dbf; sourceTree = "<group>"; };
 		94CE03052DB58175004C3CE8 /* SearchTripDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripDTO.swift; sourceTree = "<group>"; };
 		94CE03072DB58C86004C3CE8 /* SearchTripEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripEntity.swift; sourceTree = "<group>"; };
 		94CE03092DB5AC05004C3CE8 /* PathTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTips.swift; sourceTree = "<group>"; };
@@ -345,10 +333,6 @@
 		94D794A12CC2CDD30097A2F0 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		94D794A22CC2CDD30097A2F0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		94F220892C5E701F00D776B9 /* ClearRouteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearRouteButton.swift; sourceTree = "<group>"; };
-		94F2208F2C5E85A600D776B9 /* trips_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = trips_generator.rb; sourceTree = "<group>"; };
-		94F220912C5E85B200D776B9 /* generate.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate.sh; sourceTree = "<group>"; };
-		94F220972C5E886E00D776B9 /* stops_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stops_generator.rb; sourceTree = "<group>"; };
-		94F220982C5E886E00D776B9 /* stop_times_generator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stop_times_generator.rb; sourceTree = "<group>"; };
 		94F3B8802CC2EB3500E38BE2 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		94F3B8822CC2EB3C00E38BE2 /* OnboardingGeolocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGeolocationView.swift; sourceTree = "<group>"; };
 		94F3B8882CC2F1B200E38BE2 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
@@ -759,14 +743,7 @@
 			isa = PBXGroup;
 			children = (
 				ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */,
-				94F220912C5E85B200D776B9 /* generate.sh */,
 				942C53EC2C55152E00DE9BD7 /* README.md */,
-				94F220972C5E886E00D776B9 /* stops_generator.rb */,
-				94F220982C5E886E00D776B9 /* stop_times_generator.rb */,
-				94F2208F2C5E85A600D776B9 /* trips_generator.rb */,
-				942C53F02C55201900DE9BD7 /* shapes_generator.rb */,
-				942C53ED2C55152E00DE9BD7 /* routes_generator.rb */,
-				94BB5BC82C35CCCB00404028 /* Generated */,
 				94ABDF7F2C29ABBD00970F8C /* CyBus */,
 				94ABDF912C29ABBD00970F8C /* CyBusTests */,
 				94ABDF9B2C29ABBE00970F8C /* CyBusUITests */,
@@ -979,17 +956,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		94BB5BC82C35CCCB00404028 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				94CC17362C4EC42C00AC358D /* routes.shp */,
-				94CC17402C4EC65300AC358D /* routes.dbf */,
-				94CC173D2C4EC65300AC358D /* routes.prj */,
-				94CC173F2C4EC65300AC358D /* routes.shx */,
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 		94D794922CC2CDD30097A2F0 /* Domain */ = {
@@ -1294,19 +1260,13 @@
 			files = (
 				ACBEE2142D4FA9D700C1A753 /* Localizable.xcstrings in Resources */,
 				942C53EE2C55152E00DE9BD7 /* README.md in Resources */,
-				94F220902C5E85A600D776B9 /* trips_generator.rb in Resources */,
 				942F51E92DAD40F3007F6F7D /* trips.json in Resources */,
 				942F51EA2DAD40F3007F6F7D /* routes.json in Resources */,
 				942F51EB2DAD40F3007F6F7D /* shapes.json in Resources */,
 				942F51EC2DAD40F3007F6F7D /* stop_times.json in Resources */,
 				942F51ED2DAD40F3007F6F7D /* stops.json in Resources */,
-				94F220922C5E85B200D776B9 /* generate.sh in Resources */,
-				942C53EF2C55152E00DE9BD7 /* routes_generator.rb in Resources */,
-				94F220992C5E886E00D776B9 /* stops_generator.rb in Resources */,
-				94F2209A2C5E886E00D776B9 /* stop_times_generator.rb in Resources */,
 				94ABDF892C29ABBD00970F8C /* Preview Assets.xcassets in Resources */,
 				94ABDF852C29ABBD00970F8C /* Assets.xcassets in Resources */,
-				942C53F12C55201900DE9BD7 /* shapes_generator.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
