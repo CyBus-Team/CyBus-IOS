@@ -1,12 +1,3 @@
-# Ignore generated files
-CyBus/routes.json
-CyBus/stop_times.json
-CyBus/stops.json
-CyBus/trips.json
-CyBus/shapes.json
-CyBus/trip_stops.json
-CyBus/all_trips.json
-
 # Idea
 .idea/
 
