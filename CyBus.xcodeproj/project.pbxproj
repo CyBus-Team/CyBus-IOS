@@ -64,6 +64,7 @@
 		947443E62DE1FF5800305EAF /* ActiveTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947443E52DE1FF4700305EAF /* ActiveTripView.swift */; };
 		947443E72DE1FF5800305EAF /* ActiveTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947443E52DE1FF4700305EAF /* ActiveTripView.swift */; };
 		947443EA2DE207FC00305EAF /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 947443E92DE207FC00305EAF /* FactoryKit */; };
+		947790F82E5BC683003CCC62 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 947790F72E5BC683003CCC62 /* GoogleMobileAds */; };
 		9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525472D949656008EB3A0 /* BusesRepository.swift */; };
 		9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485254C2D9496FF008EB3A0 /* BusDTO.swift */; };
 		948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */; };
@@ -315,6 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947790F82E5BC683003CCC62 /* GoogleMobileAds in Frameworks */,
 				947443EA2DE207FC00305EAF /* FactoryKit in Frameworks */,
 				94D794852CC01F6D0097A2F0 /* ComposableArchitecture in Frameworks */,
 			);
@@ -596,9 +598,17 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		947790F92E5BCA31003CCC62 /* GoogleAds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GoogleAds;
+			sourceTree = "<group>";
+		};
 		9485253F2D949338008EB3A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				947790F92E5BCA31003CCC62 /* GoogleAds */,
 				948525552D949A59008EB3A0 /* AppConfiguration */,
 				94D794952CC2CDD30097A2F0 /* Location */,
 			);
@@ -1064,6 +1074,7 @@
 			packageProductDependencies = (
 				94D794842CC01F6D0097A2F0 /* ComposableArchitecture */,
 				947443E92DE207FC00305EAF /* FactoryKit */,
+				947790F72E5BC683003CCC62 /* GoogleMobileAds */,
 			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
@@ -1146,6 +1157,7 @@
 			packageReferences = (
 				94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				947443E82DE207FC00305EAF /* XCRemoteSwiftPackageReference "Factory" */,
+				947790F62E5BC683003CCC62 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
@@ -1737,6 +1749,14 @@
 				minimumVersion = 2.5.2;
 			};
 		};
+		947790F62E5BC683003CCC62 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.9.0;
+			};
+		};
 		94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -1752,6 +1772,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 947443E82DE207FC00305EAF /* XCRemoteSwiftPackageReference "Factory" */;
 			productName = FactoryKit;
+		};
+		947790F72E5BC683003CCC62 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 947790F62E5BC683003CCC62 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 		94D794842CC01F6D0097A2F0 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
