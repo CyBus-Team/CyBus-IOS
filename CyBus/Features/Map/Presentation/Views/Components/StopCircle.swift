@@ -16,7 +16,7 @@ struct StopCircle : View {
                 .overlay(
                     Circle().stroke(Color.white, lineWidth: 2)
                 )
-                .frame(width: 15, height: 15)
+                .frame(width: 18, height: 18)
         }
         .shadow(radius: 3, x: 1, y: 1)
     }

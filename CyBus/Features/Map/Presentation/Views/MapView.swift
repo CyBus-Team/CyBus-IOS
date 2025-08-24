@@ -16,7 +16,7 @@ let footStroke = StrokeStyle(
     dash: [5, 5]
 )
 let busStroke = StrokeStyle(
-    lineWidth: 5,
+    lineWidth: 7,
     lineCap: .round,
     lineJoin: .round
 )
