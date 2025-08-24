@@ -1,14 +1,14 @@
 //
-//  BusesRepository.swift
+//  RouteRepository.swift
 //  CyBus
 //
-//  Created by Vadim Popov on 22/08/2024.
+//  Created by Vadim Popov on 23/08/2025.
 //
 
 import Foundation
 import FactoryKit
 
-class BusesRepository: BusesRepositoryProtocol {
+class RouteRepository: RouteRepositoryProtocol {
     
     private let urlSession: URLSession
     private var appConfiguration: AppConfiguration
@@ -18,8 +18,15 @@ class BusesRepository: BusesRepositoryProtocol {
         self.appConfiguration = appConfiguration
     }
     
-    func fetchBuses() async throws -> [BusDTO] {
-        var request = URLRequest(url: appConfiguration.backendURL.appendingPathComponent("buses"))
+    func fetchRoute(for tripID: String) async throws -> RouteDTO {
+        var components = URLComponents(url: appConfiguration.backendURL.appendingPathComponent("routes"), resolvingAgainstBaseURL: false)!
+        components.queryItems = [
+            URLQueryItem(name: "tripId", value: tripID)
+        ]
+        guard let url = components.url else {
+            throw URLError(.badURL)
+        }
+        var request = URLRequest(url: url)
         request.httpMethod = "GET"
 
         let (data, response) = try await urlSession.data(for: request)
@@ -28,7 +35,7 @@ class BusesRepository: BusesRepositoryProtocol {
             throw URLError(.badServerResponse)
         }
         
-        let decoded = try JSONDecoder().decode([BusDTO].self, from: data)
+        let decoded = try JSONDecoder().decode(RouteDTO.self, from: data)
         return decoded
     }
     

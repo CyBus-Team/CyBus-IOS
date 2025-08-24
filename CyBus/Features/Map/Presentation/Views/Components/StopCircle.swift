@@ -13,7 +13,10 @@ struct StopCircle : View {
         ZStack {
             Circle()
                 .fill(color)
-                .frame(width: 11, height: 11)
+                .overlay(
+                    Circle().stroke(Color.white, lineWidth: 2)
+                )
+                .frame(width: 18, height: 18)
         }
         .shadow(radius: 3, x: 1, y: 1)
     }

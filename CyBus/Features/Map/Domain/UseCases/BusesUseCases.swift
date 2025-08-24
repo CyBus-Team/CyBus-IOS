@@ -9,18 +9,15 @@ import Foundation
 import CoreLocation
 import FactoryKit
 
-enum BusesUseCasesError: Error {
-    case routesIsEmpty
-}
-
 class BusesUseCases: BusesUseCasesProtocol {
+    private let clusteringThreshold: Distance = 50_000
     
     @Injected(\.busesRepository) var repository: BusesRepositoryProtocol
     
     func fetchClusters(from buses: [BusEntity], withDistance distance: Distance) -> [BusClusterEntity] {
         // If the map is zoomed in close (distance < 5 km), skip clustering and show individual buses
-        guard distance > 15000 else {
-            return buses.map { BusClusterEntity(id: $0.id ,buses: [$0]) }
+        guard distance > clusteringThreshold else {
+            return buses.map { BusClusterEntity(buses: [$0]) }
         }
         
         // Divide map into a virtual grid — the divisor controls cluster granularity
@@ -36,24 +33,13 @@ class BusesUseCases: BusesUseCasesProtocol {
             clusters[key, default: []].append(bus)
         }
         
-        return clusters.values.map { BusClusterEntity(id: $0.first?.id ?? UUID().uuidString, buses: $0) }
+        return clusters.values.map { BusClusterEntity( buses: $0) }
     }
     
     func fetchBuses() async throws -> [BusEntity] {
         do {
             let buses = try await repository.fetchBuses()
-            return buses.buses
-                .map {
-                    BusEntity(
-                        id: $0.value.label,
-                        routeID:$0.value.routeID,
-                        lineName:  $0.value.routeShortName,
-                        position: CLLocationCoordinate2D(
-                            latitude: CLLocationDegrees($0.value.latitude),
-                            longitude: CLLocationDegrees($0.value.longitude)
-                        )
-                    )
-                }
+            return buses.map { BusEntity.from(dto: $0) }
         } catch {
             throw error
         }

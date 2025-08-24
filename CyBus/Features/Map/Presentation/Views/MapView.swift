@@ -16,7 +16,7 @@ let footStroke = StrokeStyle(
     dash: [5, 5]
 )
 let busStroke = StrokeStyle(
-    lineWidth: 3,
+    lineWidth: 7,
     lineCap: .round,
     lineJoin: .round
 )
@@ -57,16 +57,17 @@ struct MapView: View {
                         UserAnnotation()
                         //MARK: Selected trip buses
                         if let selectedLines = searchStore.searchAddressResult.selectedTrip?.legs.compactMap({ $0.line }) {
-                            ForEach(busesStore.buses.filter { selectedLines.contains($0.lineName) } ) { bus in
+                            ForEach(busesStore.buses.filter { selectedLines.contains($0.shortLabel) } ) { bus in
                                 Annotation("", coordinate: bus.position, anchor: .bottom) {
                                     busItemView(for: bus, selectedBus: busesStore.selectedBus) {
                                         busesStore.send(.select(bus))
                                     }
                                 }
                             }
-                            //MARK: All buses
+                        //MARK: All buses
                         } else {
-                            ForEach(busesStore.clusters) { cluster in
+                            ForEach(busesStore.clusters.indices, id: \.self) { idx in
+                                let cluster = busesStore.clusters[idx]
                                 Annotation("", coordinate: cluster.coordinate, anchor: .bottom) {
                                     if cluster.buses.count == 1 {
                                         busItemView(for: cluster.buses[0], selectedBus: busesStore.selectedBus) {
@@ -87,21 +88,22 @@ struct MapView: View {
                         }
                         
                         //MARK: Stops and Shapes
-                        if busesStore.routes.hasSelectedRoute {
-                            let route = busesStore.routes.selectedRoute
+                        if busesStore.route.hasSelectedRoute {
+                            let route = busesStore.route.selectedRoute
                             let stops = route?.stops ?? []
-                            let shapes = route?.shapes ?? []
+                            let shape = route?.shape ?? []
                             
                             //MARK: Stops
-                            ForEach(stops) { stop in
-                                Annotation("", coordinate: stop.position) {
+                            ForEach(stops.indices, id: \.self) { idx in
+                                let stop = stops[idx]
+                                Annotation(stop.description, coordinate: stop.position) {
                                     StopCircle(color: theme.colors.primary).compositingGroup()
                                 }
                             }
-                            
+
                             //MARK: Shapes
                             MapPolyline(
-                                coordinates: shapes.map { shape in
+                                coordinates: shape.map { shape in
                                     shape.position
                                 }
                             )
@@ -146,11 +148,21 @@ struct MapView: View {
                     }
                     .mapStyle(.standard)
                     .mapControlVisibility(.visible)
-                    .onTapGesture { position in
-                        if let coordinate = proxy.convert(position, from: .local) {
-                            mapStore.send(.tapOnMap(coordinate))
-                        }
-                    }
+                    .gesture(
+                        LongPressGesture(minimumDuration: 0.5)
+                            .sequenced(before: DragGesture(minimumDistance: 0, coordinateSpace: .local))
+                            .onEnded { value in
+                                switch value {
+                                case .second(true, let drag?):
+                                    let location = drag.location
+                                    if let coordinate = proxy.convert(location, from: .local) {
+                                        mapStore.send(.tapOnMap(coordinate))
+                                    }
+                                default:
+                                    break
+                                }
+                            }
+                    )
                     .alert($mapStore.scope(state: \.alert, action: \.alert))
                 }
                 VStack {
@@ -165,11 +177,10 @@ struct MapView: View {
                     }
                     
                     Spacer()
-                    // MARK: Clear route button
-                    if let selectedBus = busesStore.selectedBus {
-                        ClearRouteButton(label: selectedBus.lineName) {
-                            busesStore.send(.clearSelection)
-                        }
+                    // MARK: Route info view
+                    if let selectedRoute = busesStore.route.selectedRoute, let _ = busesStore.selectedBus {
+                        routeInfoView(for: selectedRoute)
+                        .padding(8)
                     }
                 }
                 .padding(.bottom, 30)
@@ -215,6 +226,18 @@ struct MapView: View {
         .cornerRadius(14)
         .shadow(radius: 8)
         .padding(.horizontal)
+    }
+    
+    @ViewBuilder
+    func routeInfoView(for route: RouteEntity) -> some View {
+        RouteInfoView(
+            routeName: route.routeName,
+            routeNumber: route.routeNumber,
+            departureTime: route.departureTime,
+            arrivalTime: route.arrivalTime,
+        ) {
+            busesStore.send(.clearSelection)
+        }
     }
     
     @ViewBuilder

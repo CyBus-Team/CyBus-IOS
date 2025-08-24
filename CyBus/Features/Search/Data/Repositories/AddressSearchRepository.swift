@@ -6,33 +6,26 @@
 //
 
 import CoreLocation
+import FactoryKit
 
 class AddressSearchRepository: AddressSearchRepositoryProtocol {
     
-    public let cyprus = "cy"
-    public let format = "jsonv2"
-    public let layer = "address"
-    
     private let urlSession: URLSession
+    private var appConfiguration: AppConfiguration
     
-    
-    init(urlSession: URLSession = .shared) {
+    init(urlSession: URLSession = .shared, appConfiguration: AppConfiguration = Container.shared.appConfiguration()) {
         self.urlSession = urlSession
+        self.appConfiguration = appConfiguration
     }
     
     func fetch(query: String, userLocation: CLLocationCoordinate2D) async throws -> [SuggestionDTO] {
-        var components = URLComponents(string: "https://nominatim.openstreetmap.org/search.php")
-        
-        components?.queryItems = [
-            URLQueryItem(name: "q", value: query),
-            URLQueryItem(name: "countrycodes", value: cyprus),
-            URLQueryItem(name: "format", value: format),
-            URLQueryItem(name: "layer", value: layer)
+        var components = URLComponents(url: appConfiguration.backendURL.appendingPathComponent("autocomplete/search"), resolvingAgainstBaseURL: false)!
+        components.queryItems = [
+            URLQueryItem(name: "q", value: query)
         ]
-        guard let url = components?.url else {
+        guard let url = components.url else {
             throw AddressSearchRepositoryError.fetchFailed
         }
-
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         

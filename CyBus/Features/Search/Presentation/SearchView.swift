@@ -14,6 +14,7 @@ struct SearchView : View {
     @Bindable var store: StoreOf<SearchFeatures>
     @Bindable var addressSearchStore: StoreOf<AddressSearchFeature>
     @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
+    @Bindable var busesStore: StoreOf<BusesFeature>
     
     var body: some View {
         ZStack {
@@ -29,12 +30,12 @@ struct SearchView : View {
                 SearchCollapsedView(store: store)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                     .sheet(isPresented: $store.addressResultOpened) {
-                        AddressSearchResultView(store: addressResultStore)
+                        AddressSearchResultView(store: addressResultStore, busesStore: busesStore)
                             .presentationDragIndicator(.visible)
                             .presentationDetents([.fraction(0.2)])
                     }
                     .sheet(isPresented: $store.addressSearchOpened) {
-                        AddressSearchView(store: addressSearchStore)
+                        AddressSearchView(store: addressSearchStore, busesStore: busesStore)
                             .presentationDragIndicator(.visible)
                             .presentationDetents([.large])
                     }
@@ -56,5 +57,7 @@ struct SearchView : View {
         AddressSearchFeature()
     }, addressResultStore: Store(initialState: AddressSearchResultFeature.State()) {
         AddressSearchResultFeature()
+    },busesStore: Store(initialState: BusesFeature.State()) {
+        BusesFeature()
     })
 }

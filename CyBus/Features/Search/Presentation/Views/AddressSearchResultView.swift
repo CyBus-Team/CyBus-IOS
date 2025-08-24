@@ -13,6 +13,7 @@ struct AddressSearchResultView : View {
     @Environment(\.theme) var theme
     
     @Bindable var store: StoreOf<AddressSearchResultFeature>
+    @Bindable var busesStore: StoreOf<BusesFeature>
     
     var body: some View {
         if store.isLoading {
@@ -34,6 +35,8 @@ struct AddressSearchResultView : View {
                     PrimaryButton(
                         label: String(localized: "Get directions"),
                         action: {
+                            busesStore.send(.clearSelection)
+                            store.send(.onClose)
                             store.send(.onGetTrips)
                         },
                         isLoading: store.isTripsLoading,
@@ -46,6 +49,7 @@ struct AddressSearchResultView : View {
                             action: {
                                 store.send(.onReset)
                                 store.send(.onClose)
+                                busesStore.send(.clearSelection)
                             },
                             font: theme.typography.regular
                         )
@@ -60,15 +64,20 @@ struct AddressSearchResultView : View {
 }
 
 #Preview {
-    AddressSearchResultView(store: Store(initialState: AddressSearchResultFeature.State(
-        isLoading: false,
-        isTripsLoading: true,
-        suggestion: SuggestionEntity(
-            id: 1,
-            label: "My mall",
-            location: CLLocationCoordinate2D(latitude: 1, longitude: 1)
-        )
-    )) {
-        AddressSearchResultFeature()
-    })
+    AddressSearchResultView(
+        store: Store(initialState: AddressSearchResultFeature.State(
+            isLoading: false,
+            isTripsLoading: true,
+            suggestion: SuggestionEntity(
+                id: 1,
+                label: "My mall",
+                location: CLLocationCoordinate2D(latitude: 1, longitude: 1)
+            )
+        )) {
+            AddressSearchResultFeature()
+        },
+        busesStore: Store(initialState: BusesFeature.State()) {
+            BusesFeature()
+        }
+    )
 }

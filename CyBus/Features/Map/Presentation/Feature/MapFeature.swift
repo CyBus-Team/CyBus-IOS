@@ -76,7 +76,7 @@ struct MapFeature {
                     }
                 }
                 return .none
-            case .search(.searchAddressResult(.onGetTripsResponse(_))):
+            case .search(.searchAddressResult(.onClose)):
                 withAnimation(.easeInOut(duration: 1.0)) {
                     state.cameraPosition = .userLocation(followsHeading: true, fallback: .automatic)
                 }

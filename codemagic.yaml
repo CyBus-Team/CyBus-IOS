@@ -47,19 +47,6 @@ workflows:
 
     scripts:
 
-      - name: Generate static files
-
-        script: |
-          gem install rgeo -v 3.0.0
-          gem install dbf -v 4.2.4
-          gem install rgeo-shapefile -v 3.0.0
-          sh generate.sh
-
-      - name: Connect Sentry DSN
-
-        script: |
-          echo "SentryDSN=$SentryDSN" > CyBus/Config-Secret.xcconfig
-
       - name: Set up provisioning profiles settings on Xcode project
 
         script: xcode-project use-profiles

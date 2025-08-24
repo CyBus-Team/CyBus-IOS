@@ -7,12 +7,8 @@
 
 import CoreLocation
 
-struct BusClusterEntity: Identifiable, Equatable {
-    static func == (lhs: BusClusterEntity, rhs: BusClusterEntity) -> Bool {
-        lhs.id == rhs.id
-    }
+struct BusClusterEntity: Equatable {
     
-    let id: String
     let buses: [BusEntity]
 
     var coordinate: CLLocationCoordinate2D {

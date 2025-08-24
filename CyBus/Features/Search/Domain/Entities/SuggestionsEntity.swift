@@ -16,10 +16,7 @@ struct SuggestionEntity: Identifiable, Equatable {
     let location: CLLocationCoordinate2D
     
     static func from(dto: SuggestionDTO) -> SuggestionEntity? {
-        guard let latitude = Double(dto.lat), let longitude = Double(dto.lon) else {
-            return nil
-        }
-        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        return .init(id: dto.id, label: dto.displayName, location: location)
+        let location = CLLocationCoordinate2D(latitude: dto.lat, longitude: dto.lon)
+        return .init(id: dto.id, label: dto.name, location: location)
     }
 }

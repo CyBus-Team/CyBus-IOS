@@ -25,7 +25,7 @@ struct BusesFeature {
         var clusters: [BusClusterEntity] = []
 
         var selectedBus: BusEntity?
-        var routes = RoutesFeature.State()
+        var route = RouteFeature.State()
     }
     
     enum Action {
@@ -44,14 +44,14 @@ struct BusesFeature {
         
         case onDistanceChanged(Distance)
         
-        case routes(RoutesFeature.Action)
+        case route(RouteFeature.Action)
     }
     
     @Injected(\.busesUseCases) var busesUseCases: BusesUseCasesProtocol
     
     var body: some ReducerOf<Self> {
-        Scope(state: \.routes, action: \.routes) {
-            RoutesFeature()
+        Scope(state: \.route, action: \.route) {
+            RouteFeature()
         }
         Reduce { state, action in
             switch action {
@@ -102,12 +102,12 @@ struct BusesFeature {
                 state.selectedBus = nil
                 return .send(.selectResponse)
             case .selectResponse:
-                if let routeId = state.selectedBus?.routeID {
-                    return .send(.routes(.select(id: routeId)))
+                if let routeId = state.selectedBus?.routeId {
+                    return .send(.route(.fetchRoute(tripID: routeId)))
                 } else {
-                    return .send(.routes(.clearSelection))
+                    return .send(.route(.clearSelection))
                 }
-            case .routes(_):
+            case .route(_):
                 return .none
             case let .onDistanceChanged(distance):
                 if (distance.rounded() != state.distance.rounded()) {
