@@ -35,6 +35,10 @@ class RouteUseCases : RouteUseCasesProtocol {
                         position: CLLocationCoordinate2D(latitude: $0.lat, longitude: $0.lon),
                     )
                 },
+                arrivalTime: dto.arrivalTime,
+                departureTime: dto.departureTime,
+                routeName: dto.routeName,
+                routeNumber: dto.routeNumber,
             )
         } catch {
             throw error

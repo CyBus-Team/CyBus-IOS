@@ -177,11 +177,10 @@ struct MapView: View {
                     }
                     
                     Spacer()
-                    // MARK: Clear route button
-                    if let selectedBus = busesStore.selectedBus {
-                        ClearRouteButton(label: selectedBus.shortLabel) {
-                            busesStore.send(.clearSelection)
-                        }
+                    // MARK: Route info view
+                    if let selectedRoute = busesStore.route.selectedRoute, let _ = busesStore.selectedBus {
+                        routeInfoView(for: selectedRoute)
+                        .padding(8)
                     }
                 }
                 .padding(.bottom, 30)
@@ -227,6 +226,18 @@ struct MapView: View {
         .cornerRadius(14)
         .shadow(radius: 8)
         .padding(.horizontal)
+    }
+    
+    @ViewBuilder
+    func routeInfoView(for route: RouteEntity) -> some View {
+        RouteInfoView(
+            routeName: route.routeName,
+            routeNumber: route.routeNumber,
+            departureTime: route.departureTime,
+            arrivalTime: route.arrivalTime,
+        ) {
+            busesStore.send(.clearSelection)
+        }
     }
     
     @ViewBuilder

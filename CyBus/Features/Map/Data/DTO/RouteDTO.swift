@@ -10,6 +10,10 @@ struct RouteDTO: Codable {
     let firstStop: StopDTO
     let lastStop: StopDTO
     let shape: [ShapePointDTO]
+    let arrivalTime: String
+    let departureTime: String
+    let routeName: String
+    let routeNumber: String
 }
 
 struct StopDTO: Codable {

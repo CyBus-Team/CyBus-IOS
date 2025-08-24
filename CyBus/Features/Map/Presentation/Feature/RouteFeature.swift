@@ -53,6 +53,7 @@ struct RouteFeature {
                 return .none
             case .clearSelection:
                 state.hasSelectedRoute.toggle()
+                state.selectedRoute = nil
                 return .none
             }
         }

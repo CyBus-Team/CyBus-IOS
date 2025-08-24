@@ -13,6 +13,10 @@ struct RouteEntity: Equatable {
     let firstStop: StopEntity
     let lastStop: StopEntity
     let shape: [ShapeEntity]
+    let arrivalTime: String
+    let departureTime: String
+    let routeName: String
+    let routeNumber: String
 }
 
 struct StopEntity: Equatable {
