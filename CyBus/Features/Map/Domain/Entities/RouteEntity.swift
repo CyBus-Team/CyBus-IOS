@@ -8,29 +8,28 @@
 import Foundation
 import CoreLocation
 
-struct RouteEntity : Identifiable, Equatable {
-    let routeId: String
-    let shapes: [ShapeEntity]
+struct RouteEntity: Equatable {
     let stops: [StopEntity]
-    
-    var id : String { routeId }
+    let firstStop: StopEntity
+    let lastStop: StopEntity
+    let shape: [ShapeEntity]
 }
 
-struct StopEntity : Identifiable, Equatable {
+struct StopEntity: Equatable {
+    let description: String
+    let position: CLLocationCoordinate2D
+    
     static func == (lhs: StopEntity, rhs: StopEntity) -> Bool {
-        lhs.id == rhs.id
+        lhs.position.latitude == rhs.position.latitude &&
+        lhs.position.longitude == rhs.position.longitude
     }
-    
-    let id: String
-    let position: CLLocationCoordinate2D
 }
 
-struct ShapeEntity : Identifiable, Equatable {
-    static func == (lhs: ShapeEntity, rhs: ShapeEntity) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    let id: String
+struct ShapeEntity: Equatable {
     let position: CLLocationCoordinate2D
-    let sequence: Int
+    
+    static func == (lhs: ShapeEntity, rhs: ShapeEntity) -> Bool {
+        lhs.position.latitude == rhs.position.latitude &&
+        lhs.position.longitude == rhs.position.longitude
+    }
 }

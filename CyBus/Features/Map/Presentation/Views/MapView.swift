@@ -87,21 +87,22 @@ struct MapView: View {
                         }
                         
                         //MARK: Stops and Shapes
-                        if busesStore.routes.hasSelectedRoute {
-                            let route = busesStore.routes.selectedRoute
+                        if busesStore.route.hasSelectedRoute {
+                            let route = busesStore.route.selectedRoute
                             let stops = route?.stops ?? []
-                            let shapes = route?.shapes ?? []
+                            let shape = route?.shape ?? []
                             
                             //MARK: Stops
-                            ForEach(stops) { stop in
-                                Annotation("", coordinate: stop.position) {
+                            ForEach(stops.indices, id: \.self) { idx in
+                                let stop = stops[idx]
+                                Annotation(stop.description, coordinate: stop.position) {
                                     StopCircle(color: theme.colors.primary).compositingGroup()
                                 }
                             }
-                            
+
                             //MARK: Shapes
                             MapPolyline(
-                                coordinates: shapes.map { shape in
+                                coordinates: shape.map { shape in
                                     shape.position
                                 }
                             )

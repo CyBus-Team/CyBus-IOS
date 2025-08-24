@@ -15,6 +15,6 @@ struct AppConfiguration {
 
 extension Container {
     var appConfiguration: Factory<AppConfiguration> {
-        self { AppConfiguration(backendURL: URL(string: "https://cyprusbus.info/")!, language: "en") }
+        self { AppConfiguration(backendURL: URL(string: "https://api.cybusapp.org/")!, language: "en") }
     }
 }
