@@ -14,6 +14,8 @@ struct AddressSearchView: View {
     @FocusState private var isFocused: Bool
 
     @Bindable var store: StoreOf<AddressSearchFeature>
+    @Bindable var busesStore: StoreOf<BusesFeature>
+    
     var body: some View {
         VStack(
             alignment: { () -> HorizontalAlignment in
@@ -84,6 +86,7 @@ struct AddressSearchView: View {
                 List(store.suggestions) { suggestion in
                     Text(suggestion.label)
                         .onTapGesture {
+                            busesStore.send(.clearSelection)
                             store.send(.onSelect(suggestion))
                         }
                 }
@@ -109,6 +112,9 @@ struct AddressSearchView: View {
             reducer: {
                 AddressSearchFeature()
             }
-        )
+        ),
+        busesStore: Store(initialState: BusesFeature.State()) {
+            BusesFeature()
+        }
     )
 }

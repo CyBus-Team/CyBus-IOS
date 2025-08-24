@@ -29,7 +29,8 @@ struct HomeView: View {
                 SearchView(
                     store: mapStore.scope(state: \.search, action: \.search),
                     addressSearchStore: mapStore.scope(state: \.search, action: \.search).scope(state: \.searchAddress, action: \.searchAddress),
-                    addressResultStore: mapStore.scope(state: \.search, action: \.search).scope(state: \.searchAddressResult, action: \.searchAddressResult)
+                    addressResultStore: mapStore.scope(state: \.search, action: \.search).scope(state: \.searchAddressResult, action: \.searchAddressResult),
+                    busesStore: busesStore,
                 )
             }
         }
