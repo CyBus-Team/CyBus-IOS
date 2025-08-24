@@ -6,29 +6,27 @@
 //
 
 struct BusDTO: Codable {
+    let vehicleId: String
+    let routeId: String
     let label: String
     let latitude: Double
     let longitude: Double
-    let bearing: Double
-    let startTime: String
-    let speedKmPerHour: Double
-    let tripID: String
-    let routeID: String
-    let routeShortName: String
-    let routeLongName: String
-    let receivedFromBusAt: String
+    let timestamp: TimestampDTO
+    let shortLabel: String
 
     enum CodingKeys: String, CodingKey {
-        case label = "Label"
-        case latitude = "Latitude"
-        case longitude = "Longitude"
-        case bearing = "Bearing"
-        case startTime = "StartTime"
-        case speedKmPerHour = "SpeedKmPerHour"
-        case tripID = "TripID"
-        case routeID = "RouteID"
-        case routeShortName = "RouteShortName"
-        case routeLongName = "RouteLongName"
-        case receivedFromBusAt = "ReceivedFromBusAt"
+        case vehicleId
+        case routeId
+        case label
+        case latitude
+        case longitude
+        case timestamp
+        case shortLabel
     }
+}
+
+struct TimestampDTO: Codable {
+    let low: Int
+    let high: Int
+    let unsigned: Bool
 }

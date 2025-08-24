@@ -102,8 +102,8 @@ struct BusesFeature {
                 state.selectedBus = nil
                 return .send(.selectResponse)
             case .selectResponse:
-                if let tripID = state.selectedBus?.routeID {
-                    return .send(.route(.fetchRoute(tripID: tripID)))
+                if let routeId = state.selectedBus?.routeId {
+                    return .send(.route(.fetchRoute(tripID: routeId)))
                 } else {
                     return .send(.route(.clearSelection))
                 }

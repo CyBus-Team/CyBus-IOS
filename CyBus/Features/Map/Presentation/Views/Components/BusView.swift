@@ -21,7 +21,7 @@ struct BusView: View {
     
     var body: some View {
         VStack {
-            Text(bus.lineName)
+            Text(bus.shortLabel)
                 .frame(width: 36)
                 .foregroundColor(.white)
                 .font(.caption)

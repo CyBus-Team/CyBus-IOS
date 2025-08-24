@@ -57,16 +57,17 @@ struct MapView: View {
                         UserAnnotation()
                         //MARK: Selected trip buses
                         if let selectedLines = searchStore.searchAddressResult.selectedTrip?.legs.compactMap({ $0.line }) {
-                            ForEach(busesStore.buses.filter { selectedLines.contains($0.lineName) } ) { bus in
+                            ForEach(busesStore.buses.filter { selectedLines.contains($0.shortLabel) } ) { bus in
                                 Annotation("", coordinate: bus.position, anchor: .bottom) {
                                     busItemView(for: bus, selectedBus: busesStore.selectedBus) {
                                         busesStore.send(.select(bus))
                                     }
                                 }
                             }
-                            //MARK: All buses
+                        //MARK: All buses
                         } else {
-                            ForEach(busesStore.clusters) { cluster in
+                            ForEach(busesStore.clusters.indices, id: \.self) { idx in
+                                let cluster = busesStore.clusters[idx]
                                 Annotation("", coordinate: cluster.coordinate, anchor: .bottom) {
                                     if cluster.buses.count == 1 {
                                         busItemView(for: cluster.buses[0], selectedBus: busesStore.selectedBus) {
@@ -168,7 +169,7 @@ struct MapView: View {
                     Spacer()
                     // MARK: Clear route button
                     if let selectedBus = busesStore.selectedBus {
-                        ClearRouteButton(label: selectedBus.lineName) {
+                        ClearRouteButton(label: selectedBus.shortLabel) {
                             busesStore.send(.clearSelection)
                         }
                     }

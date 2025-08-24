@@ -18,8 +18,8 @@ class BusesRepository: BusesRepositoryProtocol {
         self.appConfiguration = appConfiguration
     }
     
-    func fetchBuses() async throws -> BusesDTO {
-        var request = URLRequest(url: appConfiguration.backendURL.appendingPathComponent("api/buses"))
+    func fetchBuses() async throws -> [BusDTO] {
+        var request = URLRequest(url: appConfiguration.backendURL.appendingPathComponent("buses"))
         request.httpMethod = "GET"
 
         let (data, response) = try await urlSession.data(for: request)
@@ -28,7 +28,7 @@ class BusesRepository: BusesRepositoryProtocol {
             throw URLError(.badServerResponse)
         }
         
-        let decoded = try JSONDecoder().decode(BusesDTO.self, from: data)
+        let decoded = try JSONDecoder().decode([BusDTO].self, from: data)
         return decoded
     }
     

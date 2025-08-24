@@ -7,6 +7,6 @@
 
 protocol BusesRepositoryProtocol {
     
-    func fetchBuses() async throws -> BusesDTO
+    func fetchBuses() async throws -> [BusDTO]
     
 }

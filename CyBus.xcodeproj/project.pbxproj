@@ -64,7 +64,6 @@
 		947443E62DE1FF5800305EAF /* ActiveTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947443E52DE1FF4700305EAF /* ActiveTripView.swift */; };
 		947443E72DE1FF5800305EAF /* ActiveTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947443E52DE1FF4700305EAF /* ActiveTripView.swift */; };
 		947443EA2DE207FC00305EAF /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 947443E92DE207FC00305EAF /* FactoryKit */; };
-		9485253B2D948891008EB3A0 /* BusesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485253A2D94888A008EB3A0 /* BusesDTO.swift */; };
 		9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525472D949656008EB3A0 /* BusesRepository.swift */; };
 		9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485254C2D9496FF008EB3A0 /* BusDTO.swift */; };
 		948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */; };
@@ -110,7 +109,6 @@
 		94B130412DB832240017C201 /* BusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525472D949656008EB3A0 /* BusesRepository.swift */; };
 		94B130422DB832240017C201 /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusView.swift */; };
 		94B130442DB832240017C201 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
-		94B130452DB832240017C201 /* BusesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485253A2D94888A008EB3A0 /* BusesDTO.swift */; };
 		94B130462DB832240017C201 /* RouteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF0DC52C7CF956002FE41B /* RouteEntity.swift */; };
 		94B130472DB832240017C201 /* RouteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435C9092CF334C50041A986 /* RouteFeature.swift */; };
 		94B130482DB832240017C201 /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945843A82CD1885F006D9893 /* MapFeature.swift */; };
@@ -253,7 +251,6 @@
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		947443E52DE1FF4700305EAF /* ActiveTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTripView.swift; sourceTree = "<group>"; };
-		9485253A2D94888A008EB3A0 /* BusesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesDTO.swift; sourceTree = "<group>"; };
 		948525472D949656008EB3A0 /* BusesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesRepository.swift; sourceTree = "<group>"; };
 		9485254C2D9496FF008EB3A0 /* BusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDTO.swift; sourceTree = "<group>"; };
 		948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationDI.swift; sourceTree = "<group>"; };
@@ -624,7 +621,6 @@
 			children = (
 				94FEF2F82E5A86E900E186DD /* RouteDTO.swift */,
 				9485254C2D9496FF008EB3A0 /* BusDTO.swift */,
-				9485253A2D94888A008EB3A0 /* BusesDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -1202,7 +1198,6 @@
 				94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */,
 				942F51DC2D9F127F007F6F7D /* RouteDI.swift in Sources */,
 				9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */,
-				9485253B2D948891008EB3A0 /* BusesDTO.swift in Sources */,
 				94CE030A2DB5AC12004C3CE8 /* PathTips.swift in Sources */,
 				948CBE612CF23066006C8B1C /* BusesFeature.swift in Sources */,
 				AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */,
@@ -1301,7 +1296,6 @@
 				94B130412DB832240017C201 /* BusesRepository.swift in Sources */,
 				94B130422DB832240017C201 /* BusView.swift in Sources */,
 				94B130442DB832240017C201 /* MapView.swift in Sources */,
-				94B130452DB832240017C201 /* BusesDTO.swift in Sources */,
 				9457A61E2DCD29DE00DDD471 /* RootMocks.swift in Sources */,
 				94B130462DB832240017C201 /* RouteEntity.swift in Sources */,
 				94B130472DB832240017C201 /* RouteFeature.swift in Sources */,
