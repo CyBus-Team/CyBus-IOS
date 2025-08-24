@@ -30,7 +30,7 @@ struct SearchView : View {
                 SearchCollapsedView(store: store)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                     .sheet(isPresented: $store.addressResultOpened) {
-                        AddressSearchResultView(store: addressResultStore)
+                        AddressSearchResultView(store: addressResultStore, busesStore: busesStore)
                             .presentationDragIndicator(.visible)
                             .presentationDetents([.fraction(0.2)])
                     }

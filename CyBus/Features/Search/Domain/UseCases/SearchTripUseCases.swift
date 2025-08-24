@@ -29,7 +29,7 @@ class SearchTripUseCases: SearchTripUseCasesProtocol {
         do {
             let now = Date()
             let dto = try await repository.fetchTrips(from: from, to: to, date: now)
-            let trips = dto.data.trip.tripPatterns.map { trip in
+            let trips = dto.map { trip in
                 SearchTripEntity(
                     id: UUID().uuidString,
                     duration: durationFromSeconds(trip.duration),

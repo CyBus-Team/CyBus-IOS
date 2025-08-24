@@ -20,70 +20,21 @@ class SearchTripRepository: SearchTripRepositoryProtocol {
     }
     
     func fetchTrips(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D, date: Date) async throws -> TripResponseDTO {
-        var request = URLRequest(url: appConfiguration.backendURL.appendingPathComponent("api/v2/otp/transmodel/v3"))
-        request.httpMethod = "POST"
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
-        // TODO: Add GraphQL client
-        let body: [String: Any] = [
-            "query": """
-            query trip($from: Location!, $to : Location!, $arriveBy: Boolean, $dateTime: DateTime, $numTripPatterns: Int, $searchWindow: Int, $modes: Modes, $itineraryFiltersDebug: ItineraryFilterDebugProfile, $pageCursor: String) {
-              trip(
-                from: $from
-                to: $to
-                arriveBy: $arriveBy
-                dateTime: $dateTime
-                numTripPatterns: $numTripPatterns
-                searchWindow: $searchWindow
-                modes: $modes
-                itineraryFilters: {debug: $itineraryFiltersDebug}
-                pageCursor: $pageCursor
-              ) {
-                previousPageCursor
-                nextPageCursor
-                tripPatterns {
-                  aimedStartTime
-                  aimedEndTime
-                  expectedEndTime
-                  expectedStartTime
-                  duration
-                  distance
-                  legs {
-                    id
-                    mode
-                    aimedStartTime
-                    aimedEndTime
-                    expectedEndTime
-                    expectedStartTime
-                    realtime
-                    distance
-                    duration
-                    fromPlace { name quay { id } }
-                    toPlace { name quay { id } }
-                    toEstimatedCall { destinationDisplay { frontText } }
-                    line { publicCode name id }
-                    authority { name id }
-                    pointsOnLink { points }
-                    interchangeTo { staySeated }
-                    interchangeFrom { staySeated }
-                  }
-                  systemNotices { tag }
-                }
-              }
-            }
-            """,
-            "variables": [
-                "from": ["coordinates": ["latitude": from.latitude, "longitude": from.longitude]],
-                "to": ["coordinates": ["latitude": to.latitude, "longitude": to.longitude]],
-                "dateTime": ISO8601DateFormatter().string(from: date),
-                "numTripPatterns": 4
-            ],
-            "operationName": "trip"
+        var components = URLComponents(url: appConfiguration.backendURL.appendingPathComponent("trip"), resolvingAgainstBaseURL: false)!
+        components.queryItems = [
+            URLQueryItem(name: "fromLatitude", value: String(from.latitude)),
+            URLQueryItem(name: "fromLongitude", value: String(from.longitude)),
+            URLQueryItem(name: "toLongitude", value: String(to.longitude)),
+            URLQueryItem(name: "toLatitude", value: String(to.latitude)),
+            URLQueryItem(name: "dateTime", value: date.ISO8601Format()),
         ]
         
-        request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
+        guard let url = components.url else {
+            throw URLError(.badURL)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         
         let (data, response) = try await urlSession.data(for: request)
         
