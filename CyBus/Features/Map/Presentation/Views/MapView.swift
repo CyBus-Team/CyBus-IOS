@@ -16,7 +16,7 @@ let footStroke = StrokeStyle(
     dash: [5, 5]
 )
 let busStroke = StrokeStyle(
-    lineWidth: 3,
+    lineWidth: 5,
     lineCap: .round,
     lineJoin: .round
 )
@@ -148,11 +148,21 @@ struct MapView: View {
                     }
                     .mapStyle(.standard)
                     .mapControlVisibility(.visible)
-                    .onTapGesture { position in
-                        if let coordinate = proxy.convert(position, from: .local) {
-                            mapStore.send(.tapOnMap(coordinate))
-                        }
-                    }
+                    .gesture(
+                        LongPressGesture(minimumDuration: 0.5)
+                            .sequenced(before: DragGesture(minimumDistance: 0, coordinateSpace: .local))
+                            .onEnded { value in
+                                switch value {
+                                case .second(true, let drag?):
+                                    let location = drag.location
+                                    if let coordinate = proxy.convert(location, from: .local) {
+                                        mapStore.send(.tapOnMap(coordinate))
+                                    }
+                                default:
+                                    break
+                                }
+                            }
+                    )
                     .alert($mapStore.scope(state: \.alert, action: \.alert))
                 }
                 VStack {
