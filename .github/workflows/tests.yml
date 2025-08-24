@@ -19,22 +19,6 @@ jobs:
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '16.0.0'
-    
-      # Set secrets
-      - name: Create Config-Secret.xcconfig
-        run: |
-          echo "SentryDSN=${{ secrets.SENTRY_DSN }}" > CyBus/Config-Secret.xcconfig
-
-      # Setup gems for generator
-      - name: Install gems
-        run: |
-          gem install rgeo -v 3.0.0
-          gem install dbf -v 4.2.4
-          gem install rgeo-shapefile -v 3.0.0
-      
-      # Static files generator
-      - name: Generate files
-        run: sh generate.sh
 
       # Run tests
       - name: Run tests
