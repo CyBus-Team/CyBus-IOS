@@ -6,5 +6,5 @@
 //
 protocol RateUsUseCasesProtocol {
     func finished()
-    func needToShow() -> Bool
+    func isShownBefore() -> Bool
 }

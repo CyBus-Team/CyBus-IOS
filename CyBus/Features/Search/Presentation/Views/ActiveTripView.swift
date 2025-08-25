@@ -12,7 +12,10 @@ import SwiftUI
 struct ActiveTripView: View {
     let title: String
     let arrivalTime: Date
-    let onFinish: () -> Void
+    let store: StoreOf<RootFeature> = Store(initialState: RootFeature.State()) {
+        RootFeature()
+    }
+    let onFinish = RateUSView()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -33,7 +36,7 @@ struct ActiveTripView: View {
                 Spacer()
             }
             
-            Button(action: onFinish) {
+            Button(action: store.) {
                 Text("Finish")
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity)
@@ -52,26 +55,6 @@ struct ActiveTripView: View {
     }
 }
 
-func CheckRateUsNeeded() {
-    @Bindable var store: StoreOf<RateUsFeatures>
-    @Injected(\.rateUsUseCases) var rateUsUseCases: RateUsUseCasesProtocol
-    
-//    UserDefaults.standard.removePersistentDomain(forName: "isShown")
-//    print(UserDefaults.standard.bool(forKey: RateUsFeatures.rateUsKey))
-    
-    let rateUsShowed = false
-//    print(rateUsShowed)
-    
-    var body: some View {
-        ZStack {
-            if rateUsShowed == false {
-                RateUsView(store: store)
-            }
-        }
-    }
-    
-  
-}
 
 #Preview {
     ActiveTripView(

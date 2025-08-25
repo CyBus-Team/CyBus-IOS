@@ -7,7 +7,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct RateUsView: View {
+struct RateUsMainView: View {
     @Bindable var store: StoreOf<RateUsFeatures>
 
     var label = "Rate us"

@@ -5,11 +5,17 @@
 //  Created by Artem on 28. 7. 2025..
 //
 import ComposableArchitecture
+import FactoryKit
 
 @Reducer
 struct RateUsFeatures {
     
     static let rateUsKey = "isShown"
+    
+    enum Page {
+        case home
+        case rateUs
+    }
  
     @ObservableState
     struct State {
@@ -18,10 +24,7 @@ struct RateUsFeatures {
         var isShown: Bool = false
         var text: String = ""
         var rate: Int = 4
-        
-        // Futures
-//        var page: .home;
-        
+        var page = Page.rateUs
     }
     
     enum Action {
@@ -31,13 +34,16 @@ struct RateUsFeatures {
     }
     
     var body: some ReducerOf<Self> {
+        
+        @Injected(\.rateUsUseCases) var rateUsUseCases: RateUsUseCasesProtocol
       
         Reduce { state, action in
             switch action {
                
             case .initAppState:
-                
-                
+                let isShownBefore = rateUsUseCases.isShownBefore()
+                state.page = isShownBefore ? .rateUs : .home
+                return .none
             case .onSubmit:
                 if state.rate < 3 {  
                 }
@@ -47,6 +53,7 @@ struct RateUsFeatures {
                 return .none
             case .onDismiss:
                 state.isShown = true
+                state.page = .home
                 return .none
             }
         }

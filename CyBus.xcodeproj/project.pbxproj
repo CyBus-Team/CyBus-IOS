@@ -184,9 +184,11 @@
 		94FEF2FD2E5A897200E186DD /* RouteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FEF2FB2E5A897200E186DD /* RouteRepository.swift */; };
 		AC1D3FA12D26B1D70005D3EE /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusView.swift */; };
 		AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3FA52D270DF70005D3EE /* StopCircle.swift */; };
+		AC57DD432E5CEAAB00C428B6 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57DD422E5CEAAB00C428B6 /* RateUsView.swift */; };
+		AC57DD442E5CEAAB00C428B6 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57DD422E5CEAAB00C428B6 /* RateUsView.swift */; };
 		AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894B962CE4CB90001A660C /* BusMarker.swift */; };
-		AC96113F2E416D65009BAB93 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96113E2E416D5C009BAB93 /* RateUsView.swift */; };
-		AC9611402E416D65009BAB93 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96113E2E416D5C009BAB93 /* RateUsView.swift */; };
+		AC96113F2E416D65009BAB93 /* RateUsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */; };
+		AC9611402E416D65009BAB93 /* RateUsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */; };
 		AC9611422E416DC1009BAB93 /* RateUsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9611412E416DB2009BAB93 /* RateUsFeature.swift */; };
 		AC9611432E416DC1009BAB93 /* RateUsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9611412E416DB2009BAB93 /* RateUsFeature.swift */; };
 		ACBEE2142D4FA9D700C1A753 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */; };
@@ -310,8 +312,9 @@
 		94FEF2FB2E5A897200E186DD /* RouteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRepository.swift; sourceTree = "<group>"; };
 		AC1D3F9E2D26B1D70005D3EE /* BusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusView.swift; sourceTree = "<group>"; };
 		AC1D3FA52D270DF70005D3EE /* StopCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCircle.swift; sourceTree = "<group>"; };
+		AC57DD422E5CEAAB00C428B6 /* RateUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsView.swift; sourceTree = "<group>"; };
 		AC894B962CE4CB90001A660C /* BusMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarker.swift; sourceTree = "<group>"; };
-		AC96113E2E416D5C009BAB93 /* RateUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsView.swift; sourceTree = "<group>"; };
+		AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsMainView.swift; sourceTree = "<group>"; };
 		AC9611412E416DB2009BAB93 /* RateUsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsFeature.swift; sourceTree = "<group>"; };
 		ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1093,7 +1096,8 @@
 			isa = PBXGroup;
 			children = (
 				AC9611412E416DB2009BAB93 /* RateUsFeature.swift */,
-				AC96113E2E416D5C009BAB93 /* RateUsView.swift */,
+				AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */,
+				AC57DD422E5CEAAB00C428B6 /* RateUsView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -1283,7 +1287,7 @@
 				947443E72DE1FF5800305EAF /* ActiveTripView.swift in Sources */,
 				AC175DCE2E421A1700141D5E /* RateUsUseCasesProtocol.swift in Sources */,
 				AC175DC22E42175300141D5E /* RateUsRepository.swift in Sources */,
-				AC9611402E416D65009BAB93 /* RateUsView.swift in Sources */,
+				AC9611402E416D65009BAB93 /* RateUsMainView.swift in Sources */,
 				948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */,
 				9432A1802D4FB19E00E05BCB /* ClearNodesButton.swift in Sources */,
 				94575D812D23346100CC3C03 /* AddressSearchRepositoryProtocol.swift in Sources */,
@@ -1347,7 +1351,7 @@
 				94B1303E2DB831DB0017C201 /* HomeView.swift in Sources */,
 				94FEF2F92E5A86EC00E186DD /* RouteDTO.swift in Sources */,
 				945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */,
-				AC96113F2E416D65009BAB93 /* RateUsView.swift in Sources */,
+				AC96113F2E416D65009BAB93 /* RateUsMainView.swift in Sources */,
 				AC175DCB2E421A0900141D5E /* RateUsUseCases.swift in Sources */,
 				944494792CCE417E00A616E2 /* LocationUseCases.swift in Sources */,
 				94B1303F2DB832240017C201 /* BusesUseCasesProtocol.swift in Sources */,
@@ -1405,6 +1409,7 @@
 				94B130662DB832370017C201 /* AddressSearchResultView.swift in Sources */,
 				94B130672DB832370017C201 /* SearchDI.swift in Sources */,
 				AC175DD02E421E5A00141D5E /* RateUsDI.swift in Sources */,
+				AC57DD432E5CEAAB00C428B6 /* RateUsView.swift in Sources */,
 				94B130682DB832370017C201 /* SearchTripRepositoryProtocol.swift in Sources */,
 				947443E62DE1FF5800305EAF /* ActiveTripView.swift in Sources */,
 				94B130692DB832370017C201 /* AddressSearchFeature.swift in Sources */,
