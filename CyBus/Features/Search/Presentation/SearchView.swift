@@ -22,7 +22,8 @@ struct SearchView : View {
                 ActiveTripView(
                     title: "Your location -> Destination",
                     arrivalTime: selectedTrip.endTime
-                ) {
+                )
+                {
                     store.send(.onReset)
                 }
                 .transition(.move(edge: .bottom).combined(with: .opacity))

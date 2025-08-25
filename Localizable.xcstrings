@@ -455,6 +455,9 @@
         }
       }
     },
+    "Rate us please..." : {
+
+    },
     "Search here" : {
       "localizations" : {
         "el-CY" : {
@@ -544,6 +547,9 @@
           }
         }
       }
+    },
+    "Submit" : {
+
     },
     "This will only take a few seconds" : {
       "localizations" : {

@@ -5,6 +5,8 @@
 //  Created by Vadim Popov on 24/05/2025.
 //
 
+import ComposableArchitecture
+import FactoryKit
 import SwiftUI
 
 struct ActiveTripView: View {
@@ -48,6 +50,27 @@ struct ActiveTripView: View {
     private var formattedArrivalTime: String {
         arrivalTime.formatted(date: .omitted, time: .shortened)
     }
+}
+
+func CheckRateUsNeeded() {
+    @Bindable var store: StoreOf<RateUsFeatures>
+    @Injected(\.rateUsUseCases) var rateUsUseCases: RateUsUseCasesProtocol
+    
+//    UserDefaults.standard.removePersistentDomain(forName: "isShown")
+//    print(UserDefaults.standard.bool(forKey: RateUsFeatures.rateUsKey))
+    
+    let rateUsShowed = false
+//    print(rateUsShowed)
+    
+    var body: some View {
+        ZStack {
+            if rateUsShowed == false {
+                RateUsView(store: store)
+            }
+        }
+    }
+    
+  
 }
 
 #Preview {
