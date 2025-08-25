@@ -65,6 +65,21 @@
 		947443E72DE1FF5800305EAF /* ActiveTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947443E52DE1FF4700305EAF /* ActiveTripView.swift */; };
 		947443EA2DE207FC00305EAF /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 947443E92DE207FC00305EAF /* FactoryKit */; };
 		947790F82E5BC683003CCC62 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 947790F72E5BC683003CCC62 /* GoogleMobileAds */; };
+		947791012E5D094B003CCC62 /* AdvertisingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791002E5D0947003CCC62 /* AdvertisingFeature.swift */; };
+		947791022E5D094B003CCC62 /* AdvertisingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791002E5D0947003CCC62 /* AdvertisingFeature.swift */; };
+		947791052E5D0F74003CCC62 /* AdvertisingUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791042E5D0F6A003CCC62 /* AdvertisingUseCasesProtocol.swift */; };
+		947791062E5D0F74003CCC62 /* AdvertisingUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791042E5D0F6A003CCC62 /* AdvertisingUseCasesProtocol.swift */; };
+		947791082E5D0FA3003CCC62 /* GoogleAdsUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791072E5D0F90003CCC62 /* GoogleAdsUseCases.swift */; };
+		947791092E5D0FA3003CCC62 /* GoogleAdsUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791072E5D0F90003CCC62 /* GoogleAdsUseCases.swift */; };
+		9477910B2E5D16B0003CCC62 /* AdvertisingDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477910A2E5D16B0003CCC62 /* AdvertisingDI.swift */; };
+		9477910C2E5D16B0003CCC62 /* AdvertisingDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477910A2E5D16B0003CCC62 /* AdvertisingDI.swift */; };
+		9477910F2E5D1E97003CCC62 /* GoogleUserMessagingPlatform in Frameworks */ = {isa = PBXBuildFile; productRef = 9477910E2E5D1E97003CCC62 /* GoogleUserMessagingPlatform */; };
+		947791142E5D230B003CCC62 /* ConsentsUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791132E5D22FC003CCC62 /* ConsentsUseCasesProtocol.swift */; };
+		947791152E5D230B003CCC62 /* ConsentsUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791132E5D22FC003CCC62 /* ConsentsUseCasesProtocol.swift */; };
+		947791172E5D2361003CCC62 /* UmpUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791162E5D2359003CCC62 /* UmpUseCases.swift */; };
+		947791182E5D2361003CCC62 /* UmpUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791162E5D2359003CCC62 /* UmpUseCases.swift */; };
+		9477911A2E5D236B003CCC62 /* AttUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791192E5D2364003CCC62 /* AttUseCases.swift */; };
+		9477911B2E5D236B003CCC62 /* AttUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791192E5D2364003CCC62 /* AttUseCases.swift */; };
 		9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525472D949656008EB3A0 /* BusesRepository.swift */; };
 		9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485254C2D9496FF008EB3A0 /* BusDTO.swift */; };
 		948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */; };
@@ -252,6 +267,13 @@
 		945843A82CD1885F006D9893 /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		945843AA2CD19236006D9893 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		947443E52DE1FF4700305EAF /* ActiveTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTripView.swift; sourceTree = "<group>"; };
+		947791002E5D0947003CCC62 /* AdvertisingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingFeature.swift; sourceTree = "<group>"; };
+		947791042E5D0F6A003CCC62 /* AdvertisingUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingUseCasesProtocol.swift; sourceTree = "<group>"; };
+		947791072E5D0F90003CCC62 /* GoogleAdsUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdsUseCases.swift; sourceTree = "<group>"; };
+		9477910A2E5D16B0003CCC62 /* AdvertisingDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingDI.swift; sourceTree = "<group>"; };
+		947791132E5D22FC003CCC62 /* ConsentsUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentsUseCasesProtocol.swift; sourceTree = "<group>"; };
+		947791162E5D2359003CCC62 /* UmpUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmpUseCases.swift; sourceTree = "<group>"; };
+		947791192E5D2364003CCC62 /* AttUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttUseCases.swift; sourceTree = "<group>"; };
 		948525472D949656008EB3A0 /* BusesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesRepository.swift; sourceTree = "<group>"; };
 		9485254C2D9496FF008EB3A0 /* BusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDTO.swift; sourceTree = "<group>"; };
 		948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationDI.swift; sourceTree = "<group>"; };
@@ -318,6 +340,7 @@
 			files = (
 				947790F82E5BC683003CCC62 /* GoogleMobileAds in Frameworks */,
 				947443EA2DE207FC00305EAF /* FactoryKit in Frameworks */,
+				9477910F2E5D1E97003CCC62 /* GoogleUserMessagingPlatform in Frameworks */,
 				94D794852CC01F6D0097A2F0 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,17 +621,48 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		947790F92E5BCA31003CCC62 /* GoogleAds */ = {
+		947790F92E5BCA31003CCC62 /* Advertising */ = {
 			isa = PBXGroup;
 			children = (
+				947791032E5D0E82003CCC62 /* Domain */,
+				947790FD2E5D0920003CCC62 /* DI */,
+				947790FE2E5D0926003CCC62 /* Feature */,
 			);
-			path = GoogleAds;
+			path = Advertising;
+			sourceTree = "<group>";
+		};
+		947790FD2E5D0920003CCC62 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				9477910A2E5D16B0003CCC62 /* AdvertisingDI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		947790FE2E5D0926003CCC62 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				947791002E5D0947003CCC62 /* AdvertisingFeature.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		947791032E5D0E82003CCC62 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				947791192E5D2364003CCC62 /* AttUseCases.swift */,
+				947791162E5D2359003CCC62 /* UmpUseCases.swift */,
+				947791132E5D22FC003CCC62 /* ConsentsUseCasesProtocol.swift */,
+				947791072E5D0F90003CCC62 /* GoogleAdsUseCases.swift */,
+				947791042E5D0F6A003CCC62 /* AdvertisingUseCasesProtocol.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		9485253F2D949338008EB3A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				947790F92E5BCA31003CCC62 /* GoogleAds */,
+				947790F92E5BCA31003CCC62 /* Advertising */,
 				948525552D949A59008EB3A0 /* AppConfiguration */,
 				94D794952CC2CDD30097A2F0 /* Location */,
 			);
@@ -649,14 +703,6 @@
 				948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */,
 			);
 			path = DI;
-			sourceTree = "<group>";
-		};
-		94AA6D802CEA5F8D004A25A9 /* Feature */ = {
-			isa = PBXGroup;
-			children = (
-				94AA6D812CEA5FB6004A25A9 /* LocationFeature.swift */,
-			);
-			path = Feature;
 			sourceTree = "<group>";
 		};
 		94ABDF742C29ABBD00970F8C = {
@@ -884,12 +930,12 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		94D794942CC2CDD30097A2F0 /* Presentation */ = {
+		94D794942CC2CDD30097A2F0 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				94AA6D802CEA5F8D004A25A9 /* Feature */,
+				94AA6D812CEA5FB6004A25A9 /* LocationFeature.swift */,
 			);
-			path = Presentation;
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		94D794952CC2CDD30097A2F0 /* Location */ = {
@@ -897,7 +943,7 @@
 			children = (
 				942F51DD2DA43DB5007F6F7D /* DI */,
 				94D794922CC2CDD30097A2F0 /* Domain */,
-				94D794942CC2CDD30097A2F0 /* Presentation */,
+				94D794942CC2CDD30097A2F0 /* Feature */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -1075,6 +1121,7 @@
 				94D794842CC01F6D0097A2F0 /* ComposableArchitecture */,
 				947443E92DE207FC00305EAF /* FactoryKit */,
 				947790F72E5BC683003CCC62 /* GoogleMobileAds */,
+				9477910E2E5D1E97003CCC62 /* GoogleUserMessagingPlatform */,
 			);
 			productName = CyBus;
 			productReference = 94ABDF7D2C29ABBD00970F8C /* CyBus.app */;
@@ -1158,6 +1205,7 @@
 				94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				947443E82DE207FC00305EAF /* XCRemoteSwiftPackageReference "Factory" */,
 				947790F62E5BC683003CCC62 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				9477910D2E5D1E97003CCC62 /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */,
 			);
 			productRefGroup = 94ABDF7E2C29ABBD00970F8C /* Products */;
 			projectDirPath = "";
@@ -1207,6 +1255,7 @@
 				942F51D52D9DC67F007F6F7D /* BusesDI.swift in Sources */,
 				94CE03062DB58188004C3CE8 /* SearchTripDTO.swift in Sources */,
 				94D7948B2CC029BA0097A2F0 /* OnboardingFeatures.swift in Sources */,
+				9477910C2E5D16B0003CCC62 /* AdvertisingDI.swift in Sources */,
 				94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */,
 				942F51DC2D9F127F007F6F7D /* RouteDI.swift in Sources */,
 				9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */,
@@ -1225,12 +1274,14 @@
 				94575D742D231DF600CC3C03 /* AddressSearchView.swift in Sources */,
 				9403C9262D3C0E58000EDB25 /* SearchTripRepositoryProtocol.swift in Sources */,
 				94AF24E32CBC5B340092EE9B /* OnboardingRepository.swift in Sources */,
+				947791022E5D094B003CCC62 /* AdvertisingFeature.swift in Sources */,
 				94575D942D2345C400CC3C03 /* AddressSearchUseCases.swift in Sources */,
 				94AF0DA32C779A8C002FE41B /* BusesUseCasesProtocol.swift in Sources */,
 				94575D762D23206B00CC3C03 /* SearchCollapsedView.swift in Sources */,
 				94FEF2FC2E5A897200E186DD /* RouteRepository.swift in Sources */,
 				9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */,
 				94F3B8892CC2F1B900E38BE2 /* LogoView.swift in Sources */,
+				947791092E5D0FA3003CCC62 /* GoogleAdsUseCases.swift in Sources */,
 				944494782CCD7DBC00A616E2 /* LocationManagerUseCases.swift in Sources */,
 				94CE03082DB58CA4004C3CE8 /* SearchTripEntity.swift in Sources */,
 				94F3B8832CC2EB4300E38BE2 /* OnboardingGeolocationView.swift in Sources */,
@@ -1265,17 +1316,20 @@
 				942F51CE2D9DB6D2007F6F7D /* MapDI.swift in Sources */,
 				945843A92CD18862006D9893 /* MapFeature.swift in Sources */,
 				94D794A82CC2CDD30097A2F0 /* Typography.swift in Sources */,
+				947791182E5D2361003CCC62 /* UmpUseCases.swift in Sources */,
 				94575D8D2D2336D500CC3C03 /* SuggestionsEntity.swift in Sources */,
 				94FEF2F62E5A86B300E186DD /* RouteRepositoryProtocol.swift in Sources */,
 				AC1D3FA12D26B1D70005D3EE /* BusView.swift in Sources */,
 				942F51D72D9F1206007F6F7D /* RouteUseCasesProtocol.swift in Sources */,
 				9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */,
 				9435C90A2CF334CC0041A986 /* RouteFeature.swift in Sources */,
+				9477911B2E5D236B003CCC62 /* AttUseCases.swift in Sources */,
 				94D794A92CC2CDD30097A2F0 /* Theme.swift in Sources */,
 				94575D792D2321C100CC3C03 /* SearchFeatures.swift in Sources */,
 				94D794AA2CC2CDD30097A2F0 /* ThemeModeUseCases.swift in Sources */,
 				94D794AB2CC2CDD30097A2F0 /* LocationUseCases.swift in Sources */,
 				944494762CCD7D3E00A616E2 /* LocationManagerUseCasesProtocol.swift in Sources */,
+				947791062E5D0F74003CCC62 /* AdvertisingUseCasesProtocol.swift in Sources */,
 				94D794AD2CC2CDD30097A2F0 /* LocalThemeModeRepository.swift in Sources */,
 				94CE030C2DB69175004C3CE8 /* TripsSelectionView.swift in Sources */,
 				94D794AE2CC2CDD30097A2F0 /* SecondaryButton.swift in Sources */,
@@ -1283,6 +1337,7 @@
 				94575D882D23350400CC3C03 /* AddressSearchRepository.swift in Sources */,
 				9403C9282D3C0F3D000EDB25 /* SearchTripRepository.swift in Sources */,
 				94D794B02CC2CDD30097A2F0 /* ColorPalette.swift in Sources */,
+				947791142E5D230B003CCC62 /* ConsentsUseCasesProtocol.swift in Sources */,
 				94575D7F2D23345400CC3C03 /* AddressSearchUseCasesProtocol.swift in Sources */,
 				94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* BusEntity.swift in Sources */,
@@ -1299,10 +1354,12 @@
 				942F51CA2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */,
 				9449B22D2DC7B3B100643B5A /* LocationFeatureTests.swift in Sources */,
 				94B1306E2DB832630017C201 /* AppConfigurationDI.swift in Sources */,
+				947791152E5D230B003CCC62 /* ConsentsUseCasesProtocol.swift in Sources */,
 				94B1303E2DB831DB0017C201 /* HomeView.swift in Sources */,
 				94FEF2F92E5A86EC00E186DD /* RouteDTO.swift in Sources */,
 				945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */,
 				944494792CCE417E00A616E2 /* LocationUseCases.swift in Sources */,
+				947791172E5D2361003CCC62 /* UmpUseCases.swift in Sources */,
 				94B1303F2DB832240017C201 /* BusesUseCasesProtocol.swift in Sources */,
 				94B130402DB832240017C201 /* RouteUseCases.swift in Sources */,
 				94B130412DB832240017C201 /* BusesRepository.swift in Sources */,
@@ -1317,6 +1374,7 @@
 				94B1304B2DB832240017C201 /* BusDTO.swift in Sources */,
 				94B1304C2DB832240017C201 /* DestinationMarker.swift in Sources */,
 				9457A6212DCD2A0400DDD471 /* SearchMocks.swift in Sources */,
+				947791052E5D0F74003CCC62 /* AdvertisingUseCasesProtocol.swift in Sources */,
 				94B1304D2DB832240017C201 /* BusesFeature.swift in Sources */,
 				94B1304E2DB832240017C201 /* BusMarker.swift in Sources */,
 				94B1304F2DB832240017C201 /* StopCircle.swift in Sources */,
@@ -1333,11 +1391,13 @@
 				944494732CCBC69100A616E2 /* OnboardingRequestGeolocationFeature.swift in Sources */,
 				94B130312DB831940017C201 /* PrimaryButton.swift in Sources */,
 				94B130372DB831C10017C201 /* ThemeModeRepositoryProtocol.swift in Sources */,
+				9477910B2E5D16B0003CCC62 /* AdvertisingDI.swift in Sources */,
 				94B130382DB831C10017C201 /* Theme.swift in Sources */,
 				94B130392DB831C10017C201 /* LocalThemeModeRepository.swift in Sources */,
 				94B1303A2DB831C10017C201 /* ThemeModeUseCasesProtocol.swift in Sources */,
 				94B1303B2DB831C10017C201 /* Typography.swift in Sources */,
 				94B1303C2DB831C10017C201 /* ThemeModeUseCases.swift in Sources */,
+				9477911A2E5D236B003CCC62 /* AttUseCases.swift in Sources */,
 				94B1303D2DB831C10017C201 /* ColorPalette.swift in Sources */,
 				94B130572DB832370017C201 /* SearchTripUseCases.swift in Sources */,
 				94B130592DB832370017C201 /* SearchTripEntity.swift in Sources */,
@@ -1348,6 +1408,8 @@
 				94B1305E2DB832370017C201 /* SuggestionsEntity.swift in Sources */,
 				94B1305F2DB832370017C201 /* AddressSearchUseCasesProtocol.swift in Sources */,
 				94B130602DB832370017C201 /* AddressSearchRepositoryProtocol.swift in Sources */,
+				947791012E5D094B003CCC62 /* AdvertisingFeature.swift in Sources */,
+				947791082E5D0FA3003CCC62 /* GoogleAdsUseCases.swift in Sources */,
 				94B130612DB832370017C201 /* SearchTripUseCasesProtocol.swift in Sources */,
 				94B130622DB832370017C201 /* SearchFeatures.swift in Sources */,
 				94B130632DB832370017C201 /* AddressSearchUseCases.swift in Sources */,
@@ -1536,7 +1598,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CyBus/CyBus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CyBus/Preview Content\"";
 				DEVELOPMENT_TEAM = 55X4R3755D;
@@ -1558,7 +1620,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cybus.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -1578,7 +1640,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CyBus/CyBus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CyBus/Preview Content\"";
 				DEVELOPMENT_TEAM = 55X4R3755D;
@@ -1600,7 +1662,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cybus.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -1757,6 +1819,14 @@
 				minimumVersion = 12.9.0;
 			};
 		};
+		9477910D2E5D1E97003CCC62 /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		94D794832CC01F6D0097A2F0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -1777,6 +1847,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 947790F62E5BC683003CCC62 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
+		};
+		9477910E2E5D1E97003CCC62 /* GoogleUserMessagingPlatform */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9477910D2E5D1E97003CCC62 /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */;
+			productName = GoogleUserMessagingPlatform;
 		};
 		94D794842CC01F6D0097A2F0 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
