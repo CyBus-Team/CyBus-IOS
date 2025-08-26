@@ -70,7 +70,7 @@ struct AdvertisingFeature {
                 
             // Method to initialize the Mobile Ads SDK.
             case .initSDK:
-                guard state.umpStatus != .required else {
+                guard ConsentInformation.shared.canRequestAds else {
                     return .none
                 }
                 return .run { @MainActor send in

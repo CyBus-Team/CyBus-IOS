@@ -6,23 +6,25 @@
 //
 
 import GoogleMobileAds
+import FactoryKit
 
 class GoogleAdsUseCases : NSObject, AdvertisingUseCasesProtocol, FullScreenContentDelegate {
     
     private var interstitialAd: InterstitialAd?
+    
+    private var appConfiguration: AppConfiguration
+    
+    init(appConfiguration: AppConfiguration = Container.shared.appConfiguration()) {
+        self.appConfiguration = appConfiguration
+    }
     
     func initSDK() async throws {
         await MobileAds.shared.start()
     }
     
     func load() async throws {
-        guard let adUnitID = Bundle.main.object(forInfoDictionaryKey: "GADApplicationIdentifier") as? String else {
-            print("Error: GADApplicationIdentifier key not found in Info.plist")
-            return
-        }
-        
         interstitialAd = try await InterstitialAd.load(
-            with: adUnitID,
+            with: appConfiguration.interstitialAdUnitID,
             request: Request()
         )
         interstitialAd?.fullScreenContentDelegate = self
