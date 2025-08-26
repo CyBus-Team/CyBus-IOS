@@ -15,7 +15,7 @@ public class RateUsUseCases : RateUsUseCasesProtocol {
         repository.finished()
     }
     
-    func isShownBefore() -> Bool {
+    func needToShow() -> Bool {
         !repository.isShownBefore()
     }
 

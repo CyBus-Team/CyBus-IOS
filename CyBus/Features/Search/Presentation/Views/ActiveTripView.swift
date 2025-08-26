@@ -6,18 +6,17 @@
 //
 
 import ComposableArchitecture
-import FactoryKit
 import SwiftUI
 
 struct ActiveTripView: View {
     let title: String
     let arrivalTime: Date
-    let store: StoreOf<RootFeature> = Store(initialState: RootFeature.State()) {
-        RootFeature()
-    }
-    let onFinish = RateUSView()
+    let onFinish: () -> Void
+
+    @Bindable var storeRateUs: StoreOf<RateUsFeatures>
     
     var body: some View {
+        
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .center, spacing: 12) {
                 Image(systemName: "bus.fill")
@@ -36,16 +35,24 @@ struct ActiveTripView: View {
                 Spacer()
             }
             
-            Button(action: store.) {
-                Text("Finish")
-                    .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
+            Button(action: onFinish) {
+                            Text("Finish")
+                                .fontWeight(.semibold)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 10)
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+            .sheet(isPresented: $storeRateUs.state.needtoShown) {
+                RateUsMainView(store: storeRateUs)
+                    }
+       
+           
+            
         }
+        .presentationDragIndicator(.visible)
+        .presentationDetents([.large])
         .padding()
         .cornerRadius(14)
     }
@@ -60,6 +67,8 @@ struct ActiveTripView: View {
     ActiveTripView(
         title: "Central Station → Airport",
         arrivalTime: Calendar.current.date(bySettingHour: 14, minute: 32, second: 0, of: .now)!,
-        onFinish: {}
-    )
+        onFinish: {},
+        storeRateUs: Store(initialState: RateUsFeatures.State()) {
+           RateUsFeatures()
+       })
 }

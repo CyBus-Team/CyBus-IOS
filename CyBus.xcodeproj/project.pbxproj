@@ -184,14 +184,16 @@
 		94FEF2FD2E5A897200E186DD /* RouteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FEF2FB2E5A897200E186DD /* RouteRepository.swift */; };
 		AC1D3FA12D26B1D70005D3EE /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusView.swift */; };
 		AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3FA52D270DF70005D3EE /* StopCircle.swift */; };
-		AC57DD432E5CEAAB00C428B6 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57DD422E5CEAAB00C428B6 /* RateUsView.swift */; };
-		AC57DD442E5CEAAB00C428B6 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57DD422E5CEAAB00C428B6 /* RateUsView.swift */; };
 		AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894B962CE4CB90001A660C /* BusMarker.swift */; };
 		AC96113F2E416D65009BAB93 /* RateUsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */; };
 		AC9611402E416D65009BAB93 /* RateUsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */; };
-		AC9611422E416DC1009BAB93 /* RateUsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9611412E416DB2009BAB93 /* RateUsFeature.swift */; };
-		AC9611432E416DC1009BAB93 /* RateUsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9611412E416DB2009BAB93 /* RateUsFeature.swift */; };
 		ACBEE2142D4FA9D700C1A753 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */; };
+		ACD9FF5E2E5D0332005636B5 /* RateUsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF5D2E5D0332005636B5 /* RateUsRepository.swift */; };
+		ACD9FF602E5D033D005636B5 /* RateUsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF5F2E5D033D005636B5 /* RateUsRepositoryProtocol.swift */; };
+		ACD9FF622E5D0346005636B5 /* RateUsDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF612E5D0346005636B5 /* RateUsDI.swift */; };
+		ACD9FF662E5D0353005636B5 /* RateUsUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF642E5D0353005636B5 /* RateUsUseCases.swift */; };
+		ACD9FF672E5D0353005636B5 /* RateUsUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF652E5D0353005636B5 /* RateUsUseCasesProtocol.swift */; };
+		ACD9FF6A2E5D03B0005636B5 /* RateUsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF692E5D03B0005636B5 /* RateUsFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,11 +314,15 @@
 		94FEF2FB2E5A897200E186DD /* RouteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRepository.swift; sourceTree = "<group>"; };
 		AC1D3F9E2D26B1D70005D3EE /* BusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusView.swift; sourceTree = "<group>"; };
 		AC1D3FA52D270DF70005D3EE /* StopCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCircle.swift; sourceTree = "<group>"; };
-		AC57DD422E5CEAAB00C428B6 /* RateUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsView.swift; sourceTree = "<group>"; };
 		AC894B962CE4CB90001A660C /* BusMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarker.swift; sourceTree = "<group>"; };
 		AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsMainView.swift; sourceTree = "<group>"; };
-		AC9611412E416DB2009BAB93 /* RateUsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsFeature.swift; sourceTree = "<group>"; };
 		ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		ACD9FF5D2E5D0332005636B5 /* RateUsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsRepository.swift; sourceTree = "<group>"; };
+		ACD9FF5F2E5D033D005636B5 /* RateUsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		ACD9FF612E5D0346005636B5 /* RateUsDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsDI.swift; sourceTree = "<group>"; };
+		ACD9FF642E5D0353005636B5 /* RateUsUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsUseCases.swift; sourceTree = "<group>"; };
+		ACD9FF652E5D0353005636B5 /* RateUsUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsUseCasesProtocol.swift; sourceTree = "<group>"; };
+		ACD9FF692E5D03B0005636B5 /* RateUsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1069,7 +1075,7 @@
 		AC9611392E416CA8009BAB93 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				AC175DCF2E421E5500141D5E /* RateUsDI.swift */,
+				ACD9FF612E5D0346005636B5 /* RateUsDI.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -1077,8 +1083,8 @@
 		AC96113A2E416CB6009BAB93 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				AC175DC02E42174000141D5E /* RateUsRepository.swift */,
-				AC175DC32E42175A00141D5E /* RateUsRepositoryProtocol.swift */,
+				ACD9FF5D2E5D0332005636B5 /* RateUsRepository.swift */,
+				ACD9FF5F2E5D033D005636B5 /* RateUsRepositoryProtocol.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1086,8 +1092,8 @@
 		AC96113B2E416CBB009BAB93 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				AC175DC92E421A0300141D5E /* RateUsUseCases.swift */,
-				AC175DCC2E421A1000141D5E /* RateUsUseCasesProtocol.swift */,
+				ACD9FF642E5D0353005636B5 /* RateUsUseCases.swift */,
+				ACD9FF652E5D0353005636B5 /* RateUsUseCasesProtocol.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1095,9 +1101,8 @@
 		AC96113C2E416CC6009BAB93 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				AC9611412E416DB2009BAB93 /* RateUsFeature.swift */,
+				ACD9FF692E5D03B0005636B5 /* RateUsFeature.swift */,
 				AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */,
-				AC57DD422E5CEAAB00C428B6 /* RateUsView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -1253,6 +1258,7 @@
 				94CE03062DB58188004C3CE8 /* SearchTripDTO.swift in Sources */,
 				94D7948B2CC029BA0097A2F0 /* OnboardingFeatures.swift in Sources */,
 				94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */,
+				ACD9FF5E2E5D0332005636B5 /* RateUsRepository.swift in Sources */,
 				942F51DC2D9F127F007F6F7D /* RouteDI.swift in Sources */,
 				9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */,
 				94CE030A2DB5AC12004C3CE8 /* PathTips.swift in Sources */,
@@ -1260,6 +1266,7 @@
 				AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */,
 				94AF24DA2CBC572A0092EE9B /* OnboardingView.swift in Sources */,
 				9406EB562D3C418800C17ABF /* SearchTripUseCasesProtocol.swift in Sources */,
+				ACD9FF622E5D0346005636B5 /* RateUsDI.swift in Sources */,
 				94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */,
 				942F51E32DA4405B007F6F7D /* SearchDI.swift in Sources */,
 				94575DB22D2DA3A700CC3C03 /* SearchTripUseCases.swift in Sources */,
@@ -1285,13 +1292,10 @@
 				94AF0DC62C7CF956002FE41B /* RouteEntity.swift in Sources */,
 				94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */,
 				947443E72DE1FF5800305EAF /* ActiveTripView.swift in Sources */,
-				AC175DCE2E421A1700141D5E /* RateUsUseCasesProtocol.swift in Sources */,
-				AC175DC22E42175300141D5E /* RateUsRepository.swift in Sources */,
 				AC9611402E416D65009BAB93 /* RateUsMainView.swift in Sources */,
 				948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */,
 				9432A1802D4FB19E00E05BCB /* ClearNodesButton.swift in Sources */,
 				94575D812D23346100CC3C03 /* AddressSearchRepositoryProtocol.swift in Sources */,
-				AC175DC42E42176600141D5E /* RateUsRepositoryProtocol.swift in Sources */,
 				94AF24DC2CBC5A150092EE9B /* OnboardingUseCasesProtocol.swift in Sources */,
 				94575DAC2D2C501200CC3C03 /* DestinationMarker.swift in Sources */,
 				AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */,
@@ -1317,7 +1321,9 @@
 				94575D8D2D2336D500CC3C03 /* SuggestionsEntity.swift in Sources */,
 				94FEF2F62E5A86B300E186DD /* RouteRepositoryProtocol.swift in Sources */,
 				AC1D3FA12D26B1D70005D3EE /* BusView.swift in Sources */,
+				ACD9FF602E5D033D005636B5 /* RateUsRepositoryProtocol.swift in Sources */,
 				942F51D72D9F1206007F6F7D /* RouteUseCasesProtocol.swift in Sources */,
+				ACD9FF6A2E5D03B0005636B5 /* RateUsFeature.swift in Sources */,
 				9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */,
 				9435C90A2CF334CC0041A986 /* RouteFeature.swift in Sources */,
 				94D794A92CC2CDD30097A2F0 /* Theme.swift in Sources */,
@@ -1332,6 +1338,8 @@
 				94575D882D23350400CC3C03 /* AddressSearchRepository.swift in Sources */,
 				9403C9282D3C0F3D000EDB25 /* SearchTripRepository.swift in Sources */,
 				94D794B02CC2CDD30097A2F0 /* ColorPalette.swift in Sources */,
+				ACD9FF662E5D0353005636B5 /* RateUsUseCases.swift in Sources */,
+				ACD9FF672E5D0353005636B5 /* RateUsUseCasesProtocol.swift in Sources */,
 				94575D7F2D23345400CC3C03 /* AddressSearchUseCasesProtocol.swift in Sources */,
 				94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* BusEntity.swift in Sources */,
@@ -1352,7 +1360,6 @@
 				94FEF2F92E5A86EC00E186DD /* RouteDTO.swift in Sources */,
 				945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */,
 				AC96113F2E416D65009BAB93 /* RateUsMainView.swift in Sources */,
-				AC175DCB2E421A0900141D5E /* RateUsUseCases.swift in Sources */,
 				944494792CCE417E00A616E2 /* LocationUseCases.swift in Sources */,
 				94B1303F2DB832240017C201 /* BusesUseCasesProtocol.swift in Sources */,
 				94B130402DB832240017C201 /* RouteUseCases.swift in Sources */,
@@ -1382,7 +1389,6 @@
 				941B317E2DDE431C005C5F00 /* BusClusterEntity.swift in Sources */,
 				942F51E02DA43DC7007F6F7D /* LocationDI.swift in Sources */,
 				944494732CCBC69100A616E2 /* OnboardingRequestGeolocationFeature.swift in Sources */,
-				AC175DCD2E421A1700141D5E /* RateUsUseCasesProtocol.swift in Sources */,
 				94B130312DB831940017C201 /* PrimaryButton.swift in Sources */,
 				94B130372DB831C10017C201 /* ThemeModeRepositoryProtocol.swift in Sources */,
 				94B130382DB831C10017C201 /* Theme.swift in Sources */,
@@ -1396,7 +1402,6 @@
 				94B1305B2DB832370017C201 /* SuggestionDTO.swift in Sources */,
 				9457A61B2DCD28ED00DDD471 /* AddressSearchFeatureTests.swift in Sources */,
 				94B1305C2DB832370017C201 /* SearchCollapsedView.swift in Sources */,
-				AC9611422E416DC1009BAB93 /* RateUsFeature.swift in Sources */,
 				94B1305D2DB832370017C201 /* SearchTripRepository.swift in Sources */,
 				94B1305E2DB832370017C201 /* SuggestionsEntity.swift in Sources */,
 				94B1305F2DB832370017C201 /* AddressSearchUseCasesProtocol.swift in Sources */,
@@ -1408,8 +1413,6 @@
 				94B130652DB832370017C201 /* AddressSearchView.swift in Sources */,
 				94B130662DB832370017C201 /* AddressSearchResultView.swift in Sources */,
 				94B130672DB832370017C201 /* SearchDI.swift in Sources */,
-				AC175DD02E421E5A00141D5E /* RateUsDI.swift in Sources */,
-				AC57DD432E5CEAAB00C428B6 /* RateUsView.swift in Sources */,
 				94B130682DB832370017C201 /* SearchTripRepositoryProtocol.swift in Sources */,
 				947443E62DE1FF5800305EAF /* ActiveTripView.swift in Sources */,
 				94B130692DB832370017C201 /* AddressSearchFeature.swift in Sources */,
@@ -1418,7 +1421,6 @@
 				9449B2312DC7B5EA00643B5A /* LocationMocks.swift in Sources */,
 				94B1306C2DB832370017C201 /* AddressSearchRepository.swift in Sources */,
 				94B1306D2DB832370017C201 /* SearchTripDTO.swift in Sources */,
-				AC175DC52E42176600141D5E /* RateUsRepositoryProtocol.swift in Sources */,
 				94B130322DB831940017C201 /* ClearNodesButton.swift in Sources */,
 				94B130332DB831940017C201 /* RouteInfoView.swift in Sources */,
 				94B130342DB831940017C201 /* FavouritesButton.swift in Sources */,

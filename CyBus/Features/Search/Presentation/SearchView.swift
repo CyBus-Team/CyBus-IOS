@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FactoryKit
 import ComposableArchitecture
 
 struct SearchView : View {
@@ -15,30 +16,38 @@ struct SearchView : View {
     @Bindable var addressSearchStore: StoreOf<AddressSearchFeature>
     @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
+    @Injected(\.rateUsFeature) var storeRateUs: StoreOf<RateUsFeatures>
     
     var body: some View {
         ZStack {
             if let selectedTrip = addressResultStore.selectedTrip, !store.tripSelectorOpened {
+                
                 ActiveTripView(
                     title: "Your location -> Destination",
-                    arrivalTime: selectedTrip.endTime
-                )
-                {
-                    store.send(.onReset)
-                }
+                    arrivalTime: selectedTrip.endTime,
+                    onFinish: { store.send(.onReset)
+                    },
+                    storeRateUs: storeRateUs)
+            
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             } else {
                 SearchCollapsedView(store: store)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                     .sheet(isPresented: $store.addressResultOpened) {
-                        AddressSearchResultView(store: addressResultStore, busesStore: busesStore)
-                            .presentationDragIndicator(.visible)
-                            .presentationDetents([.fraction(0.2)])
+                        AddressSearchResultView(
+                            store: addressResultStore,
+                            busesStore: busesStore
+                        )
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.fraction(0.2)])
                     }
                     .sheet(isPresented: $store.addressSearchOpened) {
-                        AddressSearchView(store: addressSearchStore, busesStore: busesStore)
-                            .presentationDragIndicator(.visible)
-                            .presentationDetents([.large])
+                        AddressSearchView(
+                            store: addressSearchStore,
+                            busesStore: busesStore
+                        )
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.large])
                     }
                     .sheet(isPresented: $store.tripSelectorOpened) {
                         TripSelectionView(store: addressResultStore)
@@ -47,18 +56,27 @@ struct SearchView : View {
                     }
             }
         }
-        .animation(.easeInOut(duration: 0.3), value: addressResultStore.selectedTrip)
+        .animation(
+            .easeInOut(duration: 0.3),
+            value: addressResultStore.selectedTrip
+        )
     }
 }
 
 #Preview {
-    SearchView(store: Store(initialState: SearchFeatures.State()) {
-        SearchFeatures()
-    }, addressSearchStore: Store(initialState: AddressSearchFeature.State()) {
-        AddressSearchFeature()
-    }, addressResultStore: Store(initialState: AddressSearchResultFeature.State()) {
-        AddressSearchResultFeature()
-    },busesStore: Store(initialState: BusesFeature.State()) {
-        BusesFeature()
-    })
+    SearchView(
+        store: Store(initialState: SearchFeatures.State()) {
+            SearchFeatures()
+        },
+        addressSearchStore: Store(initialState: AddressSearchFeature.State()) {
+            AddressSearchFeature()
+        },
+        addressResultStore: Store(
+            initialState: AddressSearchResultFeature.State()
+        ) {
+            AddressSearchResultFeature()
+        },
+        busesStore: Store(initialState: BusesFeature.State()) {
+            BusesFeature()
+        })
 }

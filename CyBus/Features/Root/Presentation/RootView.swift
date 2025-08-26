@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FactoryKit
 import ComposableArchitecture
 
 struct RootView: View {
@@ -16,9 +17,7 @@ struct RootView: View {
         RootFeature()
     }
     
-    let storeRateUS: StoreOf<RateUsFeatures> = Store(initialState: RateUsFeatures.State()) {
-        RateUsFeatures()
-    }
+    @Injected(\.rateUsFeature) var storeRateUs: StoreOf<RateUsFeatures>
     
     private var isDark: Bool {
         get { themeMode == ThemeMode.dark.rawValue }
@@ -35,7 +34,7 @@ struct RootView: View {
         .environment(\.theme, isDark ? .dark : .light)
         .task(priority: .background) {
             store.send(.initApp)
-            storeRateUS.send(.initAppState) 
+            storeRateUs.send(.initAppState) 
         }
         
     }

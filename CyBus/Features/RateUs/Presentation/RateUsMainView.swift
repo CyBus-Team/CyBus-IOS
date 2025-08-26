@@ -66,7 +66,7 @@ struct RateUsMainView: View {
 }
 
 #Preview {
-    RateUsView(store: Store(initialState: RateUsFeatures.State()) {
+    RateUsMainView(store: Store(initialState: RateUsFeatures.State()) {
         RateUsFeatures()
     })
 }

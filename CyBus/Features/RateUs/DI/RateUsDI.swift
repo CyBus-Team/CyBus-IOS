@@ -9,6 +9,7 @@ import FactoryKit
 import ComposableArchitecture
 
 extension Container {
+    
     var rateUsRepository: Factory<RateUsRepositoryProtocol> {
         self { RateUsRepository() }
     }

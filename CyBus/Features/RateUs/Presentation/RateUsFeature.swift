@@ -7,27 +7,23 @@
 import ComposableArchitecture
 import FactoryKit
 
+
 @Reducer
 struct RateUsFeatures {
     
     static let rateUsKey = "isShown"
-    
-    enum Page {
-        case home
-        case rateUs
-    }
  
     @ObservableState
-    struct State {
+    struct State: Equatable {
         
         // State vars
-        var isShown: Bool = false
+        var needtoShown: Bool = false
         var text: String = ""
         var rate: Int = 4
-        var page = Page.rateUs
     }
     
-    enum Action {
+    enum Action: BindableAction {
+        case binding(BindingAction<State>)
         case initAppState
         case onSubmit
         case onDismiss
@@ -39,21 +35,19 @@ struct RateUsFeatures {
       
         Reduce { state, action in
             switch action {
-               
+            case .binding(_):
+                return .none
             case .initAppState:
-                let isShownBefore = rateUsUseCases.isShownBefore()
-                state.page = isShownBefore ? .rateUs : .home
+                state.needtoShown =  rateUsUseCases.needToShow()
                 return .none
             case .onSubmit:
-                if state.rate < 3 {  
+                if state.rate < 3 {
                 }
                 else {
                 }
 
                 return .none
             case .onDismiss:
-                state.isShown = true
-                state.page = .home
                 return .none
             }
         }
