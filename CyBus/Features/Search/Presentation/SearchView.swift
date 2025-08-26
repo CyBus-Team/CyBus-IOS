@@ -15,6 +15,7 @@ struct SearchView : View {
     @Bindable var addressSearchStore: StoreOf<AddressSearchFeature>
     @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
+    @Bindable var advertisementsStore: StoreOf<AdvertisingFeature>
     
     var body: some View {
         ZStack {
@@ -24,6 +25,7 @@ struct SearchView : View {
                     arrivalTime: selectedTrip.endTime
                 ) {
                     store.send(.onReset)
+                    advertisementsStore.send(.showAd)
                 }
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             } else {
@@ -59,5 +61,7 @@ struct SearchView : View {
         AddressSearchResultFeature()
     },busesStore: Store(initialState: BusesFeature.State()) {
         BusesFeature()
+    },advertisementsStore: Store(initialState: AdvertisingFeature.State()) {
+        AdvertisingFeature()
     })
 }

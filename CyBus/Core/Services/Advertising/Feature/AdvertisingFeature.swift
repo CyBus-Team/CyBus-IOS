@@ -82,7 +82,6 @@ struct AdvertisingFeature {
                         send(.initializationResponse(.failedToInitialize))
                     }
                 }
-                return .none
                 
             // Method to handle the response after attempting to initialize the Mobile Ads SDK.
             case let .initializationResponse(status):
