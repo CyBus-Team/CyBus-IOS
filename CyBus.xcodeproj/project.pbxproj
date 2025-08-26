@@ -80,6 +80,7 @@
 		947791182E5D2361003CCC62 /* UmpUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791162E5D2359003CCC62 /* UmpUseCases.swift */; };
 		9477911A2E5D236B003CCC62 /* AttUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791192E5D2364003CCC62 /* AttUseCases.swift */; };
 		9477911B2E5D236B003CCC62 /* AttUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791192E5D2364003CCC62 /* AttUseCases.swift */; };
+		9477911E2E5D351A003CCC62 /* RootDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477911D2E5D3517003CCC62 /* RootDI.swift */; };
 		9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525472D949656008EB3A0 /* BusesRepository.swift */; };
 		9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485254C2D9496FF008EB3A0 /* BusDTO.swift */; };
 		948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */; };
@@ -274,6 +275,7 @@
 		947791132E5D22FC003CCC62 /* ConsentsUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentsUseCasesProtocol.swift; sourceTree = "<group>"; };
 		947791162E5D2359003CCC62 /* UmpUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmpUseCases.swift; sourceTree = "<group>"; };
 		947791192E5D2364003CCC62 /* AttUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttUseCases.swift; sourceTree = "<group>"; };
+		9477911D2E5D3517003CCC62 /* RootDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDI.swift; sourceTree = "<group>"; };
 		948525472D949656008EB3A0 /* BusesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesRepository.swift; sourceTree = "<group>"; };
 		9485254C2D9496FF008EB3A0 /* BusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDTO.swift; sourceTree = "<group>"; };
 		948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationDI.swift; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 		9477911C2E5D315F003CCC62 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				9477911D2E5D3517003CCC62 /* RootDI.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -1296,6 +1299,7 @@
 				94AF24E12CBC5AB40092EE9B /* OnboardingRepositoryProtocol.swift in Sources */,
 				94D794872CC020630097A2F0 /* RootView.swift in Sources */,
 				94F3B8812CC2EB3800E38BE2 /* OnboardingWelcomeView.swift in Sources */,
+				9477911E2E5D351A003CCC62 /* RootDI.swift in Sources */,
 				94AF0DC62C7CF956002FE41B /* RouteEntity.swift in Sources */,
 				94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */,
 				947443E72DE1FF5800305EAF /* ActiveTripView.swift in Sources */,

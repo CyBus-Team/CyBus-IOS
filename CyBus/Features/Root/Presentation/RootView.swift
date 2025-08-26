@@ -15,9 +15,7 @@ struct RootView: View {
     
     //MARK: DI
     @Injected(\.advertisingFeature) var advertisingFeature: StoreOf<AdvertisingFeature>
-    let store: StoreOf<RootFeature> = Store(initialState: RootFeature.State()) {
-        RootFeature()
-    }
+    @Injected(\.rootFeature) var store: StoreOf<RootFeature>
     
     private var isDark: Bool {
         get { themeMode == ThemeMode.dark.rawValue }
