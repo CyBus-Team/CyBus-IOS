@@ -17,9 +17,11 @@ struct SearchFeatures {
         var addressSearchOpened: Bool = false
         var addressResultOpened: Bool = false
         var tripSelectorOpened: Bool = false
+        var rateUsOpened: Bool = false
         // Features
         var searchAddressResult = AddressSearchResultFeature.State()
         var searchAddress = AddressSearchFeature.State()
+        var rateUs = RateUsFeatures.State()
     }
     
     enum Action: BindableAction {
@@ -30,6 +32,7 @@ struct SearchFeatures {
         case onOpenFavourites
         case searchAddressResult(AddressSearchResultFeature.Action)
         case searchAddress(AddressSearchFeature.Action)
+        case rateUs(RateUsFeatures.Action)
     }
     
     var body: some ReducerOf<Self> {
@@ -39,6 +42,12 @@ struct SearchFeatures {
         Scope(state: \.searchAddressResult, action: \.searchAddressResult) {
             AddressSearchResultFeature()
         }
+        Scope(state: \.searchAddressResult, action: \.searchAddressResult) {
+            AddressSearchResultFeature()
+        }
+        Scope(state: \.rateUs, action: \.rateUs) {
+            RateUsFeatures()
+        }
         BindingReducer()
         Reduce { state, action in
             switch action {
@@ -47,11 +56,13 @@ struct SearchFeatures {
                 state.addressSearchOpened = true
                 state.addressResultOpened = false
                 state.tripSelectorOpened = false
+                state.rateUsOpened = false
                 return .none
             case .onOpenAddressSearchResults:
                 state.addressSearchOpened = false
                 state.tripSelectorOpened = false
                 state.addressResultOpened = true
+                state.rateUsOpened = false
                 return .none
             case .onOpenFavourites:
                 return .none
@@ -62,6 +73,7 @@ struct SearchFeatures {
                 state.addressSearchOpened = false
                 state.tripSelectorOpened = false
                 state.addressResultOpened = true
+                state.rateUsOpened = false
                 return .run { send in
                     await send(.searchAddressResult(.setup(suggestion)))
                 }
@@ -73,10 +85,14 @@ struct SearchFeatures {
                     state.addressSearchOpened = false
                     state.addressResultOpened = false
                     state.tripSelectorOpened = false
+                    state.rateUsOpened = false
                 }
-                return .none
+                return .run { send in
+                    await send(.rateUs(.initFeature))
+                }
             case .searchAddressResult(.onClose), .searchAddressResult(.binding(_)):
                 state.addressResultOpened = false
+                state.rateUsOpened = false
                 return .none
             case .searchAddressResult(.onGetTripsResponse(_)):
                 state.addressSearchOpened = false
@@ -84,6 +100,12 @@ struct SearchFeatures {
                 state.tripSelectorOpened = true
                 return .none
             case .searchAddressResult(_):
+                return .none
+            // Rate Us
+            case let .rateUs(.initResponse(needToShow)):
+                state.rateUsOpened = needToShow
+                return .none
+            case .rateUs(_):
                 return .none
             // Map actions
             case .onReset:

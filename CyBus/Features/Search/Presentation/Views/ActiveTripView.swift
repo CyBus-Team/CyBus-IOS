@@ -12,8 +12,6 @@ struct ActiveTripView: View {
     let title: String
     let arrivalTime: Date
     let onFinish: () -> Void
-
-    @Bindable var storeRateUs: StoreOf<RateUsFeatures>
     
     var body: some View {
         
@@ -44,12 +42,7 @@ struct ActiveTripView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                         }
-            .sheet(isPresented: $storeRateUs.needtoShown) {
-                RateUsMainView(store: storeRateUs)
-                    }
-       
-           
-            
+
         }
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
@@ -68,7 +61,5 @@ struct ActiveTripView: View {
         title: "Central Station → Airport",
         arrivalTime: Calendar.current.date(bySettingHour: 14, minute: 32, second: 0, of: .now)!,
         onFinish: {},
-        storeRateUs: Store(initialState: RateUsFeatures.State()) {
-           RateUsFeatures()
-       })
+        )
 }

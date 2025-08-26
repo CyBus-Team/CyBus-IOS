@@ -16,7 +16,7 @@ struct SearchView : View {
     @Bindable var addressSearchStore: StoreOf<AddressSearchFeature>
     @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
-    @Injected(\.rateUsFeature) var storeRateUs: StoreOf<RateUsFeatures>
+    @Bindable var rateUsStore: StoreOf<RateUsFeatures>
     
     var body: some View {
         ZStack {
@@ -25,14 +25,17 @@ struct SearchView : View {
                 ActiveTripView(
                     title: "Your location -> Destination",
                     arrivalTime: selectedTrip.endTime,
-                    onFinish: { store.send(.onReset)
-                    },
-                    storeRateUs: storeRateUs)
-            
+                    onFinish: {
+                        store.send(.onReset)
+                    }
+                )
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             } else {
                 SearchCollapsedView(store: store)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .sheet(isPresented: $store.rateUsOpened) {
+                        RateUsMainView(store: rateUsStore)
+                    }
                     .sheet(isPresented: $store.addressResultOpened) {
                         AddressSearchResultView(
                             store: addressResultStore,
@@ -54,6 +57,7 @@ struct SearchView : View {
                             .presentationDragIndicator(.visible)
                             .presentationDetents([.large])
                     }
+                    
             }
         }
         .animation(
@@ -78,5 +82,9 @@ struct SearchView : View {
         },
         busesStore: Store(initialState: BusesFeature.State()) {
             BusesFeature()
-        })
+        },
+        rateUsStore: Store(initialState: RateUsFeatures.State()) {
+            RateUsFeatures()
+        },
+    )
 }

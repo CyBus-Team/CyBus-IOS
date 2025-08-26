@@ -15,37 +15,34 @@ struct RateUsFeatures {
  
     @ObservableState
     struct State: Equatable {
-        
         // State vars
-        var needtoShown: Bool = false
         var text: String = ""
         var rate: Int = 4
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
-        case initAppState
+        case initFeature
+        case initResponse(Bool)
         case onSubmit
         case onDismiss
     }
     
+    @Injected(\.rateUsUseCases) var rateUsUseCases: RateUsUseCasesProtocol
+    
     var body: some ReducerOf<Self> {
-        
-        @Injected(\.rateUsUseCases) var rateUsUseCases: RateUsUseCasesProtocol
       
         Reduce { state, action in
             switch action {
             case .binding(_):
                 return .none
-            case .initAppState:
-                state.needtoShown =  rateUsUseCases.needToShow()
+            case .initFeature:
+                let needtoShow = rateUsUseCases.needToShow()
+                return .send(.initResponse(needtoShow))
+            case .initResponse(_):
                 return .none
             case .onSubmit:
-                if state.rate < 3 {
-                }
-                else {
-                }
-
+                if state.rate < 3 {} else {}
                 return .none
             case .onDismiss:
                 return .none

@@ -17,8 +17,6 @@ struct RootView: View {
         RootFeature()
     }
     
-    @Injected(\.rateUsFeature) var storeRateUs: StoreOf<RateUsFeatures>
-    
     private var isDark: Bool {
         get { themeMode == ThemeMode.dark.rawValue }
     }
@@ -34,7 +32,6 @@ struct RootView: View {
         .environment(\.theme, isDark ? .dark : .light)
         .task(priority: .background) {
             store.send(.initApp)
-            storeRateUs.send(.initAppState) 
         }
         
     }
