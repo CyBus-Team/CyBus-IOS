@@ -21,8 +21,8 @@ extension Container {
     var appConfiguration: Factory<AppConfiguration> {
         self { AppConfiguration(
             backendURL: URL(string: "https://api.cybusapp.org/")!,
-            bannerAdUnitID: "ca-app-pub-3940256099942544/6300978111",
-            interstitialAdUnitID: "ca-app-pub-3940256099942544/8691691433")
+            bannerAdUnitID: "ca-app-pub-4424393069629810/9860491144",
+            interstitialAdUnitID: "ca-app-pub-4424393069629810/2173572817")
         }
     }
 }
