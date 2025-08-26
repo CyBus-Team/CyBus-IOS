@@ -7,10 +7,15 @@
 
 import FactoryKit
 import Foundation
+import ComposableArchitecture
 
 extension Container {
-    var advertisingFeature: Factory<AdvertisingFeature> {
-        self { AdvertisingFeature() }.singleton
+    var advertisingFeature: Factory<StoreOf<AdvertisingFeature>> {
+        self {
+            @MainActor in Store(initialState: AdvertisingFeature.State()) {
+                AdvertisingFeature()
+            }
+        }
     }
     var advertisingUseCases: Factory<AdvertisingUseCasesProtocol> {
         self { GoogleAdsUseCases() }.singleton

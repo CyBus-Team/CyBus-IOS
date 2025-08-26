@@ -7,11 +7,14 @@
 
 import SwiftUI
 import ComposableArchitecture
+import FactoryKit
 
 struct RootView: View {
     
     @AppStorage(ThemeKey.identifier) private var themeMode: String = ThemeKey.defaultValue.mode.rawValue
     
+    //MARK: DI
+    @Injected(\.advertisingFeature) var advertisingFeature: StoreOf<AdvertisingFeature>
     let store: StoreOf<RootFeature> = Store(initialState: RootFeature.State()) {
         RootFeature()
     }
@@ -31,6 +34,10 @@ struct RootView: View {
         .environment(\.theme, isDark ? .dark : .light)
         .task(priority: .background) {
             store.send(.initApp)
+        }
+        .task(priority: .high) {
+            advertisingFeature.send(.requestUMP)
+            advertisingFeature.send(.requestATT)
         }
         
     }

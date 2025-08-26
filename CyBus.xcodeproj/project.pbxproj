@@ -659,6 +659,13 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		9477911C2E5D315F003CCC62 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		9485253F2D949338008EB3A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -1038,6 +1045,7 @@
 		94F3B88A2CC3017100E38BE2 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				9477911C2E5D315F003CCC62 /* DI */,
 				94F3B88B2CC3017A00E38BE2 /* Presentation */,
 			);
 			path = Root;

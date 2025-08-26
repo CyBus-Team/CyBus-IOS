@@ -15,18 +15,16 @@ import UserMessagingPlatform
 struct AdvertisingFeature {
     
     enum InitializationStatus {
+        case notInitialized
         case failedToInitialize
         case initialized
     }
     
     @ObservableState
     struct State : Equatable {
-        var initializationStatus: InitializationStatus
-        // status: .authorized / .denied / .restricted / .notDetermined
+        var initializationStatus: InitializationStatus = .notInitialized
         var attStatus: ATTrackingManager.AuthorizationStatus?
-        // status: .available / .notAvailable / unknow
         var umpStatus: ConsentStatus?
-        
         var adIsReady: Bool = false
     }
     
@@ -78,8 +76,8 @@ struct AdvertisingFeature {
                 return .run { @MainActor send in
                     do {
                         try await advertisingUseCases.initSDK()
-                        send(.loadAd)
                         send(.initializationResponse(.initialized))
+                        send(.loadAd)
                     } catch {
                         send(.initializationResponse(.failedToInitialize))
                     }
