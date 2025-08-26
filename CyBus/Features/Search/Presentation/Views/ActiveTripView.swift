@@ -44,7 +44,7 @@ struct ActiveTripView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                         }
-            .sheet(isPresented: $storeRateUs.state.needtoShown) {
+            .sheet(isPresented: $storeRateUs.needtoShown) {
                 RateUsMainView(store: storeRateUs)
                     }
        
