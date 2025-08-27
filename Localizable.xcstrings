@@ -455,6 +455,29 @@
         }
       }
     },
+    "Rate us please..." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Βαθμολογήστε μας παρακαλώ…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста, оставьте отзыв…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оцініть нас, будь ласка…"
+          }
+        }
+      }
+    },
     "Search here" : {
       "localizations" : {
         "el-CY" : {
@@ -541,6 +564,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Почати від"
+          }
+        }
+      }
+    },
+    "Submit" : {
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Υποβολή"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправить"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Надіслати"
           }
         }
       }

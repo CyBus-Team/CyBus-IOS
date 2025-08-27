@@ -15,6 +15,7 @@ struct SearchView : View {
     @Bindable var addressSearchStore: StoreOf<AddressSearchFeature>
     @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
+    @Bindable var rateUsStore: StoreOf<RateUsFeatures>
     
     var body: some View {
         ZStack {
@@ -29,15 +30,26 @@ struct SearchView : View {
             } else {
                 SearchCollapsedView(store: store)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .sheet(isPresented: $store.rateUsOpened) {
+                        RateUsMainView(store: rateUsStore)
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.fraction(0.3)])
+                    }
                     .sheet(isPresented: $store.addressResultOpened) {
-                        AddressSearchResultView(store: addressResultStore, busesStore: busesStore)
-                            .presentationDragIndicator(.visible)
-                            .presentationDetents([.fraction(0.2)])
+                        AddressSearchResultView(
+                            store: addressResultStore,
+                            busesStore: busesStore
+                        )
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.fraction(0.2)])
                     }
                     .sheet(isPresented: $store.addressSearchOpened) {
-                        AddressSearchView(store: addressSearchStore, busesStore: busesStore)
-                            .presentationDragIndicator(.visible)
-                            .presentationDetents([.large])
+                        AddressSearchView(
+                            store: addressSearchStore,
+                            busesStore: busesStore
+                        )
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.large])
                     }
                     .sheet(isPresented: $store.tripSelectorOpened) {
                         TripSelectionView(store: addressResultStore)
@@ -46,18 +58,31 @@ struct SearchView : View {
                     }
             }
         }
-        .animation(.easeInOut(duration: 0.3), value: addressResultStore.selectedTrip)
+        .animation(
+            .easeInOut(duration: 0.3),
+            value: addressResultStore.selectedTrip
+        )
     }
 }
 
 #Preview {
-    SearchView(store: Store(initialState: SearchFeatures.State()) {
-        SearchFeatures()
-    }, addressSearchStore: Store(initialState: AddressSearchFeature.State()) {
-        AddressSearchFeature()
-    }, addressResultStore: Store(initialState: AddressSearchResultFeature.State()) {
-        AddressSearchResultFeature()
-    },busesStore: Store(initialState: BusesFeature.State()) {
-        BusesFeature()
-    })
+    SearchView(
+        store: Store(initialState: SearchFeatures.State()) {
+            SearchFeatures()
+        },
+        addressSearchStore: Store(initialState: AddressSearchFeature.State()) {
+            AddressSearchFeature()
+        },
+        addressResultStore: Store(
+            initialState: AddressSearchResultFeature.State()
+        ) {
+            AddressSearchResultFeature()
+        },
+        busesStore: Store(initialState: BusesFeature.State()) {
+            BusesFeature()
+        },
+        rateUsStore: Store(initialState: RateUsFeatures.State()) {
+            RateUsFeatures()
+        },
+    )
 }
