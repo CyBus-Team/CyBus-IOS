@@ -24,6 +24,7 @@ struct RateUsFeatures {
         case binding(BindingAction<State>)
         case initFeature
         case initResponse(Bool)
+        case onRateChanged(Int)
         case onSubmit
         case onDismiss
     }
@@ -42,9 +43,12 @@ struct RateUsFeatures {
             case .initResponse(_):
                 return .none
             case .onSubmit:
-                if state.rate < 3 {} else {}
+                if state.rate <= 3 {} else {}
                 return .none
             case .onDismiss:
+                return .none
+            case .onRateChanged(let value):
+                state.rate = value
                 return .none
             }
         }

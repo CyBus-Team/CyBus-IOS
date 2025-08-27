@@ -6,10 +6,12 @@
 //
 import SwiftUI
 import ComposableArchitecture
+import StoreKit
 
 struct RateUsMainView: View {
     @Bindable var store: StoreOf<RateUsFeatures>
-
+    @Environment(\.requestReview) private var requestReview
+    
     var label = "Rate us"
    
     var maximumRating = 5
@@ -38,6 +40,7 @@ struct RateUsMainView: View {
             
             ForEach(1..<maximumRating + 1, id: \.self) { number in
                 Button{
+                    store.send(.onRateChanged(number))
                     rate = number
                 } label: {
                     image(for: number)
@@ -55,6 +58,7 @@ struct RateUsMainView: View {
                 store.send(.onDismiss)
             }
             PrimaryButton(label: String(localized: "Submit")) {
+                requestReview()
                 store.send(.onSubmit)
             }
         }
