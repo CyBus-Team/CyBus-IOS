@@ -184,16 +184,24 @@
 		94FEF2FD2E5A897200E186DD /* RouteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FEF2FB2E5A897200E186DD /* RouteRepository.swift */; };
 		AC1D3FA12D26B1D70005D3EE /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3F9E2D26B1D70005D3EE /* BusView.swift */; };
 		AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D3FA52D270DF70005D3EE /* StopCircle.swift */; };
+		AC694B202E5F22CD00EE1FB7 /* RateUsDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B162E5F22CD00EE1FB7 /* RateUsDI.swift */; };
+		AC694B212E5F22CD00EE1FB7 /* RateUsUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B192E5F22CD00EE1FB7 /* RateUsUseCasesProtocol.swift */; };
+		AC694B222E5F22CD00EE1FB7 /* RateUsUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B182E5F22CD00EE1FB7 /* RateUsUseCases.swift */; };
+		AC694B232E5F22CD00EE1FB7 /* RateUsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B1C2E5F22CD00EE1FB7 /* RateUsMainView.swift */; };
+		AC694B242E5F22CD00EE1FB7 /* RateUsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B132E5F22CD00EE1FB7 /* RateUsRepository.swift */; };
+		AC694B252E5F22CD00EE1FB7 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B1D2E5F22CD00EE1FB7 /* RateUsView.swift */; };
+		AC694B262E5F22CD00EE1FB7 /* RateUsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B142E5F22CD00EE1FB7 /* RateUsRepositoryProtocol.swift */; };
+		AC694B272E5F22CD00EE1FB7 /* RateUsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B1B2E5F22CD00EE1FB7 /* RateUsFeature.swift */; };
+		AC694B282E5F22CD00EE1FB7 /* RateUsDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B162E5F22CD00EE1FB7 /* RateUsDI.swift */; };
+		AC694B292E5F22CD00EE1FB7 /* RateUsUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B192E5F22CD00EE1FB7 /* RateUsUseCasesProtocol.swift */; };
+		AC694B2A2E5F22CD00EE1FB7 /* RateUsUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B182E5F22CD00EE1FB7 /* RateUsUseCases.swift */; };
+		AC694B2B2E5F22CD00EE1FB7 /* RateUsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B1C2E5F22CD00EE1FB7 /* RateUsMainView.swift */; };
+		AC694B2C2E5F22CD00EE1FB7 /* RateUsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B132E5F22CD00EE1FB7 /* RateUsRepository.swift */; };
+		AC694B2D2E5F22CD00EE1FB7 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B1D2E5F22CD00EE1FB7 /* RateUsView.swift */; };
+		AC694B2E2E5F22CD00EE1FB7 /* RateUsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B142E5F22CD00EE1FB7 /* RateUsRepositoryProtocol.swift */; };
+		AC694B2F2E5F22CD00EE1FB7 /* RateUsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B1B2E5F22CD00EE1FB7 /* RateUsFeature.swift */; };
 		AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894B962CE4CB90001A660C /* BusMarker.swift */; };
-		AC96113F2E416D65009BAB93 /* RateUsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */; };
-		AC9611402E416D65009BAB93 /* RateUsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */; };
 		ACBEE2142D4FA9D700C1A753 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */; };
-		ACD9FF5E2E5D0332005636B5 /* RateUsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF5D2E5D0332005636B5 /* RateUsRepository.swift */; };
-		ACD9FF602E5D033D005636B5 /* RateUsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF5F2E5D033D005636B5 /* RateUsRepositoryProtocol.swift */; };
-		ACD9FF622E5D0346005636B5 /* RateUsDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF612E5D0346005636B5 /* RateUsDI.swift */; };
-		ACD9FF662E5D0353005636B5 /* RateUsUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF642E5D0353005636B5 /* RateUsUseCases.swift */; };
-		ACD9FF672E5D0353005636B5 /* RateUsUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF652E5D0353005636B5 /* RateUsUseCasesProtocol.swift */; };
-		ACD9FF6A2E5D03B0005636B5 /* RateUsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FF692E5D03B0005636B5 /* RateUsFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,15 +322,16 @@
 		94FEF2FB2E5A897200E186DD /* RouteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRepository.swift; sourceTree = "<group>"; };
 		AC1D3F9E2D26B1D70005D3EE /* BusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusView.swift; sourceTree = "<group>"; };
 		AC1D3FA52D270DF70005D3EE /* StopCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCircle.swift; sourceTree = "<group>"; };
+		AC694B132E5F22CD00EE1FB7 /* RateUsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsRepository.swift; sourceTree = "<group>"; };
+		AC694B142E5F22CD00EE1FB7 /* RateUsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		AC694B162E5F22CD00EE1FB7 /* RateUsDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsDI.swift; sourceTree = "<group>"; };
+		AC694B182E5F22CD00EE1FB7 /* RateUsUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsUseCases.swift; sourceTree = "<group>"; };
+		AC694B192E5F22CD00EE1FB7 /* RateUsUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsUseCasesProtocol.swift; sourceTree = "<group>"; };
+		AC694B1B2E5F22CD00EE1FB7 /* RateUsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsFeature.swift; sourceTree = "<group>"; };
+		AC694B1C2E5F22CD00EE1FB7 /* RateUsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsMainView.swift; sourceTree = "<group>"; };
+		AC694B1D2E5F22CD00EE1FB7 /* RateUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsView.swift; sourceTree = "<group>"; };
 		AC894B962CE4CB90001A660C /* BusMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarker.swift; sourceTree = "<group>"; };
-		AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsMainView.swift; sourceTree = "<group>"; };
 		ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		ACD9FF5D2E5D0332005636B5 /* RateUsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsRepository.swift; sourceTree = "<group>"; };
-		ACD9FF5F2E5D033D005636B5 /* RateUsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsRepositoryProtocol.swift; sourceTree = "<group>"; };
-		ACD9FF612E5D0346005636B5 /* RateUsDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsDI.swift; sourceTree = "<group>"; };
-		ACD9FF642E5D0353005636B5 /* RateUsUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsUseCases.swift; sourceTree = "<group>"; };
-		ACD9FF652E5D0353005636B5 /* RateUsUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsUseCasesProtocol.swift; sourceTree = "<group>"; };
-		ACD9FF692E5D03B0005636B5 /* RateUsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -730,7 +739,7 @@
 		94AF0D932C7793EF002FE41B /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				AC9611382E416C96009BAB93 /* RateUs */,
+				AC694B1F2E5F22CD00EE1FB7 /* RateUs */,
 				94F3B88A2CC3017100E38BE2 /* Root */,
 				94AF24B12CBC13320092EE9B /* Onboarding */,
 				945843A12CD17F0A006D9893 /* Home */,
@@ -1061,50 +1070,51 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		AC9611382E416C96009BAB93 /* RateUs */ = {
+		AC694B152E5F22CD00EE1FB7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				AC9611392E416CA8009BAB93 /* DI */,
-				AC96113A2E416CB6009BAB93 /* Data */,
-				AC96113B2E416CBB009BAB93 /* Domain */,
-				AC96113C2E416CC6009BAB93 /* Presentation */,
-			);
-			path = RateUs;
-			sourceTree = "<group>";
-		};
-		AC9611392E416CA8009BAB93 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				ACD9FF612E5D0346005636B5 /* RateUsDI.swift */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
-		AC96113A2E416CB6009BAB93 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				ACD9FF5D2E5D0332005636B5 /* RateUsRepository.swift */,
-				ACD9FF5F2E5D033D005636B5 /* RateUsRepositoryProtocol.swift */,
+				AC694B132E5F22CD00EE1FB7 /* RateUsRepository.swift */,
+				AC694B142E5F22CD00EE1FB7 /* RateUsRepositoryProtocol.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		AC96113B2E416CBB009BAB93 /* Domain */ = {
+		AC694B172E5F22CD00EE1FB7 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				ACD9FF642E5D0353005636B5 /* RateUsUseCases.swift */,
-				ACD9FF652E5D0353005636B5 /* RateUsUseCasesProtocol.swift */,
+				AC694B162E5F22CD00EE1FB7 /* RateUsDI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		AC694B1A2E5F22CD00EE1FB7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AC694B182E5F22CD00EE1FB7 /* RateUsUseCases.swift */,
+				AC694B192E5F22CD00EE1FB7 /* RateUsUseCasesProtocol.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		AC96113C2E416CC6009BAB93 /* Presentation */ = {
+		AC694B1E2E5F22CD00EE1FB7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				ACD9FF692E5D03B0005636B5 /* RateUsFeature.swift */,
-				AC96113E2E416D5C009BAB93 /* RateUsMainView.swift */,
+				AC694B1B2E5F22CD00EE1FB7 /* RateUsFeature.swift */,
+				AC694B1C2E5F22CD00EE1FB7 /* RateUsMainView.swift */,
+				AC694B1D2E5F22CD00EE1FB7 /* RateUsView.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AC694B1F2E5F22CD00EE1FB7 /* RateUs */ = {
+			isa = PBXGroup;
+			children = (
+				AC694B152E5F22CD00EE1FB7 /* Data */,
+				AC694B172E5F22CD00EE1FB7 /* DI */,
+				AC694B1A2E5F22CD00EE1FB7 /* Domain */,
+				AC694B1E2E5F22CD00EE1FB7 /* Presentation */,
+			);
+			path = RateUs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1258,7 +1268,6 @@
 				94CE03062DB58188004C3CE8 /* SearchTripDTO.swift in Sources */,
 				94D7948B2CC029BA0097A2F0 /* OnboardingFeatures.swift in Sources */,
 				94575D7B2D232E6700CC3C03 /* ClearButton.swift in Sources */,
-				ACD9FF5E2E5D0332005636B5 /* RateUsRepository.swift in Sources */,
 				942F51DC2D9F127F007F6F7D /* RouteDI.swift in Sources */,
 				9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */,
 				94CE030A2DB5AC12004C3CE8 /* PathTips.swift in Sources */,
@@ -1266,7 +1275,6 @@
 				AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */,
 				94AF24DA2CBC572A0092EE9B /* OnboardingView.swift in Sources */,
 				9406EB562D3C418800C17ABF /* SearchTripUseCasesProtocol.swift in Sources */,
-				ACD9FF622E5D0346005636B5 /* RateUsDI.swift in Sources */,
 				94F3B8902CC301A100E38BE2 /* RootFeature.swift in Sources */,
 				942F51E32DA4405B007F6F7D /* SearchDI.swift in Sources */,
 				94575DB22D2DA3A700CC3C03 /* SearchTripUseCases.swift in Sources */,
@@ -1292,7 +1300,6 @@
 				94AF0DC62C7CF956002FE41B /* RouteEntity.swift in Sources */,
 				94575D6F2D1F318300CC3C03 /* SearchView.swift in Sources */,
 				947443E72DE1FF5800305EAF /* ActiveTripView.swift in Sources */,
-				AC9611402E416D65009BAB93 /* RateUsMainView.swift in Sources */,
 				948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */,
 				9432A1802D4FB19E00E05BCB /* ClearNodesButton.swift in Sources */,
 				94575D812D23346100CC3C03 /* AddressSearchRepositoryProtocol.swift in Sources */,
@@ -1321,9 +1328,7 @@
 				94575D8D2D2336D500CC3C03 /* SuggestionsEntity.swift in Sources */,
 				94FEF2F62E5A86B300E186DD /* RouteRepositoryProtocol.swift in Sources */,
 				AC1D3FA12D26B1D70005D3EE /* BusView.swift in Sources */,
-				ACD9FF602E5D033D005636B5 /* RateUsRepositoryProtocol.swift in Sources */,
 				942F51D72D9F1206007F6F7D /* RouteUseCasesProtocol.swift in Sources */,
-				ACD9FF6A2E5D03B0005636B5 /* RateUsFeature.swift in Sources */,
 				9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */,
 				9435C90A2CF334CC0041A986 /* RouteFeature.swift in Sources */,
 				94D794A92CC2CDD30097A2F0 /* Theme.swift in Sources */,
@@ -1338,9 +1343,15 @@
 				94575D882D23350400CC3C03 /* AddressSearchRepository.swift in Sources */,
 				9403C9282D3C0F3D000EDB25 /* SearchTripRepository.swift in Sources */,
 				94D794B02CC2CDD30097A2F0 /* ColorPalette.swift in Sources */,
-				ACD9FF662E5D0353005636B5 /* RateUsUseCases.swift in Sources */,
-				ACD9FF672E5D0353005636B5 /* RateUsUseCasesProtocol.swift in Sources */,
 				94575D7F2D23345400CC3C03 /* AddressSearchUseCasesProtocol.swift in Sources */,
+				AC694B202E5F22CD00EE1FB7 /* RateUsDI.swift in Sources */,
+				AC694B212E5F22CD00EE1FB7 /* RateUsUseCasesProtocol.swift in Sources */,
+				AC694B222E5F22CD00EE1FB7 /* RateUsUseCases.swift in Sources */,
+				AC694B232E5F22CD00EE1FB7 /* RateUsMainView.swift in Sources */,
+				AC694B242E5F22CD00EE1FB7 /* RateUsRepository.swift in Sources */,
+				AC694B252E5F22CD00EE1FB7 /* RateUsView.swift in Sources */,
+				AC694B262E5F22CD00EE1FB7 /* RateUsRepositoryProtocol.swift in Sources */,
+				AC694B272E5F22CD00EE1FB7 /* RateUsFeature.swift in Sources */,
 				94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */,
 				94891BE02C3B017B008AFC53 /* BusEntity.swift in Sources */,
 			);
@@ -1359,7 +1370,6 @@
 				94B1303E2DB831DB0017C201 /* HomeView.swift in Sources */,
 				94FEF2F92E5A86EC00E186DD /* RouteDTO.swift in Sources */,
 				945B1AA02CC555460091CED6 /* RootFeature.swift in Sources */,
-				AC96113F2E416D65009BAB93 /* RateUsMainView.swift in Sources */,
 				944494792CCE417E00A616E2 /* LocationUseCases.swift in Sources */,
 				94B1303F2DB832240017C201 /* BusesUseCasesProtocol.swift in Sources */,
 				94B130402DB832240017C201 /* RouteUseCases.swift in Sources */,
@@ -1373,6 +1383,14 @@
 				94B130492DB832240017C201 /* BusesUseCases.swift in Sources */,
 				94B1304A2DB832240017C201 /* BusesDI.swift in Sources */,
 				94B1304B2DB832240017C201 /* BusDTO.swift in Sources */,
+				AC694B282E5F22CD00EE1FB7 /* RateUsDI.swift in Sources */,
+				AC694B292E5F22CD00EE1FB7 /* RateUsUseCasesProtocol.swift in Sources */,
+				AC694B2A2E5F22CD00EE1FB7 /* RateUsUseCases.swift in Sources */,
+				AC694B2B2E5F22CD00EE1FB7 /* RateUsMainView.swift in Sources */,
+				AC694B2C2E5F22CD00EE1FB7 /* RateUsRepository.swift in Sources */,
+				AC694B2D2E5F22CD00EE1FB7 /* RateUsView.swift in Sources */,
+				AC694B2E2E5F22CD00EE1FB7 /* RateUsRepositoryProtocol.swift in Sources */,
+				AC694B2F2E5F22CD00EE1FB7 /* RateUsFeature.swift in Sources */,
 				94B1304C2DB832240017C201 /* DestinationMarker.swift in Sources */,
 				9457A6212DCD2A0400DDD471 /* SearchMocks.swift in Sources */,
 				94B1304D2DB832240017C201 /* BusesFeature.swift in Sources */,
