@@ -18,5 +18,14 @@ public class RateUsUseCases : RateUsUseCasesProtocol {
     func needToShow() -> Bool {
         !repository.isShownBefore()
     }
+    
+    func pushReview(for email: String, rating: Int, message: String) async throws -> Bool {
+        do {
+            let pushResonse = try await repository.pushReview(for: email, rating: rating, message: message)
+            return pushResonse.description == "Success"
+        } catch {
+            throw error
+        }
+    }
 
 }

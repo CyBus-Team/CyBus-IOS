@@ -13,7 +13,7 @@ struct RateUsMainView: View {
     @Environment(\.requestReview) private var requestReview
     
     var label = "Rate us"
-   
+    
     var maximumRating = 5
     var offImage: Image?
     var onImage = Image(systemName: "star.fill")
@@ -32,7 +32,7 @@ struct RateUsMainView: View {
     var body: some View {
         @State var rateText: String = store.text
         @State var rate: Int = store.rate
-
+        
         HStack{
             if label.isEmpty == false {
                 Text(label)
@@ -48,19 +48,27 @@ struct RateUsMainView: View {
                 }
             }
         }
- 
-  
+        
+        
         TextField("Rate us please...", text: $rateText).frame(minHeight: 100)
-
+        
         HStack {
-
-
+            
+            
             SecondaryButton(label: String(localized: "Not now")) {
                 store.send(.onDismiss)
             }
             PrimaryButton(label: String(localized: "Submit")) {
-                requestReview()
-                store.send(.onSubmit)
+                if rate > 3 {
+                    
+                    store.send(.pushReview(email: "test@mail.com", rating: rate, message: rateText))
+                    requestReview()
+                    
+                } else {
+                    store.send(.pushReview(email: "test@mail.com", rating: rate, message: rateText))
+                    
+                }
+                
             }
         }
         

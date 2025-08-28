@@ -7,4 +7,5 @@
 protocol RateUsUseCasesProtocol {
     func finished()
     func needToShow() -> Bool
+    func pushReview(for email: String, rating: Int, message: String) async throws -> Bool
 }

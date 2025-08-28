@@ -199,6 +199,8 @@
 		AC694B4D2E5F24A400EE1FB7 /* RateUsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B3C2E5F24A400EE1FB7 /* RateUsMainView.swift */; };
 		AC694B4F2E5F24A400EE1FB7 /* RateUsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC694B342E5F24A400EE1FB7 /* RateUsRepositoryProtocol.swift */; };
 		AC894B972CE4CB90001A660C /* BusMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894B962CE4CB90001A660C /* BusMarker.swift */; };
+		AC8E5FD52E60A0A600EB40FC /* RateUsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8E5FD42E60A09E00EB40FC /* RateUsDTO.swift */; };
+		AC8E5FD62E60A0A600EB40FC /* RateUsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8E5FD42E60A09E00EB40FC /* RateUsDTO.swift */; };
 		ACBEE2142D4FA9D700C1A753 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
@@ -328,6 +330,7 @@
 		AC694B3B2E5F24A400EE1FB7 /* RateUsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsFeature.swift; sourceTree = "<group>"; };
 		AC694B3C2E5F24A400EE1FB7 /* RateUsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsMainView.swift; sourceTree = "<group>"; };
 		AC894B962CE4CB90001A660C /* BusMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMarker.swift; sourceTree = "<group>"; };
+		AC8E5FD42E60A09E00EB40FC /* RateUsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsDTO.swift; sourceTree = "<group>"; };
 		ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1070,6 +1073,7 @@
 		AC694B352E5F24A400EE1FB7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				AC8E5FD42E60A09E00EB40FC /* RateUsDTO.swift */,
 				AC694B332E5F24A400EE1FB7 /* RateUsRepository.swift */,
 				AC694B342E5F24A400EE1FB7 /* RateUsRepositoryProtocol.swift */,
 			);
@@ -1303,6 +1307,7 @@
 				94575DAC2D2C501200CC3C03 /* DestinationMarker.swift in Sources */,
 				AC1D3FA62D270DF80005D3EE /* StopCircle.swift in Sources */,
 				94F2208A2C5E701F00D776B9 /* RouteInfoView.swift in Sources */,
+				AC8E5FD52E60A0A600EB40FC /* RateUsDTO.swift in Sources */,
 				94575D7D2D23331700CC3C03 /* AddressSearchFeature.swift in Sources */,
 				942F51DF2DA43DC7007F6F7D /* LocationDI.swift in Sources */,
 				94575D8A2D23359300CC3C03 /* SuggestionDTO.swift in Sources */,
@@ -1425,6 +1430,7 @@
 				94B1306B2DB832370017C201 /* SearchView.swift in Sources */,
 				9449B2312DC7B5EA00643B5A /* LocationMocks.swift in Sources */,
 				94B1306C2DB832370017C201 /* AddressSearchRepository.swift in Sources */,
+				AC8E5FD62E60A0A600EB40FC /* RateUsDTO.swift in Sources */,
 				94B1306D2DB832370017C201 /* SearchTripDTO.swift in Sources */,
 				94B130322DB831940017C201 /* ClearNodesButton.swift in Sources */,
 				94B130332DB831940017C201 /* RouteInfoView.swift in Sources */,

@@ -456,7 +456,6 @@
       }
     },
     "Rate us please..." : {
-      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {

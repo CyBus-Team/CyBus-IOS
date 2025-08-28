@@ -7,4 +7,6 @@
 protocol RateUsRepositoryProtocol {
     func finished()
     func isShownBefore() -> Bool
+    
+    func pushReview(for email: String, rating: Int, message: String) async throws -> Bool
 }
