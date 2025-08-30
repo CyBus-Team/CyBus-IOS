@@ -40,38 +40,45 @@ jobs:
           echo "Listing available destinations for scheme CyBus (for debugging)..."
           xcodebuild -project CyBus.xcodeproj -scheme CyBus -showdestinations || true
 
-          # Try to extract the first iOS Simulator destination from xcodebuild
-          DEST=$(xcodebuild -project CyBus.xcodeproj -scheme CyBus -showdestinations 2>/dev/null \
-            | sed -n 's/.*{ \(platform:iOS Simulator[^}]*\) }.*/\1/p' \
-            | head -n1 || true)
+          # Prefer an iPhone simulator with a real UUID
+          UDID=$(xcodebuild -project CyBus.xcodeproj -scheme CyBus -showdestinations 2>/dev/null \
+            | awk '/platform:iOS Simulator/ && /name:iPhone/ && /id:[0-9A-F-]{36}/ { \
+                for (i=1;i<=NF;i++) if ($i ~ /^id:/) { gsub("id:","",$i); gsub(",","",$i); print $i; exit } \
+              }' \
+            || true)
 
-          if [ -z "$DEST" ]; then
-            echo "No destinations returned by xcodebuild. Falling back to simctl..."
+          # If not found, take any iOS Simulator with a real UUID (may be an iPad)
+          if [ -z "${UDID}" ]; then
+            UDID=$(xcodebuild -project CyBus.xcodeproj -scheme CyBus -showdestinations 2>/dev/null \
+              | awk '/platform:iOS Simulator/ && /id:[0-9A-F-]{36}/ { \
+                  for (i=1;i<=NF;i++) if ($i ~ /^id:/) { gsub("id:","",$i); gsub(",","",$i); print $i; exit } \
+                }' \
+              || true)
+          fi
 
-            # Get latest iOS runtime identifier (e.g., com.apple.CoreSimulator.SimRuntime.iOS-18-0)
+          # If still not found, fall back to creating/booting via simctl
+          if [ -z "${UDID}" ]; then
+            echo "No real simulator UUID found in -showdestinations. Falling back to simctl..."
             RUNTIME_ID=$(xcrun simctl list runtimes | awk -F'[()]' '/iOS/ && /Available/ {print $2}' | tail -n1 || true)
             if [ -z "$RUNTIME_ID" ]; then
               echo "No iOS runtime found via simctl. Attempting to download platform..."
               xcodebuild -downloadPlatform iOS
               RUNTIME_ID=$(xcrun simctl list runtimes | awk -F'[()]' '/iOS/ && /Available/ {print $2}' | tail -n1 || true)
             fi
-
-            # Pick any available iOS device UDID or create one
+            # Create iPhone simulator if none exists
             UDID=$(xcrun simctl list devices available | awk -F'[()]' '/iOS/ {print $2; exit}' || true)
             if [ -z "$UDID" ]; then
               echo "No available iOS devices. Creating a new iPhone 15 simulator..."
               UDID=$(xcrun simctl create "CI iPhone 15" "iPhone 15" "$RUNTIME_ID")
             fi
-
-            echo "Booting simulator $UDID (if not already booted)..."
             xcrun simctl boot "$UDID" || true
             xcrun simctl bootstatus "$UDID" -b || true
-
-            DEST="id=$UDID"
           fi
 
-          # Absolute last resort: use a generic destination selector so xcodebuild can pick a matching simulator
-          if [ -z "$DEST" ]; then
+          if [ -n "${UDID}" ]; then
+            DEST="id=${UDID}"
+          else
+            # Absolute last resort: generic destination lets xcodebuild pick one
             DEST="platform=iOS Simulator,OS=latest"
           fi
 
