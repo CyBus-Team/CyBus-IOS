@@ -26,7 +26,7 @@ class RateUsRepository : RateUsRepositoryProtocol {
     }
     
     func pushReview(for email: String, rating: Int, message: String) async throws -> Bool {
-        var request = URLRequest(url: appConfiguration.backendURL.appendingPathComponent("buses"))
+        var request = URLRequest(url: appConfiguration.backendURL.appendingPathComponent("feedback"))
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
