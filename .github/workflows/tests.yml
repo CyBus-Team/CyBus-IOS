@@ -20,9 +20,20 @@ jobs:
         with:
           xcode-version: '16.0.0'
 
+      # Find available iOS Simulator destination
+      - name: Find available iOS Simulator destination
+        run: |
+          set -euo pipefail
+          # Ask xcodebuild for supported destinations for this scheme/project and pick the first iPhone simulator
+          DEST=$(xcodebuild -project CyBus.xcodeproj -scheme CyBus -showdestinations \
+            | sed -n 's/.*{ \(platform:iOS Simulator[^}]*name:iPhone [^}]*\) }.*/\1/p' \
+            | head -n1)
+          echo "Using destination: $DEST"
+          echo "DESTINATION=$DEST" >> $GITHUB_ENV
+
       # Run tests
       - name: Run tests
-        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination 'platform=iOS Simulator,name=iPhone 16' -quiet -skipMacroValidation
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination "$DESTINATION" -quiet -skipMacroValidation
   
   notify:
       runs-on: macos-15
