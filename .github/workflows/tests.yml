@@ -36,7 +36,8 @@ jobs:
       - name: Pick iOS Simulator destination
         run: |
           set -euo pipefail
-          echo "Listing available destinations for scheme CyBus..."
+
+          echo "Listing available destinations for scheme CyBus (for debugging)..."
           xcodebuild -project CyBus.xcodeproj -scheme CyBus -showdestinations || true
 
           # Try to extract the first iOS Simulator destination from xcodebuild
@@ -48,21 +49,30 @@ jobs:
             echo "No destinations returned by xcodebuild. Falling back to simctl..."
 
             # Get latest iOS runtime identifier (e.g., com.apple.CoreSimulator.SimRuntime.iOS-18-0)
-            RUNTIME_ID=$(xcrun simctl list runtimes | awk -F'[()]' '/iOS/ {print $2}' | tail -n1 || true)
+            RUNTIME_ID=$(xcrun simctl list runtimes | awk -F'[()]' '/iOS/ && /Available/ {print $2}' | tail -n1 || true)
             if [ -z "$RUNTIME_ID" ]; then
               echo "No iOS runtime found via simctl. Attempting to download platform..."
               xcodebuild -downloadPlatform iOS
-              RUNTIME_ID=$(xcrun simctl list runtimes | awk -F'[()]' '/iOS/ {print $2}' | tail -n1 || true)
+              RUNTIME_ID=$(xcrun simctl list runtimes | awk -F'[()]' '/iOS/ && /Available/ {print $2}' | tail -n1 || true)
             fi
 
-            # Create a device if none exists
-            UDID=$(xcrun simctl list devices available | awk -F'[()]' '/iOS/ && /(Booted|Shutdown)/ {print $2; exit}' || true)
+            # Pick any available iOS device UDID or create one
+            UDID=$(xcrun simctl list devices available | awk -F'[()]' '/iOS/ {print $2; exit}' || true)
             if [ -z "$UDID" ]; then
               echo "No available iOS devices. Creating a new iPhone 15 simulator..."
               UDID=$(xcrun simctl create "CI iPhone 15" "iPhone 15" "$RUNTIME_ID")
             fi
 
+            echo "Booting simulator $UDID (if not already booted)..."
+            xcrun simctl boot "$UDID" || true
+            xcrun simctl bootstatus "$UDID" -b || true
+
             DEST="id=$UDID"
+          fi
+
+          # Absolute last resort: use a generic destination selector so xcodebuild can pick a matching simulator
+          if [ -z "$DEST" ]; then
+            DEST="platform=iOS Simulator,name=iPhone 15"
           fi
 
           echo "Using destination: $DEST"
@@ -70,7 +80,7 @@ jobs:
 
       # Run tests
       - name: Run tests
-        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination "$DESTINATION" -quiet -skipMacroValidation
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination "$DESTINATION" -destination-timeout 120 -quiet -skipMacroValidation
   
   notify:
       runs-on: macos-15
