@@ -72,7 +72,7 @@ jobs:
 
           # Absolute last resort: use a generic destination selector so xcodebuild can pick a matching simulator
           if [ -z "$DEST" ]; then
-            DEST="platform=iOS Simulator,name=iPhone 15"
+            DEST="platform=iOS Simulator,OS=latest"
           fi
 
           echo "Using destination: $DEST"
@@ -80,7 +80,7 @@ jobs:
 
       # Run tests
       - name: Run tests
-        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination "$DESTINATION" -destination-timeout 120 -quiet -skipMacroValidation
+        run: xcodebuild test -project CyBus.xcodeproj -scheme CyBus -destination "${DESTINATION:-platform=iOS Simulator,OS=latest}" -destination-timeout 120 -quiet -skipMacroValidation
   
   notify:
       runs-on: macos-15
