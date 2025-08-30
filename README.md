@@ -15,3 +15,7 @@ iOS application with schedules, routes, and locations of buses in Cyprus.
 
 ## Download
 [![Download on the App Store](https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us)](https://apps.apple.com/us/app/cybus/id6745707612) [![Join Beta on TestFlight](https://img.shields.io/badge/TestFlight-Join%20Beta-blue?logo=apple&style=for-the-badge)](https://testflight.apple.com/join/WD62JESV)
+
+## License
+Licensed under the Apache License, Version 2.0.  
+See [LICENSE](./LICENSE) for details.
