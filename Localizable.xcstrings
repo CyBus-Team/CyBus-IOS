@@ -273,6 +273,9 @@
         }
       }
     },
+    "Leave your feedback..." : {
+
+    },
     "Loading..." : {
       "localizations" : {
         "el-CY" : {
@@ -455,7 +458,11 @@
         }
       }
     },
+    "Rate us" : {
+
+    },
     "Rate us please..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
@@ -790,6 +797,9 @@
           }
         }
       }
+    },
+    "Your email (optional)" : {
+
     }
   },
   "version" : "1.0"

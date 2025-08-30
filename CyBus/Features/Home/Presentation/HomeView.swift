@@ -16,7 +16,6 @@ struct HomeView: View {
     //MARK: DI
     @Injected(\.mapFeature) var mapStore: StoreOf<MapFeature>
     @Injected(\.busesFeature) var busesStore: StoreOf<BusesFeature>
-    @Injected(\.rateUsFeature) var rateUsStore: StoreOf<RateUsFeatures>
     
     var body: some View {
         VStack {
@@ -32,7 +31,6 @@ struct HomeView: View {
                     addressSearchStore: mapStore.scope(state: \.search, action: \.search).scope(state: \.searchAddress, action: \.searchAddress),
                     addressResultStore: mapStore.scope(state: \.search, action: \.search).scope(state: \.searchAddressResult, action: \.searchAddressResult),
                     busesStore: busesStore,
-                    rateUsStore: rateUsStore,
                 )
             }
         }

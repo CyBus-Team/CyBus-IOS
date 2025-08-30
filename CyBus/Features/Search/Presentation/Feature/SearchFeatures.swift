@@ -21,7 +21,7 @@ struct SearchFeatures {
         // Features
         var searchAddressResult = AddressSearchResultFeature.State()
         var searchAddress = AddressSearchFeature.State()
-        var rateUs = RateUsFeatures.State()
+        var rateUs = RateUsFeature.State()
     }
     
     enum Action: BindableAction {
@@ -32,7 +32,7 @@ struct SearchFeatures {
         case onOpenFavourites
         case searchAddressResult(AddressSearchResultFeature.Action)
         case searchAddress(AddressSearchFeature.Action)
-        case rateUs(RateUsFeatures.Action)
+        case rateUs(RateUsFeature.Action)
     }
     
     var body: some ReducerOf<Self> {
@@ -46,7 +46,7 @@ struct SearchFeatures {
             AddressSearchResultFeature()
         }
         Scope(state: \.rateUs, action: \.rateUs) {
-            RateUsFeatures()
+            RateUsFeature()
         }
         BindingReducer()
         Reduce { state, action in
@@ -97,6 +97,7 @@ struct SearchFeatures {
             case .searchAddressResult(.onGetTripsResponse(_)):
                 state.addressSearchOpened = false
                 state.addressResultOpened = false
+                state.rateUsOpened = false
                 state.tripSelectorOpened = true
                 return .none
             case .searchAddressResult(_):
@@ -104,6 +105,9 @@ struct SearchFeatures {
             // Rate Us
             case let .rateUs(.initResponse(needToShow)):
                 state.rateUsOpened = needToShow
+                return .none
+            case .rateUs(.submitReviewResponse):
+                state.rateUsOpened = false
                 return .none
             case .rateUs(_):
                 return .none

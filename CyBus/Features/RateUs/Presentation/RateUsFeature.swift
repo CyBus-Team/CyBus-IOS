@@ -7,40 +7,32 @@
 import ComposableArchitecture
 import FactoryKit
 
-
 @Reducer
-struct RateUsFeatures {
-    
-    static let rateUsKey = "isShown"
+struct RateUsFeature {
     
     @ObservableState
     struct State: Equatable {
-        // State vars
-        var text: String = ""
-        var rate: Int = 4
-        var success: Bool = false
+        var message: String = ""
+        var rate: Int = 5
+        var email: String = ""
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case onDismiss
         case initFeature
         case initResponse(Bool)
         case onRateChanged(Int)
-        case onSubmit
-        case onDismiss
-        case pushReview(email: String, rating: Int, message: String)
-        case pushReviewResponse(Bool)
-        case pushReviewError(String)
-        
+        case submitReview
+        case submitReviewResponse
+        case submitReviewError(String)
     }
     
     @Injected(\.rateUsUseCases) var rateUsUseCases: RateUsUseCasesProtocol
     
     var body: some ReducerOf<Self> {
-        
-        Reduce {
-            state,
-            action in
+        BindingReducer()
+        Reduce { state,action in
             switch action {
             case .binding(_):
                 return .none
@@ -49,37 +41,33 @@ struct RateUsFeatures {
                 return .send(.initResponse(needtoShow))
             case .initResponse(_):
                 return .none
-            case .onSubmit:
-                if state.rate <= 3 {} else {}
-                return .none
             case .onDismiss:
                 return .none
-            case .onRateChanged(let value):
-                state.rate = value
+            case .onRateChanged(let rate):
+                state.rate = rate
                 return .none
-            case let .pushReview(email, rating, message):
+            case .submitReview:
+                let email = state.email
+                let rate = state.rate
+                let message = state.message
                 return .run { @MainActor send in
                     do {
-                        let result = try await rateUsUseCases.pushReview(
-                            for: email,
-                            rating: rating,
+                        try await rateUsUseCases.submit(
+                            email: email,
+                            rating: rate,
                             message: message
                         )
-                        send(.pushReviewResponse(result))
+                        send(.submitReviewResponse)
                     } catch {
-                        send(
-                            .pushReviewError(
-                                "Error: \(error.localizedDescription)"
-                            ))
+                        send(.submitReviewError("Error: \(error.localizedDescription)"))
                     }
                 }
-            case let .pushReviewError(error):
+            case let .submitReviewError(error):
                 // TODO: UI errors
                 print("Error: \(error)")
                 return .none
                 
-            case let .pushReviewResponse(result):
-                state.success = result
+            case .submitReviewResponse:
                 return .none
             }
         }

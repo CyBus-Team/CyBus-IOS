@@ -15,7 +15,6 @@ struct SearchView : View {
     @Bindable var addressSearchStore: StoreOf<AddressSearchFeature>
     @Bindable var addressResultStore: StoreOf<AddressSearchResultFeature>
     @Bindable var busesStore: StoreOf<BusesFeature>
-    @Bindable var rateUsStore: StoreOf<RateUsFeatures>
     
     var body: some View {
         ZStack {
@@ -31,9 +30,12 @@ struct SearchView : View {
                 SearchCollapsedView(store: store)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                     .sheet(isPresented: $store.rateUsOpened) {
-                        RateUsMainView(store: rateUsStore)
+                        RateUsView(store: store.scope(
+                            state: \.rateUs,
+                            action: \.rateUs
+                        ))
                         .presentationDragIndicator(.visible)
-                        .presentationDetents([.fraction(0.3)])
+                        .presentationDetents([.fraction(0.4)])
                     }
                     .sheet(isPresented: $store.addressResultOpened) {
                         AddressSearchResultView(
@@ -62,6 +64,7 @@ struct SearchView : View {
             .easeInOut(duration: 0.3),
             value: addressResultStore.selectedTrip
         )
+        .animation(.easeInOut(duration: 0.3), value: store.rateUsOpened)
     }
 }
 
@@ -80,9 +83,6 @@ struct SearchView : View {
         },
         busesStore: Store(initialState: BusesFeature.State()) {
             BusesFeature()
-        },
-        rateUsStore: Store(initialState: RateUsFeatures.State()) {
-            RateUsFeatures()
-        },
+        }
     )
 }

@@ -10,17 +10,24 @@ import ComposableArchitecture
 
 extension Container {
     
-    var rateUsRepository: Factory<RateUsRepositoryProtocol> {
-        self { RateUsRepository() }
+    var rateUsLocalRepository: Factory<RateUsRepositoryProtocol> {
+        self { RateUsLocalRepository() }
+    }
+    var rateUsRemoteRepository: Factory<RateUsRepositoryProtocol> {
+        self { RateUsRemoteRepository() }
+    }
+    var rateUsAppStoreRepository: Factory<RateUsRepositoryProtocol> {
+        self { RateUsAppStoreRepository() }
     }
     var rateUsUseCases: Factory<RateUsUseCasesProtocol> {
         self { RateUsUseCases() }
     }
-    var rateUsFeature: Factory<StoreOf<RateUsFeatures>> {
+    var rateUsFeature: Factory<StoreOf<RateUsFeature>> {
         self {
-            @MainActor in Store(initialState: RateUsFeatures.State()) {
-                RateUsFeatures()
+            @MainActor in Store(initialState: RateUsFeature.State()) {
+                RateUsFeature()
             }
         }
     }
+    
 }

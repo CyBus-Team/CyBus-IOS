@@ -9,23 +9,29 @@ import ComposableArchitecture
 import FactoryKit
 
 public class RateUsUseCases : RateUsUseCasesProtocol {
-    @Injected(\.rateUsRepository) var repository: RateUsRepositoryProtocol
+    @Injected(\.rateUsLocalRepository) var localRepository: RateUsRepositoryProtocol
+    @Injected(\.rateUsRemoteRepository) var remoteRepository: RateUsRepositoryProtocol
+    @Injected(\.rateUsAppStoreRepository) var appStoreRepository: RateUsRepositoryProtocol
     
-    func finished() {
-        repository.finished()
-    }
+    static let positiveRate: [Int] = [4, 5]
+    static let negativeRate: [Int] = [1, 2, 3]
     
-    func needToShow() -> Bool {
-        !repository.isShownBefore()
-    }
-    
-    func pushReview(for email: String, rating: Int, message: String) async throws -> Bool {
+    func submit(email: String?, rating: Int, message: String) async throws {
         do {
-            let pushResonse = try await repository.pushReview(for: email, rating: rating, message: message)
-            return pushResonse.description == "Success"
+            let dto = ReviewDTO(email: email, rating: rating, message: message)
+            if (RateUsUseCases.negativeRate.contains(dto.rating)) {
+                try await remoteRepository.submit(review: dto)
+            } else if (RateUsUseCases.positiveRate.contains(dto.rating)) {
+                try await appStoreRepository.submit(review: dto)
+            }
+            try await localRepository.submit(review: dto)
         } catch {
             throw error
         }
+    }
+    
+    func needToShow() -> Bool {
+        !localRepository.hasShown()
     }
 
 }
