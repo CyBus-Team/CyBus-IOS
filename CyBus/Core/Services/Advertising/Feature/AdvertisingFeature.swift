@@ -63,6 +63,7 @@ struct AdvertisingFeature {
     @Injected(\.advertisingUseCases) var advertisingUseCases: AdvertisingUseCasesProtocol
     @Injected(\.attUseCases) var attUseCases: any ConsentsUseCasesProtocol
     @Injected(\.umpUseCases) var umpUseCases: any ConsentsUseCasesProtocol
+    @Injected(\.rateUsUseCases) var rateUsUseCases: RateUsUseCasesProtocol
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -94,7 +95,6 @@ struct AdvertisingFeature {
                     let status = try await attUseCases.requestConsent()
                     send(.responseATT(status as! ATTrackingManager.AuthorizationStatus))
                 }
-                return .none
                 
             // Method to handle the ATT authorization response and update the state.
             case let .responseATT(status):
@@ -108,7 +108,6 @@ struct AdvertisingFeature {
                     let status = try await umpUseCases.requestConsent()
                     send(.responseUMP(status as! ConsentStatus))
                 }
-                return .none
                 
             // Method to handle the UMP consent response and update the state.
             case let .responseUMP(formStatus):
@@ -134,6 +133,8 @@ struct AdvertisingFeature {
                 
             // Method to show an advertisement; triggers reload after showing.
             case .showAd:
+                let needToShowRateUs = rateUsUseCases.needToShow()
+                guard !needToShowRateUs else { return .none }
                 guard state.initializationStatus == .initialized else { return .none }
                 guard state.adIsReady else { return .none }
                 return .run { @MainActor send in

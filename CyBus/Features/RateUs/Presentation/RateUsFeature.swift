@@ -26,6 +26,7 @@ struct RateUsFeature {
         case submitReview
         case submitReviewResponse
         case submitReviewError(String)
+        
     }
     
     @Injected(\.rateUsUseCases) var rateUsUseCases: RateUsUseCasesProtocol

@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import SwiftUI
+import FactoryKit
 
 @Reducer
 struct SearchFeatures {

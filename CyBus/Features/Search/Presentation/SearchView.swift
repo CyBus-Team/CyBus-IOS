@@ -85,6 +85,9 @@ struct SearchView : View {
         },
         busesStore: Store(initialState: BusesFeature.State()) {
             BusesFeature()
+        },
+        advertisementsStore: Store(initialState: AdvertisingFeature.State()) {
+            AdvertisingFeature()
         }
     )
 }

@@ -19,10 +19,20 @@ struct AppConfiguration {
 
 extension Container {
     var appConfiguration: Factory<AppConfiguration> {
-        self { AppConfiguration(
-            backendURL: URL(string: "https://api.cybusapp.org/")!,
-            bannerAdUnitID: "ca-app-pub-4424393069629810/9860491144",
-            interstitialAdUnitID: "ca-app-pub-4424393069629810/2173572817")
+        self {
+            #if DEBUG
+            return AppConfiguration(
+                backendURL: URL(string: "https://api.cybusapp.org/")!,
+                bannerAdUnitID: "ca-app-pub-3940256099942544/2934735716",
+                interstitialAdUnitID: "ca-app-pub-3940256099942544/4411468910"
+            )
+            #else
+            return AppConfiguration(
+                backendURL: URL(string: "https://api.cybusapp.org/")!,
+                bannerAdUnitID: "ca-app-pub-4424393069629810/9860491144",
+                interstitialAdUnitID: "ca-app-pub-4424393069629810/2173572817"
+            )
+            #endif
         }
     }
 }
