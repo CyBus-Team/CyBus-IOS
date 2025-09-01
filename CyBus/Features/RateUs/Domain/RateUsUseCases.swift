@@ -30,8 +30,18 @@ public class RateUsUseCases : RateUsUseCasesProtocol {
         }
     }
     
+    func skip() async throws {
+        try await localRepository.submit(
+            review: ReviewDTO(
+                email: nil,
+                rating: 0,
+                message: "",
+            )
+        )
+    }
+    
     func needToShow() -> Bool {
         !localRepository.hasShown()
     }
-
+    
 }

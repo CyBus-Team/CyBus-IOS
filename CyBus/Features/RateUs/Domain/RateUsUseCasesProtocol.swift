@@ -6,5 +6,6 @@
 //
 protocol RateUsUseCasesProtocol {
     func submit(email: String?, rating: Int, message: String) async throws
+    func skip() async throws
     func needToShow() -> Bool
 }

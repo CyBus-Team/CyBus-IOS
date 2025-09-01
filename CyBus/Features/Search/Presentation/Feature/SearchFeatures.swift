@@ -107,7 +107,8 @@ struct SearchFeatures {
             case let .rateUs(.initResponse(needToShow)):
                 state.rateUsOpened = needToShow
                 return .none
-            case .rateUs(.submitReviewResponse):
+            case .rateUs(.submitReviewResponse),
+                    .rateUs(.onDismiss):
                 state.rateUsOpened = false
                 return .none
             case .rateUs(_):
