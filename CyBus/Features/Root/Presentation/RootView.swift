@@ -7,14 +7,15 @@
 
 import SwiftUI
 import ComposableArchitecture
+import FactoryKit
 
 struct RootView: View {
     
     @AppStorage(ThemeKey.identifier) private var themeMode: String = ThemeKey.defaultValue.mode.rawValue
     
-    let store: StoreOf<RootFeature> = Store(initialState: RootFeature.State()) {
-        RootFeature()
-    }
+    //MARK: DI
+    @Injected(\.advertisingFeature) var advertisingFeature: StoreOf<AdvertisingFeature>
+    @Injected(\.rootFeature) var store: StoreOf<RootFeature>
     
     private var isDark: Bool {
         get { themeMode == ThemeMode.dark.rawValue }
@@ -31,6 +32,10 @@ struct RootView: View {
         .environment(\.theme, isDark ? .dark : .light)
         .task(priority: .background) {
             store.send(.initApp)
+        }
+        .task(priority: .high) {
+            advertisingFeature.send(.requestUMP)
+            advertisingFeature.send(.requestATT)
         }
         
     }

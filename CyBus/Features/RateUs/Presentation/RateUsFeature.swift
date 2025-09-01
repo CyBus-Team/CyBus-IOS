@@ -26,6 +26,7 @@ struct RateUsFeature {
         case submitReview
         case submitReviewResponse
         case submitReviewError(String)
+        
     }
     
     @Injected(\.rateUsUseCases) var rateUsUseCases: RateUsUseCasesProtocol
@@ -42,7 +43,9 @@ struct RateUsFeature {
             case .initResponse(_):
                 return .none
             case .onDismiss:
-                return .none
+                return .run { send in
+                    try await rateUsUseCases.skip()
+                }
             case .onRateChanged(let rate):
                 state.rate = rate
                 return .none
