@@ -23,6 +23,18 @@
             "value" : "Εντάξει"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allow"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allow"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -45,6 +57,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Επιτρέψτε την πρόσβαση στην τοποθεσία"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allow access to geolocation"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allow access to geolocation"
           }
         },
         "ru" : {
@@ -71,6 +95,18 @@
             "value" : "Έχετε ήδη λογαριασμό;"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Already have an account?"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Already have an account?"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -93,6 +129,18 @@
             "value" : "Ακύρωση"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -113,6 +161,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Πάτησε στο ταξίδι για να επιλέξεις"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Click on trip to select"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Click on trip to select"
           }
         },
         "ru" : {
@@ -140,6 +200,18 @@
             "value" : "Σημείο στην κάρτα"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dropped pin"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dropped pin"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -160,6 +232,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Αναμενόμενη ώρα άφιξης:"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expected arrival time: %@"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expected arrival time: %@"
           }
         },
         "ru" : {
@@ -184,6 +268,18 @@
             "value" : "Ολοκλήρωση"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finish"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finish"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -204,6 +300,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ολοκλήρωση στις"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finish at"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finish at"
           }
         },
         "ru" : {
@@ -235,6 +343,18 @@
             "value" : "Get directions"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get directions"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get directions"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -259,6 +379,18 @@
             "value" : "Ξεκινήστε"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Start"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Start"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -274,7 +406,38 @@
       }
     },
     "Leave your feedback..." : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αφήστε τα σχόλιά σας..."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leave your feedback..."
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leave your feedback..."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оставьте свой отзыв…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Залишіть ваш відгук..."
+          }
+        }
+      }
     },
     "Loading..." : {
       "localizations" : {
@@ -282,6 +445,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Φόρτωση…"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
           }
         },
         "ru" : {
@@ -307,6 +482,18 @@
             "value" : "Τα δεδομένα τοποθεσίας δεν είναι διαθέσιμα αυτή τη στιγμή. Πρέπει να ενεργοποιήσετε τις υπηρεσίες τοποθεσίας στις ρυθμίσεις της συσκευής σας."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location data is currently unavailable. You must enable location services in your device settings."
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location data is currently unavailable. You must enable location services in your device settings."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -328,6 +515,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Η άδεια τοποθεσίας απορρίφθηκε. Πρέπει να ενεργοποιήσετε τις υπηρεσίες τοποθεσίας στις ρυθμίσεις της συσκευής σας."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location permission was denied. You must enable location services in your device settings."
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location permission was denied. You must enable location services in your device settings."
           }
         },
         "ru" : {
@@ -354,6 +553,18 @@
             "value" : "Σύνδεση"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log In"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log In"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -378,6 +589,18 @@
             "value" : "Συνδεθείτε για πιο εύκολη χρήση"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log in for more convenient use"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log in for more convenient use"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -398,6 +621,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Δεν βρέθηκαν δρομολόγια. Ίσως να μην υπάρχουν διαθέσιμα λεωφορεία αυτή τη στιγμή. Παρακαλούμε βεβαιωθείτε ότι η πρόσβαση στην τοποθεσία είναι ενεργοποιημένη στις ρυθμίσεις της συσκευής σας, ώστε να μπορούμε να σας δείξουμε τις καλύτερες επιλογές κοντά σας."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No trips found. There might not be any available buses at the moment. Please also make sure location access is enabled in your settings so we can find the best options near you."
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No trips found. There might not be any available buses at the moment. Please also make sure location access is enabled in your settings so we can find the best options near you."
           }
         },
         "ru" : {
@@ -422,6 +657,18 @@
             "value" : "Όχι τώρα"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not now"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not now"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -444,6 +691,18 @@
             "value" : "Άνοιγμα ρυθμίσεων"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open settings"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open settings"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -459,27 +718,35 @@
       }
     },
     "Rate us" : {
-
-    },
-    "Rate us please..." : {
-      "extractionState" : "stale",
       "localizations" : {
         "el-CY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Βαθμολογήστε μας παρακαλώ…"
+            "value" : "Βαθμολογήστε μας"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate us"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate us"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Пожалуйста, оставьте отзыв…"
+            "value" : "Оцените приложение"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Оцініть нас, будь ласка…"
+            "value" : "Оцініть програми"
           }
         }
       }
@@ -490,6 +757,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Αναζήτηση"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search here"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search here"
           }
         },
         "ru" : {
@@ -512,6 +791,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Επιλεγμένη διαδρομή"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected line"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected line"
           }
         },
         "ru" : {
@@ -538,6 +829,18 @@
             "value" : "Εγγραφή"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign up"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign up"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -558,6 +861,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ξεκινά από"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start at"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start at"
           }
         },
         "ru" : {
@@ -582,6 +897,18 @@
             "value" : "Υποβολή"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Submit"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Submit"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -602,6 +929,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Αυτό θα διαρκέσει μόνο λίγα δευτερόλεπτα"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This will only take a few seconds"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This will only take a few seconds"
           }
         },
         "ru" : {
@@ -628,6 +967,18 @@
             "value" : "Για να σας δείξουμε την τρέχουσα τοποθεσία σας και τα πλησιέστερα λεωφορεία, χρειαζόμαστε πρόσβαση στην τοποθεσία σας."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To show you your current location and the nearest buses, we need access to your geolocation."
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To show you your current location and the nearest buses, we need access to your geolocation."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -648,6 +999,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Παρακολουθήστε τα λεωφορεία σε πραγματικό χρόνο, σχεδιάστε διαδρομές και προσθέστε τις αγαπημένες σας στάσεις στα αγαπημένα σας."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Track buses in real time, plan routes and add your favorite stops to your favorites."
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Track buses in real time, plan routes and add your favorite stops to your favorites."
           }
         },
         "ru" : {
@@ -672,6 +1035,18 @@
             "value" : "Πληκτρολογήστε τον προορισμό σας…"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type your destination..."
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type your destination..."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -692,6 +1067,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Άγνωστο"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
           }
         },
         "ru" : {
@@ -716,6 +1103,18 @@
             "value" : "Ενημέρωση λεωφορείων και διαδρομών…"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updating buses and routes..."
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updating buses and routes..."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -738,6 +1137,18 @@
             "value" : "Περπάτημα"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Walk"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Walk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -758,6 +1169,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Καλώς ήρθατε στο CyprusGo!"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to CyBus!"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to CyBus!"
           }
         },
         "ru" : {
@@ -784,6 +1207,18 @@
             "value" : "Μπορείτε να συνδεθείτε για να αποθηκεύσετε τις αγαπημένες σας διαδρομές και να λαμβάνετε εξατομικευμένες ειδοποιήσεις."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can sign in to save your favorite routes and receive personalized notifications. "
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can sign in to save your favorite routes and receive personalized notifications. "
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -799,7 +1234,38 @@
       }
     },
     "Your email (optional)" : {
-
+      "localizations" : {
+        "el-CY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το email σας (προαιρετικό)"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your email (optional)"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your email (optional)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваша почта (опционально)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваша електронна адреса (необов'язково)"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
