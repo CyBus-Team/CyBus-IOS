@@ -717,6 +717,12 @@
         }
       }
     },
+    "price/month" : {
+
+    },
+    "price/year 45% off" : {
+
+    },
     "Rate us" : {
       "localizations" : {
         "el-CY" : {
@@ -1128,6 +1134,9 @@
           }
         }
       }
+    },
+    "Upgrade to Plus" : {
+
     },
     "Walk" : {
       "localizations" : {

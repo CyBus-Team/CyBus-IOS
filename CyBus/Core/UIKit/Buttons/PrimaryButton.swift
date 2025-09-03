@@ -11,10 +11,11 @@ struct PrimaryButton : View {
     @Environment(\.theme) var theme
     
     let label: String
+    var expanded: Bool = false
     let action: () -> Void
     var isLoading: Bool = false
     var font: Font?
-    
+
     var body: some View {
         Button {
             isLoading ? nil : action()
@@ -24,6 +25,7 @@ struct PrimaryButton : View {
             } else {
                 Text(label)
                     .font(font ?? theme.typography.title)
+                    .frame(maxWidth: expanded ? .infinity : nil)
             }
         }
         .padding(.vertical, 8)

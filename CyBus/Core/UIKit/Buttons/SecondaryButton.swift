@@ -11,6 +11,7 @@ struct SecondaryButton : View {
     @Environment(\.theme) var theme
     
     var label: String
+    var expanded: Bool = false
     var action: () -> Void
     var font: Font?
     
@@ -20,6 +21,7 @@ struct SecondaryButton : View {
         }) {
             Text(label)
                 .font(font ?? theme.typography.title)
+                .frame(maxWidth: expanded ? .infinity : nil)
                 .foregroundColor(theme.colors.primary)
                 .padding(.vertical, 8)
                 .padding(.horizontal, 30)

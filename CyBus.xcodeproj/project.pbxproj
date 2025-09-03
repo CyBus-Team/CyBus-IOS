@@ -81,6 +81,10 @@
 		9477911A2E5D236B003CCC62 /* AttUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791192E5D2364003CCC62 /* AttUseCases.swift */; };
 		9477911B2E5D236B003CCC62 /* AttUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947791192E5D2364003CCC62 /* AttUseCases.swift */; };
 		9477911E2E5D351A003CCC62 /* RootDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477911D2E5D3517003CCC62 /* RootDI.swift */; };
+		947E8AE92E68D82D006C1F07 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E8AE82E68D80D006C1F07 /* SubscriptionView.swift */; };
+		947E8AEA2E68D82D006C1F07 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E8AE82E68D80D006C1F07 /* SubscriptionView.swift */; };
+		947E8AED2E68E611006C1F07 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E8AEC2E68E60E006C1F07 /* Bullet.swift */; };
+		947E8AEE2E68E611006C1F07 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E8AEC2E68E60E006C1F07 /* Bullet.swift */; };
 		9485254A2D949656008EB3A0 /* BusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525472D949656008EB3A0 /* BusesRepository.swift */; };
 		9485254D2D949702008EB3A0 /* BusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9485254C2D9496FF008EB3A0 /* BusDTO.swift */; };
 		948525542D9497CF008EB3A0 /* AppConfigurationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */; };
@@ -296,6 +300,8 @@
 		947791162E5D2359003CCC62 /* UmpUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmpUseCases.swift; sourceTree = "<group>"; };
 		947791192E5D2364003CCC62 /* AttUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttUseCases.swift; sourceTree = "<group>"; };
 		9477911D2E5D3517003CCC62 /* RootDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDI.swift; sourceTree = "<group>"; };
+		947E8AE82E68D80D006C1F07 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		947E8AEC2E68E60E006C1F07 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 		948525472D949656008EB3A0 /* BusesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesRepository.swift; sourceTree = "<group>"; };
 		9485254C2D9496FF008EB3A0 /* BusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDTO.swift; sourceTree = "<group>"; };
 		948525532D9497C6008EB3A0 /* AppConfigurationDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationDI.swift; sourceTree = "<group>"; };
@@ -699,6 +705,47 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		947E8AE42E68CC68006C1F07 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				947E8AE72E68CC7A006C1F07 /* Data */,
+				947E8AE62E68CC75006C1F07 /* Domain */,
+				947E8AE52E68CC70006C1F07 /* Presentation */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		947E8AE52E68CC70006C1F07 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				947E8AEB2E68E608006C1F07 /* Components */,
+				947E8AE82E68D80D006C1F07 /* SubscriptionView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		947E8AE62E68CC75006C1F07 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		947E8AE72E68CC7A006C1F07 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		947E8AEB2E68E608006C1F07 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				947E8AEC2E68E60E006C1F07 /* Bullet.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		9485253F2D949338008EB3A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +858,7 @@
 		94AF0D932C7793EF002FE41B /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				947E8AE42E68CC68006C1F07 /* Subscription */,
 				AC694B3F2E5F24A400EE1FB7 /* RateUs */,
 				94F3B88A2CC3017100E38BE2 /* Root */,
 				94AF24B12CBC13320092EE9B /* Onboarding */,
@@ -1423,6 +1471,7 @@
 				942F51CB2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */,
 				944494722CCBC69100A616E2 /* OnboardingRequestGeolocationFeature.swift in Sources */,
 				94AA6D832CEA5FB6004A25A9 /* LocationFeature.swift in Sources */,
+				947E8AEA2E68D82D006C1F07 /* SubscriptionView.swift in Sources */,
 				94D794A72CC2CDD30097A2F0 /* ThemeModeUseCasesProtocol.swift in Sources */,
 				94FEF2FA2E5A86EC00E186DD /* RouteDTO.swift in Sources */,
 				942F51CE2D9DB6D2007F6F7D /* MapDI.swift in Sources */,
@@ -1449,6 +1498,7 @@
 				94575D882D23350400CC3C03 /* AddressSearchRepository.swift in Sources */,
 				9403C9282D3C0F3D000EDB25 /* SearchTripRepository.swift in Sources */,
 				94D794B02CC2CDD30097A2F0 /* ColorPalette.swift in Sources */,
+				947E8AED2E68E611006C1F07 /* Bullet.swift in Sources */,
 				947791142E5D230B003CCC62 /* ConsentsUseCasesProtocol.swift in Sources */,
 				94575D7F2D23345400CC3C03 /* AddressSearchUseCasesProtocol.swift in Sources */,
 				94D794B12CC2CDD30097A2F0 /* LocationUseCasesProtocol.swift in Sources */,
@@ -1473,6 +1523,7 @@
 				944494792CCE417E00A616E2 /* LocationUseCases.swift in Sources */,
 				94ECB3522E63746D009FB00E /* RateUsRemoteRepository.swift in Sources */,
 				947791172E5D2361003CCC62 /* UmpUseCases.swift in Sources */,
+				947E8AE92E68D82D006C1F07 /* SubscriptionView.swift in Sources */,
 				94B1303F2DB832240017C201 /* BusesUseCasesProtocol.swift in Sources */,
 				94B130402DB832240017C201 /* RouteUseCases.swift in Sources */,
 				94B130412DB832240017C201 /* BusesRepository.swift in Sources */,
@@ -1504,6 +1555,7 @@
 				944494732CCBC69100A616E2 /* OnboardingRequestGeolocationFeature.swift in Sources */,
 				94B130312DB831940017C201 /* PrimaryButton.swift in Sources */,
 				94B130372DB831C10017C201 /* ThemeModeRepositoryProtocol.swift in Sources */,
+				947E8AEE2E68E611006C1F07 /* Bullet.swift in Sources */,
 				9477910B2E5D16B0003CCC62 /* AdvertisingDI.swift in Sources */,
 				94B130382DB831C10017C201 /* Theme.swift in Sources */,
 				94B130392DB831C10017C201 /* LocalThemeModeRepository.swift in Sources */,
