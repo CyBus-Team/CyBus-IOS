@@ -85,6 +85,9 @@
         }
       }
     },
+    "Already have a subscription?" : {
+
+    },
     "Already have an account?" : {
       "comment" : "OnboardingSignInView",
       "extractionState" : "manual",
@@ -717,10 +720,10 @@
         }
       }
     },
-    "price/month" : {
+    "Price/month" : {
 
     },
-    "price/year 45% off" : {
+    "Price/year 45% off" : {
 
     },
     "Rate us" : {
@@ -756,6 +759,9 @@
           }
         }
       }
+    },
+    "Restore" : {
+
     },
     "Search here" : {
       "localizations" : {

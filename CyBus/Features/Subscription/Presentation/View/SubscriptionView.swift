@@ -13,13 +13,11 @@ import StoreKit
 struct SubscriptionView: View {
     @Environment(\.theme) var theme
     
-    var body: some View {
-        let backgroundGradient = LinearGradient(
-            colors: [theme.colors.foreground, theme.colors.background],
-            startPoint: .top, endPoint: .bottom)
-        
+    var body: some View {        
         ZStack {
-            backgroundGradient
+            LinearGradient(
+                colors: [theme.colors.foreground, theme.colors.background],
+                startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
             VStack {
@@ -39,7 +37,11 @@ struct SubscriptionView: View {
                 Spacer()
                 
                 VStack {
+                    
+                    Spacer()
+                    
                     VStack(alignment: .leading, spacing: 18) {
+                        
                         Bullet(text: "No ads", color: theme.colors.primary, emoji: "🚫")
                         Bullet(text: "Unique app icon", color: theme.colors.primary, emoji: "⚡")
                         Bullet(text: "Works with Apple Family Sharing", color: theme.colors.primary, emoji: "🧑‍🧑‍🧒")

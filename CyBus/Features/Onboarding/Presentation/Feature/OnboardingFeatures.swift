@@ -11,6 +11,7 @@ import FactoryKit
 enum OnboardingPage {
     case welcome
     case geolocation
+    case subscription
     case home
 }
 
@@ -34,6 +35,7 @@ struct OnboardingFeatures {
     enum Action {
         case welcome(OnboardingWelcomeFeature.Action)
         case geolocation(OnboardingRequestGeolocationFeature.Action)
+        case subscription
     }
     
     var body: some ReducerOf<Self> {
@@ -53,20 +55,21 @@ struct OnboardingFeatures {
                 
                 // Geolocation
             case .geolocation(.nextTapped), .geolocation(.notNowTapped):
-                useCases.finish()
-                state.finished = true
-                state.page = .home
+                state.page = .subscription
                 return .none
             case let .geolocation(.permissionResponse(allowed, _)):
                 if allowed {
-                    useCases.finish()
-                    state.finished = true
-                    state.page = .home
+                    state.page = .subscription
                 }
                 return .none
             case .geolocation(_):
                 return .none
                 
+            case .subscription:
+                useCases.finish()
+                state.finished = true
+                state.page = .home
+                return .none
             }
         }
     }
