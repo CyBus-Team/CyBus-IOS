@@ -1,7 +1,7 @@
 import StoreKit
 import FactoryKit
 
-struct SubscriptionUseCases: SubscriptionUseCasesProtocol {
+actor SubscriptionUseCases: SubscriptionUseCasesProtocol {
     
     @Injected(\.subscriptionRepository) var repository: SubscriptionRepositoryProtocol
     

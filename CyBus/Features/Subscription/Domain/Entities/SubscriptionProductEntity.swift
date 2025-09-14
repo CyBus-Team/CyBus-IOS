@@ -13,7 +13,7 @@ enum SubscriptionPeriod: String, Sendable {
     case unknown
 }
 
-struct SubscriptionProductEntity: Sendable {
+struct SubscriptionProductEntity: Sendable, Equatable {
     let id: String
     let name: String
     let price: String
