@@ -27,6 +27,9 @@ struct SubscriptionFeature {
         case subscribe(SubscriptionProductEntity)
         case subscribeResponse(PurchaseStatus)
         case subscribeFailure(Error)
+        case restore
+        case restoreResponse(PurchaseStatus)
+        case restoreFailure(Error)
         case notNowPresseed
     }
 
@@ -70,6 +73,24 @@ struct SubscriptionFeature {
                 state.status = status
                 return .none
             case let .subscribeFailure(error):
+                // TODO: UI errors
+                print("Error: \(error)")
+                state.status = .failed
+                state.error = error.localizedDescription
+                return .none
+            case .restore:
+                return .run { @MainActor send in
+                    do {
+                        let status = try await useCases.restore()
+                        send(.restoreResponse(status))
+                    } catch {
+                        send(.restoreFailure(error))
+                    }
+                }
+            case let .restoreResponse(status):
+                state.status = status
+                return .none
+            case let .restoreFailure(error):
                 // TODO: UI errors
                 print("Error: \(error)")
                 state.status = .failed

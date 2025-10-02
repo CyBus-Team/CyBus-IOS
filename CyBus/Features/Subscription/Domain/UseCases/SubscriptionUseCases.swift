@@ -10,6 +10,22 @@ actor SubscriptionUseCases: SubscriptionUseCasesProtocol {
         "cybus.pro.monthly" // "6751911811"
     ]
     
+    func restore() async throws -> PurchaseStatus {
+        do {
+            let transactions = try await repository.restore()
+            let now = Date()
+            // Consider active if any transaction for our IDs is not revoked and not expired
+            let isActive = transactions.contains { tx in
+                ids.contains(tx.productID) &&
+                tx.revocationDate == nil &&
+                (tx.expirationDate == nil || (tx.expirationDate ?? now) > now)
+            }
+            return isActive ? .success : .failed
+        } catch {
+            throw error
+        }
+    }
+    
     func subscribe(product: SubscriptionProductEntity) async throws -> PurchaseStatus {
         do {
             let result = try await repository.subscribe(for: product.id)

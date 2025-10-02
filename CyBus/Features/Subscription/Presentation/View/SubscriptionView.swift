@@ -83,7 +83,7 @@ struct SubscriptionView: View {
                         Text("Already have a subscription?")
                             .foregroundColor(Color.gray)
                         Button {
-                            
+                            store.send(.restore)
                         } label: {
                             Text("Restore")
                                 .underline()
