@@ -15,6 +15,7 @@ struct SubscriptionFeature {
     struct State: Equatable {
         var error: String?
         var products: [SubscriptionProductEntity] = []
+        var status: PurchaseStatus?
     }
 
     enum Action: BindableAction {
@@ -22,6 +23,9 @@ struct SubscriptionFeature {
         case fetchProducts
         case fetchProducsResponse([SubscriptionProductEntity])
         case fetchProducsFailure(Error)
+        case subscribe(SubscriptionProductEntity)
+        case subscribeResponse(PurchaseStatus)
+        case subscribeFailure(Error)
         case notNowPresseed
     }
 
@@ -51,6 +55,24 @@ struct SubscriptionFeature {
                 state.error = error.localizedDescription
                 return .none
             case .binding(_):
+                return .none
+            case let .subscribe(product):
+                return .run { @MainActor send in
+                    do {
+                        let status = try await useCases.subscribe(product: product)
+                        send(.subscribeResponse(status))
+                    } catch {
+                        send(.subscribeFailure(error))
+                    }
+                }
+            case let .subscribeResponse(status):
+                state.status = status
+                return .none
+            case let .subscribeFailure(error):
+                // TODO: UI errors
+                print("Error: \(error)")
+                state.status = .failed
+                state.error = error.localizedDescription
                 return .none
             }
         }

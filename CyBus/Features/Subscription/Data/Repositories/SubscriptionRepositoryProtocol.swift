@@ -11,4 +11,5 @@ typealias ProductId = String
 
 protocol SubscriptionRepositoryProtocol {
     func fetchProducts(for productIds: [ProductId]) async throws -> [Product]
+    func subscribe(for productId: ProductId) async throws -> Product.PurchaseResult 
 }

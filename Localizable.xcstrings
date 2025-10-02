@@ -1008,31 +1008,31 @@
         "el-CY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Παρακολουθήστε τα λεωφορεία σε πραγματικό χρόνο, σχεδιάστε διαδρομές και προσθέστε τις αγαπημένες σας στάσεις στα αγαπημένα σας."
+            "value" : "Παρακολουθήστε τα λεωφορεία σε πραγματικό χρόνο και σχεδιάστε τις διαδρομές σας."
           }
         },
         "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Track buses in real time, plan routes and add your favorite stops to your favorites."
+            "value" : "Track buses in real time, plan routes"
           }
         },
         "en-IN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Track buses in real time, plan routes and add your favorite stops to your favorites."
+            "value" : "Track buses in real time, plan routes"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Отслеживайте автобусы в реальном времени, \nпланируйте маршруты и добавляйте любимые остановки в избранное."
+            "value" : "Отслеживайте автобусы в реальном времени, \nпланируйте маршруты"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Відстежуйте автобуси в реальному часі, плануйте маршрути та додавайте улюблені зупинки до вибраного."
+            "value" : "Відстежуйте автобуси в реальному часі, плануйте маршрути"
           }
         }
       }

@@ -59,7 +59,7 @@ struct SubscriptionView: View {
                                         label: "\(product.name) \(product.price)",
                                         expanded: true
                                     ) {
-                                        print("Subscribe to \(product.name)")
+                                        store.send(.subscribe(product))
                                     }
                                     if product.period == .yearly {
                                         Text("Save 45%")

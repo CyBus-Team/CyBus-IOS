@@ -97,6 +97,8 @@
 		94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BD62C3AFBCF008AFC53 /* MapView.swift */; };
 		94891BE02C3B017B008AFC53 /* BusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94891BDF2C3B017B008AFC53 /* BusEntity.swift */; };
 		948CBE612CF23066006C8B1C /* BusesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948CBE602CF2305C006C8B1C /* BusesFeature.swift */; };
+		94A0CCE12E8F2AF2000A13BC /* PurchaseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A0CCE02E8F2A9D000A13BC /* PurchaseStatus.swift */; };
+		94A0CCE22E8F2AF2000A13BC /* PurchaseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A0CCE02E8F2A9D000A13BC /* PurchaseStatus.swift */; };
 		94A186C72E710006007974C6 /* SubscriptionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A186C62E710001007974C6 /* SubscriptionFeature.swift */; };
 		94A186C82E710006007974C6 /* SubscriptionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A186C62E710001007974C6 /* SubscriptionFeature.swift */; };
 		94A186CA2E710018007974C6 /* SubscriptionUseCasesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A186C92E71000F007974C6 /* SubscriptionUseCasesProtocol.swift */; };
@@ -325,6 +327,7 @@
 		94891BD62C3AFBCF008AFC53 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		94891BDF2C3B017B008AFC53 /* BusEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusEntity.swift; sourceTree = "<group>"; };
 		948CBE602CF2305C006C8B1C /* BusesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesFeature.swift; sourceTree = "<group>"; };
+		94A0CCE02E8F2A9D000A13BC /* PurchaseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseStatus.swift; sourceTree = "<group>"; };
 		94A186C62E710001007974C6 /* SubscriptionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFeature.swift; sourceTree = "<group>"; };
 		94A186C92E71000F007974C6 /* SubscriptionUseCasesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionUseCasesProtocol.swift; sourceTree = "<group>"; };
 		94A186CC2E71001D007974C6 /* SubscriptionUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionUseCases.swift; sourceTree = "<group>"; };
@@ -820,6 +823,7 @@
 		94A186CF2E710089007974C6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				94A0CCE02E8F2A9D000A13BC /* PurchaseStatus.swift */,
 				945F98CD2E6F7B1B0050651D /* SubscriptionProductEntity.swift */,
 			);
 			path = Entities;
@@ -1536,6 +1540,7 @@
 				945843AB2CD1923E006D9893 /* HomeView.swift in Sources */,
 				94575DA62D2AAF3300CC3C03 /* FavouritesButton.swift in Sources */,
 				94891BD72C3AFBCF008AFC53 /* MapView.swift in Sources */,
+				94A0CCE12E8F2AF2000A13BC /* PurchaseStatus.swift in Sources */,
 				94AF0DA12C7799FE002FE41B /* BusesRepositoryProtocol.swift in Sources */,
 				94ABDF812C29ABBD00970F8C /* CyBusApp.swift in Sources */,
 				AC694B482E5F24A400EE1FB7 /* RateUsDI.swift in Sources */,
@@ -1689,6 +1694,7 @@
 				94B130362DB831940017C201 /* SecondaryButton.swift in Sources */,
 				AC694B402E5F24A400EE1FB7 /* RateUsDI.swift in Sources */,
 				AC694B412E5F24A400EE1FB7 /* RateUsLocalRepository.swift in Sources */,
+				94A0CCE22E8F2AF2000A13BC /* PurchaseStatus.swift in Sources */,
 				AC694B422E5F24A400EE1FB7 /* RateUsUseCases.swift in Sources */,
 				AC694B432E5F24A400EE1FB7 /* RateUsUseCasesProtocol.swift in Sources */,
 				AC694B442E5F24A400EE1FB7 /* RateUsFeature.swift in Sources */,

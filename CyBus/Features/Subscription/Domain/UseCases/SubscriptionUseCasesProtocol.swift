@@ -7,4 +7,5 @@
 
 protocol SubscriptionUseCasesProtocol {
     func fetchProducts() async throws -> [SubscriptionProductEntity]
+    func subscribe(product: SubscriptionProductEntity) async throws -> PurchaseStatus
 }

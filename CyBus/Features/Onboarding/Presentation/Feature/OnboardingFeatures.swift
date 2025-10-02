@@ -73,6 +73,13 @@ struct OnboardingFeatures {
                 state.finished = true
                 state.page = .home
                 return .none
+            case let .subscription(.subscribeResponse(status)):
+                if (status == .success) {
+                    useCases.finish()
+                    state.finished = true
+                    state.page = .home
+                }
+                return .none
             case .subscription:
                 return .none
             }
