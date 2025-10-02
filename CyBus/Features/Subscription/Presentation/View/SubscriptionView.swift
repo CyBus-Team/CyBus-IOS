@@ -77,11 +77,11 @@ struct SubscriptionView: View {
                     }
                     SecondaryButton(
                         label: String(localized: "Not now"), expanded: true) {
-                            store.send(.fetchProducts)
+                            store.send(.notNowPresseed)
                         }
                     HStack(spacing: 4) {
                         Text("Already have a subscription?")
-                            .foregroundStyle(.secondary)
+                            .foregroundColor(Color.gray)
                         Button {
                             
                         } label: {
