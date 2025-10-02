@@ -30,12 +30,13 @@ struct OnboardingFeatures {
         // Features
         var welcome = OnboardingWelcomeFeature.State()
         var geolocation = OnboardingRequestGeolocationFeature.State()
+        var subscription = SubscriptionFeature.State()
     }
     
     enum Action {
         case welcome(OnboardingWelcomeFeature.Action)
         case geolocation(OnboardingRequestGeolocationFeature.Action)
-        case subscription
+        case subscription(SubscriptionFeature.Action)
     }
     
     var body: some ReducerOf<Self> {
@@ -44,6 +45,9 @@ struct OnboardingFeatures {
         }
         Scope(state: \.geolocation, action: \.geolocation) {
             OnboardingRequestGeolocationFeature()
+        }
+        Scope(state: \.subscription, action: \.subscription) {
+            SubscriptionFeature()
         }
         Reduce { state, action in
             switch action {
@@ -64,11 +68,12 @@ struct OnboardingFeatures {
                 return .none
             case .geolocation(_):
                 return .none
-                
-            case .subscription:
+            case .subscription(.notNowPresseed):
                 useCases.finish()
                 state.finished = true
                 state.page = .home
+                return .none
+            case .subscription:
                 return .none
             }
         }

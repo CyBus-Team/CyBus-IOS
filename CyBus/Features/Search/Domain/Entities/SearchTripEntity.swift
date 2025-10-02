@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreLocation
-import SwiftUICore
+import SwiftUI
 
 enum LegMode : Equatable {
     case foot

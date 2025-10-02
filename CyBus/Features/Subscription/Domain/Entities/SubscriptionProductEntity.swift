@@ -8,12 +8,12 @@
 import StoreKit
 
 enum SubscriptionPeriod: String, Sendable {
-    case monthly   = "cybus.pro.monthly"
-    case yearly    = "cybus.pro.yearly"
+    case monthly   = "monthly"
+    case yearly    = "yearly"
     case unknown
 }
 
-struct SubscriptionProductEntity: Sendable, Equatable {
+struct SubscriptionProductEntity: Identifiable, Sendable, Equatable  {
     let id: String
     let name: String
     let price: String

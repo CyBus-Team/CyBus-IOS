@@ -10,43 +10,50 @@ import FactoryKit
 
 @Reducer
 struct SubscriptionFeature {
-    
+
     @ObservableState
     struct State: Equatable {
         var error: String?
         var products: [SubscriptionProductEntity] = []
     }
-    
-    enum Action {
+
+    enum Action: BindableAction {
+        case binding(BindingAction<State>)
         case fetchProducts
         case fetchProducsResponse([SubscriptionProductEntity])
         case fetchProducsFailure(Error)
+        case notNowPresseed
     }
-    
+
     @Injected(\.subscriptionUseCases) var useCases: SubscriptionUseCasesProtocol
-    
+
     var body: some ReducerOf<Self> {
+        BindingReducer()
         Reduce { state, action in
             switch action {
+            case .notNowPresseed:
+                return .none
             case .fetchProducts:
-                return .run { send in
+                return .run { @MainActor send in
                     do {
                         let products = try await useCases.fetchProducts()
-                        await send(.fetchProducsResponse(products))
+                        send(.fetchProducsResponse(products))
                     } catch {
-                        await send(.fetchProducsFailure(error))
+                        send(.fetchProducsFailure(error))
                     }
                 }
-            case let .fetchProducsResponse(products):
+            case .fetchProducsResponse(let products):
                 state.products = products
                 return .none
-            case let .fetchProducsFailure(error):
+            case .fetchProducsFailure(let error):
                 // TODO: UI errors
                 print("Error: \(error)")
                 state.error = error.localizedDescription
                 return .none
+            case .binding(_):
+                return .none
             }
         }
     }
-    
+
 }

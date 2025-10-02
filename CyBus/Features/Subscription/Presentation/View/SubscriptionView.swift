@@ -13,12 +13,14 @@ import StoreKit
 struct SubscriptionView: View {
     @Environment(\.theme) var theme
     
-    var body: some View {        
+    @Bindable var store: StoreOf<SubscriptionFeature>
+    
+    var body: some View {
         ZStack {
             LinearGradient(
                 colors: [theme.colors.foreground, theme.colors.background],
                 startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
+            .ignoresSafeArea()
             
             VStack {
                 
@@ -43,7 +45,6 @@ struct SubscriptionView: View {
                     VStack(alignment: .leading, spacing: 18) {
                         
                         Bullet(text: "No ads", color: theme.colors.primary, emoji: "🚫")
-                        Bullet(text: "Unique app icon", color: theme.colors.primary, emoji: "⚡")
                         Bullet(text: "Works with Apple Family Sharing", color: theme.colors.primary, emoji: "🧑‍🧑‍🧒")
                         Bullet(text: "Support dev team", color: theme.colors.primary, emoji: "💙")
                     }
@@ -51,36 +52,52 @@ struct SubscriptionView: View {
                     Spacer()
                     
                     VStack {
-                        PrimaryButton(
-                            label: String(localized: "Price/month"), expanded: true) {
-                                
-                            }
-                        PrimaryButton(
-                            label: String(localized: "Price/year 45% off"), expanded: true) {
-                                
-                            }
-                        SecondaryButton(
-                            label: String(localized: "Not now"), expanded: true) {
-                                
-                            }
-                        HStack(spacing: 4) {
-                            Text("Already have a subscription?")
-                                .foregroundStyle(.secondary)
-                            Button {
-                                
-                            } label: {
-                                Text("Restore")
-                                    .underline()
-                                    .foregroundStyle(theme.colors.primary)
+                        if !store.products.isEmpty {
+                            ForEach(store.products, id: \.id) { product in
+                                ZStack(alignment: .topTrailing) {
+                                    PrimaryButton(
+                                        label: "\(product.name) \(product.price)",
+                                        expanded: true
+                                    ) {
+                                        print("Subscribe to \(product.name)")
+                                    }
+                                    if product.period == .yearly {
+                                        Text("Save 45%")
+                                            .font(.caption)
+                                            .fontWeight(.bold)
+                                            .padding(4)
+                                            .background(Color.red)
+                                            .foregroundColor(.white)
+                                            .clipShape(Capsule())
+                                            .offset(x: -8, y: -10)
+                                    }
+                                }
                             }
                         }
-                        .font(.callout)
-                        .padding(.top, 8)
                     }
+                    SecondaryButton(
+                        label: String(localized: "Not now"), expanded: true) {
+                            store.send(.fetchProducts)
+                        }
+                    HStack(spacing: 4) {
+                        Text("Already have a subscription?")
+                            .foregroundStyle(.secondary)
+                        Button {
+                            
+                        } label: {
+                            Text("Restore")
+                                .underline()
+                                .foregroundStyle(theme.colors.primary)
+                        }
+                    }
+                    .font(.callout)
+                    .padding(.top, 8)
                 }
-                .padding(.horizontal, 24)
-                
             }
+            .padding(.horizontal, 24)
+        }
+        .task(priority: .high) {
+            store.send(.fetchProducts)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .safeAreaPadding()
@@ -89,5 +106,7 @@ struct SubscriptionView: View {
 }
 
 #Preview {
-    SubscriptionView()
+    SubscriptionView(store: Store(initialState: SubscriptionFeature.State()) {
+        SubscriptionFeature()
+    })
 }
