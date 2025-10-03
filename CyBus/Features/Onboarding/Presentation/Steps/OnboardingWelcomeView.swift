@@ -32,7 +32,7 @@ struct OnboardingWelcomeView: View {
                     .lineLimit(nil)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("Track buses in real time, plan routes and add your favorite stops to your favorites.")
+                Text("Track buses in real time, plan routes")
                     .padding(.bottom, 25)
                     .font(theme.typography.title)
                     .fontWeight(.medium)
