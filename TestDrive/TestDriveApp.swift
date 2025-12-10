@@ -23,10 +23,10 @@ struct TestDriveApp: App {
     
     @MainActor
     private func handleIncomingURL(_ url: URL) {
-        // Обработка URL от ассоциированного домена
+        // Handle URL from associated domain
         guard url.scheme == "https" || url.scheme == "http" else { return }
         
-        // Извлекаем данные из URL
+        // Extract data from URL
         if let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
            let queryItems = components.queryItems {
             
@@ -35,15 +35,15 @@ struct TestDriveApp: App {
                 vehicleData[item.name] = item.value
             }
             
-            // Пытаемся создать Vehicle из параметров URL
+            // Try to create Vehicle from URL parameters
             if let vehicle = createVehicleFromURLParameters(vehicleData) {
                 appState.currentVehicle = vehicle
             } else if let qrData = vehicleData["qr"] as? String {
-                // Если есть параметр qr, парсим его
+                // If there's a qr parameter, parse it
                 appState.currentVehicle = VehicleQRParser.parse(qrData)
             }
         } else {
-            // Если URL содержит данные в пути, пытаемся распарсить
+            // If URL contains data in path, try to parse it
             let urlString = url.absoluteString
             appState.currentVehicle = VehicleQRParser.parse(urlString)
         }

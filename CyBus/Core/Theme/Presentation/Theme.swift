@@ -5,7 +5,7 @@
 //  Created by Vadim Popov on 13/10/2024.
 //
 
-import SwiftUICore
+import SwiftUI
 
 struct Theme {
     let colors: ColorPalette

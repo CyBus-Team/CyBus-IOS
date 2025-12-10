@@ -10,130 +10,153 @@ import SwiftUI
 struct VehicleDetailsView: View {
     let vehicle: Vehicle
     @Environment(\.dismiss) var dismiss
+    @State private var showMoreDetails = false
+    @State private var fullName = ""
+    @State private var phone = ""
+    @State private var isSubmitting = false
     
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 20) {
-                    // Header
-                    VStack(spacing: 8) {
+                VStack(spacing: 24) {
+                    // Short Vehicle Information
+                    VStack(spacing: 16) {
                         Image(systemName: "car.fill")
-                            .font(.system(size: 60))
+                            .font(.system(size: 50))
                             .foregroundColor(.blue)
                         
-                        Text("\(vehicle.year) \(vehicle.make) \(vehicle.model)")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                    }
-                    .padding(.top)
-                    
-                    // Form
-                    VStack(alignment: .leading, spacing: 16) {
-                        SectionHeader(title: "Basic Information")
-                        
-                        InfoRow(label: "Make", value: vehicle.make)
-                        InfoRow(label: "Model", value: vehicle.model)
-                        InfoRow(label: "Year", value: "\(vehicle.year)")
-                        
-                        if let vin = vehicle.vin {
-                            InfoRow(label: "VIN", value: vin)
+                        VStack(spacing: 8) {
+                            Text("\(vehicle.year) \(vehicle.make) \(vehicle.model)")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
+                            
+                            if let price = vehicle.price {
+                                Text("$\(price, specifier: "%.0f")")
+                                    .font(.title3)
+                                    .foregroundColor(.green)
+                                    .fontWeight(.semibold)
+                            }
                         }
                         
-                        if let licensePlate = vehicle.licensePlate {
-                            InfoRow(label: "License Plate", value: licensePlate)
+                        // Show More Button
+                        Button(action: {
+                            withAnimation {
+                                showMoreDetails.toggle()
+                            }
+                        }) {
+                            HStack {
+                                Text(showMoreDetails ? "Show Less" : "Show More")
+                                Image(systemName: showMoreDetails ? "chevron.up" : "chevron.down")
+                            }
+                            .font(.subheadline)
+                            .foregroundColor(.blue)
                         }
                         
-                        if let color = vehicle.color {
-                            InfoRow(label: "Color", value: color)
+                        // Expanded Details
+                        if showMoreDetails {
+                            VStack(alignment: .leading, spacing: 12) {
+                                Divider()
+                                
+                                if let vin = vehicle.vin {
+                                    DetailRow(label: "VIN", value: vin)
+                                }
+                                
+                                if let licensePlate = vehicle.licensePlate {
+                                    DetailRow(label: "License Plate", value: licensePlate)
+                                }
+                                
+                                if let color = vehicle.color {
+                                    DetailRow(label: "Color", value: color)
+                                }
+                                
+                                if let mileage = vehicle.mileage {
+                                    DetailRow(label: "Mileage", value: "\(mileage.formatted(.number.grouping(.automatic))) miles")
+                                }
+                                
+                                if let engine = vehicle.engine {
+                                    DetailRow(label: "Engine", value: engine)
+                                }
+                                
+                                if let transmission = vehicle.transmission {
+                                    DetailRow(label: "Transmission", value: transmission)
+                                }
+                                
+                                if let fuelType = vehicle.fuelType {
+                                    DetailRow(label: "Fuel Type", value: fuelType)
+                                }
+                                
+                                if let description = vehicle.description {
+                                    Divider()
+                                    Text(description)
+                                        .font(.body)
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                            .padding(.top, 8)
+                            .transition(.opacity.combined(with: .move(edge: .top)))
                         }
                     }
                     .padding()
                     .background(Color(.systemBackground))
-                    .cornerRadius(12)
-                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
+                    .cornerRadius(16)
+                    .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 2)
                     
-                    // Technical Details
-                    if vehicle.engine != nil || vehicle.transmission != nil || vehicle.fuelType != nil || vehicle.mileage != nil {
-                        VStack(alignment: .leading, spacing: 16) {
-                            SectionHeader(title: "Technical Details")
+                    // Request Test Drive Form
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("Request Test Drive")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 4)
+                        
+                        // Full Name Field
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Full Name")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
                             
-                            if let engine = vehicle.engine {
-                                InfoRow(label: "Engine", value: engine)
-                            }
-                            
-                            if let transmission = vehicle.transmission {
-                                InfoRow(label: "Transmission", value: transmission)
-                            }
-                            
-                            if let fuelType = vehicle.fuelType {
-                                InfoRow(label: "Fuel Type", value: fuelType)
-                            }
-                            
-                            if let mileage = vehicle.mileage {
-                                InfoRow(label: "Mileage", value: "\(mileage.formatted(.number.grouping(.automatic))) miles")
-                            }
+                            TextField("Enter your full name", text: $fullName)
+                                .textFieldStyle(.roundedBorder)
+                                .autocapitalization(.words)
                         }
-                        .padding()
-                        .background(Color(.systemBackground))
-                        .cornerRadius(12)
-                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
-                    }
-                    
-                    // Price
-                    if let price = vehicle.price {
-                        VStack(alignment: .leading, spacing: 16) {
-                            SectionHeader(title: "Pricing")
+                        
+                        // Phone Field
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Phone")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
                             
-                            HStack {
-                                Text("Price")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
-                                Spacer()
-                                Text("$\(price, specifier: "%.2f")")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.green)
-                            }
+                            TextField("Enter your phone number", text: $phone)
+                                .textFieldStyle(.roundedBorder)
+                                .keyboardType(.phonePad)
                         }
-                        .padding()
-                        .background(Color(.systemBackground))
-                        .cornerRadius(12)
-                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
-                    }
-                    
-                    // Description
-                    if let description = vehicle.description {
-                        VStack(alignment: .leading, spacing: 16) {
-                            SectionHeader(title: "Description")
-                            
-                            Text(description)
-                                .font(.body)
-                                .foregroundColor(.primary)
-                        }
-                        .padding()
-                        .background(Color(.systemBackground))
-                        .cornerRadius(12)
-                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
-                    }
-                    
-                    // Action Buttons
-                    VStack(spacing: 12) {
+                        
+                        // Request Test Drive Button
                         Button(action: {
-                            // Action for test drive
+                            requestTestDrive()
                         }) {
                             HStack {
-                                Image(systemName: "car.circle.fill")
-                                Text("Schedule Test Drive")
+                                if isSubmitting {
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                } else {
+                                    Image(systemName: "car.circle.fill")
+                                    Text("Request Test Drive")
+                                }
                             }
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(Color.blue)
+                            .background(isFormValid ? Color.blue : Color.gray)
                             .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .cornerRadius(12)
+                            .fontWeight(.semibold)
                         }
+                        .disabled(!isFormValid || isSubmitting)
                     }
-                    .padding(.horizontal)
+                    .padding()
+                    .background(Color(.systemBackground))
+                    .cornerRadius(16)
+                    .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 2)
                 }
                 .padding()
             }
@@ -149,20 +172,26 @@ struct VehicleDetailsView: View {
             }
         }
     }
-}
-
-struct SectionHeader: View {
-    let title: String
     
-    var body: some View {
-        Text(title)
-            .font(.headline)
-            .foregroundColor(.secondary)
-            .textCase(.uppercase)
+    private var isFormValid: Bool {
+        !fullName.trimmingCharacters(in: .whitespaces).isEmpty &&
+        !phone.trimmingCharacters(in: .whitespaces).isEmpty
+    }
+    
+    private func requestTestDrive() {
+        isSubmitting = true
+        
+        // Simulate API call
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            isSubmitting = false
+            
+            // Show success message or handle submission
+            // You can add an alert or navigation here
+        }
     }
 }
 
-struct InfoRow: View {
+struct DetailRow: View {
     let label: String
     let value: String
     
@@ -175,9 +204,7 @@ struct InfoRow: View {
             Text(value)
                 .font(.body)
                 .fontWeight(.medium)
-                .foregroundColor(.primary)
         }
-        .padding(.vertical, 4)
     }
 }
 
@@ -198,4 +225,3 @@ struct InfoRow: View {
         description: "Excellent condition, one owner, fully loaded with autopilot."
     ))
 }
-

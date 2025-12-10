@@ -21,6 +21,20 @@
                ReferencedContainer = "container:CyBus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "942CB1632EE9D7DB00E42DD9"
+               BuildableName = "TestDrive.app"
+               BlueprintName = "TestDrive"
+               ReferencedContainer = "container:CyBus.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

@@ -39,17 +39,17 @@ struct Vehicle: Codable, Identifiable {
     }
 }
 
-// Парсер для QR-кода
+// QR code parser
 struct VehicleQRParser {
     static func parse(_ qrCode: String) -> Vehicle? {
-        // Пытаемся распарсить как JSON
+        // Try to parse as JSON
         guard let data = qrCode.data(using: .utf8) else { return nil }
         
         do {
             let vehicle = try JSONDecoder().decode(Vehicle.self, from: data)
             return vehicle
         } catch {
-            // Если не JSON, пытаемся распарсить как URL с параметрами
+            // If not JSON, try to parse as URL with parameters
             if let url = URL(string: qrCode),
                let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
                let queryItems = components.queryItems {
@@ -59,11 +59,11 @@ struct VehicleQRParser {
                     vehicleData[item.name] = item.value
                 }
                 
-                // Создаем Vehicle из параметров URL
+                // Create Vehicle from URL parameters
                 return createVehicleFromDictionary(vehicleData)
             }
             
-            // Если это просто строка с данными, пытаемся распарсить как простой формат
+            // If it's just a data string, try to parse as simple format
             return parseSimpleFormat(qrCode)
         }
     }
@@ -94,7 +94,7 @@ struct VehicleQRParser {
     }
     
     private static func parseSimpleFormat(_ qrCode: String) -> Vehicle? {
-        // Простой формат: make|model|year|vin|licensePlate
+        // Simple format: make|model|year|vin|licensePlate
         let components = qrCode.components(separatedBy: "|")
         guard components.count >= 3,
               let year = Int(components[2]) else {
