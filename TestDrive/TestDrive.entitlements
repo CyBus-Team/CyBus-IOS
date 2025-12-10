@@ -6,9 +6,9 @@
 	<array>
 		<string>appclips:cybusapp.org</string>
 	</array>
-	<key>com.apple.security.app-sandbox</key>
-	<true/>
-	<key>com.apple.security.files.user-selected.read-only</key>
-	<true/>
+	<key>com.apple.developer.parent-application-identifiers</key>
+	<array>
+		<string>$(AppIdentifierPrefix)com.cybus.ios</string>
+	</array>
 </dict>
 </plist>

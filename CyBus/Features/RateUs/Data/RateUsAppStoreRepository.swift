@@ -6,7 +6,7 @@
 //
 
 import StoreKit
-import SwiftUICore
+import SwiftUI
 
 class RateUsAppStoreRepository: RateUsRepositoryProtocol {
     

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		9420D1C12CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
 		9420D1C22CCFE38E00150F5B /* OnboardingWelcomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */; };
 		942C53EE2C55152E00DE9BD7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 942C53EC2C55152E00DE9BD7 /* README.md */; };
+		942CB1702EE9D7DC00E42DD9 /* TestDrive.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 942CB1642EE9D7DB00E42DD9 /* TestDrive.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		942F51CA2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */; };
 		942F51CB2D9DB1D2007F6F7D /* OnboardingDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */; };
 		942F51CE2D9DB6D2007F6F7D /* MapDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51CD2D9DB6CF007F6F7D /* MapDI.swift */; };
@@ -226,6 +227,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		942CB16E2EE9D7DC00E42DD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94ABDF752C29ABBD00970F8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 942CB1632EE9D7DB00E42DD9;
+			remoteInfo = TestDrive;
+		};
 		94ABDF8F2C29ABBD00970F8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 94ABDF752C29ABBD00970F8C /* Project object */;
@@ -242,6 +250,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		942CB15B2EE9D6F100E42DD9 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				942CB1702EE9D7DC00E42DD9 /* TestDrive.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9400C2532C35BA3600355A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9403C9252D3C0E46000EDB25 /* SearchTripRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTripRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -250,6 +272,7 @@
 		941B317D2DDE4318005C5F00 /* BusClusterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusClusterEntity.swift; sourceTree = "<group>"; };
 		9420D1C02CCFE38600150F5B /* OnboardingWelcomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeFeature.swift; sourceTree = "<group>"; };
 		942C53EC2C55152E00DE9BD7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		942CB1642EE9D7DB00E42DD9 /* TestDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		942F51C92D9DB1CC007F6F7D /* OnboardingDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDI.swift; sourceTree = "<group>"; };
 		942F51CD2D9DB6CF007F6F7D /* MapDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDI.swift; sourceTree = "<group>"; };
 		942F51D42D9DC67D007F6F7D /* BusesDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesDI.swift; sourceTree = "<group>"; };
@@ -365,7 +388,28 @@
 		ACBEE2132D4FA9D700C1A753 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		942CB1712EE9D7DC00E42DD9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 942CB1632EE9D7DB00E42DD9 /* TestDrive */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		942CB1652EE9D7DB00E42DD9 /* TestDrive */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (942CB1712EE9D7DC00E42DD9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TestDrive; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		942CB1612EE9D7DB00E42DD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94ABDF7A2C29ABBD00970F8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -753,6 +797,7 @@
 				94ABDF7F2C29ABBD00970F8C /* CyBus */,
 				94ABDF912C29ABBD00970F8C /* CyBusTests */,
 				94ABDF9B2C29ABBE00970F8C /* CyBusUITests */,
+				942CB1652EE9D7DB00E42DD9 /* TestDrive */,
 				94ABDF7E2C29ABBD00970F8C /* Products */,
 				94BB5BC52C35CBDF00404028 /* Frameworks */,
 			);
@@ -764,6 +809,7 @@
 				94ABDF7D2C29ABBD00970F8C /* CyBus.app */,
 				94ABDF8E2C29ABBD00970F8C /* CyBusTests.xctest */,
 				94ABDF982C29ABBE00970F8C /* CyBusUITests.xctest */,
+				942CB1642EE9D7DB00E42DD9 /* TestDrive.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1203,6 +1249,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		942CB1632EE9D7DB00E42DD9 /* TestDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942CB1722EE9D7DC00E42DD9 /* Build configuration list for PBXNativeTarget "TestDrive" */;
+			buildPhases = (
+				942CB1602EE9D7DB00E42DD9 /* Sources */,
+				942CB1612EE9D7DB00E42DD9 /* Frameworks */,
+				942CB1622EE9D7DB00E42DD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				942CB1652EE9D7DB00E42DD9 /* TestDrive */,
+			);
+			name = TestDrive;
+			packageProductDependencies = (
+			);
+			productName = TestDrive;
+			productReference = 942CB1642EE9D7DB00E42DD9 /* TestDrive.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 		94ABDF7C2C29ABBD00970F8C /* CyBus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94ABDFA22C29ABBE00970F8C /* Build configuration list for PBXNativeTarget "CyBus" */;
@@ -1210,10 +1278,12 @@
 				94ABDF792C29ABBD00970F8C /* Sources */,
 				94ABDF7A2C29ABBD00970F8C /* Frameworks */,
 				94ABDF7B2C29ABBD00970F8C /* Resources */,
+				942CB15B2EE9D6F100E42DD9 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				942CB16F2EE9D7DC00E42DD9 /* PBXTargetDependency */,
 			);
 			name = CyBus;
 			packageProductDependencies = (
@@ -1272,9 +1342,12 @@
 				KnownAssetTags = (
 					Onboard,
 				);
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 2610;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
+					942CB1632EE9D7DB00E42DD9 = {
+						CreatedOnToolsVersion = 26.1;
+					};
 					94ABDF7C2C29ABBD00970F8C = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -1313,11 +1386,19 @@
 				94ABDF7C2C29ABBD00970F8C /* CyBus */,
 				94ABDF8D2C29ABBD00970F8C /* CyBusTests */,
 				94ABDF972C29ABBE00970F8C /* CyBusUITests */,
+				942CB1632EE9D7DB00E42DD9 /* TestDrive */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		942CB1622EE9D7DB00E42DD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94ABDF7B2C29ABBD00970F8C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1346,6 +1427,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		942CB1602EE9D7DB00E42DD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94ABDF792C29ABBD00970F8C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1578,6 +1666,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		942CB16F2EE9D7DC00E42DD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 942CB1632EE9D7DB00E42DD9 /* TestDrive */;
+			targetProxy = 942CB16E2EE9D7DC00E42DD9 /* PBXContainerItemProxy */;
+		};
 		94ABDF902C29ABBD00970F8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 94ABDF7C2C29ABBD00970F8C /* CyBus */;
@@ -1591,6 +1684,81 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		942CB1732EE9D7DC00E42DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TestDrive/TestDrive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 55X4R3755D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestDrive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CyBus;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cybus.ios.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		942CB1742EE9D7DC00E42DD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TestDrive/TestDrive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 55X4R3755D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestDrive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CyBus;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cybus.ios.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		94ABDFA02C29ABBE00970F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1718,7 +1886,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CyBus/CyBus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CyBus/Preview Content\"";
 				DEVELOPMENT_TEAM = 55X4R3755D;
@@ -1760,7 +1928,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CyBus/CyBus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CyBus/Preview Content\"";
 				DEVELOPMENT_TEAM = 55X4R3755D;
@@ -1884,6 +2052,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		942CB1722EE9D7DC00E42DD9 /* Build configuration list for PBXNativeTarget "TestDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942CB1732EE9D7DC00E42DD9 /* Debug */,
+				942CB1742EE9D7DC00E42DD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		94ABDF782C29ABBD00970F8C /* Build configuration list for PBXProject "CyBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
