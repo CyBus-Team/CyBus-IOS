@@ -31,9 +31,31 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                         .foregroundColor(.secondary)
                         .padding()
+                    
+                    #if DEBUG
+                    Button(action: {
+                        appState.mockVehicleFromURL()
+                    }) {
+                        HStack {
+                            Image(systemName: "wand.and.stars")
+                            Text("Load Mock Vehicle")
+                        }
+                        .padding()
+                        .background(Color.blue.opacity(0.1))
+                        .foregroundColor(.blue)
+                        .cornerRadius(10)
+                    }
+                    .padding(.top)
+                    #endif
                 }
                 .padding()
             }
+        }
+        .onAppear {
+            #if DEBUG
+            // Uncomment to automatically load mock data on app launch
+            // appState.mockVehicleFromURL()
+            #endif
         }
     }
 }

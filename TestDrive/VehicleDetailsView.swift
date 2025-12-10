@@ -97,6 +97,7 @@ struct VehicleDetailsView: View {
                             .transition(.opacity.combined(with: .move(edge: .top)))
                         }
                     }
+                    .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color(.systemBackground))
                     .cornerRadius(16)
@@ -104,11 +105,6 @@ struct VehicleDetailsView: View {
                     
                     // Request Test Drive Form
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("Request Test Drive")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .padding(.bottom, 4)
-                        
                         // Full Name Field
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Full Name")
@@ -153,6 +149,7 @@ struct VehicleDetailsView: View {
                         }
                         .disabled(!isFormValid || isSubmitting)
                     }
+                    .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color(.systemBackground))
                     .cornerRadius(16)
@@ -161,15 +158,8 @@ struct VehicleDetailsView: View {
                 .padding()
             }
             .background(Color(.systemGroupedBackground))
-            .navigationTitle("Vehicle Details")
+            .navigationTitle("DW Test Drive")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Close") {
-                        dismiss()
-                    }
-                }
-            }
         }
     }
     

@@ -18,11 +18,21 @@ struct TestDriveApp: App {
                 .onOpenURL { url in
                     handleIncomingURL(url)
                 }
+                .onAppear {
+                    #if DEBUG
+                    // Mock vehicle data for testing (comment out for production)
+                    // Option 1: Use AppState method (simpler)
+                    // appState.mockVehicleFromURL()
+                    
+                    // Option 2: Use TestDriveApp method (simulates full URL parsing)
+                    // mockURLParsing()
+                    #endif
+                }
         }
     }
     
     @MainActor
-    private func handleIncomingURL(_ url: URL) {
+    func handleIncomingURL(_ url: URL) {
         // Handle URL from associated domain
         guard url.scheme == "https" || url.scheme == "http" else { return }
         
@@ -48,6 +58,15 @@ struct TestDriveApp: App {
             appState.currentVehicle = VehicleQRParser.parse(urlString)
         }
     }
+    
+    #if DEBUG
+    // Mock method to simulate URL parsing for testing
+    func mockURLParsing() {
+        // Simulate opening a URL with vehicle data
+        let mockURL = URL(string: "https://cybus.app/vehicle?make=Tesla&model=Model%203&year=2023&vin=5YJ3E1EA1KF123456&license_plate=ABC-1234&color=Pearl%20White&mileage=15000&engine=Electric&transmission=Single%20Speed&fuel_type=Electric&price=45000&description=Excellent%20condition,%20one%20owner,%20fully%20loaded%20with%20autopilot.")!
+        handleIncomingURL(mockURL)
+    }
+    #endif
     
     private func createVehicleFromURLParameters(_ dict: [String: Any]) -> Vehicle? {
         guard let make = dict["make"] as? String,
